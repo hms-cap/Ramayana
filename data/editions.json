@@ -7,5 +7,15 @@
     "description": "The reconstructed text published by the Oriental Institute, Baroda (1960–75), as digitised in GRETIL.",
     "source_key": "ce",
     "citation": "Vālmīki Rāmāyaṇa, Baroda Critical Edition"
+  },
+  {
+    "id": "vu",
+    "short": "Vulgate",
+    "short_kn": "ಪ್ರಚಲಿತ ಪಾಠ",
+    "name": "Traditional Vulgate (Southern recension)",
+    "description": "The longer traditional text, 7 kāṇḍas in 645 sargas, as transcribed on Sanskrit Wikisource. Many verses are written with sandhi undone (जनः च शूद्रो अपि), as in the source.",
+    "source_key": "vu",
+    "citation": "Vālmīki Rāmāyaṇa, Vulgate (Sanskrit Wikisource text)",
+    "source_label": "Numbered in source"
   }
 ]

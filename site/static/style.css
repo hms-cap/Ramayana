@@ -84,8 +84,9 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 .foot p { max-width: 72rem; margin: 0 auto; padding: 1rem; }
 
 /* ---------- home ---------- */
-.hero { padding: 2.5rem 0 1.5rem; max-width: 46rem; }
-.hero h1 { font: 400 clamp(2.8rem, 9vw, 5.6rem)/1.15 var(--f-knda); margin: 0; letter-spacing: -0.01em; }
+.hero { padding: 2.5rem 0 1.5rem; }
+.hero h1 { font: 400 clamp(2.6rem, 8vw, 5rem)/1.15 var(--f-knda); margin: 0; letter-spacing: -0.01em; white-space: nowrap; }
+@media (max-width: 30rem) { .hero h1 { white-space: normal; } }
 .hero-sa { font: 400 1.4rem/1.3 var(--f-deva); color: var(--muted); margin: 0.2rem 0 1.2rem; }
 .lede { font: 400 1.25rem/1.5 var(--f-text); max-width: 36rem; margin: 0 0 1.4rem; }
 .start { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
@@ -150,7 +151,12 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 .sarga-n { color: var(--accent); }
 .sarga-head .sub { color: var(--muted); margin: 0.2rem 0 0; }
 .sarga-title { font-family: var(--f-text); font-style: italic; color: var(--ink); }
-.alt-ed { margin: 0.3rem 0 0; }
+.recension { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center; margin-top: 0.6rem; }
+.recension p { margin: 0; }
+.seg-sm button { font-size: 0.88rem; padding: 0.35rem 0.7rem; min-height: 32px; }
+.note { color: var(--muted); font-size: 0.92rem; margin: 0.4rem 0 0; }
+.b-noise { color: var(--muted); font-style: italic; }
+.b-variant, .b-regrouped, .b-partial { color: var(--muted); }
 
 .verses { list-style: none; margin: 0; padding: 0; }
 .verse { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 0 0.9rem; padding: 0.85rem 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 5.5rem; }

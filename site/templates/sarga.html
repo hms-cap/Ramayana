@@ -12,7 +12,18 @@
   <header class="sarga-head">
     <h1><span lang="kn">{{ kanda.kn }}</span> <span class="sarga-n" lang="kn">ಸರ್ಗ {{ s|knda }}</span></h1>
     <p class="sub">{{ kanda.en }}, sarga {{ s }} of {{ total_in_kanda }}{% if title %}: <span class="sarga-title">{{ title.title_iast }}</span>{% endif %}. {{ verses|length }} verses.</p>
-    {% if alt_href %}<p class="alt-ed">Same sarga in the <a href="{{ alt_href.href }}">{{ alt_href.label }}</a> ({{ alt_href.ref }}).</p>{% endif %}
+    {% if has_cw %}
+    <div class="recension">
+      <p>{{ shared }} of {{ verses|length }} verses are also in the {{ other_label }}{% if alt_href %}, mostly in <a href="{{ alt_href.href }}">sarga {{ alt_href.ref }}</a>{% endif %}.</p>
+      {% if shared < verses|length %}
+      <div class="seg seg-sm" role="radiogroup" aria-label="Which verses to show">
+        <button type="button" role="radio" data-set-filter="all">All verses</button>
+        <button type="button" role="radio" data-set-filter="shared">Only those in the {{ other_label }}</button>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% if iitk %}<p class="note">This sarga's text was restored by the upstream project from IIT Kanpur's Valmiki Ramayanam site, whose reuse terms are not stated.</p>{% endif %}
   </header>
 
   <ol class="verses">
@@ -22,21 +33,19 @@
         <span class="n-knda">{{ v.v_knda }}</span><span class="n-deva">{{ v.v_deva }}</span><span class="n-iast">{{ v.v }}</span>
       </button>
       <div class="body">
-        {% if v.crosswalk %}{% set cw = v.crosswalk %}
-        <p class="badge b-{{ cw.status }}">
-          {% if cw.status == 'absent' %}Not in the {{ cw.other_label }}
-          {% elif cw.status == 'match' %}{{ cw.other_label }} <a href="{{ root }}{{ cw.other }}/{{ cw.k }}/{{ cw.s }}/#v{{ cw.v }}">{{ cw.ref }}</a>
-          {% else %}{{ cw.other_label }} <a href="{{ root }}{{ cw.other }}/{{ cw.k }}/{{ cw.s }}/#v{{ cw.v }}">{{ cw.ref }}</a>, {{ cw.note }}
-          {% endif %}
-        </p>
+        {% set cw = v.crosswalk %}
+        {% if cw and cw.status != 'match' %}
+        <p class="badge b-{{ cw.status }}">{% if cw.status == 'absent' %}Not in the {{ cw.other_label }}{% else %}{% if cw.status == 'variant' %}Different reading in the{% elif cw.status == 'regrouped' %}Lines grouped differently in the{% else %}Only partly in the{% endif %} {{ cw.other_label }}: {% for l in cw.links %}<a href="{{ root }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</p>
         {% endif %}
+        {% if 'source_noise' in v.flags %}<p class="badge b-noise">The source has typing errors in this verse.</p>{% endif %}
         {{ verse_text(v) }}
-        <div class="scan" aria-hidden="true">{% for l in v.scan %}<span class="ln">{{ l }}</span>{% endfor %}</div>
+        {% if v.meter %}<div class="scan" aria-hidden="true">{% for l in v.scan %}<span class="ln">{{ l }}</span>{% endfor %}</div>{% endif %}
         <div class="details" id="d{{ v.v }}" hidden>
           <dl>
             <dt>Verse</dt><dd>{{ v.ref }}</dd>
             {% if v.meter %}<dt>Metre</dt><dd>{{ v.meter }}</dd>{% endif %}
             {% for i in v.ids %}<dt>{{ i.label }}</dt><dd><code>{{ i.value }}</code></dd>{% endfor %}
+            {% if cw and cw.links %}<dt>{{ cw.other_label }}</dt><dd>{% for l in cw.links %}<a href="{{ root }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
           </dl>
           <button type="button" class="cite">Copy citation</button>
           <span class="cite-ok" role="status"></span>

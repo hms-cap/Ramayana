@@ -8,6 +8,11 @@ hand; fix the source or the script and regenerate.
 |---|---|---|
 | `normalized/ce.jsonl` | GRETIL `sa_rAmAyaNa.xml` (Baroda Critical Edition; Tokunaga, J. Smith et al.) | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
 | `normalized/ce_report.json` | Structural anomalies found while parsing the above | same |
+| `normalized/vu.jsonl` | Ramayana_Book `san/*_all.json` (Sanskrit Wikisource vulgate) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `normalized/vu_report.json` | Repairs applied and verses still flagged | same |
+| `crosswalk/verses.json` | Per-verse links between `vu` and `ce` (generated) | CC BY-NC-SA 4.0 |
+| `crosswalk/sargas.json` | Sarga-level mapping, e.g. `"vu:6.37": "ce:6.28"` | same |
+| `crosswalk/review.tsv` | Partial and variant links, with both texts, for human review | same |
 
 Each line of `ce.jsonl` is one verse:
 
@@ -21,3 +26,12 @@ Each line of `ce.jsonl` is one verse:
 line with more than one element carries explicit pāda divisions from the
 source (`<seg type="pāda">`). `meter` is computed (see `etl/meter.py`), and
 is `null` when no listed metre fits.
+
+Vulgate records use the same shape, plus optional `source_ref` (the number
+printed in the source when it differs from the verse's position), `flags`
+(`source_noise`, `renumbered`, `iitk_restored`) and, for noisy verses, `raw`
+(the untouched source entry).
+
+Cross-walk statuses: `match` (same verse), `regrouped` (same lines, split
+across different verses), `partial` (some lines shared), `variant` (similar
+but no line in common), `absent` (no counterpart).

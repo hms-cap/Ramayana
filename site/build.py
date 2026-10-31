@@ -73,13 +73,49 @@ def render_verse(rec: dict, ed: dict) -> dict:
     scan = [" ".join("".join("ऽ" if w == "G" else "।" for w in pada) for pada in line)
             for line in met["scansion"]]
     return {
+        "lines": rec["lines"],
         "uid": rec["uid"], "k": rec["k"], "s": rec["s"], "v": rec["v"], "ref": ref,
         "v_knda": to_digits(rec["v"], "knda"), "v_deva": to_digits(rec["v"], "deva"),
         "text": out, "meter": rec.get("meter"), "scan": scan,
         "slp1": " / ".join(slp_lines),
         "ids": rec_ids(rec, ed),
-        "crosswalk": rec.get("crosswalk"),
+        "crosswalk": crosswalk_for(rec, ed),
+        "flags": rec.get("flags", []),
     }
+
+
+_CW = None
+_EDITION_LABEL = {"ce": "Critical Edition", "vu": "Vulgate"}
+STATUS_TEXT = {
+    "match": "{other} {refs}",
+    "variant": "Different reading in the {other} ({refs})",
+    "regrouped": "Lines grouped differently in the {other} ({refs})",
+    "partial": "Only partly in the {other} ({refs})",
+    "absent": "Not in the {other}",
+}
+
+
+def uid_ref(uid: str) -> tuple[str, int, int, int]:
+    ed, k, s, v = uid.split("-")
+    return ed.lower(), int(k), int(s), int(v)
+
+
+def crosswalk_for(rec: dict, ed: dict):
+    """Per-verse link to the other edition, from data/crosswalk/verses.json."""
+    global _CW
+    if _CW is None:
+        p = ROOT / "data" / "crosswalk" / "verses.json"
+        _CW = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    entry = _CW.get(ed["id"], {}).get(rec["uid"])
+    if not entry:
+        return None
+    other = "ce" if ed["id"] == "vu" else "vu"
+    links = []
+    for t in entry.get("targets", []):
+        oe, k, s, v = uid_ref(t)
+        links.append({"ref": f"{k}.{s}.{v}", "path": f"{oe}/{k}/{s}/#v{v}"})
+    return {"status": entry["status"], "other": other, "other_label": _EDITION_LABEL[other],
+            "links": links, "score": entry.get("score")}
 
 
 def rec_ids(rec: dict, ed: dict) -> list[dict]:
@@ -134,10 +170,14 @@ def build(out: Path) -> None:
                 title=titles.get((k, s)), verses=verses, prev=prev_key, next=next_key,
                 total_in_kanda=kandas[k - 1]["sargas"], page="sarga",
                 alt_href=alt_edition_href(ed, editions, k, s),
+                shared=sum(1 for v in verses if v["crosswalk"] and v["crosswalk"]["status"] != "absent"),
+                has_cw=any(v["crosswalk"] for v in verses),
+                other_label="Critical Edition" if ed["id"] == "vu" else "Vulgate",
+                iitk=any("iitk_restored" in v["flags"] for v in verses),
             ), encoding="utf-8")
             (page.parent / "sarga.json").write_text(json.dumps(
                 {"edition": ed["id"], "kanda": k, "sarga": s,
-                 "verses": [{key: v[key] for key in ("uid", "ref", "text", "meter", "ids", "crosswalk")}
+                 "verses": [{key: v[key] for key in ("uid", "ref", "lines", "meter", "ids", "crosswalk", "flags")}
                             for v in verses]},
                 ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
             for v in verses:
@@ -159,7 +199,9 @@ def build(out: Path) -> None:
         (out / "data" / f'search-{ed["id"]}.json').write_text(
             json.dumps(index_rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
-    common = dict(editions=editions, eds=edition_summaries, ed=edition_summaries[0], sources=sources)
+    cw_report = ROOT / "data" / "crosswalk" / "report.json"
+    common = dict(editions=editions, eds=edition_summaries, ed=edition_summaries[0], sources=sources,
+                  crosswalk=json.loads(cw_report.read_text()) if cw_report.exists() and len(edition_summaries) > 1 else None)
     (out / "index.html").write_text(env.get_template("home.html").render(root="", page="home", **common), encoding="utf-8")
     for name in ("search", "about"):
         p = out / name / "index.html"

@@ -6,6 +6,10 @@ Kannada script, Devanāgarī and IAST, with cross-script search.
 ## What's in it
 
 - **Baroda Critical Edition**: 7 kāṇḍas, 606 sargas, 18,761 verses, from GRETIL.
+- **Traditional Vulgate**: 645 sargas, 23,386 verses, from Sanskrit Wikisource (via Ramayana_Book).
+- **Verse cross-walk** between the two: every verse links to its counterpart, with
+  badges for verses that are absent, regrouped or only partly shared, and a switch
+  to hide verses not in the other edition.
 - One page per sarga; each verse pre-rendered in Kannada script, Devanāgarī and IAST.
 - Script modes: Kannada, Devanāgarī, IAST, Kannada + Devanāgarī side by side, or all three.
 - Optional homorganic nasals (ಪುಙ್ಗವ instead of ಪುಂಗವ) for pārāyaṇa-style printing.
@@ -20,7 +24,9 @@ Kannada script, Devanāgarī and IAST, with cross-script search.
 etl/            source ingestion, transliteration, metre (Python)
   translit.py   IAST / Devanāgarī / Kannada <-> SLP1, search keys
   meter.py      laghu/guru scansion and metre names
-  ingest_gretil.py
+  ingest_gretil.py      Critical Edition (TEI-XML)
+  ingest_vulgate.py     Vulgate (JSON), with logged mechanical repairs
+  crosswalk.py          verse and sarga alignment between the editions
   sources.json  pinned upstream commits and licences
 data/           generated, normalized text (see data/README.md)
 site/           static site generator (Jinja2), templates and assets
@@ -42,6 +48,8 @@ To regenerate the normalized text from upstream:
 ```sh
 etl/fetch_sources.sh
 python etl/ingest_gretil.py sources/gretil/gretil.sub.uni-goettingen.de/gretil/corpustei/sa_rAmAyaNa.xml
+python etl/ingest_vulgate.py sources/ramayana_book/san
+python etl/crosswalk.py
 ```
 
 ## Deployment
@@ -55,12 +63,14 @@ Pages → Source to **GitHub Actions**.
 - Code: MIT (see `LICENSE`).
 - Critical Edition text: CC BY-NC-SA 4.0 (GRETIL). The site as a whole is
   therefore non-commercial.
+- Vulgate text: CC BY-SA 4.0 (Sanskrit Wikisource). Sargas 4.11, 6.25 and 6.31
+  were restored upstream from IIT Kanpur's site, whose reuse terms are not stated.
 - Fonts: Tiro Kannada, Tiro Devanagari Sanskrit, Alegreya, Alegreya Sans —
   SIL Open Font License, subset and self-hosted.
 
 ## Roadmap
 
 1. ~~Critical Edition reader with script modes, search, citations~~ (done)
-2. Traditional Vulgate as a second edition, verse cross-walk to the CE, recension badges
+2. ~~Traditional Vulgate as a second edition, verse cross-walk to the CE, recension badges~~ (done)
 3. Word-by-word Kannada meanings (DCS + Shabdārthakaustubha), pending licence checks
 4. Aligned Kannada prose translation with per-verse provenance

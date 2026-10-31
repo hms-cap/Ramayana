@@ -1,0 +1,47 @@
+{
+ "vulgate_verses": {
+  "match": 15570,
+  "partial": 1614,
+  "regrouped": 2170,
+  "absent": 3942,
+  "variant": 90
+ },
+ "ce_verses": {
+  "match": 15366,
+  "regrouped": 2242,
+  "partial": 611,
+  "variant": 71,
+  "absent": 471
+ },
+ "vulgate_sargas_mapped": 624,
+ "vulgate_sargas_total": 645,
+ "vulgate_sargas_unmapped": [
+  "2.35",
+  "3.62",
+  "3.63",
+  "4.24",
+  "5.8",
+  "6.10",
+  "6.107",
+  "6.11",
+  "6.13",
+  "6.14",
+  "6.15",
+  "6.20",
+  "6.40",
+  "6.72",
+  "7.37",
+  "7.53",
+  "7.55",
+  "7.56",
+  "7.57",
+  "7.59",
+  "7.98"
+ ],
+ "ce_sargas_mapped": 600,
+ "thresholds": {
+  "match": 0.55,
+  "variant": 0.38,
+  "line": 0.7
+ }
+}

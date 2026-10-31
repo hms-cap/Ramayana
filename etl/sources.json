@@ -7,5 +7,14 @@
     "credits": "Data entry by Muneo Tokunaga; revised by John Smith; proof-reading by Robert Chen, Yves Codet, James L. Fitzgerald and others. Distributed by GRETIL (SUB Göttingen).",
     "licence": "CC BY-NC-SA 4.0",
     "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  },
+  "vu": {
+    "title": "Vālmīki Rāmāyaṇa, traditional vulgate",
+    "file": "san/*_all.json",
+    "repository": "https://github.com/svenkatreddy/Ramayana_Book",
+    "commit": "77066a86abd0482221f939ae17dd0112aa53242d",
+    "credits": "Sanskrit Wikisource contributors (sa.wikisource.org), packaged by S. Venkat Reddy and contributors in Ramayana_Book. Sargas 4.11, 6.25 and 6.31 were restored upstream from IIT Kanpur's Valmiki Ramayanam site.",
+    "licence": "CC BY-SA 4.0 (Wikisource transcription)",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 }

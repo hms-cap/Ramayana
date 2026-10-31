@@ -16,6 +16,17 @@
   </section>
   {% endfor %}
 
+  <h2>The two editions and how they are linked</h2>
+  <p>The Critical Edition is the shorter, reconstructed text; the Vulgate is the longer text most traditional readers and pārāyaṇa books follow. Every Vulgate verse is linked to its Critical Edition counterpart where one exists, and the reverse.</p>
+  {% if crosswalk %}
+  <p>Of {{ "{:,}".format(eds[1].verses) }} Vulgate verses, {{ "{:,}".format(crosswalk.vulgate_verses.match) }} match a Critical Edition verse, {{ "{:,}".format(crosswalk.vulgate_verses.regrouped) }} have the same lines grouped differently, {{ "{:,}".format(crosswalk.vulgate_verses.partial + crosswalk.vulgate_verses.variant) }} share only part of their text, and {{ "{:,}".format(crosswalk.vulgate_verses.absent) }} have no counterpart. {{ "{:,}".format(crosswalk.ce_verses.absent) }} Critical Edition verses were not found in this Vulgate text.</p>
+  {% endif %}
+  <p>Linking is automatic. Both texts are reduced to a phonetic key that ignores vowel length, aspiration, retroflexion, sibilant differences and word breaks, which matters because this Vulgate text often writes sandhi undone. Verses are compared by shared three-letter sequences, sargas are paired by majority, matches must keep their order within a sarga, and verses that don't match whole are compared line by line. Uncertain links are listed for review in <code>data/crosswalk/review.tsv</code>.</p>
+  <p>On a Vulgate sarga page you can hide verses that are not in the Critical Edition; on a Critical Edition page, the same switch hides the few verses not found in the Vulgate.</p>
+
+  <h2>About the Vulgate text</h2>
+  <p>The Vulgate text comes from Sanskrit Wikisource and is noisier than GRETIL's. Mechanical repairs were applied and counted: a colon typed for visarga, a final <span lang="sa">ह्</span> typed for visarga, leftover ITRANS fragments such as <span lang="sa">श्R^ङ्ग</span>, and entries holding two numbered verses, which were split. Verses that still contain stray characters carry a note. Sandhi is left as the source has it. Because undone sandhi changes the syllable count, metre is shown for a Vulgate verse only when it scans cleanly.</p>
+
   <h2>How the text is shown</h2>
   <p>Each verse is converted once, at build time, from the source transliteration into Kannada script, Devanāgarī and IAST. The conversion is letter-for-letter and reversible; nothing is retyped or corrected by hand.</p>
   <p>Kannada and Devanāgarī follow print convention: a word ending in a consonant is written joined to the next word (<span lang="sa-Knda">ವಾಲ್ಮೀಕಿರ್ಮುನಿಪುಂಗವಮ್</span>), and the avagraha joins the word before it. IAST keeps the source's word breaks.</p>
@@ -31,6 +42,6 @@
   <p>The GRETIL file has a few structural irregularities, kept as they are: 595 verses have three lines, 84 have one, five have four, and two line identifiers are repeated (for example at 5.15.24). These are listed in <code>data/normalized/ce_report.json</code> in the repository.</p>
 
   <h2>Licence of this site</h2>
-  <p>Each edition's text keeps its own licence, shown above. Because the Critical Edition text is CC BY-NC-SA 4.0, the site as a whole is for non-commercial use. The code is MIT-licensed.</p>
+  <p>Each edition's text keeps its own licence, shown above: CC BY-NC-SA 4.0 for the Critical Edition and CC BY-SA 4.0 for the Vulgate. Because of the Critical Edition, the site as a whole is for non-commercial use. The code is MIT-licensed. Three Vulgate sargas (4.11, 6.25, 6.31) were restored by the upstream project from IIT Kanpur's site, whose reuse terms are not stated; they are marked on their pages.</p>
 </article>
 {% endblock %}

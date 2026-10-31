@@ -14,3 +14,11 @@ fi
 git -C sources/gretil sparse-checkout set --no-cone "/$(pin ce file)"
 git -C sources/gretil checkout -q "$(pin ce commit)"
 echo "CE source: sources/gretil/$(pin ce file)"
+
+# Vulgate: Ramayana_Book (Sanskrit Wikisource text)
+if [ ! -d sources/ramayana_book ]; then
+  git clone --filter=blob:none --no-checkout https://github.com/svenkatreddy/Ramayana_Book.git sources/ramayana_book
+fi
+git -C sources/ramayana_book sparse-checkout set san
+git -C sources/ramayana_book checkout -q "$(pin vu commit)"
+echo "Vulgate source: sources/ramayana_book/san"
