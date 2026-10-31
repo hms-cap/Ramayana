@@ -72,5 +72,15 @@ Pages → Source to **GitHub Actions**.
 
 1. ~~Critical Edition reader with script modes, search, citations~~ (done)
 2. ~~Traditional Vulgate as a second edition, verse cross-walk to the CE, recension badges~~ (done)
-3. Word-by-word Kannada meanings (DCS + Shabdārthakaustubha), pending licence checks
+3. ~~Word-by-word analysis (DCS) with English dictionary glosses (Apte + hand-written entries)~~ (done). Kannada meanings from Shabdārthakaustubha are not included: no reuse licence is stated upstream.
 4. Aligned Kannada prose translation with per-verse provenance
+
+## Word-by-word data (phase 3)
+
+    python etl/ingest_dcs.py sources/dcs/ramayanam.txt          # -> data/normalized/words.jsonl
+    python etl/build_lexicon.py sources/apte/.../apte-1890.babylon  # -> data/lexicon/gloss.json
+
+Glosses are lemma-level dictionary senses, not translations of the word in
+context. `etl/gloss_overrides.json` holds hand-written glosses that take
+priority over the dictionary. Grammar labels (Kannada/English) live in
+`etl/grammar.py`; the Kannada terms are awaiting review by a grammarian.

@@ -249,3 +249,16 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
   :root[data-size="l"] { --verse: 1.45rem; }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+/* word by word */
+.wbw-btn { font: inherit; background: transparent; color: var(--ink); border: 1px solid var(--ink); border-radius: 5px; padding: 0.4rem 0.8rem; min-height: 36px; cursor: pointer; margin-right: 0.5rem; }
+.wbw-btn[aria-expanded="true"] { background: var(--ink); color: var(--paper); }
+.wbw { margin: 0.7rem 0; }
+.wbw-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.wbw-list li { display: grid; grid-template-columns: minmax(7rem, 11rem) 1fr; gap: 0.1rem 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule, rgba(0,0,0,.12)); }
+.wbw-list .w { font-size: 1.25rem; grid-row: span 3; }
+.wbw-list .lem { color: var(--muted); }
+.wbw-list .gr { font-size: 0.9rem; }
+.wbw-list .mean { font-style: italic; }
+.wbw-note, .wbw-link { font-size: 0.85rem; color: var(--muted); }
+@media (max-width: 520px) { .wbw-list li { grid-template-columns: 1fr; } .wbw-list .w { grid-row: auto; } }

@@ -19,6 +19,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "etl"))
+import grammar  # noqa: E402
 import meter  # noqa: E402
 from translit import iast_to_slp1, render, slp1_to_brahmic, to_digits  # noqa: E402
 
@@ -85,6 +86,20 @@ def render_verse(rec: dict, ed: dict) -> dict:
 
 
 _CW = None
+WORDS: dict[str, list] = {}
+GLOSS: dict[str, str] = {}
+
+
+def load_words() -> None:
+    """Word-by-word analysis (DCS) and lemma glosses, keyed by Critical Edition verse uid."""
+    wp = ROOT / "data" / "normalized" / "words.jsonl"
+    gp = ROOT / "data" / "lexicon" / "gloss.json"
+    if wp.exists():
+        for line in open(wp, encoding="utf-8"):
+            r = json.loads(line)
+            WORDS[r["uid"]] = r["units"]
+    if gp.exists():
+        GLOSS.update(json.loads(gp.read_text(encoding="utf-8")))
 _EDITION_LABEL = {"ce": "Critical Edition", "vu": "Vulgate"}
 STATUS_TEXT = {
     "match": "{other} {refs}",
@@ -137,6 +152,10 @@ def build(out: Path) -> None:
         shutil.rmtree(out)
     shutil.copytree(ROOT / "site" / "static", out / "static")
     sources = json.loads((ROOT / "etl" / "sources.json").read_text(encoding="utf-8"))
+    load_words()
+    (out / "data").mkdir(exist_ok=True)
+    (out / "data" / "grammar.json").write_text(
+        json.dumps(grammar.as_json(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     edition_summaries = []
     for ed in editions:
@@ -161,6 +180,13 @@ def build(out: Path) -> None:
         index_rows = []
         for i, (k, s) in enumerate(sarga_keys):
             verses = [render_verse(r, ed) for r in by_sarga[(k, s)]]
+            words = {}
+            if ed["id"] == "ce":
+                for v in verses:
+                    if v["uid"] in WORDS:
+                        words[v["v"]] = WORDS[v["uid"]]
+                for v in verses:
+                    v["has_words"] = v["v"] in words
             prev_key = sarga_keys[i - 1] if i > 0 else None
             next_key = sarga_keys[i + 1] if i + 1 < len(sarga_keys) else None
             page = out / ed["id"] / str(k) / str(s) / "index.html"
@@ -180,6 +206,11 @@ def build(out: Path) -> None:
                  "verses": [{key: v[key] for key in ("uid", "ref", "lines", "meter", "ids", "crosswalk", "flags")}
                             for v in verses]},
                 ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+            if words:
+                lemmas = {l for us in words.values() for u in us for l in u["l"]}
+                (page.parent / "words.json").write_text(json.dumps(
+                    {"verses": words, "gloss": {l: GLOSS[l] for l in sorted(lemmas) if l in GLOSS}},
+                    ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
             for v in verses:
                 index_rows.append([k, s, v["v"], v["slp1"]])
 

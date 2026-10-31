@@ -45,6 +45,8 @@
       if (!open && history.replaceState) history.replaceState(null, "", "#" + v.closest(".verse").id);
       return;
     }
+    var w = e.target.closest(".wbw-btn");
+    if (w) { toggleWords(w); return; }
     var c = e.target.closest(".cite");
     if (c) { copyCitation(c); return; }
     var opts = document.querySelector(".opts[open]");
@@ -70,6 +72,63 @@
       navigator.clipboard.writeText(text).then(function () { done("Copied"); }, function () { done(text); });
     } else { done(text); }
   }
+
+  // ---- Word by word (Critical Edition only) --------------------------------
+  var wordsData = null, grammarData = null;
+  function loadJSON(url) { return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function lab(table, key, en) { var o = grammarData[table] && grammarData[table][key]; return o ? (en ? o.en : o.kn) : key; }
+  function scriptNow() { var s = root.dataset.script || "knda"; return /^(knda|deva|iast)$/.test(s) ? s : (s === "knda-deva" ? "knda" : "knda"); }
+
+  function describe(t, en) {
+    var parts = [];
+    if (t.pos) parts.push(lab("pos", t.pos, en));
+    if (t.f) parts.push(lab("f", t.f, en));
+    if (t.g) parts.push(lab("g", t.g, en));
+    if (t.c) parts.push(lab("c", t.c, en));
+    if (t.n) parts.push(lab("n", t.n, en));
+    if (t.p) parts.push(lab("p", t.p, en));
+    if (t.l) parts.push(lab("l", t.l, en));
+    if (t.comp) parts.push(grammarData.comp[en ? "en" : "kn"]);
+    return parts.join(" · ");
+  }
+  function renderWords(box, units) {
+    var T = window.Translit, sc = scriptNow(), en = sc === "iast", sav = !!prefs.savarna;
+    var h = '<ol class="wbw-list">';
+    units.forEach(function (u) {
+      var word = u.f.map(function (f) { return T.render(f, sc, sav); }).join("-");
+      var lem = u.l.map(function (l) { return T.render(l, "deva", false); }).join("-");
+      var gl = u.l.map(function (l) { return wordsData.gloss[l]; }).filter(Boolean);
+      h += '<li><span class="w">' + esc(word) + '</span>' +
+        '<span class="lem" lang="sa-Deva">' + esc(lem) + '</span>' +
+        '<span class="gr">' + esc(describe(u.t, en)) + '</span>' +
+        (gl.length ? '<span class="mean" lang="en">' + gl.map(esc).join(" + ") + '</span>' : "") + '</li>';
+    });
+    box.innerHTML = h + '</ol>' +
+      '<p class="wbw-note">Analysis: Digital Corpus of Sanskrit. Meanings are dictionary senses of each base word, chosen automatically (Apte, 1890, and project notes); they are not a translation of this verse. ' +
+      '<a href="' + root_href() + 'about/#words">About this data</a></p>';
+    box.dataset.script = sc;
+  }
+  function root_href() { return document.querySelector(".reader").dataset.root || "../../../"; }
+  function toggleWords(btn) {
+    var box = btn.parentNode.querySelector(".wbw"), open = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", open ? "false" : "true");
+    box.hidden = open;
+    if (open) return;
+    var vnum = btn.closest(".verse").id.slice(1);
+    Promise.all([wordsData || loadJSON("words.json"), grammarData || loadJSON(root_href() + "data/grammar.json")]).then(function (r) {
+      wordsData = r[0]; grammarData = r[1];
+      var units = wordsData.verses[vnum];
+      if (units) renderWords(box, units); else box.textContent = "No word analysis for this verse.";
+    }, function () { box.textContent = "Could not load the word analysis."; });
+  }
+  document.addEventListener("prefs-changed", function () {
+    if (!wordsData) return;
+    document.querySelectorAll(".wbw:not([hidden])").forEach(function (box) {
+      var units = wordsData.verses[box.closest(".verse").id.slice(1)];
+      if (units) renderWords(box, units);
+    });
+  });
 
   // Open the details of a verse linked by anchor.
   function openFromHash() {

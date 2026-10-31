@@ -16,5 +16,23 @@
     "credits": "Sanskrit Wikisource contributors (sa.wikisource.org), packaged by S. Venkat Reddy and contributors in Ramayana_Book. Sargas 4.11, 6.25 and 6.31 were restored upstream from IIT Kanpur's Valmiki Ramayanam site.",
     "licence": "CC BY-SA 4.0 (Wikisource transcription)",
     "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "dcs": {
+    "title": "Digital Corpus of Sanskrit, Rāmāyaṇa (word-by-word analysis)",
+    "file": "ramayanam.txt",
+    "repository": "https://github.com/ambuda-org/dcs",
+    "commit": "7622c22f9c5fb1bf183af58951e96d7043edd699",
+    "credits": "Oliver Hellwig, Digital Corpus of Sanskrit (DCS), as corrected and packaged by Ambuda.",
+    "licence": "CC BY 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "apte": {
+    "title": "Apte, The Practical Sanskrit-English Dictionary (1890)",
+    "file": "sa-head/en-entries/apte-1890/apte-1890.babylon",
+    "repository": "https://github.com/indic-dict/stardict-sanskrit",
+    "commit": "40bd83d9b8b20d97e526401a98f228d528136c03",
+    "credits": "Copyright © 2014 The Sanskrit Library and Thomas Malten. Cologne Digital Sanskrit Lexicon, edited by Peter M. Scharf.",
+    "licence": "CC BY-NC-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/"
   }
 }

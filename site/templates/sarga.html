@@ -3,7 +3,7 @@
 {% block title %}{{ kanda.kn }} ಸರ್ಗ {{ s|knda }} — {{ kanda.en }} {{ s }} ({{ ed.short }}){% endblock %}
 {% block description %}{{ kanda.en }}, sarga {{ s }} of the Vālmīki Rāmāyaṇa ({{ ed.name }}): {{ verses|length }} verses in Kannada script, Devanāgarī and IAST.{% endblock %}
 {% block main %}
-<div class="reader" data-edition="{{ ed.id }}" data-citation="{{ ed.citation }}">
+<div class="reader" data-root="{{ root }}" data-edition="{{ ed.id }}" data-citation="{{ ed.citation }}">
   <nav class="crumbs" aria-label="Breadcrumb">
     <a href="{{ root }}{{ ed.id }}/">{{ ed.short }}</a>
     <span aria-hidden="true">/</span>
@@ -47,6 +47,9 @@
             {% for i in v.ids %}<dt>{{ i.label }}</dt><dd><code>{{ i.value }}</code></dd>{% endfor %}
             {% if cw and cw.links %}<dt>{{ cw.other_label }}</dt><dd>{% for l in cw.links %}<a href="{{ root }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
           </dl>
+          {% if v.has_words %}<button type="button" class="wbw-btn" aria-expanded="false">Word by word</button>
+          <div class="wbw" hidden></div>
+          {% elif cw and cw.status == 'match' and cw.links and ed.id == 'vu' %}<p class="wbw-link"><a href="{{ root }}{{ cw.links[0].path }}">Word-by-word analysis (Critical Edition {{ cw.links[0].ref }})</a></p>{% endif %}
           <button type="button" class="cite">Copy citation</button>
           <span class="cite-ok" role="status"></span>
         </div>

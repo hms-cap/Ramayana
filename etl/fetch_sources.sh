@@ -22,3 +22,19 @@ fi
 git -C sources/ramayana_book sparse-checkout set san
 git -C sources/ramayana_book checkout -q "$(pin vu commit)"
 echo "Vulgate source: sources/ramayana_book/san"
+
+# Word-by-word analysis: Digital Corpus of Sanskrit (Rāmāyaṇa file)
+if [ ! -d sources/dcs ]; then
+  git clone --filter=blob:none --no-checkout https://github.com/ambuda-org/dcs.git sources/dcs
+fi
+git -C sources/dcs sparse-checkout set --no-cone "/$(pin dcs file)"
+git -C sources/dcs checkout -q "$(pin dcs commit)"
+echo "DCS source: sources/dcs/$(pin dcs file)  ->  python etl/ingest_dcs.py <that file>"
+
+# Apte dictionary (Cologne digital edition, via indic-dict)
+if [ ! -d sources/apte ]; then
+  git clone --filter=blob:none --no-checkout https://github.com/indic-dict/stardict-sanskrit.git sources/apte
+fi
+git -C sources/apte sparse-checkout set --no-cone "/$(pin apte file)"
+git -C sources/apte checkout -q "$(pin apte commit)"
+echo "Apte source: sources/apte/$(pin apte file)  ->  python etl/build_lexicon.py <that file>"

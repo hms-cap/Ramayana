@@ -38,10 +38,15 @@
   <h2>Search</h2>
   <p>Search runs in your browser on a phonetic key. Long and short vowels, aspirated and plain stops, retroflex and dental letters, and the three sibilants are each treated as the same, and spaces are ignored so a word is found even when sandhi has joined it to its neighbour.</p>
 
+  <h2 id="words">Word by word</h2>
+  <p>In the Critical Edition, each verse can be opened to show its words with their grammar. The analysis comes from Oliver Hellwig's <a href="https://github.com/ambuda-org/dcs">Digital Corpus of Sanskrit</a> (CC BY 4.0), whose verse numbers match the Critical Edition exactly. Compounds are shown as one word with its members joined by hyphens. 48 verses of the edition have no analysis in the corpus; they simply have no button. Vulgate verses that match a Critical Edition verse link to its analysis instead of repeating it.</p>
+  <p>The meanings shown are <strong>dictionary senses of each base word</strong> (lemma), not a translation of the word in that verse. They were chosen automatically from Apte's <em>Practical Sanskrit-English Dictionary</em> (1890; copyright © 2014 The Sanskrit Library and Thomas Malten, Cologne Digital Sanskrit Lexicon, CC BY-NC-SA 3.0), except for about 170 frequent words (pronouns, particles, common verbs, names and epithets of the epic) whose glosses were written by hand because the first dictionary sense misleads. For rarer words the automatic choice can be wrong. About 91% of word occurrences have a meaning.</p>
+  <p>Kannada meanings are not included yet: the Kannada dictionary <em>Śabdārthakaustubha</em> is available online but states no licence for reuse, so it is not copied here. The Kannada grammar terms (case names, tenses) have not yet been reviewed by a Kannada grammarian; corrections are welcome.</p>
+
   <h2>Known source issues</h2>
   <p>The GRETIL file has a few structural irregularities, kept as they are: 595 verses have three lines, 84 have one, five have four, and two line identifiers are repeated (for example at 5.15.24). These are listed in <code>data/normalized/ce_report.json</code> in the repository.</p>
 
   <h2>Licence of this site</h2>
-  <p>Each edition's text keeps its own licence, shown above: CC BY-NC-SA 4.0 for the Critical Edition and CC BY-SA 4.0 for the Vulgate. Because of the Critical Edition, the site as a whole is for non-commercial use. The code is MIT-licensed. Three Vulgate sargas (4.11, 6.25, 6.31) were restored by the upstream project from IIT Kanpur's site, whose reuse terms are not stated; they are marked on their pages.</p>
+  <p>Each edition's text keeps its own licence, shown above: CC BY-NC-SA 4.0 for the Critical Edition and CC BY-SA 4.0 for the Vulgate. The word analysis is CC BY 4.0 and the English glosses derived from Apte are CC BY-NC-SA 3.0. Because of the Critical Edition, the site as a whole is for non-commercial use. The code is MIT-licensed. Three Vulgate sargas (4.11, 6.25, 6.31) were restored by the upstream project from IIT Kanpur's site, whose reuse terms are not stated; they are marked on their pages.</p>
 </article>
 {% endblock %}
