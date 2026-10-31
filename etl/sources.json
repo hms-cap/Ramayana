@@ -1,0 +1,11 @@
+{
+  "ce": {
+    "title": "Vālmīki Rāmāyaṇa, Baroda Critical Edition",
+    "file": "gretil.sub.uni-goettingen.de/gretil/corpustei/sa_rAmAyaNa.xml",
+    "repository": "https://github.com/INDOLOGY/GRETIL-mirror",
+    "commit": "0baf718d8e450821eb0403c03aacc9a4a82316d7",
+    "credits": "Data entry by Muneo Tokunaga; revised by John Smith; proof-reading by Robert Chen, Yves Codet, James L. Fitzgerald and others. Distributed by GRETIL (SUB Göttingen).",
+    "licence": "CC BY-NC-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  }
+}

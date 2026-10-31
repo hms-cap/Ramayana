@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="kn" data-script="knda">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ — Vālmīki Rāmāyaṇa{% endblock %}</title>
+<meta name="description" content="{% block description %}The Vālmīki Rāmāyaṇa in Sanskrit, readable in Kannada script, Devanāgarī and IAST.{% endblock %}">
+<link rel="preload" href="{{ root }}static/fonts/TiroKannada.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="{{ root }}static/style.css">
+<script>
+(function(){try{var p=JSON.parse(localStorage.getItem("vr-prefs")||"{}");var d=document.documentElement;
+if(p.script)d.dataset.script=p.script;if(p.savarna)d.dataset.savarna="1";if(p.scan)d.dataset.scan="1";
+if(p.size)d.dataset.size=p.size;if(p.theme)d.dataset.theme=p.theme;}catch(e){}})();
+</script>
+</head>
+<body class="page-{{ page }}">
+<a class="skip" href="#main">Skip to text</a>
+<header class="bar">
+  <div class="bar-inner">
+    <a class="brand" href="{{ root }}"><span class="kn">ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ</span></a>
+    <nav class="nav" aria-label="Site">
+      <a href="{{ root }}search/"{% if page == 'search' %} aria-current="page"{% endif %}>Search</a>
+      <a href="{{ root }}about/"{% if page == 'about' %} aria-current="page"{% endif %}>Sources</a>
+    </nav>
+    {% if page in ('sarga', 'search') %}
+    <div class="controls">
+      <div class="seg" role="radiogroup" aria-label="Script">
+        <button type="button" role="radio" data-set-script="knda" lang="kn">ಕನ್ನಡ</button>
+        <button type="button" role="radio" data-set-script="deva" lang="sa">देव</button>
+        <button type="button" role="radio" data-set-script="iast">IAST</button>
+        <button type="button" role="radio" data-set-script="knda-deva" title="Kannada and Devanāgarī side by side"><span lang="kn">ಕ</span>+<span lang="sa">दे</span></button>
+        <button type="button" role="radio" data-set-script="all" title="Kannada, Devanāgarī and IAST">All</button>
+      </div>
+      <details class="opts">
+        <summary>Options</summary>
+        <div class="opts-panel">
+          <label><input type="checkbox" data-pref="savarna"> Homorganic nasals <span class="hint" lang="kn">(ಮುನಿಪುಙ್ಗವಮ್ instead of ಮುನಿಪುಂಗವಮ್)</span></label>
+          <label><input type="checkbox" data-pref="scan"> Show metre scansion <span class="hint">(<span lang="sa">।</span> laghu, <span lang="sa">ऽ</span> guru)</span></label>
+          <fieldset>
+            <legend>Text size</legend>
+            <label><input type="radio" name="size" value="s" data-pref-size> Small</label>
+            <label><input type="radio" name="size" value="m" data-pref-size> Medium</label>
+            <label><input type="radio" name="size" value="l" data-pref-size> Large</label>
+          </fieldset>
+        </div>
+      </details>
+    </div>
+    {% endif %}
+  </div>
+</header>
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+<footer class="foot">
+  <p>Sanskrit text of each edition is shown under its own licence; see <a href="{{ root }}about/">Sources</a>. Critical Edition text from <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, CC BY-NC-SA 4.0. Not for commercial use.</p>
+</footer>
+<script src="{{ root }}static/translit.js"></script>
+<script src="{{ root }}static/app.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

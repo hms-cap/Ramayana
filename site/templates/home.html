@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% from "_strip.html" import strip %}
+{% block main %}
+<section class="hero">
+  <h1 lang="kn">ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ</h1>
+  <p class="hero-sa" lang="sa">वाल्मीकिरामायणम्</p>
+  <p class="lede">The Sanskrit epic, verse by verse, in Kannada script, Devanāgarī and IAST. Pick a kāṇḍa below; each block is as wide as the kāṇḍa is long.</p>
+  <p class="start"><a class="btn" href="{{ ed.id }}/1/1/">Begin at Bālakāṇḍa 1.1</a> <a class="link" href="search/">Search the text</a></p>
+</section>
+
+{% for e in eds %}
+{{ strip(e, root) }}
+{% endfor %}
+
+<section class="kanda-table">
+  <h2>Kāṇḍas</h2>
+  <table>
+    <thead><tr><th scope="col">Kāṇḍa</th>{% for e in eds %}<th scope="col" class="numcol">{{ e.short }}</th>{% endfor %}</tr></thead>
+    <tbody>
+    {% for k in eds[0].kandas %}
+      {% set i = loop.index0 %}
+      <tr>
+        <th scope="row"><span lang="kn">{{ k.kn }}</span> <span class="en">{{ k.en }}</span></th>
+        {% for e in eds %}<td class="numcol"><a href="{{ e.id }}/{{ k.n }}/">{{ e.kandas[i].sargas }} sargas</a><span class="vv">{{ "{:,}".format(e.kandas[i].verses) }} verses</span></td>{% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

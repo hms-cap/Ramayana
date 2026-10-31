@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Sources and method — ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ{% endblock %}
+{% block main %}
+<article class="prose">
+  <h1>Sources and method</h1>
+
+  <h2>Editions</h2>
+  {% for e in eds %}
+  {% set src = sources[e.source_key] %}
+  <section class="source">
+    <h3>{{ e.name }}</h3>
+    <p>{{ e.description }} {{ e.sargas }} sargas, {{ "{:,}".format(e.verses) }} verses.</p>
+    <p>{{ src.credits }}</p>
+    <p>Source: <a href="{{ src.repository }}">{{ src.repository | replace('https://', '') }}</a>, file <code>{{ src.file }}</code>, commit <code>{{ src.commit[:12] }}</code>.</p>
+    <p>Licence: <a href="{{ src.licence_url }}">{{ src.licence }}</a>.</p>
+  </section>
+  {% endfor %}
+
+  <h2>How the text is shown</h2>
+  <p>Each verse is converted once, at build time, from the source transliteration into Kannada script, Devanāgarī and IAST. The conversion is letter-for-letter and reversible; nothing is retyped or corrected by hand.</p>
+  <p>Kannada and Devanāgarī follow print convention: a word ending in a consonant is written joined to the next word (<span lang="sa-Knda">ವಾಲ್ಮೀಕಿರ್ಮುನಿಪುಂಗವಮ್</span>), and the avagraha joins the word before it. IAST keeps the source's word breaks.</p>
+  <p>The Options menu can show homorganic nasals (<span lang="sa-Knda">ಪುಙ್ಗವ</span>) instead of the anusvāra (<span lang="sa-Knda">ಪುಂಗವ</span>), as many Karnataka pārāyaṇa books print them. Only the display changes.</p>
+
+  <h2>Metre</h2>
+  <p>Metres are identified automatically from syllable weight: a syllable is heavy when its vowel is long, when it ends in anusvāra or visarga, or when two or more consonants follow. About 95% of the Critical Edition is Anuṣṭubh. Verses that fit no listed pattern show no metre rather than a guess.</p>
+
+  <h2>Search</h2>
+  <p>Search runs in your browser on a phonetic key. Long and short vowels, aspirated and plain stops, retroflex and dental letters, and the three sibilants are each treated as the same, and spaces are ignored so a word is found even when sandhi has joined it to its neighbour.</p>
+
+  <h2>Known source issues</h2>
+  <p>The GRETIL file has a few structural irregularities, kept as they are: 595 verses have three lines, 84 have one, five have four, and two line identifiers are repeated (for example at 5.15.24). These are listed in <code>data/normalized/ce_report.json</code> in the repository.</p>
+
+  <h2>Licence of this site</h2>
+  <p>Each edition's text keeps its own licence, shown above. Because the Critical Edition text is CC BY-NC-SA 4.0, the site as a whole is for non-commercial use. The code is MIT-licensed.</p>
+</article>
+{% endblock %}

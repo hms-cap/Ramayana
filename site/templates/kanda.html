@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ kanda.kn }} — {{ kanda.en }} ({{ ed.short }}){% endblock %}
+{% block main %}
+<div class="listing">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ root }}{{ ed.id }}/">{{ ed.short }}</a></nav>
+  <header class="kanda-head">
+    <h1 lang="kn">{{ kanda.kn }}</h1>
+    <p class="sub"><span lang="sa">{{ kanda.deva }}</span> <span class="en">{{ kanda.en }}</span></p>
+    <p class="count">{{ kanda.sargas }} sargas, {{ "{:,}".format(kanda.verses) }} verses in the {{ ed.short }}.</p>
+  </header>
+  <ol class="sargas">
+  {% for it in items %}
+    <li>
+      <a href="{{ it.s }}/">
+        <span class="sn" lang="kn">{{ it.s|knda }}</span>
+        <span class="inc">
+          {% if it.title %}<span class="st">{{ it.title.title_iast }}</span>{% endif %}
+          <span class="first" lang="sa-Knda">{{ it.first.text.knda.lines[0] }}</span>
+          <span class="meta">Sarga {{ it.s }}, {{ it.count }} verses</span>
+        </span>
+      </a>
+    </li>
+  {% endfor %}
+  </ol>
+</div>
+{% endblock %}

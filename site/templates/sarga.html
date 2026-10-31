@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% from "_verse.html" import verse_text %}
+{% block title %}{{ kanda.kn }} ಸರ್ಗ {{ s|knda }} — {{ kanda.en }} {{ s }} ({{ ed.short }}){% endblock %}
+{% block description %}{{ kanda.en }}, sarga {{ s }} of the Vālmīki Rāmāyaṇa ({{ ed.name }}): {{ verses|length }} verses in Kannada script, Devanāgarī and IAST.{% endblock %}
+{% block main %}
+<div class="reader" data-edition="{{ ed.id }}" data-citation="{{ ed.citation }}">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ root }}{{ ed.id }}/">{{ ed.short }}</a>
+    <span aria-hidden="true">/</span>
+    <a href="../"><span lang="kn">{{ kanda.kn }}</span></a>
+  </nav>
+  <header class="sarga-head">
+    <h1><span lang="kn">{{ kanda.kn }}</span> <span class="sarga-n" lang="kn">ಸರ್ಗ {{ s|knda }}</span></h1>
+    <p class="sub">{{ kanda.en }}, sarga {{ s }} of {{ total_in_kanda }}{% if title %}: <span class="sarga-title">{{ title.title_iast }}</span>{% endif %}. {{ verses|length }} verses.</p>
+    {% if alt_href %}<p class="alt-ed">Same sarga in the <a href="{{ alt_href.href }}">{{ alt_href.label }}</a> ({{ alt_href.ref }}).</p>{% endif %}
+  </header>
+
+  <ol class="verses">
+  {% for v in verses %}
+    <li class="verse{% if v.crosswalk and v.crosswalk.status == 'absent' %} v-absent{% endif %}" id="v{{ v.v }}" data-ref="{{ v.ref }}"{% if v.ids %} data-ids="{% for i in v.ids %}{{ i.label }} {{ i.value }}{% if not loop.last %}; {% endif %}{% endfor %}"{% endif %}>
+      <button type="button" class="vnum" aria-expanded="false" aria-controls="d{{ v.v }}" title="Verse details">
+        <span class="n-knda">{{ v.v_knda }}</span><span class="n-deva">{{ v.v_deva }}</span><span class="n-iast">{{ v.v }}</span>
+      </button>
+      <div class="body">
+        {% if v.crosswalk %}{% set cw = v.crosswalk %}
+        <p class="badge b-{{ cw.status }}">
+          {% if cw.status == 'absent' %}Not in the {{ cw.other_label }}
+          {% elif cw.status == 'match' %}{{ cw.other_label }} <a href="{{ root }}{{ cw.other }}/{{ cw.k }}/{{ cw.s }}/#v{{ cw.v }}">{{ cw.ref }}</a>
+          {% else %}{{ cw.other_label }} <a href="{{ root }}{{ cw.other }}/{{ cw.k }}/{{ cw.s }}/#v{{ cw.v }}">{{ cw.ref }}</a>, {{ cw.note }}
+          {% endif %}
+        </p>
+        {% endif %}
+        {{ verse_text(v) }}
+        <div class="scan" aria-hidden="true">{% for l in v.scan %}<span class="ln">{{ l }}</span>{% endfor %}</div>
+        <div class="details" id="d{{ v.v }}" hidden>
+          <dl>
+            <dt>Verse</dt><dd>{{ v.ref }}</dd>
+            {% if v.meter %}<dt>Metre</dt><dd>{{ v.meter }}</dd>{% endif %}
+            {% for i in v.ids %}<dt>{{ i.label }}</dt><dd><code>{{ i.value }}</code></dd>{% endfor %}
+          </dl>
+          <button type="button" class="cite">Copy citation</button>
+          <span class="cite-ok" role="status"></span>
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+  </ol>
+
+  <nav class="pager" aria-label="Sargas">
+    {% if prev %}<a rel="prev" href="{{ root }}{{ ed.id }}/{{ prev[0] }}/{{ prev[1] }}/"><span class="dir">Previous</span> {{ prev[0] }}.{{ prev[1] }}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a rel="next" href="{{ root }}{{ ed.id }}/{{ next[0] }}/{{ next[1] }}/"><span class="dir">Next</span> {{ next[0] }}.{{ next[1] }}</a>{% endif %}
+  </nav>
+</div>
+{% endblock %}

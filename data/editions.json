@@ -1,0 +1,11 @@
+[
+  {
+    "id": "ce",
+    "short": "Critical Edition",
+    "short_kn": "ವಿಮರ್ಶಾತ್ಮಕ ಆವೃತ್ತಿ",
+    "name": "Baroda Critical Edition",
+    "description": "The reconstructed text published by the Oriental Institute, Baroda (1960–75), as digitised in GRETIL.",
+    "source_key": "ce",
+    "citation": "Vālmīki Rāmāyaṇa, Baroda Critical Edition"
+  }
+]

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Search — ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ{% endblock %}
+{% block main %}
+<div class="search">
+  <h1>Search the text</h1>
+  <form class="search-form" role="search" onsubmit="return false">
+    <label for="q">Type a word or phrase in Kannada, Devanāgarī, IAST or plain English letters</label>
+    <div class="search-row">
+      <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="ಮಾರೀಚ, मारीच, mārīca, maricha">
+      <select id="ed" aria-label="Edition">
+        {% for e in eds %}<option value="{{ e.id }}">{{ e.short }}</option>{% endfor %}
+      </select>
+      <select id="kf" aria-label="Kāṇḍa">
+        <option value="">All kāṇḍas</option>
+        {% for k in eds[0].kandas %}<option value="{{ k.n }}">{{ k.en }}</option>{% endfor %}
+      </select>
+    </div>
+    <p class="hint">Spelling is matched loosely: long and short vowels, aspiration and word breaks are ignored, so <em>seetha</em> finds sītā and <em>krishna</em> finds kṛṣṇa.</p>
+  </form>
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+  <ol id="results" class="results"></ol>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}static/search.js"></script>{% endblock %}

@@ -1,0 +1,13 @@
+{% macro verse_text(v) %}
+{% for sc in ('knda', 'deva', 'iast') %}
+{% set t = v.text[sc] %}
+<div class="t t-{{ sc }}"{% if sc == 'knda' %} lang="sa-Knda"{% elif sc == 'deva' %} lang="sa-Deva"{% else %} lang="sa-Latn"{% endif %}>
+  {% if t.savarna %}
+  <p class="ps0">{% for l in t.lines %}<span class="ln">{{ l }}</span>{% endfor %}</p>
+  <p class="ps1">{% for l in t.savarna %}<span class="ln">{{ l }}</span>{% endfor %}</p>
+  {% else %}
+  <p>{% for l in t.lines %}<span class="ln">{{ l }}</span>{% endfor %}</p>
+  {% endif %}
+</div>
+{% endfor %}
+{% endmacro %}

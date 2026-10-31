@@ -1,0 +1,15 @@
+{% macro strip(e, root) %}
+<figure class="strip" aria-label="{{ e.short }}: {{ e.sargas }} sargas in 7 kāṇḍas">
+  <figcaption><span class="ed-name">{{ e.short }}</span> <span class="ed-count">{{ e.sargas }} sargas, {{ "{:,}".format(e.verses) }} verses</span></figcaption>
+  <ol class="strip-row">
+  {% for k in e.kandas %}
+    <li style="flex-grow: {{ k.sargas }}; --ticks: {{ k.sargas }}">
+      <a href="{{ root }}{{ e.id }}/{{ k.n }}/" title="{{ k.en }}: {{ k.sargas }} sargas">
+        <span class="kn" lang="kn">{{ k.kn }}</span>
+        <span class="num">{{ k.sargas }}</span>
+      </a>
+    </li>
+  {% endfor %}
+  </ol>
+</figure>
+{% endmacro %}
