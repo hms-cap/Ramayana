@@ -1,7 +1,7 @@
 {# Temple-niche (Tanjore-style) painting for each kāṇḍa: motifs and symbols only, no figures.
    Colours come from --kb / --kp set on the card by kcard(). #}
 {% set PAL = {1:["#7B2A16","#A63E22"],2:["#1B326A","#2D4C94"],3:["#1B4D33","#2C7048"],4:["#5E3318","#8A5126"],5:["#0D4E60","#1B7A90"],6:["#6B1824","#9A2C3B"],7:["#402360","#62398C"]} %}
-{% macro art(n) %}<svg class="kart" viewBox="0 0 160 120" fill="none" stroke="#F0C45A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 120V58Q12 40 40 32Q70 24 80 6Q90 24 120 32Q148 40 148 58V120Z" style="fill:var(--kp)"/><path d="M20 120V60Q20 46 44 39Q72 31 80 16Q88 31 116 39Q140 46 140 60V120Z" stroke-width="1" opacity=".6"/><circle cx="80" cy="3.5" r="2.5" fill="#F0C45A" stroke="none"/>
+{% macro art(n) %}<svg class="kart" data-v="0" viewBox="0 0 160 120" fill="none" stroke="#F0C45A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 120V58Q12 40 40 32Q70 24 80 6Q90 24 120 32Q148 40 148 58V120Z" style="fill:var(--kp)"/><path d="M20 120V60Q20 46 44 39Q72 31 80 16Q88 31 116 39Q140 46 140 60V120Z" stroke-width="1" opacity=".6"/><circle cx="80" cy="3.5" r="2.5" fill="#F0C45A" stroke="none"/>
 {%- if n == 1 -%}
 <circle cx="58" cy="14" r="1.6" fill="#F0C45A" stroke="none"/><circle cx="102" cy="14" r="1.6" fill="#F0C45A" stroke="none"/><circle cx="80" cy="58" r="13" fill="#F0C45A" stroke="none"/><path d="M80 40V33M92 42L96 36M68 42L64 36M98 49L104 45M62 49L56 45M98 58H105M62 58H55"/><path d="M80 104C70 94 70 82 80 72C90 82 90 94 80 104Z" fill="#FFF1CF"/><path d="M80 104C64 102 56 92 58 82C70 82 78 92 80 104Z" fill="#FFE6A8"/><path d="M80 104C96 102 104 92 102 82C90 82 82 92 80 104Z" fill="#FFE6A8"/>
 {%- elif n == 2 -%}
@@ -23,7 +23,7 @@
 <nav class="workchips" aria-label="Work">
 {% for w in works_list %}
   <a class="wchip{% if w.id == W.id %} on{% endif %}" href="{{ root }}{{ w.prefix }}" data-work-pick="{{ w.id }}" style="--wb:{{ w.theme }}"{% if w.id == W.id %} aria-current="true"{% endif %}>
-    <span class="wic" aria-hidden="true">{% if w.id == 'ram' %}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5C14 6 14 18 6 20.5"/><path d="M6 3.5V20.5" stroke-width="1"/><path d="M3.5 12H20"/><path d="M17 9l3 3-3 3"/><path d="M3.5 12l-1.5-1.5M3.5 12l-1.5 1.5"/></svg>{% else %}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.2"/><path d="M12 12L21 12M12 12L19.8 16.5M12 12L16.5 19.8M12 12L12 21M12 12L7.5 19.8M12 12L4.2 16.5M12 12L3 12M12 12L4.2 7.5M12 12L7.5 4.2M12 12L12 3M12 12L16.5 4.2M12 12L19.8 7.5"/><path d="M21 12L22.2 14.2L19.8 16.5M19.8 16.5L19.4 19.2L16.5 19.8M16.5 19.8L14.2 22.2L12 21M12 21L9.8 22.2L7.5 19.8M7.5 19.8L4.8 19.4L4.2 16.5M4.2 16.5L1.8 14.2L3 12M3 12L1.8 9.8L4.2 7.5M4.2 7.5L4.6 4.8L7.5 4.2M7.5 4.2L9.8 1.8L12 3M12 3L14.2 1.8L16.5 4.2M16.5 4.2L19.2 4.6L19.8 7.5M19.8 7.5L22.2 9.8L21 12"/></svg>{% endif %}</span>
+    <span class="wic" aria-hidden="true">{% for ic in w.icons %}{{ ic|safe }}{% endfor %}</span>
     <span class="wtx"><b lang="kn">{{ w.kn_chip }}</b><small>{{ w.short_en }}</small></span>
   </a>
 {% endfor %}
@@ -31,7 +31,7 @@
 {% endmacro %}
 {% macro kcard(k, vu, ce, tag='button', unit='sargas') %}
 <{{ tag }} class="kcard" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-en="{{ k.en }}" data-n-vu="{{ vu }}" data-n-ce="{{ ce }}" style="--kb:{{ k.kb or PAL[k.n][0] }};--kp:{{ k.kp or PAL[k.n][1] }}"{% if tag == 'button' %} type="button" aria-haspopup="dialog"{% endif %}>
-  {% if k.svg %}{{ k.svg|safe }}{% else %}{{ art(k.n) }}{% endif %}
+  {% if k.svg %}{{ k.svg|safe }}{% else %}{{ art(k.n) }}{% endif %}{% for a in k.alts %}{{ a|safe }}{% endfor %}
   <span class="kc-n" lang="kn" aria-hidden="true">{{ k.n_knda }}</span>
   <span class="kc-t" lang="kn">{{ k.kn }}</span>
   <span class="kc-c">{{ k.en }} · <span data-ed="vu">{{ vu }}</span><span data-ed="ce"><span class="sep"> / </span>{{ ce }}</span> {{ unit }}</span>

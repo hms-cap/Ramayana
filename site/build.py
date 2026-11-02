@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "etl"))
 import daily  # noqa: E402
 import grammar  # noqa: E402
+import card_art  # noqa: E402
 import mbh_art  # noqa: E402
 import meter  # noqa: E402
 from translit import iast_to_slp1, render, slp1_to_brahmic, to_digits  # noqa: E402
@@ -74,7 +75,8 @@ def unit_info(W: dict, k: int) -> dict:
          "n_knda": to_digits(k, "knda")}
     if W["id"] == "mbh":
         bg, panel = mbh_art.PAL[(k - 1) % 6]
-        d.update(kb=bg, kp=panel, svg=mbh_art.svg(k))
+        d.update(kb=bg, kp=panel, svg=mbh_art.svg(k).replace('class="kart"', 'class="kart" data-v="0"', 1))
+    d["alts"] = card_art.alts(W["id"], k)
     return d
 
 
@@ -207,7 +209,7 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
     up = "../" * len([x for x in pre.split("/") if x])          # work root -> site root
     editions = load_editions(W)
     nu = len(W["units"])
-    works_list = [{**w, "n_units": len(w["units"]), "n_eds": len(load_editions(w))} for w in WORKS.values()]
+    works_list = [{**w, "n_units": len(w["units"]), "n_eds": len(load_editions(w)), "icons": card_art.chip_icons(w["id"])} for w in WORKS.values()]
     base = dict(W=W, works_list=works_list, rail_kandas=[unit_info(W, k) for k in range(1, nu + 1)], rail_eds=editions, editions=editions)
 
     def ctx(depth: int, **kw) -> dict:

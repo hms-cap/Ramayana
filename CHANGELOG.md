@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.2 — 2026-11-03
+- Card art variants (`etl/card_art.py`): two extra motifs per kāṇḍa and parvan (Kalamkari A, Pattachitra B) and two extra chip icons per work. `app.js` picks one of three per card and chip from a per-session seed (`sessionStorage vr.art`); CSS shows the chosen `.kart[data-v]` / `.wico[data-v]`.
+
 ## 0.6.1 — 2026-11-03
 - App renamed ಇತಿಹಾಸ (Itihāsa). The work chip and "Choose a work" sheet are replaced by two chips (`.wchip`, bow and arrow / Sudarśana chakra) at the top of Home and Read. Icon background blends indigo and maroon.
 

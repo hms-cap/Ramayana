@@ -12,7 +12,7 @@
 <link rel="icon" href="{{ root }}static/icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{ root }}static/icons/apple-touch-icon.png">
 <script>
-(function(){try{var p=JSON.parse(localStorage.getItem("vr-prefs")||"{}");var d=document.documentElement;
+(function(){document.documentElement.classList.add("js");try{var p=JSON.parse(localStorage.getItem("vr-prefs")||"{}");var d=document.documentElement;
 if(p.script)d.dataset.script=p.script;if(p.savarna)d.dataset.savarna="1";if(p.scan)d.dataset.scan="1";
 if(p.size)d.dataset.size=p.size;var o=p[d.dataset.work==="mbh"?"offMbh":"off"];d.dataset.off=Array.isArray(o)?o.join(" "):"ce";d.dataset.theme=p.theme||"light";}catch(e){}})();
 </script>

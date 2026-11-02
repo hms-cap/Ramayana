@@ -281,6 +281,21 @@
       try { localStorage.setItem("vr.work", a.dataset.workPick); } catch (x) { /* ignore */ }
     });
   })();
+  /* a fresh mix of card paintings and chip icons each time the app is opened (kept for the session) */
+  (function () {
+    var mix = null;
+    try { mix = JSON.parse(sessionStorage.getItem("vr.art") || "null"); } catch (e) { /* ignore */ }
+    if (!mix) { mix = { seed: Math.floor(Math.random() * 1e9) }; try { sessionStorage.setItem("vr.art", JSON.stringify(mix)); } catch (e) { /* ignore */ } }
+    function pick(key) {                     // deterministic per key within this session: 0 current, 1 A, 2 B
+      var h = mix.seed;
+      for (var i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0;
+      h ^= h >>> 15; h = Math.imul(h, 2246822519) >>> 0; h ^= h >>> 13;
+      return (h >>> 0) % 3;
+    }
+    var w = document.body.dataset.work || "ram";
+    document.querySelectorAll(".kcard").forEach(function (c) { c.dataset.art = pick(w + ":" + c.dataset.k); });
+    document.querySelectorAll(".wchip").forEach(function (c) { c.dataset.art = pick("chip:" + c.dataset.workPick); });
+  })();
   apply();
   openFromHash();
   window.addEventListener("hashchange", openFromHash);

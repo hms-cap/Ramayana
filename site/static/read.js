@@ -26,7 +26,7 @@
   }
   function open(card) {
     cur = card;
-    var art = document.getElementById("ks-art"), svg = card.querySelector("svg");
+    var art = document.getElementById("ks-art"), svg = card.querySelector('.kart[data-v="' + (card.dataset.art || 0) + '"]') || card.querySelector("svg");
     art.setAttribute("style", card.getAttribute("style")); art.innerHTML = svg ? svg.outerHTML : "";
     paint(); VRSheet.open("ksheet");
   }
