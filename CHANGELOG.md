@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.1 — 2026-11-03
+- App renamed ಇತಿಹಾಸ (Itihāsa). The work chip and "Choose a work" sheet are replaced by two chips (`.wchip`, bow and arrow / Sudarśana chakra) at the top of Home and Read. Icon background blends indigo and maroon.
+
 ## 0.6.0 — 2026-11-03
 - Mahābhārata as a second work under `/mbh/` (home, read, search, 18 parvans, two texts: Traditional / Kumbakonam from SARIT, CC BY-SA 3.0; Pune critical text from GRETIL, BORI copyright, non-commercial notice). `etl/ingest_mbh.py` writes `data/normalized/mbh/{ce,vu}.jsonl`; `data/editions_mbh.json`; parvan art in `etl/mbh_art.py`.
 - `site/build.py` builds per work (`WORKS`). Mahābhārata pages are "lean": IAST only, with `site/static/lean.js` building Kannada, Devanāgarī, verse numbers and details in the browser (keeps the site small). No sarga.json, words or cross-walk for it.

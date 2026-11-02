@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-{% from "_art.html" import kcard, workchip %}
+{% from "_art.html" import kcard, workchips %}
 {% block title %}Read — {{ W.kn }}{% endblock %}
 {% block main %}
+{{ workchips(W, works_list, root) }}
 {% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
-<section class="read-head"><h1><span lang="kn">ಓದು</span> <small>Read</small></h1>{{ workchip(W) }}<p><a class="searchbar" href="{{ wroot }}search/">Search verses or jump to {{ '1.5.12' if W.id == 'ram' else '1.2.19' }}</a></p></section>
+<section class="read-head"><h1><span lang="kn">ಓದು</span> <small>Read</small></h1><p><a class="searchbar" href="{{ wroot }}search/">Search verses or jump to {{ '1.5.12' if W.id == 'ram' else '1.2.19' }}</a></p></section>
 <div class="kgrid">
 {% for k in eds[0].kandas %}{% set i = loop.index0 %}{{ kcard(k, vu_e.kandas[i].sargas, ce_e.kandas[i].sargas, unit=W.subs) }}{% endfor %}
 </div>

@@ -274,7 +274,6 @@
     if (!b.hasAttribute("data-work-page") && cur === "mbh") {
       document.documentElement.dataset.work = "mbh";
       document.querySelectorAll("[data-wl]").forEach(function (a) { var w = a.dataset.wl; a.setAttribute("href", b.dataset.root + "mbh/" + (w === "home" ? "" : w + "/")); });
-      var br = document.querySelector(".brand .kn"); if (br) br.textContent = "ಮಹಾಭಾರತ";
       document.querySelectorAll("[data-work-pick]").forEach(function (a) { a.setAttribute("aria-checked", a.dataset.workPick === cur ? "true" : "false"); });
     }
     document.addEventListener("click", function (e) {

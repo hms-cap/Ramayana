@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% from "_art.html" import kcard, workchip %}
+{% from "_art.html" import kcard, workchips %}
 {% block main %}
+{{ workchips(W, works_list, root) }}
 {% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
 <section class="greet">
   <h1 lang="kn">ನಮಸ್ಕಾರ</h1>
   <p class="greet-date" id="greet-date"></p>
-  {{ workchip(W) }}
 </section>
 
 <div class="home-grid">

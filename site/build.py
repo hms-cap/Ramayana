@@ -43,13 +43,13 @@ KANDAS = [
 PARVANS = [(en.lower().replace(" ", ""), kn, en) for kn, en in mbh_art._NAMES]
 
 WORKS = {
-    "ram": dict(id="ram", prefix="", kn="ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", en="Vālmīki Rāmāyaṇa", short_en="Rāmāyaṇa", short_kn="ರಾಮಾಯಣ",
+    "ram": dict(id="ram", prefix="", kn="ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", en="Vālmīki Rāmāyaṇa", short_en="Rāmāyaṇa", short_kn="ರಾಮಾಯಣ", kn_chip="ರಾಮಾಯಣ",
                 tile="ರಾ", theme="#1B2358", blurb="Sanskrit text with Kannada",
                 editions="editions.json", units=KANDAS, unit="kāṇḍa", units_pl="kāṇḍas", Unit="Kāṇḍa",
                 sub="sarga", subs="sargas", Sub="Sarga", sub_kn="ಸರ್ಗ", sub_deva="सर्गः", sub_iast="sargaḥ",
                 epic_kn="ರಾಮಾಯಣದಲ್ಲಿ", lean=False, site="hms-cap.github.io/Ramayana",
                 credit='Baroda Critical Edition text from <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, CC BY-NC-SA 4.0; Traditional (Vulgate) text from <a href="https://sa.wikisource.org/">Sanskrit Wikisource</a>, CC BY-SA 4.0. Not for commercial use.'),
-    "mbh": dict(id="mbh", prefix="mbh/", kn="ಮಹಾಭಾರತ", en="Mahābhārata", short_en="Mahābhārata", short_kn="ಮಹಾಭಾರತ",
+    "mbh": dict(id="mbh", prefix="mbh/", kn="ಮಹಾಭಾರತ", en="Mahābhārata", short_en="Mahābhārata", short_kn="ಮಹಾಭಾರತ", kn_chip="ಮಹಾಭಾರತ",
                 tile="ಮ", theme="#3B1220", blurb="Sanskrit text with Kannada",
                 editions="editions_mbh.json", units=PARVANS, unit="parvan", units_pl="parvans", Unit="Parvan",
                 sub="adhyāya", subs="adhyāyas", Sub="Adhyāya", sub_kn="ಅಧ್ಯಾಯ", sub_deva="अध्यायः", sub_iast="adhyāyaḥ",

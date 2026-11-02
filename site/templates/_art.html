@@ -19,12 +19,15 @@
 {%- endif -%}
 {%- if n != 7 -%}<path d="M12 112H148" stroke-width="1.2"/>{%- endif -%}
 </svg>{% endmacro %}
-{% macro workchip(W) %}
-<button type="button" class="workchip" data-open-sheet="worksheet" aria-haspopup="dialog" aria-label="Choose a work. Now: {{ W.en }}">
-  <span class="wtile sm" style="--wb:{{ W.theme }}" lang="kn" aria-hidden="true">{{ W.tile }}</span>
-  <span class="wc-t"><b lang="kn">{{ W.kn }}</b><small>{{ W.en }}</small></span>
-  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg>
-</button>
+{% macro workchips(W, works_list, root) %}
+<nav class="workchips" aria-label="Work">
+{% for w in works_list %}
+  <a class="wchip{% if w.id == W.id %} on{% endif %}" href="{{ root }}{{ w.prefix }}" data-work-pick="{{ w.id }}" style="--wb:{{ w.theme }}"{% if w.id == W.id %} aria-current="true"{% endif %}>
+    <span class="wic" aria-hidden="true">{% if w.id == 'ram' %}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5C14 6 14 18 6 20.5"/><path d="M6 3.5V20.5" stroke-width="1"/><path d="M3.5 12H20"/><path d="M17 9l3 3-3 3"/><path d="M3.5 12l-1.5-1.5M3.5 12l-1.5 1.5"/></svg>{% else %}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.2"/><path d="M12 12L21 12M12 12L19.8 16.5M12 12L16.5 19.8M12 12L12 21M12 12L7.5 19.8M12 12L4.2 16.5M12 12L3 12M12 12L4.2 7.5M12 12L7.5 4.2M12 12L12 3M12 12L16.5 4.2M12 12L19.8 7.5"/><path d="M21 12L22.2 14.2L19.8 16.5M19.8 16.5L19.4 19.2L16.5 19.8M16.5 19.8L14.2 22.2L12 21M12 21L9.8 22.2L7.5 19.8M7.5 19.8L4.8 19.4L4.2 16.5M4.2 16.5L1.8 14.2L3 12M3 12L1.8 9.8L4.2 7.5M4.2 7.5L4.6 4.8L7.5 4.2M7.5 4.2L9.8 1.8L12 3M12 3L14.2 1.8L16.5 4.2M16.5 4.2L19.2 4.6L19.8 7.5M19.8 7.5L22.2 9.8L21 12"/></svg>{% endif %}</span>
+    <span class="wtx"><b lang="kn">{{ w.kn_chip }}</b><small>{{ w.short_en }}</small></span>
+  </a>
+{% endfor %}
+</nav>
 {% endmacro %}
 {% macro kcard(k, vu, ce, tag='button', unit='sargas') %}
 <{{ tag }} class="kcard" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-en="{{ k.en }}" data-n-vu="{{ vu }}" data-n-ce="{{ ce }}" style="--kb:{{ k.kb or PAL[k.n][0] }};--kp:{{ k.kp or PAL[k.n][1] }}"{% if tag == 'button' %} type="button" aria-haspopup="dialog"{% endif %}>

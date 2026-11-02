@@ -603,3 +603,14 @@ html[data-work="mbh"] .cont { background: linear-gradient(#3B1220, #5A1F2B); }
 .wcard[aria-checked="true"] .wradio { box-shadow: inset 0 0 0 6px var(--accent); }
 .wnote { color: var(--muted); font: 400 0.85rem/1.4 var(--f-ui); margin: 0.9rem 0 0; }
 .work-h { margin-top: 1.4rem; } .work-h small { font: 500 0.9rem var(--f-ui); color: var(--muted); }
+
+/* ---- two work chips at the top of Home and Read ---- */
+.workchips { display: flex; gap: 0.6rem; margin: 0.4rem 0 0.8rem; }
+.wchip { flex: 1; min-height: 52px; display: flex; align-items: center; gap: 0.6rem; padding: 0.25rem 0.9rem 0.25rem 0.4rem; border-radius: 26px; background: var(--card); color: var(--ink); box-shadow: 0 0 0 1px var(--rule); text-decoration: none; }
+.wchip .wic { width: 38px; height: 38px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--paper-2); }
+.wchip .wtx { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
+.wchip .wtx b { font: 400 1.1rem var(--f-knda); white-space: nowrap; }
+.wchip .wtx small { font: 500 0.72rem var(--f-ui); opacity: .75; }
+.wchip.on { background: var(--wb); color: #FFFBF2; box-shadow: none; }
+.wchip.on .wic { background: rgba(255,255,255,.16); }
+@media (max-width: 24rem) { .wchip { padding-right: 0.5rem; gap: 0.4rem; } .wchip .wtx b { font-size: 1rem; } }

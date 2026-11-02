@@ -65,8 +65,7 @@ async def main():
         assert prefs.get("offMbh") == [] or prefs.get("offMbh") == ["vu"] or "ce" not in prefs["offMbh"]
         assert "off" not in prefs or "ce" in prefs["off"]
         # switch to the Rāmāyaṇa from the sheet
-        await pg.click(".workchip")
-        await pg.click('[data-work-pick="ram"]')
+        await pg.click('.wchip[data-work-pick="ram"]')
         await pg.wait_for_timeout(900)
         print("after switch:", pg.url)
         assert pg.url.rstrip("/") == B.rstrip("/")
