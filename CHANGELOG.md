@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.2 — 2026-11-02
+- Light theme is the default; Options → Theme: Light / Dark / Same as device (`data-theme` on `<html>`: `light`, `dark`, `system`).
+
 ## 0.4.1 — 2026-11-02
 - Editions renamed in the interface: Baroda Text (Critical Edition) and Traditional Text (Vulgate). Options → "Texts to show" switches either off (pref `off`, applied as `data-off` on `<html>`).
 

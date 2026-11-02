@@ -25,6 +25,10 @@
     // search: pick an enabled edition
     var es = document.getElementById("ed");
     if (es && (prefs.off || []).indexOf(es.value) >= 0) { var ok = [].filter.call(es.options, function (o) { return prefs.off.indexOf(o.value) < 0; })[0]; if (ok) es.value = ok.value; }
+    root.dataset.theme = prefs.theme || "light";
+    document.querySelectorAll("[data-pref-theme]").forEach(function (i) { i.checked = (prefs.theme || "light") === i.value; });
+    var tc = document.querySelector('meta[name=theme-color]');
+    if (tc) tc.content = (prefs.theme === "dark" || (prefs.theme === "system" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches)) ? "#14171E" : "#1B2358";
     if (prefs.filter) root.dataset.filter = prefs.filter; else delete root.dataset.filter;
     document.querySelectorAll("[data-set-script]").forEach(function (b) {
       b.setAttribute("aria-checked", b.dataset.setScript === root.dataset.script ? "true" : "false");
@@ -72,6 +76,7 @@
       prefs.off = off; save(prefs); apply(); return;
     }
     if (t.dataset.pref) { prefs[t.dataset.pref] = t.checked; save(prefs); apply(); }
+    if (t.hasAttribute("data-pref-theme")) { prefs.theme = t.value === "light" ? "" : t.value; save(prefs); apply(); }
     if (t.hasAttribute("data-pref-size")) { prefs.size = t.value === "m" ? "" : t.value; save(prefs); apply(); }
   });
   document.addEventListener("keydown", function (e) {

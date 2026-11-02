@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="kn" data-script="knda">
+<html lang="kn" data-script="knda" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +13,7 @@
 <script>
 (function(){try{var p=JSON.parse(localStorage.getItem("vr-prefs")||"{}");var d=document.documentElement;
 if(p.script)d.dataset.script=p.script;if(p.savarna)d.dataset.savarna="1";if(p.scan)d.dataset.scan="1";
-if(p.size)d.dataset.size=p.size;if(p.off)d.dataset.off=p.off.join(" ");if(p.theme)d.dataset.theme=p.theme;}catch(e){}})();
+if(p.size)d.dataset.size=p.size;if(p.off)d.dataset.off=p.off.join(" ");d.dataset.theme=p.theme||"light";}catch(e){}})();
 </script>
 </head>
 <body class="page-{{ page }}" data-root="{{ root }}" data-ed="{{ cur_ed|default('') }}">
@@ -41,6 +41,12 @@ if(p.size)d.dataset.size=p.size;if(p.off)d.dataset.off=p.off.join(" ");if(p.them
         <div class="opts-panel">
           <label><input type="checkbox" data-pref="savarna"> Homorganic nasals <span class="hint" lang="kn">(ಮುನಿಪುಙ್ಗವಮ್ instead of ಮುನಿಪುಂಗವಮ್)</span></label>
           <label><input type="checkbox" data-pref="scan"> Show metre scansion <span class="hint">(<span lang="sa">।</span> laghu, <span lang="sa">ऽ</span> guru)</span></label>
+          <fieldset>
+            <legend>Theme</legend>
+            <label><input type="radio" name="theme" value="light" data-pref-theme> Light</label>
+            <label><input type="radio" name="theme" value="dark" data-pref-theme> Dark</label>
+            <label><input type="radio" name="theme" value="system" data-pref-theme> Same as device</label>
+          </fieldset>
           <fieldset class="ed-set">
             <legend>Texts to show</legend>
             {% for e in rail_eds %}<label><input type="checkbox" data-ed-toggle="{{ e.id }}" checked> {{ e.short }} <span class="hint" lang="kn">{{ e.short_kn }}</span></label>{% endfor %}

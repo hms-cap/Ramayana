@@ -24,7 +24,7 @@
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root[data-theme="system"] {
     --paper: #14171E; --paper-2: #1C2029; --ink: #E4E6EA; --muted: #9AA1AE;
     --rule: #2D323D; --accent: #E2A646; --accent-soft: #3A2E18; --absent: #E08A78; --focus: #8FB2F0;
     color-scheme: dark;
@@ -276,7 +276,7 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 .chant { --c-paper: #FBF6EA; --c-ink: #1B1712; --c-muted: #6B6255; --deva-lh: 2.15;
   position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column;
   background: var(--c-paper); color: var(--c-ink); font-family: var(--f-ui); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chant { --c-paper: #17140F; --c-ink: #ECE4D3; --c-muted: #A99F8D; } }
+@media (prefers-color-scheme: dark) { :root[data-theme="system"] .chant { --c-paper: #17140F; --c-ink: #ECE4D3; --c-muted: #A99F8D; } }
 :root[data-theme="dark"] .chant { --c-paper: #17140F; --c-ink: #ECE4D3; --c-muted: #A99F8D; }
 .chant.kn { --deva-lh: 2.4; }
 body.story-open { overflow: hidden; }
@@ -379,7 +379,7 @@ body.story-open { overflow: hidden; }
 .home-grid { display: grid; gap: 1.2rem; margin-top: 0.8rem; }
 @media (min-width: 900px) { .home-grid { grid-template-columns: 6fr 5fr; align-items: start; } }
 .votd { background: #FBF6EA; color: #1B1712; border: 1px solid #C9A24B; border-radius: 16px; padding: 1rem 1.2rem 0.8rem; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .votd { background: #17140F; color: #ECE4D3; border-color: #7a6228; } }
+@media (prefers-color-scheme: dark) { :root[data-theme="system"] .votd { background: #17140F; color: #ECE4D3; border-color: #7a6228; } }
 :root[data-theme="dark"] .votd { background: #17140F; color: #ECE4D3; border-color: #7a6228; }
 .votd-head h2 { font: 500 1.05rem var(--f-ui); margin: 0 0 0.5rem; color: var(--muted); }
 .votd-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.6rem; }
@@ -387,7 +387,7 @@ body.story-open { overflow: hidden; }
 .votd-view { min-height: 14rem; overflow: hidden; }
 .votd-slide { outline: 0; }
 .vc-label { font: 700 0.8rem var(--f-ui); letter-spacing: 0.08em; text-transform: uppercase; color: #2F3C9C; margin: 0 0 0.4rem; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .vc-label { color: #8FA0F0; } }
+@media (prefers-color-scheme: dark) { :root[data-theme="system"] .vc-label { color: #8FA0F0; } }
 :root[data-theme="dark"] .vc-label { color: #8FA0F0; }
 .vc-verse { font-size: clamp(1.1rem, 2.6vw, 1.45rem); line-height: 1.9; }
 .vc-verse .ln { display: block; }
