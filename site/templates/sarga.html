@@ -47,8 +47,14 @@
         <p class="badge b-{{ cw.status }}" data-ed="{{ other_id }}">{% if cw.status == 'absent' %}Not in the {{ cw.other_label }}{% else %}{% if cw.status == 'variant' %}Different reading in the{% elif cw.status == 'regrouped' %}Lines grouped differently in the{% else %}Only partly in the{% endif %} {{ cw.other_label }}: {% for l in cw.links %}<a href="{{ root }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</p>
         {% endif %}
         {% if 'source_noise' in v.flags %}<p class="badge b-noise">The source has typing errors in this verse.</p>{% endif %}
+        {% set wsrc = none %}
+        {% if v.has_words %}{% set wsrc = {"url": "words.json", "vn": v.v, "note": ""} %}
+        {% elif ed.id == 'vu' and cw and cw.links|length == 1 and cw.status in ('match', 'variant', 'partial', 'regrouped') %}{% set wsrc = {"url": cw.links[0].path.split('#')[0] ~ "words.json", "vn": cw.links[0].path.split('#v')[1], "note": "" if cw.status == 'match' else cw.status} %}{% endif %}
+        <div class="vtext"{% if wsrc %} data-words="{{ wsrc.url }}" data-vn="{{ wsrc.vn }}" data-wnote="{{ wsrc.note }}" tabindex="0" role="button" aria-expanded="false" title="Click for word-by-word meanings"{% endif %}>
         {{ verse_text(v) }}
+        </div>
         {% if v.meter %}<div class="scan" aria-hidden="true">{% for l in v.scan %}<span class="ln">{{ l }}</span>{% endfor %}</div>{% endif %}
+        {% if wsrc %}<div class="wbw" hidden></div>{% endif %}
         <div class="details" id="d{{ v.v }}" hidden>
           <dl>
             <dt>Verse</dt><dd>{{ v.ref }}</dd>
@@ -56,11 +62,7 @@
             {% for i in v.ids %}<dt>{{ i.label }}</dt><dd><code>{{ i.value }}</code></dd>{% endfor %}
             {% if cw and cw.links %}<dt data-ed="{{ other_id }}">{{ cw.other_label }}</dt><dd data-ed="{{ other_id }}">{% for l in cw.links %}<a href="{{ root }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
           </dl>
-          {% if v.has_words %}<button type="button" class="wbw-btn" aria-expanded="false">Word by word</button>
-          <div class="wbw" hidden></div>
-          {% elif cw and cw.status == 'match' and cw.links|length == 1 and ed.id == 'vu' %}<button type="button" class="wbw-btn" aria-expanded="false" data-words="{{ cw.links[0].path.split('#')[0] }}words.json" data-vn="{{ cw.links[0].path.split('#v')[1] }}">Word by word</button>
-          <div class="wbw" hidden></div>
-          {% endif %}
+          {% if v.has_words or wsrc %}<button type="button" class="wbw-btn" aria-expanded="false">Word by word</button>{% endif %}
           <button type="button" class="chant-here">Chant from here</button>
           <button type="button" class="cite">Copy citation</button>
           <span class="cite-ok" role="status"></span>

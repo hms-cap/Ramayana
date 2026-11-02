@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.4 — 2026-11-02
+- Clicking a verse's text opens the word-by-word panel under it (also keyboard: Enter / Space). Traditional verses with a single Baroda counterpart that is a variant, partial or regrouped match show that verse's analysis with a warning note. Verses with no counterpart have no analysis.
+
 ## 0.4.3 — 2026-11-02
 - Traditional Text (`vu`) is the default edition; Baroda Text (`ce`) is off until enabled in Options (`prefs.off` defaults to `["ce"]`). Editions listed vu first.
 - Home: removed the Editions strips and the My list button. Tab bar: Home, Search, My.

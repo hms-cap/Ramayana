@@ -63,7 +63,7 @@
     }
     if (e.target.closest("[data-ed-on]")) { prefs.off = offList().filter(function (x) { return x !== document.body.dataset.ed; }); save(prefs); apply(); return; }
     var w = e.target.closest(".wbw-btn");
-    if (w) { toggleWords(w); return; }
+    if (w) { toggleWords(w.closest(".verse")); return; }
     var c = e.target.closest(".cite");
     if (c) { copyCitation(c); return; }
     var opts = document.querySelector(".opts[open]");
@@ -130,26 +130,47 @@
     });
     box.innerHTML = h + '</ol>' +
       '<p class="wbw-note">Analysis: Digital Corpus of Sanskrit. Meanings are dictionary senses of each base word, chosen automatically (Apte, 1890, and project notes); they are not a translation of this verse. ' +
-      '<a href="' + root_href() + 'about/#words">About this data</a></p>';
+      '<a href="' + root_href() + 'about/#words">About this data</a></p>' +
+      (box.dataset.note ? '<p class="wbw-note wbw-warn">' + esc(NOTES[box.dataset.note]) + '</p>' : "");
     box.dataset.script = sc;
   }
   function root_href() { return document.querySelector(".reader").dataset.root || "../../../"; }
   var wordsCache = {};
   function loadWords(u) { return wordsCache[u] || (wordsCache[u] = loadJSON(u)); }
-  function toggleWords(btn) {
-    var box = btn.parentNode.querySelector(".wbw"), open = btn.getAttribute("aria-expanded") === "true";
-    btn.setAttribute("aria-expanded", open ? "false" : "true");
-    box.hidden = open;
+  var NOTES = {
+    variant: "This verse reads differently from the Baroda verse analysed here, so some words may not match.",
+    partial: "Only part of this verse is in the Baroda verse analysed here, so some words may not match.",
+    regrouped: "The lines of this verse are grouped differently in the Baroda text, so some words may not match."
+  };
+  function toggleWords(li) {
+    var src = li.querySelector(".vtext"), box = li.querySelector(".wbw"), btn = li.querySelector(".wbw-btn");
+    if (!src || !src.dataset.words || !box) return;
+    var open = !box.hidden;
+    box.hidden = open; src.setAttribute("aria-expanded", open ? "false" : "true");
+    if (btn) btn.setAttribute("aria-expanded", open ? "false" : "true");
+    li.classList.toggle("wbw-on", !open);
     if (open) return;
-    var vnum = btn.dataset.vn || btn.closest(".verse").id.slice(1);
-    var wurl = btn.dataset.words ? root_href() + btn.dataset.words : "words.json";
-    box.dataset.words = wurl; box.dataset.vn = vnum;
+    var wurl = src.dataset.words === "words.json" ? "words.json" : root_href() + src.dataset.words;
+    var vnum = src.dataset.vn;
+    box.dataset.words = wurl; box.dataset.vn = vnum; box.dataset.note = src.dataset.wnote || "";
     Promise.all([loadWords(wurl), grammarData || loadJSON(root_href() + "data/grammar.json")]).then(function (r) {
       wordsData = r[0]; grammarData = r[1];
       var units = wordsData.verses[vnum];
       if (units) renderWords(box, units); else box.textContent = "No word analysis for this verse.";
     }, function () { box.textContent = "Could not load the word analysis."; });
   }
+  // click the verse text (not while selecting text, not on links) or press Enter / Space on it
+  document.addEventListener("click", function (e) {
+    var src = e.target.closest(".vtext[data-words]");
+    if (!src || e.target.closest("a")) return;
+    var sel = window.getSelection && String(window.getSelection());
+    if (sel && sel.length > 0) return;
+    toggleWords(src.closest(".verse"));
+  });
+  document.addEventListener("keydown", function (e) {
+    var src = e.target.closest && e.target.closest(".vtext[data-words]");
+    if (src && e.target === src && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleWords(src.closest(".verse")); }
+  });
   document.addEventListener("prefs-changed", function () {
     document.querySelectorAll(".wbw:not([hidden])").forEach(function (box) {
       if (!box.dataset.words) return;

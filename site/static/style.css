@@ -430,3 +430,9 @@ body.story-open { overflow: hidden; }
 .off-note { max-width: 72rem; margin: 0 auto; padding: 0.6rem 1rem; background: var(--accent-soft); }
 .off-note[hidden] { display: none; }
 .ed-set label { display: block; }
+
+.vtext[data-words] { cursor: pointer; border-radius: 6px; }
+.vtext[data-words]:hover { background: color-mix(in srgb, var(--accent-soft) 55%, transparent); }
+.verse.wbw-on .vtext { background: color-mix(in srgb, var(--accent-soft) 70%, transparent); }
+.body > .wbw { margin: 0.5rem 0 0.2rem; padding: 0.7rem 0.9rem; background: var(--paper-2); border-radius: 6px; }
+.wbw-warn { color: var(--absent); }
