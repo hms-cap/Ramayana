@@ -73,7 +73,7 @@
   })();
 
   /* ---- kāṇḍa tiles with sarga chips ---- */
-  var chipEd = ((P.get().off || []).indexOf("ce") >= 0) ? "vu" : "ce";
+  var chipEd = P.off().indexOf("vu") >= 0 ? "ce" : "vu";
   function fillChips(tile) {
     var n = +tile.dataset["n" + chipEd.charAt(0).toUpperCase() + chipEd.slice(1)] || +tile.getAttribute("data-n-" + chipEd), k = tile.dataset.k, box = tile.querySelector(".chips"), h = "";
     var s = sc();
@@ -162,7 +162,8 @@
     votd.querySelector(".votd-kind").textContent = L(shuffled ? "another" : "kind", s);
     var dots = votd.querySelector(".votd-dots");
     dots.innerHTML = secs.map(function (x, i) { return '<button type="button" role="tab" aria-selected="' + (i === cardNo) + '" aria-label="' + esc(L(x.key, s)) + '" data-card="' + i + '"></button>'; }).join("");
-    document.getElementById("votd-open").href = ROOT + card.path;
+    var vp = card.cw && card.cw.status === "match" && card.cw.paths && card.cw.paths[0];
+    document.getElementById("votd-open").href = ROOT + ((P.off().indexOf("ce") >= 0 && vp) ? vp : card.path);
     document.getElementById("votd-today").hidden = !shuffled;
     paintSave();
   }
@@ -213,7 +214,7 @@
   });
   document.addEventListener("prefs-changed", function () {
     if (card) draw(0);
-    if ((P.get().off || []).indexOf(chipEd) >= 0) {
+    if (P.off().indexOf(chipEd) >= 0) {
       chipEd = chipEd === "ce" ? "vu" : "ce";
       document.querySelectorAll("[data-chip-ed]").forEach(function (x) { x.setAttribute("aria-checked", x.dataset.chipEd === chipEd ? "true" : "false"); });
       document.querySelectorAll(".tile .tile-btn[aria-expanded=true]").forEach(function (x) { fillChips(x.closest(".tile")); });

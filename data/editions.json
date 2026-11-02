@@ -1,14 +1,5 @@
 [
   {
-    "id": "ce",
-    "short": "Baroda Text",
-    "short_kn": "ಬರೋಡಾ ಪರಿಷ್ಕೃತ ಪಾಠ",
-    "name": "Baroda Critical Text",
-    "description": "The reconstructed text published by the Oriental Institute, Baroda (1960–75), as digitised in GRETIL.",
-    "source_key": "ce",
-    "citation": "Vālmīki Rāmāyaṇa, Baroda Critical Edition"
-  },
-  {
     "id": "vu",
     "short": "Traditional Text",
     "short_kn": "ಪರಂಪರಾಗತ ಪಾಠ",
@@ -17,5 +8,14 @@
     "source_key": "vu",
     "citation": "Vālmīki Rāmāyaṇa, Vulgate (Sanskrit Wikisource text)",
     "source_label": "Numbered in source"
+  },
+  {
+    "id": "ce",
+    "short": "Baroda Text",
+    "short_kn": "ಬರೋಡಾ ಪರಿಷ್ಕೃತ ಪಾಠ",
+    "name": "Baroda Critical Text",
+    "description": "The reconstructed text published by the Oriental Institute, Baroda (1960–75), as digitised in GRETIL.",
+    "source_key": "ce",
+    "citation": "Vālmīki Rāmāyaṇa, Baroda Critical Edition"
   }
 ]

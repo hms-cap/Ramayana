@@ -268,7 +268,11 @@ def build_daily(out: Path, editions, titles: dict) -> dict:
     def metre_of(r):
         return r.get("meter")
 
-    chosen = daily.select(recs, WORDS, metre_of)
+    def has_match(r):
+        cw = crosswalk_for(r, ed)
+        return bool(cw) and cw["status"] == "match" and len(cw["links"]) == 1
+
+    chosen = daily.select(recs, WORDS, metre_of, has_match)
 
     def card(r):
         v = render_verse(r, ed)

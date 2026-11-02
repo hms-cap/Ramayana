@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% from "_strip.html" import strip %}
 {% block main %}
+{% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
 <section class="hero hero-slim">
   <h1 lang="kn">ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ</h1>
   <p class="hero-sa" lang="sa">वाल्मीकिरामायणम्</p>
@@ -20,7 +20,7 @@
       </div>
     </header>
     <div class="votd-view" aria-live="polite"><div class="votd-slide" role="group" aria-roledescription="slide" tabindex="0">
-      <noscript>The verse of the day needs JavaScript. <a href="{{ ed.id }}/1/1/">Begin at 1.1</a>.</noscript>
+      <noscript>The verse of the day needs JavaScript. <a href="vu/1/1/">Begin at 1.1</a>.</noscript>
     </div></div>
     <div class="votd-dots" role="tablist" aria-label="Cards"></div>
   </section>
@@ -34,9 +34,8 @@
     </section>
     <section class="cont" id="begin">
       <h2>Begin</h2>
-      <p><a class="btn" href="{{ ed.id }}/1/1/">Bālakāṇḍa 1.1</a> <a class="link" href="search/">Search the text</a></p>
+      <p><a class="btn" href="{{ vu_e.id }}/1/1/">Bālakāṇḍa 1.1</a> <a class="link" href="search/">Search the text</a></p>
     </section>
-    <a class="mybtn" href="my/"><span aria-hidden="true">★</span> My list <b class="badge-n" hidden></b></a>
   </aside>
 </div>
 
@@ -54,7 +53,7 @@
       <button type="button" class="tile-btn" aria-expanded="false" aria-controls="chips{{ k.n }}">
         <span class="tn" lang="kn">{{ k.n_knda }}</span>
         <span class="tk" lang="kn">{{ k.kn }}</span>
-        <span class="tc">{{ k.en }} · <span data-ed="ce">{{ eds[0].kandas[i].sargas }}</span><span data-ed="vu"><span class="sep"> / </span>{{ eds[1].kandas[i].sargas }}</span> sargas</span>
+        <span class="tc">{{ k.en }} · <span data-ed="vu">{{ vu_e.kandas[i].sargas }}</span><span data-ed="ce"><span class="sep"> / </span>{{ ce_e.kandas[i].sargas }}</span> sargas</span>
       </button>
       <div class="chips" id="chips{{ k.n }}" hidden></div>
     </li>
@@ -62,11 +61,5 @@
   </ul>
 </section>
 
-<section class="library">
-  <h2>Editions</h2>
-  {% for e in eds %}
-  {{ strip(e, root) }}
-  {% endfor %}
-</section>
 {% endblock %}
 {% block scripts %}<script src="{{ root }}static/home.js"></script>{% endblock %}

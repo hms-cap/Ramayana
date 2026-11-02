@@ -28,7 +28,7 @@ def digest(s: str) -> str:
     return hashlib.sha1(s.encode()).hexdigest()
 
 
-def select(records: list[dict], words: dict, metre_of) -> list[dict]:
+def select(records: list[dict], words: dict, metre_of, accept=None) -> list[dict]:
     """records: CE verse records (uid, k, s, v, lines, flags). Returns N chosen, in card order."""
     elig = []
     for r in records:
@@ -37,6 +37,8 @@ def select(records: list[dict], words: dict, metre_of) -> list[dict]:
         if not 6 <= len(words[r["uid"]]) <= 22:
             continue
         if not metre_of(r):
+            continue
+        if accept and not accept(r):
             continue
         elig.append(r)
     by_k: dict[int, list[dict]] = {}

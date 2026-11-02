@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="kn" data-script="knda" data-theme="light">
+<html lang="kn" data-script="knda" data-theme="light" data-off="ce">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +13,7 @@
 <script>
 (function(){try{var p=JSON.parse(localStorage.getItem("vr-prefs")||"{}");var d=document.documentElement;
 if(p.script)d.dataset.script=p.script;if(p.savarna)d.dataset.savarna="1";if(p.scan)d.dataset.scan="1";
-if(p.size)d.dataset.size=p.size;if(p.off)d.dataset.off=p.off.join(" ");d.dataset.theme=p.theme||"light";}catch(e){}})();
+if(p.size)d.dataset.size=p.size;d.dataset.off=Array.isArray(p.off)?p.off.join(" "):"ce";d.dataset.theme=p.theme||"light";}catch(e){}})();
 </script>
 </head>
 <body class="page-{{ page }}" data-root="{{ root }}" data-ed="{{ cur_ed|default('') }}">
@@ -83,7 +83,6 @@ if(p.size)d.dataset.size=p.size;if(p.off)d.dataset.off=p.off.join(" ");d.dataset
 </div>
 <nav class="tabbar" aria-label="Main">
   <a href="{{ root }}"{% if page == 'home' %} aria-current="page"{% endif %}><span aria-hidden="true">⌂</span>Home</a>
-  <a href="{{ root }}ce/"{% if page in ('edition', 'kanda', 'sarga') %} aria-current="page"{% endif %}><span aria-hidden="true">☰</span>Library</a>
   <a href="{{ root }}search/"{% if page == 'search' %} aria-current="page"{% endif %}><span aria-hidden="true">⌕</span>Search</a>
   <a href="{{ root }}my/"{% if page == 'my' %} aria-current="page"{% endif %}><span aria-hidden="true">★</span>My<b class="badge-n" hidden></b></a>
 </nav>

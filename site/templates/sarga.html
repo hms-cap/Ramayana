@@ -58,7 +58,9 @@
           </dl>
           {% if v.has_words %}<button type="button" class="wbw-btn" aria-expanded="false">Word by word</button>
           <div class="wbw" hidden></div>
-          {% elif cw and cw.status == 'match' and cw.links and ed.id == 'vu' %}<p class="wbw-link" data-ed="ce"><a href="{{ root }}{{ cw.links[0].path }}">Word-by-word analysis (Baroda Text {{ cw.links[0].ref }})</a></p>{% endif %}
+          {% elif cw and cw.status == 'match' and cw.links|length == 1 and ed.id == 'vu' %}<button type="button" class="wbw-btn" aria-expanded="false" data-words="{{ cw.links[0].path.split('#')[0] }}words.json" data-vn="{{ cw.links[0].path.split('#v')[1] }}">Word by word</button>
+          <div class="wbw" hidden></div>
+          {% endif %}
           <button type="button" class="chant-here">Chant from here</button>
           <button type="button" class="cite">Copy citation</button>
           <span class="cite-ok" role="status"></span>

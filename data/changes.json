@@ -1,5 +1,14 @@
 [
  [
+  "0.4.3",
+  "2026-11-02",
+  [
+   "The Traditional Text is now the default; the Baroda Text is optional and can be turned on in Options.",
+   "Word by word now also works on Traditional Text verses that match a Baroda verse.",
+   "Home no longer has the Editions section or the My list button; the phone tab bar has Home, Search and My."
+  ]
+ ],
+ [
   "0.4.2",
   "2026-11-02",
   [

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.3 — 2026-11-02
+- Traditional Text (`vu`) is the default edition; Baroda Text (`ce`) is off until enabled in Options (`prefs.off` defaults to `["ce"]`). Editions listed vu first.
+- Home: removed the Editions strips and the My list button. Tab bar: Home, Search, My.
+- Word by word on matched Traditional verses reads the Baroda sarga's `words.json`. Daily cards are limited to Baroda verses with a one-to-one Traditional match, so Open works with either text.
+
 ## 0.4.2 — 2026-11-02
 - Light theme is the default; Options → Theme: Light / Dark / Same as device (`data-theme` on `<html>`: `light`, `dark`, `system`).
 

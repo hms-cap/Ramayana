@@ -13,18 +13,19 @@
     ["savarna", "scan"].forEach(function (k) { if (qp.has(k)) prefs[k] = qp.get(k) === "1"; });
   } catch (e) { /* old browser */ }
 
+  function offList() { return Array.isArray(prefs.off) ? prefs.off : ["ce"]; }   // Baroda text is optional, off until chosen
   function apply() {
     root.dataset.script = prefs.script || "knda";
     if (prefs.savarna) root.dataset.savarna = "1"; else delete root.dataset.savarna;
     if (prefs.scan) root.dataset.scan = "1"; else delete root.dataset.scan;
     if (prefs.size) root.dataset.size = prefs.size; else delete root.dataset.size;
-    root.dataset.off = (prefs.off || []).join(" ");
-    document.querySelectorAll("[data-ed-toggle]").forEach(function (i) { i.checked = (prefs.off || []).indexOf(i.dataset.edToggle) < 0; });
+    root.dataset.off = offList().join(" ");
+    document.querySelectorAll("[data-ed-toggle]").forEach(function (i) { i.checked = offList().indexOf(i.dataset.edToggle) < 0; });
     var note = document.getElementById("off-note");
-    if (note) note.hidden = (prefs.off || []).indexOf(document.body.dataset.ed) < 0 || !document.body.dataset.ed;
+    if (note) note.hidden = offList().indexOf(document.body.dataset.ed) < 0 || !document.body.dataset.ed;
     // search: pick an enabled edition
     var es = document.getElementById("ed");
-    if (es && (prefs.off || []).indexOf(es.value) >= 0) { var ok = [].filter.call(es.options, function (o) { return prefs.off.indexOf(o.value) < 0; })[0]; if (ok) es.value = ok.value; }
+    if (es && offList().indexOf(es.value) >= 0) { var ok = [].filter.call(es.options, function (o) { return offList().indexOf(o.value) < 0; })[0]; if (ok) es.value = ok.value; }
     root.dataset.theme = prefs.theme || "light";
     document.querySelectorAll("[data-pref-theme]").forEach(function (i) { i.checked = (prefs.theme || "light") === i.value; });
     var tc = document.querySelector('meta[name=theme-color]');
@@ -41,6 +42,7 @@
     document.dispatchEvent(new CustomEvent("prefs-changed", { detail: prefs }));
   }
   window.VRPrefs = {
+    off: function () { return Array.isArray(prefs.off) ? prefs.off : ["ce"]; },
     get: function () { return prefs; },
     set: function (k, v) { prefs[k] = v; save(prefs); apply(); }
   };
@@ -59,7 +61,7 @@
       if (!open && history.replaceState) history.replaceState(null, "", "#" + v.closest(".verse").id);
       return;
     }
-    if (e.target.closest("[data-ed-on]")) { prefs.off = []; save(prefs); apply(); return; }
+    if (e.target.closest("[data-ed-on]")) { prefs.off = offList().filter(function (x) { return x !== document.body.dataset.ed; }); save(prefs); apply(); return; }
     var w = e.target.closest(".wbw-btn");
     if (w) { toggleWords(w); return; }
     var c = e.target.closest(".cite");
@@ -70,7 +72,7 @@
   document.addEventListener("change", function (e) {
     var t = e.target;
     if (t.dataset.edToggle) {
-      var off = (prefs.off || []).filter(function (x) { return x !== t.dataset.edToggle; });
+      var off = offList().filter(function (x) { return x !== t.dataset.edToggle; });
       if (!t.checked) off.push(t.dataset.edToggle);
       if (off.length >= document.querySelectorAll("[data-ed-toggle]").length) { t.checked = true; return; }   // keep at least one text
       prefs.off = off; save(prefs); apply(); return;
@@ -132,23 +134,29 @@
     box.dataset.script = sc;
   }
   function root_href() { return document.querySelector(".reader").dataset.root || "../../../"; }
+  var wordsCache = {};
+  function loadWords(u) { return wordsCache[u] || (wordsCache[u] = loadJSON(u)); }
   function toggleWords(btn) {
     var box = btn.parentNode.querySelector(".wbw"), open = btn.getAttribute("aria-expanded") === "true";
     btn.setAttribute("aria-expanded", open ? "false" : "true");
     box.hidden = open;
     if (open) return;
-    var vnum = btn.closest(".verse").id.slice(1);
-    Promise.all([wordsData || loadJSON("words.json"), grammarData || loadJSON(root_href() + "data/grammar.json")]).then(function (r) {
+    var vnum = btn.dataset.vn || btn.closest(".verse").id.slice(1);
+    var wurl = btn.dataset.words ? root_href() + btn.dataset.words : "words.json";
+    box.dataset.words = wurl; box.dataset.vn = vnum;
+    Promise.all([loadWords(wurl), grammarData || loadJSON(root_href() + "data/grammar.json")]).then(function (r) {
       wordsData = r[0]; grammarData = r[1];
       var units = wordsData.verses[vnum];
       if (units) renderWords(box, units); else box.textContent = "No word analysis for this verse.";
     }, function () { box.textContent = "Could not load the word analysis."; });
   }
   document.addEventListener("prefs-changed", function () {
-    if (!wordsData) return;
     document.querySelectorAll(".wbw:not([hidden])").forEach(function (box) {
-      var units = wordsData.verses[box.closest(".verse").id.slice(1)];
-      if (units) renderWords(box, units);
+      if (!box.dataset.words) return;
+      loadWords(box.dataset.words).then(function (w) {
+        wordsData = w; var units = w.verses[box.dataset.vn];
+        if (units) renderWords(box, units);
+      });
     });
   });
 
