@@ -154,12 +154,14 @@
     var vp = card.cw && card.cw.status === "match" && card.cw.paths && card.cw.paths[0];
     document.getElementById("votd-open").href = ROOT + ((P.off().indexOf("ce") >= 0 && vp) ? vp : card.path);
     document.getElementById("votd-today").hidden = !shuffled;
+    var wb = document.getElementById("votd-words"), hasW = secs.some(function (x) { return x.key === "words"; });
+    wb.setAttribute("aria-disabled", hasW ? "false" : "true"); wb.setAttribute("aria-pressed", secs[cardNo].key === "words" ? "true" : "false");
     paintSave();
   }
   function saveId() { return "dm-ce-" + card.ref; }
   function paintSave() {
     var b = document.getElementById("votd-save"), on = S.has(saveId());
-    b.setAttribute("aria-pressed", on); b.firstChild.nodeValue = on ? "★ " : "☆ "; b.querySelector("span").textContent = on ? "Saved" : "Save";
+    b.setAttribute("aria-pressed", on); b.setAttribute("aria-label", on ? "Saved. Tap to remove" : "Save"); b.title = on ? "Saved" : "Save";
   }
   function cardAt(k) { return getJSON(ROOT + "data/daily/c" + Math.floor(k / ix.chunk) + ".json").then(function (a) { return a[k % ix.chunk]; }); }
   function show(k, isShuffle) {
@@ -176,7 +178,7 @@
   votd.addEventListener("click", function (e) {
     var d = e.target.closest("[data-card]");
     if (d) { cardNo = +d.dataset.card; draw(0); return; }
-    if (e.target.closest(".votd-actions") || e.target.closest(".votd-dots")) return;
+    if (e.target.closest(".votd-actions") || e.target.closest(".votd-dots") || e.target.closest(".hole")) return;
     if (e.target.closest(".votd-slide")) { var n = plain(card).length; cardNo = (cardNo + 1) % n; draw(1); }
   });
   votd.addEventListener("keydown", function (e) {
@@ -196,6 +198,11 @@
   document.getElementById("votd-another").addEventListener("click", function () {
     if (!ix) return; var k; do { k = Math.floor(Math.random() * ix.n); } while (k === idx);
     show(k, true);
+  });
+  document.getElementById("votd-words").addEventListener("click", function () {
+    var secs = plain(card), at = -1; secs.forEach(function (x, i) { if (x.key === "words") at = i; });
+    if (at < 0) { this.title = "No word-by-word for this śloka"; return; }
+    cardNo = at; draw(1);
   });
   document.getElementById("votd-today").addEventListener("click", function () { show(today, false); });
   document.getElementById("votd-save").addEventListener("click", function () {

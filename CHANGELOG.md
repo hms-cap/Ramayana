@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.2 — 2026-11-03
+- Verse of the day: palm-leaf manuscript card; actions are icon buttons (`#votd-another`, `-today`, `-save`, `-words`, `-share`, `-open`). The word-by-word icon jumps to the words card and is dimmed when a verse has none.
+
 ## 0.5.1 — 2026-11-03
 - Home: Continue and Begin merged into one card (`#continue`) with play / resume icons.
 

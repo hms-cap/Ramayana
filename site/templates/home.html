@@ -10,20 +10,22 @@
 <div class="home-grid">
   <section class="votd" id="votd" aria-roledescription="carousel" aria-label="Verse of the day"
            data-fallback='{{ fallback|e }}'>
+    <span class="hole l" aria-hidden="true"></span><span class="hole r" aria-hidden="true"></span>
     <header class="votd-head">
       <h2><span class="votd-kind">Today's śloka</span> · <span class="votd-name">…</span></h2>
-      <div class="votd-actions">
-        <button type="button" class="act" id="votd-another" title="A different verse">⇄ Another</button>
-        <button type="button" class="act" id="votd-today" hidden>Today's</button>
-        <button type="button" class="act" id="votd-save" aria-pressed="false">☆ <span>Save</span></button>
-        <a class="act" id="votd-open" href="#">Open →</a>
-        <button type="button" class="act" id="votd-share">Share</button>
-      </div>
     </header>
     <div class="votd-view" aria-live="polite"><div class="votd-slide" role="group" aria-roledescription="slide" tabindex="0">
       <noscript>The verse of the day needs JavaScript. <a href="vu/1/1/">Begin at 1.1</a>.</noscript>
     </div></div>
     <div class="votd-dots" role="tablist" aria-label="Cards"></div>
+    <div class="votd-actions">
+      <button type="button" class="vb" id="votd-another" aria-label="A different śloka" title="A different śloka"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h3l8 8h3M3 14h3l2-2M12 8l2-2h3M15 4l2 2-2 2M15 12l2 2-2 2"/></svg></button>
+      <button type="button" class="vb" id="votd-today" aria-label="Back to today's śloka" title="Back to today's" hidden><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10a6 6 0 1 1 2 4.5M4 15v-4h4"/></svg></button>
+      <button type="button" class="vb" id="votd-save" aria-pressed="false" aria-label="Save" title="Save"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10v14l-5-3.5L5 17z"/></svg></button>
+      <button type="button" class="vb" id="votd-words" aria-label="Word by word" title="Word by word"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h14M3 10h8M3 15h14"/><path d="M14 8.5l2 2 2-2" stroke-width="1.5"/></svg></button>
+      <button type="button" class="vb" id="votd-share" aria-label="Share as picture" title="Share as picture"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13V3M6 7l4-4 4 4M4 11v5h12v-5"/></svg></button>
+      <a class="vb go" id="votd-open" href="#" aria-label="Open in reader" title="Open in reader"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+    </div>
   </section>
 
   <aside class="home-side">
