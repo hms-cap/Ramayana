@@ -19,11 +19,18 @@
 {%- endif -%}
 {%- if n != 7 -%}<path d="M12 112H148" stroke-width="1.2"/>{%- endif -%}
 </svg>{% endmacro %}
-{% macro kcard(k, vu, ce, tag='button') %}
-<{{ tag }} class="kcard" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-en="{{ k.en }}" data-n-vu="{{ vu }}" data-n-ce="{{ ce }}" style="--kb:{{ PAL[k.n][0] }};--kp:{{ PAL[k.n][1] }}"{% if tag == 'button' %} type="button" aria-haspopup="dialog"{% endif %}>
-  {{ art(k.n) }}
+{% macro workchip(W) %}
+<button type="button" class="workchip" data-open-sheet="worksheet" aria-haspopup="dialog" aria-label="Choose a work. Now: {{ W.en }}">
+  <span class="wtile sm" style="--wb:{{ W.theme }}" lang="kn" aria-hidden="true">{{ W.tile }}</span>
+  <span class="wc-t"><b lang="kn">{{ W.kn }}</b><small>{{ W.en }}</small></span>
+  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg>
+</button>
+{% endmacro %}
+{% macro kcard(k, vu, ce, tag='button', unit='sargas') %}
+<{{ tag }} class="kcard" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-en="{{ k.en }}" data-n-vu="{{ vu }}" data-n-ce="{{ ce }}" style="--kb:{{ k.kb or PAL[k.n][0] }};--kp:{{ k.kp or PAL[k.n][1] }}"{% if tag == 'button' %} type="button" aria-haspopup="dialog"{% endif %}>
+  {% if k.svg %}{{ k.svg|safe }}{% else %}{{ art(k.n) }}{% endif %}
   <span class="kc-n" lang="kn" aria-hidden="true">{{ k.n_knda }}</span>
   <span class="kc-t" lang="kn">{{ k.kn }}</span>
-  <span class="kc-c">{{ k.en }} · <span data-ed="vu">{{ vu }}</span><span data-ed="ce"><span class="sep"> / </span>{{ ce }}</span> sargas</span>
+  <span class="kc-c">{{ k.en }} · <span data-ed="vu">{{ vu }}</span><span data-ed="ce"><span class="sep"> / </span>{{ ce }}</span> {{ unit }}</span>
 </{{ tag }}>
 {% endmacro %}

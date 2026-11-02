@@ -2,8 +2,8 @@
 (function () {
   "use strict";
   var T = window.Translit, P = window.VRPrefs, S = window.VRSaved;
-  var ROOT = document.body.dataset.root || "";
-  var SCR = ["knda", "deva", "iast"], LAST = "vr.last";
+  var B = document.body.dataset, ROOT = B.root || "", WROOT = B.wroot || "", PRE = B.prefix || "", MBH = B.work === "mbh";
+  var SCR = ["knda", "deva", "iast"], LAST = MBH ? "vr.last.mbh" : "vr.last";
   function sc() { var s = (P.get().script) || "knda"; return SCR.indexOf(s) >= 0 ? s : "knda"; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function langOf(x) { return x === "knda" ? "sa-Knda" : x === "deva" ? "sa-Deva" : "sa-Latn"; }
@@ -38,9 +38,12 @@
         return '<li><a href="' + ROOT + it.href + '">' + label + '</a> <button type="button" class="act" data-unsave="' + esc(it.id) + '" aria-label="Remove">✕</button></li>';
       }).join("");
       document.getElementById("my-empty").hidden = l.length > 0;
-      var last = lastPlace();
-      document.getElementById("my-last").innerHTML = last
-        ? '<a href="' + ROOT + last.href.replace(/^\/[^/]*\//, "").replace(/^\//, "") + '">' + esc(last.titles[s] || last.src) + ' · ' + esc(last.src) + ' ' + last.v + '</a>' : "Nothing yet.";
+      var out = [];
+      ["vr.last", "vr.last.mbh"].forEach(function (key) {
+        var last = null; try { last = JSON.parse(localStorage.getItem(key) || "null"); } catch (e) { /* ignore */ }
+        if (last) out.push('<a href="' + ROOT + last.href.replace(/^\/[^/]*\//, "").replace(/^\//, "") + '">' + esc(last.titles[s] || last.src) + ' · ' + esc(last.src) + ' ' + last.v + '</a>');
+      });
+      document.getElementById("my-last").innerHTML = out.length ? out.join("<br>") : "Nothing yet.";
     };
     document.addEventListener("click", function (e) {
       var b = e.target.closest("[data-unsave]"); if (!b) return;
@@ -54,6 +57,13 @@
   var votd = document.getElementById("votd");
   if (!votd) return;
 
+  /* opening the app fresh (no page of this site before it) returns to the work used last */
+  if (!MBH && document.body.classList.contains("page-home")) {
+    var fresh = true;
+    try { fresh = !document.referrer || new URL(document.referrer).origin !== location.origin; } catch (e) { /* ignore */ }
+    try { if (fresh && window.VRPrevWork === "mbh" && !/[?&]work=ram/.test(location.search)) { location.replace(ROOT + "mbh/"); return; } } catch (e) { /* ignore */ }
+  }
+
   /* ---- greeting date, quick Chant chip ---- */
   var gd = document.getElementById("greet-date");
   if (gd) { try { gd.textContent = new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" }); } catch (e) { /* ignore */ } }
@@ -62,7 +72,7 @@
     var l = lastPlace(), base = location.pathname.replace(/index\.html$/, ""), path = "vu/1/1/", at = 0;
     if (l) { path = l.href.indexOf(base) === 0 ? l.href.slice(base.length) : l.href.replace(/^\/[^/]+\//, ""); at = l.i; }
     try { sessionStorage.setItem("vr.chant", JSON.stringify({ moves: 1, fromList: true, origin: location.href, resume: at })); } catch (e) { /* ignore */ }
-    location.assign(ROOT + path.replace(/#.*$/, ""));
+    location.assign(WROOT + path.replace(/#.*$/, ""));
   });
 
   /* ---- Continue ---- */
@@ -81,14 +91,14 @@
     document.getElementById("cont-where").lang = "";
     document.getElementById("cont-where").textContent = (l.titles[s] || l.src) + " · verse " + l.v + " of " + l.of;
     document.getElementById("cont-bar").style.width = Math.round(100 * (l.i + 1) / l.of) + "%";
-    document.getElementById("cont-go").href = ROOT + path;
+    document.getElementById("cont-go").href = WROOT + path;
   })();
 
   /* ---- verse of the day ---- */
   var grammar = null, ix = null, card = null, idx = 0, cardNo = 0, shuffled = false, today = null;
   var LAB = {
     verse: ["Śloka", "ಶ್ಲೋಕ"], words: ["Words and grammar", "ಪದಗಳು ಮತ್ತು ವ್ಯಾಕರಣ"], metre: ["Metre", "ಛಂದಸ್ಸು"],
-    ctx: ["In the epic", "ರಾಮಾಯಣದಲ್ಲಿ"], other: ["Other recension", "ಇನ್ನೊಂದು ಪಾಠ"], m: ["Meaning", "ಅರ್ಥ"], u: ["Use and significance", "ಬಳಕೆ ಮತ್ತು ಮಹತ್ವ"],
+    ctx: ["In the epic", B.epicKn || "ರಾಮಾಯಣದಲ್ಲಿ"], other: ["Other recension", "ಇನ್ನೊಂದು ಪಾಠ"], m: ["Meaning", "ಅರ್ಥ"], u: ["Use and significance", "ಬಳಕೆ ಮತ್ತು ಮಹತ್ವ"],
     kind: ["Today's śloka", "ಇಂದಿನ ಶ್ಲೋಕ"], another: ["Another śloka", "ಇನ್ನೊಂದು ಶ್ಲೋಕ"]
   };
   var CWSTAT = {
@@ -122,7 +132,7 @@
     }), note: kn ? "ನಿಘಂಟಿನ ಅರ್ಥಗಳು (ಇಂಗ್ಲಿಷ್); ಸ್ವಯಂಚಾಲಿತ" : "Dictionary senses of each base word, chosen automatically" });
     if (c.meter) out.push({ key: "metre", text: c.meter, scan: c.scan });
     var x = c.ctx, kname = s === "knda" ? x.kn : s === "deva" ? x.deva : x.iast, nn = function (n) { return s === "iast" ? n : T.digits(n, s); };
-    out.push({ key: "ctx", text: kname + " · " + (kn ? "ಸರ್ಗ " : s === "deva" ? "सर्गः " : "sarga ") + nn(x.s) + (x.title ? " — " + x.title : "") + " · " + nn(x.v) + " / " + nn(x.of) });
+    out.push({ key: "ctx", text: kname + " · " + (kn ? (B.subKn || "ಸರ್ಗ") + " " : s === "deva" ? (B.subDeva || "सर्गः") + " " : (B.subEn || "sarga") + " ") + nn(x.s) + (x.title ? " — " + x.title : "") + " · " + nn(x.v) + " / " + nn(x.of) });
     if (c.cw) out.push({ key: "other", text: CWSTAT[c.cw.status][kn ? 1 : 0] + " " + (kn ? "ಪರಂಪರಾಗತ ಪಾಠ" : "Traditional Text") + (c.cw.refs.length ? " " + c.cw.refs.join(", ") : "") });
     if (c.u) out.push({ key: "u", text: c.u[kn ? 1 : 0] });
     return out;
@@ -152,18 +162,18 @@
     var dots = votd.querySelector(".votd-dots");
     dots.innerHTML = secs.map(function (x, i) { return '<button type="button" role="tab" aria-selected="' + (i === cardNo) + '" aria-label="' + esc(L(x.key, s)) + '" data-card="' + i + '"></button>'; }).join("");
     var vp = card.cw && card.cw.status === "match" && card.cw.paths && card.cw.paths[0];
-    document.getElementById("votd-open").href = ROOT + ((P.off().indexOf("ce") >= 0 && vp) ? vp : card.path);
+    document.getElementById("votd-open").href = WROOT + ((P.off().indexOf("ce") >= 0 && vp) ? vp : card.path);
     document.getElementById("votd-today").hidden = !shuffled;
     var wb = document.getElementById("votd-words"), hasW = secs.some(function (x) { return x.key === "words"; });
     wb.setAttribute("aria-disabled", hasW ? "false" : "true"); wb.setAttribute("aria-pressed", secs[cardNo].key === "words" ? "true" : "false");
     paintSave();
   }
-  function saveId() { return "dm-ce-" + card.ref; }
+  function saveId() { return (MBH ? "dm-mbh-vu-" : "dm-ce-") + card.ref; }
   function paintSave() {
     var b = document.getElementById("votd-save"), on = S.has(saveId());
     b.setAttribute("aria-pressed", on); b.setAttribute("aria-label", on ? "Saved. Tap to remove" : "Save"); b.title = on ? "Saved" : "Save";
   }
-  function cardAt(k) { return getJSON(ROOT + "data/daily/c" + Math.floor(k / ix.chunk) + ".json").then(function (a) { return a[k % ix.chunk]; }); }
+  function cardAt(k) { return getJSON(WROOT + "data/daily/c" + Math.floor(k / ix.chunk) + ".json").then(function (a) { return a[k % ix.chunk]; }); }
   function show(k, isShuffle) {
     return cardAt(k).then(function (c) { card = c; idx = k; shuffled = isShuffle; cardNo = 0; draw(0); }, function () {
       card = JSON.parse(votd.dataset.fallback); shuffled = false; cardNo = 0; draw(0);
@@ -172,7 +182,7 @@
   var day = Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000);
   card = JSON.parse(votd.dataset.fallback);
   Promise.all([getJSON(ROOT + "data/grammar.json").then(function (g) { grammar = g; }, function () { }),
-    getJSON(ROOT + "data/daily/index.json").then(function (i) { ix = i; today = (day * 7919) % ix.n; })]).then(function () { return show(today, false); },
+    getJSON(WROOT + "data/daily/index.json").then(function (i) { ix = i; today = (day * 7919) % ix.n; })]).then(function () { return show(today, false); },
     function () { draw(0); });
 
   votd.addEventListener("click", function (e) {
@@ -206,7 +216,7 @@
   });
   document.getElementById("votd-today").addEventListener("click", function () { show(today, false); });
   document.getElementById("votd-save").addEventListener("click", function () {
-    S.toggle({ id: saveId(), kind: "verse", href: card.path, label: "CE " + card.ref, slp: card.slp }); paintSave(); badge();
+    S.toggle({ id: saveId(), kind: "verse", href: PRE + card.path, label: (MBH ? "Mahābhārata " : "CE ") + card.ref, slp: card.slp }); paintSave(); badge();
   });
   document.addEventListener("prefs-changed", function () {
     if (card) draw(0);
@@ -256,9 +266,9 @@
     });
     var cardH = y - cardTop + 20, total = cardTop + cardH + 130;
     if (drawIt) {
-      txt("ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", pad, 100, "400 44px 'Tiro Kannada',serif", "#FFFBF2");
+      txt(MBH ? "ಮಹಾಭಾರತ" : "ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", pad, 100, "400 44px 'Tiro Kannada',serif", "#FFFBF2");
       txt(L("kind", s), pad, 150, "500 30px " + ui, "#E8D9A8");
-      txt("hms-cap.github.io/Ramayana", Wd / 2, total - 56, "400 26px " + ui, "#E8D9A8", "center");
+      txt(MBH ? "hms-cap.github.io/Ramayana/mbh" : "hms-cap.github.io/Ramayana", Wd / 2, total - 56, "400 26px " + ui, "#E8D9A8", "center");
     }
     return { total: total, cardH: cardH };
   }

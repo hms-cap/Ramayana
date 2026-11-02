@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "etl"))
 import daily  # noqa: E402
 import grammar  # noqa: E402
+import mbh_art  # noqa: E402
 import meter  # noqa: E402
 from translit import iast_to_slp1, render, slp1_to_brahmic, to_digits  # noqa: E402
 
@@ -39,15 +40,46 @@ KANDAS = [
 ]
 
 
-def load_editions():
-    return json.loads((ROOT / "data" / "editions.json").read_text(encoding="utf-8"))
+PARVANS = [(en.lower().replace(" ", ""), kn, en) for kn, en in mbh_art._NAMES]
+
+WORKS = {
+    "ram": dict(id="ram", prefix="", kn="ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", en="Vālmīki Rāmāyaṇa", short_en="Rāmāyaṇa", short_kn="ರಾಮಾಯಣ",
+                tile="ರಾ", theme="#1B2358", blurb="Sanskrit text with Kannada",
+                editions="editions.json", units=KANDAS, unit="kāṇḍa", units_pl="kāṇḍas", Unit="Kāṇḍa",
+                sub="sarga", subs="sargas", Sub="Sarga", sub_kn="ಸರ್ಗ", sub_deva="सर्गः", sub_iast="sargaḥ",
+                epic_kn="ರಾಮಾಯಣದಲ್ಲಿ", lean=False, site="hms-cap.github.io/Ramayana",
+                credit='Baroda Critical Edition text from <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, CC BY-NC-SA 4.0; Traditional (Vulgate) text from <a href="https://sa.wikisource.org/">Sanskrit Wikisource</a>, CC BY-SA 4.0. Not for commercial use.'),
+    "mbh": dict(id="mbh", prefix="mbh/", kn="ಮಹಾಭಾರತ", en="Mahābhārata", short_en="Mahābhārata", short_kn="ಮಹಾಭಾರತ",
+                tile="ಮ", theme="#3B1220", blurb="Sanskrit text with Kannada",
+                editions="editions_mbh.json", units=PARVANS, unit="parvan", units_pl="parvans", Unit="Parvan",
+                sub="adhyāya", subs="adhyāyas", Sub="Adhyāya", sub_kn="ಅಧ್ಯಾಯ", sub_deva="अध्यायः", sub_iast="adhyāyaḥ",
+                epic_kn="ಮಹಾಭಾರತದಲ್ಲಿ", lean=True, site="hms-cap.github.io/Ramayana/mbh",
+                credit='Pune critical text © Bhandarkar Oriental Research Institute, via <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, shown with attribution for non-commercial reading; Traditional (Kumbakonam) text from <a href="https://github.com/sarit/SARIT-corpus">SARIT</a>, CC BY-SA 3.0. Not for commercial use.'),
+}
+
+
+def load_editions(W=None):
+    return json.loads((ROOT / "data" / (W or WORKS["ram"])["editions"]).read_text(encoding="utf-8"))
+
+
+def norm_path(W: dict, ed: str) -> Path:
+    base = ROOT / "data" / "normalized"
+    return (base / "mbh" if W["id"] == "mbh" else base) / f"{ed}.jsonl"
+
+
+def unit_info(W: dict, k: int) -> dict:
+    iast, kn, en = W["units"][k - 1]
+    d = {"n": k, "iast": iast, "kn": kn, "en": en,
+         "deva": slp1_to_brahmic(iast_to_slp1(iast), "deva"),
+         "n_knda": to_digits(k, "knda")}
+    if W["id"] == "mbh":
+        bg, panel = mbh_art.PAL[(k - 1) % 6]
+        d.update(kb=bg, kp=panel, svg=mbh_art.svg(k))
+    return d
 
 
 def kanda_info(k: int) -> dict:
-    iast, kn, en = KANDAS[k - 1]
-    return {"n": k, "iast": iast, "kn": kn, "en": en,
-            "deva": slp1_to_brahmic(iast_to_slp1(iast), "deva"),
-            "n_knda": to_digits(k, "knda")}
+    return unit_info(WORKS["ram"], k)
 
 
 def end_marks(script: str, ref: str) -> tuple[str, str]:
@@ -85,6 +117,22 @@ def render_verse(rec: dict, ed: dict) -> dict:
         "crosswalk": crosswalk_for(rec, ed),
         "flags": rec.get("flags", []),
     }
+
+
+def lean_verse(rec: dict) -> dict:
+    """Mahābhārata verse: IAST only (lean.js builds Kannada and Devanāgarī from it)."""
+    slp_lines = [" ".join(iast_to_slp1(p) for p in line) for line in rec["lines"]]
+    ref = f'{rec["k"]}.{rec["s"]}.{rec["v"]}'
+    mid, last = end_marks("iast", ref)
+    lines = [render(l, "iast") + (last if i == len(slp_lines) - 1 else mid) for i, l in enumerate(slp_lines)]
+    scan = []
+    if rec.get("meter"):
+        met = meter.identify([[iast_to_slp1(p) for p in line] for line in rec["lines"]])
+        scan = [" ".join("".join("ऽ" if w == "G" else "।" for w in pada) for pada in line) for line in met["scansion"]]
+    return {"uid": rec["uid"], "k": rec["k"], "s": rec["s"], "v": rec["v"], "ref": ref, "iast": lines,
+            "meter": rec.get("meter"), "scan": scan, "slp1": " / ".join(slp_lines), "flags": rec.get("flags", []),
+            "ids": [{"label": "GRETIL", "value": rec["gretil_id"]}] if rec.get("gretil_id") else
+                   [{"label": "Source", "value": rec["source_ref"]}] if rec.get("source_ref") else []}
 
 
 _CW = None
@@ -144,47 +192,66 @@ def rec_ids(rec: dict, ed: dict) -> list[dict]:
     return ids
 
 
-def build(out: Path) -> None:
-    editions = load_editions()
+def make_env() -> Environment:
     env = Environment(loader=FileSystemLoader(ROOT / "site" / "templates"),
                       autoescape=select_autoescape(["html"]), trim_blocks=True, lstrip_blocks=True)
     env.filters["knda"] = lambda n: to_digits(n, "knda")
     env.filters["deva"] = lambda n: to_digits(n, "deva")
-    env.globals["rail_kandas"] = [kanda_info(k) for k in range(1, 8)]
-    env.globals["rail_eds"] = editions
-    if out.exists():
-        shutil.rmtree(out)
-    shutil.copytree(ROOT / "site" / "static", out / "static")
-    sources = json.loads((ROOT / "etl" / "sources.json").read_text(encoding="utf-8"))
-    load_words()
-    (out / "data").mkdir(exist_ok=True)
-    (out / "data" / "grammar.json").write_text(
-        json.dumps(grammar.as_json(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    return env
 
-    edition_summaries = []
+
+def build_work(W: dict, out: Path, env: Environment) -> dict:
+    """One work (Rāmāyaṇa at the site root, Mahābhārata under /mbh/). Returns what the shared pages need."""
+    pre = W["prefix"]
+    wdir = out / pre if pre else out
+    up = "../" * len([x for x in pre.split("/") if x])          # work root -> site root
+    editions = load_editions(W)
+    nu = len(W["units"])
+    works_list = [{**w, "n_units": len(w["units"]), "n_eds": len(load_editions(w))} for w in WORKS.values()]
+    base = dict(W=W, works_list=works_list, rail_kandas=[unit_info(W, k) for k in range(1, nu + 1)], rail_eds=editions, editions=editions)
+
+    def ctx(depth: int, **kw) -> dict:
+        return {**base, "wroot": "../" * depth, "root": up + "../" * depth, **kw}
+
+    (wdir / "data").mkdir(parents=True, exist_ok=True)
+    summaries = []
+    ce_titles = {}
     for ed in editions:
-        recs = [json.loads(l) for l in open(ROOT / "data" / "normalized" / f'{ed["id"]}.jsonl', encoding="utf-8")]
+        recs = [json.loads(l) for l in open(norm_path(W, ed["id"]), encoding="utf-8")]
         by_sarga = defaultdict(list)
         for r in recs:
             by_sarga[(r["k"], r["s"])].append(r)
         sarga_keys = sorted(by_sarga)
         titles = {}
         tpath = ROOT / "data" / "normalized" / f'{ed["id"]}_sargas.json'
-        if tpath.exists():
+        if not W["lean"] and tpath.exists():
             for t in json.loads(tpath.read_text(encoding="utf-8")):
                 titles[(t["k"], t["s"])] = t
         kandas = []
-        for k in range(1, 8):
+        for k in range(1, nu + 1):
             ks = [s for (kk, s) in sarga_keys if kk == k]
-            kandas.append({**kanda_info(k), "sargas": len(ks),
+            kandas.append({**unit_info(W, k), "sargas": len(ks),
                            "verses": sum(len(by_sarga[(k, s)]) for s in ks)})
         summary = {**ed, "kandas": kandas, "verses": len(recs), "sargas": len(sarga_keys)}
-        edition_summaries.append(summary)
+        summaries.append(summary)
         if ed["id"] == "ce":
             ce_titles = titles
 
         index_rows = []
         for i, (k, s) in enumerate(sarga_keys):
+            prev_key = sarga_keys[i - 1] if i > 0 else None
+            next_key = sarga_keys[i + 1] if i + 1 < len(sarga_keys) else None
+            page = wdir / ed["id"] / str(k) / str(s) / "index.html"
+            page.parent.mkdir(parents=True, exist_ok=True)
+            if W["lean"]:
+                verses = [lean_verse(r) for r in by_sarga[(k, s)]]
+                page.write_text(env.get_template("sarga.html").render(**ctx(
+                    3, ed=summary, kanda=kandas[k - 1], s=s, title=None, verses=verses, prev=prev_key, next=next_key,
+                    total_in_kanda=kandas[k - 1]["sargas"], page="sarga", alt_href=None, shared=0, has_cw=False,
+                    other_label="", other_id="", iitk=False)), encoding="utf-8")
+                for v in verses:
+                    index_rows.append([k, s, v["v"], v["slp1"]])
+                continue
             verses = [render_verse(r, ed) for r in by_sarga[(k, s)]]
             words = {}
             if ed["id"] == "ce":
@@ -193,12 +260,8 @@ def build(out: Path) -> None:
                         words[v["v"]] = WORDS[v["uid"]]
                 for v in verses:
                     v["has_words"] = v["v"] in words
-            prev_key = sarga_keys[i - 1] if i > 0 else None
-            next_key = sarga_keys[i + 1] if i + 1 < len(sarga_keys) else None
-            page = out / ed["id"] / str(k) / str(s) / "index.html"
-            page.parent.mkdir(parents=True, exist_ok=True)
-            page.write_text(env.get_template("sarga.html").render(
-                root="../../../", ed=summary, editions=editions, kanda=kanda_info(k), s=s,
+            page.write_text(env.get_template("sarga.html").render(**ctx(
+                3, ed=summary, kanda=kanda_info(k), s=s,
                 title=titles.get((k, s)), verses=verses, prev=prev_key, next=next_key,
                 total_in_kanda=kandas[k - 1]["sargas"], page="sarga",
                 alt_href=alt_edition_href(ed, editions, k, s),
@@ -206,7 +269,7 @@ def build(out: Path) -> None:
                 has_cw=any(v["crosswalk"] for v in verses),
                 other_label=_EDITION_LABEL["ce" if ed["id"] == "vu" else "vu"], other_id="ce" if ed["id"] == "vu" else "vu",
                 iitk=any("iitk_restored" in v["flags"] for v in verses),
-            ), encoding="utf-8")
+            )), encoding="utf-8")
             (page.parent / "sarga.json").write_text(json.dumps(
                 {"edition": ed["id"], "kanda": k, "sarga": s,
                  "verses": [{key: v[key] for key in ("uid", "ref", "lines", "meter", "ids", "crosswalk", "flags")}
@@ -220,40 +283,65 @@ def build(out: Path) -> None:
             for v in verses:
                 index_rows.append([k, s, v["v"], v["slp1"]])
 
-        for k in range(1, 8):
+        for k in range(1, nu + 1):
             ks = [s for (kk, s) in sarga_keys if kk == k]
             items = []
             for s in ks:
-                first = render_verse(by_sarga[(k, s)][0], ed)
-                items.append({"s": s, "count": len(by_sarga[(k, s)]), "first": first,
-                              "title": titles.get((k, s))})
-            page = out / ed["id"] / str(k) / "index.html"
-            page.write_text(env.get_template("kanda.html").render(
-                root="../../", ed=summary, editions=editions, kanda=kandas[k - 1], items=items,
-                page="kanda"), encoding="utf-8")
+                if W["lean"]:
+                    r0 = next((r for r in by_sarga[(k, s)] if r["v"] >= 1), by_sarga[(k, s)][0])
+                    line = render(" ".join(iast_to_slp1(p) for p in r0["lines"][0]), "knda")
+                    first = {"text": {"knda": {"lines": [line]}}}
+                else:
+                    first = render_verse(by_sarga[(k, s)][0], ed)
+                items.append({"s": s, "count": len(by_sarga[(k, s)]), "first": first, "title": titles.get((k, s))})
+            page = wdir / ed["id"] / str(k) / "index.html"
+            page.write_text(env.get_template("kanda.html").render(**ctx(
+                2, ed=summary, kanda=kandas[k - 1], items=items, page="kanda")), encoding="utf-8")
 
-        (out / "data").mkdir(exist_ok=True)
-        (out / "data" / f'search-{ed["id"]}.json').write_text(
+        (wdir / "data" / f'search-{ed["id"]}.json').write_text(
             json.dumps(index_rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
-    fallback = build_daily(out, editions, ce_titles)
+    fallback = build_daily(out, editions, ce_titles) if not W["lean"] else build_daily_mbh(wdir, W, editions)
+    # work pages: home, read, search, edition lists
+    common = dict(fallback=json.dumps(fallback, ensure_ascii=False), eds=summaries, ed=summaries[0])
+    (wdir / "index.html").write_text(env.get_template("home.html").render(**ctx(0, page="home", **common)), encoding="utf-8")
+    for name in ("search", "read"):
+        p = wdir / name / "index.html"
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(env.get_template(f"{name}.html").render(**ctx(1, page=name, **common)), encoding="utf-8")
+    for ed in summaries:
+        p = wdir / ed["id"] / "index.html"
+        p.write_text(env.get_template("edition.html").render(**ctx(1, page="edition", **{**common, "ed": ed})), encoding="utf-8")
+    print(f'  {W["id"]}: {sum(e["sargas"] for e in summaries)} pages for {", ".join(e["id"] for e in summaries)}')
+    return {"W": W, "eds": summaries, "base": base}
+
+
+def build(out: Path, only: str | None = None) -> None:
+    env = make_env()
+    if out.exists():
+        shutil.rmtree(out)
+    shutil.copytree(ROOT / "site" / "static", out / "static")
+    sources = json.loads((ROOT / "etl" / "sources.json").read_text(encoding="utf-8"))
+    load_words()
+    (out / "data").mkdir(exist_ok=True)
+    (out / "data" / "grammar.json").write_text(
+        json.dumps(grammar.as_json(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+    done = [build_work(W, out, env) for key, W in WORKS.items() if only in (None, key)]
+    ram = next(d for d in done if d["W"]["id"] == "ram") if only in (None, "ram") else done[0]
+    # shared pages at the site root: About and Saved (their tab bar is the Rāmāyaṇa's; app.js points it at the last-used work)
     cw_report = ROOT / "data" / "crosswalk" / "report.json"
     changes = json.loads((ROOT / "data" / "changes.json").read_text(encoding="utf-8"))
-    common = dict(changes=changes, fallback=json.dumps(fallback, ensure_ascii=False), editions=editions, eds=edition_summaries, ed=edition_summaries[0], sources=sources,
-                  crosswalk=json.loads(cw_report.read_text()) if cw_report.exists() and len(edition_summaries) > 1 else None)
-    (out / "index.html").write_text(env.get_template("home.html").render(root="", page="home", **common), encoding="utf-8")
-    for name in ("search", "about", "my", "read"):
+    shared = dict(**ram["base"], wroot="../", root="../", changes=changes, sources=sources, eds=ram["eds"], ed=ram["eds"][0],
+                  works=[(d["W"], d["eds"]) for d in done],
+                  crosswalk=json.loads(cw_report.read_text()) if cw_report.exists() and len(ram["eds"]) > 1 else None)
+    for name in ("about", "my"):
         p = out / name / "index.html"
         p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_text(env.get_template(f"{name}.html").render(root="../", page=name, **common), encoding="utf-8")
-    for ed in edition_summaries:  # /ce/ -> list of kāṇḍas
-        p = out / ed["id"] / "index.html"
-        p.write_text(env.get_template("edition.html").render(root="../", page="edition",
-                                                             **{**common, "ed": ed}), encoding="utf-8")
-    write_pwa(out, edition_summaries)
+        p.write_text(env.get_template(f"{name}.html").render(page=name, **shared), encoding="utf-8")
+    write_pwa(out, done)
     (out / ".nojekyll").write_text("")
-    print(f"built {sum(e['sargas'] for e in edition_summaries)} sarga pages "
-          f"for {', '.join(e['id'] for e in edition_summaries)} -> {out}")
+    print(f"built {sum(e['sargas'] for d in done for e in d['eds'])} sarga/adhyāya pages -> {out}")
 
 
 def build_daily(out: Path, editions, titles: dict) -> dict:
@@ -304,13 +392,46 @@ def build_daily(out: Path, editions, titles: dict) -> dict:
     return card(first)
 
 
-def write_pwa(out: Path, eds) -> None:
+def build_daily_mbh(wdir: Path, W: dict, editions) -> dict:
+    """365 verse-of-the-day cards for the Mahābhārata, from the Traditional Text: verse, metre, scansion, place.
+    Same deterministic rule as the Rāmāyaṇa (etl/daily.py); no word-by-word or cross-walk yet."""
+    recs = [json.loads(l) for l in open(norm_path(W, "vu"), encoding="utf-8")]
+    sizes = defaultdict(int)
+    for r in recs:
+        sizes[(r["k"], r["s"])] += 1
+
+    def accept(r):
+        return r["v"] >= 1 and sum(len(" ".join(l)) for l in r["lines"]) <= 130
+
+    chosen = daily.select(recs, {r["uid"]: range(8) for r in recs}, lambda r: r.get("meter"), accept)
+
+    def card(r):
+        v = lean_verse(r)
+        k = unit_info(W, r["k"])
+        return {"uid": r["uid"], "ref": v["ref"], "ed": "vu", "path": f'vu/{r["k"]}/{r["s"]}/#v{r["v"]}',
+                "slp": v["slp1"].split(" / "), "meter": v["meter"], "scan": v["scan"],
+                "ctx": {"k": r["k"], "kn": k["kn"], "deva": k["deva"], "iast": k["iast"], "en": k["en"], "s": r["s"], "v": r["v"],
+                        "of": sizes[(r["k"], r["s"])], "title": ""},
+                "w": []}
+
+    cards = [card(r) for r in chosen]
+    assert len(cards) == daily.N, len(cards)
+    daily.write(wdir, cards)
+    return cards[0]
+
+
+def write_pwa(out: Path, done: list) -> None:
     """Service worker (with its shell list), manifest, and the offline download packs."""
-    shell = ["", "read/", "search/", "about/", "my/"]
-    for e in eds:
-        shell.append(f'{e["id"]}/')
-        shell += [f'{e["id"]}/{k}/' for k in range(1, 8)]
-    shell += ["data/grammar.json", "data/daily/index.json", "manifest.webmanifest"]
+    shell = ["", "about/", "my/"]
+    for d in done:
+        pre = d["W"]["prefix"]
+        nu = len(d["W"]["units"])
+        shell += [pre, f"{pre}read/", f"{pre}search/"] if pre else ["read/", "search/"]
+        for e in d["eds"]:
+            shell.append(f'{pre}{e["id"]}/')
+            shell += [f'{pre}{e["id"]}/{k}/' for k in range(1, nu + 1)]
+        shell += [f"{pre}data/daily/index.json"]
+    shell += ["data/grammar.json", "manifest.webmanifest"]
     shell += sorted(str(p.relative_to(out)) for p in (out / "static").rglob("*") if p.is_file() and p.suffix != ".txt")
     sw = (ROOT / "site" / "sw.js").read_text(encoding="utf-8").replace("/*SHELL_FILES*/[]", json.dumps(shell))
     (out / "sw.js").write_text(sw, encoding="utf-8")
@@ -320,18 +441,22 @@ def write_pwa(out: Path, eds) -> None:
     def size(paths):
         return sum((out / p.rstrip("/") / "index.html").stat().st_size if p.endswith("/") else (out / p).stat().st_size for p in paths)
 
-    for e in eds:
-        for k in range(1, 8):
-            urls = []
-            for d in sorted((out / e["id"] / str(k)).iterdir(), key=lambda x: int(x.name) if x.name.isdigit() else 0):
-                if d.is_dir():
-                    urls.append(f'{e["id"]}/{k}/{d.name}/')
-                    if (d / "words.json").exists():
-                        urls.append(f'{e["id"]}/{k}/{d.name}/words.json')
-            kn = kanda_info(k)
-            packs.append({"id": f'{e["id"]}-{k}', "label": f'{e["short"]}: {kn["en"]}', "urls": urls, "bytes": size(urls)})
-    core = [f"data/search-{e['id']}.json" for e in eds] + [f"data/daily/c{i}.json" for i in range(8)]
-    packs.append({"id": "core", "label": "Search index and verse-of-the-day cards", "urls": core, "bytes": size(core)})
+    for d in done:
+        W, pre = d["W"], d["W"]["prefix"]
+        for e in d["eds"]:
+            for k in range(1, len(W["units"]) + 1):
+                urls = []
+                for sd in sorted((out / pre / e["id"] / str(k)).iterdir(), key=lambda x: int(x.name) if x.name.isdigit() else 0):
+                    if sd.is_dir():
+                        urls.append(f'{pre}{e["id"]}/{k}/{sd.name}/')
+                        if (sd / "words.json").exists():
+                            urls.append(f'{pre}{e["id"]}/{k}/{sd.name}/words.json')
+                kn = unit_info(W, k)
+                label = f'{e["short"]}: {kn["en"]}' if not pre else f'{W["short_en"]}, {e["short"]}: {kn["en"]}'
+                packs.append({"id": f'{pre.strip("/")}{"-" if pre else ""}{e["id"]}-{k}', "label": label, "urls": urls, "bytes": size(urls)})
+        core = [f"{pre}data/search-{e['id']}.json" for e in d["eds"]] + [f"{pre}data/daily/c{i}.json" for i in range(8)]
+        packs.append({"id": f'{pre.strip("/") or "ram"}-core', "label": ("Search index and verse-of-the-day cards" if not pre else f'{W["short_en"]}: search index and verse-of-the-day cards'),
+                      "urls": core, "bytes": size(core)})
     (out / "data" / "offline.json").write_text(json.dumps({"version": json.loads((ROOT / "data" / "changes.json").read_text())[0][0], "packs": packs},
                                                          ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
@@ -359,4 +484,6 @@ def alt_edition_href(ed, editions, k, s):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(ROOT / "dist"))
-    build(Path(ap.parse_args().out))
+    ap.add_argument("--only", choices=list(WORKS), help="build one work only (faster while developing)")
+    a = ap.parse_args()
+    build(Path(a.out), a.only)

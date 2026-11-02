@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Search — ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ{% endblock %}
+{% block title %}Search — {{ W.kn }}{% endblock %}
 {% block main %}
 <div class="search">
   <h1>Search the text</h1>
@@ -10,8 +10,8 @@
       <select id="ed" aria-label="Edition">
         {% for e in eds %}<option value="{{ e.id }}" data-ed="{{ e.id }}">{{ e.short }}</option>{% endfor %}
       </select>
-      <select id="kf" aria-label="Kāṇḍa">
-        <option value="">All kāṇḍas</option>
+      <select id="kf" aria-label="{{ W.Unit }}">
+        <option value="">All {{ W.units_pl }}</option>
         {% for k in eds[0].kandas %}<option value="{{ k.n }}">{{ k.en }}</option>{% endfor %}
       </select>
     </div>

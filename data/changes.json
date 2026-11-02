@@ -1,5 +1,15 @@
 [
  [
+  "0.6.0",
+  "2026-11-03",
+  [
+   "The Mahābhārata is now in the app as a second work: choose it from the chip under the greeting on Home and Read. It has the same reading, chant, search, saved verses, offline packs and daily śloka as the Rāmāyaṇa.",
+   "Two texts: Traditional Text (Kumbakonam, 96,415 verses) and Pune Text (critical edition, 73,821 verses), in 18 parvans with painted cards.",
+   "Your place, saved verses, today's śloka and the texts switched on are kept separately for each work; script letter, text size and theme apply to both.",
+   "Word-by-word meanings and links between the two texts are not available for the Mahābhārata yet."
+  ]
+ ],
+ [
   "0.5.3",
   "2026-11-03",
   [

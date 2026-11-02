@@ -2,6 +2,7 @@
   "use strict";
   var root = document.documentElement;
   var KEY = "vr-prefs";
+  var MBH = root.dataset.work === "mbh", OFFK = MBH ? "offMbh" : "off";   // texts switched off are kept per work
 
   function load() { try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return {}; } }
   function save(p) { try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) { /* storage unavailable */ } }
@@ -13,7 +14,7 @@
     ["savarna", "scan"].forEach(function (k) { if (qp.has(k)) prefs[k] = qp.get(k) === "1"; });
   } catch (e) { /* old browser */ }
 
-  function offList() { return Array.isArray(prefs.off) ? prefs.off : ["ce"]; }   // Baroda text is optional, off until chosen
+  function offList() { return Array.isArray(prefs[OFFK]) ? prefs[OFFK] : ["ce"]; }   // Baroda text is optional, off until chosen
   function apply() {
     root.dataset.script = prefs.script || "knda";
     if (prefs.savarna) root.dataset.savarna = "1"; else delete root.dataset.savarna;
@@ -29,7 +30,7 @@
     root.dataset.theme = prefs.theme || "light";
     document.querySelectorAll("[data-pref-theme]").forEach(function (i) { i.checked = (prefs.theme || "light") === i.value; });
     var tc = document.querySelector('meta[name=theme-color]');
-    if (tc) tc.content = (prefs.theme === "dark" || (prefs.theme === "system" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches)) ? "#14171E" : "#1B2358";
+    if (tc) tc.content = (prefs.theme === "dark" || (prefs.theme === "system" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches)) ? "#14171E" : (tc.dataset.light || "#1B2358");
     if (prefs.filter) root.dataset.filter = prefs.filter; else delete root.dataset.filter;
     document.querySelectorAll("[data-set-script]").forEach(function (b) {
       b.setAttribute("aria-checked", b.dataset.setScript === root.dataset.script ? "true" : "false");
@@ -62,7 +63,7 @@
     }
   };
   window.VRPrefs = {
-    off: function () { return Array.isArray(prefs.off) ? prefs.off : ["ce"]; },
+    off: function () { return offList(); },
     get: function () { return prefs; },
     set: function (k, v) { prefs[k] = v; save(prefs); apply(); }
   };
@@ -88,7 +89,7 @@
       if (!open && history.replaceState) history.replaceState(null, "", "#" + v.closest(".verse").id);
       return;
     }
-    if (e.target.closest("[data-ed-on]")) { prefs.off = offList().filter(function (x) { return x !== document.body.dataset.ed; }); save(prefs); apply(); return; }
+    if (e.target.closest("[data-ed-on]")) { prefs[OFFK] = offList().filter(function (x) { return x !== document.body.dataset.ed; }); save(prefs); apply(); return; }
     var w = e.target.closest(".wbw-btn, .wbw-ic");
     if (w) { if (w.getAttribute("aria-disabled") !== "true") toggleWords(w.closest(".verse")); return; }
     var c = e.target.closest(".cite");
@@ -102,7 +103,7 @@
       var off = offList().filter(function (x) { return x !== t.dataset.edToggle; });
       if (!t.checked) off.push(t.dataset.edToggle);
       if (off.length >= document.querySelectorAll("[data-ed-toggle]").length) { t.checked = true; return; }   // keep at least one text
-      prefs.off = off; save(prefs); apply(); return;
+      prefs[OFFK] = off; save(prefs); apply(); return;
     }
     if (t.dataset.pref) { prefs[t.dataset.pref] = t.checked; save(prefs); apply(); }
     if (t.hasAttribute("data-pref-theme")) { prefs.theme = t.value === "light" ? "" : t.value; save(prefs); apply(); }
@@ -263,6 +264,24 @@
       hadController = true;
     });
   }
+  /* which work was used last: remembered on work pages; About and Saved follow it */
+  (function () {
+    var b = document.body, cur = "ram";
+    try {
+      if (b.hasAttribute("data-work-page")) { window.VRPrevWork = localStorage.getItem("vr.work"); localStorage.setItem("vr.work", b.dataset.work); cur = b.dataset.work; }
+      else cur = localStorage.getItem("vr.work") || "ram";
+    } catch (e) { /* ignore */ }
+    if (!b.hasAttribute("data-work-page") && cur === "mbh") {
+      document.documentElement.dataset.work = "mbh";
+      document.querySelectorAll("[data-wl]").forEach(function (a) { var w = a.dataset.wl; a.setAttribute("href", b.dataset.root + "mbh/" + (w === "home" ? "" : w + "/")); });
+      var br = document.querySelector(".brand .kn"); if (br) br.textContent = "ಮಹಾಭಾರತ";
+      document.querySelectorAll("[data-work-pick]").forEach(function (a) { a.setAttribute("aria-checked", a.dataset.workPick === cur ? "true" : "false"); });
+    }
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest("[data-work-pick]"); if (!a) return;
+      try { localStorage.setItem("vr.work", a.dataset.workPick); } catch (x) { /* ignore */ }
+    });
+  })();
   apply();
   openFromHash();
   window.addEventListener("hashchange", openFromHash);

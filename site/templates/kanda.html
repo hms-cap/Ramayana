@@ -5,12 +5,12 @@
 {% block title %}{{ kanda.kn }} — {{ kanda.en }} ({{ ed.short }}){% endblock %}
 {% block main %}
 <div class="listing">
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ root }}{{ ed.id }}/">{{ ed.short }}</a></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ wroot }}{{ ed.id }}/">{{ ed.short }}</a></nav>
   <header class="kanda-head">
     <h1 lang="kn">{{ kanda.kn }}</h1>
     <p class="sub"><span lang="sa">{{ kanda.deva }}</span> <span class="en">{{ kanda.en }}</span></p>
-    <p class="head-actions"><button type="button" class="chant-list act" data-href="{{ items[0].s }}/"><span lang="kn">ಪಠಣ</span> Chant this kāṇḍa from sarga 1</button></p>
-    <p class="count">{{ kanda.sargas }} sargas, {{ "{:,}".format(kanda.verses) }} verses in the {{ ed.short }}.</p>
+    <p class="head-actions"><button type="button" class="chant-list act" data-href="{{ items[0].s }}/"><span lang="kn">ಪಠಣ</span> Chant this {{ W.unit }} from {{ W.sub }} 1</button></p>
+    <p class="count">{{ kanda.sargas }} {{ W.subs }}, {{ "{:,}".format(kanda.verses) }} verses in the {{ ed.short }}.</p>
   </header>
   <ol class="sargas">
   {% for it in items %}
@@ -20,7 +20,7 @@
         <span class="inc">
           {% if it.title %}<span class="st">{{ it.title.title_iast }}</span>{% endif %}
           <span class="first" lang="sa-Knda">{{ it.first.text.knda.lines[0] }}</span>
-          <span class="meta">Sarga {{ it.s }}, {{ it.count }} verses</span>
+          <span class="meta">{{ W.Sub }} {{ it.s }}, {{ it.count }} verses</span>
         </span>
       </a>
     </li>

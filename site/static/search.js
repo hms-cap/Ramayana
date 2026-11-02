@@ -3,12 +3,12 @@
   var T = window.Translit;
   var q = document.getElementById("q"), edSel = document.getElementById("ed"), kf = document.getElementById("kf");
   var status = document.getElementById("status"), list = document.getElementById("results");
-  var cache = {}, timer = null, MAX = 100;
+  var cache = {}, timer = null, MAX = 100, WROOT = document.body.dataset.wroot || "../";
 
   function loadIndex(ed) {
     if (cache[ed]) return cache[ed];
     status.textContent = "Loading the search index…";
-    cache[ed] = fetch("../data/search-" + ed + ".json").then(function (r) {
+    cache[ed] = fetch(WROOT + "data/search-" + ed + ".json").then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status);
       return r.json();
     }).then(function (rows) {
@@ -37,7 +37,7 @@
     hits.forEach(function (h) {
       var ref = h.k + "." + h.s + "." + h.v;
       var li = el("li"), a = el("a", "ref", ref);
-      a.href = "../" + ed + "/" + h.k + "/" + h.s + "/#v" + h.v;
+      a.href = WROOT + ed + "/" + h.k + "/" + h.s + "/#v" + h.v;
       li.appendChild(a);
       [["knda", "sa-Knda"], ["deva", "sa-Deva"], ["iast", "sa-Latn"]].forEach(function (sc) {
         var d = el("div", "t t-" + sc[0]); d.lang = sc[1];

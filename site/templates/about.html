@@ -24,19 +24,24 @@
   <p><button type="button" class="act" id="pack-all">Download everything</button> <span class="status" id="pack-msg" role="status"></span></p>
 
   <h2>Names used on this site</h2>
-  <p><strong>Baroda Text</strong> (ಬರೋಡಾ ಪರಿಷ್ಕೃತ ಪಾಠ) is the Baroda Critical Edition. <strong>Traditional Text</strong> (ಪರಂಪರಾಗತ ಪಾಠ) is the vulgate, the longer text handed down with the commentaries. Either can be switched off in Options. The Kannada names are proposals and have not been reviewed by a Kannada scholar.</p>
+  <p>For the Rāmāyaṇa, <strong>Baroda Text</strong> (ಬರೋಡಾ ಪರಿಷ್ಕೃತ ಪಾಠ) is the Baroda Critical Edition. <strong>Traditional Text</strong> (ಪರಂಪರಾಗತ ಪಾಠ) is the vulgate, the longer text handed down with the commentaries. Either can be switched off in Options. The Kannada names are proposals and have not been reviewed by a Kannada scholar.</p>
+  <p>For the Mahābhārata, <strong>Traditional Text</strong> (ಪರಂಪರಾಗತ ಪಾಠ) is the Kumbakonam edition, a southern-recension print of 1906–10, and <strong>Pune Text</strong> (ಪುಣೆ ಪರಿಷ್ಕೃತ ಪಾಠ) is the critical text reconstructed at Pune.</p>
 
   <h2>Editions</h2>
-  {% for e in eds %}
+  {% for wk, weds in works %}
+  <h3 class="work-h"><span lang="kn">{{ wk.kn }}</span> <small>{{ wk.en }}</small></h3>
+  {% for e in weds %}
   {% set src = sources[e.source_key] %}
   <section class="source">
     <h3>{{ e.name }}</h3>
-    <p>{{ e.description }} {{ e.sargas }} sargas, {{ "{:,}".format(e.verses) }} verses.</p>
+    <p>{{ e.description }} {{ e.sargas }} {{ wk.subs }}, {{ "{:,}".format(e.verses) }} verses.</p>
     <p>{{ src.credits }}</p>
     <p>Source: <a href="{{ src.repository }}">{{ src.repository | replace('https://', '') }}</a>, file <code>{{ src.file }}</code>, commit <code>{{ src.commit[:12] }}</code>.</p>
     <p>Licence: <a href="{{ src.licence_url }}">{{ src.licence }}</a>.</p>
   </section>
   {% endfor %}
+  {% endfor %}
+  <p>The Mahābhārata texts are shown without word-by-word meanings or links between the two texts yet. The Pune text's electronic copyright belongs to the Bhandarkar Oriental Research Institute; its reuse terms are not stated beyond GRETIL's "as for source file", so it is shown here for non-commercial reading, with attribution. In the Kumbakonam text, where the print has two runs of the same adhyāya (in the Karṇa and Śalya parvans) the first is shown, and a few adhyāyas missing from the source (Vana 109–110; Droṇa 15, 137–138) are simply absent.</p>
 
   <h2>The two editions and how they are linked</h2>
   <p>The Critical Edition is the shorter, reconstructed text; the Vulgate is the longer text most traditional readers and pārāyaṇa books follow. Every Vulgate verse is linked to its Critical Edition counterpart where one exists, and the reverse.</p>

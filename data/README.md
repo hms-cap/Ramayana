@@ -35,3 +35,10 @@ printed in the source when it differs from the verse's position), `flags`
 Cross-walk statuses: `match` (same verse), `regrouped` (same lines, split
 across different verses), `partial` (some lines shared), `variant` (similar
 but no line in common), `absent` (no counterpart).
+
+## Mahābhārata (`normalized/mbh/`)
+
+`python etl/ingest_mbh.py ce <gretil mbh dir>` (Pune critical text, `mbh_01_u.htm`–`mbh_18_u.htm`) and
+`python etl/ingest_mbh.py vu <mahabharata-devanagari.xml>` (Kumbakonam, SARIT). Records have the Rāmāyaṇa shape:
+`k` = parvan (1–18), `s` = adhyāya, `v` = verse. Counts: CE 73,821 verses in 1,995 adhyāyas; VU 96,415 verses.
+VU: 240 verses in the second runs ("B" parallel texts) of Karṇa and Śalya are dropped, and adhyāyas 3.109–110 and 7.15, 7.137–138 are missing in the source.

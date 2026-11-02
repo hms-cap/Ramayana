@@ -1,0 +1,21 @@
+[
+  {
+    "id": "vu",
+    "short": "Traditional Text",
+    "short_kn": "ಪರಂಪರಾಗತ ಪಾಠ",
+    "name": "Traditional Text (Kumbakonam, southern recension)",
+    "description": "The traditional text as printed at Kumbakonam (T. R. Krishnacharya and T. R. Vyasacharya, 1906–10), keyed in by Shrinivasa Varakhedi and published by SARIT. Verse numbers are those of the print. Where the source prints two runs of an adhyāya, the first is shown.",
+    "source_key": "mbh_vu",
+    "citation": "Mahābhārata, Kumbakonam edition (SARIT text)",
+    "source_label": "Source id"
+  },
+  {
+    "id": "ce",
+    "short": "Pune Text",
+    "short_kn": "ಪುಣೆ ಪರಿಷ್ಕೃತ ಪಾಠ",
+    "name": "Pune Critical Text",
+    "description": "The reconstructed text published by the Bhandarkar Oriental Research Institute, Pune (1933–66), as digitised in GRETIL. Verses and passages printed in the apparatus as variants are not included.",
+    "source_key": "mbh_ce",
+    "citation": "Mahābhārata, Critical Edition (BORI, Pune)"
+  }
+]

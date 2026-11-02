@@ -34,5 +34,23 @@
     "credits": "Copyright © 2014 The Sanskrit Library and Thomas Malten. Cologne Digital Sanskrit Lexicon, edited by Peter M. Scharf.",
     "licence": "CC BY-NC-SA 3.0",
     "licence_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/"
+  },
+  "mbh_ce": {
+    "title": "Mahābhārata, Pune critical edition (BORI)",
+    "file": "gretil.sub.uni-goettingen.de/gretil/1_sanskr/2_epic/mbh/mbh_01_u.htm … mbh_18_u.htm",
+    "repository": "https://github.com/INDOLOGY/GRETIL-mirror",
+    "commit": "0baf718d8e450821eb0403c03aacc9a4a82316d7",
+    "credits": "Electronic text © Bhandarkar Oriental Research Institute, Pune, 1999, on the basis of the text entered by Muneo Tokunaga et al., revised by John Smith et al. Distributed by GRETIL (SUB Göttingen).",
+    "licence": "Reuse terms stated only as \"as for source file\" (BORI); shown here with attribution, for non-commercial reference",
+    "licence_url": "https://gretil.sub.uni-goettingen.de/gretil.html"
+  },
+  "mbh_vu": {
+    "title": "Mahābhārata, Kumbakonam edition (southern recension)",
+    "file": "mahabharata-devanagari.xml",
+    "repository": "https://github.com/sarit/SARIT-corpus",
+    "commit": "1eac9ee0b055c8d11147edac4a75c76008ccc363",
+    "credits": "Text of the Kumbakonam edition (T. R. Krishnacharya and T. R. Vyasacharya, Nirnayasagar Press, 1906–10) keyed in by Shrinivasa Varakhedi with colleagues in Tirupati, Hyderabad and Bangalore; marked up in TEI by Patrick McAllister for SARIT.",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 }

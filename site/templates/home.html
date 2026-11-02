@@ -1,10 +1,11 @@
 {% extends "base.html" %}
-{% from "_art.html" import kcard %}
+{% from "_art.html" import kcard, workchip %}
 {% block main %}
 {% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
 <section class="greet">
   <h1 lang="kn">ನಮಸ್ಕಾರ</h1>
   <p class="greet-date" id="greet-date"></p>
+  {{ workchip(W) }}
 </section>
 
 <div class="home-grid">
@@ -15,7 +16,7 @@
       <h2><span class="votd-kind">Today's śloka</span> · <span class="votd-name">…</span></h2>
     </header>
     <div class="votd-view" aria-live="polite"><div class="votd-slide" role="group" aria-roledescription="slide" tabindex="0">
-      <noscript>The verse of the day needs JavaScript. <a href="vu/1/1/">Begin at 1.1</a>.</noscript>
+      <noscript>The verse of the day needs JavaScript. <a href="{{ wroot }}vu/1/1/">Begin at 1.1</a>.</noscript>
     </div></div>
     <div class="votd-dots" role="tablist" aria-label="Cards"></div>
     <div class="votd-actions">
@@ -31,21 +32,21 @@
   <aside class="home-side">
     <section class="cont" id="continue">
       <h2><span id="cont-icon" class="cont-ic"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 3.5v13l11-6.5z"/></svg></span> <span id="cont-label">Begin</span></h2>
-      <p class="cont-where" id="cont-where" lang="kn">ಬಾಲಕಾಂಡ · ಸರ್ಗ ೧</p>
+      <p class="cont-where" id="cont-where" lang="kn">{{ rail_kandas[0].kn }} · {{ W.sub_kn }} ೧</p>
       <p class="cont-bar" id="cont-barwrap" hidden><span id="cont-bar" style="width:0"></span></p>
-      <p class="cont-act"><a class="pillbtn light" id="cont-go" href="{{ vu_e.id }}/1/1/"><span id="cont-go-ic"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 3.5v13l11-6.5z"/></svg></span> <span id="cont-go-t">Start 1.1</span></a></p>
+      <p class="cont-act"><a class="pillbtn light" id="cont-go" href="{{ wroot }}vu/1/1/"><span id="cont-go-ic"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 3.5v13l11-6.5z"/></svg></span> <span id="cont-go-t">Start 1.1</span></a></p>
     </section>
   </aside>
 </div>
 
 <section class="tiles-sec">
-  <div class="tiles-head"><h2>Kāṇḍas</h2><a class="seeall" href="read/">See all</a></div>
+  <div class="tiles-head"><h2>{{ W.Unit }}s</h2><a class="seeall" href="{{ wroot }}read/">See all</a></div>
   <div class="krail">
-  {% for k in eds[0].kandas %}{% set i = loop.index0 %}{{ kcard(k, vu_e.kandas[i].sargas, ce_e.kandas[i].sargas) }}{% endfor %}
+  {% for k in eds[0].kandas %}{% set i = loop.index0 %}{{ kcard(k, vu_e.kandas[i].sargas, ce_e.kandas[i].sargas, unit=W.subs) }}{% endfor %}
   </div>
   <div class="quick">
-    <a class="pillbtn card" href="search/">Search</a>
-    <a class="pillbtn card" href="my/">Saved</a>
+    <a class="pillbtn card" href="{{ wroot }}search/">Search</a>
+    <a class="pillbtn card" href="{{ root }}my/">Saved</a>
     <button type="button" class="pillbtn card" id="quick-chant"><span lang="kn">ಪಠಣ</span> Chant</button>
   </div>
 </section>

@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% set cur_ed = ed.id %}
 {% from "_strip.html" import strip %}
-{% block title %}{{ ed.name }} — ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ{% endblock %}
+{% block title %}{{ ed.name }} — {{ W.kn }}{% endblock %}
 {% block main %}
 <div class="listing">
   <header class="kanda-head">
     <h1>{{ ed.name }}</h1>
     <p class="sub">{{ ed.description }}</p>
   </header>
-  {{ strip(ed, root) }}
+  {{ strip(ed, wroot, W) }}
   <ol class="kandas">
   {% for k in ed.kandas %}
-    <li><a href="{{ k.n }}/"><span class="sn" lang="kn">{{ k.n_knda }}</span><span class="inc"><span class="st" lang="kn">{{ k.kn }}</span><span class="meta">{{ k.en }}: {{ k.sargas }} sargas, {{ "{:,}".format(k.verses) }} verses</span></span></a></li>
+    <li><a href="{{ k.n }}/"><span class="sn" lang="kn">{{ k.n_knda }}</span><span class="inc"><span class="st" lang="kn">{{ k.kn }}</span><span class="meta">{{ k.en }}: {{ k.sargas }} {{ W.subs }}, {{ "{:,}".format(k.verses) }} verses</span></span></a></li>
   {% endfor %}
   </ol>
 </div>

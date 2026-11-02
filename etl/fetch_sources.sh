@@ -38,3 +38,14 @@ fi
 git -C sources/apte sparse-checkout set --no-cone "/$(pin apte file)"
 git -C sources/apte checkout -q "$(pin apte commit)"
 echo "Apte source: sources/apte/$(pin apte file)  ->  python etl/build_lexicon.py <that file>"
+
+# Mahābhārata: Pune critical text (GRETIL, same mirror) and the Kumbakonam text (SARIT)
+git -C sources/gretil sparse-checkout add --no-cone "/gretil.sub.uni-goettingen.de/gretil/1_sanskr/2_epic/mbh/"
+git -C sources/gretil checkout -q "$(pin mbh_ce commit)" 2>/dev/null || true
+echo "Pune text: sources/gretil/gretil.sub.uni-goettingen.de/gretil/1_sanskr/2_epic/mbh/  ->  python etl/ingest_mbh.py ce <that dir>"
+if [ ! -d sources/sarit ]; then
+  git clone --filter=blob:none --no-checkout https://github.com/sarit/SARIT-corpus.git sources/sarit
+fi
+git -C sources/sarit sparse-checkout set --no-cone "/mahabharata-devanagari.xml"
+git -C sources/sarit checkout -q "$(pin mbh_vu commit)"
+echo "Kumbakonam text: sources/sarit/mahabharata-devanagari.xml  ->  python etl/ingest_mbh.py vu <that file>"

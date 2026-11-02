@@ -28,7 +28,7 @@
       <label class="sw"><span>Show metre scansion <small>(<span lang="sa">।</span> laghu, <span lang="sa">ऽ</span> guru)</small></span><input type="checkbox" data-pref="scan"><i aria-hidden="true"></i></label>
       <label class="sw"><span>Homorganic nasals <small lang="kn">ಮುನಿಪುಙ್ಗವಮ್</small></span><input type="checkbox" data-pref="savarna"><i aria-hidden="true"></i></label>
     </div>
-    <a class="about-link" href="{{ root }}about/#app"><span class="app-mark" lang="kn" aria-hidden="true">ರಾ</span><span>About this app <small>v<span data-app-version></span></small></span><b aria-hidden="true">›</b></a>
+    <a class="about-link" href="{{ root }}about/#app"><span class="app-mark" lang="kn" aria-hidden="true">{{ W.tile }}</span><span>About this app <small>v<span data-app-version></span></small></span><b aria-hidden="true">›</b></a>
   </div>
 </section>
 
@@ -44,7 +44,24 @@
     <div class="seg seg-sm ks-ed" role="radiogroup" aria-label="Text">
       {% for e in rail_eds %}<button type="button" role="radio" data-chip-ed="{{ e.id }}" data-ed="{{ e.id }}" aria-checked="false">{{ e.short }}</button>{% endfor %}
     </div>
-    <div class="set-l">Sargas</div>
+    <div class="set-l">{{ W.Sub }}s</div>
     <div class="kchips" id="ks-chips"></div>
+  </div>
+</section>
+
+<section class="sheet" id="worksheet" role="dialog" aria-modal="true" aria-labelledby="ws-title" hidden>
+  <div class="grab" aria-hidden="true"></div>
+  <header class="sheet-head"><h2 id="ws-title">Choose a work</h2><button type="button" class="pillbtn dark" data-close-sheet>Done</button></header>
+  <div class="sheet-body">
+    <div class="wcards" role="radiogroup" aria-label="Work">
+    {% for w in works_list %}
+      <a class="wcard" href="{{ root }}{{ w.prefix }}" data-work-pick="{{ w.id }}" role="radio" aria-checked="{{ 'true' if w.id == W.id else 'false' }}">
+        <span class="wtile" style="--wb:{{ w.theme }}" lang="kn" aria-hidden="true">{{ w.tile }}</span>
+        <span class="wtext"><b lang="kn">{{ w.kn }}</b><span>{{ w.en }}</span><small>{{ w.n_units }} {{ w.units_pl }} · {{ w.n_eds }} texts</small></span>
+        <i class="wradio" aria-hidden="true"></i>
+      </a>
+    {% endfor %}
+    </div>
+    <p class="wnote">Your place, saved verses, today's śloka and the texts you switch on are kept separately for each work. Script letter, text size and theme apply to both.</p>
   </div>
 </section>

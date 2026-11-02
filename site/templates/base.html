@@ -1,31 +1,31 @@
 <!doctype html>
-<html lang="kn" data-script="knda" data-theme="light" data-off="ce">
+<html lang="kn" data-script="knda" data-theme="light" data-off="ce" data-work="{{ W.id }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ — Vālmīki Rāmāyaṇa{% endblock %}</title>
-<meta name="description" content="{% block description %}The Vālmīki Rāmāyaṇa in Sanskrit, readable in Kannada script, Devanāgarī and IAST.{% endblock %}">
+<title>{% block title %}{{ W.kn }} — {{ W.en }}{% endblock %}</title>
+<meta name="description" content="{% block description %}The {{ W.en }} in Sanskrit, readable in Kannada script, Devanāgarī and IAST.{% endblock %}">
 <link rel="preload" href="{{ root }}static/fonts/TiroKannada.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="{{ root }}static/style.css">
 <link rel="manifest" href="{{ root }}manifest.webmanifest">
-<meta name="theme-color" content="#1B2358">
+<meta name="theme-color" content="{{ W.theme }}" data-light="{{ W.theme }}">
 <link rel="icon" href="{{ root }}static/icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{ root }}static/icons/apple-touch-icon.png">
 <script>
 (function(){try{var p=JSON.parse(localStorage.getItem("vr-prefs")||"{}");var d=document.documentElement;
 if(p.script)d.dataset.script=p.script;if(p.savarna)d.dataset.savarna="1";if(p.scan)d.dataset.scan="1";
-if(p.size)d.dataset.size=p.size;d.dataset.off=Array.isArray(p.off)?p.off.join(" "):"ce";d.dataset.theme=p.theme||"light";}catch(e){}})();
+if(p.size)d.dataset.size=p.size;var o=p[d.dataset.work==="mbh"?"offMbh":"off"];d.dataset.off=Array.isArray(o)?o.join(" "):"ce";d.dataset.theme=p.theme||"light";}catch(e){}})();
 </script>
 </head>
-<body class="page-{{ page }}" data-root="{{ root }}" data-ed="{{ cur_ed|default('') }}">
+<body class="page-{{ page }}" data-root="{{ root }}" data-wroot="{{ wroot }}" data-work="{{ W.id }}" data-prefix="{{ W.prefix }}"{% if page in ('home','read','search','kanda','sarga','edition') %} data-work-page{% endif %} data-ed="{{ cur_ed|default('') }}" data-sub-kn="{{ W.sub_kn }}" data-sub-deva="{{ W.sub_deva }}" data-sub-en="{{ W.sub }}" data-epic-kn="{{ W.epic_kn }}">
 <a class="skip" href="#main">Skip to text</a>
 <header class="bar">
   <div class="bar-inner">
-    {% if page != 'home' %}<a class="back" href="{{ up|default(root) }}" aria-label="Back" data-back>‹</a>{% endif %}
-    <a class="brand" href="{{ root }}"><span class="kn">ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ</span></a>
+    {% if page != 'home' %}<a class="back" href="{{ up|default(wroot) }}" aria-label="Back" data-back>‹</a>{% endif %}
+    <a class="brand" href="{{ wroot }}" data-wl="home"><span class="kn">{{ W.kn }}</span></a>
     <nav class="nav" aria-label="Site">
-      <a href="{{ root }}read/"{% if page == 'read' %} aria-current="page"{% endif %}>Read</a>
-      <a href="{{ root }}search/"{% if page == 'search' %} aria-current="page"{% endif %}>Search</a>
+      <a href="{{ wroot }}read/" data-wl="read"{% if page == 'read' %} aria-current="page"{% endif %}>Read</a>
+      <a href="{{ wroot }}search/" data-wl="search"{% if page == 'search' %} aria-current="page"{% endif %}>Search</a>
       <a href="{{ root }}my/"{% if page == 'my' %} aria-current="page"{% endif %}>Saved</a>
       <a href="{{ root }}about/"{% if page == 'about' %} aria-current="page"{% endif %}>About</a>
     </nav>
@@ -37,11 +37,11 @@ if(p.size)d.dataset.size=p.size;d.dataset.off=Array.isArray(p.off)?p.off.join(" 
 </header>
 <div class="shell">
 <aside class="rail" aria-label="Library">
-  <a href="{{ root }}"{% if page == 'home' %} aria-current="page"{% endif %}>Home</a>
-  <a href="{{ root }}read/"{% if page == 'read' %} aria-current="page"{% endif %}>Read</a>
+  <a href="{{ wroot }}" data-wl="home"{% if page == 'home' %} aria-current="page"{% endif %}>Home</a>
+  <a href="{{ wroot }}read/" data-wl="read"{% if page == 'read' %} aria-current="page"{% endif %}>Read</a>
   {% for e in rail_eds %}
   <div data-ed="{{ e.id }}"><h2>{{ e.short }}</h2>
-  <ul>{% for k in rail_kandas %}<li><a href="{{ root }}{{ e.id }}/{{ k.n }}/" lang="kn"{% if cur_ed is defined and cur_ed == e.id and cur_k is defined and cur_k == k.n %} aria-current="true"{% endif %}>{{ k.kn }}</a></li>{% endfor %}</ul></div>
+  <ul>{% for k in rail_kandas %}<li><a href="{{ wroot }}{{ e.id }}/{{ k.n }}/" lang="kn"{% if cur_ed is defined and cur_ed == e.id and cur_k is defined and cur_k == k.n %} aria-current="true"{% endif %}>{{ k.kn }}</a></li>{% endfor %}</ul></div>
   {% endfor %}
 </aside>
 <div class="shell-main">
@@ -50,19 +50,20 @@ if(p.size)d.dataset.size=p.size;d.dataset.off=Array.isArray(p.off)?p.off.join(" 
 {% block main %}{% endblock %}
 </main>
 <footer class="foot">
-  <p>Sanskrit text of each edition is shown under its own licence; see <a href="{{ root }}about/">Sources</a>. Baroda Critical Edition text from <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, CC BY-NC-SA 4.0; Traditional (Vulgate) text from <a href="https://sa.wikisource.org/">Sanskrit Wikisource</a>, CC BY-SA 4.0. Not for commercial use.</p>
+  <p>Sanskrit text of each edition is shown under its own licence; see <a href="{{ root }}about/">Sources</a>. {{ W.credit|safe }}</p>
 </footer>
 </div>
 </div>
 <nav class="tabbar" aria-label="Main">
-  <a href="{{ root }}"{% if page == 'home' %} aria-current="page"{% endif %} aria-label="Home"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L11 4l8 6.5V19H3z"/><path d="M9 19v-5h4v5"/></svg><em>Home</em></a>
-  <a href="{{ root }}read/"{% if page in ('read','kanda','sarga','edition') %} aria-current="page"{% endif %} aria-label="Read"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5h5.5A2.5 2.5 0 0 1 11 7v12a2.5 2.5 0 0 0-2.5-2.5H3zM19 4.5h-5.5A2.5 2.5 0 0 0 11 7v12a2.5 2.5 0 0 1 2.5-2.5H19z"/></svg><em>Read</em></a>
-  <a href="{{ root }}search/"{% if page == 'search' %} aria-current="page"{% endif %} aria-label="Search"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l4.5 4.5"/></svg><em>Search</em></a>
+  <a href="{{ wroot }}" data-wl="home"{% if page == 'home' %} aria-current="page"{% endif %} aria-label="Home"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L11 4l8 6.5V19H3z"/><path d="M9 19v-5h4v5"/></svg><em>Home</em></a>
+  <a href="{{ wroot }}read/" data-wl="read"{% if page in ('read','kanda','sarga','edition') %} aria-current="page"{% endif %} aria-label="Read"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5h5.5A2.5 2.5 0 0 1 11 7v12a2.5 2.5 0 0 0-2.5-2.5H3zM19 4.5h-5.5A2.5 2.5 0 0 0 11 7v12a2.5 2.5 0 0 1 2.5-2.5H19z"/></svg><em>Read</em></a>
+  <a href="{{ wroot }}search/" data-wl="search"{% if page == 'search' %} aria-current="page"{% endif %} aria-label="Search"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l4.5 4.5"/></svg><em>Search</em></a>
   <a href="{{ root }}my/"{% if page == 'my' %} aria-current="page"{% endif %} aria-label="Saved"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3.5h11v16L11 15.5l-5.5 4z"/></svg><em>Saved</em><b class="badge-n" hidden></b></a>
 </nav>
 {% include "_sheets.html" %}
 <script src="{{ root }}static/translit.js"></script>
-<script src="{{ root }}static/version.js"></script>
+{% if W.lean and page in ('sarga',) %}<script src="{{ root }}static/lean.js"></script>
+{% endif %}<script src="{{ root }}static/version.js"></script>
 <script src="{{ root }}static/app.js"></script>
 {% block scripts %}{% endblock %}
 </body>
