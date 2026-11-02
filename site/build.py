@@ -102,7 +102,7 @@ def load_words() -> None:
             WORDS[r["uid"]] = r["units"]
     if gp.exists():
         GLOSS.update(json.loads(gp.read_text(encoding="utf-8")))
-_EDITION_LABEL = {"ce": "Critical Edition", "vu": "Vulgate"}
+_EDITION_LABEL = {"ce": "Baroda Text", "vu": "Traditional Text"}
 STATUS_TEXT = {
     "match": "{other} {refs}",
     "variant": "Different reading in the {other} ({refs})",
@@ -204,7 +204,7 @@ def build(out: Path) -> None:
                 alt_href=alt_edition_href(ed, editions, k, s),
                 shared=sum(1 for v in verses if v["crosswalk"] and v["crosswalk"]["status"] != "absent"),
                 has_cw=any(v["crosswalk"] for v in verses),
-                other_label="Critical Edition" if ed["id"] == "vu" else "Vulgate",
+                other_label=_EDITION_LABEL["ce" if ed["id"] == "vu" else "vu"], other_id="ce" if ed["id"] == "vu" else "vu",
                 iitk=any("iitk_restored" in v["flags"] for v in verses),
             ), encoding="utf-8")
             (page.parent / "sarga.json").write_text(json.dumps(

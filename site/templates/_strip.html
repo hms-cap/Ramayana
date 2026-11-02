@@ -1,5 +1,5 @@
 {% macro strip(e, root) %}
-<figure class="strip" aria-label="{{ e.short }}: {{ e.sargas }} sargas in 7 kāṇḍas">
+<figure class="strip" data-ed="{{ e.id }}" aria-label="{{ e.short }}: {{ e.sargas }} sargas in 7 kāṇḍas">
   <figcaption><span class="ed-name">{{ e.short }}</span> <span class="ed-count">{{ e.sargas }} sargas, {{ "{:,}".format(e.verses) }} verses</span></figcaption>
   <ol class="strip-row">
   {% for k in e.kandas %}

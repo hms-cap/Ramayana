@@ -73,7 +73,7 @@
   })();
 
   /* ---- kāṇḍa tiles with sarga chips ---- */
-  var chipEd = "ce";
+  var chipEd = ((P.get().off || []).indexOf("ce") >= 0) ? "vu" : "ce";
   function fillChips(tile) {
     var n = +tile.dataset["n" + chipEd.charAt(0).toUpperCase() + chipEd.slice(1)] || +tile.getAttribute("data-n-" + chipEd), k = tile.dataset.k, box = tile.querySelector(".chips"), h = "";
     var s = sc();
@@ -134,7 +134,7 @@
     if (c.meter) out.push({ key: "metre", text: c.meter, scan: c.scan });
     var x = c.ctx, kname = s === "knda" ? x.kn : s === "deva" ? x.deva : x.iast, nn = function (n) { return s === "iast" ? n : T.digits(n, s); };
     out.push({ key: "ctx", text: kname + " · " + (kn ? "ಸರ್ಗ " : s === "deva" ? "सर्गः " : "sarga ") + nn(x.s) + (x.title ? " — " + x.title : "") + " · " + nn(x.v) + " / " + nn(x.of) });
-    if (c.cw) out.push({ key: "other", text: CWSTAT[c.cw.status][kn ? 1 : 0] + " " + (kn ? "ಸಾಂಪ್ರದಾಯಿಕ ಪಾಠ" : "Vulgate") + (c.cw.refs.length ? " " + c.cw.refs.join(", ") : "") });
+    if (c.cw) out.push({ key: "other", text: CWSTAT[c.cw.status][kn ? 1 : 0] + " " + (kn ? "ಪರಂಪರಾಗತ ಪಾಠ" : "Traditional Text") + (c.cw.refs.length ? " " + c.cw.refs.join(", ") : "") });
     if (c.u) out.push({ key: "u", text: c.u[kn ? 1 : 0] });
     return out;
   }
@@ -211,7 +211,14 @@
   document.getElementById("votd-save").addEventListener("click", function () {
     S.toggle({ id: saveId(), kind: "verse", href: card.path, label: "CE " + card.ref, slp: card.slp }); paintSave(); badge();
   });
-  document.addEventListener("prefs-changed", function () { if (card) draw(0); });
+  document.addEventListener("prefs-changed", function () {
+    if (card) draw(0);
+    if ((P.get().off || []).indexOf(chipEd) >= 0) {
+      chipEd = chipEd === "ce" ? "vu" : "ce";
+      document.querySelectorAll("[data-chip-ed]").forEach(function (x) { x.setAttribute("aria-checked", x.dataset.chipEd === chipEd ? "true" : "false"); });
+      document.querySelectorAll(".tile .tile-btn[aria-expanded=true]").forEach(function (x) { fillChips(x.closest(".tile")); });
+    }
+  });
 
   /* ---- share picture: all cards in one tall PNG ---- */
   function paintShare(secs, s, drawIt, ctx, known) {

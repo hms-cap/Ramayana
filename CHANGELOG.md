@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.1 — 2026-11-02
+- Editions renamed in the interface: Baroda Text (Critical Edition) and Traditional Text (Vulgate). Options → "Texts to show" switches either off (pref `off`, applied as `data-off` on `<html>`).
+
 ## 0.4.0 — 2026-11-02
 - Chant view (`site/static/chant.js`): book page and one-verse-at-a-time layouts, size / script / layout controls, swipes and keys, wake lock, overlay history entry; ✕ returns to where chanting started, system Back lands on the last work. Built from the verses in the page, so it needs no extra data.
 - Print and PDF (`site/static/pdf.js`): library-free PDF made from page images; phones share the file.

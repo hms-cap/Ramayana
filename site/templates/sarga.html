@@ -22,7 +22,7 @@
     </div>
     <p class="sub">{{ kanda.en }}, sarga {{ s }} of {{ total_in_kanda }}{% if title %}: <span class="sarga-title">{{ title.title_iast }}</span>{% endif %}. {{ verses|length }} verses.</p>
     {% if has_cw %}
-    <div class="recension">
+    <div class="recension" data-ed="{{ other_id }}">
       <p>{{ shared }} of {{ verses|length }} verses are also in the {{ other_label }}{% if alt_href %}, mostly in <a href="{{ alt_href.href }}">sarga {{ alt_href.ref }}</a>{% endif %}.</p>
       {% if shared < verses|length %}
       <div class="seg seg-sm" role="radiogroup" aria-label="Which verses to show">
@@ -44,7 +44,7 @@
       <div class="body">
         {% set cw = v.crosswalk %}
         {% if cw and cw.status != 'match' %}
-        <p class="badge b-{{ cw.status }}">{% if cw.status == 'absent' %}Not in the {{ cw.other_label }}{% else %}{% if cw.status == 'variant' %}Different reading in the{% elif cw.status == 'regrouped' %}Lines grouped differently in the{% else %}Only partly in the{% endif %} {{ cw.other_label }}: {% for l in cw.links %}<a href="{{ root }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</p>
+        <p class="badge b-{{ cw.status }}" data-ed="{{ other_id }}">{% if cw.status == 'absent' %}Not in the {{ cw.other_label }}{% else %}{% if cw.status == 'variant' %}Different reading in the{% elif cw.status == 'regrouped' %}Lines grouped differently in the{% else %}Only partly in the{% endif %} {{ cw.other_label }}: {% for l in cw.links %}<a href="{{ root }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</p>
         {% endif %}
         {% if 'source_noise' in v.flags %}<p class="badge b-noise">The source has typing errors in this verse.</p>{% endif %}
         {{ verse_text(v) }}
@@ -54,11 +54,11 @@
             <dt>Verse</dt><dd>{{ v.ref }}</dd>
             {% if v.meter %}<dt>Metre</dt><dd>{{ v.meter }}</dd>{% endif %}
             {% for i in v.ids %}<dt>{{ i.label }}</dt><dd><code>{{ i.value }}</code></dd>{% endfor %}
-            {% if cw and cw.links %}<dt>{{ cw.other_label }}</dt><dd>{% for l in cw.links %}<a href="{{ root }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
+            {% if cw and cw.links %}<dt data-ed="{{ other_id }}">{{ cw.other_label }}</dt><dd data-ed="{{ other_id }}">{% for l in cw.links %}<a href="{{ root }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
           </dl>
           {% if v.has_words %}<button type="button" class="wbw-btn" aria-expanded="false">Word by word</button>
           <div class="wbw" hidden></div>
-          {% elif cw and cw.status == 'match' and cw.links and ed.id == 'vu' %}<p class="wbw-link"><a href="{{ root }}{{ cw.links[0].path }}">Word-by-word analysis (Critical Edition {{ cw.links[0].ref }})</a></p>{% endif %}
+          {% elif cw and cw.status == 'match' and cw.links and ed.id == 'vu' %}<p class="wbw-link" data-ed="ce"><a href="{{ root }}{{ cw.links[0].path }}">Word-by-word analysis (Baroda Text {{ cw.links[0].ref }})</a></p>{% endif %}
           <button type="button" class="chant-here">Chant from here</button>
           <button type="button" class="cite">Copy citation</button>
           <span class="cite-ok" role="status"></span>

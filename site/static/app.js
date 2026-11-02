@@ -18,6 +18,13 @@
     if (prefs.savarna) root.dataset.savarna = "1"; else delete root.dataset.savarna;
     if (prefs.scan) root.dataset.scan = "1"; else delete root.dataset.scan;
     if (prefs.size) root.dataset.size = prefs.size; else delete root.dataset.size;
+    root.dataset.off = (prefs.off || []).join(" ");
+    document.querySelectorAll("[data-ed-toggle]").forEach(function (i) { i.checked = (prefs.off || []).indexOf(i.dataset.edToggle) < 0; });
+    var note = document.getElementById("off-note");
+    if (note) note.hidden = (prefs.off || []).indexOf(document.body.dataset.ed) < 0 || !document.body.dataset.ed;
+    // search: pick an enabled edition
+    var es = document.getElementById("ed");
+    if (es && (prefs.off || []).indexOf(es.value) >= 0) { var ok = [].filter.call(es.options, function (o) { return prefs.off.indexOf(o.value) < 0; })[0]; if (ok) es.value = ok.value; }
     if (prefs.filter) root.dataset.filter = prefs.filter; else delete root.dataset.filter;
     document.querySelectorAll("[data-set-script]").forEach(function (b) {
       b.setAttribute("aria-checked", b.dataset.setScript === root.dataset.script ? "true" : "false");
@@ -48,6 +55,7 @@
       if (!open && history.replaceState) history.replaceState(null, "", "#" + v.closest(".verse").id);
       return;
     }
+    if (e.target.closest("[data-ed-on]")) { prefs.off = []; save(prefs); apply(); return; }
     var w = e.target.closest(".wbw-btn");
     if (w) { toggleWords(w); return; }
     var c = e.target.closest(".cite");
@@ -57,6 +65,12 @@
   });
   document.addEventListener("change", function (e) {
     var t = e.target;
+    if (t.dataset.edToggle) {
+      var off = (prefs.off || []).filter(function (x) { return x !== t.dataset.edToggle; });
+      if (!t.checked) off.push(t.dataset.edToggle);
+      if (off.length >= document.querySelectorAll("[data-ed-toggle]").length) { t.checked = true; return; }   // keep at least one text
+      prefs.off = off; save(prefs); apply(); return;
+    }
     if (t.dataset.pref) { prefs[t.dataset.pref] = t.checked; save(prefs); apply(); }
     if (t.hasAttribute("data-pref-size")) { prefs.size = t.value === "m" ? "" : t.value; save(prefs); apply(); }
   });

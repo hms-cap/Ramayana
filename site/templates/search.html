@@ -8,7 +8,7 @@
     <div class="search-row">
       <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="ಮಾರೀಚ, मारीच, mārīca, maricha">
       <select id="ed" aria-label="Edition">
-        {% for e in eds %}<option value="{{ e.id }}">{{ e.short }}</option>{% endfor %}
+        {% for e in eds %}<option value="{{ e.id }}" data-ed="{{ e.id }}">{{ e.short }}</option>{% endfor %}
       </select>
       <select id="kf" aria-label="Kāṇḍa">
         <option value="">All kāṇḍas</option>

@@ -1,12 +1,42 @@
 [
-  ["0.4.0", "2026-11-02", [
-    "New Chant view: a full-screen reading mode with a book page and one verse at a time, text size, script and layout controls, swipes and keys. Closing it returns you to where you started.",
-    "Print and PDF of the chant view, in the script you chose. On phones the PDF is shared as a file.",
-    "New Home: verse of the day (365 verses, a different one each day, with words, metre and context), Continue reading, kāṇḍa tiles with sarga chips, My list.",
-    "Works offline once installed. Pages you have read are kept; whole kāṇḍas can be downloaded from About.",
-    "Bottom tab bar on phones, a side list of kāṇḍas on wide screens, and a Back button that never leaves the site."
-  ]],
-  ["0.3.0", "2026-10-31", ["Word-by-word analysis of Critical Edition verses, with dictionary senses of each word."]],
-  ["0.2.0", "2026-10-30", ["The traditional Vulgate as a second edition, with verse-by-verse links to the Critical Edition."]],
-  ["0.1.0", "2026-10-29", ["Critical Edition reader in Kannada script, Devanāgarī and IAST, with search and citations."]]
+ [
+  "0.4.1",
+  "2026-11-02",
+  [
+   "The two texts have clearer names: Baroda Text (the Critical Edition) and Traditional Text (the Vulgate).",
+   "Options now lets you switch either text off, so lists, search and links show only the one you read. At least one stays on."
+  ]
+ ],
+ [
+  "0.4.0",
+  "2026-11-02",
+  [
+   "New Chant view: a full-screen reading mode with a book page and one verse at a time, text size, script and layout controls, swipes and keys. Closing it returns you to where you started.",
+   "Print and PDF of the chant view, in the script you chose. On phones the PDF is shared as a file.",
+   "New Home: verse of the day (365 verses, a different one each day, with words, metre and context), Continue reading, kāṇḍa tiles with sarga chips, My list.",
+   "Works offline once installed. Pages you have read are kept; whole kāṇḍas can be downloaded from About.",
+   "Bottom tab bar on phones, a side list of kāṇḍas on wide screens, and a Back button that never leaves the site."
+  ]
+ ],
+ [
+  "0.3.0",
+  "2026-10-31",
+  [
+   "Word-by-word analysis of Critical Edition verses, with dictionary senses of each word."
+  ]
+ ],
+ [
+  "0.2.0",
+  "2026-10-30",
+  [
+   "The traditional Vulgate as a second edition, with verse-by-verse links to the Critical Edition."
+  ]
+ ],
+ [
+  "0.1.0",
+  "2026-10-29",
+  [
+   "Critical Edition reader in Kannada script, Devanāgarī and IAST, with search and citations."
+  ]
+ ]
 ]

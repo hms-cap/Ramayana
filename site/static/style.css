@@ -423,3 +423,10 @@ body.story-open { overflow: hidden; }
 .my-list .t-knda, .my-list .t-deva, .my-list .t-iast { font-size: 1.15rem; }
 .packs { list-style: none; padding: 0; } .packs li { display: flex; gap: 0.8rem; align-items: center; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid var(--rule); }
 .packs small { color: var(--muted); display: block; }
+
+/* texts switched off in Options (data-off on <html>) */
+[data-off~="ce"] body [data-ed="ce"], [data-off~="vu"] body [data-ed="vu"] { display: none !important; }
+[data-off~="ce"] .sep, [data-off~="vu"] .sep { display: none; }
+.off-note { max-width: 72rem; margin: 0 auto; padding: 0.6rem 1rem; background: var(--accent-soft); }
+.off-note[hidden] { display: none; }
+.ed-set label { display: block; }
