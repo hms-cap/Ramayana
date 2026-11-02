@@ -212,8 +212,18 @@
     });
     // swipes: sideways, at least 70 px, not on the header
     var sx = null, sy = null;
-    el.addEventListener("touchstart", function (e) { if (e.target.closest(".ch-head")) { sx = null; return; } sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+    var two = null, twoLast = 0;
+    el.addEventListener("touchstart", function (e) {
+      if (e.touches.length === 2) { sx = null; two = (e.touches[0].clientX + e.touches[1].clientX) / 2; twoLast = two; return; }
+      if (e.target.closest(".ch-head") || e.touches.length > 1) { sx = null; return; }
+      sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+    }, { passive: true });
+    el.addEventListener("touchmove", function (e) { if (two !== null && e.touches.length === 2) twoLast = (e.touches[0].clientX + e.touches[1].clientX) / 2; }, { passive: true });
     el.addEventListener("touchend", function (e) {
+      if (two !== null) {                       // two fingers sideways: whole sarga, in either layout
+        var d2 = twoLast - two; if (e.touches.length === 0) { two = null; if (Math.abs(d2) >= 70) go(d2 < 0 ? "next" : "prev"); }
+        return;
+      }
       if (sx === null) return;
       var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; sx = null;
       if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.5) return;

@@ -267,3 +267,30 @@
   openFromHash();
   window.addEventListener("hashchange", openFromHash);
 })();
+
+/* Swipe sideways on a sarga page to move to the next or previous sarga. */
+(function () {
+  "use strict";
+  if (!document.body.classList.contains("page-sarga")) return;
+  var sx = null, sy = null, t0 = 0;
+  function scrollsX(el) {
+    for (; el && el !== document.body; el = el.parentElement) {
+      if (el.scrollWidth > el.clientWidth + 2) { var o = getComputedStyle(el).overflowX; if (o === "auto" || o === "scroll") return true; }
+    }
+    return false;
+  }
+  document.addEventListener("touchstart", function (e) {
+    sx = null;
+    if (e.touches.length !== 1 || document.body.classList.contains("story-open") || document.body.classList.contains("sheet-open")) return;
+    if (e.target.closest(".bar, .tabbar, .wbw, input, textarea, select, .listing, .nextprev") || scrollsX(e.target)) return;
+    sx = e.touches[0].clientX; sy = e.touches[0].clientY; t0 = Date.now();
+  }, { passive: true });
+  document.addEventListener("touchend", function (e) {
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy, dt = Date.now() - t0; sx = null;
+    if (Math.abs(dx) < 90 || Math.abs(dx) < Math.abs(dy) * 2 || dt > 700) return;
+    var sel = window.getSelection && String(window.getSelection()); if (sel) return;      // selecting text, not swiping
+    var a = document.querySelector(dx < 0 ? 'a[rel="next"]' : 'a[rel="prev"]');
+    if (a) { var m = document.querySelector("main"); if (m && m.animate) m.animate([{ opacity: 1 }, { opacity: 0.2 }], { duration: 120, fill: "forwards" }); location.assign(a.href); }
+  }, { passive: true });
+})();

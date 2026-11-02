@@ -6,3 +6,4 @@ Browser checks (Playwright, not run in CI). Serve the built site, then run each 
     python tests/e2e/pwa.py     # service worker, offline reload, update check, offline pack
 
 Screenshots and the exported PDF/PNG are written to /tmp.
+    python tests/e2e/swipe.py   # sideways swipe between sargas (reading and chant views)

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.3 — 2026-11-03
+- Sarga-level swipe: one finger on a sarga page (ignored on the word-by-word panel, scrollable areas, selections); two fingers in the chant view in either layout. `tests/e2e/swipe.py`.
+
 ## 0.5.2 — 2026-11-03
 - Verse of the day: palm-leaf manuscript card; actions are icon buttons (`#votd-another`, `-today`, `-save`, `-words`, `-share`, `-open`). The word-by-word icon jumps to the words card and is dimmed when a verse has none.
 
