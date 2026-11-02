@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.1 — 2026-11-03
+- Home: Continue and Begin merged into one card (`#continue`) with play / resume icons.
+
 ## 0.5.0 — 2026-11-03
 - App look: greeting Home with Continue card, verse of the day and a kāṇḍa carousel; new Read tab (`/read/`); floating pill tab bar (Home, Read, Search, Saved) below 900 px.
 - Kāṇḍa cards are Tanjore-style temple-niche paintings (`site/templates/_art.html`, motifs only); tapping one opens a bottom sheet with Start / Resume and sarga numbers (`site/static/read.js`).

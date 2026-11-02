@@ -550,3 +550,5 @@ body.sheet-open { overflow: hidden; }
 .kchips { padding: 3px; }
 .votd-actions { gap: 0.3rem; }
 .votd .act { padding: 0 0.7rem; font-size: 0.88rem; }
+.cont h2 { display: flex; align-items: center; gap: 0.4rem; } .cont-ic { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(240,196,90,.2); color: #F0C45A; }
+.pillbtn svg { flex: none; } .cont-bar[hidden] { display: none; }

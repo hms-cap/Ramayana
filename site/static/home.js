@@ -73,7 +73,12 @@
     // stored href is a full pathname; make it relative to the site root
     var base = location.pathname.replace(/index\.html$/, "");
     var path = l.href.indexOf(base) === 0 ? l.href.slice(base.length) : l.href.replace(/^\/[^/]+\//, "");
-    box.hidden = false;
+    var RES = '<svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>';
+    document.getElementById("cont-label").textContent = "Continue reading";
+    document.getElementById("cont-icon").innerHTML = RES; document.getElementById("cont-go-ic").innerHTML = RES;
+    document.getElementById("cont-go-t").textContent = "Resume";
+    document.getElementById("cont-barwrap").hidden = false;
+    document.getElementById("cont-where").lang = "";
     document.getElementById("cont-where").textContent = (l.titles[s] || l.src) + " · verse " + l.v + " of " + l.of;
     document.getElementById("cont-bar").style.width = Math.round(100 * (l.i + 1) / l.of) + "%";
     document.getElementById("cont-go").href = ROOT + path;
