@@ -4,6 +4,19 @@
 <article class="prose">
   <h1>Sources and method</h1>
 
+  <h2 id="app">This app</h2>
+  <p>Version <strong id="app-version">{{ changes[0][0] }}</strong> ({{ changes[0][1] }}). <span id="app-state" class="status"></span></p>
+  <p><button type="button" class="act" id="check-update">Check for updates</button> <span id="update-msg" class="status" role="status"></span></p>
+  <h3>What's new</h3>
+  {% for v, d, notes in changes[:3] %}
+  <p><strong>{{ v }}</strong> <span class="hint">{{ d }}</span></p>
+  <ul>{% for n in notes %}<li>{{ n }}</li>{% endfor %}</ul>
+  {% endfor %}
+  <h3 id="offline">Offline</h3>
+  <p>Pages you open are kept on this device automatically. To have a whole kāṇḍa ready without a connection, download it here. Verse-of-the-day cards and the search index are in the first item.</p>
+  <ul class="packs" id="packs"><li class="status">Loading…</li></ul>
+  <p><button type="button" class="act" id="pack-all">Download everything</button> <span class="status" id="pack-msg" role="status"></span></p>
+
   <h2>Editions</h2>
   {% for e in eds %}
   {% set src = sources[e.source_key] %}
@@ -50,3 +63,4 @@
   <p>Each edition's text keeps its own licence, shown above: CC BY-NC-SA 4.0 for the Critical Edition and CC BY-SA 4.0 for the Vulgate. The word analysis is CC BY 4.0 and the English glosses derived from Apte are CC BY-NC-SA 3.0. Because of the Critical Edition, the site as a whole is for non-commercial use. The code is MIT-licensed. Three Vulgate sargas (4.11, 6.25, 6.31) were restored by the upstream project from IIT Kanpur's site, whose reuse terms are not stated; they are marked on their pages.</p>
 </article>
 {% endblock %}
+{% block scripts %}<script src="{{ root }}static/about.js"></script>{% endblock %}

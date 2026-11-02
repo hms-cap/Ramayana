@@ -1,9 +1,13 @@
 {% extends "base.html" %}
+{% set up = '../' %}
+{% set cur_ed = ed.id %}
+{% set cur_k = kanda.n %}
 {% from "_verse.html" import verse_text %}
 {% block title %}{{ kanda.kn }} ಸರ್ಗ {{ s|knda }} — {{ kanda.en }} {{ s }} ({{ ed.short }}){% endblock %}
 {% block description %}{{ kanda.en }}, sarga {{ s }} of the Vālmīki Rāmāyaṇa ({{ ed.name }}): {{ verses|length }} verses in Kannada script, Devanāgarī and IAST.{% endblock %}
 {% block main %}
-<div class="reader" data-root="{{ root }}" data-edition="{{ ed.id }}" data-citation="{{ ed.citation }}">
+<div class="reader" data-chant data-root="{{ root }}" data-edition="{{ ed.id }}" data-citation="{{ ed.citation }}" data-src="{{ ed.short }} {{ kanda.n }}.{{ s }}" data-k="{{ kanda.n }}" data-s="{{ s }}"
+     data-title-knda="{{ kanda.kn }} · ಸರ್ಗ {{ s|knda }}" data-title-deva="{{ kanda.deva }} · सर्गः {{ s|deva }}" data-title-iast="{{ kanda.iast }} · sargaḥ {{ s }}">
   <nav class="crumbs" aria-label="Breadcrumb">
     <a href="{{ root }}{{ ed.id }}/">{{ ed.short }}</a>
     <span aria-hidden="true">/</span>
@@ -11,6 +15,11 @@
   </nav>
   <header class="sarga-head">
     <h1><span lang="kn">{{ kanda.kn }}</span> <span class="sarga-n" lang="kn">ಸರ್ಗ {{ s|knda }}</span></h1>
+    <div class="head-actions">
+      <button type="button" class="chant-open act" aria-haspopup="dialog"><span lang="kn">ಪಠಣ</span> Chant view</button>
+      <button type="button" class="pdf-btn act" data-nopdf>PDF</button>
+      <button type="button" class="save-btn act" aria-pressed="false" data-save="{{ ed.id }}/{{ kanda.n }}/{{ s }}/">☆ <span>Save</span></button>
+    </div>
     <p class="sub">{{ kanda.en }}, sarga {{ s }} of {{ total_in_kanda }}{% if title %}: <span class="sarga-title">{{ title.title_iast }}</span>{% endif %}. {{ verses|length }} verses.</p>
     {% if has_cw %}
     <div class="recension">
@@ -28,7 +37,7 @@
 
   <ol class="verses">
   {% for v in verses %}
-    <li class="verse{% if v.crosswalk and v.crosswalk.status == 'absent' %} v-absent{% endif %}" id="v{{ v.v }}" data-ref="{{ v.ref }}"{% if v.ids %} data-ids="{% for i in v.ids %}{{ i.label }} {{ i.value }}{% if not loop.last %}; {% endif %}{% endfor %}"{% endif %}>
+    <li class="verse{% if v.crosswalk and v.crosswalk.status == 'absent' %} v-absent{% endif %}" id="v{{ v.v }}" data-ref="{{ v.ref }}" data-meter="{{ v.meter or '' }}"{% if v.ids %} data-ids="{% for i in v.ids %}{{ i.label }} {{ i.value }}{% if not loop.last %}; {% endif %}{% endfor %}"{% endif %}>
       <button type="button" class="vnum" aria-expanded="false" aria-controls="d{{ v.v }}" title="Verse details">
         <span class="n-knda">{{ v.v_knda }}</span><span class="n-deva">{{ v.v_deva }}</span><span class="n-iast">{{ v.v }}</span>
       </button>
@@ -50,6 +59,7 @@
           {% if v.has_words %}<button type="button" class="wbw-btn" aria-expanded="false">Word by word</button>
           <div class="wbw" hidden></div>
           {% elif cw and cw.status == 'match' and cw.links and ed.id == 'vu' %}<p class="wbw-link"><a href="{{ root }}{{ cw.links[0].path }}">Word-by-word analysis (Critical Edition {{ cw.links[0].ref }})</a></p>{% endif %}
+          <button type="button" class="chant-here">Chant from here</button>
           <button type="button" class="cite">Copy citation</button>
           <span class="cite-ok" role="status"></span>
         </div>
@@ -64,3 +74,4 @@
   </nav>
 </div>
 {% endblock %}
+{% block scripts %}<script src="{{ root }}static/chant.js"></script>{% endblock %}

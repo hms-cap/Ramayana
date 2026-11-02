@@ -1,30 +1,72 @@
 {% extends "base.html" %}
 {% from "_strip.html" import strip %}
 {% block main %}
-<section class="hero">
+<section class="hero hero-slim">
   <h1 lang="kn">ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ</h1>
   <p class="hero-sa" lang="sa">वाल्मीकिरामायणम्</p>
-  <p class="lede">The Sanskrit epic, verse by verse, in Kannada script, Devanāgarī and IAST. Pick a kāṇḍa below; each block is as wide as the kāṇḍa is long.</p>
-  <p class="start"><a class="btn" href="{{ ed.id }}/1/1/">Begin at Bālakāṇḍa 1.1</a> <a class="link" href="search/">Search the text</a></p>
 </section>
 
-{% for e in eds %}
-{{ strip(e, root) }}
-{% endfor %}
+<div class="home-grid">
+  <section class="votd" id="votd" aria-roledescription="carousel" aria-label="Verse of the day"
+           data-fallback='{{ fallback|e }}'>
+    <header class="votd-head">
+      <h2><span class="votd-kind">Today's śloka</span> · <span class="votd-name">…</span></h2>
+      <div class="votd-actions">
+        <button type="button" class="act" id="votd-another" title="A different verse">⇄ Another</button>
+        <button type="button" class="act" id="votd-today" hidden>Today's</button>
+        <button type="button" class="act" id="votd-save" aria-pressed="false">☆ <span>Save</span></button>
+        <a class="act" id="votd-open" href="#">Open →</a>
+        <button type="button" class="act" id="votd-share">Share</button>
+      </div>
+    </header>
+    <div class="votd-view" aria-live="polite"><div class="votd-slide" role="group" aria-roledescription="slide" tabindex="0">
+      <noscript>The verse of the day needs JavaScript. <a href="{{ ed.id }}/1/1/">Begin at 1.1</a>.</noscript>
+    </div></div>
+    <div class="votd-dots" role="tablist" aria-label="Cards"></div>
+  </section>
 
-<section class="kanda-table">
-  <h2>Kāṇḍas</h2>
-  <table>
-    <thead><tr><th scope="col">Kāṇḍa</th>{% for e in eds %}<th scope="col" class="numcol">{{ e.short }}</th>{% endfor %}</tr></thead>
-    <tbody>
-    {% for k in eds[0].kandas %}
-      {% set i = loop.index0 %}
-      <tr>
-        <th scope="row"><span lang="kn">{{ k.kn }}</span> <span class="en">{{ k.en }}</span></th>
-        {% for e in eds %}<td class="numcol"><a href="{{ e.id }}/{{ k.n }}/">{{ e.kandas[i].sargas }} sargas</a><span class="vv">{{ "{:,}".format(e.kandas[i].verses) }} verses</span></td>{% endfor %}
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table>
+  <aside class="home-side">
+    <section class="cont" id="continue" hidden>
+      <h2>Continue reading</h2>
+      <p class="cont-where" id="cont-where"></p>
+      <p class="cont-bar"><span id="cont-bar" style="width:0"></span></p>
+      <p><a class="btn" id="cont-go" href="#">Continue</a> <button type="button" class="act" id="cont-chant"><span lang="kn">ಪಠಣ</span> Chant</button></p>
+    </section>
+    <section class="cont" id="begin">
+      <h2>Begin</h2>
+      <p><a class="btn" href="{{ ed.id }}/1/1/">Bālakāṇḍa 1.1</a> <a class="link" href="search/">Search the text</a></p>
+    </section>
+    <a class="mybtn" href="my/"><span aria-hidden="true">★</span> My list <b class="badge-n" hidden></b></a>
+  </aside>
+</div>
+
+<section class="tiles-sec">
+  <div class="tiles-head">
+    <h2>Kāṇḍas</h2>
+    <div class="seg seg-sm" role="radiogroup" aria-label="Edition for the sarga lists">
+      {% for e in eds %}<button type="button" role="radio" data-chip-ed="{{ e.id }}" aria-checked="{{ 'true' if loop.first else 'false' }}">{{ e.short }}</button>{% endfor %}
+    </div>
+  </div>
+  <ul class="tiles">
+  {% for k in eds[0].kandas %}
+    {% set i = loop.index0 %}
+    <li class="tile" data-k="{{ k.n }}"{% for e in eds %} data-n-{{ e.id }}="{{ e.kandas[i].sargas }}"{% endfor %}>
+      <button type="button" class="tile-btn" aria-expanded="false" aria-controls="chips{{ k.n }}">
+        <span class="tn" lang="kn">{{ k.n_knda }}</span>
+        <span class="tk" lang="kn">{{ k.kn }}</span>
+        <span class="tc">{{ k.en }} · {{ eds[0].kandas[i].sargas }}{% if eds|length > 1 %} / {{ eds[1].kandas[i].sargas }}{% endif %} sargas</span>
+      </button>
+      <div class="chips" id="chips{{ k.n }}" hidden></div>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+
+<section class="library">
+  <h2>Editions</h2>
+  {% for e in eds %}
+  {{ strip(e, root) }}
+  {% endfor %}
 </section>
 {% endblock %}
+{% block scripts %}<script src="{{ root }}static/home.js"></script>{% endblock %}

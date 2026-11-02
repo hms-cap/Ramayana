@@ -7,22 +7,27 @@
 <meta name="description" content="{% block description %}The Vālmīki Rāmāyaṇa in Sanskrit, readable in Kannada script, Devanāgarī and IAST.{% endblock %}">
 <link rel="preload" href="{{ root }}static/fonts/TiroKannada.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="{{ root }}static/style.css">
+<link rel="manifest" href="{{ root }}manifest.webmanifest">
+<meta name="theme-color" content="#1B2358">
+<link rel="icon" href="{{ root }}static/icons/icon-192.png">
 <script>
 (function(){try{var p=JSON.parse(localStorage.getItem("vr-prefs")||"{}");var d=document.documentElement;
 if(p.script)d.dataset.script=p.script;if(p.savarna)d.dataset.savarna="1";if(p.scan)d.dataset.scan="1";
 if(p.size)d.dataset.size=p.size;if(p.theme)d.dataset.theme=p.theme;}catch(e){}})();
 </script>
 </head>
-<body class="page-{{ page }}">
+<body class="page-{{ page }}" data-root="{{ root }}">
 <a class="skip" href="#main">Skip to text</a>
 <header class="bar">
   <div class="bar-inner">
+    {% if page != 'home' %}<a class="back" href="{{ up|default(root) }}" aria-label="Back" data-back>‹</a>{% endif %}
     <a class="brand" href="{{ root }}"><span class="kn">ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ</span></a>
     <nav class="nav" aria-label="Site">
       <a href="{{ root }}search/"{% if page == 'search' %} aria-current="page"{% endif %}>Search</a>
+      <a href="{{ root }}my/"{% if page == 'my' %} aria-current="page"{% endif %}>My</a>
       <a href="{{ root }}about/"{% if page == 'about' %} aria-current="page"{% endif %}>Sources</a>
     </nav>
-    {% if page in ('sarga', 'search') %}
+    {% if page in ('sarga', 'search', 'home', 'my') %}
     <div class="controls">
       <div class="seg" role="radiogroup" aria-label="Script">
         <button type="button" role="radio" data-set-script="knda" lang="kn">ಕನ್ನಡ</button>
@@ -48,13 +53,31 @@ if(p.size)d.dataset.size=p.size;if(p.theme)d.dataset.theme=p.theme;}catch(e){}})
     {% endif %}
   </div>
 </header>
+<div class="shell">
+<aside class="rail" aria-label="Library">
+  <a href="{{ root }}"{% if page == 'home' %} aria-current="page"{% endif %}>Home</a>
+  {% for e in rail_eds %}
+  <h2>{{ e.short }}</h2>
+  <ul>{% for k in rail_kandas %}<li><a href="{{ root }}{{ e.id }}/{{ k.n }}/" lang="kn"{% if cur_ed is defined and cur_ed == e.id and cur_k is defined and cur_k == k.n %} aria-current="true"{% endif %}>{{ k.kn }}</a></li>{% endfor %}</ul>
+  {% endfor %}
+</aside>
+<div class="shell-main">
 <main id="main">
 {% block main %}{% endblock %}
 </main>
 <footer class="foot">
   <p>Sanskrit text of each edition is shown under its own licence; see <a href="{{ root }}about/">Sources</a>. Critical Edition text from <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, CC BY-NC-SA 4.0; Vulgate text from <a href="https://sa.wikisource.org/">Sanskrit Wikisource</a>, CC BY-SA 4.0. Not for commercial use.</p>
 </footer>
+</div>
+</div>
+<nav class="tabbar" aria-label="Main">
+  <a href="{{ root }}"{% if page == 'home' %} aria-current="page"{% endif %}><span aria-hidden="true">⌂</span>Home</a>
+  <a href="{{ root }}ce/"{% if page in ('edition', 'kanda', 'sarga') %} aria-current="page"{% endif %}><span aria-hidden="true">☰</span>Library</a>
+  <a href="{{ root }}search/"{% if page == 'search' %} aria-current="page"{% endif %}><span aria-hidden="true">⌕</span>Search</a>
+  <a href="{{ root }}my/"{% if page == 'my' %} aria-current="page"{% endif %}><span aria-hidden="true">★</span>My<b class="badge-n" hidden></b></a>
+</nav>
 <script src="{{ root }}static/translit.js"></script>
+<script src="{{ root }}static/version.js"></script>
 <script src="{{ root }}static/app.js"></script>
 {% block scripts %}{% endblock %}
 </body>

@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% set up = '../' %}
+{% set cur_ed = ed.id %}
+{% set cur_k = kanda.n %}
 {% block title %}{{ kanda.kn }} — {{ kanda.en }} ({{ ed.short }}){% endblock %}
 {% block main %}
 <div class="listing">
@@ -6,6 +9,7 @@
   <header class="kanda-head">
     <h1 lang="kn">{{ kanda.kn }}</h1>
     <p class="sub"><span lang="sa">{{ kanda.deva }}</span> <span class="en">{{ kanda.en }}</span></p>
+    <p class="head-actions"><button type="button" class="chant-list act" data-href="{{ items[0].s }}/"><span lang="kn">ಪಠಣ</span> Chant this kāṇḍa from sarga 1</button></p>
     <p class="count">{{ kanda.sargas }} sargas, {{ "{:,}".format(kanda.verses) }} verses in the {{ ed.short }}.</p>
   </header>
   <ol class="sargas">
@@ -24,3 +28,4 @@
   </ol>
 </div>
 {% endblock %}
+{% block scripts %}<script src="{{ root }}static/chant.js"></script>{% endblock %}

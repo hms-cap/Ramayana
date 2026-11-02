@@ -1,0 +1,20 @@
+from playwright.sync_api import sync_playwright
+B="http://localhost:8765"
+with sync_playwright() as p:
+    b=p.chromium.launch(); ctx=b.new_context(viewport={"width":1000,"height":800}); pg=ctx.new_page()
+    errs=[]; pg.on("pageerror",lambda e:errs.append(str(e)))
+    pg.goto(B+"/"); pg.wait_for_function("navigator.serviceWorker.controller!==null",timeout=15000)
+    print("controlled")
+    pg.goto(B+"/ce/1/1/"); pg.wait_for_timeout(800)
+    pg.goto(B+"/about/"); pg.wait_for_selector("#packs button"); pg.wait_for_timeout(500)
+    print("state:",pg.inner_text("#app-state"))
+    pg.click("#check-update"); pg.wait_for_timeout(800); print("update:",pg.inner_text("#update-msg"))
+    # download the core pack (first button is ce-1... use the last)
+    pg.locator("#packs [data-pack]").last.click(); pg.wait_for_function("document.getElementById('pack-msg').textContent==='Done.'",timeout=60000)
+    print("pack:",pg.inner_text("#packs li >> nth=-1").replace("\n"," "))
+    ctx.set_offline(True)
+    pg.goto(B+"/"); pg.wait_for_selector(".votd-slide .vc-verse",timeout=10000); print("offline home ok:",pg.inner_text(".votd-name"))
+    pg.goto(B+"/ce/1/1/"); print("offline visited page:",pg.title()[:30])
+    r=pg.goto(B+"/ce/3/9/"); print("offline unvisited:",pg.inner_text("h1"))
+    print("errors:",errs)
+    b.close()

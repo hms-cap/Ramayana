@@ -9,6 +9,7 @@ sarga, per-sarga JSON, and a compact per-edition search index.
 from __future__ import annotations
 
 import argparse
+import re
 import json
 import shutil
 import sys
@@ -19,6 +20,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "etl"))
+import daily  # noqa: E402
 import grammar  # noqa: E402
 import meter  # noqa: E402
 from translit import iast_to_slp1, render, slp1_to_brahmic, to_digits  # noqa: E402
@@ -148,6 +150,8 @@ def build(out: Path) -> None:
                       autoescape=select_autoescape(["html"]), trim_blocks=True, lstrip_blocks=True)
     env.filters["knda"] = lambda n: to_digits(n, "knda")
     env.filters["deva"] = lambda n: to_digits(n, "deva")
+    env.globals["rail_kandas"] = [kanda_info(k) for k in range(1, 8)]
+    env.globals["rail_eds"] = editions
     if out.exists():
         shutil.rmtree(out)
     shutil.copytree(ROOT / "site" / "static", out / "static")
@@ -176,6 +180,8 @@ def build(out: Path) -> None:
                            "verses": sum(len(by_sarga[(k, s)]) for s in ks)})
         summary = {**ed, "kandas": kandas, "verses": len(recs), "sargas": len(sarga_keys)}
         edition_summaries.append(summary)
+        if ed["id"] == "ce":
+            ce_titles = titles
 
         index_rows = []
         for i, (k, s) in enumerate(sarga_keys):
@@ -230,11 +236,13 @@ def build(out: Path) -> None:
         (out / "data" / f'search-{ed["id"]}.json').write_text(
             json.dumps(index_rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
+    fallback = build_daily(out, editions, ce_titles)
     cw_report = ROOT / "data" / "crosswalk" / "report.json"
-    common = dict(editions=editions, eds=edition_summaries, ed=edition_summaries[0], sources=sources,
+    changes = json.loads((ROOT / "data" / "changes.json").read_text(encoding="utf-8"))
+    common = dict(changes=changes, fallback=json.dumps(fallback, ensure_ascii=False), editions=editions, eds=edition_summaries, ed=edition_summaries[0], sources=sources,
                   crosswalk=json.loads(cw_report.read_text()) if cw_report.exists() and len(edition_summaries) > 1 else None)
     (out / "index.html").write_text(env.get_template("home.html").render(root="", page="home", **common), encoding="utf-8")
-    for name in ("search", "about"):
+    for name in ("search", "about", "my"):
         p = out / name / "index.html"
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(env.get_template(f"{name}.html").render(root="../", page=name, **common), encoding="utf-8")
@@ -242,9 +250,86 @@ def build(out: Path) -> None:
         p = out / ed["id"] / "index.html"
         p.write_text(env.get_template("edition.html").render(root="../", page="edition",
                                                              **{**common, "ed": ed}), encoding="utf-8")
+    write_pwa(out, edition_summaries)
     (out / ".nojekyll").write_text("")
     print(f"built {sum(e['sargas'] for e in edition_summaries)} sarga pages "
           f"for {', '.join(e['id'] for e in edition_summaries)} -> {out}")
+
+
+def build_daily(out: Path, editions, titles: dict) -> dict:
+    """365 automatic verse-of-the-day cards (etl/daily.py) -> dist/data/daily/. Returns the fallback card."""
+    ed = next(e for e in editions if e["id"] == "ce")
+    recs = [json.loads(l) for l in open(ROOT / "data" / "normalized" / "ce.jsonl", encoding="utf-8")]
+    cur = json.loads((ROOT / "data" / "daily" / "curated.json").read_text(encoding="utf-8"))
+    cur.pop("_comment", None)
+    sizes = defaultdict(int)
+    for r in recs:
+        sizes[(r["k"], r["s"])] += 1
+    def metre_of(r):
+        return r.get("meter")
+
+    chosen = daily.select(recs, WORDS, metre_of)
+
+    def card(r):
+        v = render_verse(r, ed)
+        k = kanda_info(r["k"])
+        units = []
+        for u in WORDS[r["uid"]]:
+            g = GLOSS.get(u["l"][-1], "")          # the head word of a compound carries the grammar
+            g = re.sub(r"^(?:p\. ?p\. ?\d*\s*|pass\. ?\d*\s*|Ved\.\s*|[PAU]\.,?\s*)", "", g.split(" | ")[0]).strip()
+            if len(g) > 70:
+                g = g[:70].rsplit(",", 1)[0].rsplit(" ", 1)[0] if "," in g[:70] else g[:70].rsplit(" ", 1)[0]
+            if g and u["t"].get("pos") != "i" and len(units) < 8:
+                units.append({"f": u["f"], "l": u["l"], "t": u["t"], "g": g})
+        cw = v["crosswalk"]
+        c = {"uid": r["uid"], "ref": v["ref"], "path": f'ce/{r["k"]}/{r["s"]}/#v{r["v"]}',
+             "slp": v["slp1"].split(" / "), "meter": v["meter"], "scan": v["scan"],
+             "ctx": {"k": r["k"], "kn": k["kn"], "deva": k["deva"], "iast": k["iast"], "en": k["en"], "s": r["s"], "v": r["v"],
+                     "of": sizes[(r["k"], r["s"])], "title": (titles.get((r["k"], r["s"])) or {}).get("title_iast", "")},
+             "w": units}
+        if cw:
+            c["cw"] = {"status": cw["status"], "refs": [l["ref"] for l in cw["links"]], "paths": [l["path"] for l in cw["links"]]}
+        if r["uid"] in cur:
+            c.update({kk: vv for kk, vv in cur[r["uid"]].items() if kk in ("m", "u")})
+        return c
+
+    cards = [card(r) for r in chosen]
+    assert len(cards) == daily.N, len(cards)
+    daily.write(out, cards)
+    first = next(r for r in recs if r["uid"] == "CE-1-001-001")
+    return card(first)
+
+
+def write_pwa(out: Path, eds) -> None:
+    """Service worker (with its shell list), manifest, and the offline download packs."""
+    shell = ["", "search/", "about/", "my/"]
+    for e in eds:
+        shell.append(f'{e["id"]}/')
+        shell += [f'{e["id"]}/{k}/' for k in range(1, 8)]
+    shell += ["data/grammar.json", "data/daily/index.json", "manifest.webmanifest"]
+    shell += sorted(str(p.relative_to(out)) for p in (out / "static").rglob("*") if p.is_file() and p.suffix != ".txt")
+    sw = (ROOT / "site" / "sw.js").read_text(encoding="utf-8").replace("/*SHELL_FILES*/[]", json.dumps(shell))
+    (out / "sw.js").write_text(sw, encoding="utf-8")
+    shutil.copy(ROOT / "site" / "manifest.webmanifest", out / "manifest.webmanifest")
+    packs = []
+
+    def size(paths):
+        return sum((out / p.rstrip("/") / "index.html").stat().st_size if p.endswith("/") else (out / p).stat().st_size for p in paths)
+
+    for e in eds:
+        for k in range(1, 8):
+            urls = []
+            for d in sorted((out / e["id"] / str(k)).iterdir(), key=lambda x: int(x.name) if x.name.isdigit() else 0):
+                if d.is_dir():
+                    urls.append(f'{e["id"]}/{k}/{d.name}/')
+                    if (d / "words.json").exists():
+                        urls.append(f'{e["id"]}/{k}/{d.name}/words.json')
+            kn = kanda_info(k)
+            packs.append({"id": f'{e["id"]}-{k}', "label": f'{e["short"]}: {kn["en"]}', "urls": urls, "bytes": size(urls)})
+    core = [f"data/search-{e['id']}.json" for e in eds] + [f"data/daily/c{i}.json" for i in range(8)]
+    packs.append({"id": "core", "label": "Search index and verse-of-the-day cards", "urls": core, "bytes": size(core)})
+    (out / "data" / "offline.json").write_text(json.dumps({"version": json.loads((ROOT / "data" / "changes.json").read_text())[0][0], "packs": packs},
+                                                         ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
 def alt_edition_href(ed, editions, k, s):

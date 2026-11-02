@@ -29,7 +29,10 @@
     });
     document.dispatchEvent(new CustomEvent("prefs-changed", { detail: prefs }));
   }
-  window.VRPrefs = { get: function () { return prefs; } };
+  window.VRPrefs = {
+    get: function () { return prefs; },
+    set: function (k, v) { prefs[k] = v; save(prefs); apply(); }
+  };
 
   document.addEventListener("click", function (e) {
     var b = e.target.closest("[data-set-script]");
@@ -136,6 +139,53 @@
     if (!m) return;
     var el = document.getElementById("v" + m[1]);
     if (el && root.dataset.filter === "shared" && el.classList.contains("v-absent")) { prefs.filter = ""; apply(); }
+  }
+  // ---- Saved list ("My"): sargas and single verses, kept on this device ----
+  var SAVED = "vr.saved";
+  function savedList() { try { return JSON.parse(localStorage.getItem(SAVED) || "[]"); } catch (e) { return []; } }
+  function setSaved(l) { try { localStorage.setItem(SAVED, JSON.stringify(l)); } catch (e) { /* storage unavailable */ } }
+  window.VRSaved = {
+    list: savedList,
+    has: function (id) { return savedList().some(function (x) { return x.id === id; }); },
+    toggle: function (item) {
+      var l = savedList(), i = l.findIndex(function (x) { return x.id === item.id; });
+      if (i >= 0) l.splice(i, 1); else { item.ts = Date.now(); l.unshift(item); }
+      setSaved(l); return i < 0;
+    }
+  };
+  function paintSave() {
+    document.querySelectorAll("[data-save]").forEach(function (b) {
+      var on = window.VRSaved.has(b.dataset.save);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.firstChild.nodeValue = on ? "★ " : "☆ ";
+      b.querySelector("span").textContent = on ? "Saved" : "Save";
+    });
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-save]");
+    if (!b) return;
+    var rd = document.querySelector(".reader");
+    window.VRSaved.toggle({ id: b.dataset.save, href: b.dataset.save, kind: "sarga",
+      titles: rd ? { knda: rd.dataset.titleKnda, deva: rd.dataset.titleDeva, iast: rd.dataset.titleIast } : {},
+      label: rd ? rd.dataset.src : b.dataset.save });
+    paintSave();
+  });
+  paintSave();
+  // ---- offline app: service worker and the reload prompt ----
+  var ROOT = document.body.dataset.root || "";
+  window.VRToast = function (msg, actions) {
+    var t = document.querySelector(".toast") || document.body.appendChild(Object.assign(document.createElement("div"), { className: "toast", role: "status" }));
+    t.textContent = msg + " ";
+    (actions || []).forEach(function (x) { var b = document.createElement("button"); b.type = "button"; b.textContent = x[0]; b.addEventListener("click", function () { t.remove(); x[1](); }); t.appendChild(b); });
+    return t;
+  };
+  if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+    var hadController = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.register(ROOT + "sw.js", { updateViaCache: "none" }).catch(function () { /* offline use unavailable */ });
+    navigator.serviceWorker.addEventListener("controllerchange", function () {
+      if (hadController) window.VRToast("A new version is ready.", [["Reload", function () { location.reload(); }]]);
+      hadController = true;
+    });
   }
   apply();
   openFromHash();

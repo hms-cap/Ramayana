@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}My list — ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ{% endblock %}
+{% block main %}
+<article class="prose" id="my">
+  <h1>My list</h1>
+  <p class="note">Saved on this device only. Nothing is sent anywhere.</p>
+  <h2>Saved</h2>
+  <ul class="my-list" id="my-saved"></ul>
+  <p id="my-empty" class="status">Nothing saved yet. Use ☆ Save on a sarga page, or on the verse of the day.</p>
+  <h2>Last read</h2>
+  <p id="my-last" class="status">Nothing yet.</p>
+</article>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}static/home.js"></script>{% endblock %}
