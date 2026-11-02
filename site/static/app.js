@@ -62,8 +62,8 @@
       return;
     }
     if (e.target.closest("[data-ed-on]")) { prefs.off = offList().filter(function (x) { return x !== document.body.dataset.ed; }); save(prefs); apply(); return; }
-    var w = e.target.closest(".wbw-btn");
-    if (w) { toggleWords(w.closest(".verse")); return; }
+    var w = e.target.closest(".wbw-btn, .wbw-ic");
+    if (w) { if (w.getAttribute("aria-disabled") !== "true") toggleWords(w.closest(".verse")); return; }
     var c = e.target.closest(".cite");
     if (c) { copyCitation(c); return; }
     var opts = document.querySelector(".opts[open]");
@@ -143,11 +143,11 @@
     regrouped: "The lines of this verse are grouped differently in the Baroda text, so some words may not match."
   };
   function toggleWords(li) {
-    var src = li.querySelector(".vtext"), box = li.querySelector(".wbw"), btn = li.querySelector(".wbw-btn");
+    var src = li.querySelector(".vtext"), box = li.querySelector(".wbw");
     if (!src || !src.dataset.words || !box) return;
     var open = !box.hidden;
     box.hidden = open; src.setAttribute("aria-expanded", open ? "false" : "true");
-    if (btn) btn.setAttribute("aria-expanded", open ? "false" : "true");
+    li.querySelectorAll(".wbw-btn, .wbw-ic").forEach(function (b) { b.setAttribute("aria-expanded", open ? "false" : "true"); });
     li.classList.toggle("wbw-on", !open);
     if (open) return;
     var wurl = src.dataset.words === "words.json" ? "words.json" : root_href() + src.dataset.words;

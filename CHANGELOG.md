@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.5 — 2026-11-02
+- Word-by-word icon (`.wbw-ic`) under each verse number; `aria-disabled` and dimmed when the verse has no analysis.
+
 ## 0.4.4 — 2026-11-02
 - Clicking a verse's text opens the word-by-word panel under it (also keyboard: Enter / Space). Traditional verses with a single Baroda counterpart that is a variant, partial or regrouped match show that verse's analysis with a warning note. Verses with no counterpart have no analysis.
 

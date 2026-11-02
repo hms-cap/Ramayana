@@ -161,7 +161,7 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 .verses { list-style: none; margin: 0; padding: 0; }
 .verse { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 0 0.9rem; padding: 0.85rem 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 5.5rem; }
 .verse:target { background: linear-gradient(90deg, var(--accent-soft), transparent 70%); }
-.vnum { all: unset; cursor: pointer; text-align: right; color: var(--accent); font: 400 1.15rem/2 var(--f-knda); align-self: start; padding-top: 0.15rem; border-radius: 3px; }
+.vnum { all: unset; display: block; cursor: pointer; text-align: right; color: var(--accent); font: 400 1.15rem/2 var(--f-knda); align-self: start; padding-top: 0.15rem; border-radius: 3px; }
 .vnum:focus-visible { outline: 2px solid var(--focus); }
 .vnum .n-deva { font-family: var(--f-deva); }
 .vnum .n-iast { font-family: var(--f-ui); }
@@ -436,3 +436,12 @@ body.story-open { overflow: hidden; }
 .verse.wbw-on .vtext { background: color-mix(in srgb, var(--accent-soft) 70%, transparent); }
 .body > .wbw { margin: 0.5rem 0 0.2rem; padding: 0.7rem 0.9rem; background: var(--paper-2); border-radius: 6px; }
 .wbw-warn { color: var(--absent); }
+
+.side { display: flex; flex-direction: column; align-items: flex-end; gap: 0.1rem; align-self: start; }
+.wbw-ic { all: unset; box-sizing: border-box; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: var(--accent); cursor: pointer; }
+.wbw-ic:hover { background: var(--accent-soft); }
+.wbw-ic:focus-visible { outline: 2px solid var(--focus); }
+.wbw-ic[aria-expanded="true"] { background: var(--accent); color: var(--paper); }
+.wbw-ic[aria-disabled="true"] { opacity: 0.25; cursor: default; }
+.wbw-ic[aria-disabled="true"]:hover { background: none; }
+.wbw-ic svg { display: block; }
