@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% from "_art.html" import kcard %}
 {% block main %}
 {% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
-<section class="hero hero-slim">
-  <h1 lang="kn">ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ</h1>
-  <p class="hero-sa" lang="sa">वाल्मीकिरामायणम्</p>
+<section class="greet">
+  <h1 lang="kn">ನಮಸ್ಕಾರ</h1>
+  <p class="greet-date" id="greet-date"></p>
 </section>
 
 <div class="home-grid">
@@ -30,36 +31,27 @@
       <h2>Continue reading</h2>
       <p class="cont-where" id="cont-where"></p>
       <p class="cont-bar"><span id="cont-bar" style="width:0"></span></p>
-      <p><a class="btn" id="cont-go" href="#">Continue</a> <button type="button" class="act" id="cont-chant"><span lang="kn">ಪಠಣ</span> Chant</button></p>
+      <p class="cont-act"><a class="pillbtn light" id="cont-go" href="#">Resume →</a></p>
     </section>
     <section class="cont" id="begin">
       <h2>Begin</h2>
-      <p><a class="btn" href="{{ vu_e.id }}/1/1/">Bālakāṇḍa 1.1</a> <a class="link" href="search/">Search the text</a></p>
+      <p class="cont-where" lang="kn">ಬಾಲಕಾಂಡ · ಸರ್ಗ ೧</p>
+      <p class="cont-act"><a class="pillbtn light" href="{{ vu_e.id }}/1/1/">Start 1.1 →</a></p>
     </section>
   </aside>
 </div>
 
 <section class="tiles-sec">
-  <div class="tiles-head">
-    <h2>Kāṇḍas</h2>
-    <div class="seg seg-sm" role="radiogroup" aria-label="Edition for the sarga lists">
-      {% for e in eds %}<button type="button" role="radio" data-chip-ed="{{ e.id }}" data-ed="{{ e.id }}" aria-checked="{{ 'true' if loop.first else 'false' }}">{{ e.short }}</button>{% endfor %}
-    </div>
+  <div class="tiles-head"><h2>Kāṇḍas</h2><a class="seeall" href="read/">See all</a></div>
+  <div class="krail">
+  {% for k in eds[0].kandas %}{% set i = loop.index0 %}{{ kcard(k, vu_e.kandas[i].sargas, ce_e.kandas[i].sargas) }}{% endfor %}
   </div>
-  <ul class="tiles">
-  {% for k in eds[0].kandas %}
-    {% set i = loop.index0 %}
-    <li class="tile" data-k="{{ k.n }}"{% for e in eds %} data-n-{{ e.id }}="{{ e.kandas[i].sargas }}"{% endfor %}>
-      <button type="button" class="tile-btn" aria-expanded="false" aria-controls="chips{{ k.n }}">
-        <span class="tn" lang="kn">{{ k.n_knda }}</span>
-        <span class="tk" lang="kn">{{ k.kn }}</span>
-        <span class="tc">{{ k.en }} · <span data-ed="vu">{{ vu_e.kandas[i].sargas }}</span><span data-ed="ce"><span class="sep"> / </span>{{ ce_e.kandas[i].sargas }}</span> sargas</span>
-      </button>
-      <div class="chips" id="chips{{ k.n }}" hidden></div>
-    </li>
-  {% endfor %}
-  </ul>
+  <div class="quick">
+    <a class="pillbtn card" href="search/">Search</a>
+    <a class="pillbtn card" href="my/">Saved</a>
+    <button type="button" class="pillbtn card" id="quick-chant"><span lang="kn">ಪಠಣ</span> Chant</button>
+  </div>
 </section>
 
 {% endblock %}
-{% block scripts %}<script src="{{ root }}static/home.js"></script>{% endblock %}
+{% block scripts %}<script src="{{ root }}static/home.js"></script><script src="{{ root }}static/read.js"></script>{% endblock %}

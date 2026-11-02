@@ -1,0 +1,50 @@
+<div class="scrim" id="scrim" hidden></div>
+
+<section class="sheet" id="settings" role="dialog" aria-modal="true" aria-labelledby="set-title" hidden>
+  <div class="grab" aria-hidden="true"></div>
+  <header class="sheet-head"><h2 id="set-title">Reading settings</h2><button type="button" class="pillbtn dark" data-close-sheet>Done</button></header>
+  <div class="sheet-body">
+    <div class="set-row"><div class="set-l" id="lab-script">Script</div>
+      <div class="sg4" role="group" aria-labelledby="lab-script">
+        <button type="button" data-set-script="knda" lang="kn" aria-checked="false" role="radio" aria-label="Kannada">ಅ</button>
+        <button type="button" data-set-script="deva" lang="sa" aria-checked="false" role="radio" aria-label="Devanāgarī">अ</button>
+        <button type="button" data-set-script="iast" aria-checked="false" role="radio" aria-label="Roman (IAST)">A</button>
+        <button type="button" data-set-script="knda-deva" aria-checked="false" role="radio" aria-label="Kannada and Devanāgarī together"><span lang="kn">ಅ</span> <span lang="sa">अ</span></button>
+      </div></div>
+    <div class="set-row"><div class="set-l" id="lab-size">Text size</div>
+      <div class="sg3" role="radiogroup" aria-labelledby="lab-size">
+        <label><input type="radio" name="size" value="s" data-pref-size><span>Small</span></label>
+        <label><input type="radio" name="size" value="m" data-pref-size><span>Medium</span></label>
+        <label><input type="radio" name="size" value="l" data-pref-size><span>Large</span></label>
+      </div></div>
+    <div class="set-row"><div class="set-l" id="lab-theme">Theme</div>
+      <div class="sg3" role="radiogroup" aria-labelledby="lab-theme">
+        <label><input type="radio" name="theme" value="light" data-pref-theme><span>Light</span></label>
+        <label><input type="radio" name="theme" value="dark" data-pref-theme><span>Dark</span></label>
+        <label><input type="radio" name="theme" value="system" data-pref-theme><span>Same as device</span></label>
+      </div></div>
+    <div class="set-row"><div class="set-l">Texts to show</div>
+      {% for e in rail_eds %}<label class="sw"><span>{{ e.short }} <small lang="kn">{{ e.short_kn }}</small></span><input type="checkbox" data-ed-toggle="{{ e.id }}" checked><i aria-hidden="true"></i></label>{% endfor %}
+      <label class="sw"><span>Show metre scansion <small>(<span lang="sa">।</span> laghu, <span lang="sa">ऽ</span> guru)</small></span><input type="checkbox" data-pref="scan"><i aria-hidden="true"></i></label>
+      <label class="sw"><span>Homorganic nasals <small lang="kn">ಮುನಿಪುಙ್ಗವಮ್</small></span><input type="checkbox" data-pref="savarna"><i aria-hidden="true"></i></label>
+    </div>
+    <a class="about-link" href="{{ root }}about/#app"><span class="app-mark" lang="kn" aria-hidden="true">ರಾ</span><span>About this app <small>v<span data-app-version></span></small></span><b aria-hidden="true">›</b></a>
+  </div>
+</section>
+
+<section class="sheet" id="ksheet" role="dialog" aria-modal="true" aria-labelledby="ks-title" hidden>
+  <div class="grab" aria-hidden="true"></div>
+  <header class="sheet-head">
+    <div class="ks-top"><div class="ks-art" id="ks-art" aria-hidden="true"></div>
+      <div><h2 id="ks-title" lang="kn"></h2><p class="ks-sub" id="ks-sub"></p></div></div>
+    <button type="button" class="round" data-close-sheet aria-label="Close">✕</button>
+  </header>
+  <div class="sheet-body">
+    <div class="ks-go"><a class="pillbtn dark" id="ks-start" href="#"></a><a class="pillbtn sand" id="ks-resume" href="#" hidden></a></div>
+    <div class="seg seg-sm ks-ed" role="radiogroup" aria-label="Text">
+      {% for e in rail_eds %}<button type="button" role="radio" data-chip-ed="{{ e.id }}" data-ed="{{ e.id }}" aria-checked="false">{{ e.short }}</button>{% endfor %}
+    </div>
+    <div class="set-l">Sargas</div>
+    <div class="kchips" id="ks-chips"></div>
+  </div>
+</section>

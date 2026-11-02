@@ -242,7 +242,7 @@ def build(out: Path) -> None:
     common = dict(changes=changes, fallback=json.dumps(fallback, ensure_ascii=False), editions=editions, eds=edition_summaries, ed=edition_summaries[0], sources=sources,
                   crosswalk=json.loads(cw_report.read_text()) if cw_report.exists() and len(edition_summaries) > 1 else None)
     (out / "index.html").write_text(env.get_template("home.html").render(root="", page="home", **common), encoding="utf-8")
-    for name in ("search", "about", "my"):
+    for name in ("search", "about", "my", "read"):
         p = out / name / "index.html"
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(env.get_template(f"{name}.html").render(root="../", page=name, **common), encoding="utf-8")
@@ -306,7 +306,7 @@ def build_daily(out: Path, editions, titles: dict) -> dict:
 
 def write_pwa(out: Path, eds) -> None:
     """Service worker (with its shell list), manifest, and the offline download packs."""
-    shell = ["", "search/", "about/", "my/"]
+    shell = ["", "read/", "search/", "about/", "my/"]
     for e in eds:
         shell.append(f'{e["id"]}/')
         shell += [f'{e["id"]}/{k}/' for k in range(1, 8)]

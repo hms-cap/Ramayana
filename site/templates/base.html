@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="{{ root }}static/style.css">
 <link rel="manifest" href="{{ root }}manifest.webmanifest">
 <meta name="theme-color" content="#1B2358">
-<link rel="icon" href="{{ root }}static/icons/icon-192.png">
+<link rel="icon" href="{{ root }}static/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ root }}static/icons/apple-touch-icon.png">
 <script>
 (function(){try{var p=JSON.parse(localStorage.getItem("vr-prefs")||"{}");var d=document.documentElement;
 if(p.script)d.dataset.script=p.script;if(p.savarna)d.dataset.savarna="1";if(p.scan)d.dataset.scan="1";
@@ -23,49 +24,21 @@ if(p.size)d.dataset.size=p.size;d.dataset.off=Array.isArray(p.off)?p.off.join(" 
     {% if page != 'home' %}<a class="back" href="{{ up|default(root) }}" aria-label="Back" data-back>‹</a>{% endif %}
     <a class="brand" href="{{ root }}"><span class="kn">ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ</span></a>
     <nav class="nav" aria-label="Site">
+      <a href="{{ root }}read/"{% if page == 'read' %} aria-current="page"{% endif %}>Read</a>
       <a href="{{ root }}search/"{% if page == 'search' %} aria-current="page"{% endif %}>Search</a>
-      <a href="{{ root }}my/"{% if page == 'my' %} aria-current="page"{% endif %}>My</a>
-      <a href="{{ root }}about/"{% if page == 'about' %} aria-current="page"{% endif %}>Sources</a>
+      <a href="{{ root }}my/"{% if page == 'my' %} aria-current="page"{% endif %}>Saved</a>
+      <a href="{{ root }}about/"{% if page == 'about' %} aria-current="page"{% endif %}>About</a>
     </nav>
-    {% if true %}
     <div class="controls">
-      <div class="seg" role="radiogroup" aria-label="Script">
-        <button type="button" role="radio" data-set-script="knda" lang="kn">ಕನ್ನಡ</button>
-        <button type="button" role="radio" data-set-script="deva" lang="sa">देव</button>
-        <button type="button" role="radio" data-set-script="iast">IAST</button>
-        <button type="button" role="radio" data-set-script="knda-deva" title="Kannada and Devanāgarī side by side"><span lang="kn">ಕ</span>+<span lang="sa">दे</span></button>
-        <button type="button" role="radio" data-set-script="all" title="Kannada, Devanāgarī and IAST">All</button>
-      </div>
-      <details class="opts">
-        <summary>Options</summary>
-        <div class="opts-panel">
-          <label><input type="checkbox" data-pref="savarna"> Homorganic nasals <span class="hint" lang="kn">(ಮುನಿಪುಙ್ಗವಮ್ instead of ಮುನಿಪುಂಗವಮ್)</span></label>
-          <label><input type="checkbox" data-pref="scan"> Show metre scansion <span class="hint">(<span lang="sa">।</span> laghu, <span lang="sa">ऽ</span> guru)</span></label>
-          <fieldset>
-            <legend>Theme</legend>
-            <label><input type="radio" name="theme" value="light" data-pref-theme> Light</label>
-            <label><input type="radio" name="theme" value="dark" data-pref-theme> Dark</label>
-            <label><input type="radio" name="theme" value="system" data-pref-theme> Same as device</label>
-          </fieldset>
-          <fieldset class="ed-set">
-            <legend>Texts to show</legend>
-            {% for e in rail_eds %}<label><input type="checkbox" data-ed-toggle="{{ e.id }}" checked> {{ e.short }} <span class="hint" lang="kn">{{ e.short_kn }}</span></label>{% endfor %}
-          </fieldset>
-          <fieldset>
-            <legend>Text size</legend>
-            <label><input type="radio" name="size" value="s" data-pref-size> Small</label>
-            <label><input type="radio" name="size" value="m" data-pref-size> Medium</label>
-            <label><input type="radio" name="size" value="l" data-pref-size> Large</label>
-          </fieldset>
-        </div>
-      </details>
+      <button type="button" class="round letter" id="script-cycle" aria-label="Script. Tap to change"><span data-script-letter lang="kn">ಅ</span></button>
+      <button type="button" class="round" data-open-sheet="settings" aria-haspopup="dialog" aria-label="Reading settings"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 14h14"/><circle cx="7" cy="6" r="2.2" fill="var(--paper)"/><circle cx="13" cy="14" r="2.2" fill="var(--paper)"/></svg></button>
     </div>
-    {% endif %}
   </div>
 </header>
 <div class="shell">
 <aside class="rail" aria-label="Library">
   <a href="{{ root }}"{% if page == 'home' %} aria-current="page"{% endif %}>Home</a>
+  <a href="{{ root }}read/"{% if page == 'read' %} aria-current="page"{% endif %}>Read</a>
   {% for e in rail_eds %}
   <div data-ed="{{ e.id }}"><h2>{{ e.short }}</h2>
   <ul>{% for k in rail_kandas %}<li><a href="{{ root }}{{ e.id }}/{{ k.n }}/" lang="kn"{% if cur_ed is defined and cur_ed == e.id and cur_k is defined and cur_k == k.n %} aria-current="true"{% endif %}>{{ k.kn }}</a></li>{% endfor %}</ul></div>
@@ -82,10 +55,12 @@ if(p.size)d.dataset.size=p.size;d.dataset.off=Array.isArray(p.off)?p.off.join(" 
 </div>
 </div>
 <nav class="tabbar" aria-label="Main">
-  <a href="{{ root }}"{% if page == 'home' %} aria-current="page"{% endif %}><span aria-hidden="true">⌂</span>Home</a>
-  <a href="{{ root }}search/"{% if page == 'search' %} aria-current="page"{% endif %}><span aria-hidden="true">⌕</span>Search</a>
-  <a href="{{ root }}my/"{% if page == 'my' %} aria-current="page"{% endif %}><span aria-hidden="true">★</span>My<b class="badge-n" hidden></b></a>
+  <a href="{{ root }}"{% if page == 'home' %} aria-current="page"{% endif %} aria-label="Home"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L11 4l8 6.5V19H3z"/><path d="M9 19v-5h4v5"/></svg><em>Home</em></a>
+  <a href="{{ root }}read/"{% if page in ('read','kanda','sarga','edition') %} aria-current="page"{% endif %} aria-label="Read"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5h5.5A2.5 2.5 0 0 1 11 7v12a2.5 2.5 0 0 0-2.5-2.5H3zM19 4.5h-5.5A2.5 2.5 0 0 0 11 7v12a2.5 2.5 0 0 1 2.5-2.5H19z"/></svg><em>Read</em></a>
+  <a href="{{ root }}search/"{% if page == 'search' %} aria-current="page"{% endif %} aria-label="Search"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l4.5 4.5"/></svg><em>Search</em></a>
+  <a href="{{ root }}my/"{% if page == 'my' %} aria-current="page"{% endif %} aria-label="Saved"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3.5h11v16L11 15.5l-5.5 4z"/></svg><em>Saved</em><b class="badge-n" hidden></b></a>
 </nav>
+{% include "_sheets.html" %}
 <script src="{{ root }}static/translit.js"></script>
 <script src="{{ root }}static/version.js"></script>
 <script src="{{ root }}static/app.js"></script>

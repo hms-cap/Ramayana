@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0 — 2026-11-03
+- App look: greeting Home with Continue card, verse of the day and a kāṇḍa carousel; new Read tab (`/read/`); floating pill tab bar (Home, Read, Search, Saved) below 900 px.
+- Kāṇḍa cards are Tanjore-style temple-niche paintings (`site/templates/_art.html`, motifs only); tapping one opens a bottom sheet with Start / Resume and sarga numbers (`site/static/read.js`).
+- Script is chosen with one letter (ಅ / अ / A) in the header; reading settings (script, size, theme, texts, metre, nasals) open in a bottom sheet from the sliders button, replacing the Options menu.
+- About shows version, release date and Check for updates in a card. New app icon (`site/static/icons/icon.svg`, rendered by `etl/make_icons.py`).
+
 ## 0.4.5 — 2026-11-02
 - Word-by-word icon (`.wbw-ic`) under each verse number; `aria-disabled` and dimmed when the verse has no analysis.
 

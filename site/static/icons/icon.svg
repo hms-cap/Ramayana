@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%"><stop offset="0" stop-color="#2F3C9C"/><stop offset="1" stop-color="#141A45"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE08A"/><stop offset="1" stop-color="#D49A2A"/></linearGradient>
+    <linearGradient id="niche" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C24A28"/><stop offset="1" stop-color="#8E2D18"/></linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <g fill="#F0C45A" opacity=".55">
+    <circle cx="64" cy="64" r="5"/><circle cx="448" cy="64" r="5"/><circle cx="64" cy="448" r="5"/><circle cx="448" cy="448" r="5"/>
+    <circle cx="96" cy="256" r="4"/><circle cx="416" cy="256" r="4"/><circle cx="256" cy="40" r="4"/><circle cx="256" cy="472" r="4"/>
+  </g>
+  <g stroke="#F0C45A" stroke-width="3" fill="none" opacity=".35"><circle cx="256" cy="256" r="236"/><circle cx="256" cy="256" r="224" stroke-dasharray="2 9" stroke-linecap="round"/></g>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 412V236Q128 188 190 166Q242 148 256 88Q270 148 322 166Q384 188 384 236V412Z" fill="url(#niche)" stroke="url(#gold)" stroke-width="9"/>
+    <path d="M148 412V238Q148 202 198 184Q250 166 256 120Q262 166 314 184Q364 202 364 238V412Z" fill="none" stroke="#F0C45A" stroke-width="3" opacity=".6"/>
+    <circle cx="256" cy="72" r="10" fill="url(#gold)"/><circle cx="214" cy="116" r="5" fill="#F0C45A"/><circle cx="298" cy="116" r="5" fill="#F0C45A"/>
+    <g stroke="url(#gold)" stroke-width="7" fill="none"><path d="M256 190v-22M292 205l14-14M220 205l-14-14M318 242h22M194 242h-22"/></g>
+    <circle cx="256" cy="246" r="50" fill="url(#gold)"/>
+    <circle cx="256" cy="246" r="34" fill="none" stroke="#B87420" stroke-width="3" opacity=".5"/>
+    <path d="M256 384C226 354 226 316 256 290C286 316 286 354 256 384Z" fill="#FFF1CF"/>
+    <path d="M256 384C206 378 184 346 190 312C228 312 252 342 256 384Z" fill="#FFE6A8"/>
+    <path d="M256 384C306 378 328 346 322 312C284 312 260 342 256 384Z" fill="#FFE6A8"/>
+    <path d="M256 384C186 384 156 358 154 330C196 328 240 350 256 384Z" fill="#F7D98A" opacity=".85"/>
+    <path d="M256 384C326 384 356 358 358 330C316 328 272 350 256 384Z" fill="#F7D98A" opacity=".85"/>
+    <path d="M128 400H384" stroke="url(#gold)" stroke-width="5"/>
+  </g>
+</svg>

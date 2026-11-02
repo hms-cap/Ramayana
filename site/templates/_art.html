@@ -1,0 +1,29 @@
+{# Temple-niche (Tanjore-style) painting for each kāṇḍa: motifs and symbols only, no figures.
+   Colours come from --kb / --kp set on the card by kcard(). #}
+{% set PAL = {1:["#7B2A16","#A63E22"],2:["#1B326A","#2D4C94"],3:["#1B4D33","#2C7048"],4:["#5E3318","#8A5126"],5:["#0D4E60","#1B7A90"],6:["#6B1824","#9A2C3B"],7:["#402360","#62398C"]} %}
+{% macro art(n) %}<svg class="kart" viewBox="0 0 160 120" fill="none" stroke="#F0C45A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 120V58Q12 40 40 32Q70 24 80 6Q90 24 120 32Q148 40 148 58V120Z" style="fill:var(--kp)"/><path d="M20 120V60Q20 46 44 39Q72 31 80 16Q88 31 116 39Q140 46 140 60V120Z" stroke-width="1" opacity=".6"/><circle cx="80" cy="3.5" r="2.5" fill="#F0C45A" stroke="none"/>
+{%- if n == 1 -%}
+<circle cx="58" cy="14" r="1.6" fill="#F0C45A" stroke="none"/><circle cx="102" cy="14" r="1.6" fill="#F0C45A" stroke="none"/><circle cx="80" cy="58" r="13" fill="#F0C45A" stroke="none"/><path d="M80 40V33M92 42L96 36M68 42L64 36M98 49L104 45M62 49L56 45M98 58H105M62 58H55"/><path d="M80 104C70 94 70 82 80 72C90 82 90 94 80 104Z" fill="#FFF1CF"/><path d="M80 104C64 102 56 92 58 82C70 82 78 92 80 104Z" fill="#FFE6A8"/><path d="M80 104C96 102 104 92 102 82C90 82 82 92 80 104Z" fill="#FFE6A8"/>
+{%- elif n == 2 -%}
+<rect x="44" y="92" width="72" height="16" fill="#3E63B3"/><rect x="52" y="78" width="56" height="14" fill="#3E63B3"/><rect x="60" y="65" width="40" height="13" fill="#3E63B3"/><rect x="68" y="54" width="24" height="11" fill="#3E63B3"/><rect x="74" y="45" width="12" height="9" fill="#3E63B3"/><path d="M80 45V36"/><ellipse cx="80" cy="34" rx="3.5" ry="4.5" fill="#F0C45A"/><path d="M73 108V99a7 7 0 0 1 14 0v9" fill="#FFF1CF"/><path d="M56 85h8M96 85h8M64 71h6M90 71h6" stroke-width="1.4"/>
+{%- elif n == 3 -%}
+<path d="M34 108V84"/><circle cx="34" cy="74" r="10" fill="#3B8B5C"/><path d="M128 108V88"/><circle cx="128" cy="80" r="8" fill="#3B8B5C"/><ellipse cx="78" cy="74" rx="16" ry="8" fill="#F0C45A"/><path d="M66 80L64 98M72 81V98M86 81L88 98M92 79L96 98"/><path d="M90 70Q96 60 98 54"/><ellipse cx="100" cy="52" rx="6" ry="4" fill="#F0C45A" transform="rotate(-25 100 52)"/><path d="M98 48Q94 40 97 35M102 47Q106 39 112 39M104 44L108 43"/><circle cx="72" cy="72" r="1.4" fill="#FFF1CF" stroke="none"/><circle cx="80" cy="76" r="1.4" fill="#FFF1CF" stroke="none"/><circle cx="86" cy="71" r="1.4" fill="#FFF1CF" stroke="none"/>
+{%- elif n == 4 -%}
+<path d="M26 108L58 62L72 78L98 44L134 108Z" fill="#A8672F"/><path d="M84 108Q84 90 96 90Q108 90 108 108Z" fill="#4A2810"/><circle cx="120" cy="40" r="6" fill="#F0C45A" stroke="none"/><circle cx="44" cy="72" r="8" fill="#F0C45A"/><path d="M44 80V106"/><path d="M39 69h10M44 64v10" stroke="#8A5126" stroke-width="1.4"/>
+{%- elif n == 5 -%}
+<path d="M80 96Q104 84 130 96Z" fill="#2E96AC"/><path d="M96 90V68L100 60L104 68V90Z" fill="#FFF1CF"/><path d="M108 90V74L111 68L114 74V90Z" fill="#FFF1CF"/><path d="M118 90V78L121 73L124 78V90Z" fill="#FFF1CF"/><path d="M24 96q9-6 18 0t18 0t18 0t18 0t18 0t18 0"/><path d="M24 106q9-6 18 0t18 0t18 0t18 0t18 0t18 0"/><path d="M30 70Q60 30 92 56" stroke-dasharray="2 4"/><circle cx="60" cy="47" r="4.5"/><circle cx="60" cy="42" r="1.8" fill="#FFF1CF" stroke="none"/>
+{%- elif n == 6 -%}
+<circle cx="104" cy="66" r="22" fill="#F0C45A"/><circle cx="104" cy="66" r="6" fill="#6B1824"/><path d="M104 44V88M82 66H126M88 50L120 82M120 50L88 82" stroke="#6B1824" stroke-width="1.6"/><path d="M38 38Q20 66 38 94"/><path d="M38 38V94" stroke-width="1.2"/><path d="M24 66H70"/><path d="M63 60L70 66L63 72"/>
+{%- else -%}
+<circle cx="58" cy="80" r="15" fill="#F0C45A"/><circle cx="58" cy="80" r="4" fill="#62398C"/><path d="M68 70L116 30" stroke-width="4"/><circle cx="122" cy="26" r="7" fill="#F0C45A"/><path d="M52 66L112 34M64 74L118 38" stroke-width="1" opacity=".8"/><path d="M24 100q9-6 18 0t18 0t18 0t18 0t18 0t18 0"/><path d="M24 108q9-6 18 0t18 0t18 0t18 0t18 0t18 0"/>
+{%- endif -%}
+{%- if n != 7 -%}<path d="M12 112H148" stroke-width="1.2"/>{%- endif -%}
+</svg>{% endmacro %}
+{% macro kcard(k, vu, ce, tag='button') %}
+<{{ tag }} class="kcard" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-en="{{ k.en }}" data-n-vu="{{ vu }}" data-n-ce="{{ ce }}" style="--kb:{{ PAL[k.n][0] }};--kp:{{ PAL[k.n][1] }}"{% if tag == 'button' %} type="button" aria-haspopup="dialog"{% endif %}>
+  {{ art(k.n) }}
+  <span class="kc-n" lang="kn" aria-hidden="true">{{ k.n_knda }}</span>
+  <span class="kc-t" lang="kn">{{ k.kn }}</span>
+  <span class="kc-c">{{ k.en }} · <span data-ed="vu">{{ vu }}</span><span data-ed="ce"><span class="sep"> / </span>{{ ce }}</span> sargas</span>
+</{{ tag }}>
+{% endmacro %}

@@ -1,5 +1,15 @@
 [
  [
+  "0.5.0",
+  "2026-11-03",
+  [
+   "New look: a greeting Home, a Read tab and a floating tab bar.",
+   "Kāṇḍas are shown as temple-painting cards; tap one to pick a sarga.",
+   "Pick your script with one letter: ಅ, अ or A. Reading settings open from the sliders button.",
+   "A new app icon."
+  ]
+ ],
+ [
   "0.4.5",
   "2026-11-02",
   [

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% from "_art.html" import kcard %}
+{% block title %}Read — ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ{% endblock %}
+{% block main %}
+{% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
+<section class="read-head"><h1><span lang="kn">ಓದು</span> <small>Read</small></h1><p><a class="searchbar" href="../search/">Search verses or jump to 1.5.12</a></p></section>
+<div class="kgrid">
+{% for k in eds[0].kandas %}{% set i = loop.index0 %}{{ kcard(k, vu_e.kandas[i].sargas, ce_e.kandas[i].sargas) }}{% endfor %}
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}static/home.js"></script><script src="{{ root }}static/read.js"></script>{% endblock %}

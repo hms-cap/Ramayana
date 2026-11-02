@@ -5,8 +5,14 @@
   <h1>Sources and method</h1>
 
   <h2 id="app">This app</h2>
-  <p>Version <strong id="app-version">{{ changes[0][0] }}</strong> ({{ changes[0][1] }}). <span id="app-state" class="status"></span></p>
-  <p><button type="button" class="act" id="check-update">Check for updates</button> <span id="update-msg" class="status" role="status"></span></p>
+  <div class="app-card">
+    <div class="app-head"><img src="{{ root }}static/icons/icon-192.png" alt="" width="72" height="72"><div><strong lang="kn">ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ</strong><span class="hint">Sanskrit text with Kannada</span></div></div>
+    <p class="hint">Version · released {{ changes[0][1] }}</p>
+    <p class="ver" id="app-version">{{ changes[0][0] }}</p>
+    <p><span id="app-state" class="status"></span></p>
+    <p><button type="button" class="pillbtn dark" id="check-update">Check for updates</button></p>
+    <p id="update-msg" class="status" role="status"></p>
+  </div>
   <h3>What's new</h3>
   {% for v, d, notes in changes[:3] %}
   <p><strong>{{ v }}</strong> <span class="hint">{{ d }}</span></p>

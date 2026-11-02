@@ -54,6 +54,17 @@
   var votd = document.getElementById("votd");
   if (!votd) return;
 
+  /* ---- greeting date, quick Chant chip ---- */
+  var gd = document.getElementById("greet-date");
+  if (gd) { try { gd.textContent = new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" }); } catch (e) { /* ignore */ } }
+  var qc = document.getElementById("quick-chant");
+  if (qc) qc.addEventListener("click", function () {
+    var l = lastPlace(), base = location.pathname.replace(/index\.html$/, ""), path = "vu/1/1/", at = 0;
+    if (l) { path = l.href.indexOf(base) === 0 ? l.href.slice(base.length) : l.href.replace(/^\/[^/]+\//, ""); at = l.i; }
+    try { sessionStorage.setItem("vr.chant", JSON.stringify({ moves: 1, fromList: true, origin: location.href, resume: at })); } catch (e) { /* ignore */ }
+    location.assign(ROOT + path.replace(/#.*$/, ""));
+  });
+
   /* ---- Continue ---- */
   (function () {
     var l = lastPlace(); if (!l) return;
@@ -66,34 +77,7 @@
     document.getElementById("cont-where").textContent = (l.titles[s] || l.src) + " · verse " + l.v + " of " + l.of;
     document.getElementById("cont-bar").style.width = Math.round(100 * (l.i + 1) / l.of) + "%";
     document.getElementById("cont-go").href = ROOT + path;
-    document.getElementById("cont-chant").addEventListener("click", function () {
-      try { sessionStorage.setItem("vr.chant", JSON.stringify({ moves: 1, fromList: true, origin: location.href, resume: l.i })); } catch (e) { /* ignore */ }
-      location.assign(ROOT + path.replace(/#.*$/, ""));
-    });
   })();
-
-  /* ---- kāṇḍa tiles with sarga chips ---- */
-  var chipEd = P.off().indexOf("vu") >= 0 ? "ce" : "vu";
-  function fillChips(tile) {
-    var n = +tile.dataset["n" + chipEd.charAt(0).toUpperCase() + chipEd.slice(1)] || +tile.getAttribute("data-n-" + chipEd), k = tile.dataset.k, box = tile.querySelector(".chips"), h = "";
-    var s = sc();
-    for (var i = 1; i <= n; i++) h += '<a href="' + ROOT + chipEd + "/" + k + "/" + i + '/">' + (s === "iast" ? i : T.digits(i, s)) + "</a>";
-    box.innerHTML = h;
-  }
-  document.querySelectorAll(".tile").forEach(function (t) {
-    t.querySelector(".tile-btn").addEventListener("click", function () {
-      var b = t.querySelector(".tile-btn"), box = t.querySelector(".chips"), open = b.getAttribute("aria-expanded") === "true";
-      b.setAttribute("aria-expanded", open ? "false" : "true"); box.hidden = open;
-      if (!open) fillChips(t);
-    });
-  });
-  document.querySelectorAll("[data-chip-ed]").forEach(function (b) {
-    b.addEventListener("click", function () {
-      chipEd = b.dataset.chipEd;
-      document.querySelectorAll("[data-chip-ed]").forEach(function (x) { x.setAttribute("aria-checked", x === b ? "true" : "false"); });
-      document.querySelectorAll(".tile .tile-btn[aria-expanded=true]").forEach(function (x) { fillChips(x.closest(".tile")); });
-    });
-  });
 
   /* ---- verse of the day ---- */
   var grammar = null, ix = null, card = null, idx = 0, cardNo = 0, shuffled = false, today = null;
@@ -214,12 +198,7 @@
   });
   document.addEventListener("prefs-changed", function () {
     if (card) draw(0);
-    if (P.off().indexOf(chipEd) >= 0) {
-      chipEd = chipEd === "ce" ? "vu" : "ce";
-      document.querySelectorAll("[data-chip-ed]").forEach(function (x) { x.setAttribute("aria-checked", x.dataset.chipEd === chipEd ? "true" : "false"); });
-      document.querySelectorAll(".tile .tile-btn[aria-expanded=true]").forEach(function (x) { fillChips(x.closest(".tile")); });
-    }
-  });
+    });
 
   /* ---- share picture: all cards in one tall PNG ---- */
   function paintShare(secs, s, drawIt, ctx, known) {

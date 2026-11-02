@@ -39,8 +39,28 @@
     document.querySelectorAll("[data-set-filter]").forEach(function (b) {
       b.setAttribute("aria-checked", (prefs.filter || "all") === b.dataset.setFilter ? "true" : "false");
     });
+    var L = { knda: ["ಅ", "kn"], deva: ["अ", "sa"], iast: ["A", "en"], "knda-deva": ["ಅ", "kn"], all: ["A", "en"] }[root.dataset.script] || ["ಅ", "kn"];
+    document.querySelectorAll("[data-script-letter]").forEach(function (x) { x.textContent = L[0]; x.lang = L[1]; });
+    document.querySelectorAll("[data-app-version]").forEach(function (x) { x.textContent = (self.VRAMAYANA && self.VRAMAYANA.version) || ""; });
     document.dispatchEvent(new CustomEvent("prefs-changed", { detail: prefs }));
   }
+
+  /* ---- bottom sheets (reading settings, kāṇḍa picker) ---- */
+  var sheetOpener = null;
+  window.VRSheet = {
+    open: function (id) {
+      var el = document.getElementById(id), sc = document.getElementById("scrim"); if (!el) return;
+      VRSheet.close(true);
+      sheetOpener = document.activeElement; el.hidden = false; sc.hidden = false; document.body.classList.add("sheet-open");
+      var f = el.querySelector("button, a"); if (f) f.focus({ preventScroll: true });
+    },
+    close: function (quiet) {
+      document.querySelectorAll(".sheet").forEach(function (x) { x.hidden = true; });
+      var sc = document.getElementById("scrim"); if (sc) sc.hidden = true;
+      document.body.classList.remove("sheet-open");
+      if (!quiet && sheetOpener && sheetOpener.focus) { try { sheetOpener.focus({ preventScroll: true }); } catch (e) { /* ignore */ } }
+    }
+  };
   window.VRPrefs = {
     off: function () { return Array.isArray(prefs.off) ? prefs.off : ["ce"]; },
     get: function () { return prefs; },
@@ -48,6 +68,13 @@
   };
 
   document.addEventListener("click", function (e) {
+    var op = e.target.closest("[data-open-sheet]");
+    if (op) { VRSheet.open(op.dataset.openSheet); return; }
+    if (e.target.closest("[data-close-sheet]") || e.target.id === "scrim") { VRSheet.close(); return; }
+    if (e.target.closest("#script-cycle")) {
+      var order = ["knda", "deva", "iast"], i = order.indexOf(prefs.script || "knda");
+      prefs.script = order[(i + 1) % 3]; save(prefs); apply(); return;
+    }
     var b = e.target.closest("[data-set-script]");
     if (b) { prefs.script = b.dataset.setScript; save(prefs); apply(); return; }
     var f = e.target.closest("[data-set-filter]");
@@ -82,6 +109,7 @@
     if (t.hasAttribute("data-pref-size")) { prefs.size = t.value === "m" ? "" : t.value; save(prefs); apply(); }
   });
   document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && document.body.classList.contains("sheet-open")) { VRSheet.close(); return; }
     if (e.key === "Escape") { var o = document.querySelector(".opts[open]"); if (o) o.open = false; }
   });
 
