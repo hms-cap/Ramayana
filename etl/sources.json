@@ -52,5 +52,14 @@
     "credits": "Text of the Kumbakonam edition (T. R. Krishnacharya and T. R. Vyasacharya, Nirnayasagar Press, 1906–10) keyed in by Shrinivasa Varakhedi with colleagues in Tirupati, Hyderabad and Bangalore; marked up in TEI by Patrick McAllister for SARIT.",
     "licence": "CC BY-SA 3.0",
     "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "dcs_mbh": {
+    "title": "Digital Corpus of Sanskrit, Mahābhārata (word-by-word analysis)",
+    "file": "mahabharatam.txt",
+    "repository": "https://github.com/ambuda-org/dcs",
+    "commit": "7622c22f9c5fb1bf183af58951e96d7043edd699",
+    "credits": "Oliver Hellwig, Digital Corpus of Sanskrit (DCS), as corrected and packaged by Ambuda.",
+    "licence": "CC BY 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/"
   }
 }

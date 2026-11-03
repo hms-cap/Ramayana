@@ -77,5 +77,63 @@ class MahabharataBuild(unittest.TestCase):
         self.assertEqual(len(a), daily.N)
 
 
+class MahabharataWords(unittest.TestCase):
+    """DCS word analysis, glosses (English and Kannada) and the Kumbakonam-to-Pune cross-walk."""
+
+    @classmethod
+    def setUpClass(cls):
+        import gzip
+        cls.words = [json.loads(l) for l in gzip.open(ROOT / "data" / "normalized" / "mbh" / "words.jsonl.gz", "rt", encoding="utf-8")]
+        cls.ce_uids = {r["uid"] for r in load("ce")}
+        cls.gloss = json.loads((ROOT / "data" / "lexicon" / "gloss.json").read_text(encoding="utf-8"))
+        cls.kn = json.loads((ROOT / "data" / "lexicon" / "gloss_kn.json").read_text(encoding="utf-8"))
+
+    def test_words_follow_pune_ids_and_cover_nearly_all(self):
+        uids = {r["uid"] for r in self.words}
+        self.assertEqual(len(uids), len(self.words))
+        self.assertLessEqual(uids, self.ce_uids)
+        self.assertGreater(len(uids) / len(self.ce_uids), 0.98)
+
+    def test_every_tag_has_a_label(self):
+        import grammar
+        missing = Counter()
+        for r in self.words:
+            for u in r["units"]:
+                self.assertTrue(u["f"] and len(u["f"]) == len(u["l"]))
+                for m in grammar.check_tags(u["t"]):
+                    missing[m] += 1
+        self.assertEqual(dict(missing), {})
+
+    def test_gita_is_the_known_gap(self):
+        have = {tuple(map(int, r["uid"].split("-")[1:3])) for r in self.words}
+        self.assertFalse(any((6, s) in have for s in range(23, 41)))
+        self.assertIn((6, 41), have)
+
+    def test_gloss_coverage_of_the_text(self):
+        freq = Counter(l for r in self.words for u in r["units"] for l in u["l"])
+        cover = sum(n for l, n in freq.items() if l in self.gloss) / sum(freq.values())
+        self.assertGreater(cover, 0.93)
+
+    def test_kannada_glosses_are_kannada_and_have_english(self):
+        import re
+        self.assertGreater(len(self.kn), 400)
+        for lemma, g in self.kn.items():
+            self.assertIn(lemma, self.gloss)
+            self.assertTrue(re.search(r"[\u0C80-\u0CFF]", g), (lemma, g))
+            self.assertFalse(re.search(r"[A-Za-z]{3,}", g), (lemma, g))
+
+    def test_crosswalk_targets_exist_and_rate(self):
+        cw = json.loads((ROOT / "data" / "crosswalk" / "mbh" / "verses.json").read_text(encoding="utf-8"))
+        vu_uids = {r["uid"] for r in load("vu")}
+        self.assertEqual(set(cw["vu"]), vu_uids)
+        self.assertEqual(set(cw["ce"]), self.ce_uids)
+        for side, ids in (("vu", self.ce_uids), ("ce", vu_uids)):
+            for e in cw[side].values():
+                for t in e.get("targets", []):
+                    self.assertIn(t, ids)
+        share = sum(1 for e in cw["ce"].values() if e["status"] == "match") / len(cw["ce"])
+        self.assertGreater(share, 0.8)
+
+
 if __name__ == "__main__":
     unittest.main()

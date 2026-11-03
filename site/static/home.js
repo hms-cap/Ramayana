@@ -128,12 +128,12 @@
     out.push({ key: "verse", lines: lines(c, s), ref: c.ref, meta: [c.meter].filter(Boolean).join(" · ") });
     if (c.m) out.push({ key: "m", text: c.m[kn ? 1 : 0] });
     if (c.w && c.w.length) out.push({ key: "words", dl: c.w.map(function (u) {
-      return [u.f.map(function (f) { return T.render(f, s, sav); }).join("-"), gl(u.t, s) + (gl(u.t, s) ? " — " : "") + u.g];
-    }), note: kn ? "ನಿಘಂಟಿನ ಅರ್ಥಗಳು (ಇಂಗ್ಲಿಷ್); ಸ್ವಯಂಚಾಲಿತ" : "Dictionary senses of each base word, chosen automatically" });
+      return [u.f.map(function (f) { return T.render(f, s, sav); }).join("-"), gl(u.t, s) + (gl(u.t, s) ? " — " : "") + (kn && u.k ? u.k : u.g)];
+    }), note: kn ? "ನಿಘಂಟಿನ ಅರ್ಥಗಳು (ಇಂಗ್ಲಿಷ್; ಕನ್ನಡ ಅರ್ಥ ಇರುವಲ್ಲಿ ಕನ್ನಡ — ಅದು ಇನ್ನೂ ಪರಿಶೀಲನೆಯಾಗಿಲ್ಲ); ಸ್ವಯಂಚಾಲಿತ" : "Dictionary senses of each base word, chosen automatically" });
     if (c.meter) out.push({ key: "metre", text: c.meter, scan: c.scan });
     var x = c.ctx, kname = s === "knda" ? x.kn : s === "deva" ? x.deva : x.iast, nn = function (n) { return s === "iast" ? n : T.digits(n, s); };
     out.push({ key: "ctx", text: kname + " · " + (kn ? (B.subKn || "ಸರ್ಗ") + " " : s === "deva" ? (B.subDeva || "सर्गः") + " " : (B.subEn || "sarga") + " ") + nn(x.s) + (x.title ? " — " + x.title : "") + " · " + nn(x.v) + " / " + nn(x.of) });
-    if (c.cw) out.push({ key: "other", text: CWSTAT[c.cw.status][kn ? 1 : 0] + " " + (kn ? "ಪರಂಪರಾಗತ ಪಾಠ" : "Traditional Text") + (c.cw.refs.length ? " " + c.cw.refs.join(", ") : "") });
+    if (c.cw) out.push({ key: "other", text: CWSTAT[c.cw.status][kn ? 1 : 0] + " " + (kn ? (c.cw.other_kn || "ಪರಂಪರಾಗತ ಪಾಠ") : (c.cw.other || "Traditional Text")) + (c.cw.refs.length ? " " + c.cw.refs.join(", ") : "") });
     if (c.u) out.push({ key: "u", text: c.u[kn ? 1 : 0] });
     return out;
   }
@@ -162,7 +162,7 @@
     var dots = votd.querySelector(".votd-dots");
     dots.innerHTML = secs.map(function (x, i) { return '<button type="button" role="tab" aria-selected="' + (i === cardNo) + '" aria-label="' + esc(L(x.key, s)) + '" data-card="' + i + '"></button>'; }).join("");
     var vp = card.cw && card.cw.status === "match" && card.cw.paths && card.cw.paths[0];
-    document.getElementById("votd-open").href = WROOT + ((P.off().indexOf("ce") >= 0 && vp) ? vp : card.path);
+    document.getElementById("votd-open").href = WROOT + ((P.off().indexOf(card.ed || "ce") >= 0 && vp) ? vp : card.path);
     document.getElementById("votd-today").hidden = !shuffled;
     var wb = document.getElementById("votd-words"), hasW = secs.some(function (x) { return x.key === "words"; });
     wb.setAttribute("aria-disabled", hasW ? "false" : "true"); wb.setAttribute("aria-pressed", secs[cardNo].key === "words" ? "true" : "false");

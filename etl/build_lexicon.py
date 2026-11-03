@@ -18,6 +18,11 @@ Sources, in order of priority:
 
 The Kannada dictionary Shabdarthakaustubha is NOT used here: its upstream
 repository states no licence, so it is linked to rather than redistributed.
+Kannada meanings come only from etl/gloss_kn.json: about 500 lemmas (names,
+epithets, pronouns, particles and the commonest small words of both epics),
+written for this project by Claude and awaiting review by a Kannada reader.
+They are copied to data/lexicon/gloss_kn.json; the panel shows them first when
+the script is Kannada, with the English underneath.
 
 A dictionary gloss describes the lemma in general. It is not a translation
 of the word as used in a particular verse, and the reader says so.
@@ -25,6 +30,7 @@ of the word as used in a particular verse, and the reader says so.
 from __future__ import annotations
 
 import collections
+import gzip
 import html
 import json
 import re
@@ -143,8 +149,16 @@ def lookup(entries, hw: str) -> str:
 
 
 def main(babylon: str) -> None:
-    words = [json.loads(l) for l in open(ROOT / "data" / "normalized" / "words.jsonl", encoding="utf-8")]
-    freq = collections.Counter(l for r in words for u in r["units"] for l in u["l"])
+    """Lemmas of both epics: the Rāmāyaṇa file and the Mahābhārata file (gzipped)."""
+    freq = collections.Counter()
+    srcs = [open(ROOT / "data" / "normalized" / "words.jsonl", encoding="utf-8")]
+    mb = ROOT / "data" / "normalized" / "mbh" / "words.jsonl.gz"
+    if mb.exists():
+        srcs.append(gzip.open(mb, "rt", encoding="utf-8"))
+    for src in srcs:
+        for line in src:
+            for u in json.loads(line)["units"]:
+                freq.update(u["l"])
     entries = read_babylon(babylon)
     overrides = json.loads((Path(__file__).parent / "gloss_overrides.json").read_text(encoding="utf-8"))
     overrides.pop("_comment", None)
@@ -169,11 +183,15 @@ def main(babylon: str) -> None:
 
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "gloss.json").write_text(json.dumps(gloss, ensure_ascii=False, sort_keys=True, separators=(",", ":")), encoding="utf-8")
+    kn = json.loads((Path(__file__).parent / "gloss_kn.json").read_text(encoding="utf-8"))
+    kn = {l: g for l, g in kn.items() if l in gloss}
+    (OUT / "gloss_kn.json").write_text(json.dumps(kn, ensure_ascii=False, sort_keys=True, separators=(",", ":")), encoding="utf-8")
     tok_cov = sum(freq[l] for l in gloss) / sum(freq.values())
     missing.sort(reverse=True)
     report = {
         "lemmas": len(freq), "with_gloss": len(gloss), "sources": dict(source),
         "token_coverage": round(tok_cov, 4),
+        "kannada_lemmas": len(kn), "kannada_token_coverage": round(sum(freq[l] for l in kn) / sum(freq.values()), 4),
         "top_missing": [[l, n] for n, l in missing[:60]],
     }
     (OUT / "gloss_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")

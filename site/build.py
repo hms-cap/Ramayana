@@ -121,8 +121,9 @@ def render_verse(rec: dict, ed: dict) -> dict:
     }
 
 
-def lean_verse(rec: dict) -> dict:
-    """Mahābhārata verse: IAST only (lean.js builds Kannada and Devanāgarī from it)."""
+def lean_verse(rec: dict, ed: dict | None = None, W: dict | None = None) -> dict:
+    """Mahābhārata verse: IAST only (lean.js builds Kannada and Devanāgarī from it).
+    With ed and W it also carries the cross-walk link and where its word-by-word data lives."""
     slp_lines = [" ".join(iast_to_slp1(p) for p in line) for line in rec["lines"]]
     ref = f'{rec["k"]}.{rec["s"]}.{rec["v"]}'
     mid, last = end_marks("iast", ref)
@@ -131,28 +132,89 @@ def lean_verse(rec: dict) -> dict:
     if rec.get("meter"):
         met = meter.identify([[iast_to_slp1(p) for p in line] for line in rec["lines"]])
         scan = [" ".join("".join("ऽ" if w == "G" else "।" for w in pada) for pada in line) for line in met["scansion"]]
-    return {"uid": rec["uid"], "k": rec["k"], "s": rec["s"], "v": rec["v"], "ref": ref, "iast": lines,
-            "meter": rec.get("meter"), "scan": scan, "slp1": " / ".join(slp_lines), "flags": rec.get("flags", []),
-            "ids": [{"label": "GRETIL", "value": rec["gretil_id"]}] if rec.get("gretil_id") else
-                   [{"label": "Source", "value": rec["source_ref"]}] if rec.get("source_ref") else []}
+    out = {"uid": rec["uid"], "k": rec["k"], "s": rec["s"], "v": rec["v"], "ref": ref, "iast": lines,
+           "meter": rec.get("meter"), "scan": scan, "slp1": " / ".join(slp_lines), "flags": rec.get("flags", []),
+           "ids": [{"label": "GRETIL", "value": rec["gretil_id"]}] if rec.get("gretil_id") else
+                  [{"label": "Source", "value": rec["source_ref"]}] if rec.get("source_ref") else [],
+           "crosswalk": None, "wsrc": None}
+    if ed is not None:
+        cw = crosswalk_for(rec, ed, W)
+        out["crosswalk"] = cw
+        if ed["id"] == "ce":
+            if rec["uid"] in MBH_WORD_UIDS:
+                out["wsrc"] = {"url": "words.json", "vn": rec["v"], "note": ""}
+        elif cw and len(cw["links"]) == 1 and cw["status"] in ("match", "variant", "partial", "regrouped"):
+            oe, tk, ts, tv = uid_ref(cw_target_uid(cw))
+            if f"CE-{tk}-{ts:03d}-{tv:03d}" in MBH_WORD_UIDS:
+                out["wsrc"] = {"url": cw["links"][0]["path"].split("#")[0] + "words.json", "vn": tv,
+                               "note": "" if cw["status"] == "match" else cw["status"]}
+    return out
 
 
-_CW = None
-WORDS: dict[str, list] = {}
+def cw_target_uid(cw: dict) -> str:
+    """'ce/6/23/#v4' -> 'CE-6-23-4' (uid_ref only needs the four parts)."""
+    e, k, s, frag = cw["links"][0]["path"].split("/")
+    return f"{e.upper()}-{k}-{s}-{frag[2:]}"
+
+
+_CW: dict = {}                       # work id -> {"vu": {...}, "ce": {...}}
+_SARGA_CW: dict = {}
+WORDS: dict[str, list] = {}          # Rāmāyaṇa: CE verse uid -> word units
+MBH_WORDS: dict[tuple, str] = {}     # Mahābhārata: (parvan, adhyāya) -> words.json text (built while reading, to keep memory low)
+MBH_WORD_UIDS: set[str] = set()      # Pune verse uids that have words
 GLOSS: dict[str, str] = {}
+GLOSS_KN: dict[str, str] = {}
+
+
+def _words_json(verses: dict, lemmas: set) -> str:
+    return json.dumps({"verses": verses,
+                       "gloss": {l: GLOSS[l] for l in sorted(lemmas) if l in GLOSS},
+                       "kn": {l: GLOSS_KN[l] for l in sorted(lemmas) if l in GLOSS_KN}},
+                      ensure_ascii=False, separators=(",", ":"))
 
 
 def load_words() -> None:
     """Word-by-word analysis (DCS) and lemma glosses, keyed by Critical Edition verse uid."""
+    import gzip
     wp = ROOT / "data" / "normalized" / "words.jsonl"
     gp = ROOT / "data" / "lexicon" / "gloss.json"
+    kp = ROOT / "data" / "lexicon" / "gloss_kn.json"
     if wp.exists():
         for line in open(wp, encoding="utf-8"):
             r = json.loads(line)
             WORDS[r["uid"]] = r["units"]
     if gp.exists():
         GLOSS.update(json.loads(gp.read_text(encoding="utf-8")))
+    if kp.exists():
+        GLOSS_KN.update(json.loads(kp.read_text(encoding="utf-8")))
+    mp = ROOT / "data" / "normalized" / "mbh" / "words.jsonl.gz"
+    if mp.exists():
+        cur, verses, lemmas, seen = None, {}, set(), set()
+        for line in gzip.open(mp, "rt", encoding="utf-8"):
+            r = json.loads(line)
+            _, k, s, v = r["uid"].split("-")
+            key = (int(k), int(s))
+            if key != cur:
+                if cur is not None:
+                    MBH_WORDS[cur] = _words_json(verses, lemmas)
+                assert key not in seen, f"words for {key} are not contiguous in {mp.name}"
+                cur, verses, lemmas = key, {}, set()
+                seen.add(key)
+            verses[int(v)] = r["units"]
+            MBH_WORD_UIDS.add(r["uid"])
+            for u in r["units"]:
+                lemmas.update(u["l"])
+        if cur is not None:
+            MBH_WORDS[cur] = _words_json(verses, lemmas)
+
+
 _EDITION_LABEL = {"ce": "Baroda Text", "vu": "Traditional Text"}
+
+
+def edition_label(W: dict | None, ed_id: str) -> str:
+    if W is not None and W["id"] == "mbh":
+        return {"ce": "Pune Text", "vu": "Traditional Text"}[ed_id]
+    return _EDITION_LABEL[ed_id]
 STATUS_TEXT = {
     "match": "{other} {refs}",
     "variant": "Different reading in the {other} ({refs})",
@@ -167,13 +229,13 @@ def uid_ref(uid: str) -> tuple[str, int, int, int]:
     return ed.lower(), int(k), int(s), int(v)
 
 
-def crosswalk_for(rec: dict, ed: dict):
-    """Per-verse link to the other edition, from data/crosswalk/verses.json."""
-    global _CW
-    if _CW is None:
-        p = ROOT / "data" / "crosswalk" / "verses.json"
-        _CW = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
-    entry = _CW.get(ed["id"], {}).get(rec["uid"])
+def crosswalk_for(rec: dict, ed: dict, W: dict | None = None):
+    """Per-verse link to the other edition, from data/crosswalk/[mbh/]verses.json."""
+    wid = W["id"] if W else "ram"
+    if wid not in _CW:
+        p = ROOT / "data" / "crosswalk" / ("mbh" if wid == "mbh" else "") / "verses.json"
+        _CW[wid] = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    entry = _CW[wid].get(ed["id"], {}).get(rec["uid"])
     if not entry:
         return None
     other = "ce" if ed["id"] == "vu" else "vu"
@@ -181,7 +243,7 @@ def crosswalk_for(rec: dict, ed: dict):
     for t in entry.get("targets", []):
         oe, k, s, v = uid_ref(t)
         links.append({"ref": f"{k}.{s}.{v}", "path": f"{oe}/{k}/{s}/#v{v}"})
-    return {"status": entry["status"], "other": other, "other_label": _EDITION_LABEL[other],
+    return {"status": entry["status"], "other": other, "other_label": edition_label(W, other),
             "links": links, "score": entry.get("score")}
 
 
@@ -202,6 +264,16 @@ def make_env() -> Environment:
     return env
 
 
+NO_WORDS_CE: set = set()
+
+
+def no_words_note(k: int, s: int) -> str:
+    if (k, s) == (6, 23) or (k == 6 and 23 <= s <= 40):
+        return ("Word-by-word meanings are not available for the Bhagavadgītā (Bhīṣma Parvan 23–40 in the Pune text): "
+                "the Digital Corpus of Sanskrit's Mahābhārata file leaves it out.")
+    return "Word-by-word meanings are not available for this adhyāya: the Digital Corpus of Sanskrit's Mahābhārata file does not include it."
+
+
 def build_work(W: dict, out: Path, env: Environment) -> dict:
     """One work (Rāmāyaṇa at the site root, Mahābhārata under /mbh/). Returns what the shared pages need."""
     pre = W["prefix"]
@@ -216,6 +288,10 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
         return {**base, "wroot": "../" * depth, "root": up + "../" * depth, **kw}
 
     (wdir / "data").mkdir(parents=True, exist_ok=True)
+    global NO_WORDS_CE
+    if W["lean"]:
+        ce_keys = {(r["k"], r["s"]) for r in map(json.loads, open(norm_path(W, "ce"), encoding="utf-8"))}
+        NO_WORDS_CE = {key for key in ce_keys if key not in MBH_WORDS}
     summaries = []
     ce_titles = {}
     for ed in editions:
@@ -246,11 +322,22 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
             page = wdir / ed["id"] / str(k) / str(s) / "index.html"
             page.parent.mkdir(parents=True, exist_ok=True)
             if W["lean"]:
-                verses = [lean_verse(r) for r in by_sarga[(k, s)]]
+                verses = [lean_verse(r, ed, W) for r in by_sarga[(k, s)]]
+                other_id = "ce" if ed["id"] == "vu" else "vu"
+                alt = alt_edition_href(ed, editions, k, s, W)
+                wnote = ""
+                if ed["id"] == "ce" and (k, s) in NO_WORDS_CE:
+                    wnote = no_words_note(k, s)
+                elif ed["id"] == "vu" and alt and tuple(map(int, alt["ref"].split("."))) in NO_WORDS_CE:
+                    wnote = no_words_note(*map(int, alt["ref"].split(".")))
+                if ed["id"] == "ce" and (k, s) in MBH_WORDS:
+                    (page.parent / "words.json").write_text(MBH_WORDS[(k, s)], encoding="utf-8")
                 page.write_text(env.get_template("sarga.html").render(**ctx(
                     3, ed=summary, kanda=kandas[k - 1], s=s, title=None, verses=verses, prev=prev_key, next=next_key,
-                    total_in_kanda=kandas[k - 1]["sargas"], page="sarga", alt_href=None, shared=0, has_cw=False,
-                    other_label="", other_id="", iitk=False)), encoding="utf-8")
+                    total_in_kanda=kandas[k - 1]["sargas"], page="sarga", alt_href=alt,
+                    shared=sum(1 for v in verses if v["crosswalk"] and v["crosswalk"]["status"] != "absent"),
+                    has_cw=any(v["crosswalk"] for v in verses), wnote=wnote,
+                    other_label=edition_label(W, other_id), other_id=other_id, iitk=False)), encoding="utf-8")
                 for v in verses:
                     index_rows.append([k, s, v["v"], v["slp1"]])
                 continue
@@ -266,7 +353,7 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
                 3, ed=summary, kanda=kanda_info(k), s=s,
                 title=titles.get((k, s)), verses=verses, prev=prev_key, next=next_key,
                 total_in_kanda=kandas[k - 1]["sargas"], page="sarga",
-                alt_href=alt_edition_href(ed, editions, k, s),
+                alt_href=alt_edition_href(ed, editions, k, s), wnote="",
                 shared=sum(1 for v in verses if v["crosswalk"] and v["crosswalk"]["status"] != "absent"),
                 has_cw=any(v["crosswalk"] for v in verses),
                 other_label=_EDITION_LABEL["ce" if ed["id"] == "vu" else "vu"], other_id="ce" if ed["id"] == "vu" else "vu",
@@ -279,9 +366,7 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
                 ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
             if words:
                 lemmas = {l for us in words.values() for u in us for l in u["l"]}
-                (page.parent / "words.json").write_text(json.dumps(
-                    {"verses": words, "gloss": {l: GLOSS[l] for l in sorted(lemmas) if l in GLOSS}},
-                    ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+                (page.parent / "words.json").write_text(_words_json(words, lemmas), encoding="utf-8")
             for v in verses:
                 index_rows.append([k, s, v["v"], v["slp1"]])
 
@@ -334,7 +419,8 @@ def build(out: Path, only: str | None = None) -> None:
     # shared pages at the site root: About and Saved (their tab bar is the Rāmāyaṇa's; app.js points it at the last-used work)
     cw_report = ROOT / "data" / "crosswalk" / "report.json"
     changes = json.loads((ROOT / "data" / "changes.json").read_text(encoding="utf-8"))
-    shared = dict(**ram["base"], wroot="../", root="../", changes=changes, sources=sources, eds=ram["eds"], ed=ram["eds"][0],
+    mbh_rep = ROOT / "data" / "crosswalk" / "mbh" / "report.json"
+    shared = dict(**ram["base"], mbh_cw=json.loads(mbh_rep.read_text()) if mbh_rep.exists() else None, wroot="../", root="../", changes=changes, sources=sources, eds=ram["eds"], ed=ram["eds"][0],
                   works=[(d["W"], d["eds"]) for d in done],
                   crosswalk=json.loads(cw_report.read_text()) if cw_report.exists() and len(ram["eds"]) > 1 else None)
     for name in ("about", "my"):
@@ -374,7 +460,10 @@ def build_daily(out: Path, editions, titles: dict) -> dict:
             if len(g) > 70:
                 g = g[:70].rsplit(",", 1)[0].rsplit(" ", 1)[0] if "," in g[:70] else g[:70].rsplit(" ", 1)[0]
             if g and u["t"].get("pos") != "i" and len(units) < 8:
-                units.append({"f": u["f"], "l": u["l"], "t": u["t"], "g": g})
+                d = {"f": u["f"], "l": u["l"], "t": u["t"], "g": g}
+                if GLOSS_KN.get(u["l"][-1]):
+                    d["k"] = GLOSS_KN[u["l"][-1]]
+                units.append(d)
         cw = v["crosswalk"]
         c = {"uid": r["uid"], "ref": v["ref"], "path": f'ce/{r["k"]}/{r["s"]}/#v{r["v"]}',
              "slp": v["slp1"].split(" / "), "meter": v["meter"], "scan": v["scan"],
@@ -395,26 +484,61 @@ def build_daily(out: Path, editions, titles: dict) -> dict:
 
 
 def build_daily_mbh(wdir: Path, W: dict, editions) -> dict:
-    """365 verse-of-the-day cards for the Mahābhārata, from the Traditional Text: verse, metre, scansion, place.
-    Same deterministic rule as the Rāmāyaṇa (etl/daily.py); no word-by-word or cross-walk yet."""
+    """365 verse-of-the-day cards for the Mahābhārata, from the Traditional Text (the default reading text).
+    Only verses that match a Pune verse exactly are eligible, so the word-by-word card (taken from that Pune
+    verse, DCS) is right for the verse shown. Same deterministic rule as the Rāmāyaṇa (etl/daily.py)."""
+    import gzip
+    ed_vu = next(e for e in editions if e["id"] == "vu")
     recs = [json.loads(l) for l in open(norm_path(W, "vu"), encoding="utf-8")]
     sizes = defaultdict(int)
     for r in recs:
         sizes[(r["k"], r["s"])] += 1
 
+    def target(r):
+        cw = crosswalk_for(r, ed_vu, W)
+        if not cw or cw["status"] != "match" or len(cw["links"]) != 1:
+            return None
+        tid = cw_target_uid(cw)
+        e, tk, ts, tv = uid_ref(tid)
+        uid = f"CE-{tk}-{ts:03d}-{tv:03d}"
+        return (uid, cw) if uid in MBH_WORD_UIDS else None
+
+    ok = {r["uid"]: target(r) for r in recs}
+    elig_words = {u: range(8) for u, t in ok.items() if t}          # daily.select only checks membership and a size range
     def accept(r):
         return r["v"] >= 1 and sum(len(" ".join(l)) for l in r["lines"]) <= 130
 
-    chosen = daily.select(recs, {r["uid"]: range(8) for r in recs}, lambda r: r.get("meter"), accept)
+    chosen = daily.select(recs, elig_words, lambda r: r.get("meter"), accept)
+    want = {ok[r["uid"]][0] for r in chosen}
+    units_of = {}
+    for line in gzip.open(ROOT / "data" / "normalized" / "mbh" / "words.jsonl.gz", "rt", encoding="utf-8"):
+        r = json.loads(line)
+        if r["uid"] in want:
+            units_of[r["uid"]] = r["units"]
 
     def card(r):
         v = lean_verse(r)
         k = unit_info(W, r["k"])
+        cuid, cw = ok[r["uid"]]
+        units = []
+        for u in units_of[cuid]:
+            g = GLOSS.get(u["l"][-1], "")          # the head word of a compound carries the grammar
+            g = re.sub(r"^(?:p\. ?p\. ?\d*\s*|pass\. ?\d*\s*|Ved\.\s*|[PAU]\.,?\s*)", "", g.split(" | ")[0]).strip()
+            if len(g) > 70:
+                g = g[:70].rsplit(",", 1)[0].rsplit(" ", 1)[0] if "," in g[:70] else g[:70].rsplit(" ", 1)[0]
+            if g and u["t"].get("pos") != "i" and len(units) < 8:
+                d = {"f": u["f"], "l": u["l"], "t": u["t"], "g": g}
+                kn = GLOSS_KN.get(u["l"][-1])
+                if kn:
+                    d["k"] = kn
+                units.append(d)
         return {"uid": r["uid"], "ref": v["ref"], "ed": "vu", "path": f'vu/{r["k"]}/{r["s"]}/#v{r["v"]}',
                 "slp": v["slp1"].split(" / "), "meter": v["meter"], "scan": v["scan"],
                 "ctx": {"k": r["k"], "kn": k["kn"], "deva": k["deva"], "iast": k["iast"], "en": k["en"], "s": r["s"], "v": r["v"],
                         "of": sizes[(r["k"], r["s"])], "title": ""},
-                "w": []}
+                "w": units,
+                "cw": {"status": "match", "refs": [l["ref"] for l in cw["links"]], "paths": [l["path"] for l in cw["links"]],
+                       "other": cw["other_label"], "other_kn": "ಪುಣೆ ಪರಿಷ್ಕೃತ ಪಾಠ"}}
 
     cards = [card(r) for r in chosen]
     assert len(cards) == daily.N, len(cards)
@@ -463,18 +587,13 @@ def write_pwa(out: Path, done: list) -> None:
                                                          ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
-def alt_edition_href(ed, editions, k, s):
+def alt_edition_href(ed, editions, k, s, W=None):
     """Link to the same sarga in the other edition, when the sarga cross-walk knows it."""
-    cw_path = ROOT / "data" / "crosswalk" / "sargas.json"
-    if not cw_path.exists():
-        return None
-    global _SARGA_CW
-    try:
-        _SARGA_CW
-    except NameError:
-        _SARGA_CW = json.loads(cw_path.read_text(encoding="utf-8"))
-    key = f"{ed['id']}:{k}.{s}"
-    tgt = _SARGA_CW.get(key)
+    wid = W["id"] if W else "ram"
+    if wid not in _SARGA_CW:
+        cw_path = ROOT / "data" / "crosswalk" / ("mbh" if wid == "mbh" else "") / "sargas.json"
+        _SARGA_CW[wid] = json.loads(cw_path.read_text(encoding="utf-8")) if cw_path.exists() else {}
+    tgt = _SARGA_CW[wid].get(f"{ed['id']}:{k}.{s}")
     if not tgt:
         return None
     other, ks = tgt.split(":")

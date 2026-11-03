@@ -1,7 +1,10 @@
 """Stage 1b: verse and sarga cross-walk between the Vulgate (vu) and the
 Baroda Critical Edition (ce).
 
-    python etl/crosswalk.py
+    python etl/crosswalk.py [--work mbh]
+
+With --work mbh the Kumbakonam (vu) text is walked onto the Pune critical
+edition (ce), parvan by parvan, and written to data/crosswalk/mbh/.
 
 Method
 ------
@@ -35,6 +38,8 @@ from translit import iast_to_slp1, loose_for_index  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 NORM = ROOT / "data" / "normalized"
 OUT = ROOT / "data" / "crosswalk"
+if "--work" in sys.argv and sys.argv[sys.argv.index("--work") + 1] == "mbh":
+    NORM, OUT = NORM / "mbh", OUT / "mbh"
 
 MATCH, VARIANT, LINE_MATCH = 0.55, 0.38, 0.7
 RARE = 12

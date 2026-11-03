@@ -59,6 +59,7 @@ TENSE = {  # DCS `l`
     "lrn": {"kn": "ಲೃಙ್ (ಕ್ರಿಯಾತಿಪತ್ತಿ)", "en": "conditional"},
     "lun": {"kn": "ಲುಙ್ (ಸಾಮಾನ್ಯ ಭೂತ)", "en": "aorist"},
     "lun_unaug": {"kn": "ಲುಙ್ (ಆಗಮರಹಿತ)", "en": "aorist without augment"},
+    "lun_imp": {"kn": "ಲುಙ್ (ಆಜ್ಞಾರ್ಥ ರೂಪ)", "en": "aorist used as imperative"},
     "vidhilin": {"kn": "ವಿಧಿಲಿಙ್ (ವಿಧ್ಯರ್ಥ)", "en": "optative"},
     "ashirlin": {"kn": "ಆಶೀರ್ಲಿಙ್", "en": "benedictive"},
 }

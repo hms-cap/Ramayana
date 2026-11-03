@@ -13,6 +13,11 @@ hand; fix the source or the script and regenerate.
 | `crosswalk/verses.json` | Per-verse links between `vu` and `ce` (generated) | CC BY-NC-SA 4.0 |
 | `crosswalk/sargas.json` | Sarga-level mapping, e.g. `"vu:6.37": "ce:6.28"` | same |
 | `crosswalk/review.tsv` | Partial and variant links, with both texts, for human review | same |
+| `normalized/mbh/words.jsonl.gz` | DCS `mahabharatam.txt` (Oliver Hellwig, via ambuda-org/dcs, pinned in `etl/sources.json` as `dcs_mbh`); ids `M.k.s.v` follow the Pune text. Made by `python etl/ingest_dcs.py <file> --work mbh` | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `normalized/mbh/words_report.json` | Verses without analysis (the Bhagavadgītā, 6.23–40, and 7.173 among them) and repaired source lines | same |
+| `crosswalk/mbh/*` | Kumbakonam (`vu`) to Pune (`ce`) links, same method and files as above; `python etl/crosswalk.py --work mbh` (about 4 minutes) | same as the texts |
+| `lexicon/gloss.json` | English lemma meanings for both epics: Apte (1890) plus `etl/gloss_overrides.json` (about 600 hand-written entries) | Apte CC BY-NC-SA 3.0; overrides CC BY-SA |
+| `lexicon/gloss_kn.json` | Kannada meanings for about 500 lemmas (names, epithets, pronouns, particles, commonest small words), from `etl/gloss_kn.json`. **Written by Claude, not yet reviewed by a Kannada reader.** | CC BY-SA |
 
 Each line of `ce.jsonl` is one verse:
 

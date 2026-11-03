@@ -1,5 +1,14 @@
 [
  [
+  "0.7.0",
+  "2026-11-03",
+  [
+   "The Mahābhārata now has word-by-word meanings. Open the icon beside a verse of the Pune text to see each word with its grammar and meaning; verses of the Traditional text that match a Pune verse show the same analysis.",
+   "The two Mahābhārata texts are now linked verse by verse: see the same verse in the other text, hide verses that are not in it, and notes where the readings differ.",
+   "Kannada meanings appear for about 500 names, epithets and small words in both epics when the script is Kannada. They were written by Claude and are waiting for a Kannada reader to review them. The Bhagavadgītā has no word-by-word analysis yet; the pages say so."
+  ]
+ ],
+ [
   "0.6.2",
   "2026-11-03",
   [

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0 — 2026-11-03
+- Mahābhārata word by word. `etl/ingest_dcs.py --work mbh` reads the DCS `mahabharatam.txt` into `data/normalized/mbh/words.jsonl.gz` (72,711 of 73,821 Pune verses; the Bhagavadgītā 6.23–40, 7.173 and about 300 scattered verses have none). `site/build.py` writes a `words.json` per Pune adhyāya (115 MB in all); Traditional verses that match a Pune verse use that verse's words. `lean.js` adds the word icon, the details link to the other text and the "Word by word" button; `app.js` takes the words URL relative to the work root (`data-wroot`).
+- Kumbakonam-to-Pune cross-walk (`etl/crosswalk.py --work mbh`, `data/crosswalk/mbh/`): 62,574 of 96,415 Traditional verses match a Pune verse exactly. Badges, "also in the Pune text" links and the "only verses in the other text" filter are on for the Mahābhārata.
+- Lexicon covers both epics (`etl/build_lexicon.py`): about 600 hand-written English glosses (names and epithets such as arjuna, karṇa, droṇa, whose first Apte sense misleads), 94% of word occurrences. New `etl/gloss_kn.json` / `data/lexicon/gloss_kn.json`: about 500 Kannada meanings, written by Claude and awaiting review; the panel shows them first in the Kannada script, English underneath. `words.json` has a `kn` map.
+- Verse-of-the-day cards for the Mahābhārata now come only from Traditional verses that match a Pune verse exactly, and have a words card. `grammar.py`: label for `lun_imp`.
+- Tests: `tests/test_mbh.py` (words, labels, glosses, cross-walk), `tests/e2e/mbh_words.py`.
+
 ## 0.6.2 — 2026-11-03
 - Card art variants (`etl/card_art.py`): two extra motifs per kāṇḍa and parvan (Kalamkari A, Pattachitra B) and two extra chip icons per work. `app.js` picks one of three per card and chip from a per-session seed (`sessionStorage vr.art`); CSS shows the chosen `.kart[data-v]` / `.wico[data-v]`.
 

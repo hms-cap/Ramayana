@@ -1,7 +1,11 @@
-"""Stage 1 (words): ambuda-dcs ramayanam.txt -> data/normalized/words.jsonl
+"""Stage 1 (words): ambuda-dcs ramayanam.txt / mahabharatam.txt -> words.jsonl
 
 Usage:
     python etl/ingest_dcs.py path/to/ambuda-dcs/ramayanam.txt
+    python etl/ingest_dcs.py path/to/ambuda-dcs/mahabharatam.txt --work mbh
+
+The Mahābhārata run writes data/normalized/mbh/words.jsonl.gz (ids M.k.s.v
+follow the Pune critical edition, so they map onto the CE uids of that work).
 
 Source: Oliver Hellwig, Digital Corpus of Sanskrit (DCS), as corrected in
 ambuda-org/dcs. CC BY 4.0. Verse ids (R.k.s.v) follow the Baroda Critical
@@ -25,6 +29,7 @@ Output, one JSON object per verse:
 from __future__ import annotations
 
 import collections
+import gzip
 import json
 import re
 import sys
@@ -35,7 +40,7 @@ import grammar  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "normalized"
-ID = re.compile(r"^# id = R\.(\d+)\.(\d+)\.(\d+)\s*$")
+ID = re.compile(r"^# id = [RM]\.(\d+)\.(\d+)\.(\d+)\s*$")
 
 
 def parse_tags(raw: str) -> dict[str, str]:
@@ -49,8 +54,27 @@ def parse_tags(raw: str) -> dict[str, str]:
     return d
 
 
-def main(path: str) -> None:
-    ce_uids = {json.loads(l)["uid"] for l in open(OUT / "ce.jsonl", encoding="utf-8")}
+UD = {"Case": ("c", {"Nom": "1", "Acc": "2", "Ins": "3", "Dat": "4", "Abl": "5", "Gen": "6", "Loc": "7", "Voc": "8"}),
+      "Gender": ("g", {"Masc": "m", "Fem": "f", "Neut": "n"}),
+      "Number": ("n", {"Sing": "s", "Dual": "d", "Plur": "p"})}
+
+
+def salvage(raw: str) -> dict[str, str]:
+    m = re.match(r"ERR:\s*(\w+)\s*,\s*(.*)$", raw)
+    pos = m.group(1) if m and m.group(1) in grammar.POS else "n"
+    tags = {"pos": pos}
+    if "Part" in raw:
+        tags["f"] = "part"
+    for kv in (m.group(2).split("|") if m else []):
+        k, _, v = kv.partition("=")
+        if k in UD and v in UD[k][1]:
+            tags[UD[k][0]] = UD[k][1][v]
+    return tags
+
+
+def main(path: str, work: str = "ram") -> None:
+    out_dir = OUT if work == "ram" else OUT / work
+    ce_uids = {json.loads(l)["uid"] for l in open(out_dir / "ce.jsonl", encoding="utf-8")}
     verses: dict[str, list] = {}
     cur = None
     problems = collections.Counter()
@@ -75,10 +99,11 @@ def main(path: str) -> None:
         form, lemma, raw = parts
         tags = parse_tags(raw)
         if "pos" not in tags:
-            # One token in the source is "ERR: va, VerbForm=Part": the tag says participle.
+            # A few source lines read "ERR: va, Case=Nom|Gender=Masc|Number=Sing" (or "ERR: n, ").
+            # Keep what they say: the part of speech, and the case/gender/number when given.
             problems["no_pos"] += 1
             examples.setdefault("no_pos", f"{lineno}: {line[:80]}")
-            tags = {"pos": "va", "f": "part"} if "va" in raw and "Part" in raw else {"pos": "n"}
+            tags = salvage(raw)
         for miss in grammar.check_tags(tags):
             unlabelled[miss] += 1
         verses[cur].append((form, lemma, tags))
@@ -108,7 +133,9 @@ def main(path: str) -> None:
         n_units += len(out)
         records.append({"uid": uid, "units": out})
 
-    with open(OUT / "words.jsonl", "w", encoding="utf-8") as f:
+    opener = (lambda: gzip.open(out_dir / "words.jsonl.gz", "wt", encoding="utf-8", compresslevel=9)) if work == "mbh" \
+        else (lambda: open(out_dir / "words.jsonl", "w", encoding="utf-8"))
+    with opener() as f:
         for r in records:
             f.write(json.dumps(r, ensure_ascii=False, separators=(",", ":")) + "\n")
 
@@ -122,11 +149,12 @@ def main(path: str) -> None:
         "unlabelled_tags": dict(unlabelled),
         "missing_uids": sorted(ce_uids - {r["uid"] for r in records}),
     }
-    (OUT / "words_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+    (out_dir / "words_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps({k: v for k, v in report.items() if k != "missing_uids"}, ensure_ascii=False, indent=1))
     if unlabelled:
         sys.exit("ERROR: tags without a Kannada/English label: " + ", ".join(unlabelled))
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    a = sys.argv[1:]
+    main(a[0], a[a.index("--work") + 1] if "--work" in a else "ram")

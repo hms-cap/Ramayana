@@ -1,39 +1,129 @@
 {
- "lemmas": 10822,
- "with_gloss": 5991,
+ "lemmas": 23850,
+ "with_gloss": 10168,
  "sources": {
-  "apte": 5817,
-  "override": 174,
-  "short_skipped": 52
+  "apte": 9561,
+  "override": 607,
+  "short_skipped": 41
  },
- "token_coverage": 0.9106,
+ "token_coverage": 0.9439,
+ "kannada_lemmas": 503,
+ "kannada_token_coverage": 0.4735,
  "top_missing": [
   [
-   "uB",
-   126
-  ],
-  [
-   "ah",
-   89
+   "ga",
+   246
   ],
   [
    "ABa",
-   85
+   236
   ],
   [
-   "pA",
-   78
+   "narendra",
+   232
   ],
   [
-   "durDarza",
+   "aS",
+   232
+  ],
+  [
+   "kAmyA",
+   97
+  ],
+  [
+   "varay",
+   96
+  ],
+  [
+   "aBye",
+   92
+  ],
+  [
+   "viSf",
+   87
+  ],
+  [
+   "sampf",
+   83
+  ],
+  [
+   "samudyam",
+   82
+  ],
+  [
+   "vicAray",
+   81
+  ],
+  [
+   "mAciram",
+   81
+  ],
+  [
+   "yaTAvftta",
+   79
+  ],
+  [
+   "yaTAgata",
+   77
+  ],
+  [
+   "yaTAtaTa",
+   76
+  ],
+  [
+   "pratima",
+   76
+  ],
+  [
+   "mahIy",
+   76
+  ],
+  [
+   "ahaMkAra",
+   76
+  ],
+  [
+   "yaTAsuKam",
    75
   ],
   [
-   "DAray",
+   "visPAray",
    75
   ],
   [
-   "vAsava",
+   "pracoday",
+   75
+  ],
+  [
+   "nirguRa",
+   75
+  ],
+  [
+   "nimajj",
+   75
+  ],
+  [
+   "fC",
+   75
+  ],
+  [
+   "drutam",
+   75
+  ],
+  [
+   "dAray",
+   75
+  ],
+  [
+   "ci",
+   75
+  ],
+  [
+   "ADiraTi",
+   75
+  ],
+  [
+   "tiryaYc",
    74
   ],
   [
@@ -41,212 +131,124 @@
    74
   ],
   [
-   "BA",
+   "samutsfj",
+   74
+  ],
+  [
+   "prasvap",
+   74
+  ],
+  [
+   "prahArin",
+   74
+  ],
+  [
+   "mAnada",
+   74
+  ],
+  [
+   "devadeva",
+   74
+  ],
+  [
+   "avaplu",
+   74
+  ],
+  [
+   "vidAray",
    73
   ],
   [
-   "pIqay",
+   "pAraga",
+   73
+  ],
+  [
+   "jAtarUpa",
+   73
+  ],
+  [
+   "apaSyat",
+   73
+  ],
+  [
+   "anekaSas",
+   73
+  ],
+  [
+   "aBiprekz",
+   73
+  ],
+  [
+   "Dfzwaketu",
+   73
+  ],
+  [
+   "Iray",
    72
   ],
   [
-   "pAlay",
-   71
-  ],
-  [
-   "durAtman",
-   71
-  ],
-  [
-   "niSAmay",
-   70
-  ],
-  [
-   "As",
-   70
-  ],
-  [
-   "parizvaj",
-   68
-  ],
-  [
-   "dvi",
-   68
-  ],
-  [
-   "kAmarUpin",
-   67
-  ],
-  [
-   "BI",
-   67
-  ],
-  [
-   "tA",
-   66
+   "Dam",
+   72
   ],
   [
    "mArutAtmaja",
-   65
+   71
   ],
   [
-   "janay",
-   65
+   "harzay",
+   71
   ],
   [
-   "coday",
-   65
+   "nind",
+   70
   ],
   [
-   "SoBay",
-   65
+   "kftakftya",
+   70
   ],
   [
-   "ga",
-   64
+   "dvijaSrezWa",
+   70
   ],
   [
-   "durga",
-   64
+   "duHsaha",
+   70
   ],
   [
-   "pattra",
-   63
+   "BAvitAtman",
+   70
   ],
   [
-   "BAskara",
-   63
+   "puRqarIkAkza",
+   69
   ],
   [
-   "tf",
-   62
+   "kimarTam",
+   69
   ],
   [
-   "antaHpura",
-   62
+   "durmuKa",
+   69
   ],
   [
-   "vasuDA",
-   60
+   "Danurveda",
+   69
   ],
   [
-   "tUrRam",
-   60
+   "ASuga",
+   69
   ],
   [
-   "pf",
-   60
+   "samprahfz",
+   68
   ],
   [
-   "mf",
-   58
+   "jf",
+   68
   ],
   [
-   "SA",
-   58
-  ],
-  [
-   "viBUzay",
-   57
-  ],
-  [
-   "tridaSa",
-   57
-  ],
-  [
-   "samAsAday",
-   57
-  ],
-  [
-   "parivAray",
-   56
-  ],
-  [
-   "sumitrA",
-   55
-  ],
-  [
-   "saptan",
-   55
-  ],
-  [
-   "mahIpati",
-   55
-  ],
-  [
-   "mahodara",
-   54
-  ],
-  [
-   "idAnIm",
-   54
-  ],
-  [
-   "i",
-   54
-  ],
-  [
-   "sahasrAkza",
-   53
-  ],
-  [
-   "rAjarzi",
-   52
-  ],
-  [
-   "mUrCay",
-   52
-  ],
-  [
-   "kvacid",
-   52
-  ],
-  [
-   "deha",
-   52
-  ],
-  [
-   "prajApati",
-   51
-  ],
-  [
-   "narendra",
-   51
-  ],
-  [
-   "caturdaSan",
-   51
-  ],
-  [
-   "camU",
-   51
-  ],
-  [
-   "viSru",
-   50
-  ],
-  [
-   "vanOkas",
-   50
-  ],
-  [
-   "jagant",
-   50
-  ],
-  [
-   "gA",
-   48
-  ],
-  [
-   "kANkzin",
-   46
-  ],
-  [
-   "Ka",
-   46
-  ],
-  [
-   "Df",
-   45
+   "eD",
+   68
   ]
  ]
 }

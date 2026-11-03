@@ -152,24 +152,29 @@
       var word = u.f.map(function (f) { return T.render(f, sc, sav); }).join("-");
       var lem = u.l.map(function (l) { return T.render(l, "deva", false); }).join("-");
       var gl = u.l.map(function (l) { return wordsData.gloss[l]; }).filter(Boolean);
+      var kn = sc === "knda" && wordsData.kn ? u.l.map(function (l) { return wordsData.kn[l]; }).filter(Boolean) : [];
       h += '<li><span class="w">' + esc(word) + '</span>' +
         '<span class="lem" lang="sa-Deva">' + esc(lem) + '</span>' +
         '<span class="gr">' + esc(describe(u.t, en)) + '</span>' +
+        (kn.length ? '<span class="mean mean-kn" lang="kn">' + kn.map(esc).join(" + ") + '</span>' : "") +
         (gl.length ? '<span class="mean" lang="en">' + gl.map(esc).join(" + ") + '</span>' : "") + '</li>';
     });
     box.innerHTML = h + '</ol>' +
       '<p class="wbw-note">Analysis: Digital Corpus of Sanskrit. Meanings are dictionary senses of each base word, chosen automatically (Apte, 1890, and project notes); they are not a translation of this verse. ' +
+      (sc === "knda" && wordsData.kn && Object.keys(wordsData.kn).length ? 'Kannada meanings, where shown, are written for this project and have not yet been reviewed by a Kannada reader. ' : '') +
       '<a href="' + root_href() + 'about/#words">About this data</a></p>' +
       (box.dataset.note ? '<p class="wbw-note wbw-warn">' + esc(NOTES[box.dataset.note]) + '</p>' : "");
     box.dataset.script = sc;
   }
+  function wroot_href() { return document.querySelector(".reader").dataset.wroot || root_href(); }
   function root_href() { return document.querySelector(".reader").dataset.root || "../../../"; }
   var wordsCache = {};
   function loadWords(u) { return wordsCache[u] || (wordsCache[u] = loadJSON(u)); }
+  var CE_NAME = document.body.dataset.work === "mbh" ? "Pune" : "Baroda";
   var NOTES = {
-    variant: "This verse reads differently from the Baroda verse analysed here, so some words may not match.",
-    partial: "Only part of this verse is in the Baroda verse analysed here, so some words may not match.",
-    regrouped: "The lines of this verse are grouped differently in the Baroda text, so some words may not match."
+    variant: "This verse reads differently from the " + CE_NAME + " verse analysed here, so some words may not match.",
+    partial: "Only part of this verse is in the " + CE_NAME + " verse analysed here, so some words may not match.",
+    regrouped: "The lines of this verse are grouped differently in the " + CE_NAME + " text, so some words may not match."
   };
   function toggleWords(li) {
     var src = li.querySelector(".vtext"), box = li.querySelector(".wbw");
@@ -179,7 +184,7 @@
     li.querySelectorAll(".wbw-btn, .wbw-ic").forEach(function (b) { b.setAttribute("aria-expanded", open ? "false" : "true"); });
     li.classList.toggle("wbw-on", !open);
     if (open) return;
-    var wurl = src.dataset.words === "words.json" ? "words.json" : root_href() + src.dataset.words;
+    var wurl = src.dataset.words === "words.json" ? "words.json" : wroot_href() + src.dataset.words;
     var vnum = src.dataset.vn;
     box.dataset.words = wurl; box.dataset.vn = vnum; box.dataset.note = src.dataset.wnote || "";
     Promise.all([loadWords(wurl), grammarData || loadJSON(root_href() + "data/grammar.json")]).then(function (r) {

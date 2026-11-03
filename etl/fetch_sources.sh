@@ -27,9 +27,10 @@ echo "Vulgate source: sources/ramayana_book/san"
 if [ ! -d sources/dcs ]; then
   git clone --filter=blob:none --no-checkout https://github.com/ambuda-org/dcs.git sources/dcs
 fi
-git -C sources/dcs sparse-checkout set --no-cone "/$(pin dcs file)"
+git -C sources/dcs sparse-checkout set --no-cone "/$(pin dcs file)" "/$(pin dcs_mbh file)"
 git -C sources/dcs checkout -q "$(pin dcs commit)"
 echo "DCS source: sources/dcs/$(pin dcs file)  ->  python etl/ingest_dcs.py <that file>"
+echo "DCS Mahabharata: sources/dcs/$(pin dcs_mbh file)  ->  python etl/ingest_dcs.py <that file> --work mbh"
 
 # Apte dictionary (Cologne digital edition, via indic-dict)
 if [ ! -d sources/apte ]; then

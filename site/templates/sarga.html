@@ -6,7 +6,7 @@
 {% block title %}{{ kanda.kn }} {{ W.sub_kn }} {{ s|knda }} — {{ kanda.en }} {{ s }} ({{ ed.short }}){% endblock %}
 {% block description %}{{ kanda.en }}, {{ W.sub }} {{ s }} of the {{ W.en }} ({{ ed.name }}): {{ verses|length }} verses in Kannada script, Devanāgarī and IAST.{% endblock %}
 {% block main %}
-<div class="reader" data-chant data-root="{{ root }}" data-edition="{{ ed.id }}" data-work="{{ W.id }}" data-citation="{{ ed.citation }}" data-src="{{ ed.short }} {{ kanda.n }}.{{ s }}" data-k="{{ kanda.n }}" data-s="{{ s }}"
+<div class="reader" data-chant data-root="{{ root }}" data-wroot="{{ wroot }}" data-edition="{{ ed.id }}" data-work="{{ W.id }}" data-citation="{{ ed.citation }}" data-src="{{ ed.short }} {{ kanda.n }}.{{ s }}" data-k="{{ kanda.n }}" data-s="{{ s }}"
      data-title-knda="{{ kanda.kn }} · {{ W.sub_kn }} {{ s|knda }}" data-title-deva="{{ kanda.deva }} · {{ W.sub_deva }} {{ s|deva }}" data-title-iast="{{ kanda.iast }} · {{ W.sub_iast }} {{ s }}">
   <nav class="crumbs" aria-label="Breadcrumb">
     <a href="{{ wroot }}{{ ed.id }}/">{{ ed.short }}</a>
@@ -23,7 +23,7 @@
     <p class="sub">{{ kanda.en }}, {{ W.sub }} {{ s }} of {{ total_in_kanda }}{% if title %}: <span class="sarga-title">{{ title.title_iast }}</span>{% endif %}. {{ verses|length }} verses.</p>
     {% if has_cw %}
     <div class="recension" data-ed="{{ other_id }}">
-      <p>{{ shared }} of {{ verses|length }} verses are also in the {{ other_label }}{% if alt_href %}, mostly in <a href="{{ alt_href.href }}">sarga {{ alt_href.ref }}</a>{% endif %}.</p>
+      <p>{{ shared }} of {{ verses|length }} verses are also in the {{ other_label }}{% if alt_href %}, mostly in <a href="{{ alt_href.href }}">{{ W.sub }} {{ alt_href.ref }}</a>{% endif %}.</p>
       {% if shared < verses|length %}
       <div class="seg seg-sm" role="radiogroup" aria-label="Which verses to show">
         <button type="button" role="radio" data-set-filter="all">All verses</button>
@@ -32,13 +32,15 @@
       {% endif %}
     </div>
     {% endif %}
+    {% if wnote %}<p class="note">{{ wnote }}</p>{% endif %}
     {% if iitk %}<p class="note">This sarga's text was restored by the upstream project from IIT Kanpur's Valmiki Ramayanam site, whose reuse terms are not stated.</p>{% endif %}
   </header>
 
   <ol class="verses">
   {% if W.lean %}
   {% for v in verses %}
-    <li class="verse" id="v{{ v.v }}" data-ref="{{ v.ref }}" data-meter="{{ v.meter or '' }}"{% if v.ids %} data-ids="{% for i in v.ids %}{{ i.label }} {{ i.value }}{% if not loop.last %}; {% endif %}{% endfor %}"{% endif %}><div class="body"><div class="vtext"><div class="t t-iast" lang="sa-Latn"><p>{% for l in v.iast %}<span class="ln">{{ l }}</span>{% endfor %}</p></div></div>{% if v.scan %}<div class="scan" aria-hidden="true">{% for l in v.scan %}<span class="ln">{{ l }}</span>{% endfor %}</div>{% endif %}</div></li>
+    {% set cw = v.crosswalk %}
+    <li class="verse{% if cw and cw.status == 'absent' %} v-absent{% endif %}" id="v{{ v.v }}" data-ref="{{ v.ref }}" data-meter="{{ v.meter or '' }}"{% if v.ids %} data-ids="{% for i in v.ids %}{{ i.label }} {{ i.value }}{% if not loop.last %}; {% endif %}{% endfor %}"{% endif %}{% if v.wsrc %} data-w="1"{% endif %}{% if cw and cw.links %} data-cwo="{{ other_id }}" data-cwl="{{ cw.other_label }}|{% for l in cw.links %}{{ l.ref }}={{ l.path }}{% if not loop.last %};{% endif %}{% endfor %}"{% endif %}><div class="body">{% if cw and cw.status != 'match' %}<p class="badge b-{{ cw.status }}" data-ed="{{ other_id }}">{% if cw.status == 'absent' %}Not in the {{ cw.other_label }}{% else %}{% if cw.status == 'variant' %}Different reading in the{% elif cw.status == 'regrouped' %}Lines grouped differently in the{% else %}Only partly in the{% endif %} {{ cw.other_label }}: {% for l in cw.links %}<a href="{{ wroot }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</p>{% endif %}<div class="vtext"{% if v.wsrc %} data-words="{{ v.wsrc.url }}" data-vn="{{ v.wsrc.vn }}" data-wnote="{{ v.wsrc.note }}" tabindex="0" role="button" aria-expanded="false" title="Click for word-by-word meanings"{% endif %}><div class="t t-iast" lang="sa-Latn"><p>{% for l in v.iast %}<span class="ln">{{ l }}</span>{% endfor %}</p></div></div>{% if v.scan %}<div class="scan" aria-hidden="true">{% for l in v.scan %}<span class="ln">{{ l }}</span>{% endfor %}</div>{% endif %}{% if v.wsrc %}<div class="wbw" hidden></div>{% endif %}</div></li>
   {% endfor %}
   {% else %}
   {% for v in verses %}
