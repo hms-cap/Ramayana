@@ -1,5 +1,12 @@
 [
  [
+  "0.7.1",
+  "2026-11-05",
+  [
+   "A new Kosha button in the bottom bar opens the Śabdārtha Kaustubha Sanskrit–Kannada dictionary (from the VedaAlokana project) in a new tab."
+  ]
+ ],
+ [
   "0.7.0",
   "2026-11-03",
   [

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.7.1 — 2026-11-05
+- Bottom bar: fifth link "Kosha" (`a.ext`, new tab) to https://hms-cap.github.io/VedaAlokana/web/kosha/ (Śabdārtha Kaustubha). Tab bar grid is 5 columns.
+
 ## 0.7.0 — 2026-11-03
 - Mahābhārata word by word. `etl/ingest_dcs.py --work mbh` reads the DCS `mahabharatam.txt` into `data/normalized/mbh/words.jsonl.gz` (72,711 of 73,821 Pune verses; the Bhagavadgītā 6.23–40, 7.173 and about 300 scattered verses have none). `site/build.py` writes a `words.json` per Pune adhyāya (115 MB in all); Traditional verses that match a Pune verse use that verse's words. `lean.js` adds the word icon, the details link to the other text and the "Word by word" button; `app.js` takes the words URL relative to the work root (`data-wroot`).
 - Kumbakonam-to-Pune cross-walk (`etl/crosswalk.py --work mbh`, `data/crosswalk/mbh/`): 62,574 of 96,415 Traditional verses match a Pune verse exactly. Badges, "also in the Pune text" links and the "only verses in the other text" filter are on for the Mahābhārata.

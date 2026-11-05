@@ -1,1 +1,1 @@
-self.VRAMAYANA = { version: '0.7.0', released: '2026-11-03' };
+self.VRAMAYANA = { version: '0.7.1', released: '2026-11-05' };
