@@ -153,7 +153,7 @@
       var lem = u.l.map(function (l) { return T.render(l, "deva", false); }).join("-");
       var gl = u.l.map(function (l) { return wordsData.gloss[l]; }).filter(Boolean);
       var kn = sc === "knda" && wordsData.kn ? u.l.map(function (l) { return wordsData.kn[l]; }).filter(Boolean) : [];
-      h += '<li><span class="w">' + esc(word) + '</span>' +
+      h += '<li data-l="' + esc(u.l.join(" ")) + '"><span class="w" role="button" tabindex="0" aria-expanded="false" title="Dictionary entry">' + esc(word) + '</span>' +
         '<span class="lem" lang="sa-Deva">' + esc(lem) + '</span>' +
         '<span class="gr">' + esc(describe(u.t, en)) + '</span>' +
         (kn.length ? '<span class="mean mean-kn" lang="kn">' + kn.map(esc).join(" + ") + '</span>' : "") +

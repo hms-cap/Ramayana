@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.0 — 2026-11-05
+- Dictionary inside the app: `vendor/kosha/` (copied from hms-cap/VedaAlokana at the commit in `SOURCE.txt` by `etl/sync_kosha.sh`) is built to `dist/dict/` unchanged apart from a back link to Itihāsa (`build_dict` in `site/build.py`). Bottom bar link `a.ext` → `dict/kosha/` (replaces the 0.7.1 external link). The app keeps its own service worker and offline download.
+- Word look-up: tapping a word in the word-by-word panel opens a dictionary card under it (`site/static/dict.js`, loaded on sarga pages; reuses the app's `kosha.js` and `search-key.js` by dynamic import on first tap). Matching by sound key; about 83% of word occurrences have an entry.
+- `.wbw-list li` rules are now `.wbw-list > li`. Tests: `tests/test_dict.py`, `tests/e2e/dict.py`.
+
 ## 0.7.1 — 2026-11-05
 - Bottom bar: fifth link "Kosha" (`a.ext`, new tab) to https://hms-cap.github.io/VedaAlokana/web/kosha/ (Śabdārtha Kaustubha). Tab bar grid is 5 columns.
 

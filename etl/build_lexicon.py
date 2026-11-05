@@ -16,8 +16,9 @@ Sources, in order of priority:
     Thomas Malten"). Each gloss is the first few senses of the entry with
     quotations, citations and compounds removed.
 
-The Kannada dictionary Shabdarthakaustubha is NOT used here: its upstream
-repository states no licence, so it is linked to rather than redistributed.
+The Kannada dictionary Shabdarthakaustubha is not used to build these glosses.
+It is bundled separately as the Dictionary app (vendor/kosha, dist/dict/; see
+etl/sync_kosha.sh) and looked up on demand from the word panel (site/static/dict.js).
 Kannada meanings come only from etl/gloss_kn.json: about 500 lemmas (names,
 epithets, pronouns, particles and the commonest small words of both epics),
 written for this project by Claude and awaiting review by a Kannada reader.

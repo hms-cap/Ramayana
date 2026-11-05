@@ -26,8 +26,8 @@ async def main():
         await pg.wait_for_selector("#v1 .wbw-ic")
         assert await pg.get_attribute("#v1 .wbw-ic", "aria-disabled") is None
         await pg.click("#v1 .wbw-ic")
-        await pg.wait_for_selector("#v1 .wbw-list li")
-        n = await pg.locator("#v1 .wbw-list li").count()
+        await pg.wait_for_selector("#v1 .wbw-list > li")
+        n = await pg.locator("#v1 .wbw-list > li").count()
         kn = await pg.locator("#v1 .wbw-list .mean-kn").count()
         print("Pune 1.1.1 words:", n, "with Kannada:", kn)
         assert n >= 6 and kn >= 1
@@ -73,7 +73,7 @@ async def main():
         # 5. the Rāmāyaṇa panel still works and now shows Kannada for names
         await pg.goto(B + "ce/1/1/")
         await pg.click("#v1 .wbw-ic")
-        await pg.wait_for_selector("#v1 .wbw-list li")
+        await pg.wait_for_selector("#v1 .wbw-list > li")
         assert await pg.locator("#v1 .wbw-list .mean-kn").count() >= 1
 
         # 6. daily card: the Mahābhārata card has a words section

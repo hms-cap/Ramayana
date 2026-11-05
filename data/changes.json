@@ -1,5 +1,13 @@
 [
  [
+  "0.8.0",
+  "2026-11-05",
+  [
+   "A Dictionary button in the bottom bar opens the Śabdārtha Kaustubha Sanskrit–Kannada dictionary (46,800 words) inside Itihāsa, with search and browsing; it works offline once opened.",
+   "In the word-by-word panel, tap a word to see its dictionary entry under it: Kannada meanings, derivation and a link to the full entry."
+  ]
+ ],
+ [
   "0.7.1",
   "2026-11-05",
   [

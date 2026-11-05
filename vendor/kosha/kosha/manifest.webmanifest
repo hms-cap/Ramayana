@@ -1,0 +1,20 @@
+{
+  "name": "Śabdārtha Kaustubha",
+  "short_name": "Kaustubha",
+  "description": "Sanskrit–Kannada dictionary: about 46,800 words with Kannada meanings, derivations and quotations. Works offline.",
+  "id": "./",
+  "start_url": "./#/kosha",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F5F6F4",
+  "theme_color": "#0F5F7A",
+  "lang": "en",
+  "categories": ["books", "education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -414,6 +414,7 @@ def build(out: Path, only: str | None = None) -> None:
     (out / "data" / "grammar.json").write_text(
         json.dumps(grammar.as_json(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
+    build_dict(out)
     done = [build_work(W, out, env) for key, W in WORKS.items() if only in (None, key)]
     ram = next(d for d in done if d["W"]["id"] == "ram") if only in (None, "ram") else done[0]
     # shared pages at the site root: About and Saved (their tab bar is the Rāmāyaṇa's; app.js points it at the last-used work)
@@ -430,6 +431,25 @@ def build(out: Path, only: str | None = None) -> None:
     write_pwa(out, done)
     (out / ".nojekyll").write_text("")
     print(f"built {sum(e['sargas'] for d in done for e in d['eds'])} sarga/adhyāya pages -> {out}")
+
+
+def build_dict(out: Path) -> None:
+    """The Śabdārtha Kaustubha dictionary app (vendor/kosha, copied from hms-cap/VedaAlokana by etl/sync_kosha.sh)
+    goes to dist/dict/ unchanged, except for a link back to Itihāsa in its top bar."""
+    src = ROOT / "vendor" / "kosha"
+    if not src.exists():
+        return
+    shutil.copytree(src, out / "dict")
+    (out / "dict" / "SOURCE.txt").unlink(missing_ok=True)
+    page = out / "dict" / "kosha" / "index.html"
+    html = page.read_text(encoding="utf-8")
+    assert '<span class="sp"></span>' in html and "</head>" in html
+    html = html.replace('<span class="sp"></span>', '<span class="sp"></span><a class="itihasa-back" href="../../" lang="kn">\u0c87\u0ca4\u0cbf\u0cb9\u0cbe\u0cb8</a>', 1)
+    html = html.replace("</head>", '<link rel="stylesheet" href="itihasa.css">\n</head>', 1)
+    page.write_text(html, encoding="utf-8")
+    (out / "dict" / "kosha" / "itihasa.css").write_text(
+        ".itihasa-back{font-size:.9rem;font-weight:700;text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:.25rem .8rem;opacity:.85}\n"
+        ".itihasa-back:hover{opacity:1}\n", encoding="utf-8")
 
 
 def build_daily(out: Path, editions, titles: dict) -> dict:

@@ -1,0 +1,32 @@
+/* The standalone Dictionary app: the shared styles (../styles.css) plus one column on every screen size and its own bottom bar. */
+:root { --top: 56px; }
+body.solo main { max-width: 820px; margin: 0 auto; padding: 20px 16px calc(96px + env(safe-area-inset-bottom, 0px)); }
+body.solo .topbar { gap: 4px; padding: 0 8px 0 max(8px, env(safe-area-inset-left, 0px)); }
+body.solo .back:not([hidden]) { display: inline-flex; margin-left: 0; }
+body.solo .brand { padding-left: 8px; }
+body.solo .brand.when-back { display: none; }
+body.solo .brand img { border-radius: 7px; }
+body.solo .sp { flex: 1; }
+body.solo .kbar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); position: fixed; z-index: 30; left: 0; right: 0; bottom: 0;
+  padding: 6px max(8px, env(safe-area-inset-left, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-right, 0px));
+  background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(12px); border-top: 1px solid var(--line-soft); }
+body.solo .kbar a { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; min-height: 48px; color: var(--muted); font-size: 11px; font-weight: 500; }
+body.solo .kbar a:hover { text-decoration: none; }
+body.solo .kbar a[aria-current="page"] { color: var(--v-kosha); }
+body.solo .kbar a svg { padding: 4px 16px; box-sizing: content-box; width: 22px; height: 22px; border-radius: 16px; }
+body.solo .kbar a[aria-current="page"] svg { background: color-mix(in srgb, var(--v-kosha) 14%, transparent); }
+body.solo .k-strip { display: flex; }
+body.solo .k-browse.has-strip { padding-right: 18px; }
+body.solo .k-bar { margin: 0 -16px 4px; border-radius: 0; }
+@media (min-width: 900px) { body.solo .k-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } body.solo .k-strip { right: max(2px, calc(50vw - 440px)); } }
+body.solo .k-dl { font: inherit; padding: 0; border: 0; background: none; color: var(--v-kosha); text-decoration: underline; cursor: pointer; }
+body.solo .k-dl:disabled { color: var(--muted); text-decoration: none; cursor: default; }
+
+/* About and settings */
+body.solo .ab h2 { font-size: 16px; margin: 26px 0 8px; }
+body.solo .ab p { margin: 6px 0; color: var(--ink); }
+body.solo .ab .muted, body.solo .ab small { color: var(--muted); }
+body.solo .ab-btn { font: inherit; font-size: 14px; height: 40px; padding: 0 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; margin-top: 6px; }
+body.solo .ab-btn:disabled { opacity: .55; cursor: default; }
+body.solo .ab-ok { color: var(--v-kosha); font-weight: 600; }
+body.solo .ab a { color: var(--v-kosha); }
