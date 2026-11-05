@@ -1,5 +1,13 @@
 [
  [
+  "0.8.1",
+  "2026-11-05",
+  [
+   "Going to the Dictionary from a word card and coming back (Back button, or the ← button in the Dictionary) returns you to the same verse with the same word's card open.",
+   "The Dictionary now follows Itihāsa's light or dark setting."
+  ]
+ ],
+ [
   "0.8.0",
   "2026-11-05",
   [

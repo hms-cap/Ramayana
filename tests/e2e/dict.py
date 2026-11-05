@@ -71,6 +71,44 @@ async def main():
         await pg.wait_for_selector(".k-senses")
         print("entry:", (await pg.inner_text(".k-head")))
 
+        # 5. from a card to the dictionary and back: the same word's card is reopened (link and Back button)
+        for how in ("pill", "back"):
+            await pg.goto(B + "ce/1/1/")
+            await pg.evaluate("sessionStorage.clear()")
+            await pg.click("#v1 .wbw-ic")
+            await pg.wait_for_selector("#v1 .wbw-list > li")
+            li = pg.locator("#v1 .wbw-list > li").nth(2)
+            await li.locator(".w").click()
+            await li.locator(".dcard .dc-h a").first.wait_for(timeout=15000)
+            await li.locator(".dcard .dc-h a").first.click()
+            await pg.wait_for_selector(".k-senses")
+            assert "?from=" in pg.url and "/dict/kosha/" in pg.url, pg.url
+            label = (await pg.inner_text(".itihasa-back")).strip()
+            print(how, "pill:", label)
+            assert label.endswith("1.1.1"), label
+            if how == "pill":
+                await pg.click(".itihasa-back")
+            else:
+                await pg.go_back()
+            await pg.wait_for_url("**/ce/1/1/**")
+            await pg.locator("#v1 .wbw-list > li").nth(2).locator(".dcard .dc-c").wait_for(timeout=15000)
+            assert await pg.locator("#v1 .wbw-list > li").count() > 2
+            print(how, "restored the card")
+
+        # 6. the dictionary follows Itihāsa's light/dark setting, also while it is open
+        await pg.goto(B + "ce/1/1/")
+        await pg.evaluate("localStorage.setItem('vr-prefs', JSON.stringify({theme: 'dark'}))")
+        k = await ctx.new_page()
+        await k.goto(B + "dict/kosha/")
+        await k.wait_for_selector("#kq")
+        assert await k.evaluate("document.documentElement.dataset.theme") == "dark"
+        await pg.evaluate("localStorage.setItem('vr-prefs', JSON.stringify({theme: ''}))")
+        await k.wait_for_function("document.documentElement.dataset.theme === 'light'", timeout=5000)
+        await k.goto(B + "dict/kosha/#/about")
+        await k.wait_for_selector("#abTheme")
+        assert "follows" in (await k.inner_text("#abTheme"))
+        await k.close()
+
         print("console errors:", errs)
         assert not errs
         await b.close()

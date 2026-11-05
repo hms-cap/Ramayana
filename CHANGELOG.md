@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.1 — 2026-11-05
+- Back from the dictionary: a card link saves `vr.ret` (page, verse, word) in sessionStorage and adds `?from=` to the dictionary URL; `dict.js` reopens the word panel and card when the page is reached by Back or from the dictionary. The dictionary's pill reads "← 1.1.1" and returns there.
+- The dictionary follows Itihāsa's theme (`vr-prefs.theme`, also live through the `storage` event); its own Theme control is replaced by a note. `build_dict` patches `index.html`, `app.js` and the version (`1.1.4-itihasa.2`, so installed copies fetch the patched shell).
+
 ## 0.8.0 — 2026-11-05
 - Dictionary inside the app: `vendor/kosha/` (copied from hms-cap/VedaAlokana at the commit in `SOURCE.txt` by `etl/sync_kosha.sh`) is built to `dist/dict/` unchanged apart from a back link to Itihāsa (`build_dict` in `site/build.py`). Bottom bar link `a.ext` → `dict/kosha/` (replaces the 0.7.1 external link). The app keeps its own service worker and offline download.
 - Word look-up: tapping a word in the word-by-word panel opens a dictionary card under it (`site/static/dict.js`, loaded on sarga pages; reuses the app's `kosha.js` and `search-key.js` by dynamic import on first tap). Matching by sound key; about 83% of word occurrences have an entry.

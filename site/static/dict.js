@@ -75,6 +75,34 @@
     }
   }
 
+  // Leaving for the dictionary from a card: remember the verse and word, and tell the dictionary where "back" goes.
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest(".dcard a[href]"), li = a && a.closest(".wbw-list > li"), verse = a && a.closest(".verse");
+    if (!li || !verse) return;
+    try { sessionStorage.setItem("vr.ret", JSON.stringify({ p: location.pathname, v: verse.id, i: [].indexOf.call(li.parentNode.children, li), t: Date.now() })); } catch (_) { /* private mode */ }
+    a.href = a.href.replace(/\/kosha\/(\?[^#]*)?#/, "/kosha/?from=" + encodeURIComponent(location.pathname + "#" + verse.id) + "#");
+  }, true);
+
+  // Coming back (Back button, or the dictionary's "← verse" link): reopen the word panel and the same word's card.
+  function restore() {
+    var r = null;
+    try { r = JSON.parse(sessionStorage.getItem("vr.ret") || "null"); sessionStorage.removeItem("vr.ret"); } catch (_) { return; }
+    var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    var back = (nav && nav.type === "back_forward") || document.referrer.indexOf("/dict/") >= 0;
+    if (!r || !back || r.p !== location.pathname || Date.now() - r.t > 1800000) return;
+    var li = document.getElementById(r.v), ic = li && li.querySelector(".wbw-ic");
+    if (!ic || ic.getAttribute("aria-disabled") === "true") return;
+    li.scrollIntoView({ block: "center" });
+    if (!li.classList.contains("wbw-on")) ic.click();
+    var tries = 0, iv = setInterval(function () {
+      var w = li.querySelectorAll(".wbw-list > li")[r.i];
+      if (w) { clearInterval(iv); if (!w.querySelector(".dcard")) w.querySelector(".w").click(); w.scrollIntoView({ block: "center" }); }
+      else if (++tries > 80) clearInterval(iv);
+    }, 100);
+  }
+  window.addEventListener("pageshow", function (e) { if (e.persisted) { try { sessionStorage.removeItem("vr.ret"); } catch (_) { /* */ } } });
+  setTimeout(restore, 0);
+
   document.addEventListener("click", function (e) {
     var w = e.target.closest(".wbw-list .w[role=button]");
     if (w) { e.preventDefault(); show(w.closest("li")); }

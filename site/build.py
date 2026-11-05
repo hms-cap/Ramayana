@@ -445,8 +445,30 @@ def build_dict(out: Path) -> None:
     html = page.read_text(encoding="utf-8")
     assert '<span class="sp"></span>' in html and "</head>" in html
     html = html.replace('<span class="sp"></span>', '<span class="sp"></span><a class="itihasa-back" href="../../" lang="kn">\u0c87\u0ca4\u0cbf\u0cb9\u0cbe\u0cb8</a>', 1)
-    html = html.replace("</head>", '<link rel="stylesheet" href="itihasa.css">\n</head>', 1)
+    # follow Itihāsa's light/dark setting (vr-prefs; no value means light), and let "back" return to the verse the reader came from (?from=)
+    head_js = ("<script>(function(){try{var t=(JSON.parse(localStorage.getItem('vr-prefs')||'{}')).theme,d=document.documentElement;"
+               "if(t==='system')d.removeAttribute('data-theme');else d.setAttribute('data-theme',t==='dark'?'dark':'light')}catch(e){}"
+               "try{var f=new URLSearchParams(location.search).get('from');if(f&&f.charAt(0)==='/'&&f.charAt(1)!=='/'){"
+               "document.addEventListener('DOMContentLoaded',function(){var a=document.querySelector('.itihasa-back');if(!a)return;a.href=f;"
+               "var m=/\\/(?:ce|vu)\\/(\\d+)\\/(\\d+)\\/(?:#v(\\d+))?/.exec(f);a.removeAttribute('lang');"
+               "a.textContent='\\u2190 '+(m?m[1]+'.'+m[2]+(m[3]?'.'+m[3]:''):'Itihasa')})}}catch(e){}})()</script>\n")
+    html = html.replace("</head>", head_js + '<link rel="stylesheet" href="itihasa.css">\n</head>', 1)
     page.write_text(html, encoding="utf-8")
+    app = out / "dict" / "kosha" / "app.js"
+    js = app.read_text(encoding="utf-8")
+    seg = re.search(r'<div class="seg" id="abTheme".*?</div>', js)
+    assert seg and "pick('#abTheme', 'theme', applyTheme);" in js and "const savePrefs =" in js
+    js = js.replace(seg.group(0), '<p class="muted" id="abTheme">Light or dark follows the setting in Itihāsa (now: ${prefs.theme}).</p>')
+    js = js.replace("pick('#abTheme', 'theme', applyTheme);", "")
+    js = js.replace("const savePrefs =", """const itheme = () => { try { const t = JSON.parse(localStorage.getItem('vr-prefs') || '{}').theme; return t === 'dark' || t === 'system' ? t : 'light'; } catch { return 'light'; } };
+prefs.theme = itheme(); // Itihāsa's setting, not this app's own
+window.addEventListener('storage', (e) => { if (e.key === 'vr-prefs') { prefs.theme = itheme(); applyTheme(); } });
+const savePrefs =""", 1)
+    app.write_text(js, encoding="utf-8")
+    ver = out / "dict" / "kosha" / "version.js"           # a new shell for the service worker of anyone who already opened it
+    v = ver.read_text(encoding="utf-8")
+    assert "version: '1.1.4'" in v
+    ver.write_text(v.replace("version: '1.1.4'", "version: '1.1.4-itihasa.2'"), encoding="utf-8")
     (out / "dict" / "kosha" / "itihasa.css").write_text(
         ".itihasa-back{font-size:.9rem;font-weight:700;text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:.25rem .8rem;opacity:.85}\n"
         ".itihasa-back:hover{opacity:1}\n", encoding="utf-8")
