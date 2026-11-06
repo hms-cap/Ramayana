@@ -1,5 +1,12 @@
 [
  [
+  "0.8.2",
+  "2026-11-06",
+  [
+   "The work buttons, kāṇḍa and parvan cards, headings and menus now follow the script you choose at the top (Kannada, Devanāgarī or Roman) instead of always showing Kannada."
+  ]
+ ],
+ [
   "0.8.1",
   "2026-11-05",
   [
