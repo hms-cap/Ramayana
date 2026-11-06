@@ -5,7 +5,7 @@
   {% for k in e.kandas %}
     <li style="flex-grow: {{ k.sargas }}; --ticks: {{ k.sargas }}">
       <a href="{{ root }}{{ e.id }}/{{ k.n }}/" title="{{ k.en }}: {{ k.sargas }} {{ W.subs }}">
-        <span class="kn" lang="kn">{{ k.kn }}</span>
+        <span class="kn">{{ unit_sx(k) }}</span>
         <span class="num">{{ k.sargas }}</span>
       </a>
     </li>

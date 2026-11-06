@@ -7,7 +7,7 @@
 <div class="listing">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ wroot }}{{ ed.id }}/">{{ ed.short }}</a></nav>
   <header class="kanda-head">
-    <h1 lang="kn">{{ kanda.kn }}</h1>
+    <h1>{{ unit_sx(kanda) }}</h1>
     <p class="sub"><span lang="sa">{{ kanda.deva }}</span> <span class="en">{{ kanda.en }}</span></p>
     <p class="head-actions"><button type="button" class="chant-list act" data-href="{{ items[0].s }}/"><span lang="kn">ಪಠಣ</span> Chant this {{ W.unit }} from {{ W.sub }} 1</button></p>
     <p class="count">{{ kanda.sargas }} {{ W.subs }}, {{ "{:,}".format(kanda.verses) }} verses in the {{ ed.short }}.</p>

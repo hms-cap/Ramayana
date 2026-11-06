@@ -24,16 +24,16 @@
 {% for w in works_list %}
   <a class="wchip{% if w.id == W.id %} on{% endif %}" href="{{ root }}{{ w.prefix }}" data-work-pick="{{ w.id }}" style="--wb:{{ w.theme }}"{% if w.id == W.id %} aria-current="true"{% endif %}>
     <span class="wic" aria-hidden="true">{% for ic in w.icons %}{{ ic|safe }}{% endfor %}</span>
-    <span class="wtx"><b lang="kn">{{ w.kn_chip }}</b><small>{{ w.short_en }}</small></span>
+    <span class="wtx"><b>{{ work_sx(w) }}</b><small>{{ w.short_en }}</small></span>
   </a>
 {% endfor %}
 </nav>
 {% endmacro %}
 {% macro kcard(k, vu, ce, tag='button', unit='sargas') %}
-<{{ tag }} class="kcard" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-en="{{ k.en }}" data-n-vu="{{ vu }}" data-n-ce="{{ ce }}" style="--kb:{{ k.kb or PAL[k.n][0] }};--kp:{{ k.kp or PAL[k.n][1] }}"{% if tag == 'button' %} type="button" aria-haspopup="dialog"{% endif %}>
+<{{ tag }} class="kcard" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-deva="{{ k.deva }}" data-iast="{{ k.en }}" data-en="{{ k.en }}" data-n-vu="{{ vu }}" data-n-ce="{{ ce }}" style="--kb:{{ k.kb or PAL[k.n][0] }};--kp:{{ k.kp or PAL[k.n][1] }}"{% if tag == 'button' %} type="button" aria-haspopup="dialog"{% endif %}>
   {% if k.svg %}{{ k.svg|safe }}{% else %}{{ art(k.n) }}{% endif %}{% for a in k.alts %}{{ a|safe }}{% endfor %}
-  <span class="kc-n" lang="kn" aria-hidden="true">{{ k.n_knda }}</span>
-  <span class="kc-t" lang="kn">{{ k.kn }}</span>
+  <span class="kc-n" aria-hidden="true">{{ num_sx(k.n) }}</span>
+  <span class="kc-t">{{ unit_sx(k) }}</span>
   <span class="kc-c">{{ k.en }} · <span data-ed="vu">{{ vu }}</span><span data-ed="ce"><span class="sep"> / </span>{{ ce }}</span> {{ unit }}</span>
 </{{ tag }}>
 {% endmacro %}

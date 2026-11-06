@@ -13,7 +13,7 @@
     if (!cur) return;
     if (P.off().indexOf(ed) >= 0) ed = ed === "ce" ? "vu" : "ce";
     var k = cur.dataset.k, n = +cur.getAttribute("data-n-" + ed) || 0, s = sc();
-    document.getElementById("ks-title").textContent = cur.dataset.kn;
+    document.getElementById("ks-title").textContent = s === "deva" ? cur.dataset.deva : s === "iast" ? cur.dataset.iast : cur.dataset.kn;
     document.getElementById("ks-sub").textContent = cur.dataset.en + " · " + n + " " + (MBH ? "adhyāyas" : "sargas");
     sheet.querySelectorAll("[data-chip-ed]").forEach(function (b) { b.setAttribute("aria-checked", b.dataset.chipEd === ed ? "true" : "false"); });
     var st = document.getElementById("ks-start");

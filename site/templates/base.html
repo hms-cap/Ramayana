@@ -41,7 +41,7 @@ if(p.size)d.dataset.size=p.size;var o=p[d.dataset.work==="mbh"?"offMbh":"off"];d
   <a href="{{ wroot }}read/" data-wl="read"{% if page == 'read' %} aria-current="page"{% endif %}>Read</a>
   {% for e in rail_eds %}
   <div data-ed="{{ e.id }}"><h2>{{ e.short }}</h2>
-  <ul>{% for k in rail_kandas %}<li><a href="{{ wroot }}{{ e.id }}/{{ k.n }}/" lang="kn"{% if cur_ed is defined and cur_ed == e.id and cur_k is defined and cur_k == k.n %} aria-current="true"{% endif %}>{{ k.kn }}</a></li>{% endfor %}</ul></div>
+  <ul>{% for k in rail_kandas %}<li><a href="{{ wroot }}{{ e.id }}/{{ k.n }}/"{% if cur_ed is defined and cur_ed == e.id and cur_k is defined and cur_k == k.n %} aria-current="true"{% endif %}>{{ unit_sx(k) }}</a></li>{% endfor %}</ul></div>
   {% endfor %}
 </aside>
 <div class="shell-main">

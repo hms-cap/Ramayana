@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.8.2 — 2026-11-06
+- Work chips, kāṇḍa/parvan cards and sheet title, headings, breadcrumbs, side rail and strips now follow the script choice (Kannada, Devanāgarī or IAST) instead of always showing Kannada: `sx()` in `build.py` writes all three, `.sx-*` rules in `style.css` show one.
+
 ## 0.8.1 — 2026-11-05
 - Back from the dictionary: a card link saves `vr.ret` (page, verse, word) in sessionStorage and adds `?from=` to the dictionary URL; `dict.js` reopens the word panel and card when the page is reached by Back or from the dictionary. The dictionary's pill reads "← 1.1.1" and returns there.
 - The dictionary follows Itihāsa's theme (`vr-prefs.theme`, also live through the `storage` event); its own Theme control is replaced by a note. `build_dict` patches `index.html`, `app.js` and the version (`1.1.4-itihasa.2`, so installed copies fetch the patched shell).

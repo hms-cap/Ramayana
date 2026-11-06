@@ -632,3 +632,10 @@ html[data-work="mbh"] .cont { background: linear-gradient(#3B1220, #5A1F2B); }
 .kcard:not([data-art]) .kart:not([data-v="0"]), .kcard[data-art="0"] .kart:not([data-v="0"]), .kcard[data-art="1"] .kart:not([data-v="1"]), .kcard[data-art="2"] .kart:not([data-v="2"]),
 .wchip:not([data-art]) .wico:not([data-v="0"]), .wchip[data-art="0"] .wico:not([data-v="0"]), .wchip[data-art="1"] .wico:not([data-v="1"]), .wchip[data-art="2"] .wico:not([data-v="2"]) { display: none; }
 html.js .kcard:not([data-art]) .kart, html.js .wchip:not([data-art]) .wico { visibility: hidden; }
+
+/* names that follow the script choice (build.py sx()) */
+.sx-deva, .sx-iast { display: none; }
+[data-script="deva"] .sx-kn, [data-script="iast"] .sx-kn { display: none; }
+[data-script="deva"] .sx-deva, [data-script="iast"] .sx-iast { display: inline; }
+.sx-deva { font-family: var(--f-deva); }
+.sx-iast { font-family: var(--f-ui); }

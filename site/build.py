@@ -68,11 +68,17 @@ def norm_path(W: dict, ed: str) -> Path:
     return (base / "mbh" if W["id"] == "mbh" else base) / f"{ed}.jsonl"
 
 
+def sx(kn: str, deva: str, iast: str):
+    """One label in all three scripts; style.css shows the one that matches the reader's script choice."""
+    from markupsafe import Markup, escape
+    return Markup(f'<span class="sx sx-kn" lang="kn">{escape(kn)}</span><span class="sx sx-deva" lang="sa">{escape(deva)}</span><span class="sx sx-iast" lang="sa-Latn">{escape(iast)}</span>')
+
+
 def unit_info(W: dict, k: int) -> dict:
     iast, kn, en = W["units"][k - 1]
     d = {"n": k, "iast": iast, "kn": kn, "en": en,
          "deva": slp1_to_brahmic(iast_to_slp1(iast), "deva"),
-         "n_knda": to_digits(k, "knda")}
+         "n_knda": to_digits(k, "knda"), "n_deva": to_digits(k, "deva")}
     if W["id"] == "mbh":
         bg, panel = mbh_art.PAL[(k - 1) % 6]
         d.update(kb=bg, kp=panel, svg=mbh_art.svg(k).replace('class="kart"', 'class="kart" data-v="0"', 1))
@@ -260,6 +266,10 @@ def make_env() -> Environment:
     env = Environment(loader=FileSystemLoader(ROOT / "site" / "templates"),
                       autoescape=select_autoescape(["html"]), trim_blocks=True, lstrip_blocks=True)
     env.filters["knda"] = lambda n: to_digits(n, "knda")
+    env.globals["sx"] = sx
+    env.globals["unit_sx"] = lambda k: sx(k["kn"], k["deva"], k["en"])
+    env.globals["work_sx"] = lambda w: sx(w["kn_chip"], slp1_to_brahmic(iast_to_slp1(w["short_en"]), "deva"), w["short_en"])
+    env.globals["num_sx"] = lambda n: sx(to_digits(n, "knda"), to_digits(n, "deva"), str(n))
     env.filters["deva"] = lambda n: to_digits(n, "deva")
     return env
 

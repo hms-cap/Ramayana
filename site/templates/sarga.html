@@ -11,10 +11,10 @@
   <nav class="crumbs" aria-label="Breadcrumb">
     <a href="{{ wroot }}{{ ed.id }}/">{{ ed.short }}</a>
     <span aria-hidden="true">/</span>
-    <a href="../"><span lang="kn">{{ kanda.kn }}</span></a>
+    <a href="../">{{ unit_sx(kanda) }}</a>
   </nav>
   <header class="sarga-head">
-    <h1><span lang="kn">{{ kanda.kn }}</span> <span class="sarga-n" lang="kn">{{ W.sub_kn }} {{ s|knda }}</span></h1>
+    <h1>{{ unit_sx(kanda) }} <span class="sarga-n">{{ sx(W.sub_kn ~ " " ~ (s|knda), W.sub_deva ~ " " ~ (s|deva), W.sub_iast ~ " " ~ s) }}</span></h1>
     <div class="head-actions">
       <button type="button" class="chant-open act" aria-haspopup="dialog"><span lang="kn">ಪಠಣ</span> Chant view</button>
       <button type="button" class="pdf-btn act" data-nopdf>PDF</button>
