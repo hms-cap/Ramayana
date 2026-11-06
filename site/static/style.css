@@ -639,3 +639,46 @@ html.js .kcard:not([data-art]) .kart, html.js .wchip:not([data-art]) .wico { vis
 [data-script="deva"] .sx-deva, [data-script="iast"] .sx-iast { display: inline; }
 .sx-deva { font-family: var(--f-deva); }
 .sx-iast { font-family: var(--f-ui); }
+
+/* ---- Pariśiṣṭa: appendix and Chandas pages ---- */
+.workchips { gap: 0.4rem; }
+.wchip { min-width: 0; padding-right: 0.55rem; gap: 0.4rem; }
+.wchip .wtx { overflow: hidden; }
+.wchip .wtx b { font-size: 1rem; overflow: hidden; text-overflow: ellipsis; }
+.wchip .wtx small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wchip .wic { width: 30px; height: 30px; }
+.wchip .wic svg { width: 18px; height: 18px; }
+.wchip { padding-left: 0.3rem; }
+.wchip .wtx b { font-size: 0.95rem; }
+.wchip .wtx small { font-size: 0.68rem; }
+.wchip[data-work-pick="app"] { flex: 0.9; }
+@media (max-width: 28rem) { .wchip { padding-right: 0.35rem; padding-left: 0.2rem; gap: 0.25rem; } .wchip .wic { width: 24px; height: 24px; } .wchip .wic svg { width: 15px; height: 15px; } .wchip .wtx b { font-size: 0.88rem; } .wchip .wtx small { font-size: 0.64rem; } }
+@media (max-width: 34rem) { .ctable .pd { display: none; } .ctable th, .ctable td { padding: 0.4rem 0.35rem; } }
+.appx h1 small { font: 500 0.9rem var(--f-ui); color: var(--muted); margin-left: 0.4rem; }
+.appx .crumbs-l { margin: 0 0 0.2rem; font: 500 0.85rem var(--f-ui); color: var(--muted); }
+.appx-list { list-style: none; padding: 0; margin: 1rem 0; }
+.appx-list a { display: block; padding: 0.9rem 1rem; border-radius: 14px; background: var(--card); color: var(--ink); text-decoration: none; box-shadow: var(--shadow, 0 1px 3px rgba(0,0,0,.12)); }
+.appx-list b { display: block; font: 400 1.35rem var(--f-knda); }
+.appx-list span span { font: 500 0.9rem var(--f-ui); }
+.tbl-wrap { overflow-x: auto; margin: 0.8rem 0; }
+.ctable { border-collapse: collapse; width: 100%; font: 500 0.9rem var(--f-ui); }
+.ctable th, .ctable td { padding: 0.4rem 0.55rem; border-bottom: 1px solid var(--rule); text-align: left; white-space: nowrap; }
+.ctable thead th { font-weight: 600; color: var(--muted); }
+.ctable .num { text-align: right; font-variant-numeric: tabular-nums; }
+.ctable .grp { text-align: center; border-bottom: 0; }
+.ctable tbody th { font-weight: 500; }
+.ctable tbody th a { text-decoration: none; font-size: 1.05rem; }
+.ctable .pd { color: var(--muted); }
+.ctable tr.none td, .ctable tr.none th { color: var(--muted); }
+.ctable tr.all th, .ctable tr.all td { font-weight: 700; border-top: 2px solid var(--rule); }
+.m-facts { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin: 0.6rem 0; font: 500 0.95rem var(--f-ui); }
+.m-facts small { display: block; color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: .04em; }
+.pat { font: 400 1.25rem var(--f-deva); letter-spacing: .18em; }
+.m-sec h3 small { font: 500 0.8rem var(--f-ui); color: var(--muted); }
+.ex-list { list-style: none; padding: 0; margin: 0; }
+.ex { padding: 0.9rem 0; border-bottom: 1px solid var(--rule); }
+.ex-ref { display: inline-block; margin-bottom: 0.25rem; color: var(--accent); font: 600 0.9rem var(--f-ui); text-decoration: none; }
+.ex .ex-scan { display: block; color: var(--muted); font: 400 1rem/1.6 var(--f-deva); letter-spacing: 0.18em; margin-top: 0.3rem; }
+.ex .ex-scan .ln { display: block; }
+.ex-all { margin: 0.8rem 0; font: 500 0.9rem var(--f-ui); }
+.ex-all a { display: inline-block; margin: 0.15rem 0.5rem 0.15rem 0; }

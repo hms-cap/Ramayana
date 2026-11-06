@@ -1,9 +1,17 @@
 [
  [
+  "0.9.0",
+  "2026-11-06",
+  [
+   "New Pariśiṣṭa (appendix) button beside the two epics. Its first section, Chandas, lists the metres found in the Rāmāyaṇa and the Mahābhārata: how each is built, how many verses use it in each kāṇḍa or parva, and verses to read, linked to the text.",
+   "“Parvan” is now spelled “Parva”."
+  ]
+ ],
+ [
   "0.8.2",
   "2026-11-06",
   [
-   "The work buttons, kāṇḍa and parvan cards, headings and menus now follow the script you choose at the top (Kannada, Devanāgarī or Roman) instead of always showing Kannada."
+   "The work buttons, kāṇḍa and parva cards, headings and menus now follow the script you choose at the top (Kannada, Devanāgarī or Roman) instead of always showing Kannada."
   ]
  ],
  [

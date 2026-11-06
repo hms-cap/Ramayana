@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "_art.html" import workchips %}
+{% block title %}Pariśiṣṭa — ಇತಿಹಾಸ{% endblock %}
+{% block main %}
+{{ workchips(W, works_list, root, chip_on) }}
+<article class="prose appx">
+  <h1>{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }} <small>Appendix</small></h1>
+  <p>Reference pages that run across both epics.</p>
+  <ul class="appx-list">
+    <li><a href="chandas/"><b>{{ sx("ಛಂದಸ್ಸು", "छन्दः", "Chandas") }}</b>
+      <span>Index of metres in the Rāmāyaṇa and the Mahābhārata, with counts and verses to read. {{ n_metres }} metres.</span></a></li>
+  </ul>
+</article>
+{% endblock %}

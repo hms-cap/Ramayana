@@ -1,4 +1,4 @@
-"""Alternative card paintings for the kāṇḍas and parvans, and alternative work-chip icons.
+"""Alternative card paintings for the kāṇḍas and parvas, and alternative work-chip icons.
 
 Each unit has two extra motifs drawn from its story (motifs only, no figures):
 A in a Kalamkari manner (cream line, stitched border), B in a Pattachitra manner
@@ -173,7 +173,16 @@ def _setu_icon():
     return R[6][1][1]
 
 
+def _pothi():   # palm-leaf manuscript: leaves with a cord through the holes
+    return ('<path d="M3 8h18v8H3z"/><path d="M3 8l-1 2v4l1 2M21 8l1 2v4l-1 2" stroke-width="1.2"/>'
+            '<path d="M7 11h4M7 13h6M14 11h3M15 13h2" stroke-width="1"/>' + dot(5.2, 12, .9) + dot(18.8, 12, .9) + '<path d="M5.2 12C5.2 6 18.8 6 18.8 12" stroke-width=".8"/>')
+def _book():    # open book
+    return '<path d="M12 6.5C9.5 4.8 6 4.5 3 5v13c3-.5 6.5-.2 9 1.5C14.5 17.8 18 17.5 21 18V5c-3-.5-6.5-.2-9 1.5z"/><path d="M12 6.5V19.5"/><path d="M6 8.5q2 0 4 .8M6 11.5q2 0 4 .8M14 9.3q2-.8 4-.8M14 12.3q2-.8 4-.8" stroke-width=".9"/>'
+def _lekhani(): # stylus on a leaf
+    return '<path d="M4 20l1.2-4.2L16.5 4.5a2 2 0 0 1 2.8 0l.2.2a2 2 0 0 1 0 2.8L8.2 18.8z"/><path d="M14.5 6.5l3 3M5.2 15.8l3 3" stroke-width="1.1"/><path d="M12 21h9" stroke-width="1.2"/>'
+
+
 def chip_icons(work: str) -> list[str]:
-    fs = [_bow, _paduka, _setu_icon] if work == "ram" else [_chakra, _shankha, _flute]
+    fs = {"ram": [_bow, _paduka, _setu_icon], "app": [_pothi, _book, _lekhani]}.get(work, [_chakra, _shankha, _flute])
     return [f'<svg class="wico" data-v="{i}" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{f()}</svg>'
             for i, f in enumerate(fs)]

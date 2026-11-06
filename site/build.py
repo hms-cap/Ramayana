@@ -23,6 +23,7 @@ sys.path.insert(0, str(ROOT / "etl"))
 import daily  # noqa: E402
 import grammar  # noqa: E402
 import card_art  # noqa: E402
+import chandas  # noqa: E402
 import mbh_art  # noqa: E402
 import meter  # noqa: E402
 from translit import iast_to_slp1, render, slp1_to_brahmic, to_digits  # noqa: E402
@@ -52,11 +53,15 @@ WORKS = {
                 credit='Baroda Critical Edition text from <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, CC BY-NC-SA 4.0; Traditional (Vulgate) text from <a href="https://sa.wikisource.org/">Sanskrit Wikisource</a>, CC BY-SA 4.0. Not for commercial use.'),
     "mbh": dict(id="mbh", prefix="mbh/", kn="ಮಹಾಭಾರತ", en="Mahābhārata", short_en="Mahābhārata", short_kn="ಮಹಾಭಾರತ", kn_chip="ಮಹಾಭಾರತ",
                 tile="ಮ", theme="#3B1220", blurb="Sanskrit text with Kannada",
-                editions="editions_mbh.json", units=PARVANS, unit="parvan", units_pl="parvans", Unit="Parvan",
+                editions="editions_mbh.json", units=PARVANS, unit="parva", units_pl="parvas", Unit="Parva",
                 sub="adhyāya", subs="adhyāyas", Sub="Adhyāya", sub_kn="ಅಧ್ಯಾಯ", sub_deva="अध्यायः", sub_iast="adhyāyaḥ",
                 epic_kn="ಮಹಾಭಾರತದಲ್ಲಿ", lean=True, site="hms-cap.github.io/Ramayana/mbh",
                 credit='Pune critical text © Bhandarkar Oriental Research Institute, via <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, shown with attribution for non-commercial reading; Traditional (Kumbakonam) text from <a href="https://github.com/sarit/SARIT-corpus">SARIT</a>, CC BY-SA 3.0. Not for commercial use.'),
 }
+
+
+# the Pariśiṣṭa (appendix) chip beside the two works; its pages are built by build_appendix()
+APPENDIX = dict(id="app", prefix="appendix/", kn_chip="\u0caa\u0cb0\u0cbf\u0cb6\u0cbf\u0cb7\u0ccd\u0c9f", short_en="Pariśiṣṭa", sub_en="Chandas", theme="#1F4B3F")
 
 
 def load_editions(W=None):
@@ -166,7 +171,7 @@ def cw_target_uid(cw: dict) -> str:
 _CW: dict = {}                       # work id -> {"vu": {...}, "ce": {...}}
 _SARGA_CW: dict = {}
 WORDS: dict[str, list] = {}          # Rāmāyaṇa: CE verse uid -> word units
-MBH_WORDS: dict[tuple, str] = {}     # Mahābhārata: (parvan, adhyāya) -> words.json text (built while reading, to keep memory low)
+MBH_WORDS: dict[tuple, str] = {}     # Mahābhārata: (parva, adhyāya) -> words.json text (built while reading, to keep memory low)
 MBH_WORD_UIDS: set[str] = set()      # Pune verse uids that have words
 GLOSS: dict[str, str] = {}
 GLOSS_KN: dict[str, str] = {}
@@ -279,7 +284,7 @@ NO_WORDS_CE: set = set()
 
 def no_words_note(k: int, s: int) -> str:
     if (k, s) == (6, 23) or (k == 6 and 23 <= s <= 40):
-        return ("Word-by-word meanings are not available for the Bhagavadgītā (Bhīṣma Parvan 23–40 in the Pune text): "
+        return ("Word-by-word meanings are not available for the Bhagavadgītā (Bhīṣma Parva 23–40 in the Pune text): "
                 "the Digital Corpus of Sanskrit's Mahābhārata file leaves it out.")
     return "Word-by-word meanings are not available for this adhyāya: the Digital Corpus of Sanskrit's Mahābhārata file does not include it."
 
@@ -292,6 +297,7 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
     editions = load_editions(W)
     nu = len(W["units"])
     works_list = [{**w, "n_units": len(w["units"]), "n_eds": len(load_editions(w)), "icons": card_art.chip_icons(w["id"])} for w in WORKS.values()]
+    works_list.append({**APPENDIX, "icons": card_art.chip_icons("app")})
     base = dict(W=W, works_list=works_list, rail_kandas=[unit_info(W, k) for k in range(1, nu + 1)], rail_eds=editions, editions=editions)
 
     def ctx(depth: int, **kw) -> dict:
@@ -438,6 +444,8 @@ def build(out: Path, only: str | None = None) -> None:
         p = out / name / "index.html"
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(env.get_template(f"{name}.html").render(page=name, **shared), encoding="utf-8")
+    if only is None:
+        build_appendix(out, env, ram["base"])
     write_pwa(out, done)
     (out / ".nojekyll").write_text("")
     print(f"built {sum(e['sargas'] for d in done for e in d['eds'])} sarga/adhyāya pages -> {out}")
@@ -598,9 +606,97 @@ def build_daily_mbh(wdir: Path, W: dict, editions) -> dict:
     return cards[0]
 
 
+def _example(rec: dict, W: dict, ed: str, root: str) -> dict:
+    """One verse for the Chandas pages: all three scripts, the scansion, and a link to the verse in the reader."""
+    slp_lines = [" ".join(iast_to_slp1(p) for p in line) for line in rec["lines"]]
+    ref = f'{rec["k"]}.{rec["s"]}.{rec["v"]}'
+    t = {}
+    for sc in SCRIPTS:
+        mid, last = end_marks(sc, ref)
+        ls = [render(l, sc) for l in slp_lines]
+        t[sc] = [l + (last if i == len(ls) - 1 else mid) for i, l in enumerate(ls)]
+    met = meter.identify([[iast_to_slp1(p) for p in line] for line in rec["lines"]])
+    scan = [" ".join("".join("ऽ" if w == "G" else "।" for w in pada) for pada in line) for line in met["scansion"]]
+    return {"ref": ref, "text": t, "scan": scan, "href": f'{root}{W["prefix"]}{ed}/{rec["k"]}/{rec["s"]}/#v{rec["v"]}'}
+
+
+def build_appendix(out: Path, env: Environment, base: dict) -> None:
+    """Pariśiṣṭa: the appendix hub and the Chandas (metre) index, with a page for every metre that occurs."""
+    cen = chandas.census()
+    eds = {w: {e["id"]: e for e in load_editions(WORKS[w])} for w in WORKS}
+    present = [m for m in chandas.CATALOGUE if any(m["name"] in cen[w][e]["by"] for w in WORKS for e in chandas.EDS)]
+    def pat(s):  # laghu । and guru ऽ; the last syllable of a pāda may be either (×)
+        return "".join("ऽ" if c == "G" else "।" for c in s[:-1]) + "×"
+    pada = {name: pat(p) for p, name in meter.PADA.items()}
+    for (odd, even), name in meter.ARDHASAMA.items():
+        pada[name] = pat(odd) + "   /   " + pat(even)
+
+    def msx(name):  # a metre's name in the three scripts
+        s = iast_to_slp1(name)
+        return sx(slp1_to_brahmic(s, "knda"), slp1_to_brahmic(s, "deva"), name)
+
+    def counts(m):
+        rows = []
+        for w, W in WORKS.items():
+            by = {e: cen[w][e]["by"].get(m["name"], {}) for e in chandas.EDS}
+            tot = {e: sum(by[e].values()) for e in chandas.EDS}
+            rows.append(dict(W=W, w=w, by=by, tot=tot))
+        return rows
+
+    shared = dict(**base, page="appendix", chip_on="app", msx=msx)
+    # pick examples: from the Traditional Text, the text shown by default; the Critical text only if the other has none
+    want = {}
+    for m in present:
+        for w in WORKS:
+            ed = "vu" if m["name"] in cen[w]["vu"]["by"] else "ce"
+            refs = cen[w][ed]["refs"].get(m["name"], [])
+            want[(w, m["name"])] = (ed, chandas.spread(sorted(refs), 8))
+    need = defaultdict(set)
+    for (w, name), (ed, picks) in want.items():
+        need[(w, ed)].update(picks)
+    recs = {}
+    for (w, ed), keys in need.items():
+        for line in open(norm_path(WORKS[w], ed), encoding="utf-8"):
+            r = json.loads(line)
+            if (r["k"], r["s"], r["v"]) in keys:
+                recs[(w, ed, r["k"], r["s"], r["v"])] = r
+
+    def write(rel: str, tpl: str, depth: int, **kw):
+        p = out / rel / "index.html"
+        p.parent.mkdir(parents=True, exist_ok=True)
+        ctx = {**shared, "wroot": "../" * depth, "root": "../" * depth, "up": "../", **kw}
+        p.write_text(env.get_template(tpl).render(**ctx), encoding="utf-8")
+
+    write("appendix", "appendix.html", 1, n_metres=len(present))
+    index = []
+    for m in present:
+        c = counts(m)
+        index.append(dict(m=m, rows=c, pada=pada.get(m["name"])))
+    notes = {w: {e: cen[w][e]["none"] for e in chandas.EDS} for w in WORKS}
+    totals = {w: {e: cen[w][e]["total"] for e in chandas.EDS} for w in WORKS}
+    write("appendix/chandas", "chandas.html", 2, index=index, notes=notes, totals=totals, works=WORKS, eds=eds)
+    for m in present:
+        sections = []
+        for w, W in WORKS.items():
+            ed, picks = want[(w, m["name"])]
+            root3 = "../../../"
+            ex = [_example(recs[(w, ed, *k)], W, ed, root3) for k in picks if (w, ed, *k) in recs]
+            allrefs = {}
+            for e in chandas.EDS:
+                refs = sorted(cen[w][e]["refs"].get(m["name"], []))
+                if 0 < len(refs) <= 60:
+                    allrefs[e] = [dict(ref=f"{k}.{s}.{v}", href=f'{root3}{W["prefix"]}{e}/{k}/{s}/#v{v}') for k, s, v in refs]
+            by = {e: cen[w][e]["by"].get(m["name"], {}) for e in chandas.EDS}
+            units = [dict(info=unit_info(W, k), n={e: by[e].get(k, 0) for e in chandas.EDS}) for k in range(1, len(W["units"]) + 1)
+                     if any(by[e].get(k) for e in chandas.EDS)]
+            sections.append(dict(W=W, w=w, ed=ed, ed_name=eds[w][ed]["short"], examples=ex, allrefs=allrefs, units=units,
+                                 tot={e: sum(by[e].values()) for e in chandas.EDS}, eds=eds[w]))
+        write(f"appendix/chandas/{m['slug']}", "metre.html", 3, m=m, pada=pada.get(m["name"]), sections=sections, chandas_up="../")
+
+
 def write_pwa(out: Path, done: list) -> None:
     """Service worker (with its shell list), manifest, and the offline download packs."""
-    shell = ["", "about/", "my/"]
+    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/"]
     for d in done:
         pre = d["W"]["prefix"]
         nu = len(d["W"]["units"])

@@ -19,12 +19,12 @@
 {%- endif -%}
 {%- if n != 7 -%}<path d="M12 112H148" stroke-width="1.2"/>{%- endif -%}
 </svg>{% endmacro %}
-{% macro workchips(W, works_list, root) %}
+{% macro workchips(W, works_list, root, on=None) %}
 <nav class="workchips" aria-label="Work">
 {% for w in works_list %}
-  <a class="wchip{% if w.id == W.id %} on{% endif %}" href="{{ root }}{{ w.prefix }}" data-work-pick="{{ w.id }}" style="--wb:{{ w.theme }}"{% if w.id == W.id %} aria-current="true"{% endif %}>
+  <a class="wchip{% if w.id == (on or W.id) %} on{% endif %}" href="{{ root }}{{ w.prefix }}" data-work-pick="{{ w.id }}" style="--wb:{{ w.theme }}"{% if w.id == (on or W.id) %} aria-current="true"{% endif %}>
     <span class="wic" aria-hidden="true">{% for ic in w.icons %}{{ ic|safe }}{% endfor %}</span>
-    <span class="wtx"><b>{{ work_sx(w) }}</b><small>{{ w.short_en }}</small></span>
+    <span class="wtx"><b>{{ work_sx(w) }}</b><small>{{ w.sub_en or w.short_en }}</small></span>
   </a>
 {% endfor %}
 </nav>

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.0 — 2026-11-06
+- Pariśiṣṭa (appendix): a third chip beside the two works, opening `appendix/`. First section: Chandas, an index of the 15 metres found in the two epics (`etl/chandas.py` counts the stored metre labels of all four texts; `build_appendix` in `site/build.py` writes `appendix/chandas/` and one page per metre). Each metre page has its pāda pattern, counts per kāṇḍa or parva in both editions, eight verses to read (script-aware, with scansion, linked into the reader) and, for rare metres, every verse reference.
+- "Parvan" is now "Parva" everywhere it is shown (the Sanskrit word is parva; parvan is the stem).
+
 ## 0.8.2 — 2026-11-06
 - Work chips, kāṇḍa/parvan cards and sheet title, headings, breadcrumbs, side rail and strips now follow the script choice (Kannada, Devanāgarī or IAST) instead of always showing Kannada: `sx()` in `build.py` writes all three, `.sx-*` rules in `style.css` show one.
 

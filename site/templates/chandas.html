@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "_art.html" import workchips %}
+{% block title %}Chandas, index of metres — ಇತಿಹಾಸ{% endblock %}
+{% block main %}
+{{ workchips(W, works_list, root, chip_on) }}
+<article class="prose appx">
+  <p class="crumbs-l"><a href="../">{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }}</a> ›</p>
+  <h1>{{ sx("ಛಂದಸ್ಸು", "छन्दः", "Chandas") }} <small>Index of metres</small></h1>
+  <p>Chandas is the measure of a verse: how many syllables each pāda has, and which are short (laghu, <span lang="sa">।</span>) and which long (guru, <span lang="sa">ऽ</span>).
+     The metre of every verse was found by the app's own scansion, so it is a reading aid and not an editor's ruling. Choose a metre to see how it is built, how many verses use it in each part of each text, and verses to read.</p>
+  <div class="tbl-wrap">
+  <table class="ctable">
+    <thead><tr><th rowspan="2">Metre</th><th rowspan="2">Pāda</th>
+      {% for w, Wk in works.items() %}<th colspan="2" class="grp">{{ Wk[1] }}</th>{% endfor %}</tr>
+      <tr>{% for w, Wk in works.items() %}{% for e in ("vu", "ce") %}<th class="num">{{ eds[w][e].short|replace(" Text", "") }}</th>{% endfor %}{% endfor %}</tr></thead>
+    <tbody>
+    {% for it in index %}
+      <tr><th scope="row"><a href="{{ it.m.slug }}/">{{ msx(it.m.name) }}</a></th><td class="pd">{{ it.m.syl }}</td>
+      {% for r in it.rows %}{% for e in ("vu", "ce") %}<td class="num">{{ "{:,}".format(r.tot[e]) if r.tot[e] else "·" }}</td>{% endfor %}{% endfor %}</tr>
+    {% endfor %}
+    <tr class="none"><th scope="row">Not identified</th><td class="pd">·</td>
+      {% for w in works %}{% for e in ("vu", "ce") %}<td class="num">{{ "{:,}".format(notes[w][e]) }}</td>{% endfor %}{% endfor %}</tr>
+    <tr class="all"><th scope="row">All verses</th><td class="pd"></td>
+      {% for w in works %}{% for e in ("vu", "ce") %}<td class="num">{{ "{:,}".format(totals[w][e]) }}</td>{% endfor %}{% endfor %}</tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="hint">Columns: Traditional (Vulgate / Kumbakonam) text, and the critical text (Baroda / Pune). “Pāda” is syllables per quarter-verse.</p>
+  <h2>What “not identified” means</h2>
+  <p>A verse is named only when its syllable counts and patterns fit a metre exactly. Many of the rest are śloka-like verses with one pāda a syllable too long or short (a variant reading, or a sandhi or spelling difference in the digital text), verses of mixed length, or short lines of prose. They are counted here and left unlabelled instead of being guessed.</p>
+</article>
+{% endblock %}

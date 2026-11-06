@@ -4,7 +4,7 @@ Baroda Critical Edition (ce).
     python etl/crosswalk.py [--work mbh]
 
 With --work mbh the Kumbakonam (vu) text is walked onto the Pune critical
-edition (ce), parvan by parvan, and written to data/crosswalk/mbh/.
+edition (ce), parva by parva, and written to data/crosswalk/mbh/.
 
 Method
 ------

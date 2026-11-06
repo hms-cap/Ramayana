@@ -23,7 +23,7 @@ class MahabharataData(unittest.TestCase):
         self.assertEqual(len(self.vu), 96415)
         self.assertEqual(len({(r["k"], r["s"]) for r in self.ce}), 1995)
 
-    def test_eighteen_parvans_and_unique_ids(self):
+    def test_eighteen_parvas_and_unique_ids(self):
         for rows in (self.ce, self.vu):
             self.assertEqual(sorted({r["k"] for r in rows}), list(range(1, 19)))
             self.assertEqual(len({r["uid"] for r in rows}), len(rows))
@@ -38,7 +38,7 @@ class MahabharataData(unittest.TestCase):
         for r in self.ce:
             per.setdefault(r["k"], set()).add(r["s"])
         for k, ss in per.items():
-            self.assertEqual(sorted(ss), list(range(1, max(ss) + 1)), f"parvan {k}")
+            self.assertEqual(sorted(ss), list(range(1, max(ss) + 1)), f"parva {k}")
 
 
 class MahabharataBuild(unittest.TestCase):

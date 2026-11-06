@@ -283,6 +283,7 @@
     }
     document.addEventListener("click", function (e) {
       var a = e.target.closest("[data-work-pick]"); if (!a) return;
+      if (a.dataset.workPick === "app") return;      /* the appendix is not a work */
       try { localStorage.setItem("vr.work", a.dataset.workPick); } catch (x) { /* ignore */ }
     });
   })();

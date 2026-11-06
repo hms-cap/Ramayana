@@ -1,6 +1,6 @@
-"""Temple-painting (Tanjore-style) niche cards for the 18 parvans: symbols only, no figures.
+"""Temple-painting (Tanjore-style) niche cards for the 18 parvas: symbols only, no figures.
 
-svg(n) -> inline SVG string for parvan n. Colours follow the kāṇḍa cards (gold line, deep panel).
+svg(n) -> inline SVG string for parva n. Colours follow the kāṇḍa cards (gold line, deep panel).
 """
 G="#F0C45A"; I="#FFF1CF"
 PAL=[("#5A1F2B","#7E3042"),("#1F3A66","#2F5A96"),("#1B4D33","#2C7048"),("#6B3A14","#92561F"),("#0D4E60","#1B7A90"),("#4B2A66","#6D429A")]
@@ -39,5 +39,5 @@ PALETTE = PAL
 
 
 def svg(n: int) -> str:
-    """Inline SVG for parvan n; sized by CSS (class kart)."""
+    """Inline SVG for parva n; sized by CSS (class kart)."""
     return art(n).replace('width="100%" height="124" ', 'class="kart" ')

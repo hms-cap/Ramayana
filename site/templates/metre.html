@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "_art.html" import workchips %}
+{% block title %}{{ m.name }} — Chandas — ಇತಿಹಾಸ{% endblock %}
+{% block main %}
+{{ workchips(W, works_list, root, chip_on) }}
+<article class="prose appx">
+  <p class="crumbs-l"><a href="../../">{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }}</a> › <a href="../">{{ sx("ಛಂದಸ್ಸು", "छन्दः", "Chandas") }}</a> ›</p>
+  <h1>{{ msx(m.name) }}</h1>
+  <p class="m-facts"><span><small>Syllables per pāda</small> {{ m.syl }}</span>
+    {% if m.gana %}<span><small>Gaṇas</small> {{ m.gana }}</span>{% endif %}
+    {% if pada %}<span><small>Pattern</small> <span class="pat" lang="sa">{{ pada }}</span></span>{% endif %}</p>
+  <p>{{ m.text }}</p>
+  {% if pada %}<p class="hint"><span lang="sa">।</span> laghu, <span lang="sa">ऽ</span> guru, × either.</p>{% endif %}
+
+  {% for sec in sections %}
+  <section class="m-sec">
+    <h2>{{ sec.W.en }}</h2>
+    {% if sec.units %}
+    <div class="tbl-wrap"><table class="ctable">
+      <thead><tr><th>{{ sec.W.Unit }}</th><th class="num">{{ sec.eds.vu.short|replace(" Text", "") }}</th><th class="num">{{ sec.eds.ce.short|replace(" Text", "") }}</th></tr></thead>
+      <tbody>
+      {% for u in sec.units %}<tr><th scope="row">{{ unit_sx(u.info) }}</th><td class="num">{{ "{:,}".format(u.n.vu) if u.n.vu else "·" }}</td><td class="num">{{ "{:,}".format(u.n.ce) if u.n.ce else "·" }}</td></tr>{% endfor %}
+      <tr class="all"><th scope="row">Total</th><td class="num">{{ "{:,}".format(sec.tot.vu) }}</td><td class="num">{{ "{:,}".format(sec.tot.ce) }}</td></tr>
+      </tbody></table></div>
+    <h3>Verses to read <small>from the {{ sec.ed_name }}</small></h3>
+    <ol class="ex-list">
+      {% for x in sec.examples %}
+      <li class="ex"><a class="ex-ref" href="{{ x.href }}">{{ x.ref }} <span aria-hidden="true">›</span></a>
+        <div class="t t-knda" lang="kn">{% for l in x.text.knda %}<span class="ln">{{ l }}</span>{% endfor %}</div>
+        <div class="t t-deva" lang="sa">{% for l in x.text.deva %}<span class="ln">{{ l }}</span>{% endfor %}</div>
+        <div class="t t-iast" lang="sa-Latn">{% for l in x.text.iast %}<span class="ln">{{ l }}</span>{% endfor %}</div>
+        <div class="ex-scan" lang="sa">{% for l in x.scan %}<span class="ln">{{ l }}</span>{% endfor %}</div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% for e, refs in sec.allrefs.items() %}
+    <details class="ex-all"><summary>{{ 'The one verse' if refs|length == 1 else 'All ' ~ refs|length ~ ' verses' }}, {{ sec.eds[e].short }}</summary>
+      <p>{% for r in refs %}<a href="{{ r.href }}">{{ r.ref }}</a> {% endfor %}</p></details>
+    {% endfor %}
+    {% else %}
+    <p class="hint">No verse of this metre was found in the {{ sec.W.short_en }}.</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+</article>
+{% endblock %}

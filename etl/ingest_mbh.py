@@ -3,7 +3,7 @@
     python etl/ingest_mbh.py ce  path/to/gretil/.../mbh/        # Pune critical text, mbh_01_u.htm ... mbh_18_u.htm
     python etl/ingest_mbh.py vu  path/to/mahabharata-devanagari.xml   # Kumbakonam (southern recension), SARIT
 
-Same record shape as the Rāmāyaṇa files: k = parvan, s = adhyāya, v = verse.
+Same record shape as the Rāmāyaṇa files: k = parva, s = adhyāya, v = verse.
 CE: lines carrying a "*" in their id are variant insertions in the apparatus and are left out.
 VU: speaker lines ("X uvāca", xml:id ending in x) are kept as the first line of the verse that follows.
 """
@@ -124,7 +124,7 @@ def main(kind: str, src: str) -> None:
     by = collections.defaultdict(set)
     for r in recs:
         by[r["k"]].add(r["s"])
-    print(kind, "verses", len(seen), "duplicates dropped", dups, "adhyayas per parvan", {k: len(v) for k, v in sorted(by.items())})
+    print(kind, "verses", len(seen), "duplicates dropped", dups, "adhyayas per parva", {k: len(v) for k, v in sorted(by.items())})
     gaps = {k: sorted(set(range(1, max(v) + 1)) - v) for k, v in by.items() if set(range(1, max(v) + 1)) - v}
     print("adhyaya gaps:", gaps)
 
