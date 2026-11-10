@@ -45,3 +45,5 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 1800000   # the ~600 MB site can take longer than the 10-minute default to sync
