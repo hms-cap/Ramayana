@@ -1,5 +1,15 @@
 [
  [
+  "0.10.0",
+  "2026-11-10",
+  [
+   "New: the Bhagavadgītā, as a third button beside the two epics. Read its 18 adhyāyas in the Traditional (Kumbakonam) or Pune text, with the speaker shown above each verse, chapter names, chant view, search and a verse of the day.",
+   "The Gītā Dhyāna ślokas, the nine verses recited before the Gītā, open the Gītā section.",
+   "Mahābhārata pages that contain the Gītā link to it, and each Gītā verse links back to its place in the Mahābhārata.",
+   "Fixed: two Pune Mahābhārata verses (Bhīṣma Parva 23.1 and 40.78) carried extra text from the digital source that is not part of the epic."
+  ]
+ ],
+ [
   "0.9.0",
   "2026-11-06",
   [

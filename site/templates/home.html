@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_art.html" import kcard, workchips %}
+{% from "_art.html" import kcard, workchips, gita_cards %}
 {% block main %}
 {{ workchips(W, works_list, root) }}
 {% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
@@ -42,9 +42,10 @@
 <section class="tiles-sec">
   <div class="tiles-head"><h2>{{ W.Unit }}s</h2><a class="seeall" href="{{ wroot }}read/">See all</a></div>
   <div class="krail">
-  {% for k in eds[0].kandas %}{% set i = loop.index0 %}{{ kcard(k, vu_e.kandas[i].sargas, ce_e.kandas[i].sargas, unit=W.subs) }}{% endfor %}
+  {% if W.single %}{{ gita_cards(gita_chs, gita_counts, wroot) }}{% else %}{% for k in eds[0].kandas %}{% set i = loop.index0 %}{{ kcard(k, vu_e.kandas[i].sargas, ce_e.kandas[i].sargas, unit=W.subs) }}{% endfor %}{% endif %}
   </div>
   <div class="quick">
+    {% if dhyana %}<a class="pillbtn card" href="{{ wroot }}vu/1/0/"><span lang="kn">{{ dhyana.title.kn }}</span> Dhyānam</a>{% endif %}
     <a class="pillbtn card" href="{{ wroot }}search/">Search</a>
     <a class="pillbtn card" href="{{ root }}my/">Saved</a>
     <button type="button" class="pillbtn card" id="quick-chant"><span lang="kn">ಪಠಣ</span> Chant</button>

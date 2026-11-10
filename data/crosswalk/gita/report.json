@@ -1,0 +1,22 @@
+{
+ "vu_targets_outside_gita_dropped": 4,
+ "vu_targets_other_chapter_dropped": 2,
+ "ce_targets_outside_gita_dropped": 6,
+ "ce_targets_other_chapter_dropped": 2,
+ "rescored_regrouped_to_match": 4,
+ "repaired_entries": 3,
+ "vu_verses": {
+  "match": 698,
+  "absent": 1,
+  "variant": 1
+ },
+ "vu_absent": [
+  "BG-VU-13-001"
+ ],
+ "ce_verses": {
+  "match": 698,
+  "partial": 1,
+  "variant": 1
+ },
+ "ce_absent": []
+}

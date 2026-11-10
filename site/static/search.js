@@ -4,6 +4,7 @@
   var q = document.getElementById("q"), edSel = document.getElementById("ed"), kf = document.getElementById("kf");
   var status = document.getElementById("status"), list = document.getElementById("results");
   var cache = {}, timer = null, MAX = 100, WROOT = document.body.dataset.wroot || "../";
+  var GITA = document.body.dataset.work === "gita";   // one unit: refs are adhyāya.verse and the filter picks an adhyāya
 
   function loadIndex(ed) {
     if (cache[ed]) return cache[ed];
@@ -35,7 +36,7 @@
   function show(hits, total, ed) {
     list.textContent = "";
     hits.forEach(function (h) {
-      var ref = h.k + "." + h.s + "." + h.v;
+      var ref = GITA ? (h.s === 0 ? String(h.v) : h.s + "." + h.v) : h.k + "." + h.s + "." + h.v;
       var li = el("li"), a = el("a", "ref", ref);
       a.href = WROOT + ed + "/" + h.k + "/" + h.s + "/#v" + h.v;
       li.appendChild(a);
@@ -67,7 +68,7 @@
       var hits = [], total = 0;
       for (var i = 0; i < rows.length; i++) {
         var r = rows[i];
-        if (k && r.k !== k) continue;
+        if (k && (GITA ? r.s : r.k) !== k) continue;
         if (r.key.indexOf(key) >= 0) { total++; if (hits.length < MAX) hits.push(r); }
       }
       show(hits, total, ed);

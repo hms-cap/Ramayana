@@ -1,0 +1,200 @@
+{
+ "chapters": [
+  {
+   "ch": 1,
+   "iast": "arjunaviṣādayogaḥ",
+   "deva": "अर्जुनविषादयोगः",
+   "kn": "ಅರ್ಜುನವಿಷಾದಯೋಗಃ",
+   "en": "Arjuna's Despondency",
+   "alt_iast": [
+    "arjunaviṣādayoga",
+    "viṣādayoga"
+   ]
+  },
+  {
+   "ch": 2,
+   "iast": "sāṅkhyayogaḥ",
+   "deva": "साङ्ख्ययोगः",
+   "kn": "ಸಾಂಖ್ಯಯೋಗಃ",
+   "en": "Sāṅkhya Yoga: Knowledge",
+   "alt_iast": [
+    "sāṃkhyayoga"
+   ]
+  },
+  {
+   "ch": 3,
+   "iast": "karmayogaḥ",
+   "deva": "कर्मयोगः",
+   "kn": "ಕರ್ಮಯೋಗಃ",
+   "en": "The Yoga of Action",
+   "alt_iast": []
+  },
+  {
+   "ch": 4,
+   "iast": "jñānakarmasaṃnyāsayogaḥ",
+   "deva": "ज्ञानकर्मसंन्यासयोगः",
+   "kn": "ಜ್ಞಾನಕರ್ಮಸಂನ್ಯಾಸಯೋಗಃ",
+   "en": "Knowledge and the Renunciation of Action",
+   "alt_iast": [
+    "jñānayoga",
+    "jñānakarmasannyāsayoga",
+    "jñānavibhāgayoga"
+   ]
+  },
+  {
+   "ch": 5,
+   "iast": "karmasaṃnyāsayogaḥ",
+   "deva": "कर्मसंन्यासयोगः",
+   "kn": "ಕರ್ಮಸಂನ್ಯಾಸಯೋಗಃ",
+   "en": "Renunciation of Action",
+   "alt_iast": [
+    "karmasannyāsayoga",
+    "saṃnyāsayoga"
+   ]
+  },
+  {
+   "ch": 6,
+   "iast": "ātmasaṃyamayogaḥ",
+   "deva": "आत्मसंयमयोगः",
+   "kn": "ಆತ್ಮಸಂಯಮಯೋಗಃ",
+   "en": "The Yoga of Self-Restraint",
+   "alt_iast": [
+    "dhyānayoga",
+    "abhyāsayoga"
+   ]
+  },
+  {
+   "ch": 7,
+   "iast": "jñānavijñānayogaḥ",
+   "deva": "ज्ञानविज्ञानयोगः",
+   "kn": "ಜ್ಞಾನವಿಜ್ಞಾನಯೋಗಃ",
+   "en": "Knowledge and Realization",
+   "alt_iast": [
+    "vijñānayoga"
+   ]
+  },
+  {
+   "ch": 8,
+   "iast": "akṣarabrahmayogaḥ",
+   "deva": "अक्षरब्रह्मयोगः",
+   "kn": "ಅಕ್ಷರಬ್ರಹ್ಮಯೋಗಃ",
+   "en": "The Imperishable Brahman",
+   "alt_iast": [
+    "akṣarabrahmayoga",
+    "tārakabrahmayoga"
+   ]
+  },
+  {
+   "ch": 9,
+   "iast": "rājavidyārājaguhyayogaḥ",
+   "deva": "राजविद्याराजगुह्ययोगः",
+   "kn": "ರಾಜವಿದ್ಯಾರಾಜಗುಹ್ಯಯೋಗಃ",
+   "en": "The Royal Knowledge and Royal Secret",
+   "alt_iast": [
+    "rājayoga",
+    "rājaguhyayoga"
+   ]
+  },
+  {
+   "ch": 10,
+   "iast": "vibhūtiyogaḥ",
+   "deva": "विभूतियोगः",
+   "kn": "ವಿಭೂತಿಯೋಗಃ",
+   "en": "Divine Manifestations",
+   "alt_iast": [
+    "vibhūtivistārayoga"
+   ]
+  },
+  {
+   "ch": 11,
+   "iast": "viśvarūpadarśanayogaḥ",
+   "deva": "विश्वरूपदर्शनयोगः",
+   "kn": "ವಿಶ್ವರೂಪದರ್ಶನಯೋಗಃ",
+   "en": "The Vision of the Universal Form",
+   "alt_iast": [
+    "viśvarūpayoga"
+   ]
+  },
+  {
+   "ch": 12,
+   "iast": "bhaktiyogaḥ",
+   "deva": "भक्तियोगः",
+   "kn": "ಭಕ್ತಿಯೋಗಃ",
+   "en": "The Yoga of Devotion",
+   "alt_iast": []
+  },
+  {
+   "ch": 13,
+   "iast": "kṣetrakṣetrajñavibhāgayogaḥ",
+   "deva": "क्षेत्रक्षेत्रज्ञविभागयोगः",
+   "kn": "ಕ್ಷೇತ್ರಕ್ಷೇತ್ರಜ್ಞವಿಭಾಗಯೋಗಃ",
+   "en": "The Field and the Knower of the Field",
+   "alt_iast": [
+    "prakṛtipuruṣavivekayoga",
+    "kṣetrakṣetrajñayoga"
+   ]
+  },
+  {
+   "ch": 14,
+   "iast": "guṇatrayavibhāgayogaḥ",
+   "deva": "गुणत्रयविभागयोगः",
+   "kn": "ಗುಣತ್ರಯವಿಭಾಗಯೋಗಃ",
+   "en": "The Three Guṇas",
+   "alt_iast": [
+    "guṇatrayavibhāgayoga"
+   ]
+  },
+  {
+   "ch": 15,
+   "iast": "puruṣottamayogaḥ",
+   "deva": "पुरुषोत्तमयोगः",
+   "kn": "ಪುರುಷೋತ್ತಮಯೋಗಃ",
+   "en": "The Supreme Person",
+   "alt_iast": [
+    "puruṣottamayoga"
+   ]
+  },
+  {
+   "ch": 16,
+   "iast": "daivāsurasampadvibhāgayogaḥ",
+   "deva": "दैवासुरसम्पद्विभागयोगः",
+   "kn": "ದೈವಾಸುರಸಂಪದ್ವಿಭಾಗಯೋಗಃ",
+   "en": "Divine and Demonic Natures",
+   "alt_iast": [
+    "daivāsurasaṃpadvibhāgayoga"
+   ]
+  },
+  {
+   "ch": 17,
+   "iast": "śraddhātrayavibhāgayogaḥ",
+   "deva": "श्रद्धात्रयविभागयोगः",
+   "kn": "ಶ್ರದ್ಧಾತ್ರಯವಿಭಾಗಯೋಗಃ",
+   "en": "The Threefold Faith",
+   "alt_iast": [
+    "śraddhātrayayoga"
+   ]
+  },
+  {
+   "ch": 18,
+   "iast": "mokṣasaṃnyāsayogaḥ",
+   "deva": "मोक्षसंन्यासयोगः",
+   "kn": "ಮೋಕ್ಷಸಂನ್ಯಾಸಯೋಗಃ",
+   "en": "Liberation through Renunciation",
+   "alt_iast": [
+    "mokṣasannyāsayoga",
+    "saṃnyāsayoga"
+   ]
+  }
+ ],
+ "note": "Names as in the vulgate colophons (iti śrīmadbhagavadgītāsūpaniṣatsu brahmavidyāyāṃ yogaśāstre śrīkṛṣṇārjunasaṃvāde … yogo nāma … 'dhyāyaḥ). Cross-checked against two web lists; alt_iast are other names found in editions/commentaries.",
+ "sources": [
+  {
+   "title": "18 Chapters of the Gita, shlokam.org",
+   "url": "https://shlokam.org/gita/chapters.htm"
+  },
+  {
+   "title": "Bhagavad Gita, Wikipedia (chapter table)",
+   "url": "https://en.wikipedia.org/wiki/Bhagavad_Gita"
+  }
+ ]
+}

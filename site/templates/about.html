@@ -6,7 +6,7 @@
 
   <h2 id="app">This app</h2>
   <div class="app-card">
-    <div class="app-head"><img src="{{ root }}static/icons/icon-192.png" alt="" width="72" height="72"><div><strong lang="kn">ಇತಿಹಾಸ</strong><span class="hint">Itihāsa · Rāmāyaṇa and Mahābhārata, Sanskrit with Kannada</span></div></div>
+    <div class="app-head"><img src="{{ root }}static/icons/icon-192.png" alt="" width="72" height="72"><div><strong lang="kn">ಇತಿಹಾಸ</strong><span class="hint">Itihāsa · Rāmāyaṇa, Mahābhārata and Bhagavadgītā, Sanskrit with Kannada</span></div></div>
     <p class="hint">Version · released {{ changes[0][1] }}</p>
     <p class="ver" id="app-version">{{ changes[0][0] }}</p>
     <p><span id="app-state" class="status"></span></p>
@@ -26,6 +26,7 @@
   <h2>Names used on this site</h2>
   <p>For the Rāmāyaṇa, <strong>Baroda Text</strong> (ಬರೋಡಾ ಪರಿಷ್ಕೃತ ಪಾಠ) is the Baroda Critical Edition. <strong>Traditional Text</strong> (ಪರಂಪರಾಗತ ಪಾಠ) is the vulgate, the longer text handed down with the commentaries. Either can be switched off in Options. The Kannada names are proposals and have not been reviewed by a Kannada scholar.</p>
   <p>For the Mahābhārata, <strong>Traditional Text</strong> (ಪರಂಪರಾಗತ ಪಾಠ) is the Kumbakonam edition, a southern-recension print of 1906–10, and <strong>Pune Text</strong> (ಪುಣೆ ಪರಿಷ್ಕೃತ ಪಾಠ) is the critical text reconstructed at Pune.</p>
+  <p>The Bhagavadgītā uses the same two names: its Traditional Text is the Kumbakonam Mahābhārata and its Pune Text is the Pune critical text.</p>
 
   <h2>Editions</h2>
   {% for wk, weds in works %}
@@ -42,6 +43,30 @@
   {% endfor %}
   {% endfor %}
   <p>The Pune text's electronic copyright belongs to the Bhandarkar Oriental Research Institute; its reuse terms are not stated beyond GRETIL's "as for source file", so it is shown here for non-commercial reading, with attribution. In the Kumbakonam text, where the print has two runs of the same adhyāya (in the Karṇa and Śalya parvas) the first is shown, and a few adhyāyas missing from the source (Vana 109–110; Droṇa 15, 137–138) are simply absent.</p>
+
+  <h2 id="gita">The Bhagavadgītā</h2>
+  <p>The Bhagavadgītā has no separate source of its own here: it is cut out of the two Mahābhārata texts above. It is Bhīṣma Parva adhyāyas 25–42 in the Kumbakonam edition and 23–40 in the Pune text, extracted by <code>etl/extract_gita.py</code> into 700 verses in each edition. Each verse links back to its place in the Mahābhārata, and the Bhīṣma Parva adhyāyas that hold the Gītā link to the Gītā section.</p>
+  <p>Notes from the extraction:</p>
+  <ul>
+    <li>The Kumbakonam text has an extra verse at the start of adhyāya 13 (13.1, <span lang="sa">prakṛtiṃ puruṣaṃ caiva…</span>) and prints 13.25–26 as one record, so its adhyāya 13 runs to 35 verses; verse numbers are those of the print.</li>
+    <li>Speaker lines (<span lang="sa">arjuna uvāca</span>, <span lang="sa">śrībhagavān uvāca</span> and the like) are shown above the verse they introduce, not as verses of their own.</li>
+    <li>The GRETIL file adds two things to the Pune text that are not Mahābhārata text, at 6.23.1 and at the end of 18.78 (a Gītā recitation preface and an appendix). They were removed; see <code>etl/fix_mbh_gita_preface.py</code>. The raw preface is kept in <code>data/gita/gretil_preface.txt</code>.</li>
+    <li>There is no word-by-word analysis for the Gītā yet, because the Digital Corpus of Sanskrit leaves these adhyāyas out. The verses have no word panel.</li>
+  </ul>
+  <h3>Gītā Dhyāna</h3>
+  <p>Shown as adhyāya 0, before the first adhyāya, are the nine verses traditionally recited before the Gītā, in homage to the Gītā, Vyāsa and Kṛṣṇa. They are traditionally ascribed to Madhusūdana Sarasvatī, but the authorship is uncertain. They are not part of the Mahābhārata. We typed the text ourselves, checking it word by word across several web copies and not copying any one; where the copies differ, the readings are recorded in <code>data/gita/dhyana.json</code>. The copies used:</p>
+  <ul>
+    {% for s in sources.gita_dhyana.witnesses %}<li><a href="{{ s.url }}">{{ s.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% for key in ("gita", "gita_dhyana") %}{% set g = sources[key] %}
+  <section class="source">
+    <h3>{{ g.title }}</h3>
+    <p>{{ g.credits }}</p>
+    <p>Data: <code>{{ g.file }}</code>{% if g.repository and g.repository.startswith("http") %}; see <a href="{{ g.repository }}">{{ g.repository | replace('https://', '') }}</a>{% elif g.repository %}; {{ g.repository }}{% endif %}{% if g.commit and " " not in g.commit %}, commit <code>{{ g.commit }}</code>{% endif %}.</p>
+    <p>Licence: {% if g.licence_url %}<a href="{{ g.licence_url }}">{{ g.licence }}</a>{% else %}{{ g.licence }}{% endif %}.</p>
+  </section>
+  {% endfor %}
 
   <h2>The two editions and how they are linked</h2>
   <p>The Critical Edition is the shorter, reconstructed text; the Vulgate is the longer text most traditional readers and pārāyaṇa books follow. Every Vulgate verse is linked to its Critical Edition counterpart where one exists, and the reverse.</p>

@@ -509,7 +509,7 @@ body.story-open { overflow: hidden; }
 .kc-t { font: 400 1.3rem/1.2 var(--f-knda); padding: 0 0.85rem; margin-top: 0.15rem; }
 .kc-c { font-size: 0.8rem; color: #F2D58A; padding: 0 0.85rem 0.7rem; }
 .kcard:hover, .kcard:focus-visible { box-shadow: 0 0 0 2px #F0C45A; }
-.quick { display: flex; gap: 0.5rem; margin: 0.2rem 0 0; }
+.quick { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.2rem 0 0; }
 .read-head h1 { font: 400 2rem/1.2 var(--f-knda); margin: 0.4rem 0; } .read-head small { font: 400 1.1rem var(--f-ui); color: var(--muted); }
 .searchbar { display: block; background: var(--paper-2); color: var(--muted); padding: 0.75rem 1.1rem; border-radius: 999px; text-decoration: none; }
 
@@ -682,3 +682,10 @@ html.js .kcard:not([data-art]) .kart, html.js .wchip:not([data-art]) .wico { vis
 .ex .ex-scan .ln { display: block; }
 .ex-all { margin: 0.8rem 0; font: 500 0.9rem var(--f-ui); }
 .ex-all a { display: inline-block; margin: 0.15rem 0.5rem 0.15rem 0; }
+
+/* Bhagavadgītā: the speaker line (arjuna uvāca …) above the verse it introduces */
+.speaker { font-family: var(--f-text); font-style: italic; color: var(--muted); font-size: 0.95rem; margin: 0 0 0.25rem; }
+.sarga-head .sub .en, .sargas .st .en { color: var(--muted); font-style: normal; }
+.gita-link a { font-weight: 600; }
+/* Gītā adhyāya cards: yoga names are long single words; let them break and shrink */
+body[data-work="gita"] .kc-t { font-size: 1.02rem; line-height: 1.25; overflow-wrap: anywhere; }

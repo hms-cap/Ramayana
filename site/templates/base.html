@@ -14,10 +14,10 @@
 <script>
 (function(){document.documentElement.classList.add("js");try{var p=JSON.parse(localStorage.getItem("vr-prefs")||"{}");var d=document.documentElement;
 if(p.script)d.dataset.script=p.script;if(p.savarna)d.dataset.savarna="1";if(p.scan)d.dataset.scan="1";
-if(p.size)d.dataset.size=p.size;var o=p[d.dataset.work==="mbh"?"offMbh":"off"];d.dataset.off=Array.isArray(o)?o.join(" "):"ce";d.dataset.theme=p.theme||"light";}catch(e){}})();
+if(p.size)d.dataset.size=p.size;var o=p[{mbh:"offMbh",gita:"offGita"}[d.dataset.work]||"off"];d.dataset.off=Array.isArray(o)?o.join(" "):"ce";d.dataset.theme=p.theme||"light";}catch(e){}})();
 </script>
 </head>
-<body class="page-{{ page }}" data-root="{{ root }}" data-wroot="{{ wroot }}" data-work="{{ W.id }}" data-prefix="{{ W.prefix }}"{% if page in ('home','read','search','kanda','sarga','edition') %} data-work-page{% endif %} data-ed="{{ cur_ed|default('') }}" data-sub-kn="{{ W.sub_kn }}" data-sub-deva="{{ W.sub_deva }}" data-sub-en="{{ W.sub }}" data-epic-kn="{{ W.epic_kn }}">
+<body class="page-{{ page }}" data-root="{{ root }}" data-wroot="{{ wroot }}" data-work="{{ W.id }}" data-prefix="{{ W.prefix }}"{% if page in ('home','read','search','kanda','sarga','edition') %} data-work-page{% endif %} data-ed="{{ cur_ed|default('') }}" data-sub-kn="{{ W.sub_kn }}" data-sub-deva="{{ W.sub_deva }}" data-sub-en="{{ W.sub }}" data-epic-kn="{{ W.epic_kn }}" data-epic-en="{{ "In the Gītā" if W.id == "gita" else "In the epic" }}" data-work-kn="{{ W.kn }}" data-site="{{ W.site }}">
 <a class="skip" href="#main">Skip to text</a>
 <header class="bar">
   <div class="bar-inner">

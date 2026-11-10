@@ -2,8 +2,8 @@
 (function () {
   "use strict";
   var T = window.Translit, P = window.VRPrefs, S = window.VRSaved;
-  var B = document.body.dataset, ROOT = B.root || "", WROOT = B.wroot || "", PRE = B.prefix || "", MBH = B.work === "mbh";
-  var SCR = ["knda", "deva", "iast"], LAST = MBH ? "vr.last.mbh" : "vr.last";
+  var B = document.body.dataset, ROOT = B.root || "", WROOT = B.wroot || "", PRE = B.prefix || "", MBH = B.work === "mbh", GITA = B.work === "gita";
+  var SCR = ["knda", "deva", "iast"], LAST = ({ mbh: "vr.last.mbh", gita: "vr.last.gita" }[B.work] || "vr.last");
   function sc() { var s = (P.get().script) || "knda"; return SCR.indexOf(s) >= 0 ? s : "knda"; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function langOf(x) { return x === "knda" ? "sa-Knda" : x === "deva" ? "sa-Deva" : "sa-Latn"; }
@@ -39,7 +39,7 @@
       }).join("");
       document.getElementById("my-empty").hidden = l.length > 0;
       var out = [];
-      ["vr.last", "vr.last.mbh"].forEach(function (key) {
+      ["vr.last", "vr.last.mbh", "vr.last.gita"].forEach(function (key) {
         var last = null; try { last = JSON.parse(localStorage.getItem(key) || "null"); } catch (e) { /* ignore */ }
         if (last) out.push('<a href="' + ROOT + last.href.replace(/^\/[^/]*\//, "").replace(/^\//, "") + '">' + esc(last.titles[s] || last.src) + ' · ' + esc(last.src) + ' ' + last.v + '</a>');
       });
@@ -58,10 +58,10 @@
   if (!votd) return;
 
   /* opening the app fresh (no page of this site before it) returns to the work used last */
-  if (!MBH && document.body.classList.contains("page-home")) {
+  if (B.work === "ram" && document.body.classList.contains("page-home")) {
     var fresh = true;
     try { fresh = !document.referrer || new URL(document.referrer).origin !== location.origin; } catch (e) { /* ignore */ }
-    try { if (fresh && window.VRPrevWork === "mbh" && !/[?&]work=ram/.test(location.search)) { location.replace(ROOT + "mbh/"); return; } } catch (e) { /* ignore */ }
+    try { var pw = window.VRPrevWork; if (fresh && (pw === "mbh" || pw === "gita") && !/[?&]work=ram/.test(location.search)) { location.replace(ROOT + pw + "/"); return; } } catch (e) { /* ignore */ }
   }
 
   /* ---- greeting date, quick Chant chip ---- */
@@ -98,7 +98,7 @@
   var grammar = null, ix = null, card = null, idx = 0, cardNo = 0, shuffled = false, today = null;
   var LAB = {
     verse: ["Śloka", "ಶ್ಲೋಕ"], words: ["Words and grammar", "ಪದಗಳು ಮತ್ತು ವ್ಯಾಕರಣ"], metre: ["Metre", "ಛಂದಸ್ಸು"],
-    ctx: ["In the epic", B.epicKn || "ರಾಮಾಯಣದಲ್ಲಿ"], other: ["Other recension", "ಇನ್ನೊಂದು ಪಾಠ"], m: ["Meaning", "ಅರ್ಥ"], u: ["Use and significance", "ಬಳಕೆ ಮತ್ತು ಮಹತ್ವ"],
+    ctx: [B.epicEn || "In the epic", B.epicKn || "ರಾಮಾಯಣದಲ್ಲಿ"], other: ["Other recension", "ಇನ್ನೊಂದು ಪಾಠ"], m: ["Meaning", "ಅರ್ಥ"], u: ["Use and significance", "ಬಳಕೆ ಮತ್ತು ಮಹತ್ವ"],
     kind: ["Today's śloka", "ಇಂದಿನ ಶ್ಲೋಕ"], another: ["Another śloka", "ಇನ್ನೊಂದು ಶ್ಲೋಕ"]
   };
   var CWSTAT = {
@@ -168,7 +168,7 @@
     wb.setAttribute("aria-disabled", hasW ? "false" : "true"); wb.setAttribute("aria-pressed", secs[cardNo].key === "words" ? "true" : "false");
     paintSave();
   }
-  function saveId() { return (MBH ? "dm-mbh-vu-" : "dm-ce-") + card.ref; }
+  function saveId() { return (MBH ? "dm-mbh-vu-" : GITA ? "dm-gita-vu-" : "dm-ce-") + card.ref; }
   function paintSave() {
     var b = document.getElementById("votd-save"), on = S.has(saveId());
     b.setAttribute("aria-pressed", on); b.setAttribute("aria-label", on ? "Saved. Tap to remove" : "Save"); b.title = on ? "Saved" : "Save";
@@ -216,7 +216,7 @@
   });
   document.getElementById("votd-today").addEventListener("click", function () { show(today, false); });
   document.getElementById("votd-save").addEventListener("click", function () {
-    S.toggle({ id: saveId(), kind: "verse", href: PRE + card.path, label: (MBH ? "Mahābhārata " : "CE ") + card.ref, slp: card.slp }); paintSave(); badge();
+    S.toggle({ id: saveId(), kind: "verse", href: PRE + card.path, label: (MBH ? "Mahābhārata " : GITA ? "Bhagavadgītā " : "CE ") + card.ref, slp: card.slp }); paintSave(); badge();
   });
   document.addEventListener("prefs-changed", function () {
     if (card) draw(0);
@@ -266,9 +266,9 @@
     });
     var cardH = y - cardTop + 20, total = cardTop + cardH + 130;
     if (drawIt) {
-      txt(MBH ? "ಮಹಾಭಾರತ" : "ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", pad, 100, "400 44px 'Tiro Kannada',serif", "#FFFBF2");
+      txt(B.workKn || "ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", pad, 100, "400 44px 'Tiro Kannada',serif", "#FFFBF2");
       txt(L("kind", s), pad, 150, "500 30px " + ui, "#E8D9A8");
-      txt(MBH ? "hms-cap.github.io/Ramayana/mbh" : "hms-cap.github.io/Ramayana", Wd / 2, total - 56, "400 26px " + ui, "#E8D9A8", "center");
+      txt(B.site || "hms-cap.github.io/Ramayana", Wd / 2, total - 56, "400 26px " + ui, "#E8D9A8", "center");
     }
     return { total: total, cardH: cardH };
   }

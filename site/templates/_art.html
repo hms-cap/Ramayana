@@ -29,11 +29,14 @@
 {% endfor %}
 </nav>
 {% endmacro %}
-{% macro kcard(k, vu, ce, tag='button', unit='sargas') %}
-<{{ tag }} class="kcard" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-deva="{{ k.deva }}" data-iast="{{ k.en }}" data-en="{{ k.en }}" data-n-vu="{{ vu }}" data-n-ce="{{ ce }}" style="--kb:{{ k.kb or PAL[k.n][0] }};--kp:{{ k.kp or PAL[k.n][1] }}"{% if tag == 'button' %} type="button" aria-haspopup="dialog"{% endif %}>
+{% macro kcard(k, vu, ce, tag='button', unit='sargas', href=None) %}
+<{{ tag }} class="kcard" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-deva="{{ k.deva }}" data-iast="{{ k.en }}" data-en="{{ k.en }}" data-n-vu="{{ vu }}" data-n-ce="{{ ce }}" style="--kb:{{ k.kb or PAL[k.n][0] }};--kp:{{ k.kp or PAL[k.n][1] }}"{% if tag == 'button' %} type="button" aria-haspopup="dialog"{% endif %}{% if href %} href="{{ href }}"{% endif %}>
   {% if k.svg %}{{ k.svg|safe }}{% else %}{{ art(k.n) }}{% endif %}{% for a in k.alts %}{{ a|safe }}{% endfor %}
   <span class="kc-n" aria-hidden="true">{{ num_sx(k.n) }}</span>
   <span class="kc-t">{{ unit_sx(k) }}</span>
   <span class="kc-c">{{ k.en }} · <span data-ed="vu">{{ vu }}</span><span data-ed="ce"><span class="sep"> / </span>{{ ce }}</span> {{ unit }}</span>
 </{{ tag }}>
+{% endmacro %}
+{% macro gita_cards(chs, counts, wroot) %}
+{% for c in chs %}{{ kcard(c, counts.vu[c.n], counts.ce[c.n], tag='a', unit='verses', href=wroot ~ 'vu/1/' ~ c.n ~ '/') }}{% endfor %}
 {% endmacro %}

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.10.0 — 2026-11-10
+- Bhagavadgītā as a third work (`gita/`, chip beside the two epics). `etl/extract_gita.py` takes it out of the Mahābhārata data (Kumbakonam Bhīṣma 25–42, Pune 23–40) into `data/normalized/gita/{vu,ce}.jsonl` (700 records each, uids `BG-VU-02-047`, with `speaker` and `mbh_uid`); `data/crosswalk/gita/` is the Mahābhārata cross-walk translated through `mbh_uid` and repaired (698 of 700 match). `WORKS["gita"]` in `site/build.py` has one unit (`single=True`): pages are `gita/<ed>/1/<adhyāya>/`, refs are adhyāya.verse, `load_recs()` maps `{ch, v}` onto k/s/v. Non-lean pages (all three scripts in the HTML).
+- Speaker lines (arjuna uvāca …) are shown above the verse they introduce (Kumbakonam prints them at the end of the previous verse). Kumbakonam's chapter 13 has the extra verse 13.1 and prints 13.25–26 as one record (numbered to 35).
+- Gītā Dhyāna: the nine verses as adhyāya 0 (`data/gita/dhyana.json`, readings cross-checked across several published texts, variants recorded). Adhyāya names from `data/gita/chapters.json`; home and Read show 18 adhyāya cards (`etl/gita_art.py`); 365 verse-of-the-day cards from the Traditional text (`build_daily_gita`, no words card yet).
+- Links both ways: Mahābhārata Bhīṣma adhyāyas that hold the Gītā link to it; each Gītā verse's details link to its place in the Mahābhārata.
+- Data fix: GRETIL's additions to Pune 6.23.1 (the Gītā nyāsa and dhyāna preface) and 6.40.78 (a 246-line appended dialogue) were not Mahābhārata text; `etl/fix_mbh_gita_preface.py` removes them (saved to `data/gita/`) and the four affected Mahābhārata cross-walk entries are now matches.
+- JS: per-work keys generalised (`offGita`, `vr.last.gita`, save ids, share card title from `data-work-kn` / `data-site`). Chandas still counts the two epics only (`EPICS`).
+- Tests: `tests/test_gita.py`, `tests/e2e/gita.py`.
+
 ## 0.9.0 — 2026-11-06
 - Pariśiṣṭa (appendix): a third chip beside the two works, opening `appendix/`. First section: Chandas, an index of the 15 metres found in the two epics (`etl/chandas.py` counts the stored metre labels of all four texts; `build_appendix` in `site/build.py` writes `appendix/chandas/` and one page per metre). Each metre page has its pāda pattern, counts per kāṇḍa or parva in both editions, eight verses to read (script-aware, with scansion, linked into the reader) and, for rare metres, every verse reference.
 - "Parvan" is now "Parva" everywhere it is shown (the Sanskrit word is parva; parvan is the stem).

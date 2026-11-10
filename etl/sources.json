@@ -61,5 +61,57 @@
     "credits": "Oliver Hellwig, Digital Corpus of Sanskrit (DCS), as corrected and packaged by Ambuda.",
     "licence": "CC BY 4.0",
     "licence_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "gita": {
+    "title": "Bhagavadgītā (Bhīṣmaparvan 6.23–40 Pune, 6.25–42 Kumbakonam), extracted dataset",
+    "file": "derived from data/normalized/mbh/{ce,vu}.jsonl by etl/extract_gita.py (no new upstream file)",
+    "repository": "derived from mbh_ce and mbh_vu (see those entries)",
+    "commit": "same pins as mbh_ce and mbh_vu",
+    "credits": "Derived work: Gītā verses taken from the Pune critical edition text as keyed by GRETIL and from the Kumbakonam edition as keyed for SARIT (credits as in mbh_ce and mbh_vu); speaker lines normalised, GRETIL's non-Mahābhārata Gītā-pāṭha preface and the appendix to 18.78 removed (raw preface kept in data/gita/gretil_preface.txt).",
+    "licence": "Same as the sources: Pune part as for mbh_ce (GRETIL / BORI terms, non-commercial reference); Kumbakonam part CC BY-SA 3.0 as for mbh_vu",
+    "licence_url": "https://gretil.sub.uni-goettingen.de/gretil.html"
+  },
+  "gita_dhyana": {
+    "title": "Gītā Dhyānam (nine traditional invocation verses) and Gītā chapter names",
+    "file": "data/gita/dhyana.json, data/gita/chapters.json",
+    "repository": "https://shlokam.org/gitadhyanam/",
+    "commit": null,
+    "credits": "Verses collated word by word from shlokam.org, mammully.blogspot.com and gyaandweep.com, with the GRETIL Bhagavadgītā preface (data/gita/gretil_preface.txt) as a further witness for five verses; chapter names from the vulgate colophons as listed on shlokam.org and Wikipedia. We typed the text ourselves from the cross-checked sources; variants are recorded in the file. No modern translation or commentary is used.",
+    "licence": "Public domain (pre-modern verses and traditional chapter names); our typed transcription is released with the project",
+    "licence_url": null,
+    "witnesses": [
+      {
+        "title": "Gita Dhyanam, shlokam.org (Devanagari, nine verses)",
+        "url": "https://shlokam.org/gitadhyanam/"
+      },
+      {
+        "title": "Gita Dhyanam, shlokam.org (second page)",
+        "url": "https://shlokam.org/shloka/gita-dhyanam.htm"
+      },
+      {
+        "title": "Srimad Bhagavad Gita | Dhyana Shlokas, mammully.blogspot.com",
+        "url": "https://mammully.blogspot.com/2020/09/srimad-bhagavad-gita-dhyana-shlokas.html"
+      },
+      {
+        "title": "Gita Dhyanam, gyaandweep.com (partial check)",
+        "url": "https://gyaandweep.com/shloka/gita-dhyanam"
+      },
+      {
+        "title": "Gita Dhyanam, Wikipedia (attribution)",
+        "url": "https://en.wikipedia.org/wiki/Gita_Dhyanam"
+      },
+      {
+        "title": "GRETIL Bhagavadgītā preface (atha dhyānaṃ, five verses; local witness data/gita/gretil_preface.txt)",
+        "url": "https://gretil.sub.uni-goettingen.de/gretil/corpustei/sa_bhagavadgItA.xml"
+      },
+      {
+        "title": "Srimad-Bhagavad-gita Dhyanam (Stephen Knapp)",
+        "url": "https://stephen-knapp.com/srimad-bhagavad-gita_dhyanam.htm"
+      },
+      {
+        "title": "Bhagawad Gita Dhyanam (Hindupedia)",
+        "url": "https://www.hindupedia.com/en/Bhagawad_Gita_Dhyanam"
+      }
+    ]
   }
 }

@@ -6,13 +6,14 @@
   <form class="search-form" role="search" onsubmit="return false">
     <label for="q">Type a word or phrase in Kannada, Devanāgarī, IAST or plain English letters</label>
     <div class="search-row">
-      <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="ಮಾರೀಚ, मारीच, mārīca, maricha">
+      <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="{% if W.id == 'gita' %}ಕರ್ಮಣ್ಯೇವ, कर्मण्येव, karmaṇy eva, karmanyeva{% else %}ಮಾರೀಚ, मारीच, mārīca, maricha{% endif %}">
       <select id="ed" aria-label="Edition">
         {% for e in eds %}<option value="{{ e.id }}" data-ed="{{ e.id }}">{{ e.short }}</option>{% endfor %}
       </select>
       <select id="kf" aria-label="{{ W.Unit }}">
         <option value="">All {{ W.units_pl }}</option>
-        {% for k in eds[0].kandas %}<option value="{{ k.n }}">{{ k.en }}</option>{% endfor %}
+        {% if W.single %}{% for c in gita_chs %}<option value="{{ c.n }}">{{ c.n }}. {{ c.en }}</option>{% endfor %}{% else %}
+        {% for k in eds[0].kandas %}<option value="{{ k.n }}">{{ k.en }}</option>{% endfor %}{% endif %}
       </select>
     </div>
     <p class="hint">Spelling is matched loosely: long and short vowels, aspiration and word breaks are ignored, so <em>seetha</em> finds sītā and <em>krishna</em> finds kṛṣṇa.</p>

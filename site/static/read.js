@@ -1,7 +1,7 @@
 /* Kāṇḍa cards (Home, Read) open a bottom sheet with the sarga numbers. */
 (function () {
   "use strict";
-  var T = window.Translit, P = window.VRPrefs, ROOT = document.body.dataset.wroot || "", MBH = document.body.dataset.work === "mbh", LASTK = MBH ? "vr.last.mbh" : "vr.last";
+  var T = window.Translit, P = window.VRPrefs, ROOT = document.body.dataset.wroot || "", LASTK = ({ mbh: "vr.last.mbh", gita: "vr.last.gita" }[document.body.dataset.work] || "vr.last");
   var sheet = document.getElementById("ksheet");
   if (!sheet) return;
   var SCR = ["knda", "deva", "iast"], cur = null, ed = P.off().indexOf("vu") >= 0 ? "ce" : "vu";
@@ -14,7 +14,7 @@
     if (P.off().indexOf(ed) >= 0) ed = ed === "ce" ? "vu" : "ce";
     var k = cur.dataset.k, n = +cur.getAttribute("data-n-" + ed) || 0, s = sc();
     document.getElementById("ks-title").textContent = s === "deva" ? cur.dataset.deva : s === "iast" ? cur.dataset.iast : cur.dataset.kn;
-    document.getElementById("ks-sub").textContent = cur.dataset.en + " · " + n + " " + (MBH ? "adhyāyas" : "sargas");
+    document.getElementById("ks-sub").textContent = cur.dataset.en + " · " + n + " " + ((document.body.dataset.subEn || "sarga") + "s");
     sheet.querySelectorAll("[data-chip-ed]").forEach(function (b) { b.setAttribute("aria-checked", b.dataset.chipEd === ed ? "true" : "false"); });
     var st = document.getElementById("ks-start");
     st.href = ROOT + ed + "/" + k + "/1/"; st.textContent = "Start from " + num(1);

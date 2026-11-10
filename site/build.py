@@ -25,6 +25,7 @@ import grammar  # noqa: E402
 import card_art  # noqa: E402
 import chandas  # noqa: E402
 import mbh_art  # noqa: E402
+import gita_art  # noqa: E402
 import meter  # noqa: E402
 from translit import iast_to_slp1, render, slp1_to_brahmic, to_digits  # noqa: E402
 
@@ -57,7 +58,58 @@ WORKS = {
                 sub="adhyāya", subs="adhyāyas", Sub="Adhyāya", sub_kn="ಅಧ್ಯಾಯ", sub_deva="अध्यायः", sub_iast="adhyāyaḥ",
                 epic_kn="ಮಹಾಭಾರತದಲ್ಲಿ", lean=True, site="hms-cap.github.io/Ramayana/mbh",
                 credit='Pune critical text © Bhandarkar Oriental Research Institute, via <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, shown with attribution for non-commercial reading; Traditional (Kumbakonam) text from <a href="https://github.com/sarit/SARIT-corpus">SARIT</a>, CC BY-SA 3.0. Not for commercial use.'),
+    # The Bhagavadgītā, taken out of the Mahābhārata's Bhīṣma Parva (etl/extract_gita.py). One unit whose
+    # pages are its 18 adhyāyas (gita/<ed>/1/<adhyāya>/); page 0 holds the Gītā Dhyāna ślokas. Verse refs are adhyāya.verse.
+    "gita": dict(id="gita", prefix="gita/", kn="ಶ್ರೀಮದ್ಭಗವದ್ಗೀತಾ", en="Bhagavadgītā", short_en="Bhagavadgītā", short_kn="ಭಗವದ್ಗೀತಾ", kn_chip="ಭಗವದ್ಗೀತಾ",
+                 tile="ಗೀ", theme="#5C3A12", blurb="Sanskrit text with Kannada",
+                 editions="editions_gita.json", units=[("śrīmadbhagavadgītā", "ಶ್ರೀಮದ್ಭಗವದ್ಗೀತಾ", "Bhagavadgītā")],
+                 unit="Gītā", units_pl="adhyāyas", Unit="Adhyāya",
+                 sub="adhyāya", subs="adhyāyas", Sub="Adhyāya", sub_kn="ಅಧ್ಯಾಯ", sub_deva="अध्यायः", sub_iast="adhyāyaḥ",
+                 epic_kn="ಭಗವದ್ಗೀತೆಯಲ್ಲಿ", lean=False, single=True, site="hms-cap.github.io/Ramayana/gita",
+                 credit='The Gītā is Bhīṣma Parva 25–42 of the Kumbakonam Mahābhārata (<a href="https://github.com/sarit/SARIT-corpus">SARIT</a>, CC BY-SA 3.0) and 23–40 of the Pune critical text (© Bhandarkar Oriental Research Institute, via <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, shown with attribution for non-commercial reading). Not for commercial use.'),
 }
+
+EPICS = ("ram", "mbh")          # the works the Chandas appendix counts (the Gītā is already inside the Mahābhārata)
+GITA_DIR = ROOT / "data" / "gita"
+
+
+def gita_chapters() -> list[dict]:
+    """The 18 adhyāyas with their traditional names (data/gita/chapters.json) and card colours."""
+    p = GITA_DIR / "chapters.json"
+    raw = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    rows = raw["chapters"] if isinstance(raw, dict) else raw
+    by = {r["ch"]: r for r in rows}
+    out = []
+    for ch in range(1, 19):
+        r = by.get(ch, {})
+        iast = r.get("iast", f"adhyāyaḥ {ch}")
+        d = {"n": ch, "iast": iast, "en": r.get("en", f"Adhyāya {ch}"),
+             "kn": r.get("kn") or slp1_to_brahmic(iast_to_slp1(iast), "knda"),
+             "deva": r.get("deva") or slp1_to_brahmic(iast_to_slp1(iast), "deva"),
+             "n_knda": to_digits(ch, "knda"), "n_deva": to_digits(ch, "deva")}
+        d.update(gita_art.card(ch))
+        out.append(d)
+    return out
+
+
+def gita_dhyana() -> dict | None:
+    p = GITA_DIR / "dhyana.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+
+
+def load_recs(W: dict, ed_id: str) -> list[dict]:
+    """An edition's verse records. Gītā records ({ch, v}) are put on the k/s/v frame the pages use: k=1, s=adhyāya,
+    with the Dhyāna ślokas as adhyāya 0."""
+    recs = [json.loads(l) for l in open(norm_path(W, ed_id), encoding="utf-8")]
+    if W["id"] != "gita":
+        return recs
+    for r in recs:
+        r["k"], r["s"] = 1, r["ch"]
+    dh = gita_dhyana()
+    if dh:
+        recs = [{"uid": f"BG-{ed_id.upper()}-00-{d['n']:03d}", "k": 1, "s": 0, "ch": 0, "v": d["n"], "lines": d["lines"],
+                 "meter": d.get("meter"), "dhyana": True} for d in dh["verses"]] + recs
+    return recs
 
 
 # the Pariśiṣṭa (appendix) chip beside the two works; its pages are built by build_appendix()
@@ -70,7 +122,7 @@ def load_editions(W=None):
 
 def norm_path(W: dict, ed: str) -> Path:
     base = ROOT / "data" / "normalized"
-    return (base / "mbh" if W["id"] == "mbh" else base) / f"{ed}.jsonl"
+    return (base / W["id"] if W["id"] in ("mbh", "gita") else base) / f"{ed}.jsonl"
 
 
 def sx(kn: str, deva: str, iast: str):
@@ -87,6 +139,9 @@ def unit_info(W: dict, k: int) -> dict:
     if W["id"] == "mbh":
         bg, panel = mbh_art.PAL[(k - 1) % 6]
         d.update(kb=bg, kp=panel, svg=mbh_art.svg(k).replace('class="kart"', 'class="kart" data-v="0"', 1))
+    if W["id"] == "gita":
+        d.update(gita_art.card(0))
+        return d
     d["alts"] = card_art.alts(W["id"], k)
     return d
 
@@ -102,9 +157,16 @@ def end_marks(script: str, ref: str) -> tuple[str, str]:
     return f"{nb}।", f"{nb}॥{nb}{to_digits(ref, script)}{nb}॥"
 
 
-def render_verse(rec: dict, ed: dict) -> dict:
+def verse_ref(rec: dict) -> str:
+    """'k.s.v'; a Gītā verse is 'adhyāya.verse', a Dhyāna śloka just its number."""
+    if str(rec.get("uid", "")).startswith("BG-"):
+        return str(rec["v"]) if rec["s"] == 0 else f'{rec["s"]}.{rec["v"]}'
+    return f'{rec["k"]}.{rec["s"]}.{rec["v"]}'
+
+
+def render_verse(rec: dict, ed: dict, W: dict | None = None) -> dict:
     slp_lines = [" ".join(iast_to_slp1(p) for p in line) for line in rec["lines"]]
-    ref = f'{rec["k"]}.{rec["s"]}.{rec["v"]}'
+    ref = verse_ref(rec)
     out = {}
     for sc in SCRIPTS:
         mid, last = end_marks(sc, ref)
@@ -127,9 +189,21 @@ def render_verse(rec: dict, ed: dict) -> dict:
         "text": out, "meter": rec.get("meter"), "scan": scan,
         "slp1": " / ".join(slp_lines),
         "ids": rec_ids(rec, ed),
-        "crosswalk": crosswalk_for(rec, ed),
+        "crosswalk": crosswalk_for(rec, ed, W),
         "flags": rec.get("flags", []),
+        "speaker": ({sc: render(" ".join(iast_to_slp1(w) for w in rec["speaker"].split()), sc) for sc in SCRIPTS}
+                    if rec.get("speaker") else None),
+        "mbh": mbh_place(rec),
     }
+
+
+def mbh_place(rec: dict) -> dict | None:
+    """Where a Gītā verse stands in the Mahābhārata reader (same edition)."""
+    m = rec.get("mbh_uid")
+    if not m:
+        return None
+    e, k, s, v = uid_ref(m)
+    return {"ref": f"{k}.{s}.{v}", "path": f"mbh/{e}/{k}/{s}/#v{v}"}
 
 
 def lean_verse(rec: dict, ed: dict | None = None, W: dict | None = None) -> dict:
@@ -223,7 +297,7 @@ _EDITION_LABEL = {"ce": "Baroda Text", "vu": "Traditional Text"}
 
 
 def edition_label(W: dict | None, ed_id: str) -> str:
-    if W is not None and W["id"] == "mbh":
+    if W is not None and W["id"] in ("mbh", "gita"):
         return {"ce": "Pune Text", "vu": "Traditional Text"}[ed_id]
     return _EDITION_LABEL[ed_id]
 STATUS_TEXT = {
@@ -236,7 +310,10 @@ STATUS_TEXT = {
 
 
 def uid_ref(uid: str) -> tuple[str, int, int, int]:
-    ed, k, s, v = uid.split("-")
+    parts = uid.split("-")
+    if parts[0] == "BG":                      # BG-VU-02-047: Gītā adhyāya 2, verse 47 (k is always 1)
+        return parts[1].lower(), 1, int(parts[2]), int(parts[3])
+    ed, k, s, v = parts
     return ed.lower(), int(k), int(s), int(v)
 
 
@@ -244,7 +321,7 @@ def crosswalk_for(rec: dict, ed: dict, W: dict | None = None):
     """Per-verse link to the other edition, from data/crosswalk/[mbh/]verses.json."""
     wid = W["id"] if W else "ram"
     if wid not in _CW:
-        p = ROOT / "data" / "crosswalk" / ("mbh" if wid == "mbh" else "") / "verses.json"
+        p = ROOT / "data" / "crosswalk" / (wid if wid in ("mbh", "gita") else "") / "verses.json"
         _CW[wid] = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
     entry = _CW[wid].get(ed["id"], {}).get(rec["uid"])
     if not entry:
@@ -253,7 +330,7 @@ def crosswalk_for(rec: dict, ed: dict, W: dict | None = None):
     links = []
     for t in entry.get("targets", []):
         oe, k, s, v = uid_ref(t)
-        links.append({"ref": f"{k}.{s}.{v}", "path": f"{oe}/{k}/{s}/#v{v}"})
+        links.append({"ref": f"{s}.{v}" if wid == "gita" else f"{k}.{s}.{v}", "path": f"{oe}/{k}/{s}/#v{v}"})
     return {"status": entry["status"], "other": other, "other_label": edition_label(W, other),
             "links": links, "score": entry.get("score")}
 
@@ -280,6 +357,20 @@ def make_env() -> Environment:
 
 
 NO_WORDS_CE: set = set()
+GITA_START = {"ce": 23, "vu": 25}    # Bhīṣma Parva adhyāya where the Gītā begins in each Mahābhārata edition
+
+
+def mbh_gita_chapter(ed_id: str, k: int, s: int) -> int | None:
+    """Gītā adhyāya held by Mahābhārata adhyāya k.s of this edition, else None."""
+    if k == 6 and GITA_START[ed_id] <= s < GITA_START[ed_id] + 18:
+        return s - GITA_START[ed_id] + 1
+    return None
+
+
+def gita_note(s: int) -> str:
+    if s == 0:
+        return ""
+    return "Word-by-word meanings are not yet available for the Gītā: the Digital Corpus of Sanskrit leaves it out."
 
 
 def no_words_note(k: int, s: int) -> str:
@@ -299,6 +390,10 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
     works_list = [{**w, "n_units": len(w["units"]), "n_eds": len(load_editions(w)), "icons": card_art.chip_icons(w["id"])} for w in WORKS.values()]
     works_list.append({**APPENDIX, "icons": card_art.chip_icons("app")})
     base = dict(W=W, works_list=works_list, rail_kandas=[unit_info(W, k) for k in range(1, nu + 1)], rail_eds=editions, editions=editions)
+    G = W["id"] == "gita"
+    if G:
+        base["gita_chs"] = gita_chapters()
+        base["dhyana"] = gita_dhyana()
 
     def ctx(depth: int, **kw) -> dict:
         return {**base, "wroot": "../" * depth, "root": up + "../" * depth, **kw}
@@ -311,22 +406,31 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
     summaries = []
     ce_titles = {}
     for ed in editions:
-        recs = [json.loads(l) for l in open(norm_path(W, ed["id"]), encoding="utf-8")]
+        recs = load_recs(W, ed["id"])
         by_sarga = defaultdict(list)
         for r in recs:
             by_sarga[(r["k"], r["s"])].append(r)
         sarga_keys = sorted(by_sarga)
         titles = {}
         tpath = ROOT / "data" / "normalized" / f'{ed["id"]}_sargas.json'
-        if not W["lean"] and tpath.exists():
+        if G:
+            dh = base["dhyana"]
+            if dh:
+                titles[(1, 0)] = {"title_iast": dh["title"]["iast"], "sx": sx(dh["title"]["kn"], dh["title"]["deva"], dh["title"]["iast"])}
+            for c in base["gita_chs"]:
+                titles[(1, c["n"])] = {"title_iast": c["iast"], "title_en": c["en"], "sx": sx(c["kn"], c["deva"], c["iast"])}
+        elif not W["lean"] and tpath.exists():
             for t in json.loads(tpath.read_text(encoding="utf-8")):
                 titles[(t["k"], t["s"])] = t
         kandas = []
         for k in range(1, nu + 1):
-            ks = [s for (kk, s) in sarga_keys if kk == k]
+            ks = [s for (kk, s) in sarga_keys if kk == k and s >= 1]
             kandas.append({**unit_info(W, k), "sargas": len(ks),
                            "verses": sum(len(by_sarga[(k, s)]) for s in ks)})
-        summary = {**ed, "kandas": kandas, "verses": len(recs), "sargas": len(sarga_keys)}
+        n_pages = sum(1 for key in sarga_keys if key[1] >= 1)
+        if G:
+            base.setdefault("gita_counts", {})[ed["id"]] = {s: len(by_sarga[(1, s)]) for (_, s) in sarga_keys}
+        summary = {**ed, "kandas": kandas, "verses": sum(len(by_sarga[key]) for key in sarga_keys if key[1] >= 1), "sargas": n_pages}
         summaries.append(summary)
         if ed["id"] == "ce":
             ce_titles = titles
@@ -348,8 +452,10 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
                     wnote = no_words_note(*map(int, alt["ref"].split(".")))
                 if ed["id"] == "ce" and (k, s) in MBH_WORDS:
                     (page.parent / "words.json").write_text(MBH_WORDS[(k, s)], encoding="utf-8")
+                gch = mbh_gita_chapter(ed["id"], k, s)
                 page.write_text(env.get_template("sarga.html").render(**ctx(
                     3, ed=summary, kanda=kandas[k - 1], s=s, title=None, verses=verses, prev=prev_key, next=next_key,
+                    gita_link={"href": f'{up}../../../gita/{ed["id"]}/1/{gch}/', "ch": gch} if gch else None,
                     total_in_kanda=kandas[k - 1]["sargas"], page="sarga", alt_href=alt,
                     shared=sum(1 for v in verses if v["crosswalk"] and v["crosswalk"]["status"] != "absent"),
                     has_cw=any(v["crosswalk"] for v in verses), wnote=wnote,
@@ -357,7 +463,7 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
                 for v in verses:
                     index_rows.append([k, s, v["v"], v["slp1"]])
                 continue
-            verses = [render_verse(r, ed) for r in by_sarga[(k, s)]]
+            verses = [render_verse(r, ed, W) for r in by_sarga[(k, s)]]
             words = {}
             if ed["id"] == "ce":
                 for v in verses:
@@ -365,14 +471,16 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
                         words[v["v"]] = WORDS[v["uid"]]
                 for v in verses:
                     v["has_words"] = v["v"] in words
+            other_id = "ce" if ed["id"] == "vu" else "vu"
             page.write_text(env.get_template("sarga.html").render(**ctx(
-                3, ed=summary, kanda=kanda_info(k), s=s,
+                3, ed=summary, kanda=unit_info(W, k), s=s,
                 title=titles.get((k, s)), verses=verses, prev=prev_key, next=next_key,
                 total_in_kanda=kandas[k - 1]["sargas"], page="sarga",
-                alt_href=alt_edition_href(ed, editions, k, s), wnote="",
+                alt_href=alt_edition_href(ed, editions, k, s, W), wnote=gita_note(s) if G else "",
+                dhyana=base["dhyana"] if G and s == 0 else None,
                 shared=sum(1 for v in verses if v["crosswalk"] and v["crosswalk"]["status"] != "absent"),
                 has_cw=any(v["crosswalk"] for v in verses),
-                other_label=_EDITION_LABEL["ce" if ed["id"] == "vu" else "vu"], other_id="ce" if ed["id"] == "vu" else "vu",
+                other_label=edition_label(W, other_id), other_id=other_id,
                 iitk=any("iitk_restored" in v["flags"] for v in verses),
             )), encoding="utf-8")
             (page.parent / "sarga.json").write_text(json.dumps(
@@ -395,8 +503,9 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
                     line = render(" ".join(iast_to_slp1(p) for p in r0["lines"][0]), "knda")
                     first = {"text": {"knda": {"lines": [line]}}}
                 else:
-                    first = render_verse(by_sarga[(k, s)][0], ed)
-                items.append({"s": s, "count": len(by_sarga[(k, s)]), "first": first, "title": titles.get((k, s))})
+                    first = render_verse(by_sarga[(k, s)][0], ed, W)
+                items.append({"s": s, "count": len(by_sarga[(k, s)]), "first": first, "title": titles.get((k, s)),
+                              "speaker": first.get("speaker") if not W["lean"] else None})
             page = wdir / ed["id"] / str(k) / "index.html"
             page.write_text(env.get_template("kanda.html").render(**ctx(
                 2, ed=summary, kanda=kandas[k - 1], items=items, page="kanda")), encoding="utf-8")
@@ -404,7 +513,10 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
         (wdir / "data" / f'search-{ed["id"]}.json').write_text(
             json.dumps(index_rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
-    fallback = build_daily(out, editions, ce_titles) if not W["lean"] else build_daily_mbh(wdir, W, editions)
+    if G:
+        fallback = build_daily_gita(wdir, W, editions)
+    else:
+        fallback = build_daily(out, editions, ce_titles) if not W["lean"] else build_daily_mbh(wdir, W, editions)
     # work pages: home, read, search, edition lists
     common = dict(fallback=json.dumps(fallback, ensure_ascii=False), eds=summaries, ed=summaries[0])
     (wdir / "index.html").write_text(env.get_template("home.html").render(**ctx(0, page="home", **common)), encoding="utf-8")
@@ -606,6 +718,37 @@ def build_daily_mbh(wdir: Path, W: dict, editions) -> dict:
     return cards[0]
 
 
+def build_daily_gita(wdir: Path, W: dict, editions) -> dict:
+    """365 verse-of-the-day cards for the Gītā, from the Traditional Text, by the same deterministic rule
+    (etl/daily.py). The Gītā has no word-by-word analysis yet, so the cards carry none."""
+    ed_vu = next(e for e in editions if e["id"] == "vu")
+    recs = [r for r in load_recs(W, "vu") if r["s"] >= 1]
+    sizes = defaultdict(int)
+    for r in recs:
+        sizes[r["s"]] += 1
+    chs = {c["n"]: c for c in gita_chapters()}
+    chosen = daily.select(recs, {r["uid"]: range(8) for r in recs}, lambda r: r.get("meter"))
+
+    def card(r):
+        v = render_verse(r, ed_vu, W)
+        c = chs[r["s"]]
+        d = {"uid": r["uid"], "ref": v["ref"], "ed": "vu", "path": f'vu/1/{r["s"]}/#v{r["v"]}',
+             "slp": v["slp1"].split(" / "), "meter": v["meter"], "scan": v["scan"],
+             "ctx": {"k": r["s"], "kn": c["kn"], "deva": c["deva"], "iast": c["iast"], "en": c["en"], "s": r["s"], "v": r["v"],
+                     "of": sizes[r["s"]], "title": "", "gita": True},
+             "w": []}
+        cw = v["crosswalk"]
+        if cw and cw["links"]:
+            d["cw"] = {"status": cw["status"], "refs": [l["ref"] for l in cw["links"]], "paths": [l["path"] for l in cw["links"]],
+                       "other": cw["other_label"], "other_kn": "ಪುಣೆ ಪರಿಷ್ಕೃತ ಪಾಠ"}
+        return d
+
+    cards = [card(r) for r in chosen]
+    assert len(cards) == daily.N, len(cards)
+    daily.write(wdir, cards)
+    return cards[0]
+
+
 def _example(rec: dict, W: dict, ed: str, root: str) -> dict:
     """One verse for the Chandas pages: all three scripts, the scansion, and a link to the verse in the reader."""
     slp_lines = [" ".join(iast_to_slp1(p) for p in line) for line in rec["lines"]]
@@ -623,8 +766,9 @@ def _example(rec: dict, W: dict, ed: str, root: str) -> dict:
 def build_appendix(out: Path, env: Environment, base: dict) -> None:
     """Pariśiṣṭa: the appendix hub and the Chandas (metre) index, with a page for every metre that occurs."""
     cen = chandas.census()
-    eds = {w: {e["id"]: e for e in load_editions(WORKS[w])} for w in WORKS}
-    present = [m for m in chandas.CATALOGUE if any(m["name"] in cen[w][e]["by"] for w in WORKS for e in chandas.EDS)]
+    WK = {w: WORKS[w] for w in EPICS}
+    eds = {w: {e["id"]: e for e in load_editions(WORKS[w])} for w in WK}
+    present = [m for m in chandas.CATALOGUE if any(m["name"] in cen[w][e]["by"] for w in WK for e in chandas.EDS)]
     def pat(s):  # laghu । and guru ऽ; the last syllable of a pāda may be either (×)
         return "".join("ऽ" if c == "G" else "।" for c in s[:-1]) + "×"
     pada = {name: pat(p) for p, name in meter.PADA.items()}
@@ -637,7 +781,7 @@ def build_appendix(out: Path, env: Environment, base: dict) -> None:
 
     def counts(m):
         rows = []
-        for w, W in WORKS.items():
+        for w, W in WK.items():
             by = {e: cen[w][e]["by"].get(m["name"], {}) for e in chandas.EDS}
             tot = {e: sum(by[e].values()) for e in chandas.EDS}
             rows.append(dict(W=W, w=w, by=by, tot=tot))
@@ -647,7 +791,7 @@ def build_appendix(out: Path, env: Environment, base: dict) -> None:
     # pick examples: from the Traditional Text, the text shown by default; the Critical text only if the other has none
     want = {}
     for m in present:
-        for w in WORKS:
+        for w in WK:
             ed = "vu" if m["name"] in cen[w]["vu"]["by"] else "ce"
             refs = cen[w][ed]["refs"].get(m["name"], [])
             want[(w, m["name"])] = (ed, chandas.spread(sorted(refs), 8))
@@ -672,12 +816,12 @@ def build_appendix(out: Path, env: Environment, base: dict) -> None:
     for m in present:
         c = counts(m)
         index.append(dict(m=m, rows=c, pada=pada.get(m["name"])))
-    notes = {w: {e: cen[w][e]["none"] for e in chandas.EDS} for w in WORKS}
-    totals = {w: {e: cen[w][e]["total"] for e in chandas.EDS} for w in WORKS}
-    write("appendix/chandas", "chandas.html", 2, index=index, notes=notes, totals=totals, works=WORKS, eds=eds)
+    notes = {w: {e: cen[w][e]["none"] for e in chandas.EDS} for w in WK}
+    totals = {w: {e: cen[w][e]["total"] for e in chandas.EDS} for w in WK}
+    write("appendix/chandas", "chandas.html", 2, index=index, notes=notes, totals=totals, works=WK, eds=eds)
     for m in present:
         sections = []
-        for w, W in WORKS.items():
+        for w, W in WK.items():
             ed, picks = want[(w, m["name"])]
             root3 = "../../../"
             ex = [_example(recs[(w, ed, *k)], W, ed, root3) for k in picks if (w, ed, *k) in recs]
@@ -738,6 +882,10 @@ def write_pwa(out: Path, done: list) -> None:
 def alt_edition_href(ed, editions, k, s, W=None):
     """Link to the same sarga in the other edition, when the sarga cross-walk knows it."""
     wid = W["id"] if W else "ram"
+    if wid == "gita":
+        other = "ce" if ed["id"] == "vu" else "vu"
+        label = next((e["short"] for e in editions if e["id"] == other), other)
+        return {"href": f"../../../{other}/{k}/{s}/", "label": label, "ref": str(s)} if s >= 1 else None
     if wid not in _SARGA_CW:
         cw_path = ROOT / "data" / "crosswalk" / ("mbh" if wid == "mbh" else "") / "sargas.json"
         _SARGA_CW[wid] = json.loads(cw_path.read_text(encoding="utf-8")) if cw_path.exists() else {}

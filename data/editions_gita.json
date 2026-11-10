@@ -1,0 +1,21 @@
+[
+  {
+    "id": "vu",
+    "short": "Traditional Text",
+    "short_kn": "ಪರಂಪರಾಗತ ಪಾಠ",
+    "name": "Traditional Text (Kumbakonam, Bhīṣma Parva 25–42)",
+    "description": "The Bhagavadgītā as it stands in the Kumbakonam Mahābhārata (T. R. Krishnacharya and T. R. Vyasacharya, 1906–10; SARIT text), Bhīṣma Parva adhyāyas 25–42. Verse numbers are those of the print. Speaker lines (arjuna uvāca, śrībhagavān uvāca) are shown above the verse they introduce.",
+    "source_key": "mbh_vu",
+    "citation": "Bhagavadgītā, from the Mahābhārata, Kumbakonam edition (SARIT text)",
+    "source_label": "Source id"
+  },
+  {
+    "id": "ce",
+    "short": "Pune Text",
+    "short_kn": "ಪುಣೆ ಪರಿಷ್ಕೃತ ಪಾಠ",
+    "name": "Pune Critical Text (Bhīṣma Parva 23–40)",
+    "description": "The Bhagavadgītā as reconstructed in the Bhandarkar Oriental Research Institute's critical Mahābhārata (Pune, 1933–66), Bhīṣma Parva adhyāyas 23–40, as digitised in GRETIL. Its 700 verses give the familiar Gītā numbering.",
+    "source_key": "mbh_ce",
+    "citation": "Bhagavadgītā, from the Mahābhārata, Critical Edition (BORI, Pune)"
+  }
+]

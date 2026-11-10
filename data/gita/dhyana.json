@@ -1,0 +1,386 @@
+{
+ "title": {
+  "iast": "gītādhyānam",
+  "deva": "गीताध्यानम्",
+  "kn": "ಗೀತಾಧ್ಯಾನಮ್"
+ },
+ "note_en": "The nine verses traditionally recited before the Bhagavad Gītā, in homage to the Gītā, Vyāsa and Kṛṣṇa; the authorship is uncertain and they are traditionally ascribed to Madhusūdana Sarasvatī.",
+ "style": "Lowercase IAST, ṃ for anusvāra, words separated by spaces with sandhi kept (as in data/normalized/mbh/ce.jsonl); avagraha as ASCII apostrophe; the optional initial 'oṃ' is omitted from the lines and noted as a variant. One pāda per line for the long-metre verses, one half-verse per line for anuṣṭubh. Text keyed from cross-checked web witnesses (no single source copied).",
+ "verses": [
+  {
+   "n": 1,
+   "lines": [
+    [
+     "pārthāya pratibodhitāṃ bhagavatā nārāyaṇena svayaṃ"
+    ],
+    [
+     "vyāsena grathitāṃ purāṇamuninā madhye mahābhāratam"
+    ],
+    [
+     "advaitāmṛtavarṣiṇīṃ bhagavatīm aṣṭādaśādhyāyinīm"
+    ],
+    [
+     "amba tvām anusaṃdadhāmi bhagavadgīte bhavadveṣiṇīm"
+    ]
+   ],
+   "meter": "Śārdūlavikrīḍita",
+   "variants": [
+    {
+     "at": "verse opening",
+     "readings": [
+      "oṃ pārthāya …",
+      "pārthāya …"
+     ],
+     "sources": [
+      "shlokam.org",
+      "gyaandweep.com",
+      "GRETIL (local preface); mammully"
+     ]
+    },
+    {
+     "at": "pāda b end",
+     "readings": [
+      "mahābhāratam (Stephen Knapp, Hindupedia, MM, GY)",
+      "mahābhārate (SH, GRETIL)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "GRETIL (local preface)",
+      "mammully.blogspot.com",
+      "gyaandweep.com"
+     ]
+    },
+    {
+     "at": "pāda d",
+     "readings": [
+      "amba tvām anusaṃdadhāmi bhagavadgīte bhavadveṣiṇīm",
+      "āvarttair anusaṃdadhāmi bhagavadgītāṃ bhavonmocinīm (GRETIL; pāda c then ends aṣṭādaśādhyāyinīm)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "mammully.blogspot.com",
+      "gyaandweep.com",
+      "GRETIL (local preface)"
+     ]
+    },
+    {
+     "at": "anusaṃdadhāmi",
+     "readings": [
+      "anusandadhāmi (n before d in sources)",
+      "anusaṃdadhāmi (anusvāra, GRETIL and this repo's convention)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "mammully.blogspot.com",
+      "GRETIL (local preface)"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "lines": [
+    [
+     "namo 'stu te vyāsa viśālabuddhe"
+    ],
+    [
+     "phullāravindāyatapatranetra"
+    ],
+    [
+     "yena tvayā bhāratatailapūrṇaḥ"
+    ],
+    [
+     "prajvālito jñānamayaḥ pradīpaḥ"
+    ]
+   ],
+   "meter": "Upajāti",
+   "variants": [
+    {
+     "at": "pāda b end",
+     "readings": [
+      "patranetra (MM, GY)",
+      "patranetre (SH)",
+      "padmanetra (GRETIL: phullāravindāyatapadmanetra)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "mammully.blogspot.com",
+      "gyaandweep.com",
+      "GRETIL (local preface)"
+     ]
+    },
+    {
+     "at": "pāda d",
+     "readings": [
+      "prajvālito",
+      "prajvalito (SH); prajvālito is the metrical reading"
+     ],
+     "sources": [
+      "shlokam.org",
+      "mammully.blogspot.com",
+      "GRETIL (local preface)"
+     ]
+    },
+    {
+     "at": "verse position",
+     "readings": [
+      "GRETIL places this verse after sarvopaniṣado gāvo (our 4) and prefixes oṃ"
+     ],
+     "sources": [
+      "GRETIL (local preface)"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "lines": [
+    [
+     "prapannapārijātāya totravetraikapāṇaye"
+    ],
+    [
+     "jñānamudrāya kṛṣṇāya gītāmṛtaduhe namaḥ"
+    ]
+   ],
+   "meter": "Anuṣṭubh",
+   "variants": [
+    {
+     "at": "pārijātāya",
+     "readings": [
+      "parijātāya (GY)"
+     ],
+     "sources": [
+      "gyaandweep.com"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "lines": [
+    [
+     "sarvopaniṣado gāvo dogdhā gopālanandanaḥ"
+    ],
+    [
+     "pārtho vatsaḥ sudhīr bhoktā dugdhaṃ gītāmṛtaṃ mahat"
+    ]
+   ],
+   "meter": "Anuṣṭubh",
+   "variants": [
+    {
+     "at": "verse position",
+     "readings": [
+      "GRETIL puts this verse second (before namo 'stu te), i.e. order 1, 4, 2, 3"
+     ],
+     "sources": [
+      "GRETIL (local preface)"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "lines": [
+    [
+     "vasudevasutaṃ devaṃ kaṃsacāṇūramardanam"
+    ],
+    [
+     "devakīparamānandaṃ kṛṣṇaṃ vande jagadgurum"
+    ]
+   ],
+   "meter": "Anuṣṭubh",
+   "variants": []
+  },
+  {
+   "n": 6,
+   "lines": [
+    [
+     "bhīṣmadroṇataṭā jayadrathajalā gāndhāranīlotpalā"
+    ],
+    [
+     "śalyagrāhavatī kṛpeṇa vahanī karṇena velākulā"
+    ],
+    [
+     "aśvatthāmavikarṇaghoramakarā duryodhanāvartinī"
+    ],
+    [
+     "sottīrṇā khalu pāṇḍavai raṇanadī kaivartakaḥ keśavaḥ"
+    ]
+   ],
+   "meter": "Śārdūlavikrīḍita",
+   "variants": [
+    {
+     "at": "pāda a end",
+     "readings": [
+      "gāndhāranīlotpalā (Gāndhāra, i.e. the Gāndhāra king; metrical)",
+      "gāndhārīnīlotpalā (SH, GY; overlong, breaks the metre)",
+      "gāndhāranīlopalā (MM)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "gyaandweep.com",
+      "mammully.blogspot.com"
+     ]
+    },
+    {
+     "at": "pāda b",
+     "readings": [
+      "vahanī (SH, MM)",
+      "vahinī (GY)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "mammully.blogspot.com",
+      "gyaandweep.com"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "lines": [
+    [
+     "pārāśaryavacaḥ sarojam amalaṃ gītārthagandhotkaṭaṃ"
+    ],
+    [
+     "nānākhyānakakesaraṃ harikathāsaṃbodhanābodhitam"
+    ],
+    [
+     "loke sajjanaṣaṭpadair aharahaḥ pepīyamānaṃ mudā"
+    ],
+    [
+     "bhūyād bhāratapaṅkajaṃ kalimalapradhvaṃsi naḥ śreyase"
+    ]
+   ],
+   "meter": "Śārdūlavikrīḍita",
+   "variants": [
+    {
+     "at": "pāda b",
+     "readings": [
+      "nānākhyānakakesaraṃ",
+      "nānākhyānakakeśaraṃ (SH, GY)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "mammully.blogspot.com",
+      "gyaandweep.com"
+     ]
+    },
+    {
+     "at": "pāda d",
+     "readings": [
+      "kalimalapradhvaṃsi naḥ (Stephen Knapp, Hindupedia, MM)",
+      "kalimalapradhvaṃsanaṃ (SH, GY)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "mammully.blogspot.com",
+      "gyaandweep.com"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "lines": [
+    [
+     "mūkaṃ karoti vācālaṃ paṅguṃ laṅghayate girim"
+    ],
+    [
+     "yatkṛpā tam ahaṃ vande paramānandamādhavam"
+    ]
+   ],
+   "meter": "Anuṣṭubh",
+   "variants": [
+    {
+     "at": "pāda b",
+     "readings": [
+      "laṅghayate (SH, MM)",
+      "laṅghāyate (GY)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "mammully.blogspot.com",
+      "gyaandweep.com"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "lines": [
+    [
+     "yaṃ brahmā varuṇendrarudramarutaḥ stunvanti divyaiḥ stavair"
+    ],
+    [
+     "vedaiḥ sāṅgapadakramopaniṣadair gāyanti yaṃ sāmagāḥ"
+    ],
+    [
+     "dhyānāvasthitatadgatena manasā paśyanti yaṃ yogino"
+    ],
+    [
+     "yasyāntaṃ na viduḥ surāsuragaṇā devāya tasmai namaḥ"
+    ]
+   ],
+   "meter": "Śārdūlavikrīḍita",
+   "variants": [
+    {
+     "at": "pāda c",
+     "readings": [
+      "tadgatena (SH)",
+      "tatgatena (MM, unsandhied slip)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "mammully.blogspot.com"
+     ]
+    },
+    {
+     "at": "pāda a",
+     "readings": [
+      "stavair (SH)",
+      "stavaiḥ (MM, split)"
+     ],
+     "sources": [
+      "shlokam.org",
+      "mammully.blogspot.com"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Gita Dhyanam, shlokam.org (Devanagari, nine verses)",
+   "url": "https://shlokam.org/gitadhyanam/"
+  },
+  {
+   "title": "Gita Dhyanam, shlokam.org (second page)",
+   "url": "https://shlokam.org/shloka/gita-dhyanam.htm"
+  },
+  {
+   "title": "Srimad Bhagavad Gita | Dhyana Shlokas, mammully.blogspot.com",
+   "url": "https://mammully.blogspot.com/2020/09/srimad-bhagavad-gita-dhyana-shlokas.html"
+  },
+  {
+   "title": "Gita Dhyanam, gyaandweep.com (partial check)",
+   "url": "https://gyaandweep.com/shloka/gita-dhyanam"
+  },
+  {
+   "title": "Gita Dhyanam, Wikipedia (attribution)",
+   "url": "https://en.wikipedia.org/wiki/Gita_Dhyanam"
+  },
+  {
+   "title": "GRETIL Bhagavadgītā preface (atha dhyānaṃ, five verses; local witness data/gita/gretil_preface.txt)",
+   "url": "https://gretil.sub.uni-goettingen.de/gretil/corpustei/sa_bhagavadgItA.xml"
+  },
+  {
+   "title": "Srimad-Bhagavad-gita Dhyanam (Stephen Knapp)",
+   "url": "https://stephen-knapp.com/srimad-bhagavad-gita_dhyanam.htm"
+  },
+  {
+   "title": "Bhagawad Gita Dhyanam (Hindupedia)",
+   "url": "https://www.hindupedia.com/en/Bhagawad_Gita_Dhyanam"
+  }
+ ]
+}

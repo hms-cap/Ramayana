@@ -7,3 +7,4 @@ Browser checks (Playwright, not run in CI). Serve the built site, then run each 
 
 Screenshots and the exported PDF/PNG are written to /tmp.
     python tests/e2e/swipe.py   # sideways swipe between sargas (reading and chant views)
+    python tests/e2e/gita.py    # Bhagavadgītā: chips, 18 adhyāya cards, Dhyāna, 2.47, links to/from the Mahābhārata, Pune edition, search, verse of the day

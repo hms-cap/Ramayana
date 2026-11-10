@@ -19,7 +19,7 @@ async def main():
         pg.on("console", lambda m: m.type == "error" and errs.append(m.text))
 
         await pg.goto(B)
-        assert await pg.locator(".wchip").count() == 3
+        assert await pg.locator(".wchip").count() == 4   # Rāmāyaṇa, Mahābhārata, Bhagavadgītā, Pariśiṣṭa
         await pg.click(".wchip[data-work-pick=app]")
         await pg.wait_for_url("**/appendix/")
         assert await pg.evaluate("localStorage.getItem('vr.work')") != "app"   # the appendix is not a work

@@ -2,7 +2,7 @@
   "use strict";
   var root = document.documentElement;
   var KEY = "vr-prefs";
-  var MBH = root.dataset.work === "mbh", OFFK = MBH ? "offMbh" : "off";   // texts switched off are kept per work
+  var OFFK = { mbh: "offMbh", gita: "offGita" }[root.dataset.work] || "off";   // texts switched off are kept per work
 
   function load() { try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return {}; } }
   function save(p) { try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) { /* storage unavailable */ } }
@@ -170,7 +170,7 @@
   function root_href() { return document.querySelector(".reader").dataset.root || "../../../"; }
   var wordsCache = {};
   function loadWords(u) { return wordsCache[u] || (wordsCache[u] = loadJSON(u)); }
-  var CE_NAME = document.body.dataset.work === "mbh" ? "Pune" : "Baroda";
+  var CE_NAME = document.body.dataset.work === "ram" ? "Baroda" : "Pune";
   var NOTES = {
     variant: "This verse reads differently from the " + CE_NAME + " verse analysed here, so some words may not match.",
     partial: "Only part of this verse is in the " + CE_NAME + " verse analysed here, so some words may not match.",
@@ -276,9 +276,9 @@
       if (b.hasAttribute("data-work-page")) { window.VRPrevWork = localStorage.getItem("vr.work"); localStorage.setItem("vr.work", b.dataset.work); cur = b.dataset.work; }
       else cur = localStorage.getItem("vr.work") || "ram";
     } catch (e) { /* ignore */ }
-    if (!b.hasAttribute("data-work-page") && cur === "mbh") {
-      document.documentElement.dataset.work = "mbh";
-      document.querySelectorAll("[data-wl]").forEach(function (a) { var w = a.dataset.wl; a.setAttribute("href", b.dataset.root + "mbh/" + (w === "home" ? "" : w + "/")); });
+    if (!b.hasAttribute("data-work-page") && (cur === "mbh" || cur === "gita")) {
+      document.documentElement.dataset.work = cur;
+      document.querySelectorAll("[data-wl]").forEach(function (a) { var w = a.dataset.wl; a.setAttribute("href", b.dataset.root + cur + "/" + (w === "home" ? "" : w + "/")); });
       document.querySelectorAll("[data-work-pick]").forEach(function (a) { a.setAttribute("aria-checked", a.dataset.workPick === cur ? "true" : "false"); });
     }
     document.addEventListener("click", function (e) {

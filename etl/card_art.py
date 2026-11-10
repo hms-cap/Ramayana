@@ -182,7 +182,19 @@ def _lekhani(): # stylus on a leaf
     return '<path d="M4 20l1.2-4.2L16.5 4.5a2 2 0 0 1 2.8 0l.2.2a2 2 0 0 1 0 2.8L8.2 18.8z"/><path d="M14.5 6.5l3 3M5.2 15.8l3 3" stroke-width="1.1"/><path d="M12 21h9" stroke-width="1.2"/>'
 
 
+def _ratha():   # chariot wheel beside the Kapidhvaja banner (a pennant on its staff)
+    sp = "".join(f'M9.5 15.5L{9.5+6*math.cos(math.radians(a)):.2f} {15.5+6*math.sin(math.radians(a)):.2f}' for a in range(0, 360, 45))
+    return (f'<circle cx="9.5" cy="15.5" r="6"/><circle cx="9.5" cy="15.5" r="1.6"/><path d="{sp}" stroke-width=".8"/>'
+            '<path d="M19 21.5V2.8"/><path d="M19 3.6L13.4 5.6l2 2.2-2 2.2L19 11.2" stroke-width="1.2"/><path d="M16.5 21.5h5" stroke-width="1.2"/>')
+def _patra():   # leaves of a palm-leaf manuscript, stacked and slightly fanned, cord through the hole
+    return ('<path d="M4.5 7.2L20.5 4.4v3L4.5 10.2z" stroke-width="1.1"/><path d="M4.5 10.2L20.5 7.4v3L4.5 13.2z" stroke-width="1.1"/>'
+            '<path d="M3 13.6h18v6.4H3z"/><path d="M7 16.8h10" stroke-width=".9"/>' + dot(5.2, 16.8, .8) + dot(18.8, 16.8, .8))
+def _dipa():    # oil lamp with its flame
+    return ('<path d="M12 2.8c-2.4 2.6-2.4 5 0 7.6c2.4-2.6 2.4-5 0-7.6z"/><path d="M12 10.6v1.6" stroke-width="1"/>'
+            '<path d="M3 12.8h14.5q0 5.2-7 5.2t-7.5-5.2z"/><path d="M17.5 13c1.6 0 3.2-.6 3.5-1.8" stroke-width="1.2"/><path d="M10.5 18v2.6M7 21.5h7" />')
+
+
 def chip_icons(work: str) -> list[str]:
-    fs = {"ram": [_bow, _paduka, _setu_icon], "app": [_pothi, _book, _lekhani]}.get(work, [_chakra, _shankha, _flute])
+    fs = {"ram": [_bow, _paduka, _setu_icon], "app": [_pothi, _book, _lekhani], "gita": [_ratha, _patra, _dipa]}.get(work, [_chakra, _shankha, _flute])
     return [f'<svg class="wico" data-v="{i}" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{f()}</svg>'
             for i, f in enumerate(fs)]

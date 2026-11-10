@@ -3,24 +3,32 @@
 {% set cur_ed = ed.id %}
 {% set cur_k = kanda.n %}
 {% from "_verse.html" import verse_text %}
-{% block title %}{{ kanda.kn }} {{ W.sub_kn }} {{ s|knda }} — {{ kanda.en }} {{ s }} ({{ ed.short }}){% endblock %}
+{% if dhyana %}{% set head_kn = dhyana.title.kn %}{% set head_deva = dhyana.title.deva %}{% set head_iast = dhyana.title.iast %}{% else %}{% set head_kn = W.sub_kn ~ " " ~ (s|knda) %}{% set head_deva = W.sub_deva ~ " " ~ (s|deva) %}{% set head_iast = W.sub_iast ~ " " ~ s %}{% endif %}
+{% block title %}{% if dhyana %}{{ dhyana.title.kn }} — Gītā Dhyānam{% else %}{{ kanda.kn }} {{ W.sub_kn }} {{ s|knda }} — {{ kanda.en }} {{ s }}{% endif %} ({{ ed.short }}){% endblock %}
 {% block description %}{{ kanda.en }}, {{ W.sub }} {{ s }} of the {{ W.en }} ({{ ed.name }}): {{ verses|length }} verses in Kannada script, Devanāgarī and IAST.{% endblock %}
 {% block main %}
-<div class="reader" data-chant data-root="{{ root }}" data-wroot="{{ wroot }}" data-edition="{{ ed.id }}" data-work="{{ W.id }}" data-citation="{{ ed.citation }}" data-src="{{ ed.short }} {{ kanda.n }}.{{ s }}" data-k="{{ kanda.n }}" data-s="{{ s }}"
-     data-title-knda="{{ kanda.kn }} · {{ W.sub_kn }} {{ s|knda }}" data-title-deva="{{ kanda.deva }} · {{ W.sub_deva }} {{ s|deva }}" data-title-iast="{{ kanda.iast }} · {{ W.sub_iast }} {{ s }}">
+<div class="reader" data-chant data-root="{{ root }}" data-wroot="{{ wroot }}" data-edition="{{ ed.id }}" data-work="{{ W.id }}" data-citation="{{ ed.citation }}" data-src="{{ ed.short }} {% if W.single %}{{ W.short_en }} {{ s }}{% else %}{{ kanda.n }}.{{ s }}{% endif %}" data-k="{{ kanda.n }}" data-s="{{ s }}"
+     data-title-knda="{{ kanda.kn }} · {{ head_kn }}" data-title-deva="{{ kanda.deva }} · {{ head_deva }}" data-title-iast="{{ kanda.iast }} · {{ head_iast }}">
   <nav class="crumbs" aria-label="Breadcrumb">
     <a href="{{ wroot }}{{ ed.id }}/">{{ ed.short }}</a>
     <span aria-hidden="true">/</span>
     <a href="../">{{ unit_sx(kanda) }}</a>
   </nav>
   <header class="sarga-head">
-    <h1>{{ unit_sx(kanda) }} <span class="sarga-n">{{ sx(W.sub_kn ~ " " ~ (s|knda), W.sub_deva ~ " " ~ (s|deva), W.sub_iast ~ " " ~ s) }}</span></h1>
+    <h1>{{ unit_sx(kanda) }} <span class="sarga-n">{{ sx(head_kn, head_deva, head_iast) }}</span></h1>
     <div class="head-actions">
       <button type="button" class="chant-open act" aria-haspopup="dialog"><span lang="kn">ಪಠಣ</span> Chant view</button>
       <button type="button" class="pdf-btn act" data-nopdf>PDF</button>
       <button type="button" class="save-btn act" aria-pressed="false" data-save="{{ W.prefix }}{{ ed.id }}/{{ kanda.n }}/{{ s }}/">☆ <span>Save</span></button>
     </div>
+    {% if dhyana %}
+    <p class="sub">{{ dhyana.note_en }} {{ verses|length }} verses.</p>
+    {% elif W.single %}
+    <p class="sub">{{ kanda.en }}, {{ W.sub }} {{ s }} of {{ total_in_kanda }}{% if title %}: <span class="sarga-title">{{ title.sx }}</span>{% if title.title_en %} <span class="en">({{ title.title_en }})</span>{% endif %}{% endif %}. {{ verses|length }} verses.</p>
+    {% else %}
     <p class="sub">{{ kanda.en }}, {{ W.sub }} {{ s }} of {{ total_in_kanda }}{% if title %}: <span class="sarga-title">{{ title.title_iast }}</span>{% endif %}. {{ verses|length }} verses.</p>
+    {% endif %}
+    {% if gita_link %}<p class="note gita-link">This adhyāya is chapter {{ gita_link.ch }} of the Bhagavadgītā. <a href="{{ gita_link.href }}">Read it in the Gītā section</a>.</p>{% endif %}
     {% if has_cw %}
     <div class="recension" data-ed="{{ other_id }}">
       <p>{{ shared }} of {{ verses|length }} verses are also in the {{ other_label }}{% if alt_href %}, mostly in <a href="{{ alt_href.href }}">{{ W.sub }} {{ alt_href.ref }}</a>{% endif %}.</p>
@@ -48,7 +56,7 @@
       {% set cw = v.crosswalk %}
       {% set wsrc = none %}
         {% if v.has_words %}{% set wsrc = {"url": "words.json", "vn": v.v, "note": ""} %}
-        {% elif ed.id == 'vu' and cw and cw.links|length == 1 and cw.status in ('match', 'variant', 'partial', 'regrouped') %}{% set wsrc = {"url": cw.links[0].path.split('#')[0] ~ "words.json", "vn": cw.links[0].path.split('#v')[1], "note": "" if cw.status == 'match' else cw.status} %}{% endif %}
+        {% elif ed.id == 'vu' and not W.single and cw and cw.links|length == 1 and cw.status in ('match', 'variant', 'partial', 'regrouped') %}{% set wsrc = {"url": cw.links[0].path.split('#')[0] ~ "words.json", "vn": cw.links[0].path.split('#v')[1], "note": "" if cw.status == 'match' else cw.status} %}{% endif %}
       <div class="side">
         <button type="button" class="vnum" aria-expanded="false" aria-controls="d{{ v.v }}" title="Verse details">
         <span class="n-knda">{{ v.v_knda }}</span><span class="n-deva">{{ v.v_deva }}</span><span class="n-iast">{{ v.v }}</span>
@@ -60,6 +68,7 @@
         <p class="badge b-{{ cw.status }}" data-ed="{{ other_id }}">{% if cw.status == 'absent' %}Not in the {{ cw.other_label }}{% else %}{% if cw.status == 'variant' %}Different reading in the{% elif cw.status == 'regrouped' %}Lines grouped differently in the{% else %}Only partly in the{% endif %} {{ cw.other_label }}: {% for l in cw.links %}<a href="{{ wroot }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</p>
         {% endif %}
         {% if 'source_noise' in v.flags %}<p class="badge b-noise">The source has typing errors in this verse.</p>{% endif %}
+        {% if v.speaker %}<p class="speaker">{{ sx(v.speaker.knda, v.speaker.deva, v.speaker.iast) }}</p>{% endif %}
         <div class="vtext"{% if wsrc %} data-words="{{ wsrc.url }}" data-vn="{{ wsrc.vn }}" data-wnote="{{ wsrc.note }}" tabindex="0" role="button" aria-expanded="false" title="Click for word-by-word meanings"{% endif %}>
         {{ verse_text(v) }}
         </div>
@@ -70,6 +79,7 @@
             <dt>Verse</dt><dd>{{ v.ref }}</dd>
             {% if v.meter %}<dt>Metre</dt><dd>{{ v.meter }}</dd>{% endif %}
             {% for i in v.ids %}<dt>{{ i.label }}</dt><dd><code>{{ i.value }}</code></dd>{% endfor %}
+            {% if v.mbh %}<dt>Mahābhārata</dt><dd><a href="{{ root }}{{ v.mbh.path }}">Bhīṣma Parva {{ v.mbh.ref.split('.')[1] }}.{{ v.mbh.ref.split('.')[2] }}</a></dd>{% endif %}
             {% if cw and cw.links %}<dt data-ed="{{ other_id }}">{{ cw.other_label }}</dt><dd data-ed="{{ other_id }}">{% for l in cw.links %}<a href="{{ wroot }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
           </dl>
           {% if v.has_words or wsrc %}<button type="button" class="wbw-btn" aria-expanded="false">Word by word</button>{% endif %}
@@ -84,8 +94,8 @@
   </ol>
 
   <nav class="pager" aria-label="{{ W.Sub }}s">
-    {% if prev %}<a rel="prev" href="{{ wroot }}{{ ed.id }}/{{ prev[0] }}/{{ prev[1] }}/"><span class="dir">Previous</span> {{ prev[0] }}.{{ prev[1] }}</a>{% else %}<span></span>{% endif %}
-    {% if next %}<a rel="next" href="{{ wroot }}{{ ed.id }}/{{ next[0] }}/{{ next[1] }}/"><span class="dir">Next</span> {{ next[0] }}.{{ next[1] }}</a>{% endif %}
+    {% if prev %}<a rel="prev" href="{{ wroot }}{{ ed.id }}/{{ prev[0] }}/{{ prev[1] }}/"><span class="dir">Previous</span> {% if W.single %}{{ "Dhyānam" if prev[1] == 0 else W.Sub ~ " " ~ prev[1] }}{% else %}{{ prev[0] }}.{{ prev[1] }}{% endif %}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a rel="next" href="{{ wroot }}{{ ed.id }}/{{ next[0] }}/{{ next[1] }}/"><span class="dir">Next</span> {% if W.single %}{{ W.Sub }} {{ next[1] }}{% else %}{{ next[0] }}.{{ next[1] }}{% endif %}</a>{% endif %}
   </nav>
 </div>
 {% endblock %}

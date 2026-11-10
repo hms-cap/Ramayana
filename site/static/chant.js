@@ -4,7 +4,7 @@
 (function () {
   "use strict";
   var P = window.VRPrefs, T = window.Translit;
-  var SKEY = "vr.chant", LAST = document.documentElement.dataset.work === "mbh" ? "vr.last.mbh" : "vr.last", SCR = ["knda", "deva", "iast"];
+  var SKEY = "vr.chant", LAST = ({ mbh: "vr.last.mbh", gita: "vr.last.gita" }[document.documentElement.dataset.work] || "vr.last"), SCR = ["knda", "deva", "iast"];
   var NB = " ", reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var view = null;
 
