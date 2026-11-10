@@ -302,7 +302,7 @@
     model.parts.forEach(function (part) {
       var vs = part.verses, g = part.group || 1;
       for (var a = 0; a < vs.length; a += g) {
-        h += "<p>" + vs.slice(a, a + g).map(function (v) { return esc(bookVerse(v, sc)); }).join(" ") + "</p>";
+        h += "<p>" + vs.slice(a, a + g).map(function (v) { return '<span class="pv">' + esc(bookVerse(v, sc)) + '</span>'; }).join("") + "</p>";
       }
     });
     doc.innerHTML = h;

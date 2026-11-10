@@ -1,7 +1,7 @@
 # ಇತಿಹಾಸ (Itihāsa) — handoff for agents
 
 Browsable Sanskrit epics: Vālmīki Rāmāyaṇa (site root), Mahābhārata (`/mbh/`) and the Bhagavadgītā taken out of it (`/gita/`), with Kannada / Devanāgarī / IAST scripts, two editions of each, word-by-word analysis, a built-in dictionary, and an appendix of metres. Static site, built by Python, no server.
-Repo `hms-cap/Ramayana` · live (GitHub Pages) https://hms-cap.github.io/Ramayana/ · version in `site/static/version.js` (now 0.10.1) · owner: Hemanth.
+Repo `hms-cap/Ramayana` · live (GitHub Pages) https://hms-cap.github.io/Ramayana/ · version in `site/static/version.js` (now 0.10.2) · owner: Hemanth.
 
 ## How it is built and shipped
 - `python site/build.py` (Jinja2 + lxml, `requirements.txt`) reads `data/` and writes `dist/` (~600 MB, 100k+ files, ~5,500 chapter pages). `python site/build.py` takes a few minutes.

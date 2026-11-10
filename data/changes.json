@@ -1,5 +1,12 @@
 [
  [
+  "0.10.2",
+  "2026-11-10",
+  [
+   "In the chant view's Page layout each śloka now starts on its own line, so the end of one verse no longer runs into the beginning of the next (the PDF export does the same)."
+  ]
+ ],
+ [
   "0.10.1",
   "2026-11-10",
   [

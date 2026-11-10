@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.10.2 — 2026-11-10
+- Chant view, Page layout (and its PDF/print export): each śloka is a block of its own (`.cv`, `.pv`, hanging indent) instead of verses flowing together in one paragraph, so a verse ending (॥ n ॥) no longer shares a line with the next verse's beginning.
+
 ## 0.10.1 — 2026-11-10
 - Gītā text review. 228 typing slips in the Kumbakonam (SARIT) Gītā corrected in 186 verses (`data/gita/errata_vu.json`, applied to `data/normalized/mbh/vu.jsonl` by `etl/apply_errata.py`, so the Mahābhārata reader shows the same text): the systematic stray "ka" (`tattvadarśibhiḥka`), n/r (`aśrute`), vakra for vaktra (7×, ch. 11), sañjate for sajjate, dropped and swapped letters, missing half-verse breaks (5.28, 9.25, 9.31), 18.44 garbled. All 700 verses proofread by Sonnet agents, every correction checked by Opus against Pune and the vulgate; six proposals rejected as genuine readings or superseded. Verse details show what was corrected ("Corrected" row).
 - Kumbakonam 13.26 was two printed verses keyed as one record: split again (`SPLIT` in `etl/extract_gita.py`), so Traditional ch. 13 runs 1–35 as printed and the Gītā cross-walk is complete (700/700 Pune; 700/701 Traditional, 13.1 has no Pune twin). Traditional verses that scan: 653 → 697.

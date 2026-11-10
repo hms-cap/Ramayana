@@ -314,6 +314,7 @@ body.story-open { overflow: hidden; }
 .ch-page h1 { text-align: center; font-size: 1.12em; font-weight: 700; margin: 0.6em 0 0; }
 .ch-src { text-align: center; font-size: 0.74em; font-weight: 600; color: var(--c-muted); margin: 0 0 0.8em; }
 .ch-page p { margin: 0 0 0.35em; text-align: left; }
+.ch-page .cv { display: block; padding-left: 1.4em; text-indent: -1.4em; margin: 0 0 0.3em; }   /* each śloka starts on its own line */
 @media (min-width: 560px) { .ch-page p { text-align: justify; } }
 .ch-cards { max-width: 760px; margin: 0 auto; padding: 8px 18px 40px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
 .ch-card { display: grid; gap: 2px; padding: 12px 14px; border: 1px solid color-mix(in srgb, var(--c-ink) 18%, transparent); border-radius: 10px; text-decoration: none; color: var(--c-ink); }
@@ -337,6 +338,7 @@ body.story-open { overflow: hidden; }
 #printDoc { display: none; }
 .pdf-doc { font-family: var(--f-knda); font-size: 15pt; line-height: calc(2.15 * .9); color: #000; }
 .pdf-doc[lang="sa-Deva"] { font-family: var(--f-deva); }
+.pdf-doc .pv { display: block; padding-left: 1.4em; text-indent: -1.4em; }
 .pdf-doc[lang="sa-Latn"] { font-family: var(--f-text); line-height: 1.6; }
 .pdf-doc[lang="sa-Knda"] { line-height: calc(2.4 * .9); }
 .pdf-doc h1 { text-align: center; font-weight: 700; font-size: 20pt; margin: 0 0 4pt; }
