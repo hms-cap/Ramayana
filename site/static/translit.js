@@ -115,8 +115,13 @@
     }
     return o;
   }
+  /* Kannada print usage: class nasal before a stop of its own class -> anusvāra (ಸಂಗ, ಪಂಚ, ಅಂತ); inside a word only */
+  function anusvaraBeforeStops(s) {
+    return s.replace(/[NYRnm](?=[kKgGcCjJwWqQtTdDpPbB])/g, function (m, i) { return STOP_NASAL[s[i + 1]] === m ? "M" : m; });
+  }
   function render(slp1, script, savarna) {
     if (script === "iast") return slp1ToIast(slp1);
+    if (script === "knda" && !savarna) slp1 = anusvaraBeforeStops(slp1);
     var s = joinForDisplay(slp1);
     if (savarna) s = paraSavarna(s);
     return slp1ToBrahmic(s, script);
@@ -163,7 +168,7 @@
 
   global.Translit = {
     iastToSlp1: iastToSlp1, slp1ToIast: slp1ToIast, slp1ToBrahmic: slp1ToBrahmic,
-    brahmicToSlp1: brahmicToSlp1, joinForDisplay: joinForDisplay, paraSavarna: paraSavarna,
+    brahmicToSlp1: brahmicToSlp1, joinForDisplay: joinForDisplay, paraSavarna: paraSavarna, anusvaraBeforeStops: anusvaraBeforeStops,
     render: render, digits: digits, looseKey: looseKey, looseForIndex: looseForIndex,
     asciiQueryToLoose: asciiQueryToLoose, queryToLoose: queryToLoose
   };

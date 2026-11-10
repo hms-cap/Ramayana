@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "etl"))
 import meter  # noqa: E402
-from translit import (ascii_query_to_loose, brahmic_to_slp1, iast_to_slp1, join_for_display,  # noqa: E402
+from translit import (anusvara_before_stops, ascii_query_to_loose, brahmic_to_slp1, iast_to_slp1, join_for_display,  # noqa: E402
                       loose_for_index, render, slp1_to_iast)
 
 CE = ROOT / "data" / "normalized" / "ce.jsonl"
@@ -54,6 +54,18 @@ class Golden(unittest.TestCase):
         self.assertEqual(ascii_query_to_loose("Seetha"), loose_for_index(iast_to_slp1("sītā")))
 
 
+class KannadaAnusvara(unittest.TestCase):
+    def test_class_nasal_becomes_anusvara_in_kannada_only(self):
+        s = iast_to_slp1("saṅgo'stvakarmaṇi kāñcanaḥ kampa anta")
+        self.assertEqual(render(s, "knda"), "ಸಂಗೋಽಸ್ತ್ವಕರ್ಮಣಿ ಕಾಂಚನಃ ಕಂಪ ಅಂತ")
+        self.assertEqual(render(s, "deva"), "सङ्गोऽस्त्वकर्मणि काञ्चनः कम्प अन्त")
+        self.assertEqual(render(s, "knda", savarna=True), "ಸಙ್ಗೋಽಸ್ತ್ವಕರ್ಮಣಿ ಕಾಞ್ಚನಃ ಕಮ್ಪ ಅನ್ತ")
+
+    def test_not_across_words_or_classes(self):
+        self.assertEqual(render(iast_to_slp1("tasmin tu"), "knda"), "ತಸ್ಮಿನ್ತು")     # word boundary: left alone
+        self.assertEqual(render(iast_to_slp1("yasmin gatā"), "knda"), "ಯಸ್ಮಿನ್ಗತಾ")  # n before g: not the same class
+
+
 class RoundTrip(unittest.TestCase):
     def test_whole_ce_round_trips(self):
         bad = []
@@ -62,7 +74,8 @@ class RoundTrip(unittest.TestCase):
             if slp1_to_iast(slp) != line:
                 bad.append(("iast", line))
             for sc in ("knda", "deva"):
-                if brahmic_to_slp1(render(slp, sc)) != join_for_display(slp):
+                want = join_for_display(anusvara_before_stops(slp) if sc == "knda" else slp)   # Kannada writes ಂ before a same-class stop
+                if brahmic_to_slp1(render(slp, sc)) != want:
                     bad.append((sc, line))
         self.assertEqual(bad[:5], [])
 

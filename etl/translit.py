@@ -202,10 +202,22 @@ def to_digits(n: str | int, script: str) -> str:
     return "".join(d[int(c)] if c.isdigit() else c for c in str(n))
 
 
+def anusvara_before_stops(slp1: str) -> str:
+    """Kannada print usage: a class nasal before a stop of its own class is written as anusvāra
+    (saNga -> saMga ಸಂಗ, paYca -> paMca ಪಂಚ, anta -> aMta ಅಂತ). Only inside a written word: it runs
+    before join_for_display, so it never reaches across a space."""
+    return re.sub(r"[NYRnm](?=[kKgGcCjJwWqQtTdDpPbB])",
+                  lambda m: "M" if STOPS[slp1[m.end()]] == m.group(0) else m.group(0), slp1)
+
+
 def render(slp1: str, script: str, *, savarna: bool = False) -> str:
-    """Render one SLP1 line for display in 'deva', 'knda' or 'iast'."""
+    """Render one SLP1 line for display in 'deva', 'knda' or 'iast'.
+    Kannada shows anusvāra before a stop of the same class (anusvara_before_stops) unless savarna asks
+    for class nasals everywhere (para_savarna); Devanāgarī keeps the source spelling unless savarna."""
     if script == "iast":
         return slp1_to_iast(slp1)
+    if script == "knda" and not savarna:
+        slp1 = anusvara_before_stops(slp1)
     s = join_for_display(slp1)
     if savarna:
         s = para_savarna(s)

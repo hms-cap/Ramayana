@@ -1,12 +1,14 @@
+{# a speaker line that falls inside the verse (Gītā 1.21, 1.28): shown before line i; not a .ln, so chant view skips it #}
+{% macro spk(v, sc, i) %}{% if v.speaker and v.speaker_at and v.speaker_at == i %}<span class="spk">{{ v.speaker[sc] }}</span>{% endif %}{% endmacro %}
 {% macro verse_text(v) %}
 {% for sc in ('knda', 'deva', 'iast') %}
 {% set t = v.text[sc] %}
 <div class="t t-{{ sc }}"{% if sc == 'knda' %} lang="sa-Knda"{% elif sc == 'deva' %} lang="sa-Deva"{% else %} lang="sa-Latn"{% endif %}>
   {% if t.savarna %}
-  <p class="ps0">{% for l in t.lines %}<span class="ln">{{ l }}</span>{% endfor %}</p>
-  <p class="ps1">{% for l in t.savarna %}<span class="ln">{{ l }}</span>{% endfor %}</p>
+  <p class="ps0">{% for l in t.lines %}{{ spk(v, sc, loop.index0) }}<span class="ln">{{ l }}</span>{% endfor %}</p>
+  <p class="ps1">{% for l in t.savarna %}{{ spk(v, sc, loop.index0) }}<span class="ln">{{ l }}</span>{% endfor %}</p>
   {% else %}
-  <p>{% for l in t.lines %}<span class="ln">{{ l }}</span>{% endfor %}</p>
+  <p>{% for l in t.lines %}{{ spk(v, sc, loop.index0) }}<span class="ln">{{ l }}</span>{% endfor %}</p>
   {% endif %}
 </div>
 {% endfor %}

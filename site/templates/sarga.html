@@ -68,7 +68,7 @@
         <p class="badge b-{{ cw.status }}" data-ed="{{ other_id }}">{% if cw.status == 'absent' %}Not in the {{ cw.other_label }}{% else %}{% if cw.status == 'variant' %}Different reading in the{% elif cw.status == 'regrouped' %}Lines grouped differently in the{% else %}Only partly in the{% endif %} {{ cw.other_label }}: {% for l in cw.links %}<a href="{{ wroot }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</p>
         {% endif %}
         {% if 'source_noise' in v.flags %}<p class="badge b-noise">The source has typing errors in this verse.</p>{% endif %}
-        {% if v.speaker %}<p class="speaker">{{ sx(v.speaker.knda, v.speaker.deva, v.speaker.iast) }}</p>{% endif %}
+        {% if v.speaker and not v.speaker_at %}<p class="speaker">{{ sx(v.speaker.knda, v.speaker.deva, v.speaker.iast) }}</p>{% endif %}
         <div class="vtext"{% if wsrc %} data-words="{{ wsrc.url }}" data-vn="{{ wsrc.vn }}" data-wnote="{{ wsrc.note }}" tabindex="0" role="button" aria-expanded="false" title="Click for word-by-word meanings"{% endif %}>
         {{ verse_text(v) }}
         </div>
@@ -79,6 +79,7 @@
             <dt>Verse</dt><dd>{{ v.ref }}</dd>
             {% if v.meter %}<dt>Metre</dt><dd>{{ v.meter }}</dd>{% endif %}
             {% for i in v.ids %}<dt>{{ i.label }}</dt><dd><code>{{ i.value }}</code></dd>{% endfor %}
+            {% if v.corrected %}<dt>Corrected</dt><dd class="corr">Typing slips in the digital source, corrected here: {% for c in v.corrected %}<s>{{ c[0] }}</s> → {{ c[1] }}{% if not loop.last %}; {% endif %}{% endfor %}. <a href="{{ root }}about/#gita">About the corrections</a></dd>{% endif %}
             {% if v.mbh %}<dt>Mahābhārata</dt><dd><a href="{{ root }}{{ v.mbh.path }}">Bhīṣma Parva {{ v.mbh.ref.split('.')[1] }}.{{ v.mbh.ref.split('.')[2] }}</a></dd>{% endif %}
             {% if cw and cw.links %}<dt data-ed="{{ other_id }}">{{ cw.other_label }}</dt><dd data-ed="{{ other_id }}">{% for l in cw.links %}<a href="{{ wroot }}{{ l.path }}">{{ l.ref }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
           </dl>

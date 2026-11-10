@@ -689,3 +689,6 @@ html.js .kcard:not([data-art]) .kart, html.js .wchip:not([data-art]) .wico { vis
 .gita-link a { font-weight: 600; }
 /* Gītā adhyāya cards: yoga names are long single words; let them break and shrink */
 body[data-work="gita"] .kc-t { font-size: 1.02rem; line-height: 1.25; overflow-wrap: anywhere; }
+/* a speaker line inside a Gītā verse (1.21, 1.28) and the "corrected" note in verse details */
+.spk { display: block; font-family: var(--f-text); font-style: italic; color: var(--muted); font-size: 0.82em; margin: 0.15rem 0; }
+.details .corr s { color: var(--muted); }

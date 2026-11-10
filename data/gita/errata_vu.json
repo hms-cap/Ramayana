@@ -1,0 +1,2330 @@
+{
+ "_comment": "Corrections to typing slips in the Kumbakonam (SARIT) text of the Bhagavadgītā, Bhīṣma Parva 25–42. Applied to data/normalized/mbh/vu.jsonl by etl/apply_errata.py (so the Mahābhārata and Gītā readers show the same text); etl/extract_gita.py then carries the 'corrected' list into the Gītā records. 'from' is the exact text of the SARIT-derived line; ' / ' in 'to' splits a line. Found by proofreading all 700 verses (Sonnet proofreaders, every entry checked by Claude Opus against the Pune text and the standard vulgate); genuine Kumbakonam readings are not changed. Reviewed by no human reader yet.",
+ "source": "sarit/SARIT-corpus mahabharata-devanagari.xml @ 1eac9ee0b055c8d11147edac4a75c76008ccc363",
+ "errata": [
+  {
+   "uid": "BG-VU-01-005",
+   "ref": "1.5",
+   "mbh_uid": "VU-6-025-005",
+   "from": "kṛntibhojaśca",
+   "to": "kuntibhojaśca",
+   "confidence": "high",
+   "evidence": "Kunti-bhoja; Pune kuntibhojaś",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-01-006",
+   "ref": "1.6",
+   "mbh_uid": "VU-6-025-006",
+   "from": "uttamaujāśca narapuṅgavaḥ",
+   "to": "uttamaujāśca vīryavān",
+   "confidence": "medium",
+   "evidence": "pāda b has 10 syllables; Gita Press and Pune read vīryavān; narapuṅgavaḥ is repeated from 1.5 (eye-skip)",
+   "by": "Opus review (scansion check)"
+  },
+  {
+   "uid": "BG-VU-01-008",
+   "ref": "1.8",
+   "mbh_uid": "VU-6-025-008",
+   "from": "aśvatthāṃmā",
+   "to": "aśvatthāmā",
+   "confidence": "high",
+   "evidence": "stray anusvara",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-01-014",
+   "ref": "1.14",
+   "mbh_uid": "VU-6-025-014",
+   "from": "syandate",
+   "to": "syandane",
+   "confidence": "high",
+   "evidence": "Pune/vulgate syandane",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-01-030",
+   "ref": "1.30",
+   "mbh_uid": "VU-6-025-030",
+   "from": "tvakvaiva",
+   "to": "tvakcaiva",
+   "confidence": "high",
+   "evidence": "Pune/vulgate tvak caiva",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-01-037",
+   "ref": "1.37",
+   "mbh_uid": "VU-6-025-037",
+   "from": "yavaṃ",
+   "to": "vayaṃ",
+   "confidence": "high",
+   "evidence": "letters swapped",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-01-038",
+   "ref": "1.38",
+   "mbh_uid": "VU-6-025-038",
+   "from": "pitradrohe",
+   "to": "mitradrohe",
+   "confidence": "high",
+   "evidence": "Pune/vulgate mitradrohe",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-01-042",
+   "ref": "1.42",
+   "mbh_uid": "VU-6-025-042",
+   "from": "kuptapiṇḍodakakriyāḥ",
+   "to": "luptapiṇḍodakakriyāḥ",
+   "confidence": "high",
+   "evidence": "Pune/vulgate lupta",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-005",
+   "ref": "2.5",
+   "mbh_uid": "VU-6-026-005",
+   "from": "bhekṣamapīha",
+   "to": "bhaikṣamapīha",
+   "confidence": "medium",
+   "evidence": "e for ai; minimal fix (Pune bhaikṣam; Gita Press bhaikṣyam, same syllable count)",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-006",
+   "ref": "2.6",
+   "mbh_uid": "VU-6-026-006",
+   "from": "caitadvīdmaḥ",
+   "to": "caitadvidmaḥ",
+   "confidence": "high",
+   "evidence": "vid-maḥ short i",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-006",
+   "ref": "2.6",
+   "mbh_uid": "VU-6-026-006",
+   "from": "yadvā jayama",
+   "to": "yadvā jayema",
+   "confidence": "high",
+   "evidence": "Pune/vulgate jayema",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-009",
+   "ref": "2.9",
+   "mbh_uid": "VU-6-026-009",
+   "from": "evamukatvā",
+   "to": "evamuktvā",
+   "confidence": "high",
+   "evidence": "stray 'a' (ukatvā); Pune and vulgate uktvā; pāda has 9 syllables, correct form 8. Kannada/Devanāgarī reproduce it faithfully (ಏವಮುಕತ್ವಾ / एवमुकत्वा)",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-009",
+   "ref": "2.9",
+   "mbh_uid": "VU-6-026-009",
+   "from": "guḍākeśaṃ",
+   "to": "guḍākeśaḥ",
+   "confidence": "high",
+   "evidence": "Pune reads guḍākeśaḥ; vulgate 'guḍākeśaḥ parantapa': Arjuna is subject, accusative is wrong (hṛṣīkeśaṃ is the object)",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-014",
+   "ref": "2.14",
+   "mbh_uid": "VU-6-026-014",
+   "from": "'nitsyāstāṃstitikṣasva",
+   "to": "'nityāstāṃstitikṣasva",
+   "confidence": "high",
+   "evidence": "'anitsyāḥ' is not a word; Pune and vulgate 'anityās' (t/y slip)",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-015",
+   "ref": "2.15",
+   "mbh_uid": "VU-6-026-015",
+   "from": "yaṃ hi vyathayantyete",
+   "to": "yaṃ hi na vyathayantyete",
+   "confidence": "high",
+   "evidence": "dropped na; pāda short",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-016",
+   "ref": "2.16",
+   "mbh_uid": "VU-6-026-016",
+   "from": "tattvadarśibhiḥka",
+   "to": "tattvadarśibhiḥ",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-020",
+   "ref": "2.20",
+   "mbh_uid": "VU-6-026-020",
+   "from": "hantaye hanyamāne",
+   "to": "hanyate hanyamāne",
+   "confidence": "high",
+   "evidence": "Pune/vulgate na hanyate hanyamāne",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-022",
+   "ref": "2.22",
+   "mbh_uid": "VU-6-026-022",
+   "from": "gṛhṇāni",
+   "to": "gṛhṇāti",
+   "confidence": "high",
+   "evidence": "Pune/vulgate gṛhṇāti",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-026",
+   "ref": "2.26",
+   "mbh_uid": "VU-6-026-026",
+   "from": "katvaṃ",
+   "to": "tvaṃ",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-028",
+   "ref": "2.28",
+   "mbh_uid": "VU-6-026-028",
+   "from": "avyaktanidhanānyena",
+   "to": "avyaktanidhanānyeva",
+   "confidence": "high",
+   "evidence": "eva; Pune/vulgate",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-029",
+   "ref": "2.29",
+   "mbh_uid": "VU-6-026-029",
+   "from": "śrṛṇoti",
+   "to": "śṛṇoti",
+   "confidence": "high",
+   "evidence": "impossible cluster",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-032",
+   "ref": "2.32",
+   "mbh_uid": "VU-6-026-032",
+   "from": "pārtha lante",
+   "to": "pārtha labhante",
+   "confidence": "high",
+   "evidence": "dropped bha",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-036",
+   "ref": "2.36",
+   "mbh_uid": "VU-6-026-036",
+   "from": "avācyavādāṃścaka bahūn",
+   "to": "avācyavādāṃśca bahūn",
+   "confidence": "high",
+   "evidence": "stray 'ka'; Pune and vulgate 'avācyavādāṃś ca bahūn'; pāda has 9 syllables, correct 8",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-039",
+   "ref": "2.39",
+   "mbh_uid": "VU-6-026-039",
+   "from": "śrṛṇu",
+   "to": "śṛṇu",
+   "confidence": "high",
+   "evidence": "impossible cluster",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-047",
+   "ref": "2.47",
+   "mbh_uid": "VU-6-026-047",
+   "from": "kadā ca na",
+   "to": "kadācana",
+   "confidence": "high",
+   "evidence": "wrongly split; Pune kadā cana",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-050",
+   "ref": "2.50",
+   "mbh_uid": "VU-6-026-050",
+   "from": "jahātīhaka",
+   "to": "jahātīha",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-061",
+   "ref": "2.61",
+   "mbh_uid": "VU-6-026-061",
+   "from": "yasyendriyāmi",
+   "to": "yasyendriyāṇi",
+   "confidence": "high",
+   "evidence": "ṇ→m",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-063",
+   "ref": "2.63",
+   "mbh_uid": "VU-6-026-063",
+   "from": "smṛtibhraṃśādbudināśo",
+   "to": "smṛtibhraṃśādbuddhināśo",
+   "confidence": "high",
+   "evidence": "dropped dh",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-02-069",
+   "ref": "2.69",
+   "mbh_uid": "VU-6-026-069",
+   "from": "jāgartiṃ",
+   "to": "jāgarti",
+   "confidence": "high",
+   "evidence": "stray anusvara",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-003",
+   "ref": "3.3",
+   "mbh_uid": "VU-6-027-003",
+   "from": "proptā",
+   "to": "proktā",
+   "confidence": "high",
+   "evidence": "Pune/vulgate proktā",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-004",
+   "ref": "3.4",
+   "mbh_uid": "VU-6-027-004",
+   "from": "puruṣo'śrute",
+   "to": "puruṣo'śnute",
+   "confidence": "high",
+   "evidence": "n/r confusion",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-006",
+   "ref": "3.6",
+   "mbh_uid": "VU-6-027-006",
+   "from": "mithyācārāḥ",
+   "to": "mithyācāraḥ",
+   "confidence": "high",
+   "evidence": "visarga; Pune/vulgate",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-007",
+   "ref": "3.7",
+   "mbh_uid": "VU-6-027-007",
+   "from": "panasā",
+   "to": "manasā",
+   "confidence": "high",
+   "evidence": "m/p",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-007",
+   "ref": "3.7",
+   "mbh_uid": "VU-6-027-007",
+   "from": "niyamyāramabhate'rjuna",
+   "to": "niyamyārabhate'rjuna",
+   "confidence": "high",
+   "evidence": "extra ma; Pune/vulgate",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-008",
+   "ref": "3.8",
+   "mbh_uid": "VU-6-027-008",
+   "from": "tvaṃ jyāyo",
+   "to": "tvaṃ karma jyāyo",
+   "confidence": "high",
+   "evidence": "dropped karma; Pune/vulgate",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-008",
+   "ref": "3.8",
+   "mbh_uid": "VU-6-027-008",
+   "from": "pratiddhyedakarmaṇaḥ",
+   "to": "prasidhyedakarmaṇaḥ",
+   "confidence": "high",
+   "evidence": "Pune/vulgate prasidhyed",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-019",
+   "ref": "3.19",
+   "mbh_uid": "VU-6-027-019",
+   "from": "purūṣaḥ",
+   "to": "pūruṣaḥ",
+   "confidence": "high",
+   "evidence": "vowel length",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-023",
+   "ref": "3.23",
+   "mbh_uid": "VU-6-027-023",
+   "from": "varnmānuvartante",
+   "to": "vartmānuvartante",
+   "confidence": "high",
+   "evidence": "vartma",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-028",
+   "ref": "3.28",
+   "mbh_uid": "VU-6-027-028",
+   "from": "guṇā'nuṇeṣu",
+   "to": "guṇā guṇeṣu",
+   "confidence": "high",
+   "evidence": "Pune/vulgate guṇā guṇeṣu",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-028",
+   "ref": "3.28",
+   "mbh_uid": "VU-6-027-028",
+   "from": "sañjate",
+   "to": "sajjate",
+   "confidence": "medium",
+   "evidence": "na sajjate (Pune, Gita Press); sañjate is not a form of √sañj (passive sajjate); same slip in 3.29 and 6.4",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-03-029",
+   "ref": "3.29",
+   "mbh_uid": "VU-6-027-029",
+   "from": "sañjante",
+   "to": "sajjante",
+   "confidence": "medium",
+   "evidence": "sajjante (Pune, Gita Press), as above",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-03-040",
+   "ref": "3.40",
+   "mbh_uid": "VU-6-027-040",
+   "from": "jñānamāvṛttya",
+   "to": "jñānamāvṛtya",
+   "confidence": "high",
+   "evidence": "extra t",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-042",
+   "ref": "3.42",
+   "mbh_uid": "VU-6-027-042",
+   "from": "indriyāmi",
+   "to": "indriyāṇi",
+   "confidence": "high",
+   "evidence": "ṇ→m",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-03-043",
+   "ref": "3.43",
+   "mbh_uid": "VU-6-027-043",
+   "from": "buddhāḥ",
+   "to": "buddhvā",
+   "confidence": "high",
+   "evidence": "Pune/vulgate buddhvā",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-04-002",
+   "ref": "4.2",
+   "mbh_uid": "VU-6-028-002",
+   "from": "rājarṣayo'viduḥ",
+   "to": "rājarṣayo viduḥ",
+   "confidence": "high",
+   "evidence": "vulgate rājarṣayo viduḥ; pāda scans 8",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-04-009",
+   "ref": "4.9",
+   "mbh_uid": "VU-6-028-009",
+   "from": "tvaktvā",
+   "to": "tyaktvā",
+   "confidence": "high",
+   "evidence": "y→v",
+   "by": "Sonnet proofreader r1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-04-014",
+   "ref": "4.14",
+   "mbh_uid": "VU-6-028-014",
+   "from": "limpantika",
+   "to": "limpanti",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-04-033",
+   "ref": "4.33",
+   "mbh_uid": "VU-6-028-033",
+   "from": "yajājjñānayajñaḥ",
+   "to": "yajñājjñānayajñaḥ",
+   "confidence": "high",
+   "evidence": "'yajāj' missing ñ; Pune and vulgate 'yajñāj jñānayajñaḥ'. Kannada ಯಜಾಜ್ಜ್ಞಾನಯಜ್ಞಃ should be ಯಜ್ಞಾಜ್ಜ್ಞಾನಯಜ್ಞಃ",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-04-037",
+   "ref": "4.37",
+   "mbh_uid": "VU-6-028-037",
+   "from": "bhasmāsātkurute'rjuna",
+   "to": "bhasmasātkurute'rjuna",
+   "confidence": "high",
+   "evidence": "wrong vowel length 'bhasmāsāt'; Pune and vulgate bhasmasāt (cf. pāda d bhasmasāt, which is correct in the same verse)",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-04-037",
+   "ref": "4.37",
+   "mbh_uid": "VU-6-028-037",
+   "from": "bhasmasātkurute yathā",
+   "to": "bhasmasātkurute tathā",
+   "confidence": "high",
+   "evidence": "correlative of 'yathaidhāṃsi' in pāda a is tathā; Pune and standard vulgate read 'tathā' (yathā…yathā is not the Gītā text)",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-05-001",
+   "ref": "5.1",
+   "mbh_uid": "VU-6-029-001",
+   "from": "kapunaryogaṃ",
+   "to": "punaryogaṃ",
+   "confidence": "high",
+   "evidence": "stray ka; Pune/vulgate punar yogaṃ",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-05-008",
+   "ref": "5.8",
+   "mbh_uid": "VU-6-029-008",
+   "from": "annaśran",
+   "to": "annaśnan",
+   "confidence": "high",
+   "evidence": "n/r confusion; aśnan",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-05-009",
+   "ref": "5.9",
+   "mbh_uid": "VU-6-029-009",
+   "from": "nṛnmiṣan",
+   "to": "nunmiṣan",
+   "confidence": "high",
+   "evidence": "unmiṣan",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-05-020",
+   "ref": "5.20",
+   "mbh_uid": "VU-6-029-020",
+   "from": "vyāpya",
+   "to": "prāpya",
+   "confidence": "high",
+   "evidence": "priyaṃ prāpya",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-05-021",
+   "ref": "5.21",
+   "mbh_uid": "VU-6-029-021",
+   "from": "kṣayyamaśrute",
+   "to": "kṣayamaśnute",
+   "confidence": "high",
+   "evidence": "akṣayam aśnute; n/r",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-05-028",
+   "ref": "5.28",
+   "mbh_uid": "VU-6-029-028",
+   "from": "parāyaṇaḥ vigatecchā",
+   "to": "parāyaṇaḥ / vigatecchā",
+   "confidence": "high",
+   "evidence": "half-verse break missing: the verse was one line of 32 syllables",
+   "by": "Opus review (scansion check)"
+  },
+  {
+   "uid": "BG-VU-06-002",
+   "ref": "6.2",
+   "mbh_uid": "VU-6-030-002",
+   "from": "asaṃnyastasiṃkalpo",
+   "to": "asaṃnyastasaṃkalpo",
+   "confidence": "high",
+   "evidence": "saṃkalpa",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-004",
+   "ref": "6.4",
+   "mbh_uid": "VU-6-030-004",
+   "from": "anuṣañjate",
+   "to": "anuṣajjate",
+   "confidence": "medium",
+   "evidence": "Pune/vulgate anuṣajjate; may be typist nasal slip",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-008",
+   "ref": "6.8",
+   "mbh_uid": "VU-6-030-008",
+   "from": "samaloṣṭhāśmakāñcanaḥ",
+   "to": "samaloṣṭāśmakāñcanaḥ",
+   "confidence": "high",
+   "evidence": "'loṣṭha' is not the word; Pune and vulgate 'loṣṭāśma' (ṭ/ṭh confusion)",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-013",
+   "ref": "6.13",
+   "mbh_uid": "VU-6-030-013",
+   "from": "cānavalokathan",
+   "to": "cānavalokayan",
+   "confidence": "high",
+   "evidence": "y/th",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-014",
+   "ref": "6.14",
+   "mbh_uid": "VU-6-030-014",
+   "from": "pranaḥ",
+   "to": "manaḥ",
+   "confidence": "high",
+   "evidence": "manaḥ saṃyamya",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-016",
+   "ref": "6.16",
+   "mbh_uid": "VU-6-030-016",
+   "from": "nātyaśrata",
+   "to": "nātyaśnata",
+   "confidence": "high",
+   "evidence": "n/r confusion",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-016",
+   "ref": "6.16",
+   "mbh_uid": "VU-6-030-016",
+   "from": "svapraśīla",
+   "to": "svapnaśīla",
+   "confidence": "high",
+   "evidence": "svapnaśīlasya",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-017",
+   "ref": "6.17",
+   "mbh_uid": "VU-6-030-017",
+   "from": "vavodha",
+   "to": "vabodha",
+   "confidence": "high",
+   "evidence": "b/v",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-018",
+   "ref": "6.18",
+   "mbh_uid": "VU-6-030-018",
+   "from": "nispṛhaḥ",
+   "to": "niḥspṛhaḥ",
+   "confidence": "high",
+   "evidence": "visarga dropped",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-021",
+   "ref": "6.21",
+   "mbh_uid": "VU-6-030-021",
+   "from": "mukhamātyantikaṃ",
+   "to": "sukhamātyantikaṃ",
+   "confidence": "high",
+   "evidence": "sukham",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-021",
+   "ref": "6.21",
+   "mbh_uid": "VU-6-030-021",
+   "from": "tadvuddhi",
+   "to": "tadbuddhi",
+   "confidence": "high",
+   "evidence": "buddhi",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-023",
+   "ref": "6.23",
+   "mbh_uid": "VU-6-030-023",
+   "from": "saṃyogavayogaṃ",
+   "to": "saṃyogaviyogaṃ",
+   "confidence": "high",
+   "evidence": "viyogaṃ",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-024",
+   "ref": "6.24",
+   "mbh_uid": "VU-6-030-024",
+   "from": "vinivamya",
+   "to": "viniyamya",
+   "confidence": "high",
+   "evidence": "niyamya",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-025",
+   "ref": "6.25",
+   "mbh_uid": "VU-6-030-025",
+   "from": "uparamedbhuddhyā",
+   "to": "uparamedbuddhyā",
+   "confidence": "high",
+   "evidence": "buddhyā",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-027",
+   "ref": "6.27",
+   "mbh_uid": "VU-6-030-027",
+   "from": "mukhamuttamam",
+   "to": "sukhamuttamam",
+   "confidence": "high",
+   "evidence": "sukham uttamam",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-027",
+   "ref": "6.27",
+   "mbh_uid": "VU-6-030-027",
+   "from": "ścāntarajasaṃ",
+   "to": "śāntarajasaṃ",
+   "confidence": "high",
+   "evidence": "śāntarajasam",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-028",
+   "ref": "6.28",
+   "mbh_uid": "VU-6-030-028",
+   "from": "yuñcayevaṃ",
+   "to": "yuñjannevaṃ",
+   "confidence": "high",
+   "evidence": "yuñjann evaṃ",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-028",
+   "ref": "6.28",
+   "mbh_uid": "VU-6-030-028",
+   "from": "vimatakalmaṣaḥka",
+   "to": "vigatakalmaṣaḥ",
+   "confidence": "high",
+   "evidence": "vigata; stray ka",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-028",
+   "ref": "6.28",
+   "mbh_uid": "VU-6-030-028",
+   "from": "mukhena",
+   "to": "sukhena",
+   "confidence": "high",
+   "evidence": "sukhena",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-028",
+   "ref": "6.28",
+   "mbh_uid": "VU-6-030-028",
+   "from": "brahmasaṃskaparśam",
+   "to": "brahmasaṃsparśam",
+   "confidence": "high",
+   "evidence": "known stray ka slip",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-028",
+   "ref": "6.28",
+   "mbh_uid": "VU-6-030-028",
+   "from": "sukhamaśrute",
+   "to": "sukhamaśnute",
+   "confidence": "high",
+   "evidence": "aśnute",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-029",
+   "ref": "6.29",
+   "mbh_uid": "VU-6-030-029",
+   "from": "kayogayuktātmā",
+   "to": "yogayuktātmā",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-032",
+   "ref": "6.32",
+   "mbh_uid": "VU-6-030-032",
+   "from": "sukhaṃka",
+   "to": "sukhaṃ",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-032",
+   "ref": "6.32",
+   "mbh_uid": "VU-6-030-032",
+   "from": "maramo",
+   "to": "paramo",
+   "confidence": "high",
+   "evidence": "paramo mataḥ",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-038",
+   "ref": "6.38",
+   "mbh_uid": "VU-6-030-038",
+   "from": "apratikaṣṭho",
+   "to": "apratiṣṭho",
+   "confidence": "high",
+   "evidence": "apratiṣṭho",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-042",
+   "ref": "6.42",
+   "mbh_uid": "VU-6-030-042",
+   "from": "yadīdṛśyam",
+   "to": "yadīdṛśam",
+   "confidence": "high",
+   "evidence": "īdṛśam",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-044",
+   "ref": "6.44",
+   "mbh_uid": "VU-6-030-044",
+   "from": "avaśe'pi",
+   "to": "avaśo'pi",
+   "confidence": "high",
+   "evidence": "avaśo 'pi",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-045",
+   "ref": "6.45",
+   "mbh_uid": "VU-6-030-045",
+   "from": "anekanmasaṃsiddhas",
+   "to": "anekajanmasaṃsiddhas",
+   "confidence": "high",
+   "evidence": "janma dropped j",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-045",
+   "ref": "6.45",
+   "mbh_uid": "VU-6-030-045",
+   "from": "kilviṣaḥ",
+   "to": "kilbiṣaḥ",
+   "confidence": "high",
+   "evidence": "b/v; kilbiṣa",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-046",
+   "ref": "6.46",
+   "mbh_uid": "VU-6-030-046",
+   "from": "jñānibhyopi",
+   "to": "jñānibhyo'pi",
+   "confidence": "high",
+   "evidence": "avagraha lost",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-06-046",
+   "ref": "6.46",
+   "mbh_uid": "VU-6-030-046",
+   "from": "bhāvārjuna",
+   "to": "bhavārjuna",
+   "confidence": "high",
+   "evidence": "bhavārjuna",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-07-004",
+   "ref": "7.4",
+   "mbh_uid": "VU-6-031-004",
+   "from": "svaṃ mano",
+   "to": "khaṃ mano",
+   "confidence": "medium",
+   "evidence": "Pune and standard vulgate read 'khaṃ' (ether); 'svaṃ' is a kh/sv confusion. Pāda syllable count identical (8), so no metre cue",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-07-004",
+   "ref": "7.4",
+   "mbh_uid": "VU-6-031-004",
+   "from": "ahaṃkāra itī yaṃ me",
+   "to": "ahaṃkāra itīyaṃ me",
+   "confidence": "high",
+   "evidence": "word wrongly split 'itī yaṃ'; Pune 'itīyaṃ'; the stray space also shows in Kannada (ಇತೀ ಯಂ) and Devanāgarī (इती यं)",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-07-008",
+   "ref": "7.8",
+   "mbh_uid": "VU-6-031-008",
+   "from": "hamaṃpsu",
+   "to": "hamapsu",
+   "confidence": "high",
+   "evidence": "apsu",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-07-015",
+   "ref": "7.15",
+   "mbh_uid": "VU-6-031-015",
+   "from": "tuṣkṛtino",
+   "to": "duṣkṛtino",
+   "confidence": "high",
+   "evidence": "duṣkṛtinaḥ",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-07-016",
+   "ref": "7.16",
+   "mbh_uid": "VU-6-031-016",
+   "from": "cutrarvidhā",
+   "to": "caturvidhā",
+   "confidence": "high",
+   "evidence": "caturvidhā",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-07-018",
+   "ref": "7.18",
+   "mbh_uid": "VU-6-031-018",
+   "from": "āsthitaḥka",
+   "to": "āsthitaḥ",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-07-028",
+   "ref": "7.28",
+   "mbh_uid": "VU-6-031-028",
+   "from": "yoṣāṃ",
+   "to": "yeṣāṃ",
+   "confidence": "high",
+   "evidence": "yeṣāṃ",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-07-028",
+   "ref": "7.28",
+   "mbh_uid": "VU-6-031-028",
+   "from": "nirmukta bhajante",
+   "to": "nirmuktā bhajante",
+   "confidence": "high",
+   "evidence": "nirmuktā",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-001",
+   "ref": "8.1",
+   "mbh_uid": "VU-6-032-001",
+   "from": "puruṣottam",
+   "to": "puruṣottama",
+   "confidence": "high",
+   "evidence": "vocative; pāda 11",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-002",
+   "ref": "8.2",
+   "mbh_uid": "VU-6-032-002",
+   "from": "madhusīdana",
+   "to": "madhusūdana",
+   "confidence": "high",
+   "evidence": "madhusūdana",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-008",
+   "ref": "8.8",
+   "mbh_uid": "VU-6-032-008",
+   "from": "cetasā'nānyagāminā",
+   "to": "cetasānānyagāminā",
+   "confidence": "medium",
+   "evidence": "Pune/vulgate cetasā nānyagāminā; avagraha spurious",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-013",
+   "ref": "8.13",
+   "mbh_uid": "VU-6-032-013",
+   "from": "tyajandeṃ",
+   "to": "tyajandehaṃ",
+   "confidence": "high",
+   "evidence": "dehaṃ",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-017",
+   "ref": "8.17",
+   "mbh_uid": "VU-6-032-017",
+   "from": "yugasahasrāṃ",
+   "to": "yugasahasrāntāṃ",
+   "confidence": "high",
+   "evidence": "sahasrāntāṃ",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-017",
+   "ref": "8.17",
+   "mbh_uid": "VU-6-032-017",
+   "from": "yugasahasrāntāṃ tāṃ te'horātravido",
+   "to": "yugasahasrāntāṃ te'horātravido",
+   "confidence": "high",
+   "evidence": "tāṃ written twice; pāda has 9 syllables; Pune and Gita Press rātriṃ yugasahasrāntāṃ te'horātravido janāḥ",
+   "by": "Opus review (scansion check)"
+  },
+  {
+   "uid": "BG-VU-08-018",
+   "ref": "8.18",
+   "mbh_uid": "VU-6-032-018",
+   "from": "rātryāme pralīyante",
+   "to": "rātryāgame pralīyante",
+   "confidence": "high",
+   "evidence": "'ga' dropped; Pune and vulgate rātryāgame (opposite of aharāgame in pāda b); pāda has 7 syllables, correct 8",
+   "by": "Sonnet proofreader findings1, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-019",
+   "ref": "8.19",
+   "mbh_uid": "VU-6-032-019",
+   "from": "rātryagame",
+   "to": "rātryāgame",
+   "confidence": "high",
+   "evidence": "rātryāgame",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-019",
+   "ref": "8.19",
+   "mbh_uid": "VU-6-032-019",
+   "from": "pārthata",
+   "to": "pārtha",
+   "confidence": "high",
+   "evidence": "pārtha; stray 'ta'",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-020",
+   "ref": "8.20",
+   "mbh_uid": "VU-6-032-020",
+   "from": "bhūteṣuka",
+   "to": "bhūteṣu",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-022",
+   "ref": "8.22",
+   "mbh_uid": "VU-6-032-022",
+   "from": "yasyāntasthāni",
+   "to": "yasyāntaḥsthāni",
+   "confidence": "high",
+   "evidence": "antaḥsthāni",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-08-025",
+   "ref": "8.25",
+   "mbh_uid": "VU-6-032-025",
+   "from": "ṣaṇmasā",
+   "to": "ṣaṇmāsā",
+   "confidence": "high",
+   "evidence": "ṣaṇmāsā",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-003",
+   "ref": "9.3",
+   "mbh_uid": "VU-6-033-003",
+   "from": "aśraddadhānāṃ",
+   "to": "aśraddadhānāḥ",
+   "confidence": "high",
+   "evidence": "aśraddadhānāḥ puruṣāḥ",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-004",
+   "ref": "9.4",
+   "mbh_uid": "VU-6-033-004",
+   "from": "avasthitaḥka",
+   "to": "avasthitaḥ",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-015",
+   "ref": "9.15",
+   "mbh_uid": "VU-6-033-015",
+   "from": "cāpyante",
+   "to": "cāpyanye",
+   "confidence": "high",
+   "evidence": "Pune/vulgate cāpy anye",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-015",
+   "ref": "9.15",
+   "mbh_uid": "VU-6-033-015",
+   "from": "pṛthaktkavena",
+   "to": "pṛthaktvena",
+   "confidence": "high",
+   "evidence": "stray ka/t; pṛthaktvena",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-015",
+   "ref": "9.15",
+   "mbh_uid": "VU-6-033-015",
+   "from": "viśvatomum",
+   "to": "viśvatomukham",
+   "confidence": "high",
+   "evidence": "dropped kha",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-020",
+   "ref": "9.20",
+   "mbh_uid": "VU-6-033-020",
+   "from": "yajñeriṣṭvā",
+   "to": "yajñairiṣṭvā",
+   "confidence": "high",
+   "evidence": "yajñair iṣṭvā",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-020",
+   "ref": "9.20",
+   "mbh_uid": "VU-6-033-020",
+   "from": "maśranti",
+   "to": "maśnanti",
+   "confidence": "high",
+   "evidence": "aśnanti; n/r confusion",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-021",
+   "ref": "9.21",
+   "mbh_uid": "VU-6-033-021",
+   "from": "kṣīṇo",
+   "to": "kṣīṇe",
+   "confidence": "high",
+   "evidence": "kṣīṇe puṇye",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-021",
+   "ref": "9.21",
+   "mbh_uid": "VU-6-033-021",
+   "from": "partyalokaṃ",
+   "to": "martyalokaṃ",
+   "confidence": "high",
+   "evidence": "martyaloka",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-025",
+   "ref": "9.25",
+   "mbh_uid": "VU-6-033-025",
+   "from": "pitṛvratāḥ bhūtāni",
+   "to": "pitṛvratāḥ / bhūtāni",
+   "confidence": "high",
+   "evidence": "half-verse break missing (32 syllables in one line)",
+   "by": "Opus review (scansion check)"
+  },
+  {
+   "uid": "BG-VU-09-025",
+   "ref": "9.25",
+   "mbh_uid": "VU-6-033-025",
+   "from": "madyājinopi",
+   "to": "madyājino'pi",
+   "confidence": "high",
+   "evidence": "avagraha lost: madyājino 'pi (Pune, Gita Press)",
+   "by": "Opus review (scansion check)"
+  },
+  {
+   "uid": "BG-VU-09-027",
+   "ref": "9.27",
+   "mbh_uid": "VU-6-033-027",
+   "from": "yadaśrāsi",
+   "to": "yadaśnāsi",
+   "confidence": "high",
+   "evidence": "n/r confusion",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-09-031",
+   "ref": "9.31",
+   "mbh_uid": "VU-6-033-031",
+   "from": "nigacchati kaunteya",
+   "to": "nigacchati / kaunteya",
+   "confidence": "high",
+   "evidence": "half-verse break missing (32 syllables in one line)",
+   "by": "Opus review (scansion check)"
+  },
+  {
+   "uid": "BG-VU-10-001",
+   "ref": "10.1",
+   "mbh_uid": "VU-6-034-001",
+   "from": "śrṛṇu",
+   "to": "śṛṇu",
+   "confidence": "high",
+   "evidence": "impossible cluster",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-10-004",
+   "ref": "10.4",
+   "mbh_uid": "VU-6-034-004",
+   "from": "bhavo bhavo",
+   "to": "bhavo'bhāvo",
+   "confidence": "high",
+   "evidence": "bhavo 'bhāvo",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-10-006",
+   "ref": "10.6",
+   "mbh_uid": "VU-6-034-006",
+   "from": "madbhāva mānasā",
+   "to": "madbhāvā mānasā",
+   "confidence": "high",
+   "evidence": "madbhāvā",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-10-013",
+   "ref": "10.13",
+   "mbh_uid": "VU-6-034-013",
+   "from": "tathāka",
+   "to": "tathā",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-10-014",
+   "ref": "10.14",
+   "mbh_uid": "VU-6-034-014",
+   "from": "sarvatemadṛtaṃ",
+   "to": "sarvametadṛtaṃ",
+   "confidence": "high",
+   "evidence": "sarvam etad ṛtaṃ",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-10-020",
+   "ref": "10.20",
+   "mbh_uid": "VU-6-034-020",
+   "from": "sarvabhūtāśayasthitaḥka",
+   "to": "sarvabhūtāśayasthitaḥ",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-10-030",
+   "ref": "10.30",
+   "mbh_uid": "VU-6-034-030",
+   "from": "pariṇām",
+   "to": "pakṣiṇām",
+   "confidence": "high",
+   "evidence": "pakṣiṇām",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-10-034",
+   "ref": "10.34",
+   "mbh_uid": "VU-6-034-034",
+   "from": "vākka",
+   "to": "vākca",
+   "confidence": "high",
+   "evidence": "vāk ca",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-10-035",
+   "ref": "10.35",
+   "mbh_uid": "VU-6-034-035",
+   "from": "katathā",
+   "to": "tathā",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-10-041",
+   "ref": "10.41",
+   "mbh_uid": "VU-6-034-041",
+   "from": "yadyadvibhūtitatsattvaṃ",
+   "to": "yadyadvibhūtimatsattvaṃ",
+   "confidence": "high",
+   "evidence": "vibhūtimat",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-008",
+   "ref": "11.8",
+   "mbh_uid": "VU-6-035-008",
+   "from": "śakṣyase",
+   "to": "śakyase",
+   "confidence": "high",
+   "evidence": "śakyase",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-009",
+   "ref": "11.9",
+   "mbh_uid": "VU-6-035-009",
+   "from": "maramaṃ",
+   "to": "paramaṃ",
+   "confidence": "high",
+   "evidence": "paramaṃ",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-010",
+   "ref": "11.10",
+   "mbh_uid": "VU-6-035-010",
+   "from": "divyābhāraṇaṃ",
+   "to": "divyābharaṇaṃ",
+   "confidence": "medium",
+   "evidence": "abharaṇa short a",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-010",
+   "ref": "11.10",
+   "mbh_uid": "VU-6-035-010",
+   "from": "anekavakranayanam",
+   "to": "anekavaktranayanam",
+   "confidence": "high",
+   "evidence": "vaktra 'mouth' (Pune, Gita Press); the source writes vakra 'crooked' in all seven places in ch. 11",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-11-016",
+   "ref": "11.16",
+   "mbh_uid": "VU-6-035-016",
+   "from": "bāhūdaravakranetraṃ",
+   "to": "bāhūdaravaktranetraṃ",
+   "confidence": "high",
+   "evidence": "vaktra, as above",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-11-017",
+   "ref": "11.17",
+   "mbh_uid": "VU-6-035-017",
+   "from": "aprameyayam",
+   "to": "aprameyam",
+   "confidence": "high",
+   "evidence": "extra ya",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-019",
+   "ref": "11.19",
+   "mbh_uid": "VU-6-035-019",
+   "from": "dīptahutāśavakraṃ",
+   "to": "dīptahutāśavaktraṃ",
+   "confidence": "high",
+   "evidence": "Pune reads vaktraṃ; vulgate dīptahutāśavaktraṃ; vakra (crooked) is a t-drop slip. Kannada ದೀಪ್ತಹುತಾಶವಕ್ರಂ -> ವಕ್ತ್ರಂ",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-020",
+   "ref": "11.20",
+   "mbh_uid": "VU-6-035-020",
+   "from": "tadevaṃ",
+   "to": "tavedaṃ",
+   "confidence": "high",
+   "evidence": "vulgate rūpamugraṃ tavedaṃ; Pune tavograṃ",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-021",
+   "ref": "11.21",
+   "mbh_uid": "VU-6-035-021",
+   "from": "gṛṇānti",
+   "to": "gṛṇanti",
+   "confidence": "high",
+   "evidence": "gṛṇanti",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-023",
+   "ref": "11.23",
+   "mbh_uid": "VU-6-035-023",
+   "from": "bahuvakranetraṃ",
+   "to": "bahuvaktranetraṃ",
+   "confidence": "high",
+   "evidence": "vaktra, as above",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-11-025",
+   "ref": "11.25",
+   "mbh_uid": "VU-6-035-025",
+   "from": "sukhāni",
+   "to": "mukhāni",
+   "confidence": "high",
+   "evidence": "mukhāni",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-027",
+   "ref": "11.27",
+   "mbh_uid": "VU-6-035-027",
+   "from": "vakrāṇi",
+   "to": "vaktrāṇi",
+   "confidence": "high",
+   "evidence": "vaktrāṇi, as above",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-11-028",
+   "ref": "11.28",
+   "mbh_uid": "VU-6-035-028",
+   "from": "vakrāṇyabhivijvalanti",
+   "to": "vaktrāṇyabhivijvalanti",
+   "confidence": "high",
+   "evidence": "vaktrāṇy abhivijvalanti, as above",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-11-029",
+   "ref": "11.29",
+   "mbh_uid": "VU-6-035-029",
+   "from": "vakrāṇi",
+   "to": "vaktrāṇi",
+   "confidence": "high",
+   "evidence": "vaktrāṇi, as above",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-11-030",
+   "ref": "11.30",
+   "mbh_uid": "VU-6-035-030",
+   "from": "jvaladbhiḥka",
+   "to": "jvaladbhiḥ",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-034",
+   "ref": "11.34",
+   "mbh_uid": "VU-6-035-034",
+   "from": "jetāni",
+   "to": "jetāsi",
+   "confidence": "high",
+   "evidence": "yudhyasva jetāsi raṇe sapatnān (Pune and vulgate); yuddhyasva kept as the print's spelling",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-11-039",
+   "ref": "11.39",
+   "mbh_uid": "VU-6-035-039",
+   "from": "namaste'tu",
+   "to": "namaste'stu",
+   "confidence": "high",
+   "evidence": "namas te 'stu",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-042",
+   "ref": "11.42",
+   "mbh_uid": "VU-6-035-042",
+   "from": "yaccāpahāsārtham",
+   "to": "yaccāvahāsārtham",
+   "confidence": "high",
+   "evidence": "avahāsa",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-043",
+   "ref": "11.43",
+   "mbh_uid": "VU-6-035-043",
+   "from": "pūjyaś gururgarīyān",
+   "to": "pūjyaśca gururgarīyān",
+   "confidence": "high",
+   "evidence": "Pune pūjyaś ca gurur garīyān; vulgate same; ca is missing, pāda has 10 syllables; ś+g cluster impossible, so site shows ಪೂಜ್ಯಶ್ಗುರುರ್ / पूज्यश्गुरुर्",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-043",
+   "ref": "11.43",
+   "mbh_uid": "VU-6-035-043",
+   "from": "lokatraye'pyapratimaprabhāvaḥ",
+   "to": "lokatraye'pyapratimaprabhāva",
+   "confidence": "medium",
+   "evidence": "vocative prabhāva in Pune and Gita Press; visarga looks like a stray addition (does not change metre).",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-048",
+   "ref": "11.48",
+   "mbh_uid": "VU-6-035-048",
+   "from": "na veda yajñādhyayanair",
+   "to": "na vedayajñādhyayanair",
+   "confidence": "medium",
+   "evidence": "wrongly split compound",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-11-049",
+   "ref": "11.49",
+   "mbh_uid": "VU-6-035-049",
+   "from": "īdṛṅbhamedam",
+   "to": "īdṛṅmamedam",
+   "confidence": "high",
+   "evidence": "īdṛṅ mamedam",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-12-004",
+   "ref": "12.4",
+   "mbh_uid": "VU-6-036-004",
+   "from": "ratāḥka",
+   "to": "ratāḥ",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-12-005",
+   "ref": "12.5",
+   "mbh_uid": "VU-6-036-005",
+   "from": "gadirduḥkhaṃ",
+   "to": "gatirduḥkhaṃ",
+   "confidence": "high",
+   "evidence": "gatir",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-12-008",
+   "ref": "12.8",
+   "mbh_uid": "VU-6-036-008",
+   "from": "śaṃśakayaḥ",
+   "to": "saṃśayaḥ",
+   "confidence": "high",
+   "evidence": "saṃśayaḥ",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-12-010",
+   "ref": "12.10",
+   "mbh_uid": "VU-6-036-010",
+   "from": "avāpyyasi",
+   "to": "avāpsyasi",
+   "confidence": "high",
+   "evidence": "avāpsyasi",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-12-020",
+   "ref": "12.20",
+   "mbh_uid": "VU-6-036-020",
+   "from": "dharmāmṛtam",
+   "to": "dharmyāmṛtam",
+   "confidence": "high",
+   "evidence": "dharmyāmṛtam",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-13-004",
+   "ref": "13.4",
+   "mbh_uid": "VU-6-037-004",
+   "from": "yādṛk yadvikāri",
+   "to": "yādṛk ca yadvikāri",
+   "confidence": "high",
+   "evidence": "dropped ca; metre",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-13-004",
+   "ref": "13.4",
+   "mbh_uid": "VU-6-037-004",
+   "from": "śrṛṇu",
+   "to": "śṛṇu",
+   "confidence": "high",
+   "evidence": "impossible cluster",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-13-013",
+   "ref": "13.13",
+   "mbh_uid": "VU-6-037-013",
+   "from": "yajjñātvā'mṛtamaśrute",
+   "to": "yajjñātvā'mṛtamaśnute",
+   "confidence": "high",
+   "evidence": "Pune aśnute; vulgate aśnute (√aś, 'attains'); aśrute is an n/r confusion.",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-13-026",
+   "ref": "13.26",
+   "mbh_uid": "VU-6-037-026",
+   "from": "upāsate te'pi",
+   "to": "upāsate / te'pi",
+   "confidence": "high",
+   "evidence": "merged record: two verses (print 13.26 and 13.27) keyed as one line; split into half-verses",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-13-026",
+   "ref": "13.26",
+   "mbh_uid": "VU-6-037-026",
+   "from": "śrutiparāyaṇāḥ - - ayāvatsaṃjāyate",
+   "to": "śrutiparāyaṇāḥ / yāvatsaṃjāyate",
+   "confidence": "high",
+   "evidence": "'- -' joins the two verses; stray a before yāvat (Pune yāvat saṃjāyate)",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-13-026",
+   "ref": "13.26",
+   "mbh_uid": "VU-6-037-026",
+   "from": "sthāvarajaṅgamam kṣetra",
+   "to": "sthāvarajaṅgamam / kṣetra",
+   "confidence": "high",
+   "evidence": "half-verse break",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-13-030",
+   "ref": "13.30",
+   "mbh_uid": "VU-6-037-030",
+   "from": "pratyatyaiva",
+   "to": "prakṛtyaiva",
+   "confidence": "high",
+   "evidence": "prakṛtyaiva",
+   "by": "Sonnet proofreader r3, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-14-004",
+   "ref": "14.4",
+   "mbh_uid": "VU-6-038-004",
+   "from": "saṃbhavantiḥ yāḥ",
+   "to": "saṃbhavanti yāḥ",
+   "confidence": "high",
+   "evidence": "stray ḥ; Pune/vulgate saṃbhavanti yāḥ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-14-018",
+   "ref": "14.18",
+   "mbh_uid": "VU-6-038-018",
+   "from": "agho gacchanti",
+   "to": "adho gacchanti",
+   "confidence": "high",
+   "evidence": "Pune/vulgate adho",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-14-020",
+   "ref": "14.20",
+   "mbh_uid": "VU-6-038-020",
+   "from": "maśrute",
+   "to": "maśnute",
+   "confidence": "high",
+   "evidence": "n/r confusion; aśnute",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-14-021",
+   "ref": "14.21",
+   "mbh_uid": "VU-6-038-021",
+   "from": "trīnguṇānetānīto",
+   "to": "trīnguṇānetānatīto",
+   "confidence": "high",
+   "evidence": "Pune etān atīto; vulgate etānatīto. 'atī' dropped: pāda has 10 syllables instead of 11 and 'etānīto' is meaningless. Site shows ಗುಣಾನೇತಾನೀತೋ.",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-14-026",
+   "ref": "14.26",
+   "mbh_uid": "VU-6-038-026",
+   "from": "brahma bhūyāya",
+   "to": "brahmabhūyāya",
+   "confidence": "medium",
+   "evidence": "compound wrongly split; vulgate brahmabhūyāya",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-15-003",
+   "ref": "15.3",
+   "mbh_uid": "VU-6-039-003",
+   "from": "chitvā",
+   "to": "chittvā",
+   "confidence": "high",
+   "evidence": "dropped t; Pune/vulgate chittvā (pāda needs 11)",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-15-005",
+   "ref": "15.5",
+   "mbh_uid": "VU-6-039-005",
+   "from": "dvadvairvimuktāḥ",
+   "to": "dvaṃdvairvimuktāḥ",
+   "confidence": "high",
+   "evidence": "dropped nasal; Pune dvaṃdvair, vulgate dvandvair",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-15-012",
+   "ref": "15.12",
+   "mbh_uid": "VU-6-039-012",
+   "from": "mārmakam",
+   "to": "māmakam",
+   "confidence": "high",
+   "evidence": "stray r; Pune/vulgate māmakam",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-15-013",
+   "ref": "15.13",
+   "mbh_uid": "VU-6-039-013",
+   "from": "dhārayamyaham",
+   "to": "dhārayāmyaham",
+   "confidence": "high",
+   "evidence": "vowel length; dhārayāmy aham",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-15-018",
+   "ref": "15.18",
+   "mbh_uid": "VU-6-039-018",
+   "from": "prasthitaḥ",
+   "to": "prathitaḥ",
+   "confidence": "high",
+   "evidence": "Pune/vulgate prathitaḥ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-15-020",
+   "ref": "15.20",
+   "mbh_uid": "VU-6-039-020",
+   "from": "evadbuddhvā",
+   "to": "etadbuddhvā",
+   "confidence": "high",
+   "evidence": "etad buddhvā in Pune/vulgate",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-16-002",
+   "ref": "16.2",
+   "mbh_uid": "VU-6-040-002",
+   "from": "bhūteṣvalolutvaṃ",
+   "to": "bhūteṣvaloluptvaṃ",
+   "confidence": "high",
+   "evidence": "dropped p; Pune/vulgate aloluptvam; pāda short by 1 syllable",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-16-012",
+   "ref": "16.12",
+   "mbh_uid": "VU-6-040-012",
+   "from": "īhanto",
+   "to": "īhante",
+   "confidence": "high",
+   "evidence": "Pune/vulgate īhante",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-16-015",
+   "ref": "16.15",
+   "mbh_uid": "VU-6-040-015",
+   "from": "ko'nyosti",
+   "to": "ko'nyo'sti",
+   "confidence": "medium",
+   "evidence": "dropped avagraha",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-16-016",
+   "ref": "16.16",
+   "mbh_uid": "VU-6-040-016",
+   "from": "vibhrānta mohajāla",
+   "to": "vibhrāntā mohajāla",
+   "confidence": "high",
+   "evidence": "vowel length; vibhrāntā",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-16-018",
+   "ref": "16.18",
+   "mbh_uid": "VU-6-040-018",
+   "from": "māmatmaparadeheṣu",
+   "to": "māmātmaparadeheṣu",
+   "confidence": "high",
+   "evidence": "vowel length; mām ātma-",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-001",
+   "ref": "17.1",
+   "mbh_uid": "VU-6-041-001",
+   "from": "śraddhayānvitā",
+   "to": "śraddhayānvitāḥ",
+   "confidence": "high",
+   "evidence": "dropped visarga; pāda scans",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-001",
+   "ref": "17.1",
+   "mbh_uid": "VU-6-041-001",
+   "from": "sajastamaḥ",
+   "to": "rajastamaḥ",
+   "confidence": "high",
+   "evidence": "r/s confusion",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-002",
+   "ref": "17.2",
+   "mbh_uid": "VU-6-041-002",
+   "from": "tāṃ śrṛṇu",
+   "to": "tāṃ śṛṇu",
+   "confidence": "high",
+   "evidence": "impossible śrṛ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-007",
+   "ref": "17.7",
+   "mbh_uid": "VU-6-041-007",
+   "from": "bhedamimaṃ śrṛṇu",
+   "to": "bhedamimaṃ śṛṇu",
+   "confidence": "high",
+   "evidence": "impossible śrṛ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-008",
+   "ref": "17.8",
+   "mbh_uid": "VU-6-041-008",
+   "from": "rasyāḥsrigdhāḥ",
+   "to": "rasyāḥsnigdhāḥ",
+   "confidence": "high",
+   "evidence": "snigdhāḥ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-012",
+   "ref": "17.12",
+   "mbh_uid": "VU-6-041-012",
+   "from": "abhisaṃghāya",
+   "to": "abhisaṃdhāya",
+   "confidence": "high",
+   "evidence": "Pune/vulgate abhisaṃdhāya",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-015",
+   "ref": "17.15",
+   "mbh_uid": "VU-6-041-015",
+   "from": "vāṅbhayaṃ",
+   "to": "vāṅmayaṃ",
+   "confidence": "high",
+   "evidence": "vāṅmayaṃ tapa",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-016",
+   "ref": "17.16",
+   "mbh_uid": "VU-6-041-016",
+   "from": "samyatvaṃ",
+   "to": "saumyatvaṃ",
+   "confidence": "high",
+   "evidence": "saumyatvam",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-018",
+   "ref": "17.18",
+   "mbh_uid": "VU-6-041-018",
+   "from": "pūjārāthaṃ",
+   "to": "pūjārthaṃ",
+   "confidence": "high",
+   "evidence": "extra ā; pāda 8 syllables",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-023",
+   "ref": "17.23",
+   "mbh_uid": "VU-6-041-023",
+   "from": "smṛtāḥ",
+   "to": "smṛtaḥ",
+   "confidence": "high",
+   "evidence": "agrees with nirdeśaḥ; Pune/vulgate smṛtaḥ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-026",
+   "ref": "17.26",
+   "mbh_uid": "VU-6-041-026",
+   "from": "sadityetatpruyujyate",
+   "to": "sadityetatprayujyate",
+   "confidence": "high",
+   "evidence": "prayujyate",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-17-027",
+   "ref": "17.27",
+   "mbh_uid": "VU-6-041-027",
+   "from": "sādityevābhidhīyate",
+   "to": "sadityevābhidhīyate",
+   "confidence": "high",
+   "evidence": "sad ity eva",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-001",
+   "ref": "18.1",
+   "mbh_uid": "VU-6-042-001",
+   "from": "saṃnyāsatya",
+   "to": "saṃnyāsasya",
+   "confidence": "high",
+   "evidence": "genitive saṃnyāsasya",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-001",
+   "ref": "18.1",
+   "mbh_uid": "VU-6-042-001",
+   "from": "pṛthakkeśinipūdana",
+   "to": "pṛthakkeśiniṣūdana",
+   "confidence": "high",
+   "evidence": "keśiniṣūdana",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-004",
+   "ref": "18.4",
+   "mbh_uid": "VU-6-042-004",
+   "from": "śrṛṇu",
+   "to": "śṛṇu",
+   "confidence": "high",
+   "evidence": "impossible śrṛ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-012",
+   "ref": "18.12",
+   "mbh_uid": "VU-6-042-012",
+   "from": "bhavatyatyāginīṃ",
+   "to": "bhavatyatyāgināṃ",
+   "confidence": "high",
+   "evidence": "atyāgināṃ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-014",
+   "ref": "18.14",
+   "mbh_uid": "VU-6-042-014",
+   "from": "pṛthakkeṣṭā",
+   "to": "pṛthakceṣṭā",
+   "confidence": "high",
+   "evidence": "ceṣṭā",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-015",
+   "ref": "18.15",
+   "mbh_uid": "VU-6-042-015",
+   "from": "śarīravāṅbhanobhir",
+   "to": "śarīravāṅmanobhir",
+   "confidence": "high",
+   "evidence": "vāṅmanobhir",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-017",
+   "ref": "18.17",
+   "mbh_uid": "VU-6-042-017",
+   "from": "nāhaṃkṛto bhavo",
+   "to": "nāhaṃkṛto bhāvo",
+   "confidence": "high",
+   "evidence": "bhāvo; Pune/vulgate",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-022",
+   "ref": "18.22",
+   "mbh_uid": "VU-6-042-022",
+   "from": "tattāsamamudāhṛtam",
+   "to": "tattāmasamudāhṛtam",
+   "confidence": "high",
+   "evidence": "metathesis tāmasam",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-024",
+   "ref": "18.24",
+   "mbh_uid": "VU-6-042-024",
+   "from": "tāhaṅkāreṇa",
+   "to": "sāhaṅkāreṇa",
+   "confidence": "high",
+   "evidence": "sāhaṅkāreṇa",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-026",
+   "ref": "18.26",
+   "mbh_uid": "VU-6-042-026",
+   "from": "muktasaṅgonahaṃvādī",
+   "to": "muktasaṅgo'nahaṃvādī",
+   "confidence": "medium",
+   "evidence": "dropped avagraha",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-026",
+   "ref": "18.26",
+   "mbh_uid": "VU-6-042-026",
+   "from": "dhṛtyutsāhasamanvitaḥ - - bsiddhyasiddhyornirvikāraḥ",
+   "to": "dhṛtyutsāhasamanvitaḥ / siddhyasiddhyornirvikāraḥ",
+   "confidence": "high",
+   "evidence": "'- -' stands for the half-verse break; stray b (Pune siddhyasiddhyor nirvikāraḥ)",
+   "by": "Opus review"
+  },
+  {
+   "uid": "BG-VU-18-029",
+   "ref": "18.29",
+   "mbh_uid": "VU-6-042-029",
+   "from": "śrṛṇu",
+   "to": "śṛṇu",
+   "confidence": "high",
+   "evidence": "impossible śrṛ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-033",
+   "ref": "18.33",
+   "mbh_uid": "VU-6-042-033",
+   "from": "manaḥpraṇendriya",
+   "to": "manaḥprāṇendriya",
+   "confidence": "high",
+   "evidence": "prāṇa",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-034",
+   "ref": "18.34",
+   "mbh_uid": "VU-6-042-034",
+   "from": "dharmakāmārdhān",
+   "to": "dharmakāmārthān",
+   "confidence": "high",
+   "evidence": "artha",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-035",
+   "ref": "18.35",
+   "mbh_uid": "VU-6-042-035",
+   "from": "yathā svapnaṃ",
+   "to": "yayā svapnaṃ",
+   "confidence": "high",
+   "evidence": "yayā dhṛtyā; Pune/vulgate",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-035",
+   "ref": "18.35",
+   "mbh_uid": "VU-6-042-035",
+   "from": "bhademeva",
+   "to": "madameva",
+   "confidence": "high",
+   "evidence": "madam eva",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-036",
+   "ref": "18.36",
+   "mbh_uid": "VU-6-042-036",
+   "from": "śruṇu me bhāratarṣabha",
+   "to": "śṛṇu me bharatarṣabha",
+   "confidence": "high",
+   "evidence": "śṛṇu; bharatarṣabha (metre)",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-038",
+   "ref": "18.38",
+   "mbh_uid": "VU-6-042-038",
+   "from": "tadagre'mṛtopabham",
+   "to": "tadagre'mṛtopamam",
+   "confidence": "high",
+   "evidence": "amṛtopamam",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-039",
+   "ref": "18.39",
+   "mbh_uid": "VU-6-042-039",
+   "from": "tattābhasamudāhṛtam",
+   "to": "tattāmasamudāhṛtam",
+   "confidence": "high",
+   "evidence": "tāmasam",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-040",
+   "ref": "18.40",
+   "mbh_uid": "VU-6-042-040",
+   "from": "yademiḥ",
+   "to": "yadebhiḥ",
+   "confidence": "high",
+   "evidence": "Pune yad ebhiḥ; vulgate yadebhiḥ; 'emiḥ' is a bh->m slip. Site shows ಯದೇಮಿಃ.",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-040",
+   "ref": "18.40",
+   "mbh_uid": "VU-6-042-040",
+   "from": "syātribhirguṇaiḥ",
+   "to": "syāttribhirguṇaiḥ",
+   "confidence": "high",
+   "evidence": "Pune syāt tribhir guṇaiḥ; vulgate syāttribhir; lost t of syāt+tribhiḥ. Site shows ಸ್ಯಾತ್ರಿಭಿರ್ (Pune site ಸ್ಯಾತ್ತ್ರಿಭಿರ್).",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-044",
+   "ref": "18.44",
+   "mbh_uid": "VU-6-042-044",
+   "from": "kṛṣigorakṣyarabhāvaśca kṣātraṃ karma svabhāvajam",
+   "to": "kṛṣigorakṣyavāṇijyaṃ vaiśyakarma svabhāvajam",
+   "confidence": "high",
+   "evidence": "Pune and vulgate kṛṣigorakṣyavāṇijyaṃ vaiśyakarma svabhāvajam; source is garbled (meaningless 'rabhāvaśca', duplicates kṣātraṃ karma of 18.43); pāda a has 9 syllables not 8.",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-045",
+   "ref": "18.45",
+   "mbh_uid": "VU-6-042-045",
+   "from": "svakarmanirattaḥ",
+   "to": "svakarmanirataḥ",
+   "confidence": "high",
+   "evidence": "nirataḥ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-046",
+   "ref": "18.46",
+   "mbh_uid": "VU-6-042-046",
+   "from": "yona sarvam",
+   "to": "yena sarvam",
+   "confidence": "high",
+   "evidence": "yena",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-046",
+   "ref": "18.46",
+   "mbh_uid": "VU-6-042-046",
+   "from": "mānavaḥka",
+   "to": "mānavaḥ",
+   "confidence": "high",
+   "evidence": "stray ka",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-047",
+   "ref": "18.47",
+   "mbh_uid": "VU-6-042-047",
+   "from": "kilviṣam",
+   "to": "kilbiṣam",
+   "confidence": "medium",
+   "evidence": "v/b; Pune/Gita Press kilbiṣam",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-050",
+   "ref": "18.50",
+   "mbh_uid": "VU-6-042-050",
+   "from": "tathā''pneti",
+   "to": "tathā''pnoti",
+   "confidence": "high",
+   "evidence": "āpnoti",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-052",
+   "ref": "18.52",
+   "mbh_uid": "VU-6-042-052",
+   "from": "ladhvāśī",
+   "to": "laghvāśī",
+   "confidence": "high",
+   "evidence": "laghvāśī",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-052",
+   "ref": "18.52",
+   "mbh_uid": "VU-6-042-052",
+   "from": "yatakākkāya",
+   "to": "yatavākkāya",
+   "confidence": "high",
+   "evidence": "yatavākkāya",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-054",
+   "ref": "18.54",
+   "mbh_uid": "VU-6-042-054",
+   "from": "na śocatika na kāṅkṣati",
+   "to": "na śocati na kāṅkṣati",
+   "confidence": "high",
+   "evidence": "stray 'ka' after śocati; Pune na śocati; pāda would have 9 syllables. Site shows ನ ಶೋಚತಿಕ ನ / न शोचतिक न",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-054",
+   "ref": "18.54",
+   "mbh_uid": "VU-6-042-054",
+   "from": "madtabhaktiṃ",
+   "to": "madbhaktiṃ",
+   "confidence": "high",
+   "evidence": "Pune madbhaktiṃ; vulgate madbhaktiṃ; stray 't', b->t. Site shows ಮದ್ತಭಕ್ತಿಂ / मद्तभक्तिं",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-057",
+   "ref": "18.57",
+   "mbh_uid": "VU-6-042-057",
+   "from": "buddhiyogamapāśritya",
+   "to": "buddhiyogamupāśritya",
+   "confidence": "high",
+   "evidence": "upāśritya",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-064",
+   "ref": "18.64",
+   "mbh_uid": "VU-6-042-064",
+   "from": "śrṛṇu",
+   "to": "śṛṇu",
+   "confidence": "high",
+   "evidence": "Pune śṛṇu; 'śrṛ' is an impossible cluster; site shows ಶ್ರೃಣು / श्रृणु (faithful conversion of bad IAST)",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-064",
+   "ref": "18.64",
+   "mbh_uid": "VU-6-042-064",
+   "from": "iṣṭe'si",
+   "to": "iṣṭo'si",
+   "confidence": "high",
+   "evidence": "Pune iṣṭo 'si; vulgate iṣṭo'si me dṛḍham iti (iṣṭaḥ+asi); iṣṭe is a vowel slip. Site shows ಇಷ್ಟೇಽಸಿ / इष्टेऽसि",
+   "by": "Sonnet proofreader findings2, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-071",
+   "ref": "18.71",
+   "mbh_uid": "VU-6-042-071",
+   "from": "śrṛṇuyād",
+   "to": "śṛṇuyād",
+   "confidence": "high",
+   "evidence": "impossible śrṛ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  },
+  {
+   "uid": "BG-VU-18-076",
+   "ref": "18.76",
+   "mbh_uid": "VU-6-042-076",
+   "from": "keśavārjuvayoḥ",
+   "to": "keśavārjunayoḥ",
+   "confidence": "high",
+   "evidence": "arjunayoḥ",
+   "by": "Sonnet proofreader r4, checked by Opus"
+  }
+ ],
+ "not_applied": [
+  {
+   "ref": "11.19",
+   "from": "anantavīryamanantabāhuṃ",
+   "to": "anantavīryamanantabāhuṃ (or anantavīryam anantabāhuṃ)",
+   "evidence": "hyphen+space from the print line-break leaks into IAST, Kannada (ಅನನ್ತವೀರ್ಯ- ಮನನ್ತಬಾಹುಂ) and Devanagari (वीर्य- मनन्त). Join the word intended.",
+   "why": "hyphen already removed by the ingest join (markup, not a slip)"
+  },
+  {
+   "ref": "3.2",
+   "from": "vyāmiśreṇeva",
+   "to": "vyāmiśreṇaiva",
+   "evidence": "Pune/vulgate vyāmiśreṇaiva",
+   "why": "vulgate (Gita Press) reads vyāmiśreṇeva vākyena: not an error"
+  },
+  {
+   "ref": "12.14",
+   "from": "yo me bhaktaḥ",
+   "to": "yo madbhaktaḥ",
+   "evidence": "Pune/vulgate yo madbhaktaḥ",
+   "why": "scans and makes sense; possibly a Kumbakonam reading, left as printed"
+  },
+  {
+   "ref": "13.26",
+   "from": "ayāvatsaṃjāyate",
+   "to": "yāvatsaṃjāyate",
+   "evidence": "stray a before yāvat",
+   "why": "replaced by the structural fix of the merged record 13.26"
+  },
+  {
+   "ref": "16.13",
+   "from": "labdhamimaṃ",
+   "to": "labdhamidaṃ",
+   "evidence": "Pune/vulgate idaṃ",
+   "why": "Gita Press reads labdham imaṃ prāpsye manoratham: not an error"
+  },
+  {
+   "ref": "18.26",
+   "from": "bsiddhyasiddhyornirvikāraḥ",
+   "to": "siddhyasiddhyornirvikāraḥ",
+   "evidence": "stray b",
+   "why": "replaced by the structural fix of 18.26"
+  }
+ ]
+}

@@ -4,8 +4,11 @@
     python etl/ingest_mbh.py vu  path/to/mahabharata-devanagari.xml   # Kumbakonam (southern recension), SARIT
 
 Same record shape as the Rāmāyaṇa files: k = parva, s = adhyāya, v = verse.
-CE: lines carrying a "*" in their id are variant insertions in the apparatus and are left out.
+CE: lines carrying a "*" in their id are variant insertions in the apparatus and are left out. GRETIL's ";"
+between the pādas of a long line becomes a pāda break (the line's list gets one entry per pāda).
 VU: speaker lines ("X uvāca", xml:id ending in x) are kept as the first line of the verse that follows.
+A word that the print splits across two pādas ("jijīviṣāma- ste…") is joined; nukta letters (ऩ ऱ, a typing slip in
+the source) are read without the nukta.
 """
 from __future__ import annotations
 
@@ -56,19 +59,32 @@ def ingest_ce(folder: str) -> list[dict]:
             recs.setdefault((k, s, v), []).append(clean(body))
     out = []
     for (k, s, v), ls in recs.items():
-        lines = [[l] for l in ls]
+        lines = [split_padas(l) for l in ls]
         out.append({"uid": f"CE-{k}-{s:03d}-{v:03d}", "gretil_id": f"{k:02d},{s:03d}.{v:03d}", "k": k, "s": s, "v": v,
                     "lines": lines, "meter": meter_of(lines) if len(lines) in (2, 4) else None})
     return out
 
 
+def split_padas(line: str) -> list[str]:
+    """GRETIL marks the break between the pādas of a long-metre line with ';'."""
+    return [p.strip() for p in line.split(";") if p.strip()] or [line]
+
+
+def join_split_words(t: str) -> str:
+    """'jijīviṣāma- ste'vasthitāḥ' -> 'jijīviṣāmaste'vasthitāḥ' (a word split at a pāda break in the print);
+    a single '-' closing the line (the word goes on in the next line) is dropped. Runs of dashes (lacunae) stay."""
+    t = re.sub(r"(?<=[^\s-])- (?=[^\s-])", "", t)
+    return re.sub(r"(?<=[^\s-])-$", "", t)
+
+
 def deva_to_iast(t: str) -> str:
+    t = unicodedata.normalize("NFC", t).replace("\u0929", "\u0928").replace("\u0931", "\u0930")   # ऩ -> न, ऱ -> र (nukta slips)
     t = t.replace("`", "").replace("'", "").replace("’", "").replace("‘", "")
     t = re.sub(r"[॥।|]+", " ", t)
     t = re.sub(r"\([^)]*\)", " ", t)           # editorial words in brackets, e.g. (व्यासं)
     t = re.sub(r"[0-9०-९]+", " ", t)
     slp = brahmic_to_slp1(t)
-    return clean(slp1_to_iast(slp))
+    return join_split_words(clean(slp1_to_iast(slp)))
 
 
 PARVA_NO = {"ādi": 1, "sabhā": 2, "araṇya": 3, "vana": 3, "virāṭa": 4, "udyoga": 5, "bhīṣma": 6, "droṇa": 7, "karṇa": 8, "śalya": 9,

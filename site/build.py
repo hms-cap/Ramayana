@@ -194,6 +194,8 @@ def render_verse(rec: dict, ed: dict, W: dict | None = None) -> dict:
         "speaker": ({sc: render(" ".join(iast_to_slp1(w) for w in rec["speaker"].split()), sc) for sc in SCRIPTS}
                     if rec.get("speaker") else None),
         "mbh": mbh_place(rec),
+        "speaker_at": rec.get("speaker_at"),
+        "corrected": rec.get("corrected"),
     }
 
 
@@ -549,7 +551,8 @@ def build(out: Path, only: str | None = None) -> None:
     cw_report = ROOT / "data" / "crosswalk" / "report.json"
     changes = json.loads((ROOT / "data" / "changes.json").read_text(encoding="utf-8"))
     mbh_rep = ROOT / "data" / "crosswalk" / "mbh" / "report.json"
-    shared = dict(**ram["base"], mbh_cw=json.loads(mbh_rep.read_text()) if mbh_rep.exists() else None, wroot="../", root="../", changes=changes, sources=sources, eds=ram["eds"], ed=ram["eds"][0],
+    _err = json.loads((ROOT / "data" / "gita" / "errata_vu.json").read_text(encoding="utf-8"))["errata"] if (ROOT / "data" / "gita" / "errata_vu.json").exists() else []
+    shared = dict(**ram["base"], gita_errata=len(_err), gita_errata_verses=len({e["uid"] for e in _err}), mbh_cw=json.loads(mbh_rep.read_text()) if mbh_rep.exists() else None, wroot="../", root="../", changes=changes, sources=sources, eds=ram["eds"], ed=ram["eds"][0],
                   works=[(d["W"], d["eds"]) for d in done],
                   crosswalk=json.loads(cw_report.read_text()) if cw_report.exists() and len(ram["eds"]) > 1 else None)
     for name in ("about", "my"):

@@ -1,5 +1,15 @@
 [
  [
+  "0.10.1",
+  "2026-11-10",
+  [
+   "The Bhagavadgītā's Traditional text was proofread: 228 typing slips in the digital source are corrected (for example a stray “ka” after words, aśrute for aśnute). Each corrected verse shows what changed under its details.",
+   "Kannada script now shows the anusvāra before a consonant of its own class (ಸಂಗ, ಪಂಚ), as Kannada books print it. The Homorganic nasals option still shows ಸಙ್ಗ, ಪಞ್ಚ.",
+   "Semicolons and hyphens from the digital sources no longer appear inside Mahābhārata verses, and many more Pune verses now have their metre named.",
+   "Gītā 13.26 and 13.27 are shown as two verses again, and in 1.21 and 1.28 “arjuna uvāca” stands where it belongs, inside the verse."
+  ]
+ ],
+ [
   "0.10.0",
   "2026-11-10",
   [

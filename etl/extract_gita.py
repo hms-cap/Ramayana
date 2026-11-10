@@ -81,6 +81,10 @@ GITA = ROOT / "data" / "gita"
 
 FIRST_S = {"ce": 23, "vu": 25}
 EXPECTED = [47, 72, 43, 42, 29, 47, 30, 28, 34, 42, 55, 20, 34, 27, 20, 24, 28, 78]
+EXPECTED_ED = {"ce": EXPECTED, "vu": EXPECTED[:12] + [35] + EXPECTED[13:]}
+# Kumbakonam records holding two printed verses (after etl/apply_errata.py has split their lines): mbh uid -> lines
+# in the first verse. VU-6-037-026 is print 13.26 + 13.27 (the source keys no 13.27), so chapter 13 runs 1–35.
+SPLIT = {"VU-6-037-026": 2}
 
 SPEAKER = re.compile(r"^(dhṛtarāṣṭra|saṃjaya|sañjaya|arjuna|śrībhagavān|śrībhagavan) ?uvāca$")
 JUNK = re.compile(r"namaḥ \||\(Gītā|atha dhyānaṃ|\|\| \(\d+\)\s*$|\.\.\.\.")
@@ -129,7 +133,7 @@ def extract(ed, report):
                         "\n".join(" ".join(l) for l in junk) + "\n", encoding="utf-8")
         if lines and COLOPHON.search(" ".join(lines[-1])):
             colophon = " ".join(lines.pop())
-        body, trailing = [], None
+        body, trailing, speaker_at = [], None, None
         for i, l in enumerate(lines):
             if is_speaker(l):
                 name = l[0].strip()
@@ -140,7 +144,7 @@ def extract(ed, report):
                 else:
                     if speaker is not None:
                         report["conflicts"].append(r["uid"])
-                    speaker, inline = name, True
+                    speaker, inline, speaker_at = name, True, len(body)
             else:
                 body.append(l)
         if pending:
@@ -153,8 +157,19 @@ def extract(ed, report):
                "lines": body, "meter": meter_of(body), "mbh_uid": r["uid"]}
         if inline:
             rec["speaker_inline"] = True
+            rec["speaker_at"] = speaker_at          # the speaker line stands before this line of the verse
         if colophon:
             rec["colophon"] = colophon
+        if r.get("corrected"):
+            rec["corrected"] = r["corrected"]
+        if r["uid"] in SPLIT and len(body) > SPLIT[r["uid"]]:
+            n = SPLIT[r["uid"]]
+            rec2 = {**rec, "uid": f"BG-{ed.upper()}-{ch:02d}-{r['v'] + 1:03d}", "v": r["v"] + 1, "speaker": None,
+                    "lines": body[n:], "meter": meter_of(body[n:]), "split_from": r["uid"]}
+            rec.update(lines=body[:n], meter=meter_of(body[:n]), split_from=r["uid"])
+            out += [rec, rec2]
+            report["split"].append(r["uid"])
+            continue
         out.append(rec)
     if pending:
         report["conflicts"].append(f"{ed}: trailing speaker {pending!r} after last verse")
@@ -198,6 +213,12 @@ def crosswalk(ce, vu):
             res[side][gu] = ne
         stats[side + "_targets_outside_gita_dropped"] = outside
         stats[side + "_targets_other_chapter_dropped"] = xch
+    split = {r["uid"] for sd in recs for r in recs[sd] if r.get("split_from")}
+    for side in ("vu", "ce"):
+        for r in recs[side]:
+            e = res[side].get(r["uid"])
+            if r["uid"] in split or e is None or any(t in split for t in (e or {}).get("targets", [])):
+                res[side][r["uid"]] = {"status": "absent"}
     tri = {sd: {r["uid"]: _tri(_key(r)) for r in recs[sd]} for sd in recs}
     byc = {sd: collections.defaultdict(list) for sd in recs}
     for sd in recs:
@@ -258,11 +279,11 @@ def write(path, recs):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     CW_OUT.mkdir(parents=True, exist_ok=True)
-    report = {"junk": [], "conflicts": []}
+    report = {"junk": [], "conflicts": [], "split": []}
     res = {ed: extract(ed, report) for ed in ("ce", "vu")}
     for ed, recs in res.items():
         counts = [sum(1 for r in recs if r["ch"] == c) for c in range(1, 19)]
-        assert counts == EXPECTED, (ed, counts)
+        assert counts == EXPECTED_ED[ed], (ed, counts)
         write(OUT / f"{ed}.jsonl", recs)
         print(ed, len(recs), "verses;", sum(1 for r in recs if r["speaker"]), "with speaker;",
               sum(1 for r in recs if r["meter"]), "with meter;", sum(1 for r in recs if "colophon" in r), "colophons")

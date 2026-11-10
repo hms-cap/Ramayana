@@ -49,6 +49,8 @@ CATALOGUE = [
          text="Thirteen syllables in every pāda."),
     dict(name="Praharṣiṇī", slug="praharshini", syl="13", family="vṛtta", gana="ma na ja ra ga",
          text="Thirteen syllables in every pāda."),
+    dict(name="Vasantatilakā", slug="vasantatilaka", syl="14", family="vṛtta", gana="ta bha ja ja ga ga",
+         text="Fourteen syllables in every pāda."),
     dict(name="Drutavilambita", slug="drutavilambita", syl="12", family="vṛtta", gana="na bha bha ra",
          text="Twelve syllables in every pāda, a quick, lilting rhythm."),
 ]
