@@ -46,4 +46,4 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
         with:
-          timeout: 1800000   # the ~600 MB site can take longer than the 10-minute default to sync
+          timeout: 600000   # Pages caps this at 10 min; the ~600 MB site can take most of it to sync
