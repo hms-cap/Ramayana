@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.10.3 — 2026-11-11
+- Hosting moves to Vercel (https://ramayana-blond.vercel.app/). `vercel.json` gains `ignoreCommand`: Vercel builds only when `site/static/version.js` changes. The Pages workflow is replaced by `.github/workflows/tests.yml` (tests and a full build, no deploy). Shared verse cards print the new address (`SITE` in `build.py`).
+
 ## 0.10.2 — 2026-11-10
 - Chant view, Page layout (and its PDF/print export): each śloka is a block of its own (`.cv`, `.pv`, hanging indent) instead of verses flowing together in one paragraph, so a verse ending (॥ n ॥) no longer shares a line with the next verse's beginning.
 

@@ -45,18 +45,21 @@ KANDAS = [
 
 PARVANS = [(en.lower().replace(" ", ""), kn, en) for kn, en in mbh_art._NAMES]
 
+# the public address, printed on shared verse cards (change here if a custom domain is added)
+SITE = "ramayana-blond.vercel.app"
+
 WORKS = {
     "ram": dict(id="ram", prefix="", kn="ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", en="Vālmīki Rāmāyaṇa", short_en="Rāmāyaṇa", short_kn="ರಾಮಾಯಣ", kn_chip="ರಾಮಾಯಣ",
                 tile="ರಾ", theme="#1B2358", blurb="Sanskrit text with Kannada",
                 editions="editions.json", units=KANDAS, unit="kāṇḍa", units_pl="kāṇḍas", Unit="Kāṇḍa",
                 sub="sarga", subs="sargas", Sub="Sarga", sub_kn="ಸರ್ಗ", sub_deva="सर्गः", sub_iast="sargaḥ",
-                epic_kn="ರಾಮಾಯಣದಲ್ಲಿ", lean=False, site="hms-cap.github.io/Ramayana",
+                epic_kn="ರಾಮಾಯಣದಲ್ಲಿ", lean=False, site=SITE,
                 credit='Baroda Critical Edition text from <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, CC BY-NC-SA 4.0; Traditional (Vulgate) text from <a href="https://sa.wikisource.org/">Sanskrit Wikisource</a>, CC BY-SA 4.0. Not for commercial use.'),
     "mbh": dict(id="mbh", prefix="mbh/", kn="ಮಹಾಭಾರತ", en="Mahābhārata", short_en="Mahābhārata", short_kn="ಮಹಾಭಾರತ", kn_chip="ಮಹಾಭಾರತ",
                 tile="ಮ", theme="#3B1220", blurb="Sanskrit text with Kannada",
                 editions="editions_mbh.json", units=PARVANS, unit="parva", units_pl="parvas", Unit="Parva",
                 sub="adhyāya", subs="adhyāyas", Sub="Adhyāya", sub_kn="ಅಧ್ಯಾಯ", sub_deva="अध्यायः", sub_iast="adhyāyaḥ",
-                epic_kn="ಮಹಾಭಾರತದಲ್ಲಿ", lean=True, site="hms-cap.github.io/Ramayana/mbh",
+                epic_kn="ಮಹಾಭಾರತದಲ್ಲಿ", lean=True, site=SITE + "/mbh",
                 credit='Pune critical text © Bhandarkar Oriental Research Institute, via <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, shown with attribution for non-commercial reading; Traditional (Kumbakonam) text from <a href="https://github.com/sarit/SARIT-corpus">SARIT</a>, CC BY-SA 3.0. Not for commercial use.'),
     # The Bhagavadgītā, taken out of the Mahābhārata's Bhīṣma Parva (etl/extract_gita.py). One unit whose
     # pages are its 18 adhyāyas (gita/<ed>/1/<adhyāya>/); page 0 holds the Gītā Dhyāna ślokas. Verse refs are adhyāya.verse.
@@ -65,7 +68,7 @@ WORKS = {
                  editions="editions_gita.json", units=[("śrīmadbhagavadgītā", "ಶ್ರೀಮದ್ಭಗವದ್ಗೀತಾ", "Bhagavadgītā")],
                  unit="Gītā", units_pl="adhyāyas", Unit="Adhyāya",
                  sub="adhyāya", subs="adhyāyas", Sub="Adhyāya", sub_kn="ಅಧ್ಯಾಯ", sub_deva="अध्यायः", sub_iast="adhyāyaḥ",
-                 epic_kn="ಭಗವದ್ಗೀತೆಯಲ್ಲಿ", lean=False, single=True, site="hms-cap.github.io/Ramayana/gita",
+                 epic_kn="ಭಗವದ್ಗೀತೆಯಲ್ಲಿ", lean=False, single=True, site=SITE + "/gita",
                  credit='The Gītā is Bhīṣma Parva 25–42 of the Kumbakonam Mahābhārata (<a href="https://github.com/sarit/SARIT-corpus">SARIT</a>, CC BY-SA 3.0) and 23–40 of the Pune critical text (© Bhandarkar Oriental Research Institute, via <a href="https://gretil.sub.uni-goettingen.de/">GRETIL</a>, shown with attribution for non-commercial reading). Not for commercial use.'),
 }
 

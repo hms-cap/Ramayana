@@ -1,12 +1,12 @@
 # ಇತಿಹಾಸ (Itihāsa) — handoff for agents
 
 Browsable Sanskrit epics: Vālmīki Rāmāyaṇa (site root), Mahābhārata (`/mbh/`) and the Bhagavadgītā taken out of it (`/gita/`), with Kannada / Devanāgarī / IAST scripts, two editions of each, word-by-word analysis, a built-in dictionary, and an appendix of metres. Static site, built by Python, no server.
-Repo `hms-cap/Ramayana` · live (GitHub Pages) https://hms-cap.github.io/Ramayana/ · version in `site/static/version.js` (now 0.10.2) · owner: Hemanth.
+Repo `hms-cap/Ramayana` · live (Vercel) https://ramayana-blond.vercel.app/ (the old GitHub Pages copy is no longer updated) · version in `site/static/version.js` (now 0.10.2) · owner: Hemanth.
 
 ## How it is built and shipped
 - `python site/build.py` (Jinja2 + lxml, `requirements.txt`) reads `data/` and writes `dist/` (~600 MB, 100k+ files, ~5,500 chapter pages). `python site/build.py` takes a few minutes.
-- CI (`.github/workflows`): unittest → build → deploy to GitHub Pages, ~3–5 min. The deploy step has timed out once on size; `gh run rerun <id> --failed` fixed it.
-- `vercel.json` (installs into a venv because the image's Python is externally managed; output `dist/`) is pushed. The Vercel import itself is the owner's to do in the dashboard; size limits on his plan are untested. A Vercel MCP server is available in some sessions.
+- CI (`.github/workflows/tests.yml`): unittest → full build on every push; it no longer deploys.
+- Hosting: Vercel project `ramayana` (team hmullur-1572). `vercel.json` installs into a venv (the image's Python is externally managed), builds, publishes `dist/` (~610 MB, ~9.7k files), and via `ignoreCommand` builds only when `site/static/version.js` changes; force a deploy with Redeploy in the dashboard. Each deployment is a full copy, so keep deployment retention short. `SITE` in `build.py` is the address printed on shared cards. A Vercel MCP server is available in some sessions.
 - Run locally: `python site/build.py && python -m http.server 8765 --directory dist`.
 - Tests: `python -m unittest discover -s tests` (42) and Playwright scripts in `tests/e2e/` (`home swipe chant pwa mbh mbh_words dict chandas gita`; see its README). Run the e2e ones against the local server with `service_workers="block"`.
 - **Every release needs** a bump of `site/static/version.js`, a `CHANGELOG.md` entry and a `data/changes.json` entry (a test fails otherwise). Commit trailer: `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`.
@@ -30,7 +30,7 @@ Reader with three scripts + scansion + chant; two editions per work with edition
 - Prefs live in `localStorage "vr-prefs"` (`script`, `theme` "" = light, `off`, `offMbh`, `offGita`, …); last place per work in `vr.last`, `vr.last.mbh`, `vr.last.gita`; `vr.work` is the last work (`ram`, `mbh`, `gita`; never "app"); `sessionStorage "vr.ret"` carries the dictionary return state.
 - Installed service workers cache the shell: patch `version.js` when shell files change; the vendored Kosha `version.js` is patched to `…-itihasa.N` for the same reason.
 - Do not use `.wbw-list li` selectors broadly (the dictionary card list reuses the markup). Long `sleep` chains are blocked in the sandbox: use `timeout … until` loops.
-- The sandbox cannot reach the live site or the Vercel API; test on a local build.
+- The sandbox cannot open the live site; test on a local build (the Vercel MCP tools can read deployments and build logs).
 
 ## Known limits and open work
 1. **Kannada glosses and Kannada grammar terms are written by Claude and unreviewed** (About page says so). Next: have a Kannada reader review `etl/gloss_kn.json`; then extend to the next ~1,000 frequent words.
@@ -40,4 +40,4 @@ Reader with three scripts + scansion + chant; two editions per work with edition
 8. Gītā text corrections were proofread by Claude only (Sonnet agents, Opus check); a Sanskrit reader should review `data/gita/errata_vu.json` (with its `not_applied` list). The same slip patterns (stray "ka", n/r, `- -` line joins, vakra) exist across the rest of the Kumbakonam Mahābhārata, which has not been proofread; source annotations (`*` lacunae, `(sic)`, `[ ]`, stray verse numbers, ॐ) remain in a few hundred lines of both Traditional texts.
 7. Gītā Dhyāna readings were chosen by majority of web witnesses (`data/gita/dhyana.json` variants); a reader should confirm them. The MBH cross-walk `report.json` was not regenerated after the 6.23.1 / 6.40.78 fix (four entries hand-set to match).
 5. Mahābhārata Pune text: permission from BORI not checked. Licences are in `etl/sources.json` and the About page.
-6. Possible appendix sections beyond Chandas (alaṅkāra, glossary, name index), Back behaviour that skips in-dictionary steps, the Vercel deployment (size limits unknown).
+6. Possible appendix sections beyond Chandas (alaṅkāra, glossary, name index), Back behaviour that skips in-dictionary steps, shrinking the build (compact word files with one shared gloss file, ~152 → ~40 MB; pages drawn in the browser from chapter JSON, ~378 → ~60 MB).

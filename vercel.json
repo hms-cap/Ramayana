@@ -5,5 +5,6 @@
   "buildCommand": ".venv/bin/python site/build.py",
   "outputDirectory": "dist",
   "cleanUrls": false,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- site/static/version.js"
 }

@@ -268,7 +268,7 @@
     if (drawIt) {
       txt(B.workKn || "ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", pad, 100, "400 44px 'Tiro Kannada',serif", "#FFFBF2");
       txt(L("kind", s), pad, 150, "500 30px " + ui, "#E8D9A8");
-      txt(B.site || "hms-cap.github.io/Ramayana", Wd / 2, total - 56, "400 26px " + ui, "#E8D9A8", "center");
+      txt(B.site || "ramayana-blond.vercel.app", Wd / 2, total - 56, "400 26px " + ui, "#E8D9A8", "center");
     }
     return { total: total, cardH: cardH };
   }

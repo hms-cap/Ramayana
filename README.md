@@ -54,9 +54,12 @@ python etl/crosswalk.py
 
 ## Deployment
 
-`.github/workflows/pages.yml` runs the tests, builds the site and publishes it
-to GitHub Pages on every push to `main`. In the repository settings, set
-Pages → Source to **GitHub Actions**.
+The site is hosted on Vercel: https://ramayana-blond.vercel.app/ . `vercel.json` installs
+the requirements into a virtualenv, runs `site/build.py` and publishes `dist/`. Vercel builds
+only when `site/static/version.js` changes (`ignoreCommand`), so a release (version bump)
+deploys and other commits do not; use **Redeploy** in the Vercel dashboard to force one.
+Keep few old deployments (Settings → Deployment Retention), since each is a full copy of the
+~600 MB site. `.github/workflows/tests.yml` runs the tests and a full build on every push.
 
 ## Licences
 
