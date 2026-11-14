@@ -139,7 +139,22 @@
   }
   function marked(l) {                              // verse line -> HTML with the end mark (daṇḍa, number) in <span class="d">
     var m = /^(.*?)(\s+(?:[।|]|(?:॥|\|\|)\s.*))$/.exec(l);
-    return m ? esc(m[1]) + '<span class="d">' + esc(m[2]) + "</span>" : esc(l);
+    if (!m) return esc(l);
+    var end = m[2].replace(/^(\s*)(॥|\|\|)\s.*$/, "$1$2");   // ॥ alone: the reference is printed under the verse
+    return esc(m[1]) + '<span class="d">' + esc(end) + "</span>";
+  }
+  // Shrink the verse until its longest word fits the card, so a long compound is not broken mid-word.
+  function fitVerse(el) {
+    if (!el) return;
+    el.style.fontSize = "";
+    var size = parseFloat(getComputedStyle(el).fontSize), avail = el.clientWidth - size;   // 1em: the indent of later lines
+    var probe = document.createElement("span");
+    probe.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap";
+    el.appendChild(probe);
+    var widest = 0;
+    el.textContent.split(/\s+/).forEach(function (w) { if (w) { probe.textContent = w; widest = Math.max(widest, probe.getBoundingClientRect().width); } });
+    el.removeChild(probe);
+    if (widest > avail && widest > 0) el.style.fontSize = Math.max(size * 0.6, size * avail / widest * 0.98) + "px";
   }
   function cardHtml(sec, s) {
     var h = '<h3 class="vc-label">' + esc(L(sec.key, s)) + "</h3>";
@@ -159,6 +174,9 @@
     cardNo = Math.max(0, Math.min(secs.length - 1, cardNo));
     var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     slide.innerHTML = cardHtml(secs[cardNo], s);
+    var vv = slide.querySelector(".vc-verse");
+    fitVerse(vv);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (vv && vv.isConnected) fitVerse(vv); });
     slide.setAttribute("aria-label", (cardNo + 1) + " / " + secs.length);
     if (dir && !reduce && slide.animate) slide.animate([{ transform: "translateX(" + (dir * 40) + "px)", opacity: 0 }, { transform: "none", opacity: 1 }], { duration: 240, easing: "ease" });
     votd.querySelector(".votd-name").textContent = L(secs[cardNo].key, s);
