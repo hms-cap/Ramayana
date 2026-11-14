@@ -78,8 +78,9 @@ async def main():
 
         # 6. daily card: the Mahābhārata card has a words section
         await pg.goto(B + "mbh/")
-        await pg.wait_for_selector("#votd-words")
+        await pg.wait_for_selector("#votd-words", state="attached")
         assert await pg.get_attribute("#votd-words", "aria-disabled") == "false"
+        await pg.click("#votd-more")
         await pg.click("#votd-words")
         await pg.wait_for_timeout(300)
         dl = await pg.locator(".vc-dl dt").count()

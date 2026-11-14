@@ -125,7 +125,9 @@
   }
   function plain(c) {
     var s = sc(), sav = !!P.get().savarna, kn = s === "knda", out = [];
-    out.push({ key: "verse", lines: lines(c, s), ref: c.ref, meta: [c.meter].filter(Boolean).join(" · ") });
+    var cx = c.ctx || {}, kname0 = s === "knda" ? cx.kn : s === "deva" ? cx.deva : cx.iast, nn0 = function (n) { return s === "iast" ? n : T.digits(n, s); };
+    out.push({ key: "verse", lines: lines(c, s), ref: c.ref, where: cx.s ? (kname0 || "") + " " + nn0(cx.s) + (cx.v ? "." + nn0(cx.v) : "") : c.ref,
+      meta: [c.meter].filter(Boolean).join(" · ") });
     if (c.m) out.push({ key: "m", text: c.m[kn ? 1 : 0] });
     if (c.w && c.w.length) out.push({ key: "words", dl: c.w.map(function (u) {
       return [u.f.map(function (f) { return T.render(f, s, sav); }).join("-"), gl(u.t, s) + (gl(u.t, s) ? " — " : "") + (kn && u.k ? u.k : u.g)];
@@ -160,7 +162,7 @@
     var h = '<h3 class="vc-label">' + esc(L(sec.key, s)) + "</h3>";
     if (sec.lines) {
       h += '<div class="vc-verse t-' + s + '" lang="' + langOf(s) + '">' + sec.lines.map(function (l) { return '<span class="ln">' + marked(l) + "</span>"; }).join("") + "</div>" +
-        '<p class="vc-ref">' + esc(sec.ref) + (sec.meta ? " · " + esc(sec.meta) : "") + "</p>";
+        '<p class="vc-ref">' + esc(sec.where || sec.ref) + (sec.meta ? " · " + esc(sec.meta) : "") + "</p>";
     } else if (sec.dl) {
       h += '<dl class="vc-dl" lang="en">' + sec.dl.map(function (r) { return '<dt lang="' + langOf(s) + '">' + esc(r[0]) + "</dt><dd>" + esc(r[1]) + "</dd>"; }).join("") + "</dl>" + '<p class="vc-note">' + esc(sec.note) + "</p>";
     } else {
@@ -181,6 +183,8 @@
     if (dir && !reduce && slide.animate) slide.animate([{ transform: "translateX(" + (dir * 40) + "px)", opacity: 0 }, { transform: "none", opacity: 1 }], { duration: 240, easing: "ease" });
     votd.querySelector(".votd-name").textContent = L(secs[cardNo].key, s);
     votd.querySelector(".votd-kind").textContent = L(shuffled ? "another" : "kind", s);
+    votd.dataset.face = secs[cardNo].key;
+    var info = document.getElementById("votd-info"); info.textContent = cardNo ? "Back to the śloka" : "Metre, place, other text";
     var dots = votd.querySelector(".votd-dots");
     dots.innerHTML = secs.map(function (x, i) { return '<button type="button" role="tab" aria-selected="' + (i === cardNo) + '" aria-label="' + esc(L(x.key, s)) + '" data-card="' + i + '"></button>'; }).join("");
     var vp = card.cw && card.cw.status === "match" && card.cw.paths && card.cw.paths[0];
@@ -194,6 +198,7 @@
   function paintSave() {
     var b = document.getElementById("votd-save"), on = S.has(saveId());
     b.setAttribute("aria-pressed", on); b.setAttribute("aria-label", on ? "Saved. Tap to remove" : "Save"); b.title = on ? "Saved" : "Save";
+    var t = b.querySelector(".lbl"); if (t) t.textContent = on ? "Saved ✓" : "Save";
   }
   function cardAt(k) { return getJSON(WROOT + "data/daily/c" + Math.floor(k / ix.chunk) + ".json").then(function (a) { return a[k % ix.chunk]; }); }
   function show(k, isShuffle) {
@@ -230,6 +235,17 @@
   document.getElementById("votd-another").addEventListener("click", function () {
     if (!ix) return; var k; do { k = Math.floor(Math.random() * ix.n); } while (k === idx);
     show(k, true);
+  });
+  var menu = document.getElementById("votd-menu"), more = document.getElementById("votd-more");
+  function menuOpen(on) { menu.hidden = !on; more.setAttribute("aria-expanded", on ? "true" : "false"); if (on) { var f = menu.querySelector("button:not([hidden])"); if (f) f.focus(); } }
+  more.addEventListener("click", function () { menuOpen(menu.hidden); });
+  menu.addEventListener("click", function (e) { if (e.target.closest("button") && e.target.closest("button").id !== "votd-save") menuOpen(false); });
+  document.addEventListener("click", function (e) { if (!menu.hidden && !e.target.closest("#votd-menu") && !e.target.closest("#votd-more")) menuOpen(false); });
+  votd.addEventListener("keydown", function (e) { if (e.key === "Escape" && !menu.hidden) { menuOpen(false); more.focus(); e.stopPropagation(); } });
+  document.getElementById("votd-info").addEventListener("click", function () {
+    if (cardNo) { cardNo = 0; draw(-1); return; }
+    var secs = plain(card), at = -1; secs.forEach(function (x, i) { if (at < 0 && (x.key === "metre" || x.key === "ctx")) at = i; });
+    cardNo = at < 0 ? 0 : at; draw(1);
   });
   document.getElementById("votd-words").addEventListener("click", function () {
     var secs = plain(card), at = -1; secs.forEach(function (x, i) { if (x.key === "words") at = i; });

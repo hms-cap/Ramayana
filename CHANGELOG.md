@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.13.1 — 2026-11-14
+- Today's śloka card simplified: it shows only the verse, with where it is from in words (kāṇḍa/parva and number, in the chosen script) and the metre. Round buttons are now ⋯, Share and Read; the ⋯ menu holds Another śloka, Back to today's, Save, Word by word, and Metre, place and other text. The five dots are gone (tap or swipe still turn the card).
+
 ## 0.13.0 — 2026-11-14
 - Bottom bar: the Read item is gone (Home, Search, Saved, Dictionary); Read stays in the top menu and the Home chips.
 - Settings sheet reorganised into groups (Text, Appearance, Show, Offline) with a live preview verse at the top; "Classical pañcama" moved under Advanced.

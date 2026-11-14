@@ -11,8 +11,8 @@ with sync_playwright() as p:
     pg.screenshot(path=SP+"/home_d.png")
     for i in range(5):
         pg.click(".votd-slide"); pg.wait_for_timeout(300); print(i, pg.inner_text(".votd-name"))
-    pg.click("#votd-another"); pg.wait_for_timeout(500); print("another:",pg.inner_text(".votd-kind"), pg.is_visible("#votd-today"))
-    pg.click("#votd-save"); print("saved:",pg.get_attribute("#votd-save","aria-pressed"))
+    pg.click("#votd-more"); pg.click("#votd-another"); pg.wait_for_timeout(500); print("another:",pg.inner_text(".votd-kind"), pg.is_visible("#votd-today"))
+    pg.click("#votd-more"); pg.click("#votd-save"); print("saved:",pg.get_attribute("#votd-save","aria-pressed"))
     pg.click(".kcard >> nth=0"); pg.wait_for_selector("#ksheet:not([hidden])"); print("chips:",pg.locator("#ks-chips a").count()); pg.keyboard.press("Escape"); pg.click("#script-cycle"); print("letter:",pg.inner_text("[data-script-letter]"))
     with pg.expect_download() as d: pg.click("#votd-share")
     d.value.save_as(SP+"/share.png"); print("share:",d.value.suggested_filename)
