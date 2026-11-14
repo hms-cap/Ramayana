@@ -1503,10 +1503,13 @@
      ]
     },
     {
-     "en": "Brings down the Kauravas' garments from the tree",
-     "kn": "ಕೌರವರ ವಸ್ತ್ರಗಳನ್ನು ತರುತ್ತಾನೆ",
-     "ref": "4.67.21",
-     "ed": "vu"
+     "en": "Returns from the battle; Virāṭa sends his army to meet him",
+     "kn": "ಯುದ್ಧದಿಂದ ಮರಳುತ್ತಾನೆ; ವಿರಾಟ ಸೇನೆಯನ್ನು ಸ್ವಾಗತಕ್ಕೆ ಕಳುಹಿಸುತ್ತಾನೆ",
+     "ref": "4.71.13",
+     "ed": "vu",
+     "with": [
+      "virata"
+     ]
     },
     {
      "en": "Charges Śalya and is killed by his lance",
@@ -1916,8 +1919,8 @@
    ],
    "moments": [
     {
-     "en": "Plans the raid on Virāṭa's cattle",
-     "kn": "ವಿರಾಟನ ಗೋವುಗಳ ಹರಣಕ್ಕೆ ಯೋಜನೆ",
+     "en": "Leads the Trigartas in the first raid on Virāṭa's cattle, as the Kauravas plan it",
+     "kn": "ಕೌರವರ ಯೋಜನೆಯಂತೆ ವಿರಾಟನ ಗೋವುಗಳ ಮೇಲಿನ ಮೊದಲ ದಾಳಿಯಲ್ಲಿ ತ್ರಿಗರ್ತರನ್ನು ಮುನ್ನಡೆಸುತ್ತಾನೆ",
      "ref": "4.32.56",
      "ed": "vu"
     },
@@ -2162,8 +2165,6 @@
     {
      "type": "other",
      "to": "indra",
-     "ref": "3.54.12",
-     "ed": "vu",
      "note_en": "Refuses Indra and three other gods at her svayaṃvara and chooses Nala",
      "note_kn": "ಸ್ವಯಂವರದಲ್ಲಿ ಇಂದ್ರ ಮತ್ತು ಮೂವರು ದೇವತೆಗಳನ್ನು ನಿರಾಕರಿಸಿ ನಳನನ್ನು ವರಿಸುತ್ತಾಳೆ"
     }
@@ -2200,7 +2201,10 @@
      "en": "Searches the forest for him",
      "kn": "ಅವನನ್ನು ಕಾಡಿನಲ್ಲಿ ಹುಡುಕುತ್ತಾಳೆ",
      "ref": "3.61.10",
-     "ed": "vu"
+     "ed": "vu",
+     "with": [
+      "nala"
+     ]
     },
     {
      "en": "Sends her maid to test Bāhuka",
@@ -2694,7 +2698,7 @@
     {
      "en": "Cyavana promises them soma",
      "kn": "ಚ್ಯವನ ಅವರಿಗೆ ಸೋಮದ ಪಾಲು ಕೊಡುವುದಾಗಿ ಮಾತು ಕೊಡುತ್ತಾನೆ",
-     "ref": "3.124.25",
+     "ref": "3.124.23",
      "ed": "vu"
     },
     {
