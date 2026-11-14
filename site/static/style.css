@@ -795,3 +795,7 @@ a.crow:hover .cn { color: var(--accent); }
 .wbw-list .wbw-char { grid-column: 2; font: 600 0.8rem var(--f-ui); color: var(--accent); text-decoration: none; justify-self: start; }
 .wbw-list .wbw-char:hover { text-decoration: underline; }
 @media (max-width: 520px) { .wbw-list .wbw-char { grid-column: 1; } }
+
+.tree.fit svg { width: 100%; height: auto; }
+.tree-fit { display: block; margin: 0 0 6px auto; font: 600 0.8rem var(--f-ui); color: var(--ink); background: var(--card, var(--paper)); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.tree-fit[aria-pressed="true"] { background: var(--ink); color: var(--paper); }

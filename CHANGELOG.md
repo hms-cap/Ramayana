@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.12.0 — 2026-11-14
+- Pariśiṣṭa → Characters: 42 Rāmāyaṇa and 81 Mahābhārata characters (`data/characters/`), each with role, epithets, description (Kannada and English), relations and key moments linked to verses. Every cited verse is checked to name the person (`etl/check_characters.py`); `etl/find_verses.py` helps choose citations.
+- Character pages with a relationship circle (family, teacher, ally, opposed, killed by), key moments, and mentions per kāṇḍa/parva counted from the critical texts' word analysis (`etl/characters.py`). Family trees: Ikṣvāku, Mithilā, vānaras, rākṣasas; Kuru, Pāñcāla, Yādava (open at the founder, with a "Whole tree" view).
+- Word-by-word panel: a word that names a character links to their page.
+- Descriptions and all Kannada text written by Claude, not yet reviewed.
+
 ## 0.11.1 — 2026-11-14
 - Reader layout "B1": each verse opens with a header row (reference pill k.s.v in the script's digits, which is the verse-details button; the metre; the word-by-word icon on the right) and the text uses the full width; the side number column is gone, later half-lines are indented 1.2em, wrapped lines align with their own line, and verses end with a plain ॥ (the pill carries the number). Rāmāyaṇa, Mahābhārata and Gītā, both editions.
 - Work chips in a 2×2 grid on phones (four in a row from 40rem), full names.
