@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% from "_art.html" import workchips %}
+{% block title %}Family trees, {{ WK.short_en }} — ಇತಿಹಾಸ{% endblock %}
+{% block main %}
+{{ workchips(W, works_list, root, chip_on) }}
+<article class="prose appx chars ftree">
+  <p class="crumbs-l"><a href="{{ root }}appendix/">{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }}</a> › <a href="../../#{{ work }}">{{ sx("ಪಾತ್ರಗಳು", "पात्राणि", "Characters") }}</a> › {{ work_sx(WK) }} ›</p>
+  <h1>{{ sx("ವಂಶವೃಕ್ಷ", "वंशवृक्षः", "Family trees") }} <small>{{ WK.en }}</small></h1>
+  <div class="seg cw-seg" role="tablist" aria-label="Family line">
+    {% for t in trees %}<a href="#{{ t.l.id }}" role="tab" data-tr-tab="{{ t.l.id }}">{{ t.sx }}</a>{% endfor %}
+  </div>
+  {% for t in trees %}
+  <section class="tr-sec" data-tr-sec="{{ t.l.id }}">
+    <h2>{{ t.l.full }} <small>{{ t.l.note }}</small></h2>
+    {% if t.svg %}<div class="tree" tabindex="0" aria-label="{{ t.l.full }} (scrolls sideways)">{{ t.svg }}</div>
+    {% else %}<p class="hint">The relations for this line are not written yet.</p>{% endif %}
+    {% for m in t.missing %}<p class="hint">Not shown: {{ m }} in the data.</p>{% endfor %}
+  </section>
+  {% endfor %}
+  <p class="legend"><span><i class="t-mar-k"></i>marriage</span><span><i class="t-kid-k"></i>parent to child</span><span><i class="t-dash-k"></i>born by niyoga or from a god</span><span><i class="t-sib-k"></i>brothers and sisters of the person beside them</span></p>
+  <p class="hint">Each person is drawn once, under their parents and beside their husband or wife; further marriages are on the character pages. Tap a name for the page. Drawn from the relations in the character data, so a person whose parents are not listed there stands at the top of the line.</p>
+</article>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}static/characters.js"></script>{% endblock %}

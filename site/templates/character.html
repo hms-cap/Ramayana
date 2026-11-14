@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% from "_art.html" import workchips %}
+{% block title %}{{ c.name }} — {{ WK.short_en }} — ಇತಿಹಾಸ{% endblock %}
+{% block main %}
+{{ workchips(W, works_list, root, chip_on) }}
+<article class="prose appx chars cpage">
+  <p class="crumbs-l"><a href="{{ root }}appendix/">{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }}</a> › <a href="../../#{{ work }}">{{ sx("ಪಾತ್ರಗಳು", "पात्राणि", "Characters") }}</a> › {{ work_sx(WK) }} › <span class="g-en2">{{ group.en }}</span></p>
+  <h1 class="pt">{{ nsx }} <small class="iast-lab">{{ c.name }}</small></h1>
+  <p class="c-role"><span class="r-kn" lang="kn">{{ c.role_kn }}</span><span class="r-en">{{ c.role_en }}</span></p>
+  {% if epis %}<ul class="eps" aria-label="Other names">{% for e in epis %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+  <div class="desc"><p class="d-kn" lang="kn">{{ c.desc_kn }}</p><p class="d-en">{{ c.desc_en }}</p></div>
+
+  <h3>Relations</h3>
+  {% if circle and n_rel %}
+  <div class="legend">{% for k in kinds %}<span><i class="e-{{ k }}"></i>{{ {"fam": "family", "tea": "teacher or student", "ally": "ally, friend, serves", "foe": "opposed", "kill": "killed or killed by", "oth": "other"}[k] }}</span>{% endfor %}</div>
+  <div class="circle">{{ circle }}</div>
+  {% if rest %}<p class="more-rel">Also related: {% for r in rest %}{% if r.href %}<a href="{{ r.href }}">{{ r.sx }}</a>{% else %}{{ r.sx }}{% endif %} <small>({{ r.en }})</small>{% if not loop.last %}, {% endif %}{% endfor %}.</p>{% endif %}
+  {% else %}<p class="hint">No relations are listed for this person yet.</p>{% endif %}
+  {% if lines %}<p class="pick">Family tree: {% for l in lines %}<a href="../family/#{{ l.id }}">{{ l.full }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+
+  <h3>Key moments</h3>
+  <ul class="mom">
+    {% for m in moments %}
+    <li><a class="r" href="{{ m.href }}" title="Open verse {{ m.ref }} in the reader">{{ m.sx }}</a>
+      <span class="mt"><span class="m-kn" lang="kn">{{ m.kn }}</span><span class="m-en">{{ m.en }}</span>{% if m.with_ %} <small class="with">with {% for w in m.with_ %}{% if w.href %}<a href="{{ w.href }}">{{ w.sx }}</a>{% else %}{{ w.sx }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</small>{% endif %}</span></li>
+    {% endfor %}
+  </ul>
+
+  <h3>Mentions by {{ WK.unit }}</h3>
+  <figure class="mchart" role="img" aria-label="Mentions by {{ WK.unit }}: {% for x in chart %}{{ x.u.en }} {{ x.n }}{% if not loop.last %}, {% endif %}{% endfor %}">
+    <div class="chart">{% for x in chart %}<span class="cb" title="{{ x.u.en }}: {{ x.n }}"><i style="height:{{ x.h }}px"></i><b>{{ x.u.n_sx }}</b></span>{% endfor %}</div>
+    <div class="axis"><span>{{ chart[0].u.sx }}</span><span>{{ chart[-1].u.sx }}</span></div>
+    <figcaption>{% if total %}About {{ "{:,}".format(total) }} mentions in all{% if peak %}; most in {{ peak.u.sx }} ({{ peak.n }}){% endif %}.{% else %}No mentions were found under this name.{% endif %}
+      Counts come from the word analysis of the {{ "Baroda" if work == "ram" else "Pune" }} critical text and are approximate: they count the person's own names and epithets that belong to no one else, and skip pronouns, names shared with others and other forms.</figcaption>
+  </figure>
+  <p class="hint">The description, Kannada text and moments were written by Claude and have not yet been reviewed. <a href="{{ root }}about/#characters">About</a></p>
+</article>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}static/characters.js"></script>{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% from "_art.html" import workchips %}
+{% block title %}Characters — ಇತಿಹಾಸ{% endblock %}
+{% block main %}
+{{ workchips(W, works_list, root, chip_on) }}
+<article class="prose appx chars">
+  <p class="crumbs-l"><a href="../">{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }}</a> ›</p>
+  <h1>{{ sx("ಪಾತ್ರಗಳು", "पात्राणि", "Characters") }} <small>Pariśiṣṭa</small></h1>
+  <p>Who is who in the two epics: a line on each person, how they are related, key moments with the verse to read, and how often the name is used in each part of the text. Choose a work, then a name.</p>
+  <div class="seg cw-seg" role="tablist" aria-label="Work">
+    {% for s in secs %}<a href="#{{ s.work }}" role="tab" data-cw-tab="{{ s.work }}">{{ work_sx(s.W) }} <em>{{ s.n }}</em></a>{% endfor %}
+  </div>
+  {% for s in secs %}
+  <section class="cw-sec" data-cw-sec="{{ s.work }}" aria-label="{{ s.W.en }}">
+    <h2 class="cw-h">{{ work_sx(s.W) }} <small>{{ s.W.en }}</small></h2>
+    <p class="pick">Family trees: {% for l in s.lines %}<a href="{{ s.work }}/family/#{{ l.id }}">{{ l.en }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+    {% for g in s.groups %}
+    <div class="grp"><span class="g-kn" lang="kn">{{ g.g.kn }}</span><span class="g-en">{{ g.g.en }}</span></div>
+    {% for r in g.rows %}
+    <{{ 'a' if r.has else 'div' }} class="crow{% if not r.has %} dim{% endif %}"{% if r.has %} href="{{ r.href }}"{% endif %} data-id="{{ r.id }}">
+      <b class="cn">{{ r.sx }}<em>{{ r.iast }}</em></b>
+      <span class="cbars" aria-hidden="true" title="{{ r.tip }}">{% for h in r.bars %}<i style="height:{{ h }}px"></i>{% endfor %}</span>
+      <span class="crole">{% if r.role_kn %}<span class="r-kn" lang="kn">{{ r.role_kn }}</span>{% endif %}<span class="r-en">{{ r.role_en }}</span></span>
+    </{{ 'a' if r.has else 'div' }}>
+    {% endfor %}
+    {% endfor %}
+    <p class="hint">Bars: how often the name (and its epithets) occurs in each {{ s.W.unit }} of the critical text, from the word analysis. {% if s.n_have < s.n %}{{ s.n - s.n_have }} of {{ s.n }} pages are still being written.{% endif %}</p>
+  </section>
+  {% endfor %}
+  <p class="hint">Descriptions and Kannada text on these pages are written by Claude and have not yet been reviewed. <a href="{{ root }}about/#characters">About this section</a></p>
+</article>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}static/characters.js"></script>{% endblock %}

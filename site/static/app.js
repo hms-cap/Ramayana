@@ -149,6 +149,22 @@
     if (t.comp) parts.push(grammarData.comp[en ? "en" : "kn"]);
     return parts.join(" · ");
   }
+  // a lemma that names exactly one character links to that character's page (appendix/characters/<work>/names.json, fetched once)
+  var charsData = null, charsReq = null;
+  function charWork() { var w = document.body.dataset.work; return w === "gita" ? "mbh" : w; }
+  function loadChars() {
+    if (!charsReq) charsReq = loadJSON(root_href() + "appendix/characters/" + charWork() + "/names.json").then(function (d) { charsData = d; return d; }, function () { return null; });
+    return charsReq;
+  }
+  function charLink(u, sc) {
+    if (!charsData) return "";
+    for (var i = 0; i < u.l.length; i++) {
+      var id = charsData.l[u.l[i]], c = id && charsData.c[id];
+      if (c) return '<a class="wbw-char" href="' + root_href() + 'appendix/characters/' + charWork() + '/' + id + '/">' +
+        (sc === "knda" ? "ಪಾತ್ರ: " : "Character: ") + esc(sc === "knda" ? c[1] : sc === "deva" ? c[2] : c[0]) + ' ›</a>';
+    }
+    return "";
+  }
   function renderWords(box, units) {
     var T = window.Translit, sc = scriptNow(), en = sc === "iast", sav = !!prefs.savarna;
     var h = '<ol class="wbw-list">';
@@ -161,7 +177,7 @@
         '<span class="lem" lang="sa-Deva">' + esc(lem) + '</span>' +
         '<span class="gr">' + esc(describe(u.t, en)) + '</span>' +
         (kn.length ? '<span class="mean mean-kn" lang="kn">' + kn.map(esc).join(" + ") + '</span>' : "") +
-        (gl.length ? '<span class="mean" lang="en">' + gl.map(esc).join(" + ") + '</span>' : "") + '</li>';
+        (gl.length ? '<span class="mean" lang="en">' + gl.map(esc).join(" + ") + '</span>' : "") + charLink(u, sc) + '</li>';
     });
     box.innerHTML = h + '</ol>' +
       '<p class="wbw-note">Analysis: Digital Corpus of Sanskrit. Meanings are dictionary senses of each base word, chosen automatically (Apte, 1890, and project notes); they are not a translation of this verse. ' +
@@ -191,7 +207,7 @@
     var wurl = src.dataset.words === "words.json" ? "words.json" : wroot_href() + src.dataset.words;
     var vnum = src.dataset.vn;
     box.dataset.words = wurl; box.dataset.vn = vnum; box.dataset.note = src.dataset.wnote || "";
-    Promise.all([loadWords(wurl), grammarData || loadJSON(root_href() + "data/grammar.json")]).then(function (r) {
+    Promise.all([loadWords(wurl), grammarData || loadJSON(root_href() + "data/grammar.json"), loadChars()]).then(function (r) {
       wordsData = r[0]; grammarData = r[1];
       var units = wordsData.verses[vnum];
       if (units) renderWords(box, units); else box.textContent = "No word analysis for this verse.";

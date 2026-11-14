@@ -24,6 +24,7 @@ import daily  # noqa: E402
 import grammar  # noqa: E402
 import card_art  # noqa: E402
 import chandas  # noqa: E402
+import characters as chars  # noqa: E402
 import mbh_art  # noqa: E402
 import gita_art  # noqa: E402
 import meter  # noqa: E402
@@ -116,7 +117,7 @@ def load_recs(W: dict, ed_id: str) -> list[dict]:
 
 
 # the Pariśiṣṭa (appendix) chip beside the two works; its pages are built by build_appendix()
-APPENDIX = dict(id="app", prefix="appendix/", kn_chip="\u0caa\u0cb0\u0cbf\u0cb6\u0cbf\u0cb7\u0ccd\u0c9f", short_en="Pariśiṣṭa", sub_en="Chandas", theme="#1F4B3F")
+APPENDIX = dict(id="app", prefix="appendix/", kn_chip="\u0caa\u0cb0\u0cbf\u0cb6\u0cbf\u0cb7\u0ccd\u0c9f", short_en="Pariśiṣṭa", sub_en="Chandas, Characters", theme="#1F4B3F")
 
 
 def load_editions(W=None):
@@ -265,6 +266,20 @@ MBH_WORDS: dict[tuple, str] = {}     # Mahābhārata: (parva, adhyāya) -> words
 MBH_WORD_UIDS: set[str] = set()      # Pune verse uids that have words
 GLOSS: dict[str, str] = {}
 GLOSS_KN: dict[str, str] = {}
+LEMCNT: dict[str, dict[str, list]] = {"ram": {}, "mbh": {}}   # work -> lemma -> occurrences per kāṇḍa / parva (Characters mention counts)
+CHAR_SHELL: list[str] = []                                    # Characters pages the service worker keeps with the shell
+
+
+def _count_lemmas(work: str, k: int, units: list) -> None:
+    n = len(WORKS[work]["units"])
+    tab = LEMCNT[work]
+    for u in units:
+        ls = u["l"]
+        for l in (ls + ["".join(ls)] if len(ls) > 1 else ls):
+            row = tab.get(l)
+            if row is None:
+                row = tab[l] = [0] * n
+            row[k - 1] += 1
 
 
 def _words_json(verses: dict, lemmas: set) -> str:
@@ -284,6 +299,7 @@ def load_words() -> None:
         for line in open(wp, encoding="utf-8"):
             r = json.loads(line)
             WORDS[r["uid"]] = r["units"]
+            _count_lemmas("ram", int(r["uid"].split("-")[1]), r["units"])
     if gp.exists():
         GLOSS.update(json.loads(gp.read_text(encoding="utf-8")))
     if kp.exists():
@@ -303,6 +319,7 @@ def load_words() -> None:
                 seen.add(key)
             verses[int(v)] = r["units"]
             MBH_WORD_UIDS.add(r["uid"])
+            _count_lemmas("mbh", int(k), r["units"])
             for u in r["units"]:
                 lemmas.update(u["l"])
         if cur is not None:
@@ -547,6 +564,15 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
     return {"W": W, "eds": summaries, "base": base}
 
 
+def build_work_base() -> dict:
+    """The context the shared pages (appendix) take from the Rāmāyaṇa build, without building the work (development flag)."""
+    W = WORKS["ram"]
+    editions = load_editions(W)
+    works_list = [{**w, "n_units": len(w["units"]), "n_eds": len(load_editions(w)), "icons": card_art.chip_icons(w["id"])} for w in WORKS.values()]
+    works_list.append({**APPENDIX, "icons": card_art.chip_icons("app")})
+    return dict(W=W, works_list=works_list, rail_kandas=[unit_info(W, k) for k in range(1, len(W["units"]) + 1)], rail_eds=editions, editions=editions)
+
+
 def build(out: Path, only: str | None = None) -> None:
     env = make_env()
     if out.exists():
@@ -575,6 +601,7 @@ def build(out: Path, only: str | None = None) -> None:
         p.write_text(env.get_template(f"{name}.html").render(page=name, **shared), encoding="utf-8")
     if only is None:
         build_appendix(out, env, ram["base"])
+        build_characters(out, env, ram["base"])
     write_pwa(out, done)
     (out / ".nojekyll").write_text("")
     print(f"built {sum(e['sargas'] for d in done for e in d['eds'])} sarga/adhyāya pages -> {out}")
@@ -854,9 +881,112 @@ def build_appendix(out: Path, env: Environment, base: dict) -> None:
         write(f"appendix/chandas/{m['slug']}", "metre.html", 3, m=m, pada=pada.get(m["name"]), sections=sections, chandas_up="../")
 
 
+def build_characters(out: Path, env: Environment, base: dict) -> None:
+    """Pariśiṣṭa -> Characters: an index of both epics, one page per character (relationship circle, key moments,
+    mentions), family trees, and names.json per work (the word panel links a lemma to its character; search uses it).
+    Reads data/characters/ (see its README); characters without a data entry are listed by name, without a page."""
+    from markupsafe import Markup
+    shared = dict(**base, page="appendix", chip_on="app", msx=lambda n: sx(*chars.names3(n)))
+    CHAR_SHELL[:] = ["appendix/characters/"]
+    data = {}
+    for work in chars.WORKS:
+        Wd = chars.load(work)
+        F = chars.facts(Wd)
+        n_units = len(WORKS[work]["units"])
+        units = []
+        for k in range(1, n_units + 1):
+            iast, kn, en = WORKS[work]["units"][k - 1]
+            units.append({"n": k, "kn": kn, "en": en, "deva": slp1_to_brahmic(iast_to_slp1(iast), "deva"),
+                          "iast": en, "n_sx": sx(to_digits(k, "knda"), to_digits(k, "deva"), str(k)), "sx": sx(kn, slp1_to_brahmic(iast_to_slp1(iast), "deva"), en)})
+        counts = chars.count_mentions(Wd, LEMCNT[work], n_units)
+        lines = chars.LINES[work]
+        lay = {l["id"]: chars.tree_layout(Wd, F, l) for l in lines}
+        in_lines: dict = {}
+        for l in lines:
+            for m in lay[l["id"]]["members"]:
+                in_lines.setdefault(m, []).append(l)
+        data[work] = dict(W=Wd, F=F, units=units, counts=counts, lines=lines, lay=lay, in_lines=in_lines)
+        CHAR_SHELL.append(f"appendix/characters/{work}/family/")
+        CHAR_SHELL.append(f"appendix/characters/{work}/names.json")
+
+    def write(rel: str, tpl: str, depth: int, **kw):
+        p = out / rel / "index.html"
+        p.parent.mkdir(parents=True, exist_ok=True)
+        ctx = {**shared, "wroot": "../" * depth, "root": "../" * depth, "up": "../", **kw}
+        p.write_text(env.get_template(tpl).render(**ctx), encoding="utf-8")
+
+    def nsx(c):
+        return sx(*chars.names3(c["name"], c.get("gender")))
+
+    def bars(n):
+        top = max(n) if n and max(n) else 1
+        return [max(2, round(x / top * 26)) if x else 1 for x in n], sum(n)
+
+    # ---- hub entry count and the index
+    secs = []
+    for work, d in data.items():
+        Wd = d["W"]
+        groups = []
+        for g in Wd["groups"]:
+            rows = []
+            for c in Wd["chars"].values():
+                if c["group"] != g["id"]:
+                    continue
+                hs, tot = bars(d["counts"][c["id"]])
+                rows.append(dict(id=c["id"], sx=nsx(c), iast=c["name"], has=c["has"], role_kn=c.get("role_kn", ""), role_en=c.get("role_en", ""),
+                                 bars=hs, total=tot, tip=", ".join(f'{u["en"]} {n}' for u, n in zip(d["units"], d["counts"][c["id"]])),
+                                 href=f"{work}/{c['id']}/" if c["has"] else None))
+            if rows:
+                groups.append(dict(g=g, rows=rows))
+        secs.append(dict(work=work, W=WORKS[work], n=len(Wd["chars"]), n_have=sum(c["has"] for c in Wd["chars"].values()), groups=groups,
+                         lines=d["lines"], units=d["units"]))
+    write("appendix/characters", "characters.html", 2, secs=secs, works=WORKS, up="../")
+
+    # ---- one page per character, the family trees, names.json
+    for work, d in data.items():
+        Wd, F = d["W"], d["F"]
+        ch = Wd["chars"]
+        hrefs = {i: f"../{i}/" for i, c in ch.items() if c["has"]}
+        groups = {g["id"]: g for g in Wd["groups"]}
+        WK = WORKS[work]
+        par_rel = chars.parent_rels(Wd)
+        for cid, c in ch.items():
+            if not c["has"]:
+                continue
+            rows = chars.edges_for(Wd, F, cid)
+            top, rest = chars.pick_circle(rows)
+            svg = chars.circle_svg(Wd, cid, top, hrefs)
+            kinds = [k for k in chars.KIND_PRIO if any(r["kind"] == k for r in top)]
+            cnt = d["counts"][cid]
+            mx = max(cnt) if cnt and max(cnt) else 1
+            chart = [dict(u=u, n=n, h=max(2, round(n / mx * 52)) if n else 1) for u, n in zip(d["units"], cnt)]
+            peak = max(chart, key=lambda x: x["n"]) if sum(cnt) else None
+            moments = []
+            for m in c["moments"]:
+                a, b, v = (int(x) for x in m["ref"].split("."))
+                moments.append(dict(sx=sx(to_digits(m["ref"], "knda"), to_digits(m["ref"], "deva"), m["ref"]), ref=m["ref"],
+                                    href=f'../../../../{WK["prefix"]}{m.get("ed", "vu")}/{a}/{b}/#v{v}', kn=m.get("kn", ""), en=m.get("en", ""),
+                                    with_=[dict(sx=nsx(ch[w]), href=hrefs.get(w)) for w in m.get("with", []) if w in ch]))
+            epis = [sx(*chars.names3(e, c.get("gender"))) for e in c["epithets"]]
+            write(f"appendix/characters/{work}/{cid}", "character.html", 4, up=f"../../#{work}", c=c, work=work, WK=WK, nsx=nsx(c),
+                  group=groups[c["group"]], epis=epis, circle=Markup(svg), kinds=kinds, rest=[dict(sx=nsx(ch[r["id"]]), href=hrefs.get(r["id"]), en=r["en"], kn=r["kn"]) for r in rest],
+                  moments=moments, chart=chart, total=sum(cnt), peak=peak, units=d["units"], lines=d["in_lines"].get(cid, []),
+                  n_rel=len(rows))
+        # family trees
+        trees = []
+        for l in d["lines"]:
+            lay = d["lay"][l["id"]]
+            trees.append(dict(l=l, svg=Markup(chars.tree_svg(Wd, F, lay, hrefs, par_rel)), n=len(lay["members"]), missing=lay["missing"],
+                              sx=sx(l["kn"], slp1_to_brahmic(iast_to_slp1(l["en"]), "deva"), l["en"])))
+        write(f"appendix/characters/{work}/family", "family.html", 4, up="../../", work=work, WK=WK, trees=trees)
+        nj = chars.names_json(Wd)
+        (out / "appendix" / "characters" / work / "names.json").write_text(json.dumps(nj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"  characters: {sum(len(d['W']['chars']) for d in data.values())} listed, {sum(c['has'] for d in data.values() for c in d['W']['chars'].values())} with pages")
+
+
 def write_pwa(out: Path, done: list) -> None:
     """Service worker (with its shell list), manifest, and the offline download packs."""
-    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/"]
+    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/"] + CHAR_SHELL
     for d in done:
         pre = d["W"]["prefix"]
         nu = len(d["W"]["units"])
@@ -918,5 +1048,16 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(ROOT / "dist"))
     ap.add_argument("--only", choices=list(WORKS), help="build one work only (faster while developing)")
+    ap.add_argument("--characters-only", action="store_true", help="rewrite only the appendix and Characters pages and static files in an existing build (development)")
     a = ap.parse_args()
-    build(Path(a.out), a.only)
+    if a.characters_only:
+        out = Path(a.out)
+        shutil.rmtree(out / "static"); shutil.copytree(ROOT / "site" / "static", out / "static")
+        shutil.rmtree(out / "appendix" / "characters", ignore_errors=True)
+        load_words()
+        e = make_env()
+        ram = build_work_base()
+        build_appendix(out, e, ram)
+        build_characters(out, e, ram)
+    else:
+        build(Path(a.out), a.only)
