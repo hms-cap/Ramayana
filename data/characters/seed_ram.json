@@ -1,0 +1,252 @@
+{
+ "work": "ram",
+ "groups": [
+  {
+   "id": "ikshvaku",
+   "en": "Ikṣvāku family",
+   "kn": "ಇಕ್ಷ್ವಾಕು ವಂಶ"
+  },
+  {
+   "id": "mithila",
+   "en": "Mithilā",
+   "kn": "ಮಿಥಿಲೆ"
+  },
+  {
+   "id": "court",
+   "en": "Court and companions",
+   "kn": "ಆಸ್ಥಾನ ಮತ್ತು ಸಂಗಡಿಗರು"
+  },
+  {
+   "id": "sages",
+   "en": "Sages and seers",
+   "kn": "ಋಷಿಗಳು"
+  },
+  {
+   "id": "vanara",
+   "en": "Vānaras",
+   "kn": "ವಾನರರು"
+  },
+  {
+   "id": "rakshasa",
+   "en": "Rākṣasas",
+   "kn": "ರಾಕ್ಷಸರು"
+  },
+  {
+   "id": "others",
+   "en": "Others",
+   "kn": "ಇತರರು"
+  }
+ ],
+ "characters": [
+  {
+   "id": "dasharatha",
+   "name": "Daśaratha",
+   "group": "ikshvaku"
+  },
+  {
+   "id": "kausalya",
+   "name": "Kausalyā",
+   "group": "ikshvaku"
+  },
+  {
+   "id": "kaikeyi",
+   "name": "Kaikeyī",
+   "group": "ikshvaku"
+  },
+  {
+   "id": "sumitra",
+   "name": "Sumitrā",
+   "group": "ikshvaku"
+  },
+  {
+   "id": "rama",
+   "name": "Rāma",
+   "group": "ikshvaku"
+  },
+  {
+   "id": "lakshmana",
+   "name": "Lakṣmaṇa",
+   "group": "ikshvaku"
+  },
+  {
+   "id": "bharata",
+   "name": "Bharata",
+   "group": "ikshvaku"
+  },
+  {
+   "id": "shatrughna",
+   "name": "Śatrughna",
+   "group": "ikshvaku"
+  },
+  {
+   "id": "lava",
+   "name": "Lava",
+   "group": "ikshvaku"
+  },
+  {
+   "id": "kusha",
+   "name": "Kuśa",
+   "group": "ikshvaku"
+  },
+  {
+   "id": "janaka",
+   "name": "Janaka",
+   "group": "mithila"
+  },
+  {
+   "id": "sita",
+   "name": "Sītā",
+   "group": "mithila"
+  },
+  {
+   "id": "urmila",
+   "name": "Ūrmilā",
+   "group": "mithila"
+  },
+  {
+   "id": "sumantra",
+   "name": "Sumantra",
+   "group": "court"
+  },
+  {
+   "id": "vasishtha",
+   "name": "Vasiṣṭha",
+   "group": "court"
+  },
+  {
+   "id": "guha",
+   "name": "Guha",
+   "group": "court"
+  },
+  {
+   "id": "manthara",
+   "name": "Mantharā",
+   "group": "court"
+  },
+  {
+   "id": "valmiki",
+   "name": "Vālmīki",
+   "group": "sages"
+  },
+  {
+   "id": "narada",
+   "name": "Nārada",
+   "group": "sages"
+  },
+  {
+   "id": "vishvamitra",
+   "name": "Viśvāmitra",
+   "group": "sages"
+  },
+  {
+   "id": "agastya",
+   "name": "Agastya",
+   "group": "sages"
+  },
+  {
+   "id": "shabari",
+   "name": "Śabarī",
+   "group": "sages"
+  },
+  {
+   "id": "ahalya",
+   "name": "Ahalyā",
+   "group": "sages"
+  },
+  {
+   "id": "parashurama",
+   "name": "Paraśurāma",
+   "group": "sages"
+  },
+  {
+   "id": "jatayu",
+   "name": "Jaṭāyus",
+   "group": "others"
+  },
+  {
+   "id": "sugriva",
+   "name": "Sugrīva",
+   "group": "vanara"
+  },
+  {
+   "id": "valin",
+   "name": "Vālin",
+   "group": "vanara"
+  },
+  {
+   "id": "tara",
+   "name": "Tārā",
+   "group": "vanara"
+  },
+  {
+   "id": "angada",
+   "name": "Aṅgada",
+   "group": "vanara"
+  },
+  {
+   "id": "hanumat",
+   "name": "Hanumat",
+   "group": "vanara"
+  },
+  {
+   "id": "jambavat",
+   "name": "Jāmbavat",
+   "group": "vanara"
+  },
+  {
+   "id": "nila",
+   "name": "Nīla",
+   "group": "vanara"
+  },
+  {
+   "id": "nala",
+   "name": "Nala",
+   "group": "vanara"
+  },
+  {
+   "id": "ravana",
+   "name": "Rāvaṇa",
+   "group": "rakshasa"
+  },
+  {
+   "id": "mandodari",
+   "name": "Mandodarī",
+   "group": "rakshasa"
+  },
+  {
+   "id": "vibhishana",
+   "name": "Vibhīṣaṇa",
+   "group": "rakshasa"
+  },
+  {
+   "id": "kumbhakarna",
+   "name": "Kumbhakarṇa",
+   "group": "rakshasa"
+  },
+  {
+   "id": "indrajit",
+   "name": "Indrajit",
+   "group": "rakshasa"
+  },
+  {
+   "id": "shurpanakha",
+   "name": "Śūrpaṇakhā",
+   "group": "rakshasa"
+  },
+  {
+   "id": "maricha",
+   "name": "Mārīca",
+   "group": "rakshasa"
+  },
+  {
+   "id": "khara",
+   "name": "Khara",
+   "group": "rakshasa"
+  },
+  {
+   "id": "tataka",
+   "name": "Tāṭakā",
+   "group": "rakshasa"
+  }
+ ]
+}

@@ -1,0 +1,457 @@
+{
+ "work": "mbh",
+ "groups": [
+  {
+   "id": "kuru",
+   "en": "Kuru elders",
+   "kn": "ಕುರು ಹಿರಿಯರು"
+  },
+  {
+   "id": "pandava",
+   "en": "Pāṇḍavas and their family",
+   "kn": "ಪಾಂಡವರು ಮತ್ತು ಅವರ ಕುಟುಂಬ"
+  },
+  {
+   "id": "kaurava",
+   "en": "Kauravas and their side",
+   "kn": "ಕೌರವರು ಮತ್ತು ಅವರ ಪಕ್ಷ"
+  },
+  {
+   "id": "teachers",
+   "en": "Teachers, sages and narrators",
+   "kn": "ಗುರುಗಳು, ಋಷಿಗಳು ಮತ್ತು ಕಥೆ ಹೇಳುವವರು"
+  },
+  {
+   "id": "yadava",
+   "en": "Yādavas",
+   "kn": "ಯಾದವರು"
+  },
+  {
+   "id": "panchala",
+   "en": "Pāñcālas",
+   "kn": "ಪಾಂಚಾಲರು"
+  },
+  {
+   "id": "kings",
+   "en": "Other kings and warriors",
+   "kn": "ಇತರ ರಾಜರು ಮತ್ತು ಯೋಧರು"
+  },
+  {
+   "id": "tales",
+   "en": "Characters of the inner tales",
+   "kn": "ಉಪಾಖ್ಯಾನಗಳ ಪಾತ್ರಗಳು"
+  },
+  {
+   "id": "gods",
+   "en": "Gods",
+   "kn": "ದೇವತೆಗಳು"
+  }
+ ],
+ "characters": [
+  {
+   "id": "shantanu",
+   "name": "Śantanu",
+   "group": "kuru"
+  },
+  {
+   "id": "ganga",
+   "name": "Gaṅgā",
+   "group": "kuru"
+  },
+  {
+   "id": "satyavati",
+   "name": "Satyavatī",
+   "group": "kuru"
+  },
+  {
+   "id": "bhishma",
+   "name": "Bhīṣma",
+   "group": "kuru"
+  },
+  {
+   "id": "vyasa",
+   "name": "Vyāsa",
+   "group": "kuru"
+  },
+  {
+   "id": "vichitravirya",
+   "name": "Vicitravīrya",
+   "group": "kuru"
+  },
+  {
+   "id": "amba",
+   "name": "Ambā",
+   "group": "kuru"
+  },
+  {
+   "id": "ambika",
+   "name": "Ambikā",
+   "group": "kuru"
+  },
+  {
+   "id": "ambalika",
+   "name": "Ambālikā",
+   "group": "kuru"
+  },
+  {
+   "id": "vidura",
+   "name": "Vidura",
+   "group": "kuru"
+  },
+  {
+   "id": "dhritarashtra",
+   "name": "Dhṛtarāṣṭra",
+   "group": "kuru"
+  },
+  {
+   "id": "gandhari",
+   "name": "Gāndhārī",
+   "group": "kuru"
+  },
+  {
+   "id": "pandu",
+   "name": "Pāṇḍu",
+   "group": "kuru"
+  },
+  {
+   "id": "kunti",
+   "name": "Kuntī",
+   "group": "kuru"
+  },
+  {
+   "id": "madri",
+   "name": "Mādrī",
+   "group": "kuru"
+  },
+  {
+   "id": "yudhishthira",
+   "name": "Yudhiṣṭhira",
+   "group": "pandava"
+  },
+  {
+   "id": "bhima",
+   "name": "Bhīma",
+   "group": "pandava"
+  },
+  {
+   "id": "arjuna",
+   "name": "Arjuna",
+   "group": "pandava"
+  },
+  {
+   "id": "nakula",
+   "name": "Nakula",
+   "group": "pandava"
+  },
+  {
+   "id": "sahadeva",
+   "name": "Sahadeva",
+   "group": "pandava"
+  },
+  {
+   "id": "draupadi",
+   "name": "Draupadī",
+   "group": "pandava"
+  },
+  {
+   "id": "subhadra",
+   "name": "Subhadrā",
+   "group": "pandava"
+  },
+  {
+   "id": "ulupi",
+   "name": "Ulūpī",
+   "group": "pandava"
+  },
+  {
+   "id": "chitrangada",
+   "name": "Citrāṅgadā",
+   "group": "pandava"
+  },
+  {
+   "id": "hidimba",
+   "name": "Hiḍimbā",
+   "group": "pandava"
+  },
+  {
+   "id": "ghatotkacha",
+   "name": "Ghaṭotkaca",
+   "group": "pandava"
+  },
+  {
+   "id": "abhimanyu",
+   "name": "Abhimanyu",
+   "group": "pandava"
+  },
+  {
+   "id": "uttara",
+   "name": "Uttarā",
+   "group": "pandava"
+  },
+  {
+   "id": "parikshit",
+   "name": "Parikṣit",
+   "group": "pandava"
+  },
+  {
+   "id": "duryodhana",
+   "name": "Duryodhana",
+   "group": "kaurava"
+  },
+  {
+   "id": "duhshasana",
+   "name": "Duḥśāsana",
+   "group": "kaurava"
+  },
+  {
+   "id": "vikarna",
+   "name": "Vikarṇa",
+   "group": "kaurava"
+  },
+  {
+   "id": "yuyutsu",
+   "name": "Yuyutsu",
+   "group": "kaurava"
+  },
+  {
+   "id": "duhshala",
+   "name": "Duḥśalā",
+   "group": "kaurava"
+  },
+  {
+   "id": "jayadratha",
+   "name": "Jayadratha",
+   "group": "kaurava"
+  },
+  {
+   "id": "karna",
+   "name": "Karṇa",
+   "group": "kaurava"
+  },
+  {
+   "id": "shakuni",
+   "name": "Śakuni",
+   "group": "kaurava"
+  },
+  {
+   "id": "ashvatthaman",
+   "name": "Aśvatthāman",
+   "group": "kaurava"
+  },
+  {
+   "id": "kripa",
+   "name": "Kṛpa",
+   "group": "kaurava"
+  },
+  {
+   "id": "shalya",
+   "name": "Śalya",
+   "group": "kaurava"
+  },
+  {
+   "id": "bhagadatta",
+   "name": "Bhagadatta",
+   "group": "kaurava"
+  },
+  {
+   "id": "drona",
+   "name": "Droṇa",
+   "group": "teachers"
+  },
+  {
+   "id": "parashurama",
+   "name": "Paraśurāma",
+   "group": "teachers"
+  },
+  {
+   "id": "durvasas",
+   "name": "Durvāsas",
+   "group": "teachers"
+  },
+  {
+   "id": "markandeya",
+   "name": "Mārkaṇḍeya",
+   "group": "teachers"
+  },
+  {
+   "id": "narada",
+   "name": "Nārada",
+   "group": "teachers"
+  },
+  {
+   "id": "dhaumya",
+   "name": "Dhaumya",
+   "group": "teachers"
+  },
+  {
+   "id": "vaishampayana",
+   "name": "Vaiśampāyana",
+   "group": "teachers"
+  },
+  {
+   "id": "janamejaya",
+   "name": "Janamejaya",
+   "group": "teachers"
+  },
+  {
+   "id": "ugrashravas",
+   "name": "Ugraśravas",
+   "group": "teachers"
+  },
+  {
+   "id": "sanjaya",
+   "name": "Saṃjaya",
+   "group": "teachers"
+  },
+  {
+   "id": "krishna",
+   "name": "Kṛṣṇa",
+   "group": "yadava"
+  },
+  {
+   "id": "balarama",
+   "name": "Balarāma",
+   "group": "yadava"
+  },
+  {
+   "id": "vasudeva",
+   "name": "Vasudeva",
+   "group": "yadava"
+  },
+  {
+   "id": "rukmini",
+   "name": "Rukmiṇī",
+   "group": "yadava"
+  },
+  {
+   "id": "satyaki",
+   "name": "Sātyaki",
+   "group": "yadava"
+  },
+  {
+   "id": "kritavarman",
+   "name": "Kṛtavarman",
+   "group": "yadava"
+  },
+  {
+   "id": "drupada",
+   "name": "Drupada",
+   "group": "panchala"
+  },
+  {
+   "id": "dhrishtadyumna",
+   "name": "Dhṛṣṭadyumna",
+   "group": "panchala"
+  },
+  {
+   "id": "shikhandin",
+   "name": "Śikhaṇḍin",
+   "group": "panchala"
+  },
+  {
+   "id": "virata",
+   "name": "Virāṭa",
+   "group": "kings"
+  },
+  {
+   "id": "sudeshna",
+   "name": "Sudeṣṇā",
+   "group": "kings"
+  },
+  {
+   "id": "uttara_prince",
+   "name": "Uttara",
+   "group": "kings"
+  },
+  {
+   "id": "kichaka",
+   "name": "Kīcaka",
+   "group": "kings"
+  },
+  {
+   "id": "jarasandha",
+   "name": "Jarāsaṃdha",
+   "group": "kings"
+  },
+  {
+   "id": "shishupala",
+   "name": "Śiśupāla",
+   "group": "kings"
+  },
+  {
+   "id": "ekalavya",
+   "name": "Ekalavya",
+   "group": "kings"
+  },
+  {
+   "id": "bhurishravas",
+   "name": "Bhūriśravas",
+   "group": "kings"
+  },
+  {
+   "id": "susharman",
+   "name": "Suśarman",
+   "group": "kings"
+  },
+  {
+   "id": "dushyanta",
+   "name": "Duḥṣanta",
+   "group": "tales"
+  },
+  {
+   "id": "shakuntala",
+   "name": "Śakuntalā",
+   "group": "tales"
+  },
+  {
+   "id": "nala",
+   "name": "Nala",
+   "group": "tales"
+  },
+  {
+   "id": "damayanti",
+   "name": "Damayantī",
+   "group": "tales"
+  },
+  {
+   "id": "savitri",
+   "name": "Sāvitrī",
+   "group": "tales"
+  },
+  {
+   "id": "satyavat",
+   "name": "Satyavat",
+   "group": "tales"
+  },
+  {
+   "id": "hanumat",
+   "name": "Hanumat",
+   "group": "tales"
+  },
+  {
+   "id": "indra",
+   "name": "Indra",
+   "group": "gods"
+  },
+  {
+   "id": "surya",
+   "name": "Sūrya",
+   "group": "gods"
+  },
+  {
+   "id": "dharma",
+   "name": "Dharma",
+   "group": "gods"
+  },
+  {
+   "id": "vayu",
+   "name": "Vāyu",
+   "group": "gods"
+  },
+  {
+   "id": "ashvins",
+   "name": "Aśvins",
+   "group": "gods"
+  }
+ ]
+}
