@@ -1,0 +1,2789 @@
+{
+ "work": "ram",
+ "characters": [
+  {
+   "id": "dasharatha",
+   "name": "Daśaratha",
+   "group": "ikshvaku",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Ayodhyādhipa"
+   ],
+   "role_en": "King of Ayodhyā, father of Rāma and his three brothers",
+   "role_kn": "ಅಯೋಧ್ಯೆಯ ರಾಜ, ರಾಮ ಮತ್ತು ಅವನ ಮೂವರು ತಮ್ಮಂದಿರ ತಂದೆ",
+   "desc_en": "Daśaratha is the Ikṣvāku king of Ayodhyā, husband of Kausalyā, Kaikeyī and Sumitrā, and father of Rāma, Bharata, Lakṣmaṇa and Śatrughna. When he decides to make Rāma his heir, Kaikeyī, urged on by Mantharā, claims two boons he had once granted her: Rāma's exile for fourteen years and Bharata's consecration. Bound by his word, he cannot refuse and sends Rāma to the forest. On the sixth night after Rāma's departure he dies of grief, remembering the curse of the old blind parents of a boy he once killed by mistake.",
+   "desc_kn": "ದಶರಥನು ಅಯೋಧ್ಯೆಯ ಇಕ್ಷ್ವಾಕು ವಂಶದ ರಾಜ; ಕೌಸಲ್ಯೆ, ಕೈಕೇಯಿ ಮತ್ತು ಸುಮಿತ್ರೆಯರ ಪತಿ, ರಾಮ, ಭರತ, ಲಕ್ಷ್ಮಣ ಮತ್ತು ಶತ್ರುಘ್ನರ ತಂದೆ. ರಾಮನಿಗೆ ಯುವರಾಜ ಪಟ್ಟ ಕಟ್ಟಲು ನಿರ್ಧರಿಸಿದಾಗ, ಮಂಥರೆಯ ಪ್ರಚೋದನೆಯಿಂದ ಕೈಕೇಯಿ ತನಗೆ ಹಿಂದೆ ಕೊಟ್ಟಿದ್ದ ಎರಡು ವರಗಳನ್ನು ಕೇಳುತ್ತಾಳೆ: ರಾಮನಿಗೆ ಹದಿನಾಲ್ಕು ವರ್ಷ ವನವಾಸ ಮತ್ತು ಭರತನಿಗೆ ಪಟ್ಟಾಭಿಷೇಕ. ಕೊಟ್ಟ ಮಾತಿಗೆ ಬದ್ಧನಾದ ದಶರಥ ನಿರಾಕರಿಸಲಾಗದೆ ರಾಮನನ್ನು ಕಾಡಿಗೆ ಕಳುಹಿಸುತ್ತಾನೆ. ರಾಮ ಹೊರಟ ಆರನೇ ರಾತ್ರಿ, ತಾನು ಹಿಂದೆ ತಪ್ಪಿ ಕೊಂದ ಬಾಲಕನ ಕುರುಡು ಮುದಿ ತಂದೆತಾಯಿಗಳ ಶಾಪವನ್ನು ನೆನೆದು ಶೋಕದಿಂದ ಪ್ರಾಣ ಬಿಡುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "spouse",
+     "to": "kausalya"
+    },
+    {
+     "type": "spouse",
+     "to": "kaikeyi"
+    },
+    {
+     "type": "spouse",
+     "to": "sumitra"
+    },
+    {
+     "type": "friend",
+     "to": "jatayu",
+     "ref": "3.14.35",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "His four sons are born",
+     "kn": "ಅವನಿಗೆ ನಾಲ್ವರು ಮಕ್ಕಳು ಜನಿಸುತ್ತಾರೆ",
+     "ref": "1.18.36",
+     "ed": "vu"
+    },
+    {
+     "en": "Swears, by Rāma himself, to grant whatever Kaikeyī asks",
+     "kn": "ಕೈಕೇಯಿ ಕೇಳಿದ್ದನ್ನು ಕೊಡುವೆನೆಂದು ರಾಮನ ಮೇಲೆಯೇ ಆಣೆ ಇಡುತ್ತಾನೆ",
+     "ref": "2.11.7",
+     "ed": "vu",
+     "with": [
+      "rama",
+      "kaikeyi"
+     ]
+    },
+    {
+     "en": "Hears her two demands and denounces Kaikeyī",
+     "kn": "ಅವಳ ಎರಡು ಬೇಡಿಕೆಗಳನ್ನು ಕೇಳಿ ಕೈಕೇಯಿಯನ್ನು ನಿಂದಿಸುತ್ತಾನೆ",
+     "ref": "2.12.7",
+     "ed": "vu",
+     "with": [
+      "kaikeyi"
+     ]
+    },
+    {
+     "en": "Recalls how he once shot the ascetic's son by mistake",
+     "kn": "ತಾನು ಹಿಂದೆ ತಪಸ್ವಿಯ ಮಗನನ್ನು ತಪ್ಪಿ ಕೊಂದುದನ್ನು ನೆನೆಯುತ್ತಾನೆ",
+     "ref": "2.64.13",
+     "ed": "vu"
+    },
+    {
+     "en": "Dies of grief with Kausalyā and Sumitrā beside him",
+     "kn": "ಕೌಸಲ್ಯೆ ಮತ್ತು ಸುಮಿತ್ರೆಯರ ಸನ್ನಿಧಿಯಲ್ಲಿ ಶೋಕದಿಂದ ಪ್ರಾಣ ಬಿಡುತ್ತಾನೆ",
+     "ref": "2.64.78",
+     "ed": "vu",
+     "with": [
+      "kausalya",
+      "sumitra"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kausalya",
+   "name": "Kausalyā",
+   "group": "ikshvaku",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [],
+   "role_en": "Daśaratha's senior queen and Rāma's mother",
+   "role_kn": "ದಶರಥನ ಪಟ್ಟದ ರಾಣಿ, ರಾಮನ ತಾಯಿ",
+   "desc_en": "Kausalyā is Daśaratha's chief queen and the mother of Rāma. On the eve of Rāma's planned consecration she keeps vigil and worships Viṣṇu for his welfare. When Rāma is sent into exile she grieves bitterly but, in the end, blesses him and sends him off with Sītā and Lakṣmaṇa. She is with Sumitrā at Daśaratha's death, and when the fourteen years are over Rāma greets her first among his mothers.",
+   "desc_kn": "ಕೌಸಲ್ಯೆ ದಶರಥನ ಪಟ್ಟದ ರಾಣಿ ಹಾಗೂ ರಾಮನ ತಾಯಿ. ರಾಮನ ಪಟ್ಟಾಭಿಷೇಕದ ಹಿಂದಿನ ರಾತ್ರಿ ಅವಳು ಜಾಗರಣೆ ಮಾಡಿ ಅವನ ಕ್ಷೇಮಕ್ಕಾಗಿ ವಿಷ್ಣುವನ್ನು ಪೂಜಿಸುತ್ತಾಳೆ. ರಾಮನಿಗೆ ವನವಾಸ ಬಂದಾಗ ತುಂಬ ದುಃಖಿಸುತ್ತಾಳೆ, ಆದರೂ ಕೊನೆಗೆ ಅವನನ್ನು ಆಶೀರ್ವದಿಸಿ ಸೀತೆ ಮತ್ತು ಲಕ್ಷ್ಮಣರೊಂದಿಗೆ ಕಳುಹಿಸಿಕೊಡುತ್ತಾಳೆ. ದಶರಥನ ಮರಣದ ವೇಳೆ ಸುಮಿತ್ರೆಯೊಂದಿಗೆ ಇರುತ್ತಾಳೆ; ವನವಾಸ ಮುಗಿದ ಮೇಲೆ ರಾಮ ತನ್ನ ತಾಯಂದಿರಲ್ಲಿ ಮೊದಲು ಅವಳಿಗೇ ನಮಸ್ಕರಿಸುತ್ತಾನೆ.",
+   "relations": [],
+   "moments": [
+    {
+     "en": "Gives birth to Rāma",
+     "kn": "ರಾಮನಿಗೆ ಜನ್ಮ ನೀಡುತ್ತಾಳೆ",
+     "ref": "1.18.10",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "On the day of the planned consecration she blesses Rāma",
+     "kn": "ಪಟ್ಟಾಭಿಷೇಕದ ದಿನ ರಾಮನನ್ನು ಆಶೀರ್ವದಿಸುತ್ತಾಳೆ",
+     "ref": "2.20.22",
+     "ed": "vu"
+    },
+    {
+     "en": "Bids farewell as Rāma, Sītā and Lakṣmaṇa leave for the forest",
+     "kn": "ರಾಮ, ಸೀತೆ, ಲಕ್ಷ್ಮಣರು ಕಾಡಿಗೆ ಹೊರಡುವಾಗ ಬೀಳ್ಕೊಡುತ್ತಾಳೆ",
+     "ref": "2.40.3",
+     "ed": "vu",
+     "with": [
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Greeted by Rāma on his return, with Sumitrā and Kaikeyī",
+     "kn": "ರಾಮ ಹಿಂದಿರುಗಿದಾಗ ಸುಮಿತ್ರೆ, ಕೈಕೇಯಿಯರೊಂದಿಗೆ ಅವನ ವಂದನೆ ಸ್ವೀಕರಿಸುತ್ತಾಳೆ",
+     "ref": "6.116.39",
+     "ed": "ce",
+     "with": [
+      "sumitra",
+      "kaikeyi"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kaikeyi",
+   "name": "Kaikeyī",
+   "group": "ikshvaku",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [
+    "Kekayī"
+   ],
+   "role_en": "Daśaratha's youngest queen, Bharata's mother, who claims the boons",
+   "role_kn": "ದಶರಥನ ಕಿರಿಯ ರಾಣಿ, ಭರತನ ತಾಯಿ; ವರಗಳನ್ನು ಕೇಳಿದವಳು",
+   "desc_en": "Kaikeyī, a princess of the Kekayas, is Daśaratha's queen and the mother of Bharata. At first she is glad of Rāma's consecration, but Mantharā poisons her mind. She then demands the two boons the king once gave her, so that Bharata is crowned and Rāma goes to the forest for fourteen years. Her son Bharata utterly rejects what she has done, and refuses the kingdom.",
+   "desc_kn": "ಕೈಕೇಯಿ ಕೇಕಯ ದೇಶದ ರಾಜಕುವರಿ, ದಶರಥನ ರಾಣಿ, ಭರತನ ತಾಯಿ. ಮೊದಲು ರಾಮನ ಪಟ್ಟಾಭಿಷೇಕದ ಸುದ್ದಿ ಕೇಳಿ ಸಂತೋಷಪಡುತ್ತಾಳೆ, ಆದರೆ ಮಂಥರೆ ಅವಳ ಮನಸ್ಸನ್ನು ಕೆಡಿಸುತ್ತಾಳೆ. ಆಗ ರಾಜ ಹಿಂದೆ ಕೊಟ್ಟಿದ್ದ ಎರಡು ವರಗಳನ್ನು ಕೇಳುತ್ತಾಳೆ: ಭರತನಿಗೆ ಪಟ್ಟ, ರಾಮನಿಗೆ ಹದಿನಾಲ್ಕು ವರ್ಷ ವನವಾಸ. ಮಗ ಭರತನೇ ಅವಳ ಕೃತ್ಯವನ್ನು ಸಂಪೂರ್ಣ ತಿರಸ್ಕರಿಸಿ ರಾಜ್ಯವನ್ನು ನಿರಾಕರಿಸುತ್ತಾನೆ.",
+   "relations": [],
+   "moments": [
+    {
+     "en": "Reacts to Mantharā's words against Rāma",
+     "kn": "ರಾಮನ ವಿರುದ್ಧ ಮಂಥರೆ ಹೇಳಿದ ಮಾತುಗಳಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಾಳೆ",
+     "ref": "2.9.1",
+     "ed": "vu",
+     "with": [
+      "manthara"
+     ]
+    },
+    {
+     "en": "Demands Rāma's exile and Bharata's consecration",
+     "kn": "ರಾಮನ ವನವಾಸ ಮತ್ತು ಭರತನ ಪಟ್ಟಾಭಿಷೇಕವನ್ನು ಕೇಳುತ್ತಾಳೆ",
+     "ref": "2.11.1",
+     "ed": "vu"
+    },
+    {
+     "en": "Tells Bharata what has happened",
+     "kn": "ನಡೆದುದನ್ನು ಭರತನಿಗೆ ತಿಳಿಸುತ್ತಾಳೆ",
+     "ref": "2.72.14",
+     "ed": "vu",
+     "with": [
+      "bharata"
+     ]
+    },
+    {
+     "en": "Bharata rebukes her",
+     "kn": "ಭರತ ಅವಳನ್ನು ಖಂಡಿಸುತ್ತಾನೆ",
+     "ref": "2.74.2",
+     "ed": "vu",
+     "with": [
+      "bharata"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sumitra",
+   "name": "Sumitrā",
+   "group": "ikshvaku",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [],
+   "role_en": "Daśaratha's queen, mother of Lakṣmaṇa and Śatrughna",
+   "role_kn": "ದಶರಥನ ರಾಣಿ, ಲಕ್ಷ್ಮಣ ಮತ್ತು ಶತ್ರುಘ್ನರ ತಾಯಿ",
+   "desc_en": "Sumitrā is the third queen of Daśaratha and the mother of Lakṣmaṇa and Śatrughna, who were born together. When Lakṣmaṇa takes leave of her to follow Rāma into exile, she sends him off with encouraging words instead of tears. She stays beside Kausalyā in the grief of the exile years and is present at the king's death. She is greeted by Rāma on his return.",
+   "desc_kn": "ಸುಮಿತ್ರೆ ದಶರಥನ ಮೂರನೇ ರಾಣಿ; ಜೊತೆಯಾಗಿ ಹುಟ್ಟಿದ ಲಕ್ಷ್ಮಣ ಮತ್ತು ಶತ್ರುಘ್ನರ ತಾಯಿ. ಲಕ್ಷ್ಮಣ ರಾಮನೊಂದಿಗೆ ವನವಾಸಕ್ಕೆ ಹೊರಡುವಾಗ ಅವಳು ಕಣ್ಣೀರಿಗಿಂತ ಹೆಚ್ಚಾಗಿ ಧೈರ್ಯದ ಮಾತುಗಳನ್ನು ಹೇಳಿ ಕಳುಹಿಸುತ್ತಾಳೆ. ವನವಾಸದ ವರ್ಷಗಳಲ್ಲಿ ಕೌಸಲ್ಯೆಯ ಜೊತೆಯಲ್ಲೇ ದುಃಖ ಹಂಚಿಕೊಂಡು, ರಾಜನ ಮರಣದ ವೇಳೆ ಹಾಜರಿರುತ್ತಾಳೆ. ರಾಮ ಹಿಂದಿರುಗಿದಾಗ ಅವನ ವಂದನೆ ಸ್ವೀಕರಿಸುತ್ತಾಳೆ.",
+   "relations": [],
+   "moments": [
+    {
+     "en": "Gives birth to Lakṣmaṇa and Śatrughna",
+     "kn": "ಲಕ್ಷ್ಮಣ ಮತ್ತು ಶತ್ರುಘ್ನರಿಗೆ ಜನ್ಮ ನೀಡುತ್ತಾಳೆ",
+     "ref": "1.18.14",
+     "ed": "vu",
+     "with": [
+      "lakshmana",
+      "shatrughna"
+     ]
+    },
+    {
+     "en": "Tells Lakṣmaṇa to go",
+     "kn": "\"ಹೋಗು, ಹೋಗು\" ಎಂದು ಲಕ್ಷ್ಮಣನಿಗೆ ಹೇಳುತ್ತಾಳೆ",
+     "ref": "2.40.8",
+     "ed": "vu",
+     "with": [
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Present at Daśaratha's death",
+     "kn": "ದಶರಥನ ಮರಣದ ವೇಳೆ ಹಾಜರಿರುತ್ತಾಳೆ",
+     "ref": "2.64.78",
+     "ed": "vu",
+     "with": [
+      "dasharatha"
+     ]
+    },
+    {
+     "en": "Greeted by Rāma on his return",
+     "kn": "ರಾಮ ಹಿಂದಿರುಗಿದಾಗ ಅವನ ವಂದನೆ ಸ್ವೀಕರಿಸುತ್ತಾಳೆ",
+     "ref": "6.116.39",
+     "ed": "ce",
+     "with": [
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rama",
+   "name": "Rāma",
+   "group": "ikshvaku",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Rāghava",
+    "Kākutstha",
+    "Dāśarathi",
+    "Raghunandana"
+   ],
+   "role_en": "Prince of Ayodhyā, the ideal of dharma; hero of the epic",
+   "role_kn": "ಅಯೋಧ್ಯೆಯ ರಾಜಕುಮಾರ, ಧರ್ಮದ ಆದರ್ಶ; ಮಹಾಕಾವ್ಯದ ನಾಯಕ",
+   "desc_en": "Rāma is the eldest son of Daśaratha and Kausalyā, praised in the epic as faithful to his word and devoted to dharma. He wins Sītā by stringing Śiva's bow at Janaka's court, but on the eve of his consecration he accepts exile for fourteen years to keep his father's promise. In the forest Sītā is carried off by Rāvaṇa; with Sugrīva's help, Hanumān's search and the vānara army, he builds a bridge to Laṅkā, kills Rāvaṇa and recovers her. He returns to Ayodhyā and is consecrated king.",
+   "desc_kn": "ರಾಮನು ದಶರಥ ಮತ್ತು ಕೌಸಲ್ಯೆಯರ ಹಿರಿಯ ಮಗ; ಕೊಟ್ಟ ಮಾತಿಗೆ ನಿಷ್ಠ, ಧರ್ಮಪರ ಎಂದು ಮಹಾಕಾವ್ಯ ಅವನನ್ನು ಹೊಗಳುತ್ತದೆ. ಜನಕನ ಆಸ್ಥಾನದಲ್ಲಿ ಶಿವಧನುಸ್ಸನ್ನು ಏರಿಸಿ ಸೀತೆಯನ್ನು ವರಿಸುತ್ತಾನೆ; ಆದರೆ ಪಟ್ಟಾಭಿಷೇಕದ ಹಿಂದಿನ ದಿನ ತಂದೆಯ ವಚನ ಪಾಲಿಸಲು ಹದಿನಾಲ್ಕು ವರ್ಷ ವನವಾಸಕ್ಕೆ ಒಪ್ಪುತ್ತಾನೆ. ಕಾಡಿನಲ್ಲಿ ರಾವಣ ಸೀತೆಯನ್ನು ಅಪಹರಿಸುತ್ತಾನೆ; ಸುಗ್ರೀವನ ಸಹಾಯ, ಹನುಮಂತನ ಹುಡುಕಾಟ ಮತ್ತು ವಾನರ ಸೇನೆಯೊಂದಿಗೆ ಲಂಕೆಗೆ ಸೇತುವೆ ಕಟ್ಟಿ, ರಾವಣನನ್ನು ಕೊಂದು ಸೀತೆಯನ್ನು ಮರಳಿ ಪಡೆಯುತ್ತಾನೆ. ಅಯೋಧ್ಯೆಗೆ ಮರಳಿ ರಾಜನಾಗಿ ಪಟ್ಟಾಭಿಷಿಕ್ತನಾಗುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "dasharatha"
+    },
+    {
+     "type": "parent",
+     "to": "kausalya"
+    },
+    {
+     "type": "spouse",
+     "to": "sita"
+    },
+    {
+     "type": "teacher",
+     "to": "vishvamitra",
+     "ref": "1.30.25",
+     "ed": "vu"
+    },
+    {
+     "type": "teacher",
+     "to": "vasishtha",
+     "ref": "2.111.1",
+     "ed": "vu"
+    },
+    {
+     "type": "ally",
+     "to": "sugriva",
+     "ref": "4.8.10",
+     "ed": "vu"
+    },
+    {
+     "type": "ally",
+     "to": "vibhishana",
+     "ref": "6.19.2",
+     "ed": "vu"
+    },
+    {
+     "type": "friend",
+     "to": "guha",
+     "ref": "2.50.42",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is born to Kausalyā",
+     "kn": "ಕೌಸಲ್ಯೆಗೆ ಜನಿಸುತ್ತಾನೆ",
+     "ref": "1.18.10",
+     "ed": "vu"
+    },
+    {
+     "en": "At Janaka's court, Viśvāmitra shows him Śiva's bow; he strings it and it breaks",
+     "kn": "ಜನಕನ ಆಸ್ಥಾನದಲ್ಲಿ ವಿಶ್ವಾಮಿತ್ರ ಶಿವಧನುಸ್ಸನ್ನು ತೋರಿಸುತ್ತಾನೆ; ಅವನು ಅದನ್ನು ಏರಿಸಲು ಅದು ಮುರಿಯುತ್ತದೆ",
+     "ref": "1.67.12",
+     "ed": "vu",
+     "with": [
+      "vishvamitra",
+      "janaka"
+     ]
+    },
+    {
+     "en": "Hears of his exile without wavering",
+     "kn": "ವನವಾಸದ ಸುದ್ದಿ ಕೇಳಿಯೂ ವಿಚಲಿತನಾಗುವುದಿಲ್ಲ",
+     "ref": "2.19.1",
+     "ed": "vu",
+     "with": [
+      "kaikeyi"
+     ]
+    },
+    {
+     "en": "Kills Vālin with a single arrow, for Sugrīva",
+     "kn": "ಸುಗ್ರೀವನಿಗಾಗಿ ಒಂದೇ ಬಾಣದಿಂದ ವಾಲಿಯನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ",
+     "ref": "4.17.1",
+     "ed": "vu",
+     "with": [
+      "valin",
+      "sugriva"
+     ]
+    },
+    {
+     "en": "Kills Rāvaṇa in the chariot duel",
+     "kn": "ರಾವಣನನ್ನು ದ್ವಂದ್ವಯುದ್ಧದಲ್ಲಿ ಕೊಲ್ಲುತ್ತಾನೆ",
+     "ref": "6.111.18",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    },
+    {
+     "en": "Is seated on the throne by Vasiṣṭha with Sītā",
+     "kn": "ವಸಿಷ್ಠ ಸೀತೆಯೊಂದಿಗೆ ಅವನನ್ನು ಸಿಂಹಾಸನದಲ್ಲಿ ಕೂರಿಸುತ್ತಾನೆ",
+     "ref": "6.116.54",
+     "ed": "ce",
+     "with": [
+      "vasishtha",
+      "sita"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lakshmana",
+   "name": "Lakṣmaṇa",
+   "group": "ikshvaku",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Saumitri",
+    "Rāmānuja",
+    "Sumitrānandavardhana"
+   ],
+   "role_en": "Rāma's devoted younger brother, who follows him into exile",
+   "role_kn": "ರಾಮನ ನಿಷ್ಠಾವಂತ ತಮ್ಮ; ವನವಾಸದಲ್ಲಿ ಅವನನ್ನು ಹಿಂಬಾಲಿಸಿದವನು",
+   "desc_en": "Lakṣmaṇa is the son of Daśaratha and Sumitrā, and Rāma's inseparable companion. When Rāma is exiled he insists on going with him and serves him and Sītā throughout the fourteen years. In Daṇḍaka he cuts off Śūrpaṇakhā's nose and ears, and he keeps watch over Sītā until Rāvaṇa's trick draws him away. In the war he is struck down by Rāvaṇa's spear (śakti) and revived, and later kills Indrajit, Rāvaṇa's son.",
+   "desc_kn": "ಲಕ್ಷ್ಮಣ ದಶರಥ ಮತ್ತು ಸುಮಿತ್ರೆಯರ ಮಗ, ರಾಮನ ಬಿಡದ ಸಂಗಾತಿ. ರಾಮನಿಗೆ ವನವಾಸ ಬಂದಾಗ ತಾನೂ ಬರುತ್ತೇನೆಂದು ಹಟ ಹಿಡಿದು ಹದಿನಾಲ್ಕು ವರ್ಷ ರಾಮ ಮತ್ತು ಸೀತೆಯರ ಸೇವೆ ಮಾಡುತ್ತಾನೆ. ದಂಡಕಾರಣ್ಯದಲ್ಲಿ ಶೂರ್ಪಣಖಿಯ ಮೂಗು ಕಿವಿಗಳನ್ನು ಕತ್ತರಿಸುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ರಾವಣನ ಶಕ್ತ್ಯಾಯುಧದಿಂದ ಬಿದ್ದರೂ ಚೇತರಿಸಿಕೊಂಡು, ಕೊನೆಗೆ ರಾವಣನ ಮಗ ಇಂದ್ರಜಿತ್ತನನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "dasharatha"
+    },
+    {
+     "type": "parent",
+     "to": "sumitra"
+    },
+    {
+     "type": "spouse",
+     "to": "urmila",
+     "ref": "1.71.21",
+     "ed": "vu"
+    },
+    {
+     "type": "serves",
+     "to": "rama",
+     "ref": "2.31.18",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Insists on following Rāma into exile",
+     "kn": "ರಾಮನ ಜೊತೆ ವನವಾಸಕ್ಕೆ ಬರುತ್ತೇನೆಂದು ಹಟ ಹಿಡಿಯುತ್ತಾನೆ",
+     "ref": "2.31.18",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Mutilates Śūrpaṇakhā",
+     "kn": "ಶೂರ್ಪಣಖಿಯ ಮೂಗು-ಕಿವಿಗಳನ್ನು ಕತ್ತರಿಸುತ್ತಾನೆ",
+     "ref": "3.18.22",
+     "ed": "vu",
+     "with": [
+      "shurpanakha"
+     ]
+    },
+    {
+     "en": "Furious at Sugrīva's delay, he confronts him in Kiṣkindhā",
+     "kn": "ಸುಗ್ರೀವನ ವಿಳಂಬದಿಂದ ಕೋಪಗೊಂಡು ಕಿಷ್ಕಿಂಧೆಯಲ್ಲಿ ಅವನನ್ನು ಎದುರಿಸುತ್ತಾನೆ",
+     "ref": "4.34.6",
+     "ed": "vu",
+     "with": [
+      "sugriva"
+     ]
+    },
+    {
+     "en": "Struck down by Rāvaṇa's spear",
+     "kn": "ರಾವಣನ ಶಕ್ತಿ ಆಯುಧದಿಂದ ಬೀಳುತ್ತಾನೆ",
+     "ref": "6.101.34",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    },
+    {
+     "en": "Kills Indrajit",
+     "kn": "ಇಂದ್ರಜಿತ್ತನನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ",
+     "ref": "6.91.94",
+     "ed": "vu",
+     "with": [
+      "indrajit"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bharata",
+   "name": "Bharata",
+   "group": "ikshvaku",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Kaikeyīputra"
+   ],
+   "role_en": "Rāma's brother who refuses the throne and rules in his name",
+   "role_kn": "ಸಿಂಹಾಸನವನ್ನು ನಿರಾಕರಿಸಿ ರಾಮನ ಹೆಸರಿನಲ್ಲಿ ಆಳಿದ ತಮ್ಮ",
+   "desc_en": "Bharata is Daśaratha's son by Kaikeyī. He is away at his uncle's court in Kekaya when Rāma is exiled and the king dies. On returning he condemns his mother, refuses the kingdom, and goes to the forest to bring Rāma back. Rāma will not break his father's word, so Bharata takes Rāma's sandals, places them on the throne, and rules from Nandigrāma as Rāma's deputy until the fourteen years end.",
+   "desc_kn": "ಭರತ ದಶರಥ ಮತ್ತು ಕೈಕೇಯಿಯರ ಮಗ. ರಾಮನಿಗೆ ವನವಾಸ ಬಂದು ರಾಜ ಮರಣ ಹೊಂದಿದಾಗ ಅವನು ಕೇಕಯ ದೇಶದಲ್ಲಿ ಸೋದರಮಾವನ ಬಳಿ ಇರುತ್ತಾನೆ. ಹಿಂದಿರುಗಿ ತನ್ನ ತಾಯಿಯನ್ನು ಖಂಡಿಸಿ, ರಾಜ್ಯವನ್ನು ನಿರಾಕರಿಸಿ, ರಾಮನನ್ನು ಕರೆತರಲು ಕಾಡಿಗೆ ಹೋಗುತ್ತಾನೆ. ತಂದೆಯ ಮಾತನ್ನು ಮೀರಲು ರಾಮ ಒಪ್ಪದಿದ್ದಾಗ, ರಾಮನ ಪಾದುಕೆಗಳನ್ನು ತಂದು ಸಿಂಹಾಸನದ ಮೇಲಿಟ್ಟು, ಹದಿನಾಲ್ಕು ವರ್ಷ ಮುಗಿಯುವವರೆಗೆ ನಂದಿಗ್ರಾಮದಿಂದ ರಾಮನ ಪ್ರತಿನಿಧಿಯಾಗಿ ಆಳುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "dasharatha"
+    },
+    {
+     "type": "parent",
+     "to": "kaikeyi"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Returns from Kekaya and goes to his mother's palace",
+     "kn": "ಕೇಕಯದಿಂದ ಹಿಂದಿರುಗಿ ತಾಯಿಯ ಅರಮನೆಗೆ ಹೋಗುತ್ತಾನೆ",
+     "ref": "2.72.1",
+     "ed": "vu",
+     "with": [
+      "kaikeyi"
+     ]
+    },
+    {
+     "en": "Rebukes Kaikeyī and rejects the kingdom",
+     "kn": "ಕೈಕೇಯಿಯನ್ನು ಖಂಡಿಸಿ ರಾಜ್ಯವನ್ನು ನಿರಾಕರಿಸುತ್ತಾನೆ",
+     "ref": "2.74.2",
+     "ed": "vu",
+     "with": [
+      "kaikeyi"
+     ]
+    },
+    {
+     "en": "Reaches Rāma's hermitage and pleads with him",
+     "kn": "ರಾಮನ ಪರ್ಣಕುಟಿಯನ್ನು ಕಂಡು ಮರಳಲು ಬೇಡುತ್ತಾನೆ",
+     "ref": "2.99.4",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Takes Rāma's sandals as his stand-in",
+     "kn": "ರಾಮನ ಪಾದುಕೆಗಳನ್ನು ಪ್ರತಿನಿಧಿಯಾಗಿ ಸ್ವೀಕರಿಸುತ್ತಾನೆ",
+     "ref": "2.112.29",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Rules from Nandigrāma",
+     "kn": "ನಂದಿಗ್ರಾಮದಿಂದ ಆಳುತ್ತಾನೆ",
+     "ref": "2.115.22",
+     "ed": "vu"
+    }
+   ]
+  },
+  {
+   "id": "shatrughna",
+   "name": "Śatrughna",
+   "group": "ikshvaku",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Lakṣmaṇānuja",
+    "Śatrutāpana"
+   ],
+   "role_en": "Youngest of the four brothers; kills the rākṣasa Lavaṇa",
+   "role_kn": "ನಾಲ್ವರು ಅಣ್ಣತಮ್ಮಂದಿರಲ್ಲಿ ಕಿರಿಯ; ಲವಣ ರಾಕ್ಷಸನನ್ನು ಕೊಂದವನು",
+   "desc_en": "Śatrughna is Sumitrā's younger son, born together with Lakṣmaṇa, and is always at Bharata's side. After Daśaratha's death he seizes the hunchback Mantharā for her part in the plot, though Bharata makes him let her go. Later, in the Uttarakāṇḍa, Rāma sends him against the rākṣasa Lavaṇa of Madhupurī, whom he kills before founding the city of Mathurā in that region.",
+   "desc_kn": "ಶತ್ರುಘ್ನ ಸುಮಿತ್ರೆಯ ಕಿರಿಯ ಮಗ, ಲಕ್ಷ್ಮಣನ ಜೊತೆ ಹುಟ್ಟಿದವನು; ಯಾವಾಗಲೂ ಭರತನ ಜೊತೆಯಲ್ಲಿರುತ್ತಾನೆ. ದಶರಥನ ಮರಣದ ನಂತರ ಪಿತೂರಿಗೆ ಕಾರಣಳಾದ ಗೂನಿ ಮಂಥರೆಯನ್ನು ಹಿಡಿದೆಳೆಯುತ್ತಾನೆ, ಆದರೆ ಭರತ ಅವಳನ್ನು ಬಿಡಿಸುತ್ತಾನೆ. ಉತ್ತರಕಾಂಡದಲ್ಲಿ ರಾಮ ಅವನನ್ನು ಮಧುಪುರಿಯ ಲವಣ ರಾಕ್ಷಸನ ವಿರುದ್ಧ ಕಳುಹಿಸುತ್ತಾನೆ; ಅವನು ಲವಣನನ್ನು ಕೊಂದು ಆ ಪ್ರದೇಶದಲ್ಲಿ ಮಥುರಾ ನಗರವನ್ನು ಸ್ಥಾಪಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "dasharatha"
+    },
+    {
+     "type": "parent",
+     "to": "sumitra"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is born to Sumitrā with Lakṣmaṇa",
+     "kn": "ಲಕ್ಷ್ಮಣನೊಂದಿಗೆ ಸುಮಿತ್ರೆಗೆ ಜನಿಸುತ್ತಾನೆ",
+     "ref": "1.18.14",
+     "ed": "vu",
+     "with": [
+      "sumitra"
+     ]
+    },
+    {
+     "en": "Speaks to Bharata, who is grieving",
+     "kn": "ಶೋಕದಲ್ಲಿದ್ದ ಭರತನೊಂದಿಗೆ ಮಾತನಾಡುತ್ತಾನೆ",
+     "ref": "2.78.1",
+     "ed": "vu",
+     "with": [
+      "bharata"
+     ]
+    },
+    {
+     "en": "Mantharā is dragged before him",
+     "kn": "ಮಂಥರೆಯನ್ನು ಅವನ ಬಳಿಗೆ ಎಳೆದು ತರುತ್ತಾರೆ",
+     "ref": "2.78.8",
+     "ed": "vu",
+     "with": [
+      "manthara"
+     ]
+    },
+    {
+     "en": "Challenges Lavaṇa",
+     "kn": "ಲವಣನಿಗೆ ಸವಾಲು ಹಾಕುತ್ತಾನೆ",
+     "ref": "7.69.3",
+     "ed": "vu"
+    },
+    {
+     "en": "Gods praise him after Lavaṇa is killed",
+     "kn": "ಲವಣ ಹತನಾದ ಮೇಲೆ ದೇವತೆಗಳು ಅವನನ್ನು ಹೊಗಳುತ್ತಾರೆ",
+     "ref": "7.70.1",
+     "ed": "vu"
+    }
+   ]
+  },
+  {
+   "id": "lava",
+   "name": "Lava",
+   "group": "ikshvaku",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [],
+   "match": [
+    "kuśīlava"
+   ],
+   "role_en": "Rāma and Sītā's son, who with Kuśa recites the Rāmāyaṇa",
+   "role_kn": "ರಾಮ-ಸೀತೆಯರ ಮಗ; ಕುಶನೊಂದಿಗೆ ರಾಮಾಯಣವನ್ನು ಹಾಡಿದವನು",
+   "desc_en": "Lava and his twin brother Kuśa are born to Sītā in Vālmīki's hermitage after Rāma has sent her away. Vālmīki names them and teaches them the Rāmāyaṇa. They sing it at Rāma's horse-sacrifice, where Rāma recognises them as his sons. At the end Rāma consecrates Lava as ruler of the northern part of the kingdom and Kuśa in Kosala.",
+   "desc_kn": "ಲವ ಮತ್ತು ಅವನ ಅವಳಿ ತಮ್ಮ ಕುಶ, ರಾಮ ಸೀತೆಯನ್ನು ತ್ಯಜಿಸಿದ ಮೇಲೆ ವಾಲ್ಮೀಕಿಯ ಆಶ್ರಮದಲ್ಲಿ ಜನಿಸುತ್ತಾರೆ. ವಾಲ್ಮೀಕಿ ಅವರಿಗೆ ಹೆಸರಿಟ್ಟು ರಾಮಾಯಣವನ್ನು ಕಲಿಸುತ್ತಾನೆ. ರಾಮನ ಅಶ್ವಮೇಧ ಯಜ್ಞದಲ್ಲಿ ಅವರು ಅದನ್ನು ಹಾಡುತ್ತಾರೆ; ಆಗ ರಾಮ ಅವರನ್ನು ತನ್ನ ಮಕ್ಕಳೆಂದು ಗುರುತಿಸುತ್ತಾನೆ. ಕೊನೆಯಲ್ಲಿ ರಾಮ ಲವನನ್ನು ಉತ್ತರ ಪ್ರದೇಶದ ಅರಸನನ್ನಾಗಿಯೂ ಕುಶನನ್ನು ಕೋಸಲದ ಅರಸನನ್ನಾಗಿಯೂ ಅಭಿಷೇಕಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "rama"
+    },
+    {
+     "type": "parent",
+     "to": "sita"
+    },
+    {
+     "type": "teacher",
+     "to": "valmiki"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is born and named",
+     "kn": "ಜನನ ಮತ್ತು ನಾಮಕರಣ",
+     "ref": "7.66.9",
+     "ed": "vu",
+     "with": [
+      "kusha"
+     ]
+    },
+    {
+     "en": "Refuses gold for his singing",
+     "kn": "ತಮ್ಮ ಗಾಯನಕ್ಕೆ ಬಂಗಾರವನ್ನು ನಿರಾಕರಿಸುತ್ತಾನೆ",
+     "ref": "7.94.19",
+     "ed": "vu",
+     "with": [
+      "kusha"
+     ]
+    },
+    {
+     "en": "Sings before Rāma, who knows them as Sītā's sons",
+     "kn": "ರಾಮನ ಮುಂದೆ ಹಾಡುತ್ತಾನೆ; ರಾಮ ಅವರನ್ನು ಸೀತೆಯ ಮಕ್ಕಳೆಂದು ಅರಿಯುತ್ತಾನೆ",
+     "ref": "7.95.2",
+     "ed": "vu",
+     "with": [
+      "kusha",
+      "rama"
+     ]
+    },
+    {
+     "en": "Is consecrated in the north",
+     "kn": "ಉತ್ತರ ಪ್ರದೇಶಕ್ಕೆ ಅಭಿಷಿಕ್ತನಾಗುತ್ತಾನೆ",
+     "ref": "7.107.17",
+     "ed": "vu",
+     "with": [
+      "kusha",
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kusha",
+   "name": "Kuśa",
+   "group": "ikshvaku",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [],
+   "match": [
+    "kuśīlava"
+   ],
+   "role_en": "Rāma and Sītā's elder son, who with Lava recites the Rāmāyaṇa",
+   "role_kn": "ರಾಮ-ಸೀತೆಯರ ಹಿರಿಯ ಮಗ; ಲವನೊಂದಿಗೆ ರಾಮಾಯಣವನ್ನು ಹಾಡಿದವನು",
+   "desc_en": "Kuśa is the elder of Sītā's twin sons, born in Vālmīki's hermitage; he is named for the kuśa grass Vālmīki used to protect him. With Lava he learns the Rāmāyaṇa from Vālmīki and sings it before Rāma and the assembled sages. Rāma acknowledges the two as his sons. He later consecrates Kuśa as king of Kosala and Lava of the north.",
+   "desc_kn": "ಕುಶ ಸೀತೆಯ ಅವಳಿ ಮಕ್ಕಳಲ್ಲಿ ಹಿರಿಯವನು; ವಾಲ್ಮೀಕಿಯ ಆಶ್ರಮದಲ್ಲಿ ಜನಿಸುತ್ತಾನೆ. ವಾಲ್ಮೀಕಿ ರಕ್ಷೆಗಾಗಿ ಬಳಸಿದ ದರ್ಭೆ (ಕುಶ) ಹುಲ್ಲಿನಿಂದ ಅವನಿಗೆ ಆ ಹೆಸರು ಬಂತು. ಲವನೊಂದಿಗೆ ವಾಲ್ಮೀಕಿಯಿಂದ ರಾಮಾಯಣವನ್ನು ಕಲಿತು ರಾಮ ಮತ್ತು ಸೇರಿದ ಋಷಿಗಳ ಮುಂದೆ ಹಾಡುತ್ತಾನೆ. ರಾಮ ಇಬ್ಬರನ್ನೂ ತನ್ನ ಮಕ್ಕಳೆಂದು ಒಪ್ಪಿಕೊಂಡು ಕುಶನನ್ನು ಕೋಸಲದ ಅರಸನನ್ನಾಗಿ, ಲವನನ್ನು ಉತ್ತರದ ಅರಸನನ್ನಾಗಿ ಅಭಿಷೇಕಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "rama"
+    },
+    {
+     "type": "parent",
+     "to": "sita"
+    },
+    {
+     "type": "teacher",
+     "to": "valmiki"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is born first and named for kuśa grass",
+     "kn": "ಮೊದಲು ಹುಟ್ಟಿ ದರ್ಭೆ (ಕುಶ) ಹುಲ್ಲಿನ ಹೆಸರು ಪಡೆಯುತ್ತಾನೆ",
+     "ref": "7.66.7",
+     "ed": "vu",
+     "with": [
+      "lava"
+     ]
+    },
+    {
+     "en": "Refuses gold for his singing",
+     "kn": "ತಮ್ಮ ಗಾಯನಕ್ಕೆ ಬಂಗಾರವನ್ನು ನಿರಾಕರಿಸುತ್ತಾನೆ",
+     "ref": "7.94.19",
+     "ed": "vu",
+     "with": [
+      "lava"
+     ]
+    },
+    {
+     "en": "Sings before Rāma, who knows them as Sītā's sons",
+     "kn": "ರಾಮನ ಮುಂದೆ ಹಾಡುತ್ತಾನೆ; ರಾಮ ಅವರನ್ನು ಸೀತೆಯ ಮಕ್ಕಳೆಂದು ಅರಿಯುತ್ತಾನೆ",
+     "ref": "7.95.2",
+     "ed": "vu",
+     "with": [
+      "lava",
+      "rama"
+     ]
+    },
+    {
+     "en": "Is consecrated in Kosala",
+     "kn": "ಕೋಸಲಕ್ಕೆ ಅಭಿಷಿಕ್ತನಾಗುತ್ತಾನೆ",
+     "ref": "7.107.17",
+     "ed": "vu",
+     "with": [
+      "lava",
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "janaka",
+   "name": "Janaka",
+   "group": "mithila",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Mithileśvara",
+    "Mithilādhipa",
+    "Videha"
+   ],
+   "role_en": "King of Mithilā, Sītā's father",
+   "role_kn": "ಮಿಥಿಲೆಯ ರಾಜ, ಸೀತೆಯ ತಂದೆ",
+   "desc_en": "Janaka is the king of Mithilā (Videha). While ploughing a field he found a girl in the furrow and raised her as his daughter, calling her Sītā. He decreed that she would be given only to the man who could string Śiva's great bow, which many princes had failed to lift. When Rāma breaks it, Janaka gives Sītā to Rāma and his other daughter Ūrmilā to Lakṣmaṇa at a wedding arranged with Daśaratha.",
+   "desc_kn": "ಜನಕ ಮಿಥಿಲೆಯ (ವಿದೇಹದ) ರಾಜ. ಹೊಲ ಉಳುವಾಗ ಸಾಲಿನಲ್ಲಿ ಸಿಕ್ಕ ಹೆಣ್ಣುಮಗುವನ್ನು ತನ್ನ ಮಗಳಾಗಿ ಸಾಕಿ ಸೀತೆ ಎಂದು ಹೆಸರಿಡುತ್ತಾನೆ. ಅನೇಕ ರಾಜರಿಗೆ ಎತ್ತಲೂ ಆಗದ ಶಿವನ ಮಹಾಧನುಸ್ಸನ್ನು ಏರಿಸಿದವನಿಗೇ ಅವಳನ್ನು ಕೊಡುವುದಾಗಿ ಪ್ರತಿಜ್ಞೆ ಮಾಡುತ್ತಾನೆ. ರಾಮ ಅದನ್ನು ಮುರಿದಾಗ, ದಶರಥನೊಂದಿಗೆ ಮಾತನಾಡಿ ಸೀತೆಯನ್ನು ರಾಮನಿಗೂ ತನ್ನ ಇನ್ನೊಬ್ಬ ಮಗಳು ಊರ್ಮಿಳೆಯನ್ನು ಲಕ್ಷ್ಮಣನಿಗೂ ಕೊಟ್ಟು ವಿವಾಹ ಮಾಡುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "ally",
+     "to": "dasharatha",
+     "ref": "1.69.8",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Tells of finding Sītā in the furrow",
+     "kn": "ಸಾಲಿನಲ್ಲಿ ಸೀತೆ ಸಿಕ್ಕ ಕಥೆ ಹೇಳುತ್ತಾನೆ",
+     "ref": "1.66.14",
+     "ed": "vu",
+     "with": [
+      "sita"
+     ]
+    },
+    {
+     "en": "Has the great bow brought for Rāma",
+     "kn": "ರಾಮನಿಗಾಗಿ ಮಹಾಧನುಸ್ಸನ್ನು ತರಿಸುತ್ತಾನೆ",
+     "ref": "1.67.2",
+     "ed": "vu"
+    },
+    {
+     "en": "Offers Ūrmilā to Lakṣmaṇa",
+     "kn": "ಊರ್ಮಿಳೆಯನ್ನು ಲಕ್ಷ್ಮಣನಿಗೆ ಕೊಡುತ್ತಾನೆ",
+     "ref": "1.73.30",
+     "ed": "vu",
+     "with": [
+      "urmila",
+      "lakshmana"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sita",
+   "name": "Sītā",
+   "group": "mithila",
+   "gender": "f",
+   "rank": 1,
+   "epithets": [
+    "Vaidehī",
+    "Maithilī",
+    "Jānakī",
+    "Janakātmajā"
+   ],
+   "role_en": "Daughter of Janaka, Rāma's wife, carried off by Rāvaṇa",
+   "role_kn": "ಜನಕನ ಮಗಳು, ರಾಮನ ಪತ್ನಿ; ರಾವಣನಿಂದ ಅಪಹರಿಸಲ್ಪಟ್ಟವಳು",
+   "desc_en": "Sītā is the daughter of Janaka, found in a furrow, and the wife of Rāma. She chooses to go with him into the forest and shares his exile. In Daṇḍaka Rāvaṇa carries her off to Laṅkā, where she refuses all his advances and is guarded in the Aśoka grove until Hanumān finds her. After Rāvaṇa's death she undergoes the fire test and is accepted, but later Rāma sends her away because of public talk; Vālmīki shelters her, and in the end the Earth takes her back.",
+   "desc_kn": "ಸೀತೆ ಜನಕನ ಮಗಳು; ಸಾಲಿನಲ್ಲಿ ದೊರೆತವಳು, ರಾಮನ ಪತ್ನಿ. ಅವನೊಂದಿಗೆ ಕಾಡಿಗೆ ಹೋಗಲು ತಾನೇ ಆರಿಸಿ ವನವಾಸದಲ್ಲಿ ಜೊತೆಗಿರುತ್ತಾಳೆ. ದಂಡಕಾರಣ್ಯದಲ್ಲಿ ರಾವಣ ಅವಳನ್ನು ಲಂಕೆಗೆ ಅಪಹರಿಸುತ್ತಾನೆ; ಅವನ ಎಲ್ಲ ಆಸೆಗಳನ್ನು ತಿರಸ್ಕರಿಸಿ ಅಶೋಕವನದಲ್ಲಿ ಹನುಮಂತ ಕಂಡುಹಿಡಿಯುವವರೆಗೆ ಕಾವಲಿನಲ್ಲಿರುತ್ತಾಳೆ. ರಾವಣನ ಸಾವಿನ ನಂತರ ಅಗ್ನಿಪರೀಕ್ಷೆಗೆ ಒಳಗಾಗಿ ಸ್ವೀಕೃತಳಾಗುತ್ತಾಳೆ; ಆದರೆ ಜನರ ಆಡಿಕೆಯ ಕಾರಣ ರಾಮ ಅವಳನ್ನು ತ್ಯಜಿಸುತ್ತಾನೆ. ವಾಲ್ಮೀಕಿ ಆಶ್ರಯ ಕೊಡುತ್ತಾನೆ; ಕೊನೆಗೆ ಭೂದೇವಿ ಅವಳನ್ನು ತನ್ನೊಳಗೆ ತೆಗೆದುಕೊಳ್ಳುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "janaka",
+     "ref": "1.66.14",
+     "ed": "vu"
+    },
+    {
+     "type": "other",
+     "to": "ravana",
+     "ref": "3.49.20",
+     "ed": "vu",
+     "note_en": "Abducted by Rāvaṇa and held in Laṅkā",
+     "note_kn": "ರಾವಣನಿಂದ ಅಪಹರಿಸಲ್ಪಟ್ಟು ಲಂಕೆಯಲ್ಲಿ ಬಂಧಿಯಾದಳು"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is found in Janaka's furrow",
+     "kn": "ಜನಕನ ಉಳುಮೆಯ ಸಾಲಿನಲ್ಲಿ ದೊರೆಯುತ್ತಾಳೆ",
+     "ref": "1.66.14",
+     "ed": "vu",
+     "with": [
+      "janaka"
+     ]
+    },
+    {
+     "en": "Refuses to stay behind and goes with Rāma",
+     "kn": "ಹಿಂದೆ ಉಳಿಯಲು ನಿರಾಕರಿಸಿ ರಾಮನೊಂದಿಗೆ ಹೊರಡುತ್ತಾಳೆ",
+     "ref": "2.28.26",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Is carried off by Rāvaṇa",
+     "kn": "ರಾವಣ ಅವಳನ್ನು ಅಪಹರಿಸುತ್ತಾನೆ",
+     "ref": "3.49.20",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    },
+    {
+     "en": "Hanumān finds her and brings Rāma's message",
+     "kn": "ಹನುಮಂತ ಅವಳನ್ನು ಕಂಡು ರಾಮನ ಸಂದೇಶ ತರುತ್ತಾನೆ",
+     "ref": "5.34.8",
+     "ed": "vu",
+     "with": [
+      "hanumat"
+     ]
+    },
+    {
+     "en": "Enters the fire to prove her purity",
+     "kn": "ತನ್ನ ಶುದ್ಧತೆ ಸಾಬೀತುಪಡಿಸಲು ಅಗ್ನಿಯನ್ನು ಪ್ರವೇಶಿಸುತ್ತಾಳೆ",
+     "ref": "6.119.23",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Calls on the Earth, who takes her",
+     "kn": "ಭೂದೇವಿಯನ್ನು ಕರೆಯುತ್ತಾಳೆ; ಭೂಮಿ ಅವಳನ್ನು ತನ್ನೊಳಗೆ ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ",
+     "ref": "7.97.20",
+     "ed": "vu"
+    }
+   ]
+  },
+  {
+   "id": "urmila",
+   "name": "Ūrmilā",
+   "group": "mithila",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [],
+   "role_en": "Janaka's younger daughter, wife of Lakṣmaṇa",
+   "role_kn": "ಜನಕನ ಕಿರಿಯ ಮಗಳು, ಲಕ್ಷ್ಮಣನ ಪತ್ನಿ",
+   "desc_en": "Ūrmilā is a daughter of Janaka and the younger sister of Sītā. At Mithilā Janaka offers her to Lakṣmaṇa, and she is married to him in the same ceremony as Sītā's wedding to Rāma. The Vālmīki Rāmāyaṇa tells us almost nothing more about her; she is not described in the exile story, and later legends about her are not in Vālmīki's text.",
+   "desc_kn": "ಊರ್ಮಿಳೆ ಜನಕನ ಮಗಳು, ಸೀತೆಯ ತಂಗಿ. ಮಿಥಿಲೆಯಲ್ಲಿ ಜನಕ ಅವಳನ್ನು ಲಕ್ಷ್ಮಣನಿಗೆ ಕೊಡುತ್ತಾನೆ; ಸೀತಾ-ರಾಮರ ವಿವಾಹದ ಸಮಾರಂಭದಲ್ಲೇ ಅವಳ ವಿವಾಹವೂ ನಡೆಯುತ್ತದೆ. ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ ಅವಳ ಬಗ್ಗೆ ಇಷ್ಟಕ್ಕಿಂತ ಹೆಚ್ಚೇನೂ ಹೇಳುವುದಿಲ್ಲ; ವನವಾಸದ ಕಥೆಯಲ್ಲಿ ಅವಳ ವರ್ಣನೆಯಿಲ್ಲ, ಮತ್ತು ಅವಳ ಬಗ್ಗೆ ನಂತರದ ಕಥೆಗಳು ವಾಲ್ಮೀಕಿಯ ಪಠ್ಯದಲ್ಲಿಲ್ಲ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "janaka",
+     "ref": "1.71.21",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Janaka offers her to Lakṣmaṇa, with Sītā for Rāma",
+     "kn": "ಜನಕ ಸೀತೆಯನ್ನು ರಾಮನಿಗೆ, ಊರ್ಮಿಳೆಯನ್ನು ಲಕ್ಷ್ಮಣನಿಗೆ ಕೊಡುತ್ತೇನೆಂದು ಹೇಳುತ್ತಾನೆ",
+     "ref": "1.71.21",
+     "ed": "vu",
+     "with": [
+      "sita",
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Is given in marriage to Lakṣmaṇa",
+     "kn": "ಲಕ್ಷ್ಮಣನಿಗೆ ವಿವಾಹ ಮಾಡಿಕೊಡಲ್ಪಡುತ್ತಾಳೆ",
+     "ref": "1.73.30",
+     "ed": "vu",
+     "with": [
+      "janaka",
+      "lakshmana"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sumantra",
+   "name": "Sumantra",
+   "group": "court",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [],
+   "role_en": "Daśaratha's minister and charioteer",
+   "role_kn": "ದಶರಥನ ಮಂತ್ರಿ ಮತ್ತು ಸಾರಥಿ",
+   "desc_en": "Sumantra is the eighth of Daśaratha's ministers and also his charioteer. He advises the king on the sacrifice for sons, wakes him on the morning of the planned consecration, and drives Rāma, Sītā and Lakṣmaṇa to the Gaṅgā when they leave. There Rāma sends him back, and he returns to Ayodhyā in grief to tell the court. He remains a loyal servant of the family throughout the story.",
+   "desc_kn": "ಸುಮಂತ್ರ ದಶರಥನ ಎಂಟನೇ ಮಂತ್ರಿ, ಜೊತೆಗೆ ಅವನ ಸಾರಥಿ. ಪುತ್ರಕಾಮೇಷ್ಠಿಯ ಬಗ್ಗೆ ರಾಜನಿಗೆ ಸಲಹೆ ಕೊಡುತ್ತಾನೆ; ಪಟ್ಟಾಭಿಷೇಕದ ಬೆಳಿಗ್ಗೆ ರಾಜನನ್ನು ಎಬ್ಬಿಸುತ್ತಾನೆ; ರಾಮ, ಸೀತೆ, ಲಕ್ಷ್ಮಣರು ಹೊರಟಾಗ ಅವರನ್ನು ರಥದಲ್ಲಿ ಗಂಗೆಯವರೆಗೆ ಒಯ್ಯುತ್ತಾನೆ. ಅಲ್ಲಿ ರಾಮ ಅವನನ್ನು ಹಿಂದಕ್ಕೆ ಕಳುಹಿಸುತ್ತಾನೆ; ಅವನು ದುಃಖದಿಂದ ಅಯೋಧ್ಯೆಗೆ ಮರಳಿ ಸುದ್ದಿ ತಿಳಿಸುತ್ತಾನೆ. ಕಥೆಯುದ್ದಕ್ಕೂ ಅವನು ಈ ವಂಶದ ನಿಷ್ಠ ಸೇವಕನಾಗಿರುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "serves",
+     "to": "dasharatha",
+     "ref": "1.11.13",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Counsels Daśaratha on the sacrifice for sons",
+     "kn": "ಪುತ್ರಪ್ರಾಪ್ತಿಯ ಯಜ್ಞದ ಬಗ್ಗೆ ದಶರಥನಿಗೆ ಸಲಹೆ ಕೊಡುತ್ತಾನೆ",
+     "ref": "1.11.13",
+     "ed": "vu",
+     "with": [
+      "dasharatha"
+     ]
+    },
+    {
+     "en": "Wakes the king at dawn on the day of the consecration",
+     "kn": "ಪಟ್ಟಾಭಿಷೇಕದ ದಿನ ಬೆಳಗ್ಗೆ ರಾಜನನ್ನು ಎಬ್ಬಿಸುತ್ತಾನೆ",
+     "ref": "2.15.25",
+     "ed": "vu",
+     "with": [
+      "dasharatha"
+     ]
+    },
+    {
+     "en": "Rāma sends him back from the Gaṅgā; he weeps",
+     "kn": "ಗಂಗೆಯ ತೀರದಲ್ಲಿ ರಾಮ ಅವನನ್ನು ಹಿಂದಕ್ಕೆ ಕಳುಹಿಸುತ್ತಾನೆ; ಅವನು ಅಳುತ್ತಾನೆ",
+     "ref": "2.52.20",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Returns to Ayodhyā in sorrow",
+     "kn": "ದುಃಖದಿಂದ ಅಯೋಧ್ಯೆಗೆ ಮರಳುತ್ತಾನೆ",
+     "ref": "2.57.3",
+     "ed": "vu"
+    }
+   ]
+  },
+  {
+   "id": "vasishtha",
+   "name": "Vasiṣṭha",
+   "group": "court",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Vaśiṣṭha"
+   ],
+   "role_en": "Ikṣvāku family priest and guru; teacher of Rāma",
+   "role_kn": "ಇಕ್ಷ್ವಾಕು ವಂಶದ ಪುರೋಹಿತ ಮತ್ತು ಗುರು; ರಾಮನ ಗುರು",
+   "desc_en": "Vasiṣṭha is the family priest of the Ikṣvākus and the king's counsellor. He urges Daśaratha to let Rāma go with Viśvāmitra, officiates at the wedding at Mithilā by reciting the Ikṣvāku genealogy, and leads the rites after Daśaratha's death, where he consoles Bharata. At Citrakūṭa he urges Rāma to come back and rule. At the end of the exile he enthrones Rāma. The Bālakāṇḍa also tells how he refused to give his wish-cow Śabalā to Viśvāmitra.",
+   "desc_kn": "ವಸಿಷ್ಠ ಇಕ್ಷ್ವಾಕು ವಂಶದ ಪುರೋಹಿತ ಮತ್ತು ರಾಜನ ಸಲಹೆಗಾರ. ರಾಮನನ್ನು ವಿಶ್ವಾಮಿತ್ರನ ಜೊತೆ ಕಳುಹಿಸಲು ದಶರಥನಿಗೆ ಹೇಳುತ್ತಾನೆ; ಮಿಥಿಲೆಯ ವಿವಾಹದಲ್ಲಿ ಇಕ್ಷ್ವಾಕು ವಂಶಾವಳಿಯನ್ನು ಹೇಳುತ್ತಾನೆ; ದಶರಥನ ಅಂತ್ಯಕ್ರಿಯೆಯ ನೇತೃತ್ವ ವಹಿಸಿ ಭರತನನ್ನು ಸಂತೈಸುತ್ತಾನೆ. ಚಿತ್ರಕೂಟದಲ್ಲಿ ರಾಮ ಹಿಂದಿರುಗಿ ರಾಜ್ಯವಾಳಬೇಕೆಂದು ಒತ್ತಾಯಿಸುತ್ತಾನೆ. ವನವಾಸ ಮುಗಿದ ಮೇಲೆ ರಾಮನಿಗೆ ಪಟ್ಟಾಭಿಷೇಕ ಮಾಡಿಸುತ್ತಾನೆ. ಬಾಲಕಾಂಡದಲ್ಲಿ ತನ್ನ ಕಾಮಧೇನು ಶಬಲೆಯನ್ನು ವಿಶ್ವಾಮಿತ್ರನಿಗೆ ಕೊಡಲು ನಿರಾಕರಿಸಿದ ಕಥೆಯೂ ಇದೆ.",
+   "relations": [
+    {
+     "type": "enemy",
+     "to": "vishvamitra",
+     "ref": "1.53.16",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Refuses to give his cow Śabalā to Viśvāmitra",
+     "kn": "ತನ್ನ ಹಸು ಶಬಲೆಯನ್ನು ವಿಶ್ವಾಮಿತ್ರನಿಗೆ ಕೊಡಲು ನಿರಾಕರಿಸುತ್ತಾನೆ",
+     "ref": "1.53.16",
+     "ed": "vu",
+     "with": [
+      "vishvamitra"
+     ]
+    },
+    {
+     "en": "Advises Daśaratha to send Rāma with Viśvāmitra",
+     "kn": "ರಾಮನನ್ನು ವಿಶ್ವಾಮಿತ್ರನ ಜೊತೆ ಕಳುಹಿಸಲು ದಶರಥನಿಗೆ ಹೇಳುತ್ತಾನೆ",
+     "ref": "1.21.5",
+     "ed": "vu",
+     "with": [
+      "dasharatha"
+     ]
+    },
+    {
+     "en": "Is chosen to recite the Ikṣvāku line at Mithilā",
+     "kn": "ಮಿಥಿಲೆಯಲ್ಲಿ ಇಕ್ಷ್ವಾಕು ವಂಶಾವಳಿಯನ್ನು ಹೇಳಲು ನಿಯೋಜಿತನಾಗುತ್ತಾನೆ",
+     "ref": "1.70.17",
+     "ed": "vu"
+    },
+    {
+     "en": "Consoles Bharata after Daśaratha's death",
+     "kn": "ದಶರಥನ ಮರಣದ ನಂತರ ಭರತನನ್ನು ಸಂತೈಸುತ್ತಾನೆ",
+     "ref": "2.76.1",
+     "ed": "vu",
+     "with": [
+      "bharata"
+     ]
+    },
+    {
+     "en": "At Citrakūṭa urges Rāma to return and rule",
+     "kn": "ಚಿತ್ರಕೂಟದಲ್ಲಿ ರಾಮ ಮರಳಿ ರಾಜ್ಯವಾಳಬೇಕೆಂದು ಒತ್ತಾಯಿಸುತ್ತಾನೆ",
+     "ref": "2.111.1",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Seats Rāma on the throne",
+     "kn": "ರಾಮನನ್ನು ಸಿಂಹಾಸನದಲ್ಲಿ ಕೂರಿಸುತ್ತಾನೆ",
+     "ref": "6.116.54",
+     "ed": "ce",
+     "with": [
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "guha",
+   "name": "Guha",
+   "group": "court",
+   "gender": "m",
+   "rank": 3,
+   "epithets": [
+    "Niṣādādhipati"
+   ],
+   "role_en": "Niṣāda chief of Śṛṅgaverapura, Rāma's friend",
+   "role_kn": "ಶೃಂಗವೇರಪುರದ ನಿಷಾದರ ನಾಯಕ, ರಾಮನ ಮಿತ್ರ",
+   "desc_en": "Guha is the chief of the Niṣādas at Śṛṅgaverapura on the Gaṅgā and a friend of Rāma. When Rāma comes there in exile Guha receives him with food and offers his own country, and Lakṣmaṇa and he keep watch through the night. At dawn Guha has a boat brought and ferries Rāma, Sītā and Lakṣmaṇa across the river. When Bharata later comes with the army, Guha first fears an attack, then guides Bharata across the Gaṅgā towards Rāma.",
+   "desc_kn": "ಗುಹ ಗಂಗಾತೀರದ ಶೃಂಗವೇರಪುರದ ನಿಷಾದರ ನಾಯಕ, ರಾಮನ ಮಿತ್ರ. ವನವಾಸದಲ್ಲಿ ರಾಮ ಬಂದಾಗ ಅವನು ಆಹಾರ ಕೊಟ್ಟು ಆದರಿಸಿ ತನ್ನ ರಾಜ್ಯವನ್ನೇ ಒಪ್ಪಿಸುತ್ತಾನೆ; ರಾತ್ರಿಯಿಡೀ ಲಕ್ಷ್ಮಣನೊಂದಿಗೆ ಕಾವಲು ಕಾಯುತ್ತಾನೆ. ಬೆಳಗಾಗುತ್ತಲೇ ದೋಣಿ ತರಿಸಿ ರಾಮ, ಸೀತೆ, ಲಕ್ಷ್ಮಣರನ್ನು ನದಿ ದಾಟಿಸುತ್ತಾನೆ. ನಂತರ ಭರತ ಸೇನೆಯೊಂದಿಗೆ ಬಂದಾಗ ಮೊದಲು ದಾಳಿಯೆಂದು ಹೆದರಿ, ಅನಂತರ ಭರತನಿಗೆ ಗಂಗೆ ದಾಟಲು ದಾರಿ ತೋರಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "friend",
+     "to": "rama",
+     "ref": "2.50.42",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Welcomes Rāma at Śṛṅgaverapura",
+     "kn": "ಶೃಂಗವೇರಪುರದಲ್ಲಿ ರಾಮನನ್ನು ಸ್ವಾಗತಿಸುತ್ತಾನೆ",
+     "ref": "2.50.42",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Keeps watch with Lakṣmaṇa through the night",
+     "kn": "ರಾತ್ರಿಯಿಡೀ ಲಕ್ಷ್ಮಣನೊಂದಿಗೆ ಕಾವಲು ಕಾಯುತ್ತಾನೆ",
+     "ref": "2.51.1",
+     "ed": "vu",
+     "with": [
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Has a boat brought to ferry Rāma across",
+     "kn": "ರಾಮನನ್ನು ದಾಟಿಸಲು ದೋಣಿ ತರಿಸುತ್ತಾನೆ",
+     "ref": "2.52.7",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Meets Bharata and shows him the way",
+     "kn": "ಭರತನನ್ನು ಭೇಟಿಯಾಗಿ ದಾರಿ ತೋರಿಸುತ್ತಾನೆ",
+     "ref": "2.85.1",
+     "ed": "vu",
+     "with": [
+      "bharata"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "manthara",
+   "name": "Mantharā",
+   "group": "court",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [
+    "Kubjā"
+   ],
+   "role_en": "Kaikeyī's hunchbacked maid who turns her against Rāma",
+   "role_kn": "ರಾಮನ ವಿರುದ್ಧ ಕೈಕೇಯಿಯನ್ನು ಎತ್ತಿಕಟ್ಟಿದ ಗೂನಿ ದಾಸಿ",
+   "desc_en": "Mantharā is Kaikeyī's hunchbacked servant, who has long served her. When she sees Ayodhyā decorated for Rāma's consecration she is angry, and tells Kaikeyī that Rāma's rise will ruin her and Bharata. She persuades her to claim the old boons from Daśaratha. After the king's death Śatrughna drags her out for her part in the plot, but Bharata stops him from killing her.",
+   "desc_kn": "ಮಂಥರೆ ಕೈಕೇಯಿಯ ಗೂನಿ ದಾಸಿ; ಬಹುಕಾಲದಿಂದ ಅವಳ ಸೇವೆಯಲ್ಲಿರುವವಳು. ರಾಮನ ಪಟ್ಟಾಭಿಷೇಕಕ್ಕಾಗಿ ಅಲಂಕೃತವಾದ ಅಯೋಧ್ಯೆಯನ್ನು ಕಂಡು ಕೋಪಗೊಂಡು, ರಾಮನ ಏಳಿಗೆ ಕೈಕೇಯಿ ಮತ್ತು ಭರತನ ಅವನತಿಗೆ ಕಾರಣವೆಂದು ಹೇಳುತ್ತಾಳೆ. ರಾಜನಿಂದ ಹಳೆಯ ವರಗಳನ್ನು ಕೇಳುವಂತೆ ಕೈಕೇಯಿಯನ್ನು ಒಪ್ಪಿಸುತ್ತಾಳೆ. ರಾಜನ ಮರಣದ ನಂತರ ಶತ್ರುಘ್ನ ಅವಳನ್ನು ಹಿಡಿದೆಳೆಯುತ್ತಾನೆ; ಆದರೆ ಭರತ ಅವಳನ್ನು ಕೊಲ್ಲದಂತೆ ತಡೆಯುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "serves",
+     "to": "kaikeyi",
+     "ref": "2.7.18",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Sees festive Ayodhyā from the palace roof",
+     "kn": "ಅರಮನೆಯ ಮಹಡಿಯಿಂದ ಹಬ್ಬದ ಅಯೋಧ್ಯೆಯನ್ನು ನೋಡುತ್ತಾಳೆ",
+     "ref": "2.7.2",
+     "ed": "vu"
+    },
+    {
+     "en": "Begins to turn Kaikeyī against Rāma",
+     "kn": "ರಾಮನ ವಿರುದ್ಧ ಕೈಕೇಯಿಯನ್ನು ಪ್ರಚೋದಿಸಲು ಪ್ರಾರಂಭಿಸುತ್ತಾಳೆ",
+     "ref": "2.8.1",
+     "ed": "vu",
+     "with": [
+      "kaikeyi"
+     ]
+    },
+    {
+     "en": "Proposes the plan of the two boons",
+     "kn": "ಎರಡು ವರಗಳ ಉಪಾಯವನ್ನು ಸೂಚಿಸುತ್ತಾಳೆ",
+     "ref": "2.9.4",
+     "ed": "vu",
+     "with": [
+      "kaikeyi"
+     ]
+    },
+    {
+     "en": "Dragged out by Śatrughna",
+     "kn": "ಶತ್ರುಘ್ನ ಅವಳನ್ನು ಎಳೆದು ತರುತ್ತಾನೆ",
+     "ref": "2.78.8",
+     "ed": "vu",
+     "with": [
+      "shatrughna"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "valmiki",
+   "name": "Vālmīki",
+   "group": "sages",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Prācetasa",
+    "Ādikavi"
+   ],
+   "role_en": "The sage-poet who composed the Rāmāyaṇa",
+   "role_kn": "ರಾಮಾಯಣವನ್ನು ರಚಿಸಿದ ಋಷಿಕವಿ",
+   "desc_en": "Vālmīki is the sage who composed the Rāmāyaṇa, called the first poet (ādikavi). Moved by the grief of a krauñca bird whose mate a hunter killed, he speaks the first śloka; Brahmā then tells him to compose Rāma's story as he had heard it from Nārada. In the Uttarakāṇḍa he gives shelter to Sītā in his hermitage, where her sons Kuśa and Lava are born, teaches them the poem, and later brings Sītā before Rāma. He is also a character in the story he tells.",
+   "desc_kn": "ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣವನ್ನು ರಚಿಸಿದ ಋಷಿ; ಆದಿಕವಿ ಎಂದು ಹೆಸರಾದವನು. ಬೇಟೆಗಾರ ಹೆಣ್ಣು ಕ್ರೌಂಚಪಕ್ಷಿಯ ಗಂಡನನ್ನು ಕೊಂದಾಗ ಅದರ ದುಃಖ ಕಂಡು ಅವನ ಬಾಯಿಂದ ಮೊದಲ ಶ್ಲೋಕ ಹೊರಹೊಮ್ಮುತ್ತದೆ; ಆಮೇಲೆ ಬ್ರಹ್ಮ ನಾರದನಿಂದ ಕೇಳಿದಂತೆ ರಾಮಕಥೆಯನ್ನು ರಚಿಸಲು ಹೇಳುತ್ತಾನೆ. ಉತ್ತರಕಾಂಡದಲ್ಲಿ ಸೀತೆಗೆ ತನ್ನ ಆಶ್ರಮದಲ್ಲಿ ಆಶ್ರಯ ಕೊಡುತ್ತಾನೆ; ಅವಳ ಮಕ್ಕಳಾದ ಕುಶ ಲವರು ಅಲ್ಲಿ ಜನಿಸುತ್ತಾರೆ, ಅವರಿಗೆ ಕಾವ್ಯವನ್ನು ಕಲಿಸುತ್ತಾನೆ, ನಂತರ ಸೀತೆಯನ್ನು ರಾಮನ ಮುಂದೆ ಕರೆತರುತ್ತಾನೆ. ಅವನು ತಾನು ಹೇಳುವ ಕಥೆಯ ಒಂದು ಪಾತ್ರವೂ ಹೌದು.",
+   "relations": [
+    {
+     "type": "other",
+     "to": "narada",
+     "ref": "1.1.1",
+     "ed": "vu",
+     "note_en": "Asks Nārada who the ideal man is; Nārada's answer is the outline of the poem",
+     "note_kn": "ಆದರ್ಶ ಪುರುಷ ಯಾರೆಂದು ನಾರದನನ್ನು ಕೇಳುತ್ತಾನೆ; ನಾರದನ ಉತ್ತರವೇ ಕಾವ್ಯದ ರೂಪರೇಖೆ"
+    },
+    {
+     "type": "other",
+     "to": "sita",
+     "ref": "7.49.10",
+     "ed": "vu",
+     "note_en": "Gives shelter to Sītā in his hermitage",
+     "note_kn": "ತನ್ನ ಆಶ್ರಮದಲ್ಲಿ ಸೀತೆಗೆ ಆಶ್ರಯ ಕೊಡುತ್ತಾನೆ"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Asks Nārada about the ideal man",
+     "kn": "ಆದರ್ಶ ಪುರುಷನ ಬಗ್ಗೆ ನಾರದನನ್ನು ಕೇಳುತ್ತಾನೆ",
+     "ref": "1.1.1",
+     "ed": "vu",
+     "with": [
+      "narada"
+     ]
+    },
+    {
+     "en": "Brahmā visits him, after his first śloka, and bids him compose Rāma's story",
+     "kn": "ಮೊದಲ ಶ್ಲೋಕದ ನಂತರ ಬ್ರಹ್ಮ ಬಂದು ರಾಮನ ಕಥೆ ರಚಿಸಲು ಹೇಳುತ್ತಾನೆ",
+     "ref": "1.2.24",
+     "ed": "vu"
+    },
+    {
+     "en": "Composes the story of Rāma",
+     "kn": "ರಾಮನ ಕಥೆಯನ್ನು ರಚಿಸುತ್ತಾನೆ",
+     "ref": "1.4.1",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Finds Sītā weeping and takes her in",
+     "kn": "ಅಳುತ್ತಿದ್ದ ಸೀತೆಯನ್ನು ಕಂಡು ಆಶ್ರಯ ಕೊಡುತ್ತಾನೆ",
+     "ref": "7.49.10",
+     "ed": "vu",
+     "with": [
+      "sita"
+     ]
+    },
+    {
+     "en": "Comes to Rāma's sacrifice with his pupils",
+     "kn": "ಶಿಷ್ಯರೊಂದಿಗೆ ರಾಮನ ಯಜ್ಞಕ್ಕೆ ಬರುತ್ತಾನೆ",
+     "ref": "7.93.1",
+     "ed": "vu"
+    },
+    {
+     "en": "Brings Sītā before Rāma and the assembly",
+     "kn": "ಸೀತೆಯನ್ನು ರಾಮ ಮತ್ತು ಸಭೆಯ ಮುಂದೆ ಕರೆತರುತ್ತಾನೆ",
+     "ref": "7.96.15",
+     "ed": "vu",
+     "with": [
+      "sita",
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "narada",
+   "name": "Nārada",
+   "group": "sages",
+   "gender": "m",
+   "rank": 3,
+   "epithets": [
+    "Devarṣi"
+   ],
+   "role_en": "Divine sage who tells Vālmīki the outline of Rāma's story",
+   "role_kn": "ವಾಲ್ಮೀಕಿಗೆ ರಾಮನ ಕಥೆಯ ರೂಪರೇಖೆ ಹೇಳಿದ ದೇವರ್ಷಿ",
+   "desc_en": "Nārada is the divine sage (devarṣi) who appears at the very start of the poem. Vālmīki asks him who is the best man in the world, full of virtue and strength, and Nārada answers by telling the story of Rāma in brief. Vālmīki honours him and he departs through the sky. Later Brahmā tells Vālmīki to compose the full poem on the basis of what he heard from Nārada.",
+   "desc_kn": "ನಾರದ ಕಾವ್ಯದ ಆರಂಭದಲ್ಲೇ ಕಾಣಿಸಿಕೊಳ್ಳುವ ದೇವರ್ಷಿ. ಗುಣ ಮತ್ತು ಶಕ್ತಿಯಿಂದ ತುಂಬಿದ ಶ್ರೇಷ್ಠ ಮನುಷ್ಯ ಯಾರೆಂದು ವಾಲ್ಮೀಕಿ ಕೇಳಿದಾಗ, ನಾರದ ರಾಮನ ಕಥೆಯನ್ನು ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಹೇಳಿ ಉತ್ತರಿಸುತ್ತಾನೆ. ವಾಲ್ಮೀಕಿ ಅವನನ್ನು ಗೌರವಿಸುತ್ತಾನೆ; ನಾರದ ಆಕಾಶಮಾರ್ಗವಾಗಿ ಹೊರಡುತ್ತಾನೆ. ನಂತರ ನಾರದನಿಂದ ಕೇಳಿದುದರ ಆಧಾರದ ಮೇಲೆ ಪೂರ್ಣ ಕಾವ್ಯ ರಚಿಸಲು ಬ್ರಹ್ಮ ವಾಲ್ಮೀಕಿಗೆ ಹೇಳುತ್ತಾನೆ.",
+   "relations": [],
+   "moments": [
+    {
+     "en": "Is asked by Vālmīki who the ideal man is",
+     "kn": "ಆದರ್ಶ ಪುರುಷ ಯಾರೆಂದು ವಾಲ್ಮೀಕಿ ಅವನನ್ನು ಕೇಳುತ್ತಾನೆ",
+     "ref": "1.1.1",
+     "ed": "vu",
+     "with": [
+      "valmiki"
+     ]
+    },
+    {
+     "en": "Tells him the story of Rāma",
+     "kn": "ವಾಲ್ಮೀಕಿಗೆ ರಾಮನ ಕಥೆ ಹೇಳುತ್ತಾನೆ",
+     "ref": "1.1.6",
+     "ed": "vu",
+     "with": [
+      "valmiki"
+     ]
+    },
+    {
+     "en": "Is honoured and departs",
+     "kn": "ಗೌರವಿಸಲ್ಪಟ್ಟು ಹೊರಡುತ್ತಾನೆ",
+     "ref": "1.2.2",
+     "ed": "vu"
+    },
+    {
+     "en": "Brahmā bids Vālmīki compose it as Nārada told it",
+     "kn": "ನಾರದ ಹೇಳಿದಂತೆ ರಚಿಸಲು ಬ್ರಹ್ಮ ವಾಲ್ಮೀಕಿಗೆ ಹೇಳುತ್ತಾನೆ",
+     "ref": "1.2.33",
+     "ed": "vu",
+     "with": [
+      "valmiki"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vishvamitra",
+   "name": "Viśvāmitra",
+   "group": "sages",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Kauśika",
+    "Gādhisuta"
+   ],
+   "role_en": "Sage who takes Rāma and Lakṣmaṇa to guard his sacrifice and to Mithilā",
+   "role_kn": "ರಾಮ-ಲಕ್ಷ್ಮಣರನ್ನು ಯಜ್ಞರಕ್ಷಣೆಗೆ ಮತ್ತು ಮಿಥಿಲೆಗೆ ಕರೆದೊಯ್ದ ಋಷಿ",
+   "desc_en": "Viśvāmitra, born a king, the son of Gādhi, rises to become a brahmarṣi through his tapas. He asks Daśaratha for Rāma and Lakṣmaṇa to guard his sacrifice from the rākṣasas, and Daśaratha agrees after Vasiṣṭha advises him to. On the way Rāma kills Tāṭakā and receives divine weapons; at the hermitage the princes defeat Mārīca and Subāhu. He then takes them to Mithilā, frees Ahalyā on the way, and asks Janaka to show Rāma Śiva's bow.",
+   "desc_kn": "ವಿಶ್ವಾಮಿತ್ರ ಗಾಧಿಯ ಮಗ, ಹುಟ್ಟಿನಿಂದ ರಾಜ; ತಪಸ್ಸಿನಿಂದ ಬ್ರಹ್ಮರ್ಷಿಯಾದವನು. ತನ್ನ ಯಜ್ಞವನ್ನು ರಾಕ್ಷಸರಿಂದ ಕಾಪಾಡಲು ರಾಮ ಮತ್ತು ಲಕ್ಷ್ಮಣರನ್ನು ಕೊಡಬೇಕೆಂದು ದಶರಥನನ್ನು ಕೇಳುತ್ತಾನೆ; ವಸಿಷ್ಠನ ಸಲಹೆಯ ನಂತರ ದಶರಥ ಒಪ್ಪುತ್ತಾನೆ. ದಾರಿಯಲ್ಲಿ ರಾಮ ತಾಟಕಿಯನ್ನು ಕೊಂದು ದಿವ್ಯಾಸ್ತ್ರಗಳನ್ನು ಪಡೆಯುತ್ತಾನೆ; ಆಶ್ರಮದಲ್ಲಿ ರಾಜಕುಮಾರರು ಮಾರೀಚ ಮತ್ತು ಸುಬಾಹುವನ್ನು ಸೋಲಿಸುತ್ತಾರೆ. ಅನಂತರ ಅವರನ್ನು ಮಿಥಿಲೆಗೆ ಕರೆದೊಯ್ಯುತ್ತಾನೆ; ದಾರಿಯಲ್ಲಿ ಅಹಲ್ಯೆಯ ಶಾಪವಿಮೋಚನೆಯಾಗುತ್ತದೆ; ಜನಕನಿಗೆ ರಾಮನಿಗೆ ಧನುಸ್ಸನ್ನು ತೋರಿಸಲು ಹೇಳುತ್ತಾನೆ.",
+   "relations": [],
+   "moments": [
+    {
+     "en": "Asks Daśaratha for Rāma",
+     "kn": "ರಾಮನನ್ನು ಕೊಡಬೇಕೆಂದು ದಶರಥನನ್ನು ಕೇಳುತ್ತಾನೆ",
+     "ref": "1.19.1",
+     "ed": "vu",
+     "with": [
+      "dasharatha"
+     ]
+    },
+    {
+     "en": "Roars at Tāṭakā and blesses the princes as she attacks",
+     "kn": "ತಾಟಕಿ ದಾಳಿ ಮಾಡಿದಾಗ ಅವಳನ್ನು ಗದರಿಸಿ ರಾಜಕುಮಾರರನ್ನು ಆಶೀರ್ವದಿಸುತ್ತಾನೆ",
+     "ref": "1.26.14",
+     "ed": "vu",
+     "with": [
+      "tataka",
+      "rama"
+     ]
+    },
+    {
+     "en": "His sacrifice is completed with the princes on guard",
+     "kn": "ರಾಜಕುಮಾರರ ರಕ್ಷಣೆಯಲ್ಲಿ ಅವನ ಯಜ್ಞ ಪೂರ್ಣಗೊಳ್ಳುತ್ತದೆ",
+     "ref": "1.30.25",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Leads the princes into Ahalyā's hermitage",
+     "kn": "ರಾಜಕುಮಾರರನ್ನು ಅಹಲ್ಯೆಯ ಆಶ್ರಮಕ್ಕೆ ಕರೆದೊಯ್ಯುತ್ತಾನೆ",
+     "ref": "1.49.12",
+     "ed": "vu",
+     "with": [
+      "rama",
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Asks Janaka to show Rāma the bow",
+     "kn": "ರಾಮನಿಗೆ ಧನುಸ್ಸನ್ನು ತೋರಿಸಲು ಜನಕನಿಗೆ ಹೇಳುತ್ತಾನೆ",
+     "ref": "1.67.1",
+     "ed": "vu",
+     "with": [
+      "janaka",
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "agastya",
+   "name": "Agastya",
+   "group": "sages",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Kumbhayoni"
+   ],
+   "role_en": "Sage of the south who gives Rāma divine weapons and the Āditya-hṛdaya",
+   "role_kn": "ದಕ್ಷಿಣದ ಋಷಿ; ರಾಮನಿಗೆ ದಿವ್ಯಾಯುಧಗಳನ್ನೂ ಆದಿತ್ಯಹೃದಯವನ್ನೂ ಕೊಟ್ಟವನು",
+   "desc_en": "Agastya is the great sage whose hermitage lies in the south, in the Daṇḍaka region. When Rāma, Sītā and Lakṣmaṇa visit him he receives them with honour and gives Rāma Viṣṇu's bow, an inexhaustible quiver, arrows and a sword. He also tells Rāma where to settle, at Pañcavaṭī. On the battlefield before the last duel with Rāvaṇa he comes and teaches Rāma the hymn Āditya-hṛdaya to the Sun, which gives him confidence for victory.",
+   "desc_kn": "ಅಗಸ್ತ್ಯ ದಂಡಕಾರಣ್ಯದ ದಕ್ಷಿಣ ಭಾಗದಲ್ಲಿ ಆಶ್ರಮ ಹೊಂದಿದ ಮಹರ್ಷಿ. ರಾಮ, ಸೀತೆ, ಲಕ್ಷ್ಮಣರು ಅವನನ್ನು ಭೇಟಿಯಾದಾಗ ಗೌರವದಿಂದ ಸ್ವಾಗತಿಸಿ, ರಾಮನಿಗೆ ವಿಷ್ಣುವಿನ ಧನುಸ್ಸು, ಅಕ್ಷಯ ಬತ್ತಳಿಕೆ, ಬಾಣಗಳು ಮತ್ತು ಖಡ್ಗವನ್ನು ನೀಡುತ್ತಾನೆ. ಪಂಚವಟಿಯಲ್ಲಿ ನೆಲೆಸುವಂತೆಯೂ ಹೇಳುತ್ತಾನೆ. ರಾವಣನೊಂದಿಗಿನ ಕೊನೆಯ ದ್ವಂದ್ವ ಯುದ್ಧಕ್ಕೆ ಮೊದಲು ಯುದ್ಧಭೂಮಿಗೆ ಬಂದು ರಾಮನಿಗೆ ಸೂರ್ಯನ ಸ್ತೋತ್ರ ಆದಿತ್ಯಹೃದಯವನ್ನು ಉಪದೇಶಿಸಿ ಜಯದ ವಿಶ್ವಾಸ ತುಂಬುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "enemy",
+     "to": "tataka",
+     "ref": "1.25.12",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Curses Tāṭakā and Mārīca to become rākṣasas",
+     "kn": "ತಾಟಕಿ ಮತ್ತು ಮಾರೀಚರನ್ನು ರಾಕ್ಷಸರಾಗುವಂತೆ ಶಪಿಸುತ್ತಾನೆ",
+     "ref": "1.25.12",
+     "ed": "vu",
+     "with": [
+      "tataka",
+      "maricha"
+     ]
+    },
+    {
+     "en": "Sutīkṣṇa sends Rāma to visit him",
+     "kn": "ಸುತೀಕ್ಷ್ಣ ರಾಮನನ್ನು ಅವನ ಆಶ್ರಮಕ್ಕೆ ಕಳುಹಿಸುತ್ತಾನೆ",
+     "ref": "3.11.36",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Gives Rāma the bow, quivers and sword",
+     "kn": "ರಾಮನಿಗೆ ಧನುಸ್ಸು, ಬತ್ತಳಿಕೆ, ಖಡ್ಗ ಕೊಡುತ್ತಾನೆ",
+     "ref": "3.12.37",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Sends them on to Pañcavaṭī",
+     "kn": "ಅವರನ್ನು ಪಂಚವಟಿಗೆ ಕಳುಹಿಸುತ್ತಾನೆ",
+     "ref": "3.13.23",
+     "ed": "vu",
+     "with": [
+      "rama",
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Teaches Rāma the Āditya-hṛdaya on the battlefield",
+     "kn": "ಯುದ್ಧಭೂಮಿಯಲ್ಲಿ ರಾಮನಿಗೆ ಆದಿತ್ಯಹೃದಯ ಉಪದೇಶಿಸುತ್ತಾನೆ",
+     "ref": "6.107.2",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shabari",
+   "name": "Śabarī",
+   "group": "sages",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [],
+   "role_en": "Elderly ascetic woman who welcomes Rāma near Pampā",
+   "role_kn": "ಪಂಪಾ ಸರೋವರದ ಬಳಿ ರಾಮನನ್ನು ಸ್ವಾಗತಿಸಿದ ವೃದ್ಧ ತಪಸ್ವಿನಿ",
+   "desc_en": "Śabarī is an old female ascetic who lives in a hermitage near Lake Pampā, where she has long served her teachers, the sages of Mataṅga's circle. When Rāma and Lakṣmaṇa reach her hermitage, she honours them and shows them the forest. She tells Rāma that her penance has borne fruit by seeing him. With his leave she gives up her body in fire and goes to the world of the sages she served.",
+   "desc_kn": "ಶಬರಿ ಪಂಪಾ ಸರೋವರದ ಬಳಿಯ ಆಶ್ರಮದಲ್ಲಿರುವ ವೃದ್ಧ ತಪಸ್ವಿನಿ; ಅಲ್ಲಿ ಮತಂಗ ಋಷಿಗಳ ಶಿಷ್ಯಬಳಗದ ಮುನಿಗಳ ಸೇವೆ ಮಾಡಿದವಳು. ರಾಮ-ಲಕ್ಷ್ಮಣರು ಅವಳ ಆಶ್ರಮಕ್ಕೆ ಬಂದಾಗ ಅವರನ್ನು ಸತ್ಕರಿಸಿ ಕಾಡನ್ನು ತೋರಿಸುತ್ತಾಳೆ. ರಾಮನ ದರ್ಶನದಿಂದ ತನ್ನ ತಪಸ್ಸು ಫಲಿಸಿತೆಂದು ಹೇಳುತ್ತಾಳೆ. ಅವನ ಅನುಮತಿ ಪಡೆದು ಅಗ್ನಿಯಲ್ಲಿ ದೇಹ ತ್ಯಜಿಸಿ ತಾನು ಸೇವೆ ಮಾಡಿದ ಋಷಿಗಳ ಲೋಕಕ್ಕೆ ಹೋಗುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "other",
+     "to": "rama",
+     "ref": "3.74.10",
+     "ed": "vu",
+     "note_en": "Receives Rāma and Lakṣmaṇa at her hermitage",
+     "note_kn": "ರಾಮ-ಲಕ್ಷ್ಮಣರನ್ನು ತನ್ನ ಆಶ್ರಮದಲ್ಲಿ ಸ್ವಾಗತಿಸುತ್ತಾಳೆ"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Rāma and Lakṣmaṇa come to her hermitage",
+     "kn": "ರಾಮ-ಲಕ್ಷ್ಮಣರು ಅವಳ ಆಶ್ರಮಕ್ಕೆ ಬರುತ್ತಾರೆ",
+     "ref": "3.74.4",
+     "ed": "vu",
+     "with": [
+      "rama",
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Answers Rāma's questions about her penance",
+     "kn": "ತನ್ನ ತಪಸ್ಸಿನ ಬಗ್ಗೆ ರಾಮನ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸುತ್ತಾಳೆ",
+     "ref": "3.74.10",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Shows them the forest",
+     "kn": "ಅವರಿಗೆ ಕಾಡನ್ನು ತೋರಿಸುತ್ತಾಳೆ",
+     "ref": "3.74.21",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Enters the fire with Rāma's leave and goes to heaven",
+     "kn": "ರಾಮನ ಅನುಮತಿಯಿಂದ ಅಗ್ನಿಪ್ರವೇಶ ಮಾಡಿ ಸ್ವರ್ಗಕ್ಕೆ ಹೋಗುತ್ತಾಳೆ",
+     "ref": "3.74.31",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ahalya",
+   "name": "Ahalyā",
+   "group": "sages",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [],
+   "role_en": "Gautama's wife, cursed after Indra's visit and freed by Rāma",
+   "role_kn": "ಗೌತಮನ ಪತ್ನಿ; ಇಂದ್ರನ ಭೇಟಿಯ ನಂತರ ಶಾಪಗ್ರಸ್ತಳಾಗಿ ರಾಮನಿಂದ ಮುಕ್ತಳಾದವಳು",
+   "desc_en": "Ahalyā is the wife of the sage Gautama. Indra comes to her disguised as Gautama; in Vālmīki's account she recognises him but agrees out of curiosity. Gautama curses her to live unseen, fasting and lying in ashes, until Rāma comes to the hermitage. When Viśvāmitra brings Rāma and Lakṣmaṇa there, she becomes visible again, is freed of the curse, and returns to her husband.",
+   "desc_kn": "ಅಹಲ್ಯೆ ಗೌತಮ ಮುನಿಯ ಪತ್ನಿ. ಇಂದ್ರ ಗೌತಮನ ವೇಷದಲ್ಲಿ ಬರುತ್ತಾನೆ; ವಾಲ್ಮೀಕಿಯ ಕಥನದಲ್ಲಿ ಅವಳು ಅವನನ್ನು ಗುರುತಿಸಿಯೂ ಕುತೂಹಲದಿಂದ ಒಪ್ಪುತ್ತಾಳೆ. ರಾಮ ಆಶ್ರಮಕ್ಕೆ ಬರುವವರೆಗೆ ಯಾರಿಗೂ ಕಾಣದೆ, ಉಪವಾಸದಿಂದ ಬೂದಿಯಲ್ಲಿ ಮಲಗಿ ಇರು ಎಂದು ಗೌತಮ ಶಪಿಸುತ್ತಾನೆ. ವಿಶ್ವಾಮಿತ್ರ ರಾಮ-ಲಕ್ಷ್ಮಣರನ್ನು ಅಲ್ಲಿಗೆ ಕರೆತಂದಾಗ ಅವಳು ಮತ್ತೆ ಕಾಣಿಸಿಕೊಂಡು ಶಾಪಮುಕ್ತಳಾಗಿ ಪತಿಯನ್ನು ಸೇರುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "other",
+     "to": "rama",
+     "ref": "1.49.21",
+     "ed": "vu",
+     "note_en": "Freed from Gautama's curse when Rāma comes to her hermitage",
+     "note_kn": "ರಾಮ ಆಶ್ರಮಕ್ಕೆ ಬಂದಾಗ ಗೌತಮನ ಶಾಪದಿಂದ ಮುಕ್ತಳಾಗುತ್ತಾಳೆ"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Indra, disguised as the sage, approaches her",
+     "kn": "ಮುನಿವೇಷದಲ್ಲಿ ಇಂದ್ರ ಅವಳ ಬಳಿ ಬರುತ್ತಾನೆ",
+     "ref": "1.48.18",
+     "ed": "vu"
+    },
+    {
+     "en": "She asks him to leave quickly and protect them both from Gautama",
+     "kn": "ಬೇಗ ಹೊರಡಲು ಹೇಳಿ ಗೌತಮನಿಂದ ತಮ್ಮಿಬ್ಬರನ್ನೂ ಕಾಪಾಡಿಕೊಳ್ಳುವಂತೆ ಹೇಳುತ್ತಾಳೆ",
+     "ref": "1.48.22",
+     "ed": "vu"
+    },
+    {
+     "en": "Freed of the curse, she is honoured by the gods",
+     "kn": "ಶಾಪಮುಕ್ತಳಾದ ಅವಳನ್ನು ದೇವತೆಗಳು ಗೌರವಿಸುತ್ತಾರೆ",
+     "ref": "1.49.20",
+     "ed": "vu"
+    }
+   ]
+  },
+  {
+   "id": "parashurama",
+   "name": "Paraśurāma",
+   "group": "sages",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Jāmadagnya",
+    "Bhārgava"
+   ],
+   "role_en": "Axe-bearing brāhmaṇa warrior who challenges Rāma on the road from Mithilā",
+   "role_kn": "ಮಿಥಿಲೆಯಿಂದ ಹಿಂದಿರುಗುವಾಗ ರಾಮನಿಗೆ ಸವಾಲೊಡ್ಡಿದ ಪರಶುಧಾರಿ ಬ್ರಾಹ್ಮಣ ವೀರ",
+   "desc_en": "Paraśurāma (Rāma Jāmadagnya, of the Bhṛgu line) is the sage-warrior who once destroyed many kṣatriyas and gave the earth to Kaśyapa. As Daśaratha's party returns from Mithilā, he blocks the road, says Rāma's breaking of Śiva's bow is nothing, and challenges him to string Viṣṇu's bow. Rāma strings it and fits an arrow, and Paraśurāma, his strength gone, yields. At his request Rāma's arrow destroys the worlds he had won by his tapas, and he leaves for Mount Mahendra.",
+   "desc_kn": "ಪರಶುರಾಮ (ಭೃಗು ವಂಶದ ಜಾಮದಗ್ನ್ಯ ರಾಮ) ಅನೇಕ ಕ್ಷತ್ರಿಯರನ್ನು ನಾಶ ಮಾಡಿ ಭೂಮಿಯನ್ನು ಕಶ್ಯಪನಿಗೆ ದಾನ ಮಾಡಿದ ಋಷಿ-ವೀರ. ಮಿಥಿಲೆಯಿಂದ ದಶರಥನ ಪರಿವಾರ ಹಿಂದಿರುಗುವಾಗ ದಾರಿ ತಡೆದು, ಶಿವಧನುಸ್ಸು ಮುರಿದುದು ದೊಡ್ಡದಲ್ಲವೆಂದು ಹೇಳಿ, ವಿಷ್ಣುವಿನ ಧನುಸ್ಸನ್ನು ಏರಿಸುವಂತೆ ರಾಮನಿಗೆ ಸವಾಲು ಹಾಕುತ್ತಾನೆ. ರಾಮ ಅದನ್ನು ಏರಿಸಿ ಬಾಣ ಹೂಡಿದಾಗ ಪರಶುರಾಮನ ಬಲ ಕುಗ್ಗುತ್ತದೆ; ಅವನ ಕೋರಿಕೆಯಂತೆ ರಾಮನ ಬಾಣ ಅವನು ತಪಸ್ಸಿನಿಂದ ಗೆದ್ದ ಲೋಕಗಳನ್ನು ನಾಶಮಾಡುತ್ತದೆ; ಅವನು ಮಹೇಂದ್ರ ಪರ್ವತಕ್ಕೆ ಹೊರಡುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "other",
+     "to": "rama",
+     "ref": "1.76.5",
+     "ed": "vu",
+     "note_en": "Challenges Rāma to string the Vaiṣṇava bow",
+     "note_kn": "ವೈಷ್ಣವ ಧನುಸ್ಸನ್ನು ಏರಿಸುವಂತೆ ರಾಮನಿಗೆ ಸವಾಲು ಹಾಕುತ್ತಾನೆ"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Meets Rāma and Daśaratha on the road",
+     "kn": "ದಾರಿಯಲ್ಲಿ ರಾಮ ಮತ್ತು ದಶರಥನನ್ನು ಎದುರುಗೊಳ್ಳುತ್ತಾನೆ",
+     "ref": "1.74.24",
+     "ed": "vu",
+     "with": [
+      "rama",
+      "dasharatha"
+     ]
+    },
+    {
+     "en": "Offers the Vaiṣṇava bow to Rāma",
+     "kn": "ವೈಷ್ಣವ ಧನುಸ್ಸನ್ನು ರಾಮನಿಗೆ ನೀಡುತ್ತಾನೆ",
+     "ref": "1.75.3",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Rāma strings the bow and aims",
+     "kn": "ರಾಮ ಧನುಸ್ಸನ್ನು ಏರಿಸಿ ಗುರಿಯಿಡುತ್ತಾನೆ",
+     "ref": "1.76.5",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Sees his worlds destroyed by Rāma's arrow and leaves for Mahendra",
+     "kn": "ರಾಮನ ಬಾಣದಿಂದ ತನ್ನ ಲೋಕಗಳು ನಾಶವಾದುದನ್ನು ಕಂಡು ಮಹೇಂದ್ರ ಪರ್ವತಕ್ಕೆ ಹೊರಡುತ್ತಾನೆ",
+     "ref": "1.76.22",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jatayu",
+   "name": "Jaṭāyus",
+   "group": "others",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Gṛdhrarāja"
+   ],
+   "role_en": "Vulture king, Daśaratha's friend, who fights Rāvaṇa for Sītā",
+   "role_kn": "ದಶರಥನ ಗೆಳೆಯ, ಸೀತೆಗಾಗಿ ರಾವಣನೊಡನೆ ಹೋರಾಡಿದ ಗೃಧ್ರರಾಜ",
+   "desc_en": "Jaṭāyus is a vulture king, son of Aruṇa and brother of Sampāti, and an old friend of Daśaratha. At Pañcavaṭī he offers to guard Sītā, and when Rāvaṇa carries her off he hears her cry and attacks, though old. Rāvaṇa cuts off his wings and legs and he falls. Dying, he tells Rāma and Lakṣmaṇa that Rāvaṇa took Sītā, and Rāma performs his funeral rites like a son's.",
+   "desc_kn": "ಜಟಾಯು ಅರುಣನ ಮಗ, ಸಂಪಾತಿಯ ತಮ್ಮ, ದಶರಥನ ಹಳೆಯ ಗೆಳೆಯ; ಗೃಧ್ರರಾಜ. ಪಂಚವಟಿಯಲ್ಲಿ ಸೀತೆಯನ್ನು ಕಾಯುವುದಾಗಿ ಹೇಳುತ್ತಾನೆ. ರಾವಣ ಸೀತೆಯನ್ನು ಒಯ್ಯುವಾಗ ಅವಳ ಕೂಗು ಕೇಳಿ, ವೃದ್ಧನಾದರೂ ಎದುರಿಸುತ್ತಾನೆ; ರಾವಣ ಅವನ ರೆಕ್ಕೆ ಕಾಲುಗಳನ್ನು ಕತ್ತರಿಸಲು ಅವನು ಬೀಳುತ್ತಾನೆ. ಸಾಯುವ ಮೊದಲು ರಾವಣ ಸೀತೆಯನ್ನು ಒಯ್ದನೆಂದು ರಾಮ-ಲಕ್ಷ್ಮಣರಿಗೆ ತಿಳಿಸುತ್ತಾನೆ; ರಾಮ ತಂದೆಗೆ ಮಾಡುವಂತೆ ಅವನ ಅಂತ್ಯಕ್ರಿಯೆ ನೆರವೇರಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "killed_by",
+     "to": "ravana",
+     "ref": "3.51.23",
+     "ed": "vu"
+    },
+    {
+     "type": "ally",
+     "to": "rama",
+     "ref": "3.67.28",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Introduces himself to Rāma as Daśaratha's friend",
+     "kn": "ದಶರಥನ ಗೆಳೆಯನೆಂದು ರಾಮನಿಗೆ ಪರಿಚಯಿಸಿಕೊಳ್ಳುತ್ತಾನೆ",
+     "ref": "3.14.33",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Hears Sītā's cry as Rāvaṇa carries her off",
+     "kn": "ರಾವಣ ಒಯ್ಯುವಾಗ ಸೀತೆಯ ಕೂಗು ಕೇಳುತ್ತಾನೆ",
+     "ref": "3.50.1",
+     "ed": "vu",
+     "with": [
+      "ravana",
+      "sita"
+     ]
+    },
+    {
+     "en": "Attacks Rāvaṇa",
+     "kn": "ರಾವಣನ ಮೇಲೆ ಎರಗುತ್ತಾನೆ",
+     "ref": "3.51.33",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    },
+    {
+     "en": "Rāma finds him fallen",
+     "kn": "ಬಿದ್ದಿದ್ದ ಅವನನ್ನು ರಾಮ ಕಾಣುತ್ತಾನೆ",
+     "ref": "3.67.10",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Rāma asks him to speak of Sītā",
+     "kn": "ಸೀತೆಯ ಬಗ್ಗೆ ಹೇಳುವಂತೆ ರಾಮ ಕೇಳುತ್ತಾನೆ",
+     "ref": "3.68.4",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sugriva",
+   "name": "Sugrīva",
+   "group": "vanara",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [],
+   "role_en": "Vānara king of Kiṣkindhā, Rāma's ally and Vālin's younger brother",
+   "role_kn": "ಕಿಷ್ಕಿಂಧೆಯ ವಾನರ ರಾಜ, ರಾಮನ ಮಿತ್ರ, ವಾಲಿಯ ತಮ್ಮ",
+   "desc_en": "Sugrīva, son of the Sun, is the younger brother of Vālin. Driven out of Kiṣkindhā by Vālin, who wrongly thought he had betrayed him, he lives on Ṛṣyamūka with Hanumān and a few companions. There he makes a pact of friendship with Rāma: Rāma will kill Vālin, and Sugrīva will search for Sītā. After Rāma kills Vālin, Sugrīva is made king, but he forgets his promise during the rains until Lakṣmaṇa's anger reminds him; he then sends out the search parties, brings his vānara army to Laṅkā and fights in the war.",
+   "desc_kn": "ಸುಗ್ರೀವ ಸೂರ್ಯನ ಮಗ, ವಾಲಿಯ ತಮ್ಮ. ತನ್ನ ಮೇಲೆ ದ್ರೋಹದ ಸಂಶಯ ಇಟ್ಟುಕೊಂಡ ವಾಲಿ ಕಿಷ್ಕಿಂಧೆಯಿಂದ ಹೊರಹಾಕಿದಾಗ, ಹನುಮಂತ ಮತ್ತಿತರರೊಂದಿಗೆ ಋಷ್ಯಮೂಕದಲ್ಲಿ ವಾಸಿಸುತ್ತಾನೆ. ಅಲ್ಲಿ ರಾಮನೊಂದಿಗೆ ಸ್ನೇಹ ಒಪ್ಪಂದ ಮಾಡಿಕೊಳ್ಳುತ್ತಾನೆ: ರಾಮ ವಾಲಿಯನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ, ಸುಗ್ರೀವ ಸೀತೆಯನ್ನು ಹುಡುಕುತ್ತಾನೆ. ವಾಲಿ ಹತನಾದ ಮೇಲೆ ಸುಗ್ರೀವ ರಾಜನಾಗುತ್ತಾನೆ; ಮಳೆಗಾಲದಲ್ಲಿ ತನ್ನ ಮಾತನ್ನು ಮರೆತು, ಲಕ್ಷ್ಮಣನ ಕೋಪದಿಂದ ಎಚ್ಚರಗೊಂಡು ಹುಡುಕಾಟದ ತಂಡಗಳನ್ನು ಕಳುಹಿಸುತ್ತಾನೆ; ವಾನರ ಸೇನೆಯೊಂದಿಗೆ ಲಂಕೆಗೆ ಹೋಗಿ ಯುದ್ಧದಲ್ಲಿ ಹೋರಾಡುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "sibling",
+     "to": "valin",
+     "ref": "4.16.16",
+     "ed": "vu"
+    },
+    {
+     "type": "ally",
+     "to": "rama",
+     "ref": "4.8.10",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Clasps hands with Rāma in friendship",
+     "kn": "ರಾಮನೊಂದಿಗೆ ಕೈ ಹಿಡಿದು ಸ್ನೇಹ ಬೆಳೆಸುತ್ತಾನೆ",
+     "ref": "4.5.12",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Fights Vālin again at Kiṣkindhā",
+     "kn": "ಕಿಷ್ಕಿಂಧೆಯಲ್ಲಿ ವಾಲಿಯೊಂದಿಗೆ ಮತ್ತೆ ಹೋರಾಡುತ್ತಾನೆ",
+     "ref": "4.16.16",
+     "ed": "vu",
+     "with": [
+      "valin"
+     ]
+    },
+    {
+     "en": "Is consecrated king, with Aṅgada as heir",
+     "kn": "ಅಂಗದನನ್ನು ಯುವರಾಜನನ್ನಾಗಿಸಿ ತಾನು ರಾಜನಾಗಿ ಪಟ್ಟಾಭಿಷಿಕ್ತನಾಗುತ್ತಾನೆ",
+     "ref": "4.26.37",
+     "ed": "vu",
+     "with": [
+      "angada"
+     ]
+    },
+    {
+     "en": "Neglects his promise during the rains; Rāma sees no effort from him",
+     "kn": "ಮಳೆಗಾಲದಲ್ಲಿ ತನ್ನ ವಚನ ಮರೆಯುತ್ತಾನೆ; ಅವನ ಪ್ರಯತ್ನ ಕಾಣುತ್ತಿಲ್ಲವೆಂದು ರಾಮ ಹೇಳುತ್ತಾನೆ",
+     "ref": "4.30.60",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Lakṣmaṇa angrily confronts him among his wives",
+     "kn": "ಕೋಪಗೊಂಡ ಲಕ್ಷ್ಮಣ ಅವನನ್ನು ಪತ್ನಿಯರ ನಡುವೆ ಎದುರಿಸುತ್ತಾನೆ",
+     "ref": "4.34.6",
+     "ed": "vu",
+     "with": [
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Is attacked by Rāvaṇa in battle",
+     "kn": "ಯುದ್ಧದಲ್ಲಿ ರಾವಣ ಅವನ ಮೇಲೆ ಬಾಣ ಬಿಡುತ್ತಾನೆ",
+     "ref": "6.59.39",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "valin",
+   "name": "Vālin",
+   "group": "vanara",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Vālī",
+    "Hemamālin"
+   ],
+   "role_en": "Mighty vānara king of Kiṣkindhā, killed by Rāma",
+   "role_kn": "ಕಿಷ್ಕಿಂಧೆಯ ಬಲಶಾಲಿ ವಾನರ ರಾಜ; ರಾಮನಿಂದ ಹತನಾದವನು",
+   "desc_en": "Vālin is the son of Indra and the powerful king of the vānaras at Kiṣkindhā; he had killed the buffalo-demon Dundubhi. After a night fight with the demon Māyāvin he drives out his younger brother Sugrīva and takes his wife. When Sugrīva returns and challenges him, Rāma, who has promised Sugrīva his help, shoots Vālin from a place of hiding. Dying, Vālin rebukes Rāma, but accepts his answer, entrusts his son Aṅgada to Sugrīva, and dies.",
+   "desc_kn": "ವಾಲಿ ಇಂದ್ರನ ಮಗ; ಕಿಷ್ಕಿಂಧೆಯ ಬಲಶಾಲಿ ವಾನರ ರಾಜ; ದುಂದುಭಿ ಎಂಬ ಎಮ್ಮೆ ರೂಪದ ರಾಕ್ಷಸನನ್ನು ಕೊಂದವನು. ಮಾಯಾವಿ ರಾಕ್ಷಸನೊಂದಿಗಿನ ರಾತ್ರಿಯ ಯುದ್ಧದ ನಂತರ ತಮ್ಮ ಸುಗ್ರೀವನನ್ನು ಹೊರಹಾಕಿ ಅವನ ಪತ್ನಿಯನ್ನು ವಶಪಡಿಸಿಕೊಳ್ಳುತ್ತಾನೆ. ಸುಗ್ರೀವ ಮರಳಿ ಬಂದು ಸವಾಲು ಹಾಕಿದಾಗ, ಸುಗ್ರೀವನಿಗೆ ಮಾತು ಕೊಟ್ಟಿದ್ದ ರಾಮ ಅಡಗಿ ನಿಂತು ವಾಲಿಗೆ ಬಾಣ ಬಿಡುತ್ತಾನೆ. ಸಾಯುವ ವೇಳೆ ವಾಲಿ ರಾಮನನ್ನು ಪ್ರಶ್ನಿಸಿ ನಿಂದಿಸುತ್ತಾನೆ, ಅವನ ಉತ್ತರವನ್ನು ಒಪ್ಪಿ, ಮಗ ಅಂಗದನನ್ನು ಸುಗ್ರೀವನಿಗೆ ಒಪ್ಪಿಸಿ ಪ್ರಾಣ ಬಿಡುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "killed_by",
+     "to": "rama",
+     "ref": "4.17.1",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Kills Dundubhi",
+     "kn": "ದುಂದುಭಿಯನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ",
+     "ref": "4.11.40",
+     "ed": "vu"
+    },
+    {
+     "en": "Comes out to fight Sugrīva",
+     "kn": "ಸುಗ್ರೀವನೊಂದಿಗೆ ಹೋರಾಡಲು ಹೊರಬರುತ್ತಾನೆ",
+     "ref": "4.16.14",
+     "ed": "vu",
+     "with": [
+      "sugriva"
+     ]
+    },
+    {
+     "en": "Is struck down by Rāma's arrow",
+     "kn": "ರಾಮನ ಬಾಣದಿಂದ ಬೀಳುತ್ತಾನೆ",
+     "ref": "4.17.1",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Rebukes Rāma and Lakṣmaṇa",
+     "kn": "ರಾಮ ಮತ್ತು ಲಕ್ಷ್ಮಣರನ್ನು ನಿಂದಿಸುತ್ತಾನೆ",
+     "ref": "4.17.14",
+     "ed": "vu",
+     "with": [
+      "rama",
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Entrusts Aṅgada to Sugrīva",
+     "kn": "ಅಂಗದನನ್ನು ಸುಗ್ರೀವನಿಗೆ ಒಪ್ಪಿಸುತ್ತಾನೆ",
+     "ref": "4.22.19",
+     "ed": "vu",
+     "with": [
+      "angada",
+      "sugriva"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tara",
+   "name": "Tārā",
+   "group": "vanara",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [],
+   "role_en": "Vālin's wise wife, mother of Aṅgada",
+   "role_kn": "ವಾಲಿಯ ಬುದ್ಧಿವಂತ ಪತ್ನಿ, ಅಂಗದನ ತಾಯಿ",
+   "desc_en": "Tārā is Vālin's wife and the mother of Aṅgada, known for her good judgement. Before Vālin's second duel with Sugrīva she warns him that Sugrīva must now have a powerful ally, and urges him to make peace; he does not listen. She weeps over his body and speaks to him in grief. Afterwards she remains at Kiṣkindhā, where she calms Lakṣmaṇa's anger at Sugrīva's neglect of his promise.",
+   "desc_kn": "ತಾರೆ ವಾಲಿಯ ಪತ್ನಿ, ಅಂಗದನ ತಾಯಿ; ಒಳ್ಳೆಯ ವಿವೇಚನೆಗೆ ಹೆಸರಾದವಳು. ಸುಗ್ರೀವನೊಂದಿಗೆ ವಾಲಿಯ ಎರಡನೇ ದ್ವಂದ್ವ ಯುದ್ಧಕ್ಕೆ ಮೊದಲು, ಸುಗ್ರೀವನಿಗೆ ಈಗ ಬಲಿಷ್ಠ ಮಿತ್ರನಿದ್ದಾನೆಂದು ಎಚ್ಚರಿಸಿ, ಶಾಂತಿ ಮಾಡಿಕೊಳ್ಳುವಂತೆ ಹೇಳುತ್ತಾಳೆ; ವಾಲಿ ಕೇಳುವುದಿಲ್ಲ. ಅವನ ಶವದ ಬಳಿ ಅತ್ತು ದುಃಖದಿಂದ ಮಾತನಾಡುತ್ತಾಳೆ. ನಂತರ ಕಿಷ್ಕಿಂಧೆಯಲ್ಲೇ ಇರುತ್ತಾಳೆ; ಸುಗ್ರೀವ ತನ್ನ ವಚನ ಮರೆತುದಕ್ಕೆ ಕೋಪಗೊಂಡ ಲಕ್ಷ್ಮಣನನ್ನು ಅವಳು ಸಮಾಧಾನಪಡಿಸುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "spouse",
+     "to": "valin",
+     "ref": "4.15.6",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Warns Vālin not to fight Sugrīva again",
+     "kn": "ಸುಗ್ರೀವನೊಂದಿಗೆ ಮತ್ತೆ ಹೋರಾಡಬೇಡವೆಂದು ವಾಲಿಗೆ ಎಚ್ಚರಿಸುತ್ತಾಳೆ",
+     "ref": "4.15.6",
+     "ed": "vu",
+     "with": [
+      "valin"
+     ]
+    },
+    {
+     "en": "Embraces him and lets him go to the fight",
+     "kn": "ಅವನನ್ನು ತಬ್ಬಿಕೊಂಡು ಹೋರಾಟಕ್ಕೆ ಕಳುಹಿಸುತ್ತಾಳೆ",
+     "ref": "4.16.11",
+     "ed": "vu",
+     "with": [
+      "valin"
+     ]
+    },
+    {
+     "en": "Sees Vālin fallen and laments",
+     "kn": "ಬಿದ್ದ ವಾಲಿಯನ್ನು ಕಂಡು ಗೋಳಾಡುತ್ತಾಳೆ",
+     "ref": "4.19.3",
+     "ed": "vu",
+     "with": [
+      "valin"
+     ]
+    },
+    {
+     "en": "Takes part in his funeral rites",
+     "kn": "ಅವನ ಅಂತ್ಯಕ್ರಿಯೆಯಲ್ಲಿ ಭಾಗವಹಿಸುತ್ತಾಳೆ",
+     "ref": "4.25.52",
+     "ed": "vu",
+     "with": [
+      "sugriva",
+      "angada"
+     ]
+    },
+    {
+     "en": "Calms Lakṣmaṇa",
+     "kn": "ಲಕ್ಷ್ಮಣನನ್ನು ಸಮಾಧಾನಪಡಿಸುತ್ತಾಳೆ",
+     "ref": "4.35.1",
+     "ed": "vu",
+     "with": [
+      "lakshmana"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "angada",
+   "name": "Aṅgada",
+   "group": "vanara",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Tāreya",
+    "Vālisūnu"
+   ],
+   "role_en": "Vālin's son, crown prince of the vānaras and leader of the southern search",
+   "role_kn": "ವಾಲಿಯ ಮಗ, ವಾನರರ ಯುವರಾಜ; ದಕ್ಷಿಣ ಹುಡುಕಾಟದ ನಾಯಕ",
+   "desc_en": "Aṅgada is the son of Vālin and Tārā. As Vālin dies, he entrusts the boy to Sugrīva, who later makes him crown prince. He leads the vānara search party to the south, and when the deadline Sugrīva set has passed, he resolves to fast to death rather than return empty-handed, until Sampāti shows them where Sītā is and Hanumān crosses the sea. In the war Rāma sends him as messenger to Rāvaṇa, and he defeats Indrajit in battle.",
+   "desc_kn": "ಅಂಗದ ವಾಲಿ ಮತ್ತು ತಾರೆಯರ ಮಗ. ವಾಲಿ ಸಾಯುವ ಮೊದಲು ಅವನನ್ನು ಸುಗ್ರೀವನಿಗೆ ಒಪ್ಪಿಸುತ್ತಾನೆ; ಸುಗ್ರೀವ ಅವನನ್ನು ಯುವರಾಜನನ್ನಾಗಿ ಮಾಡುತ್ತಾನೆ. ದಕ್ಷಿಣಕ್ಕೆ ಹೋದ ಹುಡುಕಾಟದ ತಂಡವನ್ನು ಮುನ್ನಡೆಸುತ್ತಾನೆ; ಸುಗ್ರೀವ ನೀಡಿದ ಗಡುವು ಮುಗಿದಾಗ ಖಾಲಿ ಕೈಯಲ್ಲಿ ಹಿಂತಿರುಗುವುದಕ್ಕಿಂತ ಉಪವಾಸ ಮಾಡಿ ಪ್ರಾಣ ಬಿಡುವೆನೆಂದು ನಿರ್ಧರಿಸುತ್ತಾನೆ; ಸಂಪಾತಿ ಸೀತೆ ಇರುವ ಸ್ಥಳ ತೋರಿಸುತ್ತಾನೆ, ಹನುಮಂತ ಸಮುದ್ರ ದಾಟುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ರಾಮ ಅವನನ್ನು ರಾವಣನ ಬಳಿ ದೂತನಾಗಿ ಕಳುಹಿಸುತ್ತಾನೆ; ಅವನು ಇಂದ್ರಜಿತ್ತನನ್ನು ಸೋಲಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "valin"
+    },
+    {
+     "type": "parent",
+     "to": "tara"
+    },
+    {
+     "type": "serves",
+     "to": "sugriva",
+     "ref": "4.26.39",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is entrusted by the dying Vālin to Sugrīva",
+     "kn": "ಸಾಯುತ್ತಿದ್ದ ವಾಲಿ ಅವನನ್ನು ಸುಗ್ರೀವನಿಗೆ ಒಪ್ಪಿಸುತ್ತಾನೆ",
+     "ref": "4.22.19",
+     "ed": "vu",
+     "with": [
+      "valin",
+      "sugriva"
+     ]
+    },
+    {
+     "en": "Is made crown prince",
+     "kn": "ಯುವರಾಜನಾಗಿ ಅಭಿಷಿಕ್ತನಾಗುತ್ತಾನೆ",
+     "ref": "4.26.39",
+     "ed": "vu",
+     "with": [
+      "sugriva"
+     ]
+    },
+    {
+     "en": "Speaks as leader of the southern search party after the deadline has passed",
+     "kn": "ಗಡುವು ಮುಗಿದ ನಂತರ ದಕ್ಷಿಣ ತಂಡದ ನಾಯಕನಾಗಿ ಮಾತನಾಡುತ್ತಾನೆ",
+     "ref": "4.53.7",
+     "ed": "vu"
+    },
+    {
+     "en": "Rāma sends him as envoy to Rāvaṇa",
+     "kn": "ರಾಮ ಅವನನ್ನು ರಾವಣನ ಬಳಿ ದೂತನಾಗಿ ಕಳುಹಿಸುತ್ತಾನೆ",
+     "ref": "6.41.60",
+     "ed": "vu",
+     "with": [
+      "rama",
+      "ravana"
+     ]
+    },
+    {
+     "en": "Defeats Indrajit in battle",
+     "kn": "ಯುದ್ಧದಲ್ಲಿ ಇಂದ್ರಜಿತ್ತನನ್ನು ಸೋಲಿಸುತ್ತಾನೆ",
+     "ref": "6.44.33",
+     "ed": "vu",
+     "with": [
+      "indrajit"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hanumat",
+   "name": "Hanumat",
+   "group": "vanara",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Hanumān",
+    "Mārutātmaja",
+    "Mārutī",
+    "Vāyuputra"
+   ],
+   "role_en": "Vānara hero, Sugrīva's minister and Rāma's devoted messenger",
+   "role_kn": "ವಾನರ ವೀರ, ಸುಗ್ರೀವನ ಮಂತ್ರಿ, ರಾಮನ ನಿಷ್ಠ ದೂತ",
+   "desc_en": "Hanumān, son of the wind-god Vāyu and Añjanā, is a minister of Sugrīva, who first meets Rāma and Lakṣmaṇa on Ṛṣyamūka and brings them to Sugrīva. When no one else dares, he leaps across the sea to Laṅkā and finds Sītā in the Aśoka grove, gives her Rāma's ring, and returns with her jewel as a sign. He lets himself be caught, sets Laṅkā on fire with his burning tail, and in the war brings healing herbs from the Himālaya to revive the wounded Rāma, Lakṣmaṇa and the army.",
+   "desc_kn": "ಹನುಮಂತ ವಾಯುದೇವ ಮತ್ತು ಅಂಜನೆಯ ಮಗ, ಸುಗ್ರೀವನ ಮಂತ್ರಿ. ಋಷ್ಯಮೂಕದಲ್ಲಿ ರಾಮ-ಲಕ್ಷ್ಮಣರನ್ನು ಮೊದಲು ಭೇಟಿಯಾಗಿ ಸುಗ್ರೀವನ ಬಳಿಗೆ ಕರೆತರುತ್ತಾನೆ. ಬೇರೆ ಯಾರಿಗೂ ಧೈರ್ಯವಿಲ್ಲದಿದ್ದಾಗ ಸಮುದ್ರ ಹಾರಿ ಲಂಕೆಗೆ ಹೋಗಿ ಅಶೋಕವನದಲ್ಲಿ ಸೀತೆಯನ್ನು ಕಂಡು, ರಾಮನ ಉಂಗುರ ಕೊಟ್ಟು, ಅವಳ ಚೂಡಾಮಣಿಯನ್ನು ಗುರುತಾಗಿ ತರುತ್ತಾನೆ. ಉದ್ದೇಶಪೂರ್ವಕವಾಗಿ ಸೆರೆಯಾಗಿ, ಉರಿಯುವ ಬಾಲದಿಂದ ಲಂಕೆಗೆ ಬೆಂಕಿ ಹಚ್ಚುತ್ತಾನೆ; ಯುದ್ಧದಲ್ಲಿ ಹಿಮಾಲಯದಿಂದ ಔಷಧಿ ತಂದು ಗಾಯಗೊಂಡ ರಾಮ, ಲಕ್ಷ್ಮಣ ಮತ್ತು ಸೇನೆಯನ್ನು ಬದುಕಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "serves",
+     "to": "sugriva",
+     "ref": "4.3.1",
+     "ed": "vu"
+    },
+    {
+     "type": "ally",
+     "to": "rama",
+     "ref": "4.3.24",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Meets Rāma and Lakṣmaṇa on behalf of Sugrīva",
+     "kn": "ಸುಗ್ರೀವನ ಪರವಾಗಿ ರಾಮ-ಲಕ್ಷ್ಮಣರನ್ನು ಭೇಟಿಯಾಗುತ್ತಾನೆ",
+     "ref": "4.3.1",
+     "ed": "vu",
+     "with": [
+      "rama",
+      "lakshmana",
+      "sugriva"
+     ]
+    },
+    {
+     "en": "Leaps across the sea toward Laṅkā",
+     "kn": "ಲಂಕೆಯತ್ತ ಸಮುದ್ರ ಹಾರುತ್ತಾನೆ",
+     "ref": "5.1.29",
+     "ed": "vu"
+    },
+    {
+     "en": "Finds Sītā and speaks to her",
+     "kn": "ಸೀತೆಯನ್ನು ಕಂಡು ಮಾತನಾಡಿಸುತ್ತಾನೆ",
+     "ref": "5.34.8",
+     "ed": "vu",
+     "with": [
+      "sita"
+     ]
+    },
+    {
+     "en": "Is bound by Indrajit's weapon and brought before Rāvaṇa",
+     "kn": "ಇಂದ್ರಜಿತ್ತನ ಅಸ್ತ್ರಕ್ಕೆ ಸಿಕ್ಕಿ ರಾವಣನ ಮುಂದೆ ತರಲ್ಪಡುತ್ತಾನೆ",
+     "ref": "5.48.52",
+     "ed": "vu",
+     "with": [
+      "indrajit"
+     ]
+    },
+    {
+     "en": "Burns Laṅkā",
+     "kn": "ಲಂಕೆಯನ್ನು ಸುಡುತ್ತಾನೆ",
+     "ref": "5.54.42",
+     "ed": "vu"
+    },
+    {
+     "en": "Flies to the Himālaya for healing herbs",
+     "kn": "ಔಷಧಿಗಾಗಿ ಹಿಮಾಲಯಕ್ಕೆ ಹಾರುತ್ತಾನೆ",
+     "ref": "6.74.55",
+     "ed": "vu",
+     "with": [
+      "jambavat"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jambavat",
+   "name": "Jāmbavat",
+   "group": "vanara",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Jāmbavān"
+   ],
+   "role_en": "Aged bear king, Sugrīva's counsellor, who reminds Hanumān of his strength",
+   "role_kn": "ವೃದ್ಧ ಕರಡಿ ರಾಜ, ಸುಗ್ರೀವನ ಸಲಹೆಗಾರ; ಹನುಮಂತನಿಗೆ ಅವನ ಶಕ್ತಿಯನ್ನು ನೆನಪಿಸಿದವನು",
+   "desc_en": "Jāmbavat (Jāmbavān) is the old king of the bears (ṛkṣas), created by Brahmā at the time the gods took birth as vānaras and bears. He goes with the southern search party. When the vānaras stand helpless before the sea, he tells Hanumān to take the leap. In the war he is the one who, after the great weapon-strike on the army, asks first for Hanumān and sends him to the Himālaya for the herbs.",
+   "desc_kn": "ಜಾಂಬವಂತ (ಜಾಂಬವಾನ್) ಕರಡಿಗಳ ವೃದ್ಧ ರಾಜ; ದೇವತೆಗಳು ವಾನರ-ಕರಡಿಗಳ ರೂಪದಲ್ಲಿ ಜನಿಸಿದಾಗ ಬ್ರಹ್ಮನಿಂದ ಸೃಷ್ಟಿಯಾದವನು. ದಕ್ಷಿಣ ಹುಡುಕಾಟದ ತಂಡದೊಂದಿಗೆ ಹೋಗುತ್ತಾನೆ. ವಾನರರು ಸಮುದ್ರದ ಮುಂದೆ ಅಸಹಾಯರಾಗಿ ನಿಂತಾಗ ಹಾರುವಂತೆ ಹನುಮಂತನಿಗೆ ಹೇಳುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ಸೇನೆಯ ಮೇಲೆ ಮಹಾಸ್ತ್ರ ಬಿದ್ದ ನಂತರ ಮೊದಲು ಹನುಮಂತನನ್ನೇ ಕೇಳಿ, ಔಷಧಿ ತರಲು ಹಿಮಾಲಯಕ್ಕೆ ಕಳುಹಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "ally",
+     "to": "hanumat",
+     "ref": "4.66.1",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is created by Brahmā",
+     "kn": "ಬ್ರಹ್ಮನಿಂದ ಸೃಷ್ಟಿಯಾಗುತ್ತಾನೆ",
+     "ref": "1.17.7",
+     "ed": "vu"
+    },
+    {
+     "en": "Urges Hanumān to cross the sea",
+     "kn": "ಸಮುದ್ರ ದಾಟುವಂತೆ ಹನುಮಂತನನ್ನು ಪ್ರೇರೇಪಿಸುತ್ತಾನೆ",
+     "ref": "4.66.1",
+     "ed": "vu",
+     "with": [
+      "hanumat"
+     ]
+    },
+    {
+     "en": "Wounded, he recognises Vibhīṣaṇa's voice and asks first for Hanumān",
+     "kn": "ಗಾಯಗೊಂಡಿದ್ದ ಅವನು ವಿಭೀಷಣನ ಧ್ವನಿ ಗುರುತಿಸಿ ಮೊದಲು ಹನುಮಂತನ ಬಗ್ಗೆ ಕೇಳುತ್ತಾನೆ",
+     "ref": "6.74.16",
+     "ed": "vu",
+     "with": [
+      "hanumat",
+      "vibhishana"
+     ]
+    },
+    {
+     "en": "Tells Hanumān to bring the herbs",
+     "kn": "ಔಷಧಿ ತರುವಂತೆ ಹನುಮಂತನಿಗೆ ಹೇಳುತ್ತಾನೆ",
+     "ref": "6.74.26",
+     "ed": "vu",
+     "with": [
+      "hanumat"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nila",
+   "name": "Nīla",
+   "group": "vanara",
+   "gender": "m",
+   "rank": 3,
+   "epithets": [
+    "Agnisuta"
+   ],
+   "match": [
+    "nīl"
+   ],
+   "role_en": "Vānara general, son of Agni, who kills Prahasta",
+   "role_kn": "ಅಗ್ನಿಯ ಮಗ, ವಾನರ ಸೇನಾನಾಯಕ; ಪ್ರಹಸ್ತನನ್ನು ಕೊಂದವನು",
+   "desc_en": "Nīla is a vānara chief, born from Agni, and a general of Sugrīva's army. He is named among those sent south to search for Sītā. At Laṅkā he is posted at the eastern gate. When the rākṣasa commander Prahasta sallies out, Nīla fights him, breaks his bow, and kills him by hurling a rock at his head.",
+   "desc_kn": "ನೀಲ ಅಗ್ನಿಯಿಂದ ಜನಿಸಿದ ವಾನರ ನಾಯಕ, ಸುಗ್ರೀವನ ಸೇನೆಯ ಸೇನಾಪತಿ. ಸೀತೆಯನ್ನು ಹುಡುಕಲು ದಕ್ಷಿಣಕ್ಕೆ ಕಳುಹಿಸಲ್ಪಟ್ಟವರಲ್ಲಿ ಅವನ ಹೆಸರೂ ಇದೆ. ಲಂಕೆಯಲ್ಲಿ ಪೂರ್ವ ದ್ವಾರದ ಕಾವಲಿಗೆ ನಿಲ್ಲುತ್ತಾನೆ. ರಾಕ್ಷಸ ಸೇನಾಪತಿ ಪ್ರಹಸ್ತ ಹೊರಬಂದಾಗ ಅವನೊಂದಿಗೆ ಹೋರಾಡಿ, ಅವನ ಬಿಲ್ಲನ್ನು ಮುರಿದು, ತಲೆಗೆ ಬಂಡೆ ಎಸೆದು ಕೊಲ್ಲುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "serves",
+     "to": "sugriva",
+     "ref": "6.41.38",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Named among the leaders sent south",
+     "kn": "ದಕ್ಷಿಣಕ್ಕೆ ಕಳುಹಿಸಲ್ಪಟ್ಟ ನಾಯಕರಲ್ಲಿ ಹೆಸರಿಸಲ್ಪಟ್ಟಿದ್ದಾನೆ",
+     "ref": "4.41.2",
+     "ed": "vu"
+    },
+    {
+     "en": "Guards the eastern gate of Laṅkā",
+     "kn": "ಲಂಕೆಯ ಪೂರ್ವ ದ್ವಾರವನ್ನು ಕಾಯುತ್ತಾನೆ",
+     "ref": "6.41.38",
+     "ed": "vu"
+    },
+    {
+     "en": "Kills Prahasta with a rock",
+     "kn": "ಬಂಡೆಯಿಂದ ಪ್ರಹಸ್ತನನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ",
+     "ref": "6.58.57",
+     "ed": "vu"
+    }
+   ]
+  },
+  {
+   "id": "nala",
+   "name": "Nala",
+   "group": "vanara",
+   "gender": "m",
+   "rank": 3,
+   "epithets": [],
+   "role_en": "Vānara engineer, son of Viśvakarman, who builds the bridge to Laṅkā",
+   "role_kn": "ವಿಶ್ವಕರ್ಮನ ಮಗ, ವಾನರ ಶಿಲ್ಪಿ; ಲಂಕೆಗೆ ಸೇತುವೆ ಕಟ್ಟಿದವನು",
+   "desc_en": "Nala is a vānara born as a son of the divine craftsman Viśvakarman. When Rāma, stopped by the ocean, is ready to dry it up with his arrows, the sea-god Varuṇa tells him Nala can build a bridge across it. Nala says he has his father's skill and sets the vānaras to work. The bridge across the ocean is afterwards called after him, Nala's bridge.",
+   "desc_kn": "ನಳ ದೇವಶಿಲ್ಪಿ ವಿಶ್ವಕರ್ಮನ ಮಗನಾಗಿ ಜನಿಸಿದ ವಾನರ. ಸಮುದ್ರ ಅಡ್ಡವಾದಾಗ ರಾಮ ಬಾಣಗಳಿಂದ ಅದನ್ನು ಬತ್ತಿಸಲು ಸಿದ್ಧನಾದಾಗ, ಸಮುದ್ರರಾಜ ವರುಣ ನಳನು ಸೇತುವೆ ಕಟ್ಟಬಲ್ಲನೆಂದು ತಿಳಿಸುತ್ತಾನೆ. ತನಗೆ ತಂದೆಯ ಕೌಶಲ್ಯವಿದೆ ಎಂದು ಹೇಳಿ ನಳ ವಾನರರನ್ನು ಕೆಲಸಕ್ಕೆ ಹಚ್ಚುತ್ತಾನೆ. ಆ ಸೇತುವೆಯನ್ನು ಮುಂದೆ ನಳಸೇತು ಎಂದು ಕರೆಯುತ್ತಾರೆ.",
+   "relations": [
+    {
+     "type": "ally",
+     "to": "rama",
+     "ref": "6.22.46",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is born as Viśvakarman's son",
+     "kn": "ವಿಶ್ವಕರ್ಮನ ಮಗನಾಗಿ ಜನಿಸುತ್ತಾನೆ",
+     "ref": "1.17.12",
+     "ed": "vu"
+    },
+    {
+     "en": "Offers to build the bridge",
+     "kn": "ಸೇತುವೆ ಕಟ್ಟುವುದಾಗಿ ಮುಂದೆ ಬರುತ್ತಾನೆ",
+     "ref": "6.22.46",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "The bridge is seen, named after him",
+     "kn": "ಅವನ ಹೆಸರಿನ ಸೇತುವೆಯನ್ನು ಎಲ್ಲರೂ ಕಾಣುತ್ತಾರೆ",
+     "ref": "6.22.75",
+     "ed": "vu"
+    }
+   ]
+  },
+  {
+   "id": "ravana",
+   "name": "Rāvaṇa",
+   "group": "rakshasa",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Daśagrīva",
+    "Daśānana",
+    "Laṅkeśvara"
+   ],
+   "role_en": "Ten-headed rākṣasa king of Laṅkā who abducts Sītā",
+   "role_kn": "ಲಂಕೆಯ ಹತ್ತು ತಲೆಯ ರಾಕ್ಷಸ ರಾಜ; ಸೀತೆಯನ್ನು ಅಪಹರಿಸಿದವನು",
+   "desc_en": "Rāvaṇa (Daśagrīva) is the rākṣasa king of Laṅkā, son of the sage Viśravas, who gained from Brahmā a boon of safety from gods, demons and other beings (but not from humans) and terrorised the worlds. Angered by Śūrpaṇakhā's mutilation and the death of Khara, he has Mārīca lure Rāma away as a golden deer and carries off Sītā; he keeps her in Laṅkā and presses her to be his wife, but she refuses. He rejects Vibhīṣaṇa's advice to return her, loses his brother, his sons and his army in the war, and is killed by Rāma.",
+   "desc_kn": "ರಾವಣ (ದಶಗ್ರೀವ) ಲಂಕೆಯ ರಾಕ್ಷಸ ರಾಜ, ವಿಶ್ರವಸ್ ಮುನಿಯ ಮಗ. ದೇವ, ದಾನವ ಮುಂತಾದವರಿಂದ ಅವಧ್ಯನಾಗುವ (ಮನುಷ್ಯರನ್ನು ಬಿಟ್ಟು) ವರವನ್ನು ಬ್ರಹ್ಮನಿಂದ ಪಡೆದು ಲೋಕಗಳನ್ನು ಭಯಪಡಿಸಿದವನು. ಶೂರ್ಪಣಖಿಯ ಅಂಗಭಂಗ ಮತ್ತು ಖರನ ಸಾವಿನಿಂದ ಕೋಪಗೊಂಡು, ಮಾರೀಚನನ್ನು ಚಿನ್ನದ ಜಿಂಕೆಯಾಗಿ ಕಳುಹಿಸಿ ರಾಮನನ್ನು ದೂರ ಸೆಳೆದು ಸೀತೆಯನ್ನು ಅಪಹರಿಸುತ್ತಾನೆ; ಅವಳನ್ನು ಲಂಕೆಯಲ್ಲಿ ಇಟ್ಟು ತನ್ನನ್ನು ವರಿಸುವಂತೆ ಒತ್ತಾಯಿಸುತ್ತಾನೆ, ಅವಳು ನಿರಾಕರಿಸುತ್ತಾಳೆ. ಸೀತೆಯನ್ನು ಹಿಂದಿರುಗಿಸುವಂತೆ ವಿಭೀಷಣ ಹೇಳಿದ ಸಲಹೆಯನ್ನು ತಿರಸ್ಕರಿಸಿ, ಯುದ್ಧದಲ್ಲಿ ತಮ್ಮ, ಮಕ್ಕಳು, ಸೇನೆ ಎಲ್ಲವನ್ನೂ ಕಳೆದುಕೊಂಡು ರಾಮನಿಂದ ಹತನಾಗುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "killed_by",
+     "to": "rama",
+     "ref": "6.111.18",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Comes to Sītā disguised as a mendicant",
+     "kn": "ಭಿಕ್ಷುವಿನ ವೇಷದಲ್ಲಿ ಸೀತೆಯ ಬಳಿಗೆ ಬರುತ್ತಾನೆ",
+     "ref": "3.46.9",
+     "ed": "vu",
+     "with": [
+      "sita"
+     ]
+    },
+    {
+     "en": "Carries Sītā off in his chariot",
+     "kn": "ಸೀತೆಯನ್ನು ತನ್ನ ರಥದಲ್ಲಿ ಒಯ್ಯುತ್ತಾನೆ",
+     "ref": "3.49.20",
+     "ed": "vu",
+     "with": [
+      "sita"
+     ]
+    },
+    {
+     "en": "Threatens and urges Sītā in Laṅkā",
+     "kn": "ಲಂಕೆಯಲ್ಲಿ ಸೀತೆಯನ್ನು ಬೆದರಿಸಿ ಒತ್ತಾಯಿಸುತ್ತಾನೆ",
+     "ref": "5.20.7",
+     "ed": "vu",
+     "with": [
+      "sita"
+     ]
+    },
+    {
+     "en": "Answers Vibhīṣaṇa's counsel with harsh words",
+     "kn": "ವಿಭೀಷಣನ ಸಲಹೆಗೆ ಕಠೋರವಾಗಿ ಉತ್ತರಿಸುತ್ತಾನೆ",
+     "ref": "6.16.1",
+     "ed": "vu",
+     "with": [
+      "vibhishana"
+     ]
+    },
+    {
+     "en": "Is killed by Rāma",
+     "kn": "ರಾಮನಿಂದ ಹತನಾಗುತ್ತಾನೆ",
+     "ref": "6.111.18",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mandodari",
+   "name": "Mandodarī",
+   "group": "rakshasa",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [
+    "Maṇḍodarī"
+   ],
+   "role_en": "Rāvaṇa's chief queen, mother of Indrajit",
+   "role_kn": "ರಾವಣನ ಪಟ್ಟದ ರಾಣಿ, ಇಂದ್ರಜಿತ್ತನ ತಾಯಿ",
+   "desc_en": "Mandodarī is the daughter of the dānava architect Maya and the apsaras Hemā, and Rāvaṇa's chief queen. Maya gives her to Rāvaṇa in marriage, and she bears Meghanāda, later called Indrajit. In Hanumān's report to Rāma she holds Rāvaṇa back when he threatens Sītā (in the scene itself, 5.20, it is Dhānyamālinī who does so). After Rāvaṇa's death she laments over his body and says he ignored the good advice of Vibhīṣaṇa.",
+   "desc_kn": "ಮಂಡೋದರಿ ದಾನವ ಶಿಲ್ಪಿ ಮಯ ಮತ್ತು ಅಪ್ಸರೆ ಹೇಮೆಯರ ಮಗಳು, ರಾವಣನ ಪಟ್ಟದ ರಾಣಿ. ಮಯ ಅವಳನ್ನು ರಾವಣನಿಗೆ ಕೊಟ್ಟು ವಿವಾಹ ಮಾಡುತ್ತಾನೆ; ಅವಳು ಮೇಘನಾದನಿಗೆ (ನಂತರ ಇಂದ್ರಜಿತ್) ಜನ್ಮ ನೀಡುತ್ತಾಳೆ. ರಾವಣ ಸೀತೆಯನ್ನು ಹೊಡೆಯಲು ಮುಂದಾದಾಗ ಮಂಡೋದರಿ ಅವನನ್ನು ತಡೆಯುತ್ತಾಳೆ ಎಂದು ಹನುಮಂತ ವರದಿ ಮಾಡುತ್ತಾನೆ. ರಾವಣನ ಮರಣದ ನಂತರ ಅವನ ದೇಹದ ಬಳಿ ಗೋಳಾಡಿ, ಅವನು ವಿಭೀಷಣನ ಒಳ್ಳೆಯ ಸಲಹೆಯನ್ನು ಕೇಳಲಿಲ್ಲ ಎನ್ನುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "spouse",
+     "to": "ravana",
+     "ref": "7.12.18",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Maya gives her to Rāvaṇa as his wife",
+     "kn": "ಮಯ ಅವಳನ್ನು ರಾವಣನಿಗೆ ಪತ್ನಿಯಾಗಿ ಕೊಡುತ್ತಾನೆ",
+     "ref": "7.12.18",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    },
+    {
+     "en": "Bears Meghanāda, called Indrajit",
+     "kn": "ಮೇಘನಾದನಿಗೆ ಜನ್ಮ ನೀಡುತ್ತಾಳೆ; ಅವನೇ ಇಂದ್ರಜಿತ್",
+     "ref": "7.12.28",
+     "ed": "vu",
+     "with": [
+      "indrajit"
+     ]
+    },
+    {
+     "en": "In Hanumān's report, holds Rāvaṇa back when he threatens Sītā",
+     "kn": "ಹನುಮಂತನ ವರದಿಯಂತೆ, ರಾವಣ ಸೀತೆಯನ್ನು ಬೆದರಿಸಿದಾಗ ಅವನನ್ನು ತಡೆಯುತ್ತಾಳೆ",
+     "ref": "5.58.75",
+     "ed": "vu",
+     "with": [
+      "ravana",
+      "sita"
+     ]
+    },
+    {
+     "en": "Laments over the dead Rāvaṇa",
+     "kn": "ಸತ್ತ ರಾವಣನ ಬಳಿ ಗೋಳಾಡುತ್ತಾಳೆ",
+     "ref": "6.114.2",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vibhishana",
+   "name": "Vibhīṣaṇa",
+   "group": "rakshasa",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Rāvaṇānuja"
+   ],
+   "role_en": "Rāvaṇa's righteous younger brother, who joins Rāma and is made king of Laṅkā",
+   "role_kn": "ರಾವಣನ ಧರ್ಮಿಷ್ಠ ತಮ್ಮ; ರಾಮನನ್ನು ಸೇರಿ ಲಂಕೆಯ ರಾಜನಾದವನು",
+   "desc_en": "Vibhīṣaṇa is Rāvaṇa's younger brother, devoted to dharma even among rākṣasas. He urges Rāvaṇa to return Sītā, and when Rāvaṇa answers him harshly he leaves Laṅkā with four companions and comes to Rāma, who accepts him. He is a trusted adviser in the war, tells Rāma and Lakṣmaṇa how Indrajit can be killed, and mourns his brother, performing his funeral at Rāma's urging. Rāma has him consecrated king of Laṅkā.",
+   "desc_kn": "ವಿಭೀಷಣ ರಾವಣನ ತಮ್ಮ; ರಾಕ್ಷಸರ ನಡುವೆಯೂ ಧರ್ಮನಿಷ್ಠ. ಸೀತೆಯನ್ನು ಹಿಂದಿರುಗಿಸುವಂತೆ ರಾವಣನಿಗೆ ಹೇಳುತ್ತಾನೆ; ರಾವಣ ಕಠೋರವಾಗಿ ಉತ್ತರಿಸಿದಾಗ ನಾಲ್ವರು ಸಂಗಡಿಗರೊಂದಿಗೆ ಲಂಕೆಯನ್ನು ಬಿಟ್ಟು ರಾಮನ ಬಳಿ ಬರುತ್ತಾನೆ; ರಾಮ ಅವನನ್ನು ಸ್ವೀಕರಿಸುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ನಂಬಿಗಸ್ತ ಸಲಹೆಗಾರನಾಗಿ ಇಂದ್ರಜಿತ್ತನನ್ನು ಕೊಲ್ಲುವ ಮಾರ್ಗವನ್ನು ರಾಮ-ಲಕ್ಷ್ಮಣರಿಗೆ ತಿಳಿಸುತ್ತಾನೆ; ಅಣ್ಣನ ಸಾವಿಗೆ ಶೋಕಿಸಿ, ರಾಮನ ಒತ್ತಾಸೆಯಂತೆ ಅಂತ್ಯಕ್ರಿಯೆ ಮಾಡುತ್ತಾನೆ. ರಾಮ ಅವನನ್ನು ಲಂಕೆಯ ರಾಜನಾಗಿ ಅಭಿಷೇಕಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "sibling",
+     "to": "ravana",
+     "ref": "6.16.1",
+     "ed": "vu"
+    },
+    {
+     "type": "ally",
+     "to": "rama",
+     "ref": "6.19.2",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Advises Rāvaṇa to return Sītā",
+     "kn": "ಸೀತೆಯನ್ನು ಹಿಂದಿರುಗಿಸುವಂತೆ ರಾವಣನಿಗೆ ಸಲಹೆ ನೀಡುತ್ತಾನೆ",
+     "ref": "6.10.27",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    },
+    {
+     "en": "Is rebuked by Rāvaṇa",
+     "kn": "ರಾವಣನಿಂದ ನಿಂದಿಸಲ್ಪಡುತ್ತಾನೆ",
+     "ref": "6.16.1",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    },
+    {
+     "en": "Reaches the vānara camp and gives his name",
+     "kn": "ವಾನರ ಶಿಬಿರಕ್ಕೆ ಬಂದು ತನ್ನ ಹೆಸರು ಹೇಳುತ್ತಾನೆ",
+     "ref": "6.17.12",
+     "ed": "vu"
+    },
+    {
+     "en": "Falls at Rāma's feet seeking refuge",
+     "kn": "ಆಶ್ರಯ ಕೋರಿ ರಾಮನ ಪಾದಗಳಿಗೆ ಬೀಳುತ್ತಾನೆ",
+     "ref": "6.19.2",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Mourns his brother Rāvaṇa",
+     "kn": "ಅಣ್ಣ ರಾವಣನಿಗಾಗಿ ಶೋಕಿಸುತ್ತಾನೆ",
+     "ref": "6.112.1",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    },
+    {
+     "en": "Is consecrated king of Laṅkā",
+     "kn": "ಲಂಕೆಯ ರಾಜನಾಗಿ ಅಭಿಷಿಕ್ತನಾಗುತ್ತಾನೆ",
+     "ref": "6.115.14",
+     "ed": "vu",
+     "with": [
+      "lakshmana"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kumbhakarna",
+   "name": "Kumbhakarṇa",
+   "group": "rakshasa",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [],
+   "role_en": "Rāvaṇa's giant brother who sleeps for months",
+   "role_kn": "ತಿಂಗಳುಗಟ್ಟಲೆ ನಿದ್ರಿಸುವ ರಾವಣನ ದೈತ್ಯ ತಮ್ಮ",
+   "desc_en": "Kumbhakarṇa is Rāvaṇa's huge and powerful brother. Because of a boon (in the Uttarakāṇḍa, a confused one, so that he asks for sleep) he sleeps for months at a time. When the siege begins Rāvaṇa has him woken; he tells his brother plainly that he was wrong to take Sītā, but then agrees to fight for him. He kills great numbers of vānaras and is finally killed by Rāma.",
+   "desc_kn": "ಕುಂಭಕರ್ಣ ರಾವಣನ ದೈತ್ಯ ಶರೀರದ, ಅತಿ ಬಲಶಾಲಿ ತಮ್ಮ. ವರದ ಕಾರಣದಿಂದ (ಉತ್ತರಕಾಂಡದ ಪ್ರಕಾರ, ಬುದ್ಧಿ ಗೊಂದಲಗೊಂಡು ನಿದ್ರೆಯನ್ನೇ ಕೇಳಿದ್ದರಿಂದ) ತಿಂಗಳುಗಟ್ಟಲೆ ನಿದ್ರಿಸುತ್ತಾನೆ. ಮುತ್ತಿಗೆ ಆರಂಭವಾದಾಗ ರಾವಣ ಅವನನ್ನು ಎಬ್ಬಿಸುತ್ತಾನೆ; ಸೀತೆಯನ್ನು ಅಪಹರಿಸಿದ್ದು ತಪ್ಪೆಂದು ಅಣ್ಣನಿಗೆ ನೇರವಾಗಿ ಹೇಳಿ, ಆದರೂ ಅವನಿಗಾಗಿ ಹೋರಾಡಲು ಒಪ್ಪುತ್ತಾನೆ. ಅನೇಕ ವಾನರರನ್ನು ಕೊಂದು ಕೊನೆಗೆ ರಾಮನಿಂದ ಹತನಾಗುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "sibling",
+     "to": "ravana",
+     "ref": "6.62.7",
+     "ed": "vu"
+    },
+    {
+     "type": "killed_by",
+     "to": "rama",
+     "ref": "6.67.164",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is woken on Rāvaṇa's orders",
+     "kn": "ರಾವಣನ ಆಜ್ಞೆಯಂತೆ ಎಬ್ಬಿಸಲ್ಪಡುತ್ತಾನೆ",
+     "ref": "6.60.17",
+     "ed": "vu"
+    },
+    {
+     "en": "Tells Rāvaṇa he was wrong, then agrees to fight",
+     "kn": "ರಾವಣನದು ತಪ್ಪೆಂದು ಹೇಳಿ, ಆದರೂ ಹೋರಾಡಲು ಒಪ್ಪುತ್ತಾನೆ",
+     "ref": "6.63.1",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    },
+    {
+     "en": "Crushes the vānara ranks",
+     "kn": "ವಾನರ ಸೇನೆಯನ್ನು ನುಚ್ಚುನೂರು ಮಾಡುತ್ತಾನೆ",
+     "ref": "6.67.7",
+     "ed": "vu"
+    },
+    {
+     "en": "Is killed by Rāma",
+     "kn": "ರಾಮನಿಂದ ಹತನಾಗುತ್ತಾನೆ",
+     "ref": "6.67.164",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "indrajit",
+   "name": "Indrajit",
+   "group": "rakshasa",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Meghanāda",
+    "Rāvaṇi",
+    "Rāvaṇātmaja",
+    "Maṇḍodarīsuta"
+   ],
+   "role_en": "Rāvaṇa's eldest son, the conqueror of Indra",
+   "role_kn": "ರಾವಣನ ಮಗ, ಇಂದ್ರನನ್ನು ಗೆದ್ದವನು",
+   "desc_en": "Indrajit, born Meghanāda, is the son of Rāvaṇa and Mandodarī; he won his name by defeating Indra. In the war he is Laṅkā's most dangerous fighter: he binds Hanumān with Brahmā's weapon, and, fighting unseen, he binds Rāma and Lakṣmaṇa with serpent arrows. He goes to the Nikumbhilā grove to perform a rite that would make him invincible. Vibhīṣaṇa reveals this to Lakṣmaṇa, who kills him there.",
+   "desc_kn": "ಇಂದ್ರಜಿತ್ತು ರಾವಣ ಮತ್ತು ಮಂಡೋದರಿಯರ ಮಗ; ಮೂಲ ಹೆಸರು ಮೇಘನಾದ; ಇಂದ್ರನನ್ನು ಗೆದ್ದುದರಿಂದ ಈ ಹೆಸರು. ಯುದ್ಧದಲ್ಲಿ ಲಂಕೆಯ ಅತ್ಯಂತ ಅಪಾಯಕಾರಿ ಯೋಧ: ಹನುಮಂತನನ್ನು ಬ್ರಹ್ಮಾಸ್ತ್ರದಿಂದ ಕಟ್ಟಿಹಾಕುತ್ತಾನೆ, ಅದೃಶ್ಯನಾಗಿ ಹೋರಾಡಿ ರಾಮ-ಲಕ್ಷ್ಮಣರನ್ನು ನಾಗಬಾಣಗಳಿಂದ ಬಂಧಿಸುತ್ತಾನೆ. ನಿಕುಂಭಿಲಾ ವನದಲ್ಲಿ ತನ್ನನ್ನು ಅಜೇಯನನ್ನಾಗಿ ಮಾಡುವ ಯಜ್ಞವನ್ನು ಮಾಡಲು ಹೋಗುತ್ತಾನೆ. ವಿಭೀಷಣ ಇದನ್ನು ಲಕ್ಷ್ಮಣನಿಗೆ ತಿಳಿಸುತ್ತಾನೆ; ಲಕ್ಷ್ಮಣ ಅವನನ್ನು ಅಲ್ಲಿಯೇ ಕೊಲ್ಲುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "ravana",
+     "ref": "7.12.28",
+     "ed": "vu"
+    },
+    {
+     "type": "parent",
+     "to": "mandodari",
+     "ref": "7.12.28",
+     "ed": "vu"
+    },
+    {
+     "type": "killed_by",
+     "to": "lakshmana",
+     "ref": "6.91.83",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is born as Meghanāda to Mandodarī",
+     "kn": "ಮಂಡೋದರಿಗೆ ಮೇಘನಾದನಾಗಿ ಜನಿಸುತ್ತಾನೆ",
+     "ref": "7.12.28",
+     "ed": "vu",
+     "with": [
+      "mandodari"
+     ]
+    },
+    {
+     "en": "Binds Hanumān with Brahmā's weapon",
+     "kn": "ಬ್ರಹ್ಮಾಸ್ತ್ರದಿಂದ ಹನುಮಂತನನ್ನು ಬಂಧಿಸುತ್ತಾನೆ",
+     "ref": "5.48.52",
+     "ed": "vu",
+     "with": [
+      "hanumat"
+     ]
+    },
+    {
+     "en": "Unseen, binds Rāma and Lakṣmaṇa with serpent arrows",
+     "kn": "ಅದೃಶ್ಯನಾಗಿ ರಾಮ-ಲಕ್ಷ್ಮಣರನ್ನು ನಾಗಬಾಣಗಳಿಂದ ಬಂಧಿಸುತ್ತಾನೆ",
+     "ref": "6.44.37",
+     "ed": "vu",
+     "with": [
+      "rama",
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Goes out to perform the rite before the fight",
+     "kn": "ಯುದ್ಧಕ್ಕೆ ಮೊದಲು ಯಜ್ಞ ಮಾಡಲು ಹೊರಡುತ್ತಾನೆ",
+     "ref": "6.80.16",
+     "ed": "vu"
+    },
+    {
+     "en": "Falls to Lakṣmaṇa",
+     "kn": "ಲಕ್ಷ್ಮಣನ ಕೈಯಲ್ಲಿ ಬೀಳುತ್ತಾನೆ",
+     "ref": "6.91.83",
+     "ed": "vu",
+     "with": [
+      "lakshmana"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shurpanakha",
+   "name": "Śūrpaṇakhā",
+   "group": "rakshasa",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [],
+   "role_en": "Rāvaṇa's sister, whose mutilation sets the abduction in motion",
+   "role_kn": "ರಾವಣನ ತಂಗಿ; ಅವಳ ಅಂಗಭಂಗವೇ ಅಪಹರಣಕ್ಕೆ ನಾಂದಿ",
+   "desc_en": "Śūrpaṇakhā is Rāvaṇa's sister, who lives at Janasthāna. She sees Rāma at Pañcavaṭī and, taking a beautiful form, asks him to marry her; he sends her to Lakṣmaṇa and back. When she rushes at Sītā, Lakṣmaṇa cuts off her nose and ears. She goes weeping to her brother Khara, whose fourteen rākṣasas are killed by Rāma, and then to Rāvaṇa in Laṅkā, whom she taunts into taking revenge by seizing Sītā.",
+   "desc_kn": "ಶೂರ್ಪಣಖಿ ರಾವಣನ ತಂಗಿ; ಜನಸ್ಥಾನದಲ್ಲಿ ವಾಸಿಸುತ್ತಾಳೆ. ಪಂಚವಟಿಯಲ್ಲಿ ರಾಮನನ್ನು ಕಂಡು ಸುಂದರ ರೂಪ ಧರಿಸಿ ತನ್ನನ್ನು ವಿವಾಹವಾಗುವಂತೆ ಕೇಳುತ್ತಾಳೆ; ಅವನು ಅವಳನ್ನು ಲಕ್ಷ್ಮಣನ ಬಳಿಗೆ ಕಳುಹಿಸುತ್ತಾನೆ, ಲಕ್ಷ್ಮಣ ಮರಳಿ ಕಳುಹಿಸುತ್ತಾನೆ. ಅವಳು ಸೀತೆಯ ಮೇಲೆ ಎರಗಿದಾಗ ಲಕ್ಷ್ಮಣ ಅವಳ ಮೂಗು ಕಿವಿಗಳನ್ನು ಕತ್ತರಿಸುತ್ತಾನೆ. ಅಳುತ್ತಾ ತನ್ನ ಅಣ್ಣ ಖರನ ಬಳಿಗೆ ಹೋಗುತ್ತಾಳೆ; ಅವನ ಹದಿನಾಲ್ಕು ಸಾವಿರ ರಾಕ್ಷಸರು ರಾಮನಿಂದ ಹತರಾದ ಮೇಲೆ ಲಂಕೆಗೆ ಹೋಗಿ ರಾವಣನನ್ನು ಚುಚ್ಚಿ ಮಾತನಾಡಿ ಸೀತೆಯನ್ನು ಅಪಹರಿಸುವಂತೆ ಪ್ರೇರೇಪಿಸುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "sibling",
+     "to": "ravana",
+     "ref": "3.17.6",
+     "ed": "vu"
+    },
+    {
+     "type": "sibling",
+     "to": "khara",
+     "ref": "3.19.1",
+     "ed": "vu"
+    },
+    {
+     "type": "enemy",
+     "to": "lakshmana",
+     "ref": "3.18.22",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Sees Rāma and approaches him",
+     "kn": "ರಾಮನನ್ನು ಕಂಡು ಅವನ ಬಳಿಗೆ ಬರುತ್ತಾಳೆ",
+     "ref": "3.17.6",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Her nose and ears are cut off",
+     "kn": "ಅವಳ ಮೂಗು ಕಿವಿಗಳನ್ನು ಕತ್ತರಿಸಲಾಗುತ್ತದೆ",
+     "ref": "3.18.22",
+     "ed": "vu",
+     "with": [
+      "lakshmana"
+     ]
+    },
+    {
+     "en": "Leads Khara's rākṣasas to Rāma's hermitage and points him out",
+     "kn": "ಖರನ ರಾಕ್ಷಸರನ್ನು ರಾಮನ ಆಶ್ರಮಕ್ಕೆ ಕರೆತಂದು ಅವನನ್ನು ತೋರಿಸುತ್ತಾಳೆ",
+     "ref": "3.20.1",
+     "ed": "vu",
+     "with": [
+      "khara",
+      "rama"
+     ]
+    },
+    {
+     "en": "Taunts Rāvaṇa before his ministers",
+     "kn": "ಮಂತ್ರಿಗಳ ಮುಂದೆ ರಾವಣನನ್ನು ಚುಚ್ಚಿ ಮಾತನಾಡುತ್ತಾಳೆ",
+     "ref": "3.33.1",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "maricha",
+   "name": "Mārīca",
+   "group": "rakshasa",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Tāṭakeya"
+   ],
+   "role_en": "Rākṣasa, Tāṭakā's son, who becomes the golden deer",
+   "role_kn": "ತಾಟಕಿಯ ಮಗ, ರಾಕ್ಷಸ; ಚಿನ್ನದ ಜಿಂಕೆಯಾಗಿ ರೂಪ ಧರಿಸಿದವನು",
+   "desc_en": "Mārīca is Tāṭakā's son, a rākṣasa who can change his shape. In the Bālakāṇḍa, when he and Subāhu attack Viśvāmitra's sacrifice, Rāma's weapon hurls him far into the sea, and he lives on in fear of Rāma. Years later Rāvaṇa forces him to help carry off Sītā; he takes the form of a golden deer to draw Rāma away. Rāma shoots him, and as he dies he calls out in Rāma's voice, so that Sītā sends Lakṣmaṇa after Rāma.",
+   "desc_kn": "ಮಾರೀಚ ತಾಟಕಿಯ ಮಗ; ರೂಪ ಬದಲಿಸಬಲ್ಲ ರಾಕ್ಷಸ. ಬಾಲಕಾಂಡದಲ್ಲಿ ಅವನು ಮತ್ತು ಸುಬಾಹು ವಿಶ್ವಾಮಿತ್ರನ ಯಜ್ಞಕ್ಕೆ ಅಡ್ಡಿಪಡಿಸಿದಾಗ ರಾಮನ ಅಸ್ತ್ರ ಅವನನ್ನು ಸಮುದ್ರದ ದೂರಕ್ಕೆ ಎಸೆಯುತ್ತದೆ; ಅಂದಿನಿಂದ ರಾಮನಿಗೆ ಹೆದರುತ್ತಾನೆ. ಬಹುಕಾಲದ ನಂತರ ರಾವಣ ಅವನನ್ನು ಸೀತಾಪಹರಣಕ್ಕೆ ಸಹಾಯ ಮಾಡುವಂತೆ ಬಲವಂತಪಡಿಸುತ್ತಾನೆ; ಅವನು ಚಿನ್ನದ ಜಿಂಕೆಯ ರೂಪ ಧರಿಸಿ ರಾಮನನ್ನು ದೂರ ಸೆಳೆಯುತ್ತಾನೆ. ರಾಮನ ಬಾಣ ತಗುಲಿ ಸಾಯುವಾಗ ರಾಮನ ಧ್ವನಿಯಲ್ಲಿ ಕೂಗುತ್ತಾನೆ; ಆಗ ಸೀತೆ ಲಕ್ಷ್ಮಣನನ್ನು ರಾಮನ ಬಳಿಗೆ ಕಳುಹಿಸುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "tataka",
+     "ref": "3.42.9",
+     "ed": "vu"
+    },
+    {
+     "type": "serves",
+     "to": "ravana",
+     "ref": "3.40.2",
+     "ed": "vu"
+    },
+    {
+     "type": "killed_by",
+     "to": "rama",
+     "ref": "3.44.16",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is struck by Rāma's weapon at Viśvāmitra's hermitage",
+     "kn": "ವಿಶ್ವಾಮಿತ್ರನ ಆಶ್ರಮದಲ್ಲಿ ರಾಮನ ಅಸ್ತ್ರ ಅವನಿಗೆ ಬಡಿಯುತ್ತದೆ",
+     "ref": "1.30.17",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Is terrified when Rāvaṇa tells him of Rāma",
+     "kn": "ರಾವಣ ರಾಮನ ಬಗ್ಗೆ ಹೇಳಿದಾಗ ಭಯಗೊಳ್ಳುತ್ತಾನೆ",
+     "ref": "3.36.22",
+     "ed": "vu",
+     "with": [
+      "rama",
+      "ravana"
+     ]
+    },
+    {
+     "en": "Rāvaṇa rejects his warning",
+     "kn": "ರಾವಣ ಅವನ ಎಚ್ಚರಿಕೆಯನ್ನು ತಳ್ಳಿಹಾಕುತ್ತಾನೆ",
+     "ref": "3.40.2",
+     "ed": "vu",
+     "with": [
+      "ravana"
+     ]
+    },
+    {
+     "en": "Agrees and goes with Rāvaṇa",
+     "kn": "ಒಪ್ಪಿ ರಾವಣನೊಂದಿಗೆ ಹೊರಡುತ್ತಾನೆ",
+     "ref": "3.42.9",
+     "ed": "vu",
+     "with": [
+      "ravana",
+      "tataka"
+     ]
+    },
+    {
+     "en": "Dies under Rāma's arrow, imitating his voice",
+     "kn": "ರಾಮನ ಬಾಣದಿಂದ ಸಾಯುತ್ತಾ ಅವನ ಧ್ವನಿಯನ್ನು ಅನುಕರಿಸುತ್ತಾನೆ",
+     "ref": "3.44.16",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "khara",
+   "name": "Khara",
+   "group": "rakshasa",
+   "gender": "m",
+   "rank": 3,
+   "epithets": [],
+   "role_en": "Rākṣasa chief of Janasthāna, killed by Rāma with his army",
+   "role_kn": "ಜನಸ್ಥಾನದ ರಾಕ್ಷಸ ನಾಯಕ; ಸೇನೆಯೊಂದಿಗೆ ರಾಮನಿಂದ ಹತನಾದವನು",
+   "desc_en": "Khara is a rākṣasa commander at Janasthāna in Daṇḍaka, brother of Śūrpaṇakhā, with the generals Dūṣaṇa and Triśiras under him. When she comes to him mutilated, he sends fourteen warriors against Rāma, and when they die he marches out himself with fourteen thousand rākṣasas. Rāma kills the whole army and finally Khara in single combat. Śūrpaṇakhā then carries the news to Rāvaṇa.",
+   "desc_kn": "ಖರ ದಂಡಕಾರಣ್ಯದ ಜನಸ್ಥಾನದ ರಾಕ್ಷಸ ಸೇನಾಪತಿ, ಶೂರ್ಪಣಖಿಯ ಅಣ್ಣ; ದೂಷಣ ಮತ್ತು ತ್ರಿಶಿರರು ಅವನ ಅಧೀನ ಸೇನಾನಿಗಳು. ಅಂಗಭಂಗಗೊಂಡ ಶೂರ್ಪಣಖಿ ಬಂದಾಗ ರಾಮನ ವಿರುದ್ಧ ಹದಿನಾಲ್ಕು ಯೋಧರನ್ನು ಕಳುಹಿಸುತ್ತಾನೆ; ಅವರು ಸತ್ತಾಗ ಹದಿನಾಲ್ಕು ಸಾವಿರ ರಾಕ್ಷಸರೊಂದಿಗೆ ತಾನೇ ಹೊರಡುತ್ತಾನೆ. ರಾಮ ಇಡೀ ಸೇನೆಯನ್ನು ನಾಶಮಾಡಿ ಕೊನೆಗೆ ಖರನನ್ನು ದ್ವಂದ್ವಯುದ್ಧದಲ್ಲಿ ಕೊಲ್ಲುತ್ತಾನೆ. ನಂತರ ಶೂರ್ಪಣಖಿ ರಾವಣನಿಗೆ ಸುದ್ದಿ ತಿಳಿಸುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "killed_by",
+     "to": "rama",
+     "ref": "3.30.28",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Learns of his sister's mutilation",
+     "kn": "ತಂಗಿಯ ಅಂಗಭಂಗದ ಸುದ್ದಿ ತಿಳಿಯುತ್ತಾನೆ",
+     "ref": "3.19.1",
+     "ed": "vu",
+     "with": [
+      "shurpanakha"
+     ]
+    },
+    {
+     "en": "Vows revenge and orders Dūṣaṇa to march",
+     "kn": "ಪ್ರತೀಕಾರ ಪ್ರತಿಜ್ಞೆ ಮಾಡಿ ದೂಷಣನಿಗೆ ಸೇನೆ ಸಜ್ಜುಗೊಳಿಸಲು ಹೇಳುತ್ತಾನೆ",
+     "ref": "3.22.1",
+     "ed": "vu"
+    },
+    {
+     "en": "Shoots arrows at Rāma",
+     "kn": "ರಾಮನ ಮೇಲೆ ಬಾಣಗಳನ್ನು ಎಸೆಯುತ್ತಾನೆ",
+     "ref": "3.28.4",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Is killed by Rāma",
+     "kn": "ರಾಮನಿಂದ ಹತನಾಗುತ್ತಾನೆ",
+     "ref": "3.30.28",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tataka",
+   "name": "Tāṭakā",
+   "group": "rakshasa",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [
+    "Yakṣī"
+   ],
+   "role_en": "Yakṣī turned rākṣasī, who is killed by Rāma on the way to Viśvāmitra's hermitage",
+   "role_kn": "ರಾಕ್ಷಸಿಯಾದ ಯಕ್ಷಿ; ವಿಶ್ವಾಮಿತ್ರನ ಆಶ್ರಮದ ದಾರಿಯಲ್ಲಿ ರಾಮನಿಂದ ಹತಳಾದವಳು",
+   "desc_en": "Tāṭakā is a yakṣī of great strength, the wife of Sunda and mother of Mārīca. After Sunda is killed by Agastya, she and her son attack Agastya, and he curses both to become rākṣasas. She lives in a forest that she has laid waste. When Rāma and Lakṣmaṇa enter it with Viśvāmitra, she attacks them in a storm of dust and stones, and Rāma, at Viśvāmitra's urging, kills her with an arrow.",
+   "desc_kn": "ತಾಟಕಿ ಅಪಾರ ಬಲದ ಯಕ್ಷಿ, ಸುಂದನ ಪತ್ನಿ, ಮಾರೀಚನ ತಾಯಿ. ಸುಂದನನ್ನು ಅಗಸ್ತ್ಯ ಕೊಂದ ಮೇಲೆ ಅವಳು ಮತ್ತು ಮಗ ಅಗಸ್ತ್ಯನ ಮೇಲೆ ದಾಳಿ ಮಾಡುತ್ತಾರೆ; ಅಗಸ್ತ್ಯ ಇಬ್ಬರನ್ನೂ ರಾಕ್ಷಸರಾಗುವಂತೆ ಶಪಿಸುತ್ತಾನೆ. ತಾನೇ ಹಾಳುಮಾಡಿದ ಕಾಡಿನಲ್ಲಿ ವಾಸಿಸುತ್ತಾಳೆ. ವಿಶ್ವಾಮಿತ್ರನೊಂದಿಗೆ ರಾಮ-ಲಕ್ಷ್ಮಣರು ಅಲ್ಲಿಗೆ ಬಂದಾಗ ಧೂಳು ಮತ್ತು ಕಲ್ಲಿನ ಮಳೆಯೊಂದಿಗೆ ದಾಳಿ ಮಾಡುತ್ತಾಳೆ; ವಿಶ್ವಾಮಿತ್ರನ ಪ್ರೇರಣೆಯಂತೆ ರಾಮ ಬಾಣದಿಂದ ಅವಳನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "killed_by",
+     "to": "rama",
+     "ref": "1.26.13",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Is described as Sunda's wife",
+     "kn": "ಸುಂದನ ಪತ್ನಿಯಾಗಿ ವರ್ಣಿಸಲ್ಪಡುತ್ತಾಳೆ",
+     "ref": "1.24.26",
+     "ed": "vu"
+    },
+    {
+     "en": "Agastya curses her and her son",
+     "kn": "ಅಗಸ್ತ್ಯ ಅವಳನ್ನು ಮತ್ತು ಮಗನನ್ನು ಶಪಿಸುತ್ತಾನೆ",
+     "ref": "1.25.12",
+     "ed": "vu",
+     "with": [
+      "agastya",
+      "maricha"
+     ]
+    },
+    {
+     "en": "Rushes at Rāma in rage",
+     "kn": "ಕೋಪದಿಂದ ರಾಮನ ಮೇಲೆ ಎರಗುತ್ತಾಳೆ",
+     "ref": "1.26.13",
+     "ed": "vu",
+     "with": [
+      "rama"
+     ]
+    },
+    {
+     "en": "Stirs up dust and stones against the princes",
+     "kn": "ರಾಜಕುಮಾರರ ಮೇಲೆ ಧೂಳು, ಕಲ್ಲುಗಳ ಮಳೆ ಸುರಿಸುತ್ತಾಳೆ",
+     "ref": "1.26.15",
+     "ed": "vu"
+    }
+   ]
+  }
+ ]
+}
