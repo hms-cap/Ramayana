@@ -185,6 +185,7 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 .t-knda .ln, .t-deva .ln, .t-iast .ln { padding-left: var(--hang); text-indent: calc(-1 * var(--hang)); }
 .t-knda .ln ~ .ln, .t-deva .ln ~ .ln, .t-iast .ln ~ .ln { padding-left: calc(var(--hang) + 14px); }
 .d { color: var(--accent); font-weight: 700; }
+.t-iast .d { font-style: normal; }   /* upright dandas in italic Roman text */
 
 /* script modes */
 .t { display: none; }

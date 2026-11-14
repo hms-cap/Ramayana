@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.11.0 — 2026-11-14
+- Fonts and verse layout follow the Kāvya app. Self-hosted (subset WOFF, `etl/make_fonts.sh`): Noto Serif Kannada (Noto Sans Kannada as an option, "Kannada letters" in Options, `data-knfont`), Noto Serif Devanagari, Cormorant Garamond (IAST, italic), Plus Jakarta Sans (UI); Tiro and Alegreya removed. Verses in weight 500, line-height 1.62, every half-line after the first indented 14px, dandas and verse numbers in the accent colour (`.d`), in the reader, Mahābhārata, Gītā, chant view, home cards and appendix examples.
+- The pañcama switch is now "Classical pañcama" and changes Kannada only (class nasal everywhere before a stop); Devanāgarī keeps the source spelling, and its alternative copy is no longer written into the pages.
+
 ## 0.10.3 — 2026-11-11
 - Hosting moves to Vercel (https://ramayana-blond.vercel.app/). `vercel.json` gains `ignoreCommand`: Vercel builds only when `site/static/version.js` changes. The Pages workflow is replaced by `.github/workflows/tests.yml` (tests and a full build, no deploy). Shared verse cards print the new address (`SITE` in `build.py`).
 

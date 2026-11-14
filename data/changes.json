@@ -1,5 +1,13 @@
 [
  [
+  "0.11.0",
+  "2026-11-14",
+  [
+   "New fonts, the same as the Kāvya app: Noto Serif Kannada (or Noto Sans Kannada, in Options), Noto Serif Devanagari and Cormorant Garamond. Verses are set a little bolder and tighter, with the second half-line indented and the dandas in colour.",
+   "The “Classical pañcama” switch (ಪುಙ್ಗವ for ಪುಂಗವ) now changes the Kannada text only."
+  ]
+ ],
+ [
   "0.10.3",
   "2026-11-11",
   [
