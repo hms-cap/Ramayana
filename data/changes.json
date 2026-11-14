@@ -1,5 +1,13 @@
 [
  [
+  "0.11.1",
+  "2026-11-14",
+  [
+   "Tighter reading layout: each verse starts with its reference and metre in one row, and the text uses the full width of the screen.",
+   "The four work buttons are in two rows with their full names, and the verse of the day no longer runs off the edge on the Mahābhārata page."
+  ]
+ ],
+ [
   "0.11.0",
   "2026-11-14",
   [

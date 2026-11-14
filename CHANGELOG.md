@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.11.1 — 2026-11-14
+- Reader layout "B1": each verse opens with a header row (reference pill k.s.v in the script's digits, which is the verse-details button; the metre; the word-by-word icon on the right) and the text uses the full width; the side number column is gone, later half-lines are indented 1.2em, wrapped lines align with their own line, and verses end with a plain ॥ (the pill carries the number). Rāmāyaṇa, Mahābhārata and Gītā, both editions.
+- Work chips in a 2×2 grid on phones (four in a row from 40rem), full names.
+- Verse-of-the-day card: left-aligned couplet with wrapping lines; a long compound shrinks the verse to fit (`fitVerse` in home.js) instead of widening the page. `tests/e2e/layout.py` checks that no main page scrolls sideways at 360 and 390px.
+
 ## 0.11.0 — 2026-11-14
 - Fonts and verse layout follow the Kāvya app. Self-hosted (subset WOFF, `etl/make_fonts.sh`): Noto Serif Kannada (Noto Sans Kannada as an option, "Kannada letters" in Options, `data-knfont`), Noto Serif Devanagari, Cormorant Garamond (IAST, italic), Plus Jakarta Sans (UI); Tiro and Alegreya removed. Verses in weight 500, line-height 1.62, every half-line after the first indented 14px, dandas and verse numbers in the accent colour (`.d`), in the reader, Mahābhārata, Gītā, chant view, home cards and appendix examples.
 - The pañcama switch is now "Classical pañcama" and changes Kannada only (class nasal everywhere before a stop); Devanāgarī keeps the source spelling, and its alternative copy is no longer written into the pages.
