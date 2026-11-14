@@ -18,14 +18,20 @@
   }
   function script(slp, sc, ref, sav) {
     var m = marks(sc, ref);
-    return slp.map(function (l, i) { return T.render(l, sc, sav) + (i === slp.length - 1 ? m.last : m.mid); });
+    return slp.map(function (l, i) { return [T.render(l, sc, sav), i === slp.length - 1 ? m.last : m.mid]; });
   }
   function block(sc, lang, slp, ref) {
     var d = el("div", "t t-" + sc, { lang: lang });
-    var base = script(slp, sc, ref, false), alt = script(slp, sc, ref, true), same = base.join("|") === alt.join("|");
+    var base = script(slp, sc, ref, false);
+    // the Kannada-only "classical pañcama" variant (.ps1); Devanāgarī has no variant
+    var alt = sc === "knda" ? script(slp, sc, ref, true) : null;
+    var same = !alt || base.map(function (x) { return x[0]; }).join("|") === alt.map(function (x) { return x[0]; }).join("|");
     function para(lines, cls) {
       var p = el("p", cls || ""); if (!cls) p.removeAttribute("class");
-      lines.forEach(function (t) { var s = el("span", "ln"); s.textContent = t; p.appendChild(s); });
+      lines.forEach(function (t) {
+        var s = el("span", "ln"), dm = el("span", "d");
+        s.appendChild(document.createTextNode(t[0])); dm.textContent = t[1]; s.appendChild(dm); p.appendChild(s);
+      });
       return p;
     }
     if (same) d.appendChild(para(base));

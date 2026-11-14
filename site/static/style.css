@@ -175,11 +175,16 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 .t { overflow-wrap: break-word; }
 [data-script="knda-deva"] .reader, [data-script="all"] .reader { max-width: 72rem; }
 .t .ln { display: block; }
-.t-knda { font: 400 var(--verse)/1.85 var(--f-knda); }
-.t-deva { font: 400 var(--verse)/1.8 var(--f-deva); }
-.t-iast { font: 400 calc(var(--verse) * 1.02)/1.45 var(--f-text); }
-.t-iast .ln { padding-left: 1.2em; text-indent: -1.2em; }
-.t-knda .ln, .t-deva .ln { padding-left: 1.4em; text-indent: -1.4em; }
+/* verse type after Kāvya: weight 500, tight lines, staggered couplet (each line after the first sits 14px in),
+   Roman in italic; a wrapped line keeps its hanging indent (--hang) on top of the stagger */
+.t-knda { font: 500 calc(var(--verse) * 0.94)/1.62 var(--f-knda); }
+.t-deva { font: 500 calc(var(--verse) * 0.94)/1.62 var(--f-deva); }
+.t-iast { font: italic 500 calc(var(--verse) * 1.02)/1.48 var(--f-text); }
+.t-knda, .t-deva { --hang: 1.4em; }
+.t-iast { --hang: 1.2em; }
+.t-knda .ln, .t-deva .ln, .t-iast .ln { padding-left: var(--hang); text-indent: calc(-1 * var(--hang)); }
+.t-knda .ln ~ .ln, .t-deva .ln ~ .ln, .t-iast .ln ~ .ln { padding-left: calc(var(--hang) + 14px); }
+.d { color: var(--accent); font-weight: 700; }
 
 /* script modes */
 .t { display: none; }
@@ -193,12 +198,13 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
   [data-script="all"] .body { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 0.2rem 1.6rem; align-items: start; }
   [data-script="all"] .body > .t-iast, [data-script="all"] .body > :not(.t) { grid-column: 1 / -1; }
 }
-.ps1 { display: none; }
+.ps1 { display: none; }                                  /* Kannada only: classical pañcama (class nasal) variant */
 [data-savarna="1"] .ps0 { display: none; }
 [data-savarna="1"] .ps1 { display: block; }
 
 .scan { display: none; color: var(--muted); font: 400 1rem/1.7 var(--f-deva); letter-spacing: 0.18em; margin-top: 0.15rem; }
 .scan .ln { display: block; }
+.scan .ln ~ .ln, .ex .ex-scan .ln ~ .ln { padding-left: 14px; }          /* line up with the staggered verse lines */
 [data-scan="1"] .scan { display: block; }
 
 .details { margin-top: 0.6rem; padding: 0.7rem 0.9rem; background: var(--paper-2); border-radius: 6px; font-size: 0.95rem; }
@@ -245,7 +251,7 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
   .seg button { padding: 0.45rem 0.55rem; }
   main { padding: 1rem 1rem 2.5rem; }
   .verse { grid-template-columns: 2.2rem minmax(0, 1fr); gap: 0 0.6rem; }
-  .t-knda .ln, .t-deva .ln, .t-iast .ln { padding-left: 0.9em; text-indent: -0.9em; }
+  .t-knda, .t-deva, .t-iast { --hang: 1.3em; }
   :root { --verse: 1.2rem; }
   :root[data-size="s"] { --verse: 1.05rem; }
   :root[data-size="l"] { --verse: 1.45rem; }
@@ -325,6 +331,7 @@ body.story-open { overflow: hidden; }
 .ch-body.one { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 18px; }
 .ch-verse { font-family: var(--f-knda); font-size: calc(var(--chz, 23px) + 7px); line-height: var(--deva-lh); }
 .ch-verse .ln { display: block; }
+.ch-page, .ch-verse { font-weight: 500; }
 .ch-verse.fade { animation: chfade 200ms ease-out; }
 @keyframes chfade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .ch-ref { color: var(--c-muted); margin: 0.6rem 0 0; }
@@ -539,6 +546,7 @@ body.sheet-open { overflow: hidden; }
 .sg3 input:focus-visible + span { outline: 2px solid var(--focus); }
 .sw { display: flex; align-items: center; justify-content: space-between; min-height: 52px; border-bottom: 1px solid var(--rule); gap: 1rem; position: relative; }
 .sw small { color: var(--muted); font-size: 0.85em; margin-left: 0.3rem; }
+.sw small.sub { display: block; margin: 0.1rem 0 0; font-size: 0.8em; line-height: 1.5; }
 .sw input { position: absolute; opacity: 0; right: 0; width: 52px; height: 32px; margin: 0; cursor: pointer; }
 .sw i { flex: none; width: 52px; height: 32px; border-radius: 16px; background: var(--rule); position: relative; transition: background .15s; }
 .sw i::after { content: ""; position: absolute; left: 3px; top: 3px; width: 26px; height: 26px; border-radius: 50%; background: #fff; transition: transform .15s; box-shadow: 0 1px 2px rgba(0,0,0,.25); }
@@ -586,6 +594,10 @@ body.sheet-open { overflow: hidden; }
 .votd-slide { width: 100%; }
 .votd .vc-verse { text-align: center; line-height: 2.4rem; font-size: clamp(1.15rem, 5.4vw, 1.45rem); background-image: repeating-linear-gradient(transparent 0 calc(2.4rem - 1px), rgba(94,51,24,.22) calc(2.4rem - 1px) 2.4rem); }
 .votd .vc-verse .ln { display: block; }
+.votd .vc-verse .ln ~ .ln { padding-left: var(--hang); }               /* centred card: no stagger */
+.votd .d { color: #7B2A16; }
+:root[data-theme="dark"] .votd .d { color: #F0C45A; }
+@media (prefers-color-scheme: dark) { :root[data-theme="system"] .votd .d { color: #F0C45A; } }
 .votd .vc-ref { text-align: center; color: #7B2A16; font-weight: 500; font-size: 0.9rem; margin-top: 0.5rem; }
 .votd .vc-note, .votd .vc-scan { color: inherit; opacity: .75; }
 .votd-dots button[aria-selected="true"]::after { background: #7B2A16; }

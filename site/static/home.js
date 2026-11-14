@@ -137,10 +137,14 @@
     if (c.u) out.push({ key: "u", text: c.u[kn ? 1 : 0] });
     return out;
   }
+  function marked(l) {                              // verse line -> HTML with the end mark (daṇḍa, number) in <span class="d">
+    var m = /^(.*?)(\s+(?:[।|]|(?:॥|\|\|)\s.*))$/.exec(l);
+    return m ? esc(m[1]) + '<span class="d">' + esc(m[2]) + "</span>" : esc(l);
+  }
   function cardHtml(sec, s) {
     var h = '<h3 class="vc-label">' + esc(L(sec.key, s)) + "</h3>";
     if (sec.lines) {
-      h += '<div class="vc-verse t-' + s + '" lang="' + langOf(s) + '">' + sec.lines.map(function (l) { return '<span class="ln">' + esc(l) + "</span>"; }).join("") + "</div>" +
+      h += '<div class="vc-verse t-' + s + '" lang="' + langOf(s) + '">' + sec.lines.map(function (l) { return '<span class="ln">' + marked(l) + "</span>"; }).join("") + "</div>" +
         '<p class="vc-ref">' + esc(sec.ref) + (sec.meta ? " · " + esc(sec.meta) : "") + "</p>";
     } else if (sec.dl) {
       h += '<dl class="vc-dl" lang="en">' + sec.dl.map(function (r) { return '<dt lang="' + langOf(s) + '">' + esc(r[0]) + "</dt><dd>" + esc(r[1]) + "</dd>"; }).join("") + "</dl>" + '<p class="vc-note">' + esc(sec.note) + "</p>";

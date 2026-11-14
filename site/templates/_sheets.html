@@ -31,7 +31,7 @@
     <div class="set-row"><div class="set-l">Texts to show</div>
       {% for e in rail_eds %}<label class="sw"><span>{{ e.short }} <small lang="kn">{{ e.short_kn }}</small></span><input type="checkbox" data-ed-toggle="{{ e.id }}" checked><i aria-hidden="true"></i></label>{% endfor %}
       <label class="sw"><span>Show metre scansion <small>(<span lang="sa">।</span> laghu, <span lang="sa">ऽ</span> guru)</small></span><input type="checkbox" data-pref="scan"><i aria-hidden="true"></i></label>
-      <label class="sw"><span>Homorganic nasals <small lang="kn">ಮುನಿಪುಙ್ಗವಮ್</small></span><input type="checkbox" data-pref="savarna"><i aria-hidden="true"></i></label>
+      <label class="sw"><span>Classical pañcama<small class="sub">Off: modern anusvāra <span lang="kn">ಪುಂಗವ</span> · On: <span lang="kn">ಪುಙ್ಗವ</span></small></span><input type="checkbox" data-pref="savarna"><i aria-hidden="true"></i></label>
     </div>
     <a class="about-link" href="{{ root }}about/#app"><span class="app-mark" lang="kn" aria-hidden="true">{{ W.tile }}</span><span>About this app <small>v<span data-app-version></span></small></span><b aria-hidden="true">›</b></a>
   </div>

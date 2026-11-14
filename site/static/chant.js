@@ -50,6 +50,12 @@
     return v.lines[sc].join(NB + d.one + " ") + NB + d.two + NB + v.num[sc] + NB + d.two;
   }
 
+  function dm(t) { return '<span class="d">' + esc(t) + "</span>"; }       // daṇḍa in the accent colour
+  function bookHtml(v, sc) {                                                  // bookVerse with coloured daṇḍas
+    var d = dandas(sc);
+    return v.lines[sc].map(esc).join(dm(NB + d.one) + " ") + dm(NB + d.two + NB + v.num[sc] + NB + d.two);
+  }
+
   /* ---------- the view ---------- */
   function lastPlace(model, i) {
     var v = model.verses[i]; if (!v) return;
@@ -114,7 +120,7 @@
       model.parts.forEach(function (part) {
         var vs = part.verses, g = part.group || 1;
         for (var a = 0; a < vs.length; a += g) {
-          var chunk = vs.slice(a, a + g).map(function (v, k) { return '<span class="cv" data-i="' + (a + k) + '">' + esc(bookVerse(v, st.sc)) + '</span>'; });
+          var chunk = vs.slice(a, a + g).map(function (v, k) { return '<span class="cv" data-i="' + (a + k) + '">' + bookHtml(v, st.sc) + '</span>'; });
           h += "<p>" + chunk.join(" ") + "</p>";
         }
       });
@@ -128,7 +134,7 @@
       foot.hidden = false; body.setAttribute("aria-live", "polite"); body.classList.add("one");
       var last = st.i >= model.verses.length - 1;
       body.innerHTML = '<div class="ch-verse' + (animate && !reduce ? " fade" : "") + '" lang="' + langOf(st.sc) + '">' +
-        v.lines[st.sc].map(function (l, k) { return '<span class="ln">' + esc(l) + NB + (k === v.lines[st.sc].length - 1 ? d.two + NB + v.num[st.sc] + NB + d.two : d.one) + '</span>'; }).join("") +
+        v.lines[st.sc].map(function (l, k) { return '<span class="ln">' + esc(l) + dm(NB + (k === v.lines[st.sc].length - 1 ? d.two + NB + v.num[st.sc] + NB + d.two : d.one)) + '</span>'; }).join("") +
         '</div><p class="ch-ref">' + esc(v.label + (v.meter ? " · " + v.meter : "")) + '</p>' + (last ? cards() : "");
       var n = (st.sc === "iast") ? String(st.i + 1) : T.digits(st.i + 1, st.sc), N = (st.sc === "iast") ? String(model.verses.length) : T.digits(model.verses.length, st.sc);
       el.querySelector(".ch-count").textContent = n + " / " + N;

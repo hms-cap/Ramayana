@@ -213,9 +213,10 @@ def anusvara_before_stops(slp1: str) -> str:
 def render(slp1: str, script: str, *, savarna: bool = False) -> str:
     """Render one SLP1 line for display in 'deva', 'knda' or 'iast'.
     Kannada shows anusvāra before a stop of the same class (anusvara_before_stops) unless savarna asks
-    for class nasals everywhere (para_savarna); Devanāgarī keeps the source spelling unless savarna."""
+    for class nasals everywhere (para_savarna). The option is Kannada-only: Devanāgarī and IAST ignore it."""
     if script == "iast":
         return slp1_to_iast(slp1)
+    savarna = savarna and script == "knda"
     if script == "knda" and not savarna:
         slp1 = anusvara_before_stops(slp1)
     s = join_for_display(slp1)

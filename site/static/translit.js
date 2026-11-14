@@ -121,6 +121,7 @@
   }
   function render(slp1, script, savarna) {
     if (script === "iast") return slp1ToIast(slp1);
+    savarna = savarna && script === "knda";      // the pañcama switch is Kannada-only
     if (script === "knda" && !savarna) slp1 = anusvaraBeforeStops(slp1);
     var s = joinForDisplay(slp1);
     if (savarna) s = paraSavarna(s);

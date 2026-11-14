@@ -66,6 +66,40 @@ class KannadaAnusvara(unittest.TestCase):
         self.assertEqual(render(iast_to_slp1("yasmin gatā"), "knda"), "ಯಸ್ಮಿನ್ಗತಾ")  # n before g: not the same class
 
 
+class PancamaSwitch(unittest.TestCase):
+    """"Classical pañcama" (pref key savarna) is Kannada-only."""
+
+    S = iast_to_slp1("nāradaṃ paripapraccha vālmīkir munipuṃgavam saṅgo'stvakarmaṇi kāñcanaḥ")
+
+    def test_devanagari_and_iast_ignore_it(self):
+        for sc in ("deva", "iast"):
+            self.assertEqual(render(self.S, sc, savarna=True), render(self.S, sc), sc)
+        self.assertEqual(render(iast_to_slp1("munipuṃgavam"), "deva", savarna=True), "मुनिपुंगवम्")
+
+    def test_kannada_switches_to_class_nasal(self):
+        self.assertIn("ಪುಂಗವ", render(self.S, "knda"))
+        self.assertIn("ಪುಙ್ಗವ", render(self.S, "knda", savarna=True))
+        self.assertNotIn("ಂಗ", render(iast_to_slp1("munipuṃgavam"), "knda", savarna=True))
+
+    def test_built_verse_has_kannada_variant_only(self):
+        sys.path.insert(0, str(ROOT / "site"))
+        import build
+        ed = build.load_editions()[0]
+        rec = json.loads((ROOT / "data" / "normalized" / "ce.jsonl").read_text(encoding="utf-8").splitlines()[0])
+        t = build.render_verse(rec, ed)["text"]
+        self.assertTrue(t["knda"]["savarna"])             # 1.1.1 has "puṃgavam"
+        self.assertIsNone(t["deva"]["savarna"])
+        self.assertIsNone(t["iast"]["savarna"])
+        from jinja2 import Environment, FileSystemLoader
+        env = Environment(loader=FileSystemLoader(str(ROOT / "site" / "templates")), autoescape=True)
+        html = env.from_string('{% from "_verse.html" import verse_text %}{{ verse_text(v) }}').render(v={**build.render_verse(rec, ed), "speaker": None})
+        self.assertEqual(html.count('class="ps1"'), 1)
+        self.assertEqual(html.count('class="ps0"'), 1)
+        self.assertEqual(html.count("ps1"), 1)
+        self.assertIn('<span class="d">', html)
+        self.assertNotIn("&lt;span", html)
+
+
 class RoundTrip(unittest.TestCase):
     def test_whole_ce_round_trips(self):
         bad = []

@@ -3,7 +3,7 @@
     python site/build.py [--out dist]
 
 Pre-renders every verse in Kannada script, Devanāgarī and IAST (plus the
-para-savarṇa nasal variant where it differs), writes one HTML page per
+para-savarṇa nasal variant of the Kannada where it differs), writes one HTML page per
 sarga, per-sarga JSON, and a compact per-edition search index.
 """
 from __future__ import annotations
@@ -154,10 +154,20 @@ def kanda_info(k: int) -> dict:
 
 
 def end_marks(script: str, ref: str) -> tuple[str, str]:
+    """Verse-end marks as HTML: the daṇḍas and the number sit in <span class="d"> (accent colour, bold)."""
+    from markupsafe import Markup
     nb = "\u00a0"  # keep daṇḍas on the line they close
     if script == "iast":
-        return f"{nb}|", f"{nb}||{nb}{ref}{nb}||"
-    return f"{nb}।", f"{nb}॥{nb}{to_digits(ref, script)}{nb}॥"
+        mid, last = f"{nb}|", f"{nb}||{nb}{ref}{nb}||"
+    else:
+        mid, last = f"{nb}।", f"{nb}॥{nb}{to_digits(ref, script)}{nb}॥"
+    return Markup('<span class="d">%s</span>') % mid, Markup('<span class="d">%s</span>') % last
+
+
+def with_marks(lines: list[str], mid, last) -> list:
+    """Escaped verse lines, each followed by its end mark (Markup, safe to print as is)."""
+    from markupsafe import escape
+    return [escape(l) + (last if i == len(lines) - 1 else mid) for i, l in enumerate(lines)]
 
 
 def verse_ref(rec: dict) -> str:
@@ -173,14 +183,13 @@ def render_verse(rec: dict, ed: dict, W: dict | None = None) -> dict:
     out = {}
     for sc in SCRIPTS:
         mid, last = end_marks(sc, ref)
-        base = [render(l, sc) for l in slp_lines]
-        base = [l + (last if i == len(base) - 1 else mid) for i, l in enumerate(base)]
+        raw = [render(l, sc) for l in slp_lines]
+        base = with_marks(raw, mid, last)
         alt = None
-        if sc != "iast":
+        if sc == "knda":                     # the "classical pañcama" switch is Kannada-only
             ps = [render(l, sc, savarna=True) for l in slp_lines]
-            ps = [l + (last if i == len(ps) - 1 else mid) for i, l in enumerate(ps)]
-            if ps != base:
-                alt = ps
+            if ps != raw:
+                alt = with_marks(ps, mid, last)
         out[sc] = {"lines": base, "savarna": alt}
     met = meter.identify([[iast_to_slp1(p) for p in line] for line in rec["lines"]])
     scan = [" ".join("".join("ऽ" if w == "G" else "।" for w in pada) for pada in line)
@@ -217,7 +226,7 @@ def lean_verse(rec: dict, ed: dict | None = None, W: dict | None = None) -> dict
     slp_lines = [" ".join(iast_to_slp1(p) for p in line) for line in rec["lines"]]
     ref = f'{rec["k"]}.{rec["s"]}.{rec["v"]}'
     mid, last = end_marks("iast", ref)
-    lines = [render(l, "iast") + (last if i == len(slp_lines) - 1 else mid) for i, l in enumerate(slp_lines)]
+    lines = with_marks([render(l, "iast") for l in slp_lines], mid, last)
     scan = []
     if rec.get("meter"):
         met = meter.identify([[iast_to_slp1(p) for p in line] for line in rec["lines"]])
@@ -762,8 +771,7 @@ def _example(rec: dict, W: dict, ed: str, root: str) -> dict:
     t = {}
     for sc in SCRIPTS:
         mid, last = end_marks(sc, ref)
-        ls = [render(l, sc) for l in slp_lines]
-        t[sc] = [l + (last if i == len(ls) - 1 else mid) for i, l in enumerate(ls)]
+        t[sc] = with_marks([render(l, sc) for l in slp_lines], mid, last)
     met = meter.identify([[iast_to_slp1(p) for p in line] for line in rec["lines"]])
     scan = [" ".join("".join("ऽ" if w == "G" else "।" for w in pada) for pada in line) for line in met["scansion"]]
     return {"ref": ref, "text": t, "scan": scan, "href": f'{root}{W["prefix"]}{ed}/{rec["k"]}/{rec["s"]}/#v{rec["v"]}'}

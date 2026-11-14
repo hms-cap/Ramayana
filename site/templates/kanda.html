@@ -19,7 +19,7 @@
         <span class="sn" lang="kn">{% if W.single and it.s == 0 %}ॐ{% else %}{{ it.s|knda }}{% endif %}</span>
         <span class="inc">
           {% if it.title and it.title.sx %}<span class="st">{{ it.title.sx }}{% if it.title.title_en %} <small class="en">{{ it.title.title_en }}</small>{% endif %}</span>{% elif it.title %}<span class="st">{{ it.title.title_iast }}</span>{% endif %}
-          <span class="first" lang="sa-Knda">{{ it.first.text.knda.lines[0] }}</span>
+          <span class="first" lang="sa-Knda">{{ it.first.text.knda.lines[0]|striptags }}</span>
           <span class="meta">{% if W.single and it.s == 0 %}Recited before the Gītā{% else %}{{ W.Sub }} {{ it.s }}{% endif %}, {{ it.count }} verses</span>
         </span>
       </a>

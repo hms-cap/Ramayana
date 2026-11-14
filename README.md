@@ -12,7 +12,7 @@ Kannada script, Devanāgarī and IAST, with cross-script search.
   to hide verses not in the other edition.
 - One page per sarga; each verse pre-rendered in Kannada script, Devanāgarī and IAST.
 - Script modes: Kannada, Devanāgarī, IAST, Kannada + Devanāgarī side by side, or all three.
-- Optional homorganic nasals (ಪುಙ್ಗವ instead of ಪುಂಗವ) for pārāyaṇa-style printing.
+- Optional "classical pañcama" for Kannada (ಪುಙ್ಗವ instead of ಪುಂಗವ), pārāyaṇa-style; Kannada only.
 - Metre identification and laghu/guru scansion for every verse.
 - Search in any script or plain English letters (ಮಾರೀಚ, मारीच, mārīca, maricha all match).
 - Per-verse permalinks and copyable citations with GRETIL identifiers.
