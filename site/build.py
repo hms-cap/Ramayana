@@ -1017,10 +1017,11 @@ def write_pwa(out: Path, done: list) -> None:
                             urls.append(f'{pre}{e["id"]}/{k}/{sd.name}/words.json')
                 kn = unit_info(W, k)
                 label = f'{e["short"]}: {kn["en"]}' if not pre else f'{W["short_en"]}, {e["short"]}: {kn["en"]}'
-                packs.append({"id": f'{pre.strip("/")}{"-" if pre else ""}{e["id"]}-{k}', "label": label, "urls": urls, "bytes": size(urls)})
+                packs.append({"id": f'{pre.strip("/")}{"-" if pre else ""}{e["id"]}-{k}', "label": label, "urls": urls, "bytes": size(urls),
+                              "w": W["id"], "e": e["id"], "k": k, "u": [kn["kn"], kn["deva"], kn["iast"]]})
         core = [f"{pre}data/search-{e['id']}.json" for e in d["eds"]] + [f"{pre}data/daily/c{i}.json" for i in range(8)]
         packs.append({"id": f'{pre.strip("/") or "ram"}-core', "label": ("Search index and verse-of-the-day cards" if not pre else f'{W["short_en"]}: search index and verse-of-the-day cards'),
-                      "urls": core, "bytes": size(core)})
+                      "urls": core, "bytes": size(core), "w": W["id"], "e": "", "k": 0})
     (out / "data" / "offline.json").write_text(json.dumps({"version": json.loads((ROOT / "data" / "changes.json").read_text())[0][0], "packs": packs},
                                                          ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 

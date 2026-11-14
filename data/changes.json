@@ -1,5 +1,14 @@
 [
  [
+  "0.13.0",
+  "2026-11-14",
+  [
+   "The bottom bar no longer has Read (it is still in the top menu and on the Home page).",
+   "Settings are grouped and show a preview verse, so you see what a change does.",
+   "New: Settings → Downloads. Save a kāṇḍa or parva at a time to read without internet, and remove it again."
+  ]
+ ],
+ [
   "0.12.0",
   "2026-11-14",
   [

@@ -2,38 +2,58 @@
 
 <section class="sheet" id="settings" role="dialog" aria-modal="true" aria-labelledby="set-title" hidden>
   <div class="grab" aria-hidden="true"></div>
-  <header class="sheet-head"><h2 id="set-title">Reading settings</h2><button type="button" class="pillbtn dark" data-close-sheet>Done</button></header>
+  <header class="sheet-head"><h2 id="set-title">Settings</h2><button type="button" class="pillbtn dark" data-close-sheet>Done</button></header>
   <div class="sheet-body">
-    <div class="set-row"><div class="set-l" id="lab-script">Script</div>
+    <p class="set-prev" aria-hidden="true">{{ sx("ಧರ್ಮಕ್ಷೇತ್ರೇ ಕುರುಕ್ಷೇತ್ರೇ ಸಮವೇತಾ ಯುಯುತ್ಸವಃ ॥", "धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः ॥", "dharmakṣetre kurukṣetre samavetā yuyutsavaḥ ॥") }}<small>Preview</small></p>
+    <div class="set-row"><div class="set-l" id="lab-script">Text</div>
       <div class="sg4" role="group" aria-labelledby="lab-script">
         <button type="button" data-set-script="knda" lang="kn" aria-checked="false" role="radio" aria-label="Kannada">ಅ</button>
         <button type="button" data-set-script="deva" lang="sa" aria-checked="false" role="radio" aria-label="Devanāgarī">अ</button>
         <button type="button" data-set-script="iast" aria-checked="false" role="radio" aria-label="Roman (IAST)">A</button>
         <button type="button" data-set-script="knda-deva" aria-checked="false" role="radio" aria-label="Kannada and Devanāgarī together"><span lang="kn">ಅ</span> <span lang="sa">अ</span></button>
-      </div></div>
-    <div class="set-row"><div class="set-l" id="lab-size">Text size</div>
-      <div class="sg3" role="radiogroup" aria-labelledby="lab-size">
+      </div>
+      <div class="sg3" role="radiogroup" aria-label="Text size">
         <label><input type="radio" name="size" value="s" data-pref-size><span>Small</span></label>
         <label><input type="radio" name="size" value="m" data-pref-size><span>Medium</span></label>
         <label><input type="radio" name="size" value="l" data-pref-size><span>Large</span></label>
-      </div></div>
-    <div class="set-row"><div class="set-l" id="lab-knfont">Kannada letters</div>
-      <div class="sg3 sg2" role="radiogroup" aria-labelledby="lab-knfont">
+      </div>
+      <div class="sg3 sg2" role="radiogroup" aria-label="Kannada letters">
         <label><input type="radio" name="knfont" value="serif" data-pref-knfont><span>Serif <b class="kf-serif" lang="kn">ಕನ್ನಡ</b></span></label>
         <label><input type="radio" name="knfont" value="sans" data-pref-knfont><span>Sans <b class="kf-sans" lang="kn">ಕನ್ನಡ</b></span></label>
       </div></div>
-    <div class="set-row"><div class="set-l" id="lab-theme">Theme</div>
+    <div class="set-row"><div class="set-l" id="lab-theme">Appearance</div>
       <div class="sg3" role="radiogroup" aria-labelledby="lab-theme">
         <label><input type="radio" name="theme" value="light" data-pref-theme><span>Light</span></label>
         <label><input type="radio" name="theme" value="dark" data-pref-theme><span>Dark</span></label>
         <label><input type="radio" name="theme" value="system" data-pref-theme><span>Same as device</span></label>
       </div></div>
-    <div class="set-row"><div class="set-l">Texts to show</div>
+    <div class="set-row"><div class="set-l">Show</div>
       {% for e in rail_eds %}<label class="sw"><span>{{ e.short }} <small lang="kn">{{ e.short_kn }}</small></span><input type="checkbox" data-ed-toggle="{{ e.id }}" checked><i aria-hidden="true"></i></label>{% endfor %}
-      <label class="sw"><span>Show metre scansion <small>(<span lang="sa">।</span> laghu, <span lang="sa">ऽ</span> guru)</small></span><input type="checkbox" data-pref="scan"><i aria-hidden="true"></i></label>
-      <label class="sw"><span>Classical pañcama<small class="sub">Off: modern anusvāra <span lang="kn">ಪುಂಗವ</span> · On: <span lang="kn">ಪುಙ್ಗವ</span></small></span><input type="checkbox" data-pref="savarna"><i aria-hidden="true"></i></label>
+      <label class="sw"><span>Metre scansion <small>(<span lang="sa">।</span> laghu, <span lang="sa">ऽ</span> guru)</small></span><input type="checkbox" data-pref="scan"><i aria-hidden="true"></i></label>
+    </div>
+    <div class="set-row"><div class="set-l">Offline</div>
+      <button type="button" class="acc" data-open-sheet="dlsheet"><span>Downloads</span><i id="dl-sum">Save for offline</i><b aria-hidden="true">›</b></button>
+      <details class="acc-d"><summary class="acc"><span>Advanced</span><i>Classical pañcama</i><b aria-hidden="true">›</b></summary>
+        <label class="sw"><span>Classical pañcama<small class="sub">Kannada only. Off: modern anusvāra <span lang="kn">ಪುಂಗವ</span> · On: <span lang="kn">ಪುಙ್ಗವ</span></small></span><input type="checkbox" data-pref="savarna"><i aria-hidden="true"></i></label>
+      </details>
     </div>
     <a class="about-link" href="{{ root }}about/#app"><span class="app-mark" lang="kn" aria-hidden="true">{{ W.tile }}</span><span>About this app <small>v<span data-app-version></span></small></span><b aria-hidden="true">›</b></a>
+  </div>
+</section>
+
+<section class="sheet" id="dlsheet" role="dialog" aria-modal="true" aria-labelledby="dl-title" hidden>
+  <div class="grab" aria-hidden="true"></div>
+  <header class="sheet-head"><div class="dl-ttl"><button type="button" class="round" data-open-sheet="settings" aria-label="Back to settings">‹</button><h2 id="dl-title">Downloads</h2></div><button type="button" class="pillbtn dark" data-close-sheet>Done</button></header>
+  <div class="sheet-body">
+    <div class="wk" role="tablist" aria-label="Work">
+      <button type="button" role="tab" data-dl-work="ram">Rāmāyaṇa</button>
+      <button type="button" role="tab" data-dl-work="mbh">Mahābhārata</button>
+      <button type="button" role="tab" data-dl-work="gita">Gītā</button>
+    </div>
+    <p class="hint dl-note">Save a chip to read it without internet. Sizes are for the texts you have switched on.</p>
+    <div id="dl-list" role="status"><p class="hint">Loading…</p></div>
+    <div class="dl dl-all"><div class="nm"><b id="dl-all-name"></b><small id="dl-all-size"></small></div><button type="button" class="btn" id="dl-all">Download all</button></div>
+    <p class="dl-foot"><span id="dl-used" class="hint"></span> <button type="button" class="btn rm" id="dl-clear">Remove all</button></p>
   </div>
 </section>
 

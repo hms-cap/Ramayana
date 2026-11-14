@@ -1,14 +1,14 @@
 # ಇತಿಹಾಸ (Itihāsa) — handoff for agents
 
 Browsable Sanskrit epics: Vālmīki Rāmāyaṇa (site root), Mahābhārata (`/mbh/`) and the Bhagavadgītā taken out of it (`/gita/`), with Kannada / Devanāgarī / IAST scripts, two editions of each, word-by-word analysis, a built-in dictionary, and an appendix of metres. Static site, built by Python, no server.
-Repo `hms-cap/Ramayana` · live (Vercel) https://ramayana-blond.vercel.app/ (the old GitHub Pages copy is no longer updated) · version in `site/static/version.js` (now 0.10.2) · owner: Hemanth.
+Repo `hms-cap/Ramayana` · live (Vercel) https://ramayana-blond.vercel.app/ (the old GitHub Pages copy is no longer updated) · version in `site/static/version.js` (now 0.13.0) · owner: Hemanth.
 
 ## How it is built and shipped
 - `python site/build.py` (Jinja2 + lxml, `requirements.txt`) reads `data/` and writes `dist/` (~600 MB, 100k+ files, ~5,500 chapter pages). `python site/build.py` takes a few minutes.
 - CI (`.github/workflows/tests.yml`): unittest → full build on every push; it no longer deploys.
 - Hosting: Vercel project `ramayana` (team hmullur-1572). `vercel.json` installs into a venv (the image's Python is externally managed), builds, publishes `dist/` (~610 MB, ~9.7k files), and via `ignoreCommand` builds only when `site/static/version.js` changes; force a deploy with Redeploy in the dashboard. Each deployment is a full copy, so keep deployment retention short. `SITE` in `build.py` is the address printed on shared cards. A Vercel MCP server is available in some sessions.
 - Run locally: `python site/build.py && python -m http.server 8765 --directory dist`.
-- Tests: `python -m unittest discover -s tests` (42) and Playwright scripts in `tests/e2e/` (`home swipe chant pwa mbh mbh_words dict chandas gita layout characters`; see its README). Run the e2e ones against the local server with `service_workers="block"`.
+- Tests: `python -m unittest discover -s tests` (42) and Playwright scripts in `tests/e2e/` (`home swipe chant pwa mbh mbh_words dict chandas gita layout characters settings`; see its README). Run the e2e ones against the local server with `service_workers="block"`.
 - **Every release needs** a bump of `site/static/version.js`, a `CHANGELOG.md` entry and a `data/changes.json` entry (a test fails otherwise). Commit trailer: `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`.
 
 ## Layout

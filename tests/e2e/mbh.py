@@ -86,7 +86,7 @@ async def main():
         await pg.wait_for_timeout(300)
         hrefs = await pg.evaluate("[...document.querySelectorAll('.tabbar a')].map(a => a.getAttribute('href'))")
         print("about tabbar:", hrefs)
-        assert hrefs[0].endswith("mbh/") and hrefs[1].endswith("mbh/read/")
+        assert hrefs[0].endswith("mbh/") and hrefs[1].endswith("mbh/search/")
 
         # 4. search and the daily śloka
         await pg.goto(B + "mbh/search/?q=dharmaksetre")

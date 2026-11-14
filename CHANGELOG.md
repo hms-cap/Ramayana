@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.13.0 — 2026-11-14
+- Bottom bar: the Read item is gone (Home, Search, Saved, Dictionary); Read stays in the top menu and the Home chips.
+- Settings sheet reorganised into groups (Text, Appearance, Show, Offline) with a live preview verse at the top; "Classical pañcama" moved under Advanced.
+- Settings → Downloads: save one chip (kāṇḍa or parva) at a time for offline reading, with progress, Cancel, Remove, "all of this work" and the storage used (`static/downloads.js`, same cache and `data/offline.json` as the About page; packs now carry work, text, chip and names).
+
 ## 0.12.0 — 2026-11-14
 - Pariśiṣṭa → Characters: 42 Rāmāyaṇa and 81 Mahābhārata characters (`data/characters/`), each with role, epithets, description (Kannada and English), relations and key moments linked to verses. Every cited verse is checked to name the person (`etl/check_characters.py`); `etl/find_verses.py` helps choose citations.
 - Character pages with a relationship circle (family, teacher, ally, opposed, killed by), key moments, and mentions per kāṇḍa/parva counted from the critical texts' word analysis (`etl/characters.py`). Family trees: Ikṣvāku, Mithilā, vānaras, rākṣasas; Kuru, Pāñcāla, Yādava (open at the founder, with a "Whole tree" view).
