@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}{{ W.kn }} — {{ W.en }}{% endblock %}</title>
 <meta name="description" content="{% block description %}The {{ W.en }} in Sanskrit, readable in Kannada script, Devanāgarī and IAST.{% endblock %}">
-<link rel="preload" href="{{ root }}static/fonts/TiroKannada.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{ root }}static/fonts/NotoSerifKannada.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="{{ root }}static/style.css">
 <link rel="manifest" href="{{ root }}manifest.webmanifest">
 <meta name="theme-color" content="{{ W.theme }}" data-light="{{ W.theme }}">
@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" href="{{ root }}static/icons/apple-touch-icon.png">
 <script>
 (function(){document.documentElement.classList.add("js");try{var p=JSON.parse(localStorage.getItem("vr-prefs")||"{}");var d=document.documentElement;
-if(p.script)d.dataset.script=p.script;if(p.savarna)d.dataset.savarna="1";if(p.scan)d.dataset.scan="1";
+if(p.script)d.dataset.script=p.script;if(p.savarna)d.dataset.savarna="1";if(p.scan)d.dataset.scan="1";if(p.knfont==="sans")d.dataset.knfont="sans";
 if(p.size)d.dataset.size=p.size;var o=p[{mbh:"offMbh",gita:"offGita"}[d.dataset.work]||"off"];d.dataset.off=Array.isArray(o)?o.join(" "):"ce";d.dataset.theme=p.theme||"light";}catch(e){}})();
 </script>
 </head>

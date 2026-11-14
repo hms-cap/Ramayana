@@ -225,8 +225,9 @@
   /* ---- share picture: all cards in one tall PNG ---- */
   function paintShare(secs, s, drawIt, ctx, known) {
     var Wd = 1080, pad = 60, inner = Wd - 2 * pad - 2 * 44, y = 0;
-    var fam = s === "knda" ? "'Tiro Kannada','Tiro Devanagari Sanskrit',serif" : s === "deva" ? "'Tiro Devanagari Sanskrit',serif" : "'Alegreya',serif";
-    var ui = "'Alegreya Sans',sans-serif";
+    var kn = document.documentElement.dataset.knfont === "sans" ? "'Noto Sans Kannada'" : "'Noto Serif Kannada'";
+    var fam = s === "knda" ? kn + ",'Noto Serif Devanagari',serif" : s === "deva" ? "'Noto Serif Devanagari',serif" : "'Cormorant Garamond',serif";
+    var ui = "'Plus Jakarta Sans',sans-serif";
     function wrap(text, font, width) {
       ctx.font = font; var words = text.split(/\s+/), lines = [], cur = "";
       words.forEach(function (w) { var t = cur ? cur + " " + w : w; if (ctx.measureText(t).width > width && cur) { lines.push(cur); cur = w; } else cur = t; });
@@ -266,7 +267,7 @@
     });
     var cardH = y - cardTop + 20, total = cardTop + cardH + 130;
     if (drawIt) {
-      txt(B.workKn || "ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", pad, 100, "400 44px 'Tiro Kannada',serif", "#FFFBF2");
+      txt(B.workKn || "ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", pad, 100, "400 44px " + kn + ",serif", "#FFFBF2");
       txt(L("kind", s), pad, 150, "500 30px " + ui, "#E8D9A8");
       txt(B.site || "ramayana-blond.vercel.app", Wd / 2, total - 56, "400 26px " + ui, "#E8D9A8", "center");
     }
@@ -274,7 +275,7 @@
   }
   document.getElementById("votd-share").addEventListener("click", function () {
     var btn = this, s = sc(), secs = plain(card);
-    var fam = ["'Tiro Kannada'", "'Tiro Devanagari Sanskrit'", "'Alegreya'", "'Alegreya Sans'"];
+    var fam = [document.documentElement.dataset.knfont === "sans" ? "'Noto Sans Kannada'" : "'Noto Serif Kannada'", "'Noto Serif Devanagari'", "'Cormorant Garamond'", "'Plus Jakarta Sans'"];
     btn.setAttribute("aria-busy", "true");
     Promise.all(fam.map(function (f) { return document.fonts.load("30px " + f, secs.map(function (x) { return (x.lines || [x.text || ""]).join(" "); }).join(" ").slice(0, 300)); })).then(function () {
       var c = document.createElement("canvas"), ctx = c.getContext("2d");

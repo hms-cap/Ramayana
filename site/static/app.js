@@ -11,6 +11,7 @@
   try {
     var qp = new URLSearchParams(location.search);
     if (/^(knda|deva|iast|knda-deva|all)$/.test(qp.get("script") || "")) prefs.script = qp.get("script");
+    if (/^(serif|sans)$/.test(qp.get("knfont") || "")) prefs.knfont = qp.get("knfont") === "sans" ? "sans" : "";
     ["savarna", "scan"].forEach(function (k) { if (qp.has(k)) prefs[k] = qp.get(k) === "1"; });
   } catch (e) { /* old browser */ }
 
@@ -19,6 +20,8 @@
     root.dataset.script = prefs.script || "knda";
     if (prefs.savarna) root.dataset.savarna = "1"; else delete root.dataset.savarna;
     if (prefs.scan) root.dataset.scan = "1"; else delete root.dataset.scan;
+    if (prefs.knfont === "sans") root.dataset.knfont = "sans"; else delete root.dataset.knfont;
+    document.querySelectorAll("[data-pref-knfont]").forEach(function (i) { i.checked = (prefs.knfont || "serif") === i.value; });
     if (prefs.size) root.dataset.size = prefs.size; else delete root.dataset.size;
     root.dataset.off = offList().join(" ");
     document.querySelectorAll("[data-ed-toggle]").forEach(function (i) { i.checked = offList().indexOf(i.dataset.edToggle) < 0; });
@@ -107,6 +110,7 @@
     }
     if (t.dataset.pref) { prefs[t.dataset.pref] = t.checked; save(prefs); apply(); }
     if (t.hasAttribute("data-pref-theme")) { prefs.theme = t.value === "light" ? "" : t.value; save(prefs); apply(); }
+    if (t.hasAttribute("data-pref-knfont")) { prefs.knfont = t.value === "serif" ? "" : t.value; save(prefs); apply(); }
     if (t.hasAttribute("data-pref-size")) { prefs.size = t.value === "m" ? "" : t.value; save(prefs); apply(); }
   });
   document.addEventListener("keydown", function (e) {

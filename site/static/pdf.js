@@ -30,12 +30,13 @@
     "html,body{margin:0;background:#fff;color:#000}.stage{box-sizing:border-box;width:" + (W - 2 * M) + "px;font-size:15pt}" +
     "h1{text-align:center;font-weight:700;font-size:20pt;margin:0 0 4pt}.pd-src{text-align:center;font-size:11pt;margin:0 0 14pt}" +
     "p{margin:0 0 8pt;text-align:justify;word-break:keep-all;hyphens:none}" +
-    ".foot{font:10pt 'Alegreya Sans',sans-serif;color:#555;text-align:center}";
+    ".foot{font:10pt 'Plus Jakarta Sans',sans-serif;color:#555;text-align:center}";
 
   function stackFor(lang) {
-    if (lang === "sa-Knda") return { fam: "'Tiro Kannada','Tiro Devanagari Sanskrit',serif", lh: 2.4 * 0.9, names: ["Tiro Kannada", "Tiro Devanagari Sanskrit"] };
-    if (lang === "sa-Deva") return { fam: "'Tiro Devanagari Sanskrit',serif", lh: 2.15 * 0.9, names: ["Tiro Devanagari Sanskrit"] };
-    return { fam: "'Alegreya',serif", lh: 1.6, names: ["Alegreya"] };
+    var sans = document.documentElement.dataset.knfont === "sans", kn = sans ? "Noto Sans Kannada" : "Noto Serif Kannada";
+    if (lang === "sa-Knda") return { fam: "'" + kn + "','Noto Serif Devanagari'," + (sans ? "sans-serif" : "serif"), lh: 2.4 * 0.9, names: [kn, "Noto Serif Devanagari"] };
+    if (lang === "sa-Deva") return { fam: "'Noto Serif Devanagari',serif", lh: 2.15 * 0.9, names: ["Noto Serif Devanagari"] };
+    return { fam: "'Cormorant Garamond',serif", lh: 1.45, names: ["Cormorant Garamond"] };
   }
 
   function layout(docEl, css) {
@@ -131,7 +132,7 @@
   /* docEl: a detached .pdf-doc element. Returns a Promise<Blob>. */
   function make(docEl, title, progress) {
     var st = stackFor(docEl.lang), L;
-    return fontCss(st.names.concat(["Alegreya Sans"])).then(function (fc) {
+    return fontCss(st.names.concat(["Plus Jakarta Sans"])).then(function (fc) {
       var css = fc + "\n" + DOC_CSS + ".stage{font-family:" + st.fam + ";line-height:" + st.lh + "}";
       return layout(docEl, css).then(function (l) {
         L = l; var pages = paginate(l.stage), images = [], N = pages.length;
