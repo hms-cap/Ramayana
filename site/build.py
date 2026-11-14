@@ -153,14 +153,15 @@ def kanda_info(k: int) -> dict:
     return unit_info(WORKS["ram"], k)
 
 
-def end_marks(script: str, ref: str) -> tuple[str, str]:
-    """Verse-end marks as HTML: the daṇḍas and the number sit in <span class="d"> (accent colour, bold)."""
+def end_marks(script: str, ref: str | None = None) -> tuple[str, str]:
+    """Verse-end marks as HTML: the daṇḍas (and the reference, if given) sit in <span class="d"> (accent colour, bold).
+    The reader shows the reference in the verse's pill, so its closing mark is a plain ॥; the Chandas examples pass it."""
     from markupsafe import Markup
     nb = "\u00a0"  # keep daṇḍas on the line they close
     if script == "iast":
-        mid, last = f"{nb}|", f"{nb}||{nb}{ref}{nb}||"
+        mid, last = f"{nb}|", (f"{nb}||{nb}{ref}{nb}||" if ref else f"{nb}||")
     else:
-        mid, last = f"{nb}।", f"{nb}॥{nb}{to_digits(ref, script)}{nb}॥"
+        mid, last = f"{nb}।", (f"{nb}॥{nb}{to_digits(ref, script)}{nb}॥" if ref else f"{nb}॥")
     return Markup('<span class="d">%s</span>') % mid, Markup('<span class="d">%s</span>') % last
 
 
@@ -182,7 +183,7 @@ def render_verse(rec: dict, ed: dict, W: dict | None = None) -> dict:
     ref = verse_ref(rec)
     out = {}
     for sc in SCRIPTS:
-        mid, last = end_marks(sc, ref)
+        mid, last = end_marks(sc)
         raw = [render(l, sc) for l in slp_lines]
         base = with_marks(raw, mid, last)
         alt = None
@@ -198,6 +199,7 @@ def render_verse(rec: dict, ed: dict, W: dict | None = None) -> dict:
         "lines": rec["lines"],
         "uid": rec["uid"], "k": rec["k"], "s": rec["s"], "v": rec["v"], "ref": ref,
         "v_knda": to_digits(rec["v"], "knda"), "v_deva": to_digits(rec["v"], "deva"),
+        "ref_knda": to_digits(ref, "knda"), "ref_deva": to_digits(ref, "deva"),
         "text": out, "meter": rec.get("meter"), "scan": scan,
         "slp1": " / ".join(slp_lines),
         "ids": rec_ids(rec, ed),
@@ -225,7 +227,7 @@ def lean_verse(rec: dict, ed: dict | None = None, W: dict | None = None) -> dict
     With ed and W it also carries the cross-walk link and where its word-by-word data lives."""
     slp_lines = [" ".join(iast_to_slp1(p) for p in line) for line in rec["lines"]]
     ref = f'{rec["k"]}.{rec["s"]}.{rec["v"]}'
-    mid, last = end_marks("iast", ref)
+    mid, last = end_marks("iast")
     lines = with_marks([render(l, "iast") for l in slp_lines], mid, last)
     scan = []
     if rec.get("meter"):

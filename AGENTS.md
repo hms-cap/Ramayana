@@ -8,7 +8,7 @@ Repo `hms-cap/Ramayana` · live (Vercel) https://ramayana-blond.vercel.app/ (the
 - CI (`.github/workflows/tests.yml`): unittest → full build on every push; it no longer deploys.
 - Hosting: Vercel project `ramayana` (team hmullur-1572). `vercel.json` installs into a venv (the image's Python is externally managed), builds, publishes `dist/` (~610 MB, ~9.7k files), and via `ignoreCommand` builds only when `site/static/version.js` changes; force a deploy with Redeploy in the dashboard. Each deployment is a full copy, so keep deployment retention short. `SITE` in `build.py` is the address printed on shared cards. A Vercel MCP server is available in some sessions.
 - Run locally: `python site/build.py && python -m http.server 8765 --directory dist`.
-- Tests: `python -m unittest discover -s tests` (42) and Playwright scripts in `tests/e2e/` (`home swipe chant pwa mbh mbh_words dict chandas gita`; see its README). Run the e2e ones against the local server with `service_workers="block"`.
+- Tests: `python -m unittest discover -s tests` (42) and Playwright scripts in `tests/e2e/` (`home swipe chant pwa mbh mbh_words dict chandas gita layout`; see its README). Run the e2e ones against the local server with `service_workers="block"`.
 - **Every release needs** a bump of `site/static/version.js`, a `CHANGELOG.md` entry and a `data/changes.json` entry (a test fails otherwise). Commit trailer: `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`.
 
 ## Layout

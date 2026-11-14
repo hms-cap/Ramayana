@@ -54,7 +54,8 @@ class MahabharataBuild(unittest.TestCase):
         import build
         v = build.lean_verse(self.ce_first())
         self.assertEqual(v["ref"], "1.1.0")
-        self.assertTrue(re.sub(r"<[^>]+>", "", v["iast"][-1]).endswith("\u00a0||\u00a01.1.0\u00a0||"))
+        self.assertTrue(re.sub(r"<[^>]+>", "", v["iast"][-1]).endswith("\u00a0||"))
+        self.assertNotIn("1.1.0", re.sub(r"<[^>]+>", "", v["iast"][-1]))   # the reference is in the verse's pill
         self.assertIn('<span class="d">', v["iast"][-1])
         self.assertIn("nārāyaṇaṃ", v["iast"][0])
 

@@ -32,7 +32,7 @@
         o.lines[sc] = [].map.call(p.querySelectorAll(".ln"), function (x) {
           return x.textContent.replace(/[\s ]*[।॥|].*$/, "").trim();
         }).filter(Boolean);
-        o.num[sc] = li.querySelector(".n-" + sc).textContent.trim();
+        o.num[sc] = sc === "iast" ? o.n : T.digits(o.n, sc);   // the verse number alone: the page shows the full reference in the pill
       });
       return o;
     });

@@ -161,29 +161,31 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 .b-variant, .b-regrouped, .b-partial { color: var(--muted); }
 
 .verses { list-style: none; margin: 0; padding: 0; }
-.verse { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 0 0.9rem; padding: 0.85rem 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 5.5rem; }
+/* verse: a header row (reference pill that opens the details, metre, word-by-word icon), then the text at full width */
+.verse { padding: 10px 0 8px; border-top: 1px solid var(--rule); scroll-margin-top: 5.5rem; }
 .verse:target { background: linear-gradient(90deg, var(--accent-soft), transparent 70%); }
-.vnum { all: unset; display: block; cursor: pointer; text-align: right; color: var(--accent); font: 400 1.15rem/2 var(--f-knda); align-self: start; padding-top: 0.15rem; border-radius: 3px; }
-.vnum:focus-visible { outline: 2px solid var(--focus); }
+.vh { display: flex; align-items: center; gap: 8px; margin-bottom: 2px; min-width: 0; }
+.vnum { all: unset; box-sizing: border-box; cursor: pointer; flex: none; font: 700 0.74rem/1.5 var(--f-ui); color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+.vnum:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.vnum[aria-expanded="true"] { background: var(--accent); color: var(--paper); }
+.vnum .n-knda { font-family: var(--f-knda); }
 .vnum .n-deva { font-family: var(--f-deva); }
 .vnum .n-iast { font-family: var(--f-ui); }
 .vnum .n-deva, .vnum .n-iast { display: none; }
 [data-script="deva"] .vnum .n-knda { display: none; } [data-script="deva"] .vnum .n-deva { display: inline; }
 [data-script="iast"] .vnum .n-knda { display: none; } [data-script="iast"] .vnum .n-iast { display: inline; }
+.vmeter { font: 500 0.72rem var(--f-ui); color: var(--muted); min-width: 0; overflow-wrap: anywhere; }
 
 .t p { margin: 0; }
-.t { overflow-wrap: break-word; }
+.t { overflow-wrap: anywhere; min-width: 0; }
 [data-script="knda-deva"] .reader, [data-script="all"] .reader { max-width: 72rem; }
 .t .ln { display: block; }
-/* verse type after Kāvya: weight 500, tight lines, staggered couplet (each line after the first sits 14px in),
-   Roman in italic; a wrapped line keeps its hanging indent (--hang) on top of the stagger */
+/* verse type after Kāvya: weight 500, tight lines, Roman in italic; every line after the first is indented 1.2em,
+   and a wrapped line stays aligned with its own line */
 .t-knda { font: 500 calc(var(--verse) * 0.94)/1.62 var(--f-knda); }
 .t-deva { font: 500 calc(var(--verse) * 0.94)/1.62 var(--f-deva); }
 .t-iast { font: italic 500 calc(var(--verse) * 1.02)/1.48 var(--f-text); }
-.t-knda, .t-deva { --hang: 1.4em; }
-.t-iast { --hang: 1.2em; }
-.t-knda .ln, .t-deva .ln, .t-iast .ln { padding-left: var(--hang); text-indent: calc(-1 * var(--hang)); }
-.t-knda .ln ~ .ln, .t-deva .ln ~ .ln, .t-iast .ln ~ .ln { padding-left: calc(var(--hang) + 14px); }
+.t .ln ~ .ln { padding-left: 1.2em; }
 .d { color: var(--accent); font-weight: 700; }
 .t-iast .d { font-style: normal; }   /* upright dandas in italic Roman text */
 
@@ -205,7 +207,7 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 
 .scan { display: none; color: var(--muted); font: 400 1rem/1.7 var(--f-deva); letter-spacing: 0.18em; margin-top: 0.15rem; }
 .scan .ln { display: block; }
-.scan .ln ~ .ln, .ex .ex-scan .ln ~ .ln { padding-left: 14px; }          /* line up with the staggered verse lines */
+.scan .ln ~ .ln, .ex .ex-scan .ln ~ .ln { padding-left: 1.2em; }          /* line up with the indented verse lines */
 [data-scan="1"] .scan { display: block; }
 
 .details { margin-top: 0.6rem; padding: 0.7rem 0.9rem; background: var(--paper-2); border-radius: 6px; font-size: 0.95rem; }
@@ -251,8 +253,6 @@ main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
   .controls { margin-left: 0; width: 100%; justify-content: space-between; }
   .seg button { padding: 0.45rem 0.55rem; }
   main { padding: 1rem 1rem 2.5rem; }
-  .verse { grid-template-columns: 2.2rem minmax(0, 1fr); gap: 0 0.6rem; }
-  .t-knda, .t-deva, .t-iast { --hang: 1.3em; }
   :root { --verse: 1.2rem; }
   :root[data-size="s"] { --verse: 1.05rem; }
   :root[data-size="l"] { --verse: 1.45rem; }
@@ -462,8 +462,7 @@ body.story-open { overflow: hidden; }
 .body > .wbw { margin: 0.5rem 0 0.2rem; padding: 0.7rem 0.9rem; background: var(--paper-2); border-radius: 6px; }
 .wbw-warn { color: var(--absent); }
 
-.side { display: flex; flex-direction: column; align-items: flex-end; gap: 0.1rem; align-self: start; }
-.wbw-ic { all: unset; box-sizing: border-box; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: var(--accent); cursor: pointer; }
+.wbw-ic { all: unset; box-sizing: border-box; display: grid; place-items: center; width: 30px; height: 30px; margin: -4px -3px -4px auto; flex: none; border-radius: 50%; color: var(--accent); cursor: pointer; }
 .wbw-ic:hover { background: var(--accent-soft); }
 .wbw-ic:focus-visible { outline: 2px solid var(--focus); }
 .wbw-ic[aria-expanded="true"] { background: var(--accent); color: var(--paper); }
@@ -593,9 +592,11 @@ body.sheet-open { overflow: hidden; }
 .votd .vc-label { color: #7B2A16; }
 .votd-view { min-height: 12rem; display: flex; flex-direction: column; justify-content: center; }
 .votd-slide { width: 100%; }
-.votd .vc-verse { text-align: center; line-height: 2.4rem; font-size: clamp(1.15rem, 5.4vw, 1.45rem); background-image: repeating-linear-gradient(transparent 0 calc(2.4rem - 1px), rgba(94,51,24,.22) calc(2.4rem - 1px) 2.4rem); }
-.votd .vc-verse .ln { display: block; }
-.votd .vc-verse .ln ~ .ln { padding-left: var(--hang); }               /* centred card: no stagger */
+.votd .vc-verse { text-align: left; line-height: 1.75; font-size: clamp(1.15rem, 5.4vw, 1.45rem); padding: 0.55rem 0; border-top: 1px solid rgba(94,51,24,.3); border-bottom: 1px solid rgba(94,51,24,.3); }
+:root[data-theme="dark"] .votd .vc-verse { border-color: rgba(240,200,120,.28); }
+@media (prefers-color-scheme: dark) { :root[data-theme="system"] .votd .vc-verse { border-color: rgba(240,200,120,.28); } }
+.votd .vc-verse .ln { display: block; overflow-wrap: anywhere; }
+.votd .vc-verse .ln ~ .ln { padding-left: 1em; }                       /* couplet: the second line sits in; lines may wrap */
 .votd .d { color: #7B2A16; }
 :root[data-theme="dark"] .votd .d { color: #F0C45A; }
 @media (prefers-color-scheme: dark) { :root[data-theme="system"] .votd .d { color: #F0C45A; } }
@@ -636,15 +637,18 @@ html[data-work="mbh"] .cont { background: linear-gradient(#3B1220, #5A1F2B); }
 .work-h { margin-top: 1.4rem; } .work-h small { font: 500 0.9rem var(--f-ui); color: var(--muted); }
 
 /* ---- two work chips at the top of Home and Read ---- */
-.workchips { display: flex; gap: 0.6rem; margin: 0.4rem 0 0.8rem; }
-.wchip { flex: 1; min-height: 52px; display: flex; align-items: center; gap: 0.6rem; padding: 0.25rem 0.9rem 0.25rem 0.4rem; border-radius: 26px; background: var(--card); color: var(--ink); box-shadow: 0 0 0 1px var(--rule); text-decoration: none; }
-.wchip .wic { width: 38px; height: 38px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--paper-2); }
+.workchips { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin: 0.4rem 0 0.8rem; }      /* four chips: 2 x 2 on phones, one row from 40rem */
+@media (min-width: 40rem) { .workchips { grid-template-columns: repeat(4, 1fr); gap: 0.6rem; } }
+.wchip { min-width: 0; min-height: 52px; display: flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.55rem 0.25rem 0.3rem; border-radius: 26px; background: var(--card); color: var(--ink); box-shadow: 0 0 0 1px var(--rule); text-decoration: none; }
+.wchip .wic { width: 30px; height: 30px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--paper-2); }
+.wchip .wic svg { width: 18px; height: 18px; }
 .wchip .wtx { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
-.wchip .wtx b { font: 400 1.1rem var(--f-knda); white-space: nowrap; }
-.wchip .wtx small { font: 500 0.72rem var(--f-ui); opacity: .75; }
+.wchip .wtx b { font: 400 0.95rem var(--f-knda); overflow-wrap: anywhere; }      /* the full name, never an ellipsis */
+.wchip .wtx small { font: 500 0.68rem var(--f-ui); opacity: .75; overflow-wrap: anywhere; }
+@media (min-width: 40rem) { .wchip { gap: 0.6rem; padding-left: 0.4rem; } .wchip .wtx b { font-size: 1.05rem; } .wchip .wtx small { font-size: 0.72rem; } }
+@media (max-width: 24rem) { .wchip .wtx small { display: none; } }      /* narrowest phones: drop the sub-label rather than cut the name */
 .wchip.on { background: var(--wb); color: #FFFBF2; box-shadow: none; }
 .wchip.on .wic { background: rgba(255,255,255,.16); }
-@media (max-width: 24rem) { .wchip { padding-right: 0.5rem; gap: 0.4rem; } .wchip .wtx b { font-size: 1rem; } }
 
 /* card paintings and chip icons: one of three variants, chosen per app session (app.js) */
 .kcard:not([data-art]) .kart:not([data-v="0"]), .kcard[data-art="0"] .kart:not([data-v="0"]), .kcard[data-art="1"] .kart:not([data-v="1"]), .kcard[data-art="2"] .kart:not([data-v="2"]),
@@ -659,18 +663,6 @@ html.js .kcard:not([data-art]) .kart, html.js .wchip:not([data-art]) .wico { vis
 .sx-iast { font-family: var(--f-ui); }
 
 /* ---- Pariśiṣṭa: appendix and Chandas pages ---- */
-.workchips { gap: 0.4rem; }
-.wchip { min-width: 0; padding-right: 0.55rem; gap: 0.4rem; }
-.wchip .wtx { overflow: hidden; }
-.wchip .wtx b { font-size: 1rem; overflow: hidden; text-overflow: ellipsis; }
-.wchip .wtx small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.wchip .wic { width: 30px; height: 30px; }
-.wchip .wic svg { width: 18px; height: 18px; }
-.wchip { padding-left: 0.3rem; }
-.wchip .wtx b { font-size: 0.95rem; }
-.wchip .wtx small { font-size: 0.68rem; }
-.wchip[data-work-pick="app"] { flex: 0.9; }
-@media (max-width: 28rem) { .wchip { padding-right: 0.35rem; padding-left: 0.2rem; gap: 0.25rem; } .wchip .wic { width: 24px; height: 24px; } .wchip .wic svg { width: 15px; height: 15px; } .wchip .wtx b { font-size: 0.88rem; } .wchip .wtx small { font-size: 0.64rem; } }
 @media (max-width: 34rem) { .ctable .pd { display: none; } .ctable th, .ctable td { padding: 0.4rem 0.35rem; } }
 .appx h1 small { font: 500 0.9rem var(--f-ui); color: var(--muted); margin-left: 0.4rem; }
 .appx .crumbs-l { margin: 0 0 0.2rem; font: 500 0.85rem var(--f-ui); color: var(--muted); }
