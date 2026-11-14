@@ -1,0 +1,3038 @@
+{
+ "work": "mbh",
+ "characters": [
+  {
+   "id": "shantanu",
+   "name": "Śantanu",
+   "group": "kuru",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Śāntanu"
+   ],
+   "match": [],
+   "role_en": "King of the Kurus, father of Bhīṣma and husband of Gaṅgā and Satyavatī",
+   "role_kn": "ಕುರುರಾಜ; ಭೀಷ್ಮನ ತಂದೆ, ಗಂಗೆ ಮತ್ತು ಸತ್ಯವತಿಯರ ಪತಿ",
+   "desc_en": "Śantanu is the Kuru king of Hastināpura, a son of Pratīpa. He marries the river goddess Gaṅgā on her condition that he never question her; she drowns their first seven sons, and he stops her only at the eighth, who grows up as Devavrata (Bhīṣma). Years later he longs for Satyavatī, the daughter of the fisher chief, whose father will give her only if her sons inherit the throne. Devavrata solves this by renouncing the kingdom and marriage, and the pleased Śantanu grants him death at will. Śantanu has two sons by Satyavatī, Citrāṅgada and Vicitravīrya, and then dies.",
+   "desc_kn": "ಶಂತನು ಹಸ್ತಿನಾಪುರದ ಕುರುರಾಜ, ಪ್ರತೀಪನ ಮಗ. ತನ್ನನ್ನು ಎಂದಿಗೂ ಪ್ರಶ್ನಿಸಬಾರದೆಂಬ ಷರತ್ತಿನ ಮೇಲೆ ಅವನು ಗಂಗಾದೇವಿಯನ್ನು ಮದುವೆಯಾಗುತ್ತಾನೆ; ಅವಳು ಮೊದಲ ಏಳು ಮಕ್ಕಳನ್ನು ನೀರಿಗೆ ಎಸೆಯುತ್ತಾಳೆ, ಎಂಟನೆಯವನನ್ನು ಮಾತ್ರ ರಾಜ ತಡೆಯುತ್ತಾನೆ — ಅವನೇ ದೇವವ್ರತ (ಭೀಷ್ಮ). ಬಳಿಕ ಬೆಸ್ತರ ಮುಖ್ಯಸ್ಥನ ಮಗಳು ಸತ್ಯವತಿಯನ್ನು ಬಯಸುತ್ತಾನೆ; ಅವಳ ಮಕ್ಕಳೇ ರಾಜ್ಯವಾಳಬೇಕೆಂದು ಅವಳ ತಂದೆ ಷರತ್ತು ಹಾಕುತ್ತಾನೆ. ದೇವವ್ರತನು ರಾಜ್ಯವನ್ನೂ ಮದುವೆಯನ್ನೂ ತ್ಯಜಿಸಿ ಭೀಷ್ಮ ಪ್ರತಿಜ್ಞೆ ಮಾಡಿದಾಗ ಸಂತುಷ್ಟನಾದ ಶಂತನು ಅವನಿಗೆ ಇಚ್ಛಾಮರಣದ ವರ ಕೊಡುತ್ತಾನೆ. ಸತ್ಯವತಿಯಲ್ಲಿ ಚಿತ್ರಾಂಗದ ಮತ್ತು ವಿಚಿತ್ರವೀರ್ಯರೆಂಬ ಇಬ್ಬರು ಮಕ್ಕಳನ್ನು ಪಡೆದು ಅವನು ತೀರಿಕೊಳ್ಳುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "spouse",
+     "to": "ganga",
+     "ref": "1.63.50",
+     "ed": "vu"
+    },
+    {
+     "type": "spouse",
+     "to": "satyavati",
+     "ref": "1.63.55",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Marries Gaṅgā; Devavrata is born",
+     "kn": "ಗಂಗೆಯನ್ನು ಮದುವೆಯಾಗುತ್ತಾನೆ; ದೇವವ್ರತನ ಜನನ",
+     "ref": "1.63.50",
+     "ed": "vu",
+     "with": [
+      "ganga",
+      "bhishma"
+     ]
+    },
+    {
+     "en": "Gaṅgā drowns her newborn sons",
+     "kn": "ಗಂಗೆ ತನ್ನ ನವಜಾತ ಶಿಶುಗಳನ್ನು ನದಿಯಲ್ಲಿ ಮುಳುಗಿಸುತ್ತಾಳೆ",
+     "ref": "1.105.5",
+     "ed": "vu",
+     "with": [
+      "ganga"
+     ]
+    },
+    {
+     "en": "Bhīṣma's vow wins Satyavatī for him; Śantanu grants him death at will",
+     "kn": "ಭೀಷ್ಮನ ಪ್ರತಿಜ್ಞೆಯಿಂದ ಸತ್ಯವತಿ ಲಭಿಸುತ್ತಾಳೆ; ಶಂತನು ಇಚ್ಛಾಮರಣದ ವರ ಕೊಡುತ್ತಾನೆ",
+     "ref": "1.107.117",
+     "ed": "vu",
+     "with": [
+      "bhishma",
+      "satyavati"
+     ]
+    },
+    {
+     "en": "Śantanu dies and Bhīṣma installs Citrāṅgada",
+     "kn": "ಶಂತನುವಿನ ಮರಣ; ಭೀಷ್ಮನು ಚಿತ್ರಾಂಗದನನ್ನು ರಾಜನನ್ನಾಗಿಸುತ್ತಾನೆ",
+     "ref": "1.108.6",
+     "ed": "vu",
+     "with": [
+      "bhishma"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ganga",
+   "name": "Gaṅgā",
+   "group": "kuru",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [
+    "Jāhnavī",
+    "Bhāgīrathī"
+   ],
+   "match": [],
+   "role_en": "The river goddess, Śantanu's wife and mother of Bhīṣma",
+   "role_kn": "ನದೀದೇವತೆ; ಶಂತನುವಿನ ಪತ್ನಿ, ಭೀಷ್ಮನ ತಾಯಿ",
+   "desc_en": "Gaṅgā takes human form and marries King Śantanu on the condition that he never question her. The eight Vasus, cursed by the sage Vasiṣṭha to be born among men, ask her to be their mother, and she drowns each at birth to free them quickly. When Śantanu finally stops her at the eighth, she leaves, taking the child and returning him later as the young Devavrata, who becomes Bhīṣma. Bhīṣma is called Gāṅgeya, ‘son of Gaṅgā’, after her.",
+   "desc_kn": "ಗಂಗೆ ಮಾನವ ರೂಪ ತಾಳಿ, ತನ್ನನ್ನು ಎಂದಿಗೂ ಪ್ರಶ್ನಿಸಬಾರದೆಂಬ ಷರತ್ತಿನ ಮೇಲೆ ರಾಜ ಶಂತನುವನ್ನು ಮದುವೆಯಾಗುತ್ತಾಳೆ. ವಸಿಷ್ಠರ ಶಾಪದಿಂದ ಮನುಷ್ಯರಲ್ಲಿ ಹುಟ್ಟಬೇಕಾದ ಎಂಟು ವಸುಗಳು ಅವಳನ್ನೇ ತಾಯಿಯಾಗಬೇಕೆಂದು ಕೇಳುತ್ತಾರೆ; ಅವರನ್ನು ಬೇಗ ಮುಕ್ತಗೊಳಿಸಲು ಅವಳು ಹುಟ್ಟಿದ ತಕ್ಷಣ ನೀರಿಗೆ ಬಿಡುತ್ತಾಳೆ. ಎಂಟನೆಯ ಮಗುವನ್ನು ಶಂತನು ತಡೆದಾಗ ಅವಳು ಮಗುವಿನೊಂದಿಗೆ ಹೊರಟುಹೋಗಿ, ನಂತರ ಅವನನ್ನು ಯುವಕ ದೇವವ್ರತನಾಗಿ (ಭೀಷ್ಮ) ಮರಳಿಸುತ್ತಾಳೆ. ಭೀಷ್ಮನಿಗೆ ‘ಗಾಂಗೇಯ’ (ಗಂಗೆಯ ಮಗ) ಎಂಬ ಹೆಸರು ಅವಳಿಂದಲೇ.",
+   "relations": [
+    {
+     "type": "spouse",
+     "to": "shantanu",
+     "ref": "1.106.4",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "The Vasus beg her to be their mother",
+     "kn": "ವಸುಗಳು ತಮ್ಮ ತಾಯಿಯಾಗಬೇಕೆಂದು ಗಂಗೆಯನ್ನು ಬೇಡುತ್ತಾರೆ",
+     "ref": "1.102.17",
+     "ed": "vu"
+    },
+    {
+     "en": "Drowns her newborn sons",
+     "kn": "ತನ್ನ ನವಜಾತ ಶಿಶುಗಳನ್ನು ನದಿಯಲ್ಲಿ ಮುಳುಗಿಸುತ್ತಾಳೆ",
+     "ref": "1.105.5",
+     "ed": "vu",
+     "with": [
+      "shantanu"
+     ]
+    },
+    {
+     "en": "Explains the Vasus' curse to Śantanu and leaves with the eighth son",
+     "kn": "ವಸುಗಳ ಶಾಪವನ್ನು ಶಂತನುವಿಗೆ ವಿವರಿಸಿ ಎಂಟನೆಯ ಮಗನೊಂದಿಗೆ ಹೊರಡುತ್ತಾಳೆ",
+     "ref": "1.106.4",
+     "ed": "vu",
+     "with": [
+      "shantanu"
+     ]
+    },
+    {
+     "en": "Devavrata, called Gāṅgeya, is born",
+     "kn": "ದೇವವ್ರತ (ಗಾಂಗೇಯ) ಜನಿಸುತ್ತಾನೆ",
+     "ref": "1.106.49",
+     "ed": "vu",
+     "with": [
+      "bhishma"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "satyavati",
+   "name": "Satyavatī",
+   "group": "kuru",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [
+    "Kālī",
+    "Dāśeyī",
+    "Matsyagandhā",
+    "Satyā"
+   ],
+   "match": [],
+   "role_en": "Fisher chief's daughter who became Śantanu's queen and Vyāsa's mother",
+   "role_kn": "ಬೆಸ್ತರ ರಾಜನ ಮಗಳು; ಶಂತನುವಿನ ರಾಣಿ, ವ್ಯಾಸರ ತಾಯಿ",
+   "desc_en": "Satyavatī, also called Kālī and Matsyagandhā, is the daughter of the fisher chief (Dāśarāja). Before marriage she bears the sage Vyāsa to Parāśara. Śantanu marries her after his son Devavrata renounces his claim, and she bears Citrāṅgada and Vicitravīrya. When both sons die without heirs she first asks Bhīṣma to raise children for the dynasty; he refuses, so she calls on Vyāsa, from whose union with the widows Dhṛtarāṣṭra, Pāṇḍu and Vidura are born. Later she goes to the forest with Ambikā and Ambālikā and dies there after severe austerities.",
+   "desc_kn": "ಸತ್ಯವತಿ (ಕಾಳಿ, ಮತ್ಸ್ಯಗಂಧಾ ಎಂದೂ ಹೆಸರು) ಬೆಸ್ತರ ರಾಜನ ಮಗಳು. ಮದುವೆಗೆ ಮೊದಲೇ ಪರಾಶರರಿಂದ ಅವಳು ವ್ಯಾಸ ಮುನಿಯನ್ನು ಪಡೆಯುತ್ತಾಳೆ. ದೇವವ್ರತನು ತನ್ನ ಹಕ್ಕನ್ನು ತ್ಯಜಿಸಿದ ಮೇಲೆ ಶಂತನು ಅವಳನ್ನು ಮದುವೆಯಾಗುತ್ತಾನೆ; ಅವಳಿಗೆ ಚಿತ್ರಾಂಗದ ಮತ್ತು ವಿಚಿತ್ರವೀರ್ಯರು ಹುಟ್ಟುತ್ತಾರೆ. ಇಬ್ಬರೂ ಮಕ್ಕಳಿಲ್ಲದೆ ಸತ್ತಾಗ ಅವಳು ವಂಶಕ್ಕಾಗಿ ಸಂತಾನ ಕೊಡುವಂತೆ ಮೊದಲು ಭೀಷ್ಮನನ್ನು ಕೇಳುತ್ತಾಳೆ; ಅವನು ನಿರಾಕರಿಸಿದಾಗ ವ್ಯಾಸರನ್ನು ಕರೆಯುತ್ತಾಳೆ — ವಿಧವೆಯರಲ್ಲಿ ಅವರಿಂದ ಧೃತರಾಷ್ಟ್ರ, ಪಾಂಡು, ವಿದುರರು ಹುಟ್ಟುತ್ತಾರೆ. ಕೊನೆಗೆ ಅಂಬಿಕೆ, ಅಂಬಾಲಿಕೆಯರೊಂದಿಗೆ ಕಾಡಿಗೆ ಹೋಗಿ ಕಠೋರ ತಪಸ್ಸು ಮಾಡಿ ಅಲ್ಲೇ ದೇಹ ತ್ಯಜಿಸುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "spouse",
+     "to": "shantanu",
+     "ref": "1.63.55",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Daughter of the fisher chief, meets Parāśara and bears Vyāsa",
+     "kn": "ಬೆಸ್ತರ ರಾಜನ ಮಗಳು ಪರಾಶರರನ್ನು ಭೇಟಿಯಾಗಿ ವ್ಯಾಸರನ್ನು ಪಡೆಯುತ್ತಾಳೆ",
+     "ref": "1.64.91",
+     "ed": "vu",
+     "with": [
+      "vyasa"
+     ]
+    },
+    {
+     "en": "Bhīṣma brings her home as his mother",
+     "kn": "ಭೀಷ್ಮನು ಅವಳನ್ನು ತನ್ನ ತಾಯಿಯಾಗಿ ಮನೆಗೆ ಕರೆತರುತ್ತಾನೆ",
+     "ref": "1.63.51",
+     "ed": "vu",
+     "with": [
+      "bhishma"
+     ]
+    },
+    {
+     "en": "Asks Bhīṣma to beget heirs on the widows; he refuses",
+     "kn": "ವಿಧವೆಯರಲ್ಲಿ ಸಂತಾನ ಕೊಡುವಂತೆ ಭೀಷ್ಮನನ್ನು ಕೇಳುತ್ತಾಳೆ; ಅವನು ನಿರಾಕರಿಸುತ್ತಾನೆ",
+     "ref": "1.114.3",
+     "ed": "vu",
+     "with": [
+      "bhishma"
+     ]
+    },
+    {
+     "en": "Calls Vyāsa to raise children for the Kuru line",
+     "kn": "ಕುರುವಂಶಕ್ಕಾಗಿ ಸಂತಾನ ಪಡೆಯಲು ವ್ಯಾಸರನ್ನು ಕರೆಯುತ್ತಾಳೆ",
+     "ref": "1.114.60",
+     "ed": "vu",
+     "with": [
+      "vyasa"
+     ]
+    },
+    {
+     "en": "Leaves for the forest with her daughters-in-law and dies there",
+     "kn": "ಸೊಸೆಯರೊಂದಿಗೆ ಕಾಡಿಗೆ ಹೋಗಿ ಅಲ್ಲೇ ದೇಹ ತ್ಯಜಿಸುತ್ತಾಳೆ",
+     "ref": "1.137.12",
+     "ed": "vu",
+     "with": [
+      "ambika",
+      "bhishma"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bhishma",
+   "name": "Bhīṣma",
+   "group": "kuru",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Devavrata",
+    "Gāṅgeya",
+    "Śāntanava",
+    "Pitāmaha"
+   ],
+   "match": [],
+   "role_en": "Grandsire of the Kurus, who vowed lifelong celibacy and fell on a bed of arrows",
+   "role_kn": "ಕುರುಗಳ ಪಿತಾಮಹ; ಬ್ರಹ್ಮಚರ್ಯದ ಪ್ರತಿಜ್ಞೆ ಮಾಡಿ ಬಾಣಶಯ್ಯೆಯಲ್ಲಿ ಮಲಗಿದವನು",
+   "desc_en": "Bhīṣma, born as Devavrata, is the eighth son of Śantanu and Gaṅgā. To win Satyavatī for his father he renounces the throne and marriage, and is granted death at his own will. He guards the Kuru house under Citrāṅgada, Vicitravīrya and then Dhṛtarāṣṭra, and carries off the Kāśī princesses Ambā, Ambikā and Ambālikā for Vicitravīrya. In the Kurukṣetra war he leads the Kaurava army for ten days; with Śikhaṇḍin placed before Arjuna he lets himself be struck down and lies on a bed of arrows, waiting for the sun's northward turn. He then teaches Yudhiṣṭhira about dharma and, at the right time, departs from life.",
+   "desc_kn": "ಭೀಷ್ಮ ಹುಟ್ಟಿದಾಗ ದೇವವ್ರತ; ಶಂತನು ಮತ್ತು ಗಂಗೆಯರ ಎಂಟನೆಯ ಮಗ. ತಂದೆಗಾಗಿ ಸತ್ಯವತಿಯನ್ನು ಪಡೆಯಲು ಅವನು ಸಿಂಹಾಸನವನ್ನೂ ಮದುವೆಯನ್ನೂ ತ್ಯಜಿಸುತ್ತಾನೆ; ತನ್ನ ಇಚ್ಛೆಯಂತೆ ಸಾಯುವ ವರ ಅವನಿಗೆ ಸಿಗುತ್ತದೆ. ಚಿತ್ರಾಂಗದ, ವಿಚಿತ್ರವೀರ್ಯ, ನಂತರ ಧೃತರಾಷ್ಟ್ರನ ಕಾಲದಲ್ಲೂ ಕುರುಮನೆತನವನ್ನು ಕಾಯುತ್ತಾನೆ; ವಿಚಿತ್ರವೀರ್ಯನಿಗಾಗಿ ಕಾಶಿರಾಜನ ಮಕ್ಕಳಾದ ಅಂಬಾ, ಅಂಬಿಕಾ, ಅಂಬಾಲಿಕೆಯರನ್ನು ಅಪಹರಿಸಿ ತರುತ್ತಾನೆ. ಕುರುಕ್ಷೇತ್ರ ಯುದ್ಧದಲ್ಲಿ ಹತ್ತು ದಿನ ಕೌರವ ಸೇನೆಯ ಸೇನಾಪತಿಯಾಗಿ, ಅರ್ಜುನನ ಮುಂದೆ ಶಿಖಂಡಿಯನ್ನು ನಿಲ್ಲಿಸಿದಾಗ ತಾನೇ ಸೋಲಲು ಬಿಟ್ಟು ಬಾಣಶಯ್ಯೆಯಲ್ಲಿ ಮಲಗುತ್ತಾನೆ; ಉತ್ತರಾಯಣಕ್ಕಾಗಿ ಕಾಯುತ್ತಾನೆ. ಅಲ್ಲಿಂದ ಯುಧಿಷ್ಠಿರನಿಗೆ ಧರ್ಮೋಪದೇಶ ಮಾಡಿ, ಸರಿಯಾದ ಕಾಲದಲ್ಲಿ ದೇಹ ತ್ಯಜಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "shantanu"
+    },
+    {
+     "type": "parent",
+     "to": "ganga"
+    },
+    {
+     "type": "teacher",
+     "to": "parashurama"
+    },
+    {
+     "type": "killed_by",
+     "to": "arjuna",
+     "ref": "6.119.102",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Vows to renounce the throne and marriage for his father's sake",
+     "kn": "ತಂದೆಗಾಗಿ ರಾಜ್ಯ ಮತ್ತು ಮದುವೆಯನ್ನು ತ್ಯಜಿಸುವ ಪ್ರತಿಜ್ಞೆ ಮಾಡುತ್ತಾನೆ",
+     "ref": "1.107.114",
+     "ed": "vu",
+     "with": [
+      "shantanu",
+      "satyavati"
+     ]
+    },
+    {
+     "en": "Carries off the Kāśī princesses at their svayaṃvara",
+     "kn": "ಕಾಶಿರಾಜನ ಮಕ್ಕಳನ್ನು ಸ್ವಯಂವರದಿಂದ ಅಪಹರಿಸುತ್ತಾನೆ",
+     "ref": "1.109.62",
+     "ed": "vu",
+     "with": [
+      "amba"
+     ]
+    },
+    {
+     "en": "Declines Satyavatī's request to father heirs, holding to his vow",
+     "kn": "ವಂಶಕ್ಕಾಗಿ ಸಂತಾನ ಪಡೆಯಬೇಕೆಂಬ ಸತ್ಯವತಿಯ ಕೋರಿಕೆಯನ್ನು ತನ್ನ ಪ್ರತಿಜ್ಞೆಯಂತೆ ನಿರಾಕರಿಸುತ್ತಾನೆ",
+     "ref": "1.114.44",
+     "ed": "vu",
+     "with": [
+      "satyavati"
+     ]
+    },
+    {
+     "en": "Made commander of the Kaurava army",
+     "kn": "ಕೌರವ ಸೇನೆಯ ಸೇನಾಪತಿಯಾಗಿ ಅಭಿಷಿಕ್ತನಾಗುತ್ತಾನೆ",
+     "ref": "5.156.26",
+     "ed": "vu",
+     "with": [
+      "duryodhana"
+     ]
+    },
+    {
+     "en": "Falls and lies on the bed of arrows",
+     "kn": "ಬಿದ್ದು ಬಾಣಶಯ್ಯೆಯಲ್ಲಿ ಮಲಗುತ್ತಾನೆ",
+     "ref": "6.119.102",
+     "ed": "vu"
+    },
+    {
+     "en": "Gives up his life after instructing Yudhiṣṭhira",
+     "kn": "ಯುಧಿಷ್ಠಿರನಿಗೆ ಉಪದೇಶಿಸಿದ ಮೇಲೆ ಪ್ರಾಣ ತ್ಯಜಿಸುತ್ತಾನೆ",
+     "ref": "13.274.8",
+     "ed": "vu",
+     "with": [
+      "yudhishthira"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vyasa",
+   "name": "Vyāsa",
+   "group": "kuru",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Kṛṣṇadvaipāyana",
+    "Dvaipāyana",
+    "Satyavatīsuta",
+    "Vedavyāsa"
+   ],
+   "match": [],
+   "role_en": "The sage who composed the Mahābhārata and fathered Dhṛtarāṣṭra, Pāṇḍu and Vidura",
+   "role_kn": "ಮಹಾಭಾರತ ರಚಿಸಿದ ಋಷಿ; ಧೃತರಾಷ್ಟ್ರ, ಪಾಂಡು, ವಿದುರರ ಜನಕ",
+   "desc_en": "Vyāsa, called Kṛṣṇa Dvaipāyana, is the son of Satyavatī and the sage Parāśara. He arranged the Veda and composed the epic, which Gaṇeśa writes down at his dictation. When Satyavatī calls him, he begets on Vicitravīrya's widows Dhṛtarāṣṭra and Pāṇḍu, and on a maidservant Vidura. He grants Gāndhārī the boon of a hundred sons and later counsels the Pāṇḍavas and Dhṛtarāṣṭra at key moments. He is the grandfather of both sides and remains outside the fighting.",
+   "desc_kn": "ವ್ಯಾಸ (ಕೃಷ್ಣದ್ವೈಪಾಯನ) ಸತ್ಯವತಿ ಮತ್ತು ಪರಾಶರ ಮುನಿಯ ಮಗ. ವೇದಗಳನ್ನು ವಿಭಾಗಿಸಿ ಮಹಾಭಾರತವನ್ನು ರಚಿಸಿದವನು; ಅವನು ಹೇಳುತ್ತಿದ್ದಂತೆ ಗಣೇಶ ಅದನ್ನು ಬರೆಯುತ್ತಾನೆ. ಸತ್ಯವತಿ ಕರೆದಾಗ ಅವನು ವಿಚಿತ್ರವೀರ್ಯನ ವಿಧವೆಯರಲ್ಲಿ ಧೃತರಾಷ್ಟ್ರ ಮತ್ತು ಪಾಂಡುವನ್ನೂ, ದಾಸಿಯಲ್ಲಿ ವಿದುರನನ್ನೂ ಪಡೆಯುತ್ತಾನೆ. ಗಾಂಧಾರಿಗೆ ನೂರು ಮಕ್ಕಳ ವರ ಕೊಡುತ್ತಾನೆ; ಮುಂದೆ ಪಾಂಡವರಿಗೂ ಧೃತರಾಷ್ಟ್ರನಿಗೂ ಮುಖ್ಯ ಘಟ್ಟಗಳಲ್ಲಿ ಸಲಹೆ ನೀಡುತ್ತಾನೆ. ಎರಡೂ ಪಕ್ಷಗಳಿಗೆ ಅಜ್ಜನಾದ ಅವನು ಯುದ್ಧದಿಂದ ದೂರವೇ ಉಳಿಯುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "satyavati"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Composes the epic; in the Traditional text Gaṇeśa comes to write it down",
+     "kn": "ಮಹಾಭಾರತವನ್ನು ರಚಿಸುತ್ತಾನೆ; ಸಂಪ್ರದಾಯ ಪಾಠದಲ್ಲಿ ಗಣೇಶ ಬಂದು ಅದನ್ನು ಬರೆಯುತ್ತಾನೆ",
+     "ref": "1.1.112",
+     "ed": "vu"
+    },
+    {
+     "en": "Appears at his mother's call",
+     "kn": "ತಾಯಿಯ ಕರೆಗೆ ವ್ಯಾಸರು ಪ್ರತ್ಯಕ್ಷರಾಗುತ್ತಾರೆ",
+     "ref": "1.114.45",
+     "ed": "vu",
+     "with": [
+      "satyavati"
+     ]
+    },
+    {
+     "en": "Begets Pāṇḍu on Ambālikā, who turns pale at the sight of him",
+     "kn": "ಅಂಬಾಲಿಕೆ ಅವರನ್ನು ಕಂಡು ಬಿಳಿಚಿಕೊಳ್ಳುತ್ತಾಳೆ; ಅವಳಲ್ಲಿ ಪಾಂಡು ಜನನ",
+     "ref": "1.115.22",
+     "ed": "vu",
+     "with": [
+      "ambalika",
+      "pandu"
+     ]
+    },
+    {
+     "en": "Vidura is born of his union with a maidservant",
+     "kn": "ದಾಸಿಯಿಂದ ವಿದುರನ ಜನನ",
+     "ref": "1.115.43",
+     "ed": "vu",
+     "with": [
+      "vidura"
+     ]
+    },
+    {
+     "en": "Grants Gāndhārī the boon of a hundred sons",
+     "kn": "ಗಾಂಧಾರಿಗೆ ನೂರು ಮಕ್ಕಳ ವರ ನೀಡುತ್ತಾನೆ",
+     "ref": "1.126.11",
+     "ed": "vu",
+     "with": [
+      "gandhari"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vichitravirya",
+   "name": "Vicitravīrya",
+   "group": "kuru",
+   "gender": "m",
+   "rank": 3,
+   "epithets": [],
+   "match": [],
+   "role_en": "Younger son of Śantanu and Satyavatī, who died childless soon after marrying",
+   "role_kn": "ಶಂತನು-ಸತ್ಯವತಿಯರ ಕಿರಿಯ ಮಗ; ಮದುವೆಯ ನಂತರ ಮಕ್ಕಳಿಲ್ಲದೆ ತೀರಿದನು",
+   "desc_en": "Vicitravīrya is the younger son of Śantanu and Satyavatī and becomes king after his brother Citrāṅgada is killed by a gandharva. Bhīṣma wins the Kāśī princesses Ambikā and Ambālikā for him; Ambā, who loved Śālva, is let go. The king indulges himself in pleasure with his two wives and dies young without children. His widows' sons, Dhṛtarāṣṭra and Pāṇḍu, are begotten by Vyāsa to continue the line.",
+   "desc_kn": "ವಿಚಿತ್ರವೀರ್ಯ ಶಂತನು ಮತ್ತು ಸತ್ಯವತಿಯರ ಕಿರಿಯ ಮಗ; ಅಣ್ಣ ಚಿತ್ರಾಂಗದನನ್ನು ಗಂಧರ್ವನು ಕೊಂದ ಮೇಲೆ ರಾಜನಾಗುತ್ತಾನೆ. ಭೀಷ್ಮನು ಅವನಿಗಾಗಿ ಕಾಶಿರಾಜನ ಮಕ್ಕಳಾದ ಅಂಬಿಕೆ ಮತ್ತು ಅಂಬಾಲಿಕೆಯರನ್ನು ಗೆದ್ದು ತರುತ್ತಾನೆ; ಶಾಲ್ವನನ್ನು ಪ್ರೀತಿಸಿದ ಅಂಬೆಯನ್ನು ಬಿಟ್ಟುಬಿಡಲಾಗುತ್ತದೆ. ಇಬ್ಬರು ಪತ್ನಿಯರೊಂದಿಗೆ ಭೋಗದಲ್ಲಿ ಮುಳುಗಿದ ಅವನು ಕಿರಿಯ ವಯಸ್ಸಿನಲ್ಲೇ ಮಕ್ಕಳಿಲ್ಲದೆ ಸಾಯುತ್ತಾನೆ. ವಂಶ ಮುಂದುವರಿಯಲು ವ್ಯಾಸರಿಂದ ಅವನ ವಿಧವೆಯರಲ್ಲಿ ಧೃತರಾಷ್ಟ್ರ ಮತ್ತು ಪಾಂಡು ಹುಟ್ಟುತ್ತಾರೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "shantanu"
+    },
+    {
+     "type": "parent",
+     "to": "satyavati"
+    },
+    {
+     "type": "spouse",
+     "to": "ambika",
+     "ref": "1.109.69",
+     "ed": "vu"
+    },
+    {
+     "type": "spouse",
+     "to": "ambalika",
+     "ref": "1.109.69",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Bhīṣma gives him Ambikā and Ambālikā as wives",
+     "kn": "ಭೀಷ್ಮನು ಅಂಬಿಕೆ-ಅಂಬಾಲಿಕೆಯರನ್ನು ಅವನಿಗೆ ಮದುವೆ ಮಾಡಿಕೊಡುತ್ತಾನೆ",
+     "ref": "1.109.69",
+     "ed": "vu",
+     "with": [
+      "bhishma",
+      "ambika",
+      "ambalika"
+     ]
+    },
+    {
+     "en": "Falls into indulgence in marriage",
+     "kn": "ಮದುವೆಯ ನಂತರ ಭೋಗಾಸಕ್ತನಾಗುತ್ತಾನೆ",
+     "ref": "1.111.2",
+     "ed": "vu",
+     "with": [
+      "ambika",
+      "ambalika"
+     ]
+    },
+    {
+     "en": "Dies without children",
+     "kn": "ಮಕ್ಕಳಿಲ್ಲದೆ ತೀರುತ್ತಾನೆ",
+     "ref": "1.63.54",
+     "ed": "vu",
+     "with": [
+      "ambika",
+      "ambalika"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amba",
+   "name": "Ambā",
+   "group": "kuru",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [],
+   "match": [],
+   "role_en": "Eldest Kāśī princess, wronged by Bhīṣma, who is reborn as Śikhaṇḍin to bring him down",
+   "role_kn": "ಕಾಶಿರಾಜನ ಹಿರಿಯ ಮಗಳು; ಭೀಷ್ಮನಿಂದ ಅನ್ಯಾಯ, ಅವನನ್ನು ಕೆಡವಲು ಶಿಖಂಡಿಯಾಗಿ ಮರುಹುಟ್ಟು",
+   "desc_en": "Ambā is the eldest of the three daughters of the king of Kāśī. Bhīṣma carries all three off from the svayaṃvara for Vicitravīrya, but Ambā says she has already chosen King Śālva. Bhīṣma lets her go, yet Śālva refuses her, and Vicitravīrya will not take her either. She seeks vengeance on Bhīṣma, gets Paraśurāma to fight Bhīṣma for her, who cannot defeat him, then performs austerities and is promised by Śiva that she will cause his death. In the epic she is reborn in Drupada's house as Śikhaṇḍin.",
+   "desc_kn": "ಅಂಬೆ ಕಾಶಿರಾಜನ ಮೂವರು ಮಕ್ಕಳಲ್ಲಿ ಹಿರಿಯವಳು. ಭೀಷ್ಮನು ವಿಚಿತ್ರವೀರ್ಯನಿಗಾಗಿ ಮೂವರನ್ನೂ ಸ್ವಯಂವರದಿಂದ ಅಪಹರಿಸಿದಾಗ, ತಾನು ಈಗಾಗಲೇ ರಾಜ ಶಾಲ್ವನನ್ನು ವರಿಸಿದ್ದೇನೆಂದು ಹೇಳುತ್ತಾಳೆ. ಭೀಷ್ಮ ಅವಳನ್ನು ಕಳುಹಿಸುತ್ತಾನೆ; ಆದರೆ ಶಾಲ್ವ ಅವಳನ್ನು ಒಪ್ಪುವುದಿಲ್ಲ, ವಿಚಿತ್ರವೀರ್ಯನೂ ಸ್ವೀಕರಿಸುವುದಿಲ್ಲ. ಭೀಷ್ಮನ ಮೇಲೆ ಸೇಡು ತೀರಿಸಲು ಹೊರಟ ಅವಳ ಪರವಾಗಿ ಪರಶುರಾಮ ಹೋರಾಡುತ್ತಾನೆ, ಆದರೆ ಭೀಷ್ಮನನ್ನು ಸೋಲಿಸಲಾರ; ಅವಳು ತಪಸ್ಸು ಮಾಡಿ ಶಿವನಿಂದ ಅವನ ಸಾವಿಗೆ ತಾನು ಕಾರಣಳಾಗುವೆನೆಂಬ ವರ ಪಡೆಯುತ್ತಾಳೆ. ಮಹಾಭಾರತದಲ್ಲಿ ಅವಳು ದ್ರುಪದನ ಮನೆಯಲ್ಲಿ ಶಿಖಂಡಿಯಾಗಿ ಮರುಹುಟ್ಟು ಪಡೆಯುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "sibling",
+     "to": "ambika",
+     "ref": "5.173.9",
+     "ed": "vu"
+    },
+    {
+     "type": "sibling",
+     "to": "ambalika",
+     "ref": "5.173.9",
+     "ed": "vu"
+    },
+    {
+     "type": "enemy",
+     "to": "bhishma",
+     "ref": "1.109.82",
+     "ed": "vu"
+    },
+    {
+     "type": "other",
+     "to": "shikhandin",
+     "ref": "5.192.64",
+     "ed": "vu",
+     "note_en": "Reborn as Śikhaṇḍin in Drupada's house",
+     "note_kn": "ದ್ರುಪದನ ಮನೆಯಲ್ಲಿ ಶಿಖಂಡಿಯಾಗಿ ಮರುಹುಟ್ಟು"
+    }
+   ],
+   "moments": [
+    {
+     "en": "The three Kāśī sisters are named at their svayaṃvara",
+     "kn": "ಸ್ವಯಂವರದಲ್ಲಿ ಕಾಶಿರಾಜನ ಮೂವರು ಮಕ್ಕಳು",
+     "ref": "5.173.9",
+     "ed": "vu",
+     "with": [
+      "ambika",
+      "ambalika"
+     ]
+    },
+    {
+     "en": "Tells Bhīṣma she had already chosen Śālva",
+     "kn": "ತಾನು ಶಾಲ್ವನನ್ನು ವರಿಸಿದ್ದೇನೆಂದು ಭೀಷ್ಮನಿಗೆ ಹೇಳುತ್ತಾಳೆ",
+     "ref": "1.109.82",
+     "ed": "vu",
+     "with": [
+      "bhishma"
+     ]
+    },
+    {
+     "en": "Rejected by Śālva after Bhīṣma releases her",
+     "kn": "ಭೀಷ್ಮ ಬಿಟ್ಟ ಬಳಿಕ ಶಾಲ್ವನಿಂದ ತಿರಸ್ಕೃತಳಾಗುತ್ತಾಳೆ",
+     "ref": "5.175.11",
+     "ed": "vu"
+    },
+    {
+     "en": "Reborn as Drupada's child Śikhaṇḍin",
+     "kn": "ದ್ರುಪದನ ಮಗು ಶಿಖಂಡಿಯಾಗಿ ಮರುಹುಟ್ಟು",
+     "ref": "5.192.64",
+     "ed": "vu",
+     "with": [
+      "shikhandin",
+      "drupada"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ambika",
+   "name": "Ambikā",
+   "group": "kuru",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [],
+   "match": [
+    "Kausalyā"
+   ],
+   "role_en": "Elder widow of Vicitravīrya, mother of the blind Dhṛtarāṣṭra",
+   "role_kn": "ವಿಚಿತ್ರವೀರ್ಯನ ಹಿರಿಯ ಪತ್ನಿ; ಕುರುಡ ಧೃತರಾಷ್ಟ್ರನ ತಾಯಿ",
+   "desc_en": "Ambikā is the second of the three Kāśī princesses, carried off by Bhīṣma and married to Vicitravīrya. After his death Satyavatī sends her to Vyāsa. She shuts her eyes in fear at his appearance, so her son Dhṛtarāṣṭra is born blind. (The text sometimes calls her Kausalyā, ‘the Kosala princess’, which is unrelated to Rāma's mother.) She later retires to the forest with Satyavatī and Ambālikā and dies there.",
+   "desc_kn": "ಅಂಬಿಕೆ ಕಾಶಿರಾಜನ ಮೂವರು ಮಕ್ಕಳಲ್ಲಿ ಎರಡನೆಯವಳು; ಭೀಷ್ಮನು ಅಪಹರಿಸಿ ವಿಚಿತ್ರವೀರ್ಯನಿಗೆ ಮದುವೆ ಮಾಡಿಕೊಡುತ್ತಾನೆ. ಅವನ ಮರಣದ ನಂತರ ಸತ್ಯವತಿ ಅವಳನ್ನು ವ್ಯಾಸರ ಬಳಿ ಕಳುಹಿಸುತ್ತಾಳೆ. ವ್ಯಾಸರ ರೂಪಕ್ಕೆ ಹೆದರಿ ಅವಳು ಕಣ್ಣು ಮುಚ್ಚಿಕೊಂಡಿದ್ದರಿಂದ ಮಗ ಧೃತರಾಷ್ಟ್ರ ಕುರುಡನಾಗಿ ಹುಟ್ಟುತ್ತಾನೆ. (ಪಠ್ಯದಲ್ಲಿ ಕೆಲವೆಡೆ ಅವಳನ್ನು ‘ಕೌಸಲ್ಯಾ’ — ಕೋಸಲ ರಾಜಕುಮಾರಿ ಎಂದು ಕರೆಯಲಾಗಿದೆ; ರಾಮನ ತಾಯಿಗೂ ಇದಕ್ಕೂ ಸಂಬಂಧವಿಲ್ಲ.) ಕೊನೆಗೆ ಸತ್ಯವತಿ, ಅಂಬಾಲಿಕೆಯರೊಂದಿಗೆ ಕಾಡಿಗೆ ಹೋಗಿ ಅಲ್ಲೇ ತೀರುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "sibling",
+     "to": "ambalika",
+     "ref": "5.173.9",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Married to Vicitravīrya",
+     "kn": "ವಿಚಿತ್ರವೀರ್ಯನೊಂದಿಗೆ ಮದುವೆ",
+     "ref": "1.109.69",
+     "ed": "vu",
+     "with": [
+      "vichitravirya",
+      "bhishma"
+     ]
+    },
+    {
+     "en": "Closes her eyes before Vyāsa; Dhṛtarāṣṭra is born blind",
+     "kn": "ವ್ಯಾಸರನ್ನು ಕಂಡು ಕಣ್ಣು ಮುಚ್ಚುತ್ತಾಳೆ; ಧೃತರಾಷ್ಟ್ರ ಕುರುಡನಾಗಿ ಹುಟ್ಟುತ್ತಾನೆ",
+     "ref": "1.115.6",
+     "ed": "vu",
+     "with": [
+      "vyasa"
+     ]
+    },
+    {
+     "en": "Her blind son is born",
+     "kn": "ಕುರುಡ ಮಗನ ಜನನ",
+     "ref": "1.115.33",
+     "ed": "vu",
+     "with": [
+      "dhritarashtra"
+     ]
+    },
+    {
+     "en": "Goes to the forest with Satyavatī",
+     "kn": "ಸತ್ಯವತಿಯೊಂದಿಗೆ ಕಾಡಿಗೆ ಹೋಗುತ್ತಾಳೆ",
+     "ref": "1.137.12",
+     "ed": "vu",
+     "with": [
+      "satyavati"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ambalika",
+   "name": "Ambālikā",
+   "group": "kuru",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [],
+   "match": [],
+   "role_en": "Younger widow of Vicitravīrya, mother of Pāṇḍu",
+   "role_kn": "ವಿಚಿತ್ರವೀರ್ಯನ ಕಿರಿಯ ಪತ್ನಿ; ಪಾಂಡುವಿನ ತಾಯಿ",
+   "desc_en": "Ambālikā is the youngest of the Kāśī princesses and the second wife of Vicitravīrya. When Satyavatī sends her to Vyāsa after his death, she turns pale at the sight of him. Vyāsa says her son will therefore be ‘pale’ (pāṇḍu), and that is the name of the child, the father of the Pāṇḍavas. She later goes to the forest with Satyavatī and Ambikā, practises austerities and dies there.",
+   "desc_kn": "ಅಂಬಾಲಿಕೆ ಕಾಶಿರಾಜನ ಕಿರಿಯ ಮಗಳು, ವಿಚಿತ್ರವೀರ್ಯನ ಎರಡನೆಯ ಪತ್ನಿ. ಅವನ ಮರಣದ ನಂತರ ಸತ್ಯವತಿ ಅವಳನ್ನು ವ್ಯಾಸರ ಬಳಿ ಕಳುಹಿಸಿದಾಗ ಅವರನ್ನು ಕಂಡು ಅವಳು ಬಿಳಿಚಿಕೊಳ್ಳುತ್ತಾಳೆ. ಅದಕ್ಕೇ ಮಗ ‘ಪಾಂಡು’ (ಬಿಳಿಚಿದವನು) ಎಂದು ಕರೆಯಲ್ಪಡುತ್ತಾನೆ ಎಂದು ವ್ಯಾಸರು ಹೇಳುತ್ತಾರೆ; ಅವನೇ ಪಾಂಡವರ ತಂದೆ. ಕೊನೆಗೆ ಅವಳು ಸತ್ಯವತಿ, ಅಂಬಿಕೆಯರೊಂದಿಗೆ ಕಾಡಿಗೆ ಹೋಗಿ ತಪಸ್ಸು ಮಾಡಿ ಅಲ್ಲೇ ತೀರುತ್ತಾಳೆ.",
+   "relations": [],
+   "moments": [
+    {
+     "en": "Married to Vicitravīrya",
+     "kn": "ವಿಚಿತ್ರವೀರ್ಯನೊಂದಿಗೆ ಮದುವೆ",
+     "ref": "1.109.69",
+     "ed": "vu",
+     "with": [
+      "vichitravirya",
+      "bhishma"
+     ]
+    },
+    {
+     "en": "Satyavatī sends her to Vyāsa",
+     "kn": "ಸತ್ಯವತಿ ಅವಳನ್ನು ವ್ಯಾಸರ ಬಳಿ ಕಳುಹಿಸುತ್ತಾಳೆ",
+     "ref": "1.115.20",
+     "ed": "vu",
+     "with": [
+      "satyavati",
+      "vyasa"
+     ]
+    },
+    {
+     "en": "Turns pale before Vyāsa, so her son is named Pāṇḍu",
+     "kn": "ವ್ಯಾಸರನ್ನು ಕಂಡು ಬಿಳಿಚಿಕೊಳ್ಳುತ್ತಾಳೆ; ಮಗನಿಗೆ ಪಾಂಡು ಎಂದು ಹೆಸರು",
+     "ref": "1.115.22",
+     "ed": "vu",
+     "with": [
+      "vyasa",
+      "pandu"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vidura",
+   "name": "Vidura",
+   "group": "kuru",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Kṣattṛ",
+    "Kṣattā"
+   ],
+   "match": [],
+   "role_en": "The wise half-brother of Dhṛtarāṣṭra and Pāṇḍu, who always counselled dharma",
+   "role_kn": "ಧೃತರಾಷ್ಟ್ರ-ಪಾಂಡುವಿನ ಜ್ಞಾನಿ ಮಲಸಹೋದರ; ಸದಾ ಧರ್ಮದ ಸಲಹೆ ನೀಡಿದವನು",
+   "desc_en": "Vidura is Vyāsa's son by a maidservant of Ambikā, and is explained as Dharma himself born through the sage Māṇḍavya's curse. He serves Dhṛtarāṣṭra as minister, but repeatedly speaks for the Pāṇḍavas: he warns of the lacquer house, objects to the dice game and Draupadī's humiliation, and receives Kṛṣṇa in his own house before the embassy. Dhṛtarāṣṭra does not follow his advice. He does not fight; later he lives in the forest with Dhṛtarāṣṭra and Gāndhārī and, when Yudhiṣṭhira finds him, leaves his body into Yudhiṣṭhira's, as Dharma into Dharma.",
+   "desc_kn": "ವಿದುರ ವ್ಯಾಸರಿಗೆ ಅಂಬಿಕೆಯ ದಾಸಿಯಲ್ಲಿ ಹುಟ್ಟಿದ ಮಗ; ಮಾಂಡವ್ಯ ಋಷಿಯ ಶಾಪದಿಂದ ಧರ್ಮದೇವತೆಯೇ ವಿದುರನಾಗಿ ಹುಟ್ಟಿದನೆಂದು ಹೇಳಲಾಗಿದೆ. ಧೃತರಾಷ್ಟ್ರನ ಮಂತ್ರಿಯಾಗಿದ್ದರೂ ಅವನು ಪದೇಪದೇ ಪಾಂಡವರ ಪರವಾಗಿ ಮಾತನಾಡುತ್ತಾನೆ: ಅರಗಿನ ಮನೆಯ ಬಗ್ಗೆ ಎಚ್ಚರಿಸುತ್ತಾನೆ, ಜೂಜನ್ನೂ ದ್ರೌಪದಿಯ ಅವಮಾನವನ್ನೂ ವಿರೋಧಿಸುತ್ತಾನೆ, ಕೃಷ್ಣ ಸಂಧಾನಕ್ಕೆ ಬಂದಾಗ ತನ್ನ ಮನೆಯಲ್ಲಿ ಆತಿಥ್ಯ ನೀಡುತ್ತಾನೆ. ಧೃತರಾಷ್ಟ್ರ ಅವನ ಮಾತು ಕೇಳುವುದಿಲ್ಲ. ಅವನು ಯುದ್ಧ ಮಾಡುವುದಿಲ್ಲ; ಮುಂದೆ ಧೃತರಾಷ್ಟ್ರ-ಗಾಂಧಾರಿಯರೊಂದಿಗೆ ಕಾಡಿನಲ್ಲಿ ವಾಸಿಸುತ್ತಾನೆ; ಯುಧಿಷ್ಠಿರ ಅವನನ್ನು ಕಂಡಾಗ ತನ್ನ ದೇಹವನ್ನು ತ್ಯಜಿಸಿ ಧರ್ಮನಾದ ಯುಧಿಷ್ಠಿರನಲ್ಲಿ ಲೀನನಾಗುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "vyasa",
+     "ref": "1.115.43",
+     "ed": "vu"
+    },
+    {
+     "type": "serves",
+     "to": "dhritarashtra",
+     "ref": "5.33.3",
+     "ed": "vu"
+    },
+    {
+     "type": "other",
+     "to": "dharma",
+     "ref": "1.115.44",
+     "ed": "vu",
+     "note_en": "Said to be Dharma himself, born as Vidura by Māṇḍavya's curse",
+     "note_kn": "ಮಾಂಡವ್ಯನ ಶಾಪದಿಂದ ಧರ್ಮದೇವತೆಯೇ ವಿದುರನಾಗಿ ಹುಟ್ಟಿದನೆಂದು ಹೇಳಲಾಗಿದೆ"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Born to Vyāsa and a maidservant; Dharma born as Vidura",
+     "kn": "ವ್ಯಾಸರಿಗೆ ದಾಸಿಯಲ್ಲಿ ಜನನ; ಧರ್ಮವೇ ವಿದುರನಾಗಿ ಹುಟ್ಟಿದ್ದು",
+     "ref": "1.115.43",
+     "ed": "vu",
+     "with": [
+      "vyasa"
+     ]
+    },
+    {
+     "en": "Sends the miner Khanaka to help the Pāṇḍavas escape the lacquer house",
+     "kn": "ಅರಗಿನ ಮನೆಯಿಂದ ಪಾಂಡವರನ್ನು ಪಾರುಮಾಡಲು ಗಣಿಗಾರ ಖನಕನನ್ನು ಕಳುಹಿಸುತ್ತಾನೆ",
+     "ref": "1.159.2",
+     "ed": "vu",
+     "with": [
+      "yudhishthira"
+     ]
+    },
+    {
+     "en": "Speaks against the dice game",
+     "kn": "ಜೂಜಾಟದ ವಿರುದ್ಧ ಮಾತನಾಡುತ್ತಾನೆ",
+     "ref": "2.86.1",
+     "ed": "vu",
+     "with": [
+      "dhritarashtra"
+     ]
+    },
+    {
+     "en": "Receives Kṛṣṇa in his house",
+     "kn": "ಕೃಷ್ಣನನ್ನು ತನ್ನ ಮನೆಯಲ್ಲಿ ಸತ್ಕರಿಸುತ್ತಾನೆ",
+     "ref": "5.89.24",
+     "ed": "vu",
+     "with": [
+      "krishna"
+     ]
+    },
+    {
+     "en": "Lives as an ascetic in the forest; Yudhiṣṭhira finds him",
+     "kn": "ಕಾಡಿನಲ್ಲಿ ತಪಸ್ವಿಯಾಗಿ ವಾಸಿಸುತ್ತಾನೆ; ಯುಧಿಷ್ಠಿರ ಅವನನ್ನು ಭೇಟಿಯಾಗುತ್ತಾನೆ",
+     "ref": "15.28.22",
+     "ed": "vu",
+     "with": [
+      "yudhishthira"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dhritarashtra",
+   "name": "Dhṛtarāṣṭra",
+   "group": "kuru",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Ambikāputra",
+    "Vaicitravīrya"
+   ],
+   "match": [],
+   "role_en": "The blind Kuru king, father of Duryodhana and the hundred Kauravas",
+   "role_kn": "ಕುರುಡ ಕುರುರಾಜ; ದುರ್ಯೋಧನ ಮತ್ತು ನೂರು ಕೌರವರ ತಂದೆ",
+   "desc_en": "Dhṛtarāṣṭra is the eldest son of Ambikā and Vyāsa, born blind, and is passed over for the throne in favour of Pāṇḍu; he rules while Pāṇḍu lives in the forest and as king after his death. He marries Gāndhārī, who bears a hundred sons. Out of affection for Duryodhana he allows the dice game and ignores Vidura, Bhīṣma and Kṛṣṇa, though he often sees the right course. After the war he loses all his sons, nearly crushes Bhīma in an embrace, and later lives in the forest, where he dies with Gāndhārī and Kuntī in a forest fire.",
+   "desc_kn": "ಧೃತರಾಷ್ಟ್ರ ಅಂಬಿಕೆ ಮತ್ತು ವ್ಯಾಸರ ಹಿರಿಯ ಮಗ, ಹುಟ್ಟಿನಿಂದಲೇ ಕುರುಡ; ಆದ್ದರಿಂದ ಪಾಂಡುವೇ ರಾಜನಾಗುತ್ತಾನೆ; ಪಾಂಡು ಕಾಡಿನಲ್ಲಿದ್ದಾಗ ಮತ್ತು ಅವನ ಮರಣದ ನಂತರ ಧೃತರಾಷ್ಟ್ರ ರಾಜ್ಯವಾಳುತ್ತಾನೆ. ಅವನು ಗಾಂಧಾರಿಯನ್ನು ಮದುವೆಯಾಗುತ್ತಾನೆ; ಅವಳಿಗೆ ನೂರು ಮಕ್ಕಳು. ದುರ್ಯೋಧನನ ಮೇಲಿನ ವಾತ್ಸಲ್ಯದಿಂದ ಜೂಜಿಗೆ ಒಪ್ಪುತ್ತಾನೆ; ವಿದುರ, ಭೀಷ್ಮ, ಕೃಷ್ಣರ ಮಾತನ್ನು ಕೇಳುವುದಿಲ್ಲ, ಆದರೂ ಸರಿಯಾದ ದಾರಿ ಅವನಿಗೆ ಗೊತ್ತಿರುತ್ತದೆ. ಯುದ್ಧದ ನಂತರ ಎಲ್ಲ ಮಕ್ಕಳನ್ನು ಕಳೆದುಕೊಂಡು, ಭೀಮನನ್ನು ಅಪ್ಪಿ ಪುಡಿ ಮಾಡಲು ಹೊರಟು, ಮುಂದೆ ಕಾಡಿನಲ್ಲಿ ವಾಸಿಸುತ್ತಾನೆ; ಅಲ್ಲಿ ಗಾಂಧಾರಿ ಮತ್ತು ಕುಂತಿಯರೊಂದಿಗೆ ಕಾಡ್ಗಿಚ್ಚಿನಲ್ಲಿ ತೀರುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "vyasa"
+    },
+    {
+     "type": "parent",
+     "to": "ambika",
+     "ref": "1.115.33",
+     "ed": "vu"
+    },
+    {
+     "type": "spouse",
+     "to": "gandhari",
+     "ref": "1.119.12",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Born blind to Ambikā",
+     "kn": "ಅಂಬಿಕೆಗೆ ಕುರುಡನಾಗಿ ಹುಟ್ಟುತ್ತಾನೆ",
+     "ref": "1.115.33",
+     "ed": "vu",
+     "with": [
+      "ambika"
+     ]
+    },
+    {
+     "en": "Marries Gāndhārī",
+     "kn": "ಗಾಂಧಾರಿಯನ್ನು ಮದುವೆಯಾಗುತ್ತಾನೆ",
+     "ref": "1.119.12",
+     "ed": "vu",
+     "with": [
+      "gandhari"
+     ]
+    },
+    {
+     "en": "Agrees to the dice game at Duryodhana's urging",
+     "kn": "ದುರ್ಯೋಧನನ ಒತ್ತಾಯದಿಂದ ಜೂಜಿಗೆ ಒಪ್ಪುತ್ತಾನೆ",
+     "ref": "2.76.8",
+     "ed": "vu",
+     "with": [
+      "duryodhana",
+      "shakuni"
+     ]
+    },
+    {
+     "en": "Hears Kṛṣṇa's peace mission",
+     "kn": "ಕೃಷ್ಣನ ಸಂಧಾನ ಸಂದೇಶವನ್ನು ಕೇಳುತ್ತಾನೆ",
+     "ref": "5.129.1",
+     "ed": "vu",
+     "with": [
+      "krishna",
+      "vidura"
+     ]
+    },
+    {
+     "en": "Embraces the iron statue instead of Bhīma",
+     "kn": "ಭೀಮನ ಬದಲು ಕಬ್ಬಿಣದ ಪ್ರತಿಮೆಯನ್ನು ಅಪ್ಪುತ್ತಾನೆ",
+     "ref": "11.11.23",
+     "ed": "vu",
+     "with": [
+      "bhima",
+      "krishna"
+     ]
+    },
+    {
+     "en": "Retires to the forest and dies in a forest fire",
+     "kn": "ಕಾಡಿಗೆ ತೆರಳಿ ಕಾಡ್ಗಿಚ್ಚಿನಲ್ಲಿ ತೀರುತ್ತಾನೆ",
+     "ref": "15.39.6",
+     "ed": "vu",
+     "with": [
+      "gandhari",
+      "kunti"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gandhari",
+   "name": "Gāndhārī",
+   "group": "kuru",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [
+    "Subalātmajā"
+   ],
+   "match": [],
+   "role_en": "Gāndhāra princess, wife of Dhṛtarāṣṭra and mother of the hundred Kauravas",
+   "role_kn": "ಗಾಂಧಾರ ರಾಜಕುಮಾರಿ; ಧೃತರಾಷ್ಟ್ರನ ಪತ್ನಿ, ನೂರು ಕೌರವರ ತಾಯಿ",
+   "desc_en": "Gāndhārī is the daughter of King Subala of Gāndhāra and the sister of Śakuni. Having heard that Dhṛtarāṣṭra is blind, she binds her own eyes with cloth and keeps them covered for life. She has a boon from Vyāsa of a hundred sons, of whom Duryodhana is the eldest. She tells Duryodhana to follow dharma but is not heard; after the war, grieving on the battlefield, she curses Kṛṣṇa that his own clan will perish. She goes to the forest with Dhṛtarāṣṭra and Kuntī and dies in the forest fire.",
+   "desc_kn": "ಗಾಂಧಾರಿ ಗಾಂಧಾರ ರಾಜ ಸುಬಲನ ಮಗಳು, ಶಕುನಿಯ ತಂಗಿ. ಧೃತರಾಷ್ಟ್ರ ಕುರುಡನೆಂದು ತಿಳಿದ ಮೇಲೆ ಅವಳು ತನ್ನ ಕಣ್ಣುಗಳಿಗೆ ಬಟ್ಟೆ ಕಟ್ಟಿಕೊಂಡು ಜೀವನವಿಡೀ ಹಾಗೆಯೇ ಇರುತ್ತಾಳೆ. ವ್ಯಾಸರ ವರದಿಂದ ಅವಳಿಗೆ ನೂರು ಮಕ್ಕಳು; ದುರ್ಯೋಧನ ಹಿರಿಯವನು. ಧರ್ಮದಂತೆ ನಡೆಯುವಂತೆ ಅವಳು ದುರ್ಯೋಧನನಿಗೆ ಹೇಳುತ್ತಾಳೆ, ಆದರೆ ಅವನು ಕೇಳುವುದಿಲ್ಲ; ಯುದ್ಧದ ನಂತರ ರಣಭೂಮಿಯಲ್ಲಿ ದುಃಖಿಸುತ್ತ ಕೃಷ್ಣನ ವಂಶವೂ ನಾಶವಾಗಲಿ ಎಂದು ಶಪಿಸುತ್ತಾಳೆ. ಧೃತರಾಷ್ಟ್ರ ಮತ್ತು ಕುಂತಿಯೊಂದಿಗೆ ಕಾಡಿಗೆ ಹೋಗಿ ಕಾಡ್ಗಿಚ್ಚಿನಲ್ಲಿ ತೀರುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "sibling",
+     "to": "shakuni",
+     "ref": "1.119.15",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Binds her eyes on learning her husband is blind",
+     "kn": "ಪತಿ ಕುರುಡನೆಂದು ತಿಳಿದು ತನ್ನ ಕಣ್ಣುಗಳಿಗೆ ಬಟ್ಟೆ ಕಟ್ಟಿಕೊಳ್ಳುತ್ತಾಳೆ",
+     "ref": "1.119.15",
+     "ed": "vu",
+     "with": [
+      "dhritarashtra"
+     ]
+    },
+    {
+     "en": "Receives Vyāsa's boon and bears a hundred sons",
+     "kn": "ವ್ಯಾಸರ ವರದಿಂದ ನೂರು ಮಕ್ಕಳನ್ನು ಹೆರುತ್ತಾಳೆ",
+     "ref": "1.126.4",
+     "ed": "vu",
+     "with": [
+      "dhritarashtra"
+     ]
+    },
+    {
+     "en": "Laments the dead on the battlefield",
+     "kn": "ರಣಭೂಮಿಯಲ್ಲಿ ಸತ್ತವರಿಗಾಗಿ ಗೋಳಾಡುತ್ತಾಳೆ",
+     "ref": "11.25.1",
+     "ed": "vu",
+     "with": [
+      "krishna"
+     ]
+    },
+    {
+     "en": "Curses Kṛṣṇa",
+     "kn": "ಕೃಷ್ಣನನ್ನು ಶಪಿಸುತ್ತಾಳೆ",
+     "ref": "11.25.38",
+     "ed": "vu",
+     "with": [
+      "krishna"
+     ]
+    },
+    {
+     "en": "Goes with Kuntī to the forest and dies in the fire",
+     "kn": "ಕುಂತಿಯೊಂದಿಗೆ ಕಾಡಿಗೆ ಹೋಗಿ ಕಾಡ್ಗಿಚ್ಚಿನಲ್ಲಿ ತೀರುತ್ತಾಳೆ",
+     "ref": "15.39.31",
+     "ed": "vu",
+     "with": [
+      "kunti"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pandu",
+   "name": "Pāṇḍu",
+   "group": "kuru",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [],
+   "match": [],
+   "role_en": "Kuru king and father of the Pāṇḍavas, who died under a sage's curse",
+   "role_kn": "ಕುರುರಾಜ; ಪಾಂಡವರ ತಂದೆ, ಋಷಿಶಾಪದಿಂದ ಮರಣ ಹೊಂದಿದವನು",
+   "desc_en": "Pāṇḍu is Vyāsa's son by Ambālikā, named for her pallor, and a great archer-king. He marries Kuntī and Mādrī and conquers many lands. While hunting he shoots a sage, Kindama, who was mating in deer form, and is cursed to die if he approaches his wife. He retires to the forest, where Kuntī and Mādrī bear his sons through gods (Yudhiṣṭhira, Bhīma and Arjuna from Kuntī, Nakula and Sahadeva from Mādrī). Overcome by desire he embraces Mādrī and dies, and Mādrī follows him on the pyre.",
+   "desc_kn": "ಪಾಂಡು ವ್ಯಾಸರಿಗೆ ಅಂಬಾಲಿಕೆಯಲ್ಲಿ ಹುಟ್ಟಿದ ಮಗ; ಅವಳ ಬಿಳಿಚುವಿಕೆಯಿಂದ ಈ ಹೆಸರು. ಅವನು ಶ್ರೇಷ್ಠ ಬಿಲ್ಲುಗಾರ ರಾಜ. ಕುಂತಿ ಮತ್ತು ಮಾದ್ರಿಯರನ್ನು ಮದುವೆಯಾಗಿ ಅನೇಕ ರಾಜ್ಯಗಳನ್ನು ಗೆಲ್ಲುತ್ತಾನೆ. ಬೇಟೆಯಲ್ಲಿ ಜಿಂಕೆಯ ರೂಪದಲ್ಲಿ ಸಂಭೋಗದಲ್ಲಿದ್ದ ಕಿಂದಮ ಋಷಿಗೆ ಬಾಣ ಹೊಡೆದು, ಪತ್ನಿಯನ್ನು ಸಮೀಪಿಸಿದರೆ ಸಾವು ಬರುವುದೆಂಬ ಶಾಪ ಪಡೆಯುತ್ತಾನೆ. ಕಾಡಿಗೆ ತೆರಳಿದಾಗ ಕುಂತಿ ಮತ್ತು ಮಾದ್ರಿಯರು ದೇವತೆಗಳ ಮೂಲಕ ಮಕ್ಕಳನ್ನು ಪಡೆಯುತ್ತಾರೆ (ಕುಂತಿಗೆ ಯುಧಿಷ್ಠಿರ, ಭೀಮ, ಅರ್ಜುನ; ಮಾದ್ರಿಗೆ ನಕುಲ, ಸಹದೇವ). ಒಮ್ಮೆ ಕಾಮ ವಶನಾಗಿ ಮಾದ್ರಿಯನ್ನು ಅಪ್ಪಿ ಅವನು ಸಾಯುತ್ತಾನೆ; ಮಾದ್ರಿ ಅವನ ಚಿತೆಯಲ್ಲಿ ಸಹಗಮನ ಮಾಡುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "vyasa"
+    },
+    {
+     "type": "parent",
+     "to": "ambalika",
+     "ref": "1.115.22",
+     "ed": "vu"
+    },
+    {
+     "type": "spouse",
+     "to": "kunti",
+     "ref": "1.121.4",
+     "ed": "vu"
+    },
+    {
+     "type": "spouse",
+     "to": "madri",
+     "ref": "1.122.18",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Kuntī chooses him at her svayaṃvara",
+     "kn": "ಕುಂತಿ ಸ್ವಯಂವರದಲ್ಲಿ ಅವನನ್ನು ವರಿಸುತ್ತಾಳೆ",
+     "ref": "1.121.4",
+     "ed": "vu",
+     "with": [
+      "kunti"
+     ]
+    },
+    {
+     "en": "Marries Mādrī, brought by Bhīṣma",
+     "kn": "ಭೀಷ್ಮ ತಂದ ಮಾದ್ರಿಯನ್ನು ಮದುವೆಯಾಗುತ್ತಾನೆ",
+     "ref": "1.122.18",
+     "ed": "vu",
+     "with": [
+      "madri",
+      "bhishma"
+     ]
+    },
+    {
+     "en": "Grieves in the forest after the sage's curse",
+     "kn": "ಋಷಿಯ ಶಾಪದ ನಂತರ ಕಾಡಿನಲ್ಲಿ ದುಃಖಿಸುತ್ತಾನೆ",
+     "ref": "1.124.1",
+     "ed": "vu"
+    },
+    {
+     "en": "Asks Kuntī to call a god to give him sons",
+     "kn": "ದೇವತೆಯ ಮೂಲಕ ಮಕ್ಕಳನ್ನು ಪಡೆಯಲು ಕುಂತಿಗೆ ಹೇಳುತ್ತಾನೆ",
+     "ref": "1.129.4",
+     "ed": "vu",
+     "with": [
+      "kunti"
+     ]
+    },
+    {
+     "en": "Dies in Mādrī's embrace",
+     "kn": "ಮಾದ್ರಿಯ ಅಪ್ಪುಗೆಯಲ್ಲಿ ಮರಣ ಹೊಂದುತ್ತಾನೆ",
+     "ref": "1.134.31",
+     "ed": "vu",
+     "with": [
+      "madri",
+      "kunti"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kunti",
+   "name": "Kuntī",
+   "group": "kuru",
+   "gender": "f",
+   "rank": 1,
+   "epithets": [
+    "Pṛthā"
+   ],
+   "match": [],
+   "role_en": "Mother of Yudhiṣṭhira, Bhīma and Arjuna, and of Karṇa before her marriage",
+   "role_kn": "ಯುಧಿಷ್ಠಿರ, ಭೀಮ, ಅರ್ಜುನರ ತಾಯಿ; ಮದುವೆಗೆ ಮುನ್ನ ಕರ್ಣನ ತಾಯಿ",
+   "desc_en": "Kuntī, born Pṛthā, is the daughter of Śūra, raised by Kuntibhoja. As a girl she serves the sage Durvāsas and receives a mantra to call any god; testing it she calls the Sun and bears Karṇa, whom she abandons. She marries Pāṇḍu and, with the mantra, bears Yudhiṣṭhira, Bhīma and Arjuna through Dharma, Vāyu and Indra, and shares it with Mādrī. As a widow she raises all five Pāṇḍavas, shields them in the lacquer house and at Ekacakrā, and before the war reveals to Karṇa that he is her son. After the war she goes to the forest with Dhṛtarāṣṭra and Gāndhārī and dies in the forest fire.",
+   "desc_kn": "ಕುಂತಿ, ಹುಟ್ಟಿದಾಗ ಪೃಥಾ, ಶೂರನ ಮಗಳು; ಕುಂತಿಭೋಜನ ಬಳಿ ಬೆಳೆಯುತ್ತಾಳೆ. ಬಾಲ್ಯದಲ್ಲಿ ದೂರ್ವಾಸ ಮುನಿಯ ಸೇವೆ ಮಾಡಿ ಯಾವ ದೇವತೆಯನ್ನಾದರೂ ಕರೆಯುವ ಮಂತ್ರ ಪಡೆಯುತ್ತಾಳೆ; ಪರೀಕ್ಷಿಸಲು ಸೂರ್ಯನನ್ನು ಕರೆದು ಕರ್ಣನನ್ನು ಹೆತ್ತು ಅವನನ್ನು ತ್ಯಜಿಸುತ್ತಾಳೆ. ಪಾಂಡುವನ್ನು ಮದುವೆಯಾಗಿ ಅದೇ ಮಂತ್ರದಿಂದ ಧರ್ಮ, ವಾಯು, ಇಂದ್ರರ ಮೂಲಕ ಯುಧಿಷ್ಠಿರ, ಭೀಮ, ಅರ್ಜುನರನ್ನು ಪಡೆಯುತ್ತಾಳೆ; ಮಂತ್ರವನ್ನು ಮಾದ್ರಿಗೂ ಹಂಚುತ್ತಾಳೆ. ವಿಧವೆಯಾದ ಮೇಲೆ ಐವರು ಪಾಂಡವರನ್ನೂ ಬೆಳೆಸಿ, ಅರಗಿನ ಮನೆಯಲ್ಲೂ ಏಕಚಕ್ರದಲ್ಲೂ ರಕ್ಷಿಸುತ್ತಾಳೆ; ಯುದ್ಧಕ್ಕೆ ಮುನ್ನ ಕರ್ಣನಿಗೆ ಅವನು ತನ್ನ ಮಗನೆಂದು ತಿಳಿಸುತ್ತಾಳೆ. ಯುದ್ಧದ ನಂತರ ಧೃತರಾಷ್ಟ್ರ-ಗಾಂಧಾರಿಯರೊಂದಿಗೆ ಕಾಡಿಗೆ ಹೋಗಿ ಕಾಡ್ಗಿಚ್ಚಿನಲ್ಲಿ ತೀರುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "sibling",
+     "to": "vasudeva"
+    },
+    {
+     "type": "other",
+     "to": "durvasas",
+     "ref": "1.120.7",
+     "ed": "vu",
+     "note_en": "Receives from him the mantra for calling gods",
+     "note_kn": "ಅವನಿಂದ ದೇವತೆಗಳನ್ನು ಕರೆಯುವ ಮಂತ್ರ ಪಡೆಯುತ್ತಾಳೆ"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Serves Durvāsas and receives the mantra",
+     "kn": "ದೂರ್ವಾಸರ ಸೇವೆ ಮಾಡಿ ಮಂತ್ರ ಪಡೆಯುತ್ತಾಳೆ",
+     "ref": "1.120.7",
+     "ed": "vu",
+     "with": [
+      "durvasas"
+     ]
+    },
+    {
+     "en": "Bears Karṇa to the Sun while unmarried",
+     "kn": "ಅವಿವಾಹಿತಳಾಗಿರುವಾಗ ಸೂರ್ಯನಿಂದ ಕರ್ಣನನ್ನು ಪಡೆಯುತ್ತಾಳೆ",
+     "ref": "1.120.31",
+     "ed": "vu",
+     "with": [
+      "karna",
+      "surya"
+     ]
+    },
+    {
+     "en": "Calls Dharma at Pāṇḍu's wish; Yudhiṣṭhira is born",
+     "kn": "ಪಾಂಡುವಿನ ಇಚ್ಛೆಯಂತೆ ಧರ್ಮನನ್ನು ಕರೆಯುತ್ತಾಳೆ; ಯುಧಿಷ್ಠಿರನ ಜನನ",
+     "ref": "1.129.16",
+     "ed": "vu",
+     "with": [
+      "dharma",
+      "pandu"
+     ]
+    },
+    {
+     "en": "Tells Karṇa he is her son",
+     "kn": "ಕರ್ಣನಿಗೆ ಅವನು ತನ್ನ ಮಗನೆಂದು ತಿಳಿಸುತ್ತಾಳೆ",
+     "ref": "5.145.1",
+     "ed": "vu",
+     "with": [
+      "karna"
+     ]
+    },
+    {
+     "en": "Follows Dhṛtarāṣṭra and Gāndhārī to the forest",
+     "kn": "ಧೃತರಾಷ್ಟ್ರ-ಗಾಂಧಾರಿಯರೊಂದಿಗೆ ಕಾಡಿಗೆ ಹೋಗುತ್ತಾಳೆ",
+     "ref": "15.39.14",
+     "ed": "vu",
+     "with": [
+      "gandhari"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "madri",
+   "name": "Mādrī",
+   "group": "kuru",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [
+    "Mādravatī"
+   ],
+   "match": [],
+   "role_en": "Pāṇḍu's second wife, mother of Nakula and Sahadeva, who died on his pyre",
+   "role_kn": "ಪಾಂಡುವಿನ ಎರಡನೆಯ ಪತ್ನಿ; ನಕುಲ-ಸಹದೇವರ ತಾಯಿ, ಅವನ ಚಿತೆಯಲ್ಲಿ ಪ್ರಾಣ ತೊರೆದವಳು",
+   "desc_en": "Mādrī, a princess of Madra and sister of Śalya, is married to Pāṇḍu by Bhīṣma. In the forest Kuntī shares her mantra with her, and by calling the twin Aśvins she bears Nakula and Sahadeva. When Pāṇḍu, overcome by desire, approaches her and dies under the curse, she blames herself. She mounts his pyre and leaves her sons in Kuntī's care.",
+   "desc_kn": "ಮಾದ್ರಿ ಮದ್ರ ದೇಶದ ರಾಜಕುಮಾರಿ, ಶಲ್ಯನ ತಂಗಿ; ಭೀಷ್ಮ ಅವಳನ್ನು ಪಾಂಡುವಿಗೆ ಮದುವೆ ಮಾಡಿಕೊಡುತ್ತಾನೆ. ಕಾಡಿನಲ್ಲಿ ಕುಂತಿ ತನ್ನ ಮಂತ್ರವನ್ನು ಅವಳಿಗೆ ಹಂಚುತ್ತಾಳೆ; ಅಶ್ವಿನೀ ದೇವತೆಗಳನ್ನು ಕರೆದು ಅವಳು ನಕುಲ ಮತ್ತು ಸಹದೇವರನ್ನು ಪಡೆಯುತ್ತಾಳೆ. ಕಾಮ ವಶನಾದ ಪಾಂಡು ಅವಳ ಬಳಿ ಬಂದು ಶಾಪದಂತೆ ಸತ್ತಾಗ ಅವಳು ತನ್ನನ್ನೇ ಹೊಣೆಗಾರಳೆಂದು ತಿಳಿಯುತ್ತಾಳೆ; ಅವನ ಚಿತೆ ಏರಿ ಮಕ್ಕಳನ್ನು ಕುಂತಿಯ ಆರೈಕೆಗೆ ಬಿಡುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "sibling",
+     "to": "shalya",
+     "ref": "1.122.6",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Married to Pāṇḍu by Bhīṣma",
+     "kn": "ಭೀಷ್ಮನು ಪಾಂಡುವಿಗೆ ಮಾದ್ರಿಯನ್ನು ಮದುವೆ ಮಾಡುತ್ತಾನೆ",
+     "ref": "1.122.18",
+     "ed": "vu",
+     "with": [
+      "pandu",
+      "bhishma"
+     ]
+    },
+    {
+     "en": "Calls the Aśvins; Nakula and Sahadeva are born",
+     "kn": "ಅಶ್ವಿನರನ್ನು ಕರೆಯುತ್ತಾಳೆ; ನಕುಲ-ಸಹದೇವರ ಜನನ",
+     "ref": "1.133.18",
+     "ed": "vu",
+     "with": [
+      "ashvins",
+      "nakula",
+      "sahadeva"
+     ]
+    },
+    {
+     "en": "Pāṇḍu dies in her embrace; she mourns",
+     "kn": "ಅವಳ ಅಪ್ಪುಗೆಯಲ್ಲಿ ಪಾಂಡು ಸಾಯುತ್ತಾನೆ; ಅವಳು ದುಃಖಿಸುತ್ತಾಳೆ",
+     "ref": "1.134.27",
+     "ed": "vu",
+     "with": [
+      "pandu"
+     ]
+    },
+    {
+     "en": "Enters Pāṇḍu's pyre",
+     "kn": "ಪಾಂಡುವಿನ ಚಿತೆಯನ್ನು ಏರುತ್ತಾಳೆ",
+     "ref": "1.63.68",
+     "ed": "vu",
+     "with": [
+      "pandu",
+      "kunti"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "yudhishthira",
+   "name": "Yudhiṣṭhira",
+   "group": "pandava",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Dharmarāja",
+    "Dharmaputra",
+    "Ajātaśatru",
+    "Kaunteya",
+    "Kuntīputra"
+   ],
+   "match": [],
+   "role_en": "Eldest Pāṇḍava, the king devoted to dharma, son of Dharma",
+   "role_kn": "ಪಾಂಡವರಲ್ಲಿ ಹಿರಿಯ; ಧರ್ಮನಿಷ್ಠ ರಾಜ, ಧರ್ಮದೇವನ ಮಗ",
+   "desc_en": "Yudhiṣṭhira is the eldest of the five Pāṇḍavas, born to Kuntī through the god Dharma, and is known for truthfulness. He performs the Rājasūya at Indraprastha, then loses his kingdom, his brothers, himself and Draupadī in the dice game against Śakuni. After twelve years in the forest and a year in disguise at Virāṭa's court he fights for his share; in the war he speaks the half-truth about Aśvatthāman's death and kills Śalya. He rules after the war, performs the horse sacrifice, and at the end walks to heaven with a dog, refusing to enter without it.",
+   "desc_kn": "ಯುಧಿಷ್ಠಿರ ಐವರು ಪಾಂಡವರಲ್ಲಿ ಹಿರಿಯ; ಕುಂತಿಗೆ ಧರ್ಮದೇವನಿಂದ ಹುಟ್ಟಿದವನು, ಸತ್ಯನಿಷ್ಠೆಗೆ ಹೆಸರಾದವನು. ಇಂದ್ರಪ್ರಸ್ಥದಲ್ಲಿ ರಾಜಸೂಯ ಯಜ್ಞ ಮಾಡುತ್ತಾನೆ; ನಂತರ ಶಕುನಿಯ ವಿರುದ್ಧ ಜೂಜಾಡಿ ರಾಜ್ಯ, ತಮ್ಮಂದಿರು, ತನ್ನನ್ನು ಮತ್ತು ದ್ರೌಪದಿಯನ್ನು ಸೋಲುತ್ತಾನೆ. ಹನ್ನೆರಡು ವರ್ಷ ವನವಾಸ ಮತ್ತು ವಿರಾಟನ ಅರಮನೆಯಲ್ಲಿ ಒಂದು ವರ್ಷ ವೇಷಮರೆಸಿ ಕಳೆದ ಮೇಲೆ ತನ್ನ ಪಾಲಿಗಾಗಿ ಹೋರಾಡುತ್ತಾನೆ; ಯುದ್ಧದಲ್ಲಿ ಅಶ್ವತ್ಥಾಮನ ಸಾವಿನ ಬಗ್ಗೆ ಅರ್ಧಸತ್ಯ ಹೇಳುತ್ತಾನೆ ಮತ್ತು ಶಲ್ಯನನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ. ಯುದ್ಧಾನಂತರ ರಾಜ್ಯಭಾರ ಮಾಡಿ ಅಶ್ವಮೇಧ ನಡೆಸುತ್ತಾನೆ; ಕೊನೆಯಲ್ಲಿ ನಾಯಿಯನ್ನು ಬಿಡದೆ ಅದರೊಂದಿಗೇ ಸ್ವರ್ಗಕ್ಕೆ ಹೋಗುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "pandu"
+    },
+    {
+     "type": "parent",
+     "to": "kunti"
+    },
+    {
+     "type": "parent",
+     "to": "dharma"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Performs the Rājasūya sacrifice",
+     "kn": "ರಾಜಸೂಯ ಯಜ್ಞವನ್ನು ಆರಂಭಿಸುತ್ತಾನೆ",
+     "ref": "2.34.66",
+     "ed": "vu"
+    },
+    {
+     "en": "Loses at dice to Śakuni",
+     "kn": "ಜೂಜಿನಲ್ಲಿ ಶಕುನಿಯಿಂದ ಸೋಲುತ್ತಾನೆ",
+     "ref": "2.85.20",
+     "ed": "vu",
+     "with": [
+      "shakuni"
+     ]
+    },
+    {
+     "en": "Answers the Yakṣa's questions beside the lake",
+     "kn": "ಸರೋವರದ ಬಳಿ ಯಕ್ಷನ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸುತ್ತಾನೆ",
+     "ref": "3.314.47",
+     "ed": "vu"
+    },
+    {
+     "en": "Says ‘Aśvatthāmā is dead’, adding indistinctly that it is an elephant",
+     "kn": "‘ಅಶ್ವತ್ಥಾಮ ಸತ್ತ’ ಎಂದು ಹೇಳಿ, ಅದು ಆನೆ ಎಂದು ಅಸ್ಪಷ್ಟವಾಗಿ ಸೇರಿಸುತ್ತಾನೆ",
+     "ref": "7.191.54",
+     "ed": "vu",
+     "with": [
+      "ashvatthaman"
+     ]
+    },
+    {
+     "en": "Kills Śalya with a spear",
+     "kn": "ಶಲ್ಯನನ್ನು ಶಕ್ತ್ಯಾಯುಧದಿಂದ ಕೊಲ್ಲುತ್ತಾನೆ",
+     "ref": "9.16.32",
+     "ed": "vu",
+     "with": [
+      "shalya"
+     ]
+    },
+    {
+     "en": "Refuses to enter heaven without the dog",
+     "kn": "ನಾಯಿಯನ್ನು ಬಿಟ್ಟು ಸ್ವರ್ಗಕ್ಕೆ ಹೋಗಲು ನಿರಾಕರಿಸುತ್ತಾನೆ",
+     "ref": "17.3.14",
+     "ed": "vu",
+     "with": [
+      "indra",
+      "dharma"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bhima",
+   "name": "Bhīma",
+   "group": "pandava",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Bhīmasena",
+    "Vṛkodara",
+    "Pārtha",
+    "Kaunteya"
+   ],
+   "match": [],
+   "role_en": "Second Pāṇḍava, son of Vāyu, the strongest of the brothers",
+   "role_kn": "ಎರಡನೆಯ ಪಾಂಡವ; ವಾಯುಪುತ್ರ, ಸಹೋದರರಲ್ಲಿ ಬಲಿಷ್ಠ",
+   "desc_en": "Bhīma, also Bhīmasena and Vṛkodara, is Kuntī's second son by the wind god Vāyu and the strongest of the Pāṇḍavas. In childhood Duryodhana poisons him; he survives. He kills Hiḍimba, Baka and Kīcaka, and, with Kṛṣṇa's counsel, Jarāsandha. In the dice hall he vows to drink Duḥśāsana's blood and break Duryodhana's thigh, and in the war he keeps both vows. He is the husband of Hiḍimbā, father of Ghaṭotkaca, and in the forest meets Hanumān, who is also Vāyu's son.",
+   "desc_kn": "ಭೀಮ (ಭೀಮಸೇನ, ವೃಕೋದರ) ಕುಂತಿಗೆ ವಾಯುದೇವನಿಂದ ಹುಟ್ಟಿದ ಎರಡನೆಯ ಮಗ; ಪಾಂಡವರಲ್ಲಿ ಅತ್ಯಂತ ಬಲಶಾಲಿ. ಬಾಲ್ಯದಲ್ಲಿ ದುರ್ಯೋಧನ ವಿಷ ಉಣಿಸುತ್ತಾನೆ; ಅವನು ಬದುಕುಳಿಯುತ್ತಾನೆ. ಹಿಡಿಂಬ, ಬಕ, ಕೀಚಕರನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ; ಕೃಷ್ಣನ ಸಲಹೆಯಂತೆ ಜರಾಸಂಧನನ್ನೂ ಕೊಲ್ಲುತ್ತಾನೆ. ಜೂಜಿನ ಸಭೆಯಲ್ಲಿ ದುಶ್ಶಾಸನನ ರಕ್ತ ಕುಡಿಯುವುದಾಗಿಯೂ ದುರ್ಯೋಧನನ ತೊಡೆ ಮುರಿಯುವುದಾಗಿಯೂ ಪ್ರತಿಜ್ಞೆ ಮಾಡುತ್ತಾನೆ; ಯುದ್ಧದಲ್ಲಿ ಎರಡನ್ನೂ ನೆರವೇರಿಸುತ್ತಾನೆ. ಅವನು ಹಿಡಿಂಬೆಯ ಪತಿ, ಘಟೋತ್ಕಚನ ತಂದೆ; ಕಾಡಿನಲ್ಲಿ ಅವನಂತೆ ವಾಯುಪುತ್ರನಾದ ಹನುಮಂತನನ್ನು ಭೇಟಿಯಾಗುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "pandu"
+    },
+    {
+     "type": "parent",
+     "to": "kunti"
+    },
+    {
+     "type": "parent",
+     "to": "vayu"
+    },
+    {
+     "type": "other",
+     "to": "hanumat",
+     "ref": "3.149.4",
+     "ed": "vu",
+     "note_en": "Meets Hanumān, his half-brother as a son of Vāyu, in the forest",
+     "note_kn": "ವಾಯುಪುತ್ರನಾದ ಹನುಮಂತನನ್ನು (ಒಡಹುಟ್ಟಿದವನಂತೆ) ಕಾಡಿನಲ್ಲಿ ಭೇಟಿಯಾಗುತ್ತಾನೆ"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Kills the rākṣasa Baka at Ekacakrā; Baka's kin seek his protection",
+     "kn": "ಏಕಚಕ್ರಾ ನಗರದಲ್ಲಿ ಬಕಾಸುರನನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ; ಬಕನ ಬಂಧುಗಳು ಅವನ ಆಶ್ರಯ ಬೇಡುತ್ತಾರೆ",
+     "ref": "1.178.3",
+     "ed": "vu"
+    },
+    {
+     "en": "Fights and kills Jarāsandha",
+     "kn": "ಜರಾಸಂಧನೊಂದಿಗೆ ಹೋರಾಡಿ ಕೊಲ್ಲುತ್ತಾನೆ",
+     "ref": "2.24.11",
+     "ed": "vu",
+     "with": [
+      "jarasandha",
+      "krishna"
+     ]
+    },
+    {
+     "en": "Vows to drink Duḥśāsana's blood",
+     "kn": "ದುಶ್ಶಾಸನನ ರಕ್ತ ಕುಡಿಯುವ ಪ್ರತಿಜ್ಞೆ",
+     "ref": "2.92.63",
+     "ed": "vu",
+     "with": [
+      "duhshasana"
+     ]
+    },
+    {
+     "en": "Kills Kīcaka, who had molested Draupadī",
+     "kn": "ದ್ರೌಪದಿಗೆ ಕಿರುಕುಳ ಕೊಟ್ಟ ಕೀಚಕನನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ",
+     "ref": "4.26.39",
+     "ed": "vu",
+     "with": [
+      "kichaka"
+     ]
+    },
+    {
+     "en": "Tears open Duḥśāsana and drinks his blood",
+     "kn": "ದುಶ್ಶಾಸನನನ್ನು ಸೀಳಿ ರಕ್ತ ಕುಡಿಯುತ್ತಾನೆ",
+     "ref": "8.87.28",
+     "ed": "vu",
+     "with": [
+      "duhshasana"
+     ]
+    },
+    {
+     "en": "Breaks Duryodhana's thighs with his mace",
+     "kn": "ಗದೆಯಿಂದ ದುರ್ಯೋಧನನ ತೊಡೆಗಳನ್ನು ಮುರಿಯುತ್ತಾನೆ",
+     "ref": "9.59.46",
+     "ed": "vu",
+     "with": [
+      "duryodhana"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "arjuna",
+   "name": "Arjuna",
+   "group": "pandava",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Pārtha",
+    "Dhanañjaya",
+    "Kirīṭin",
+    "Phalguna",
+    "Savyasācin",
+    "Bībhatsu",
+    "Kaunteya",
+    "Jiṣṇu",
+    "Guḍākeśa"
+   ],
+   "match": [],
+   "role_en": "Third Pāṇḍava, son of Indra, the great archer and friend of Kṛṣṇa",
+   "role_kn": "ಮೂರನೆಯ ಪಾಂಡವ; ಇಂದ್ರಪುತ್ರ, ಶ್ರೇಷ್ಠ ಬಿಲ್ಲುಗಾರ ಮತ್ತು ಕೃಷ್ಣನ ಗೆಳೆಯ",
+   "desc_en": "Arjuna is Kuntī's third son by Indra, Droṇa's favourite pupil and the foremost archer. He wins Draupadī at her svayaṃvara, marries Subhadrā, Ulūpī and Citrāṅgadā, and with Kṛṣṇa burns the Khāṇḍava forest. In exile he gains the Pāśupata weapon from Śiva and other weapons in Indra's heaven; at Virāṭa's court he lives as the dance teacher Bṛhannalā. On the Kurukṣetra field Kṛṣṇa is his charioteer and speaks the Bhagavad Gītā to him; he kills Jayadratha, Bhagadatta and Karṇa, and brings down Bhīṣma. On the final journey he falls after Draupadī, Sahadeva and Nakula, because he had boasted he could burn all his enemies alone.",
+   "desc_kn": "ಅರ್ಜುನ ಕುಂತಿಗೆ ಇಂದ್ರನಿಂದ ಹುಟ್ಟಿದ ಮೂರನೆಯ ಮಗ; ದ್ರೋಣರ ಪ್ರಿಯ ಶಿಷ್ಯ, ಅಗ್ರಗಣ್ಯ ಬಿಲ್ಲುಗಾರ. ದ್ರೌಪದಿಯನ್ನು ಸ್ವಯಂವರದಲ್ಲಿ ಗೆಲ್ಲುತ್ತಾನೆ; ಸುಭದ್ರೆ, ಉಲೂಪಿ, ಚಿತ್ರಾಂಗದೆಯರನ್ನು ಮದುವೆಯಾಗುತ್ತಾನೆ; ಕೃಷ್ಣನೊಂದಿಗೆ ಖಾಂಡವವನ ದಹಿಸುತ್ತಾನೆ. ವನವಾಸದಲ್ಲಿ ಶಿವನಿಂದ ಪಾಶುಪತಾಸ್ತ್ರವನ್ನೂ ಇಂದ್ರಲೋಕದಲ್ಲಿ ಇತರ ಅಸ್ತ್ರಗಳನ್ನೂ ಪಡೆಯುತ್ತಾನೆ; ವಿರಾಟನ ಅರಮನೆಯಲ್ಲಿ ನೃತ್ಯಗುರು ಬೃಹನ್ನಳೆಯಾಗಿ ವೇಷ ಮರೆಸಿ ಇರುತ್ತಾನೆ. ಕುರುಕ್ಷೇತ್ರದಲ್ಲಿ ಕೃಷ್ಣ ಅವನ ಸಾರಥಿ, ಅವನಿಗೇ ಭಗವದ್ಗೀತೆ ಹೇಳುತ್ತಾನೆ; ಜಯದ್ರಥ, ಭಗದತ್ತ, ಕರ್ಣರನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ, ಭೀಷ್ಮನನ್ನು ಉರುಳಿಸುತ್ತಾನೆ. ಸ್ವರ್ಗಯಾತ್ರೆಯಲ್ಲಿ ತಾನೊಬ್ಬನೇ ಎಲ್ಲ ಶತ್ರುಗಳನ್ನು ಸುಡಬಲ್ಲೆನೆಂದು ಜಂಭ ಕೊಚ್ಚಿದ್ದರಿಂದ ದ್ರೌಪದಿ, ಸಹದೇವ, ನಕುಲರ ನಂತರ ಬೀಳುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "pandu"
+    },
+    {
+     "type": "parent",
+     "to": "kunti"
+    },
+    {
+     "type": "parent",
+     "to": "indra"
+    },
+    {
+     "type": "teacher",
+     "to": "drona",
+     "ref": "1.143.4",
+     "ed": "vu"
+    },
+    {
+     "type": "friend",
+     "to": "krishna"
+    },
+    {
+     "type": "enemy",
+     "to": "karna"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Hits the bird's eye in Droṇa's test",
+     "kn": "ದ್ರೋಣರ ಪರೀಕ್ಷೆಯಲ್ಲಿ ಹಕ್ಕಿಯ ಕಣ್ಣಿಗೆ ಗುರಿ ಇಡುತ್ತಾನೆ",
+     "ref": "1.143.4",
+     "ed": "vu",
+     "with": [
+      "drona"
+     ]
+    },
+    {
+     "en": "Strings the bow and wins Draupadī at her svayaṃvara",
+     "kn": "ಬಿಲ್ಲಿಗೆ ಹೆದೆ ಏರಿಸಿ ಸ್ವಯಂವರದಲ್ಲಿ ದ್ರೌಪದಿಯನ್ನು ಗೆಲ್ಲುತ್ತಾನೆ",
+     "ref": "1.203.22",
+     "ed": "vu",
+     "with": [
+      "draupadi"
+     ]
+    },
+    {
+     "en": "Receives the Pāśupata weapon",
+     "kn": "ಪಾಶುಪತಾಸ್ತ್ರ ಪಡೆಯುತ್ತಾನೆ",
+     "ref": "3.46.24",
+     "ed": "vu"
+    },
+    {
+     "en": "Lives at Virāṭa's court as Bṛhannalā",
+     "kn": "ವಿರಾಟನ ಅರಮನೆಯಲ್ಲಿ ಬೃಹನ್ನಳೆಯಾಗಿ ಇರುತ್ತಾನೆ",
+     "ref": "4.11.11",
+     "ed": "vu",
+     "with": [
+      "virata"
+     ]
+    },
+    {
+     "en": "Kṛṣṇa urges him to fight on the battlefield",
+     "kn": "ರಣಭೂಮಿಯಲ್ಲಿ ಕೃಷ್ಣ ಅವನನ್ನು ಹೋರಾಡಲು ಪ್ರೇರೇಪಿಸುತ್ತಾನೆ",
+     "ref": "6.26.3",
+     "ed": "vu",
+     "with": [
+      "krishna"
+     ]
+    },
+    {
+     "en": "Kills Jayadratha and Karṇa",
+     "kn": "ಜಯದ್ರಥ ಮತ್ತು ಕರ್ಣರನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ",
+     "ref": "8.100.19",
+     "ed": "vu",
+     "with": [
+      "karna"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nakula",
+   "name": "Nakula",
+   "group": "pandava",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Mādrīputra"
+   ],
+   "match": [],
+   "role_en": "Fourth Pāṇḍava, son of the Aśvins, handsome and skilled with horses",
+   "role_kn": "ನಾಲ್ಕನೆಯ ಪಾಂಡವ; ಅಶ್ವಿನೀ ದೇವತೆಗಳ ಮಗ, ಸುಂದರ, ಕುದುರೆಗಳಲ್ಲಿ ಪಳಗಿದವನು",
+   "desc_en": "Nakula is the elder of the twins born to Mādrī through the Aśvins. He conquers the western quarter for Yudhiṣṭhira's Rājasūya. During the year in disguise he serves King Virāṭa as keeper of horses. In the war he fights Karṇa and the Kaurava army, and he is one of the five Pāṇḍavas who survive. On the final journey he falls after Draupadī and Sahadeva, and Yudhiṣṭhira says it was because he took too much pride in his beauty.",
+   "desc_kn": "ನಕುಲ ಮಾದ್ರಿಗೆ ಅಶ್ವಿನೀ ದೇವತೆಗಳಿಂದ ಹುಟ್ಟಿದ ಅವಳಿಗಳಲ್ಲಿ ಹಿರಿಯ. ರಾಜಸೂಯಕ್ಕಾಗಿ ಪಶ್ಚಿಮ ದಿಕ್ಕನ್ನು ಗೆಲ್ಲುತ್ತಾನೆ. ವೇಷಮರೆಸಿದ ಒಂದು ವರ್ಷದಲ್ಲಿ ವಿರಾಟ ರಾಜನ ಕುದುರೆಗಳ ಪಾಲಕನಾಗಿ ಸೇವೆ ಮಾಡುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ಕರ್ಣ ಮತ್ತು ಕೌರವ ಸೇನೆಯೊಂದಿಗೆ ಹೋರಾಡುತ್ತಾನೆ; ಉಳಿದ ಐವರು ಪಾಂಡವರಲ್ಲಿ ಒಬ್ಬ. ಕೊನೆಯ ಪಯಣದಲ್ಲಿ ದ್ರೌಪದಿ ಮತ್ತು ಸಹದೇವನ ನಂತರ ಬೀಳುತ್ತಾನೆ; ತನ್ನ ರೂಪದ ಬಗ್ಗೆ ಅತಿ ಹೆಮ್ಮೆ ಇದ್ದುದೇ ಕಾರಣ ಎಂದು ಯುಧಿಷ್ಠಿರ ಹೇಳುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "pandu"
+    },
+    {
+     "type": "parent",
+     "to": "madri"
+    },
+    {
+     "type": "parent",
+     "to": "ashvins"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Born to Mādrī; named Nakula and Sahadeva",
+     "kn": "ಮಾದ್ರಿಗೆ ಜನನ; ನಕುಲ-ಸಹದೇವರೆಂದು ನಾಮಕರಣ",
+     "ref": "1.133.23",
+     "ed": "vu",
+     "with": [
+      "sahadeva",
+      "madri"
+     ]
+    },
+    {
+     "en": "Conquers the western quarter for the Rājasūya",
+     "kn": "ರಾಜಸೂಯಕ್ಕಾಗಿ ಪಶ್ಚಿಮ ದಿಕ್ಕನ್ನು ಗೆಲ್ಲುತ್ತಾನೆ",
+     "ref": "2.35.20",
+     "ed": "vu"
+    },
+    {
+     "en": "Enters Virāṭa's service as horse-keeper",
+     "kn": "ವಿರಾಟನ ಅರಮನೆಯಲ್ಲಿ ಕುದುರೆ ಪಾಲಕನಾಗಿ ಸೇರುತ್ತಾನೆ",
+     "ref": "4.12.7",
+     "ed": "vu",
+     "with": [
+      "virata"
+     ]
+    },
+    {
+     "en": "Cuts Karṇa's bow in battle",
+     "kn": "ಯುದ್ಧದಲ್ಲಿ ಕರ್ಣನ ಬಿಲ್ಲನ್ನು ಕತ್ತರಿಸುತ್ತಾನೆ",
+     "ref": "8.15.13",
+     "ed": "vu",
+     "with": [
+      "karna"
+     ]
+    },
+    {
+     "en": "Falls on the final journey",
+     "kn": "ಕೊನೆಯ ಪಯಣದಲ್ಲಿ ಬೀಳುತ್ತಾನೆ",
+     "ref": "17.2.12",
+     "ed": "vu",
+     "with": [
+      "draupadi",
+      "sahadeva"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sahadeva",
+   "name": "Sahadeva",
+   "group": "pandava",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Mādrīputra"
+   ],
+   "match": [],
+   "role_en": "Youngest Pāṇḍava, son of the Aśvins, who killed Śakuni",
+   "role_kn": "ಕಿರಿಯ ಪಾಂಡವ; ಅಶ್ವಿನೀ ದೇವತೆಗಳ ಮಗ, ಶಕುನಿಯನ್ನು ಕೊಂದವನು",
+   "desc_en": "Sahadeva is the younger of the twins born to Mādrī through the Aśvins. He conquers the southern quarter for the Rājasūya. In the dice hall he vows to kill Śakuni, and in the war he does so. He is known as wise; in the year in disguise he lives with Virāṭa's herds. On the final journey he falls after Draupadī, and Yudhiṣṭhira says he thought no one wiser than himself.",
+   "desc_kn": "ಸಹದೇವ ಮಾದ್ರಿಗೆ ಅಶ್ವಿನೀ ದೇವತೆಗಳಿಂದ ಹುಟ್ಟಿದ ಅವಳಿಗಳಲ್ಲಿ ಕಿರಿಯ. ರಾಜಸೂಯಕ್ಕಾಗಿ ದಕ್ಷಿಣ ದಿಕ್ಕನ್ನು ಗೆಲ್ಲುತ್ತಾನೆ. ಜೂಜಿನ ಸಭೆಯಲ್ಲಿ ಶಕುನಿಯನ್ನು ಕೊಲ್ಲುವ ಪ್ರತಿಜ್ಞೆ ಮಾಡಿ, ಯುದ್ಧದಲ್ಲಿ ಅದನ್ನು ನೆರವೇರಿಸುತ್ತಾನೆ. ಜ್ಞಾನಿಯೆಂದು ಹೆಸರಾದ ಅವನು ವೇಷಮರೆಸಿದ ವರ್ಷದಲ್ಲಿ ವಿರಾಟನ ದನಕರುಗಳ ನಡುವೆ ಇರುತ್ತಾನೆ. ಕೊನೆಯ ಪಯಣದಲ್ಲಿ ದ್ರೌಪದಿಯ ನಂತರ ಬೀಳುತ್ತಾನೆ; ತನಗಿಂತ ಬುದ್ಧಿವಂತರಿಲ್ಲ ಎಂದು ಭಾವಿಸಿದ್ದೇ ಕಾರಣ ಎಂದು ಯುಧಿಷ್ಠಿರ ಹೇಳುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "pandu"
+    },
+    {
+     "type": "parent",
+     "to": "madri"
+    },
+    {
+     "type": "parent",
+     "to": "ashvins"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Born to Mādrī; named Nakula and Sahadeva",
+     "kn": "ಮಾದ್ರಿಗೆ ಜನನ; ನಕುಲ-ಸಹದೇವರೆಂದು ನಾಮಕರಣ",
+     "ref": "1.133.23",
+     "ed": "vu",
+     "with": [
+      "nakula",
+      "madri"
+     ]
+    },
+    {
+     "en": "Conquers the southern quarter for the Rājasūya",
+     "kn": "ರಾಜಸೂಯಕ್ಕಾಗಿ ದಕ್ಷಿಣ ದಿಕ್ಕನ್ನು ಗೆಲ್ಲುತ್ತಾನೆ",
+     "ref": "2.32.8",
+     "ed": "vu"
+    },
+    {
+     "en": "Vows in the dice hall to kill Śakuni",
+     "kn": "ಜೂಜಿನ ಸಭೆಯಲ್ಲಿ ಶಕುನಿಯನ್ನು ಕೊಲ್ಲುವ ಪ್ರತಿಜ್ಞೆ ಮಾಡುತ್ತಾನೆ",
+     "ref": "2.99.38",
+     "ed": "vu",
+     "with": [
+      "shakuni"
+     ]
+    },
+    {
+     "en": "Fights Śakuni on the eighteenth day",
+     "kn": "ಹದಿನೆಂಟನೆಯ ದಿನ ಶಕುನಿಯೊಂದಿಗೆ ಹೋರಾಡುತ್ತಾನೆ",
+     "ref": "9.27.26",
+     "ed": "vu",
+     "with": [
+      "shakuni"
+     ]
+    },
+    {
+     "en": "Falls on the final journey",
+     "kn": "ಕೊನೆಯ ಪಯಣದಲ್ಲಿ ಬೀಳುತ್ತಾನೆ",
+     "ref": "17.2.8",
+     "ed": "vu",
+     "with": [
+      "draupadi"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "draupadi",
+   "name": "Draupadī",
+   "group": "pandava",
+   "gender": "f",
+   "rank": 1,
+   "epithets": [
+    "Kṛṣṇā",
+    "Pāñcālī",
+    "Yājñasenī",
+    "Pārṣatī",
+    "Sairandhrī"
+   ],
+   "match": [],
+   "role_en": "Daughter of Drupada and common wife of the five Pāṇḍavas",
+   "role_kn": "ದ್ರುಪದನ ಮಗಳು; ಐವರು ಪಾಂಡವರ ಸಾಮಾನ್ಯ ಪತ್ನಿ",
+   "desc_en": "Draupadī, also Kṛṣṇā and Pāñcālī, is Drupada's daughter, born from the sacrificial fire. Arjuna wins her at her svayaṃvara, and she becomes the wife of all five Pāṇḍavas after Kuntī's words that they share what Arjuna brought. After Yudhiṣṭhira stakes and loses her, Duḥśāsana drags her into the hall and tries to strip her, while Karṇa calls her a slave; her vow of revenge shapes the war. She is later abducted by Jayadratha and molested by Kīcaka, and Bhīma kills Kīcaka. Her five sons are killed by Aśvatthāman, and she is the first of the Pāṇḍavas to fall on the final journey.",
+   "desc_kn": "ದ್ರೌಪದಿ (ಕೃಷ್ಣಾ, ಪಾಂಚಾಲಿ) ದ್ರುಪದನ ಮಗಳು, ಯಜ್ಞಾಗ್ನಿಯಿಂದ ಹುಟ್ಟಿದವಳು. ಅರ್ಜುನ ಅವಳನ್ನು ಸ್ವಯಂವರದಲ್ಲಿ ಗೆಲ್ಲುತ್ತಾನೆ; ತಂದದ್ದನ್ನು ಎಲ್ಲರೂ ಹಂಚಿಕೊಳ್ಳಿ ಎಂಬ ಕುಂತಿಯ ಮಾತಿನಂತೆ ಐವರು ಪಾಂಡವರ ಪತ್ನಿಯಾಗುತ್ತಾಳೆ. ಯುಧಿಷ್ಠಿರ ಅವಳನ್ನು ಜೂಜಿನಲ್ಲಿ ಪಣಕ್ಕಿಟ್ಟು ಸೋತ ಮೇಲೆ ದುಶ್ಶಾಸನ ಅವಳನ್ನು ಸಭೆಗೆ ಎಳೆದು ತಂದು ವಸ್ತ್ರ ಸೆಳೆಯಲು ಯತ್ನಿಸುತ್ತಾನೆ; ಕರ್ಣ ಅವಳನ್ನು ದಾಸಿ ಎನ್ನುತ್ತಾನೆ. ಅವಳ ಸೇಡಿನ ಪ್ರತಿಜ್ಞೆ ಯುದ್ಧಕ್ಕೆ ದಾರಿಯಾಗುತ್ತದೆ. ಮುಂದೆ ಜಯದ್ರಥ ಅವಳನ್ನು ಅಪಹರಿಸುತ್ತಾನೆ, ಕೀಚಕ ಕಿರುಕುಳ ಕೊಡುತ್ತಾನೆ; ಭೀಮ ಕೀಚಕನನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ. ಅವಳ ಐವರು ಮಕ್ಕಳನ್ನು ಅಶ್ವತ್ಥಾಮ ಕೊಲ್ಲುತ್ತಾನೆ; ಕೊನೆಯ ಪಯಣದಲ್ಲಿ ಪಾಂಡವರಲ್ಲಿ ಮೊದಲು ಬೀಳುವವಳು ಅವಳೇ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "drupada"
+    },
+    {
+     "type": "spouse",
+     "to": "yudhishthira"
+    },
+    {
+     "type": "spouse",
+     "to": "bhima"
+    },
+    {
+     "type": "spouse",
+     "to": "arjuna",
+     "ref": "1.203.31",
+     "ed": "vu"
+    },
+    {
+     "type": "spouse",
+     "to": "nakula"
+    },
+    {
+     "type": "spouse",
+     "to": "sahadeva"
+    },
+    {
+     "type": "friend",
+     "to": "krishna"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Sees Arjuna pierce the target at her svayaṃvara",
+     "kn": "ಸ್ವಯಂವರದಲ್ಲಿ ಅರ್ಜುನ ಗುರಿ ಭೇದಿಸುವುದನ್ನು ನೋಡುತ್ತಾಳೆ",
+     "ref": "1.203.31",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Dragged into the hall by Duḥśāsana",
+     "kn": "ದುಶ್ಶಾಸನ ಅವಳನ್ನು ಸಭೆಗೆ ಎಳೆದು ತರುತ್ತಾನೆ",
+     "ref": "2.90.40",
+     "ed": "vu",
+     "with": [
+      "duhshasana"
+     ]
+    },
+    {
+     "en": "Abducted by Jayadratha",
+     "kn": "ಜಯದ್ರಥನಿಂದ ಅಪಹರಣ",
+     "ref": "3.270.18",
+     "ed": "vu",
+     "with": [
+      "jayadratha"
+     ]
+    },
+    {
+     "en": "Pursued by Kīcaka at Virāṭa's court",
+     "kn": "ವಿರಾಟನ ಅರಮನೆಯಲ್ಲಿ ಕೀಚಕನ ಕಾಟ",
+     "ref": "4.17.1",
+     "ed": "vu",
+     "with": [
+      "kichaka"
+     ]
+    },
+    {
+     "en": "Sits fasting until Aśvatthāman's jewel is brought",
+     "kn": "ಅಶ್ವತ್ಥಾಮನ ಮಣಿ ತರುವವರೆಗೆ ಪ್ರಾಯೋಪವೇಶ ಮಾಡುತ್ತಾಳೆ",
+     "ref": "10.16.18",
+     "ed": "vu",
+     "with": [
+      "ashvatthaman"
+     ]
+    },
+    {
+     "en": "Falls first on the final journey",
+     "kn": "ಕೊನೆಯ ಪಯಣದಲ್ಲಿ ಮೊದಲು ಬೀಳುತ್ತಾಳೆ",
+     "ref": "17.2.5",
+     "ed": "vu",
+     "with": [
+      "bhima"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "subhadra",
+   "name": "Subhadrā",
+   "group": "pandava",
+   "gender": "f",
+   "rank": 2,
+   "epithets": [],
+   "match": [],
+   "role_en": "Kṛṣṇa's sister, Arjuna's wife and mother of Abhimanyu",
+   "role_kn": "ಕೃಷ್ಣನ ತಂಗಿ; ಅರ್ಜುನನ ಪತ್ನಿ, ಅಭಿಮನ್ಯುವಿನ ತಾಯಿ",
+   "desc_en": "Subhadrā is the daughter of Vasudeva and the sister of Kṛṣṇa and Balarāma. Arjuna, returning from his pilgrimage, sets his heart on her; Kṛṣṇa advises him to carry her off, and Yudhiṣṭhira agrees. She drives the chariot as Arjuna takes her away, and Balarāma's anger is calmed. She bears Abhimanyu and grieves bitterly for him in the war. After Abhimanyu's death she stays with Draupadī and Uttarā, and Yudhiṣṭhira addresses her when he hands the kingdom to Parikṣit.",
+   "desc_kn": "ಸುಭದ್ರೆ ವಸುದೇವನ ಮಗಳು, ಕೃಷ್ಣ ಮತ್ತು ಬಲರಾಮರ ತಂಗಿ. ತೀರ್ಥಯಾತ್ರೆಯಿಂದ ಮರಳಿದ ಅರ್ಜುನ ಅವಳನ್ನು ಬಯಸುತ್ತಾನೆ; ಅವಳನ್ನು ಅಪಹರಿಸುವಂತೆ ಕೃಷ್ಣ ಸಲಹೆ ನೀಡುತ್ತಾನೆ, ಯುಧಿಷ್ಠಿರನೂ ಒಪ್ಪುತ್ತಾನೆ. ಅರ್ಜುನ ಅವಳನ್ನು ಕರೆದೊಯ್ಯುವಾಗ ರಥವನ್ನು ಅವಳೇ ನಡೆಸುತ್ತಾಳೆ; ಬಲರಾಮನ ಕೋಪ ಶಾಂತವಾಗುತ್ತದೆ. ಅವಳು ಅಭಿಮನ್ಯುವನ್ನು ಹೆರುತ್ತಾಳೆ ಮತ್ತು ಅವನ ಸಾವಿಗಾಗಿ ತೀವ್ರವಾಗಿ ದುಃಖಿಸುತ್ತಾಳೆ. ನಂತರ ದ್ರೌಪದಿ ಮತ್ತು ಉತ್ತರೆಯೊಂದಿಗೆ ಇರುತ್ತಾಳೆ; ಯುಧಿಷ್ಠಿರ ಪರೀಕ್ಷಿತನಿಗೆ ರಾಜ್ಯ ಒಪ್ಪಿಸುವಾಗ ಅವಳೊಂದಿಗೆ ಮಾತನಾಡುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "vasudeva",
+     "ref": "1.239.18",
+     "ed": "vu"
+    },
+    {
+     "type": "spouse",
+     "to": "arjuna",
+     "ref": "1.243.1",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Kṛṣṇa tells Arjuna she is his sister",
+     "kn": "ಅವಳು ತನ್ನ ತಂಗಿ ಎಂದು ಕೃಷ್ಣ ಅರ್ಜುನನಿಗೆ ಹೇಳುತ್ತಾನೆ",
+     "ref": "1.239.18",
+     "ed": "vu",
+     "with": [
+      "krishna",
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Takes Arjuna's chariot as he carries her away",
+     "kn": "ಅರ್ಜುನ ಅವಳನ್ನು ಕರೆದೊಯ್ಯುವಾಗ ರಥ ನಡೆಸುತ್ತಾಳೆ",
+     "ref": "1.243.8",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Grieves for Abhimanyu",
+     "kn": "ಅಭಿಮನ್ಯುವಿನ ಸಾವಿಗಾಗಿ ದುಃಖಿಸುತ್ತಾಳೆ",
+     "ref": "7.51.12",
+     "ed": "vu",
+     "with": [
+      "abhimanyu"
+     ]
+    },
+    {
+     "en": "Yudhiṣṭhira speaks to her as he installs Parikṣit",
+     "kn": "ಪರೀಕ್ಷಿತನ ಪಟ್ಟಾಭಿಷೇಕದ ವೇಳೆ ಯುಧಿಷ್ಠಿರ ಅವಳೊಂದಿಗೆ ಮಾತನಾಡುತ್ತಾನೆ",
+     "ref": "17.1.7",
+     "ed": "vu",
+     "with": [
+      "parikshit",
+      "yudhishthira"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ulupi",
+   "name": "Ulūpī",
+   "group": "pandava",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [
+    "Pannagātmajā",
+    "Bhujagātmajā"
+   ],
+   "match": [],
+   "role_en": "Nāga princess, one of Arjuna's wives, mother of Irāvān",
+   "role_kn": "ನಾಗ ರಾಜಕುಮಾರಿ; ಅರ್ಜುನನ ಪತ್ನಿಯರಲ್ಲಿ ಒಬ್ಬಳು, ಇರಾವಂತನ ತಾಯಿ",
+   "desc_en": "Ulūpī is a daughter of a Nāga king. While Arjuna bathes in the Gaṅgā during his exile she pulls him into the water to her home and asks him to be her husband; he agrees, and she bears Irāvān. In the horse sacrifice story she comes up from the earth when Arjuna lies slain by his son Babhruvāhana and revives him with the help of a gem. After the Pāṇḍavas leave the world she enters the Gaṅgā.",
+   "desc_kn": "ಉಲೂಪಿ ನಾಗರಾಜನ ಮಗಳು. ವನವಾಸದಲ್ಲಿ ಅರ್ಜುನ ಗಂಗೆಯಲ್ಲಿ ಸ್ನಾನ ಮಾಡುವಾಗ ಅವಳು ಅವನನ್ನು ನೀರಿನೊಳಗಿನ ತನ್ನ ಮನೆಗೆ ಎಳೆದೊಯ್ದು ಪತಿಯಾಗಲು ಕೇಳುತ್ತಾಳೆ; ಅವನು ಒಪ್ಪುತ್ತಾನೆ, ಅವಳಿಗೆ ಇರಾವಂತ ಹುಟ್ಟುತ್ತಾನೆ. ಅಶ್ವಮೇಧದ ಕಥೆಯಲ್ಲಿ ಮಗ ಬಭ್ರುವಾಹನನಿಂದ ಅರ್ಜುನ ಹತನಾದಾಗ ಅವಳು ಭೂಮಿಯಿಂದ ಮೇಲೆ ಬಂದು ಮಣಿಯ ಸಹಾಯದಿಂದ ಅವನನ್ನು ಬದುಕಿಸುತ್ತಾಳೆ. ಪಾಂಡವರು ಲೋಕ ತೊರೆದ ಮೇಲೆ ಅವಳು ಗಂಗೆಯನ್ನು ಪ್ರವೇಶಿಸುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "spouse",
+     "to": "arjuna",
+     "ref": "1.234.17",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Draws Arjuna into the water and asks to wed him",
+     "kn": "ಅರ್ಜುನನನ್ನು ನೀರಿನೊಳಗೆ ಸೆಳೆದು ಮದುವೆಯಾಗಲು ಕೇಳುತ್ತಾಳೆ",
+     "ref": "1.234.17",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Bears Irāvān to Arjuna",
+     "kn": "ಅರ್ಜುನನಿಂದ ಇರಾವಂತನನ್ನು ಪಡೆಯುತ್ತಾಳೆ",
+     "ref": "1.63.80",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Appears to Babhruvāhana and tells him she is his stepmother",
+     "kn": "ಬಭ್ರುವಾಹನನ ಮುಂದೆ ಬಂದು ತಾನು ಅವನ ಮಲತಾಯಿ ಎನ್ನುತ್ತಾಳೆ",
+     "ref": "14.79.10",
+     "ed": "vu",
+     "with": [
+      "chitrangada"
+     ]
+    },
+    {
+     "en": "Enters the Gaṅgā after the Pāṇḍavas leave the world",
+     "kn": "ಪಾಂಡವರು ಲೋಕ ತೊರೆದ ಮೇಲೆ ಗಂಗೆಯನ್ನು ಪ್ರವೇಶಿಸುತ್ತಾಳೆ",
+     "ref": "17.1.28",
+     "ed": "vu"
+    }
+   ]
+  },
+  {
+   "id": "chitrangada",
+   "name": "Citrāṅgadā",
+   "group": "pandava",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [
+    "Caitravāhanī"
+   ],
+   "match": [],
+   "role_en": "Princess of Maṇalūra, Arjuna's wife and mother of Babhruvāhana",
+   "role_kn": "ಮಣಲೂರಿನ ರಾಜಕುಮಾರಿ; ಅರ್ಜುನನ ಪತ್ನಿ, ಬಭ್ರುವಾಹನನ ತಾಯಿ",
+   "desc_en": "Citrāṅgadā is the daughter of King Citravāhana of Maṇalūra. Arjuna marries her in exile on the condition that her son will stay as heir to her father's kingdom, and she bears Babhruvāhana. When Arjuna comes with the horse sacrifice, Babhruvāhana fights him and Arjuna falls; Citrāṅgadā grieves, and Ulūpī brings him back to life. She lives in Maṇalūra afterwards and goes back there when the Pāṇḍavas retire.",
+   "desc_kn": "ಚಿತ್ರಾಂಗದೆ ಮಣಲೂರಿನ ರಾಜ ಚಿತ್ರವಾಹನನ ಮಗಳು. ಅವಳ ಮಗ ತಂದೆಯ ರಾಜ್ಯಕ್ಕೆ ಉತ್ತರಾಧಿಕಾರಿಯಾಗಿ ಅಲ್ಲೇ ಇರಬೇಕೆಂಬ ಷರತ್ತಿನ ಮೇಲೆ ಅರ್ಜುನ ವನವಾಸದಲ್ಲಿ ಅವಳನ್ನು ಮದುವೆಯಾಗುತ್ತಾನೆ; ಅವಳಿಗೆ ಬಭ್ರುವಾಹನ ಹುಟ್ಟುತ್ತಾನೆ. ಅಶ್ವಮೇಧದ ಕುದುರೆಯೊಂದಿಗೆ ಅರ್ಜುನ ಬಂದಾಗ ಬಭ್ರುವಾಹನ ಅವನೊಂದಿಗೆ ಯುದ್ಧ ಮಾಡಿ ಅರ್ಜುನ ಬೀಳುತ್ತಾನೆ; ಚಿತ್ರಾಂಗದೆ ದುಃಖಿಸುತ್ತಾಳೆ, ಉಲೂಪಿ ಅವನನ್ನು ಬದುಕಿಸುತ್ತಾಳೆ. ನಂತರ ಮಣಲೂರಿನಲ್ಲೇ ಇರುತ್ತಾಳೆ; ಪಾಂಡವರು ನಿವೃತ್ತರಾದಾಗ ಮತ್ತೆ ಅಲ್ಲಿಗೆ ಹೋಗುತ್ತಾಳೆ.",
+   "relations": [
+    {
+     "type": "spouse",
+     "to": "arjuna",
+     "ref": "1.235.17",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Arjuna sees her, the daughter of Citravāhana of Maṇalūra",
+     "kn": "ಮಣಲೂರಿನ ಚಿತ್ರವಾಹನನ ಮಗಳನ್ನು ಅರ್ಜುನ ಕಾಣುತ್ತಾನೆ",
+     "ref": "1.235.17",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Rushes into the battlefield on seeing her husband and son fallen",
+     "kn": "ಪತಿ ಮತ್ತು ಮಗ ಬಿದ್ದುದನ್ನು ಕಂಡು ರಣರಂಗಕ್ಕೆ ಧಾವಿಸುತ್ತಾಳೆ",
+     "ref": "14.79.38",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Arjuna asks after her",
+     "kn": "ಅರ್ಜುನ ಅವಳ ಕ್ಷೇಮ ವಿಚಾರಿಸುತ್ತಾನೆ",
+     "ref": "14.82.4",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Returns to Maṇalūra",
+     "kn": "ಮಣಲೂರಿಗೆ ಮರಳುತ್ತಾಳೆ",
+     "ref": "17.1.29",
+     "ed": "vu",
+     "with": [
+      "parikshit"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hidimba",
+   "name": "Hiḍimbā",
+   "group": "pandava",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [],
+   "match": [],
+   "role_en": "Rākṣasī who married Bhīma and bore Ghaṭotkaca",
+   "role_kn": "ಭೀಮನನ್ನು ಮದುವೆಯಾಗಿ ಘಟೋತ್ಕಚನನ್ನು ಹೆತ್ತ ರಾಕ್ಷಸಿ",
+   "desc_en": "Hiḍimbā is the sister of the man-eating rākṣasa Hiḍimba. Sent to bring the sleeping Pāṇḍavas to her brother, she falls in love with Bhīma and warns them. After Bhīma kills her brother, she asks Kuntī and Yudhiṣṭhira for Bhīma as her husband; they agree on condition that he stays with her only until a son is born. She bears Ghaṭotkaca, who later fights for the Pāṇḍavas, and goes her way.",
+   "desc_kn": "ಹಿಡಿಂಬೆ ನರಭಕ್ಷಕ ರಾಕ್ಷಸ ಹಿಡಿಂಬನ ತಂಗಿ. ಮಲಗಿದ್ದ ಪಾಂಡವರನ್ನು ಅಣ್ಣನ ಬಳಿ ತರಲು ಹೋದ ಅವಳು ಭೀಮನನ್ನು ಪ್ರೀತಿಸಿ ಅವರನ್ನು ಎಚ್ಚರಿಸುತ್ತಾಳೆ. ಭೀಮ ಅವಳ ಅಣ್ಣನನ್ನು ಕೊಂದ ಬಳಿಕ ಅವಳು ಭೀಮನನ್ನು ಪತಿಯಾಗಿ ಕೇಳುತ್ತಾಳೆ; ಮಗ ಹುಟ್ಟುವವರೆಗೆ ಮಾತ್ರ ಅವನು ಅವಳೊಂದಿಗೆ ಇರಬೇಕೆಂಬ ಷರತ್ತಿನ ಮೇಲೆ ಕುಂತಿ ಮತ್ತು ಯುಧಿಷ್ಠಿರ ಒಪ್ಪುತ್ತಾರೆ. ಅವಳು ಘಟೋತ್ಕಚನನ್ನು ಹೆರುತ್ತಾಳೆ — ಮುಂದೆ ಅವನು ಪಾಂಡವರ ಪರ ಹೋರಾಡುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "spouse",
+     "to": "bhima",
+     "ref": "1.167.36",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Meets the Pāṇḍavas and warns them of her brother",
+     "kn": "ಪಾಂಡವರನ್ನು ಭೇಟಿಯಾಗಿ ಅಣ್ಣನ ಬಗ್ಗೆ ಎಚ್ಚರಿಸುತ್ತಾಳೆ",
+     "ref": "1.166.1",
+     "ed": "vu",
+     "with": [
+      "bhima"
+     ]
+    },
+    {
+     "en": "Bows to Kuntī and asks for Bhīma as husband",
+     "kn": "ಕುಂತಿಗೆ ನಮಸ್ಕರಿಸಿ ಭೀಮನನ್ನು ಪತಿಯಾಗಿ ಕೇಳುತ್ತಾಳೆ",
+     "ref": "1.167.8",
+     "ed": "vu",
+     "with": [
+      "kunti",
+      "yudhishthira"
+     ]
+    },
+    {
+     "en": "Yudhiṣṭhira allows the marriage until a son is born",
+     "kn": "ಮಗ ಹುಟ್ಟುವವರೆಗೆ ಮದುವೆಗೆ ಯುಧಿಷ್ಠಿರ ಒಪ್ಪುತ್ತಾನೆ",
+     "ref": "1.167.36",
+     "ed": "vu",
+     "with": [
+      "yudhishthira",
+      "bhima"
+     ]
+    },
+    {
+     "en": "Ghaṭotkaca is born to her",
+     "kn": "ಅವಳಿಗೆ ಘಟೋತ್ಕಚನ ಜನನ",
+     "ref": "1.61.26",
+     "ed": "vu",
+     "with": [
+      "ghatotkacha",
+      "bhima"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ghatotkacha",
+   "name": "Ghaṭotkaca",
+   "group": "pandava",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Bhaimaseni",
+    "Heḍimbi"
+   ],
+   "match": [],
+   "role_en": "Bhīma's rākṣasa son, who fell to Karṇa's divine spear in the war",
+   "role_kn": "ಭೀಮನ ರಾಕ್ಷಸ ಮಗ; ಯುದ್ಧದಲ್ಲಿ ಕರ್ಣನ ದಿವ್ಯಶಕ್ತಿಗೆ ಬಲಿಯಾದವನು",
+   "desc_en": "Ghaṭotkaca is the son of Bhīma and the rākṣasī Hiḍimbā, born shortly after the Pāṇḍavas leave the lacquer house. He comes at Bhīma's thought and carries Draupadī and the brothers on the way to Gandhamādana. In the war he fights at night with great magic against the Kauravas, and kills the rākṣasa Alāyudha. Pressed hard, Karṇa uses on him the unfailing spear (śakti) Indra had given him for Arjuna. Kṛṣṇa is glad, since Arjuna is thus spared the weapon.",
+   "desc_kn": "ಘಟೋತ್ಕಚ ಭೀಮ ಮತ್ತು ರಾಕ್ಷಸಿ ಹಿಡಿಂಬೆಯರ ಮಗ; ಪಾಂಡವರು ಅರಗಿನ ಮನೆಯಿಂದ ಪಾರಾದ ಸ್ವಲ್ಪ ಕಾಲದಲ್ಲೇ ಹುಟ್ಟುತ್ತಾನೆ. ಭೀಮ ನೆನೆದಾಗ ಬಂದು, ಗಂಧಮಾದನದ ದಾರಿಯಲ್ಲಿ ದ್ರೌಪದಿ ಮತ್ತು ಪಾಂಡವರನ್ನು ಹೊತ್ತು ಸಾಗುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ರಾತ್ರಿ ಮಾಯಾಶಕ್ತಿಯಿಂದ ಕೌರವರ ವಿರುದ್ಧ ಹೋರಾಡಿ ರಾಕ್ಷಸ ಅಲಾಯುಧನನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ. ತೀವ್ರ ಸಂಕಷ್ಟಕ್ಕೆ ಸಿಲುಕಿದ ಕರ್ಣ ಇಂದ್ರ ಅರ್ಜುನನಿಗಾಗಿ ಕೊಟ್ಟಿದ್ದ ಅಮೋಘ ಶಕ್ತ್ಯಾಯುಧವನ್ನು ಅವನ ಮೇಲೆ ಪ್ರಯೋಗಿಸುತ್ತಾನೆ; ಅದರಿಂದ ಅರ್ಜುನ ಆ ಅಸ್ತ್ರದಿಂದ ಪಾರಾದನೆಂದು ಕೃಷ್ಣ ಸಂತೋಷಪಡುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "bhima"
+    },
+    {
+     "type": "parent",
+     "to": "hidimba"
+    },
+    {
+     "type": "killed_by",
+     "to": "karna",
+     "ref": "7.181.23",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Born to Hiḍimbā",
+     "kn": "ಹಿಡಿಂಬೆಗೆ ಜನನ",
+     "ref": "1.61.26",
+     "ed": "vu",
+     "with": [
+      "hidimba",
+      "bhima"
+     ]
+    },
+    {
+     "en": "Summoned by Bhīma to carry the exiles",
+     "kn": "ವನವಾಸಿಗಳನ್ನು ಹೊರಲು ಭೀಮ ಅವನನ್ನು ಕರೆಯುತ್ತಾನೆ",
+     "ref": "3.147.4",
+     "ed": "vu",
+     "with": [
+      "bhima"
+     ]
+    },
+    {
+     "en": "Fights Karṇa and Alāyudha at night",
+     "kn": "ರಾತ್ರಿ ಕರ್ಣ ಮತ್ತು ಅಲಾಯುಧನೊಂದಿಗೆ ಹೋರಾಡುತ್ತಾನೆ",
+     "ref": "7.179.4",
+     "ed": "vu",
+     "with": [
+      "karna"
+     ]
+    },
+    {
+     "en": "Falls; Kṛṣṇa rejoices that Karṇa's śakti is spent",
+     "kn": "ಬೀಳುತ್ತಾನೆ; ಕರ್ಣನ ಶಕ್ತಿ ಖರ್ಚಾದುದಕ್ಕೆ ಕೃಷ್ಣ ಸಂತೋಷಪಡುತ್ತಾನೆ",
+     "ref": "7.181.23",
+     "ed": "vu",
+     "with": [
+      "karna",
+      "krishna"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "abhimanyu",
+   "name": "Abhimanyu",
+   "group": "pandava",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Saubhadra",
+    "Ārjuni"
+   ],
+   "match": [],
+   "role_en": "Arjuna's young son, who broke into the Kaurava wheel formation and was killed",
+   "role_kn": "ಅರ್ಜುನನ ಯುವ ಮಗ; ಕೌರವರ ಚಕ್ರವ್ಯೂಹ ಭೇದಿಸಿ ಹತನಾದವನು",
+   "desc_en": "Abhimanyu is the son of Arjuna and Subhadrā and the husband of Uttarā. On the thirteenth day of the war, Arjuna is drawn away, and Yudhiṣṭhira asks Abhimanyu to break the Kaurava wheel formation (cakravyūha). He enters it and fights alone, as Jayadratha blocks the other Pāṇḍavas. Surrounded by several Kaurava warriors, he is finally struck down with a mace by Duḥśāsana's son. He leaves Uttarā pregnant with Parikṣit.",
+   "desc_kn": "ಅಭಿಮನ್ಯು ಅರ್ಜುನ ಮತ್ತು ಸುಭದ್ರೆಯರ ಮಗ, ಉತ್ತರೆಯ ಪತಿ. ಯುದ್ಧದ ಹದಿಮೂರನೆಯ ದಿನ ಅರ್ಜುನ ದೂರ ಹೋಗಿದ್ದಾಗ ಕೌರವರ ಚಕ್ರವ್ಯೂಹವನ್ನು ಭೇದಿಸುವಂತೆ ಯುಧಿಷ್ಠಿರ ಅಭಿಮನ್ಯುವನ್ನು ಕೇಳುತ್ತಾನೆ. ಅವನು ವ್ಯೂಹ ಪ್ರವೇಶಿಸಿ ಒಬ್ಬನೇ ಹೋರಾಡುತ್ತಾನೆ; ಜಯದ್ರಥ ಉಳಿದ ಪಾಂಡವರನ್ನು ತಡೆಯುತ್ತಾನೆ. ಹಲವು ಕೌರವ ಯೋಧರಿಂದ ಸುತ್ತುವರಿಯಲ್ಪಟ್ಟ ಅವನನ್ನು ಕೊನೆಗೆ ದುಶ್ಶಾಸನನ ಮಗ ಗದೆಯಿಂದ ಹೊಡೆದು ಕೊಲ್ಲುತ್ತಾನೆ. ಉತ್ತರೆ ಪರೀಕ್ಷಿತನನ್ನು ಗರ್ಭದಲ್ಲಿ ಹೊತ್ತಿರುವಾಗಲೇ ಅವನು ಸಾಯುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "arjuna"
+    },
+    {
+     "type": "parent",
+     "to": "subhadra",
+     "ref": "1.63.77",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Born to Subhadrā and Arjuna",
+     "kn": "ಸುಭದ್ರೆ ಮತ್ತು ಅರ್ಜುನರಿಗೆ ಜನನ",
+     "ref": "1.63.77",
+     "ed": "vu",
+     "with": [
+      "subhadra",
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Married to Virāṭa's daughter Uttarā",
+     "kn": "ವಿರಾಟನ ಮಗಳು ಉತ್ತರೆಯೊಂದಿಗೆ ಮದುವೆ",
+     "ref": "4.78.53",
+     "ed": "vu",
+     "with": [
+      "uttara",
+      "virata"
+     ]
+    },
+    {
+     "en": "Breaks into the cakravyūha at Yudhiṣṭhira's word",
+     "kn": "ಯುಧಿಷ್ಠಿರನ ಮಾತಿನಂತೆ ಚಕ್ರವ್ಯೂಹವನ್ನು ಭೇದಿಸುತ್ತಾನೆ",
+     "ref": "7.33.19",
+     "ed": "vu",
+     "with": [
+      "yudhishthira"
+     ]
+    },
+    {
+     "en": "Struck down by Duḥśāsana's son and dies",
+     "kn": "ದುಶ್ಶಾಸನನ ಮಗನ ಹೊಡೆತಕ್ಕೆ ಬಿದ್ದು ಸಾಯುತ್ತಾನೆ",
+     "ref": "7.49.13",
+     "ed": "vu",
+     "with": [
+      "duhshasana"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "uttara",
+   "name": "Uttarā",
+   "group": "pandava",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [
+    "Vairāṭī"
+   ],
+   "match": [],
+   "role_en": "Virāṭa's daughter, Abhimanyu's wife and mother of Parikṣit",
+   "role_kn": "ವಿರಾಟನ ಮಗಳು; ಅಭಿಮನ್ಯುವಿನ ಪತ್ನಿ, ಪರೀಕ್ಷಿತನ ತಾಯಿ",
+   "desc_en": "Uttarā is the daughter of King Virāṭa and Sudeṣṇā. Arjuna, living at the court as Bṛhannalā, teaches her dance and music and, rather than marry her himself, asks that she be given to his son Abhimanyu. She is widowed in the war while pregnant. Aśvatthāman's Brahmaśiras weapon is aimed at her unborn child, but Kṛṣṇa saves him; after the war she bears the child, who is named Parikṣit, and Kṛṣṇa revives him.",
+   "desc_kn": "ಉತ್ತರೆ ರಾಜ ವಿರಾಟ ಮತ್ತು ಸುದೇಷ್ಣೆಯರ ಮಗಳು. ಬೃಹನ್ನಳೆಯ ರೂಪದಲ್ಲಿ ಅರಮನೆಯಲ್ಲಿದ್ದ ಅರ್ಜುನ ಅವಳಿಗೆ ನೃತ್ಯ-ಸಂಗೀತ ಕಲಿಸುತ್ತಾನೆ; ತಾನೇ ಮದುವೆಯಾಗದೆ ಅವಳನ್ನು ತನ್ನ ಮಗ ಅಭಿಮನ್ಯುವಿಗೆ ಕೊಡಿಸುತ್ತಾನೆ. ಗರ್ಭಿಣಿಯಾಗಿರುವಾಗಲೇ ಯುದ್ಧದಲ್ಲಿ ಅವಳು ವಿಧವೆಯಾಗುತ್ತಾಳೆ. ಅಶ್ವತ್ಥಾಮನ ಬ್ರಹ್ಮಶಿರಾಸ್ತ್ರ ಅವಳ ಗರ್ಭದ ಮಗುವಿನತ್ತ ಬಿಡಲ್ಪಡುತ್ತದೆ; ಕೃಷ್ಣ ಮಗುವನ್ನು ರಕ್ಷಿಸುತ್ತಾನೆ. ಯುದ್ಧದ ನಂತರ ಹುಟ್ಟಿದ ಮಗುವಿಗೆ ಪರೀಕ್ಷಿತ ಎಂದು ಹೆಸರು; ಕೃಷ್ಣ ಅವನನ್ನು ಬದುಕಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "virata",
+     "ref": "4.78.53",
+     "ed": "vu"
+    },
+    {
+     "type": "parent",
+     "to": "sudeshna"
+    },
+    {
+     "type": "spouse",
+     "to": "abhimanyu",
+     "ref": "4.78.53",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Given in marriage to Abhimanyu",
+     "kn": "ಅಭಿಮನ್ಯುವಿಗೆ ಮದುವೆ ಮಾಡಿಕೊಡಲಾಗುತ್ತದೆ",
+     "ref": "4.78.53",
+     "ed": "vu",
+     "with": [
+      "abhimanyu",
+      "virata"
+     ]
+    },
+    {
+     "en": "Among the widows mourning on the battlefield",
+     "kn": "ರಣಭೂಮಿಯಲ್ಲಿ ವಿಧವೆಯರೊಂದಿಗೆ ದುಃಖಿಸುತ್ತಾಳೆ",
+     "ref": "11.20.29",
+     "ed": "vu",
+     "with": [
+      "abhimanyu"
+     ]
+    },
+    {
+     "en": "Faints with her stillborn son in her lap",
+     "kn": "ಸತ್ತು ಹುಟ್ಟಿದ ಮಗನನ್ನು ತೊಡೆಯ ಮೇಲಿಟ್ಟುಕೊಂಡು ಮೂರ್ಛೆ ಹೋಗುತ್ತಾಳೆ",
+     "ref": "14.69.1",
+     "ed": "vu",
+     "with": [
+      "parikshit",
+      "krishna"
+     ]
+    },
+    {
+     "en": "Bows to Kṛṣṇa with her revived son",
+     "kn": "ಬದುಕಿದ ಮಗನೊಂದಿಗೆ ಕೃಷ್ಣನಿಗೆ ನಮಸ್ಕರಿಸುತ್ತಾಳೆ",
+     "ref": "14.70.9",
+     "ed": "vu",
+     "with": [
+      "krishna",
+      "parikshit"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "parikshit",
+   "name": "Parikṣit",
+   "group": "pandava",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [],
+   "match": [],
+   "role_en": "Abhimanyu's son, the Kuru king who was the last of the line after the war",
+   "role_kn": "ಅಭಿಮನ್ಯುವಿನ ಮಗ; ಯುದ್ಧದ ನಂತರ ಕುರುವಂಶದ ಏಕೈಕ ವಾರಸುದಾರ ರಾಜ",
+   "desc_en": "Parikṣit is the son of Abhimanyu and Uttarā, the only heir of the Kurus after the war. Aśvatthāman aims a weapon at him in the womb; Kṛṣṇa saves him, and the text says he is named Parikṣit because he is born when the Kuru line has dwindled (parikṣīṇa). He is born lifeless and Kṛṣṇa revives him. Yudhiṣṭhira makes him king before the Pāṇḍavas set out for heaven, with Kṛpa as his teacher. He later offends a sage, is cursed to die of the serpent Takṣaka's bite, and is the father of Janamejaya.",
+   "desc_kn": "ಪರೀಕ್ಷಿತ ಅಭಿಮನ್ಯು ಮತ್ತು ಉತ್ತರೆಯರ ಮಗ; ಯುದ್ಧದ ನಂತರ ಕುರುವಂಶದ ಏಕೈಕ ವಾರಸುದಾರ. ಅಶ್ವತ್ಥಾಮ ಗರ್ಭದಲ್ಲಿದ್ದ ಅವನ ಮೇಲೆ ಅಸ್ತ್ರ ಬಿಡುತ್ತಾನೆ; ಕೃಷ್ಣ ಅವನನ್ನು ರಕ್ಷಿಸುತ್ತಾನೆ. ಕುರುವಂಶ ‘ಪರಿಕ್ಷೀಣ’ವಾದಾಗ ಹುಟ್ಟಿದ್ದರಿಂದ ಈ ಹೆಸರು ಎಂದು ಪಠ್ಯ ಹೇಳುತ್ತದೆ. ಸತ್ತು ಹುಟ್ಟಿದ ಅವನನ್ನು ಕೃಷ್ಣ ಬದುಕಿಸುತ್ತಾನೆ. ಪಾಂಡವರು ಸ್ವರ್ಗಕ್ಕೆ ಹೊರಡುವ ಮುನ್ನ ಯುಧಿಷ್ಠಿರ ಅವನಿಗೆ ಪಟ್ಟ ಕಟ್ಟುತ್ತಾನೆ; ಕೃಪ ಅವನ ಗುರು. ಮುಂದೆ ಒಬ್ಬ ಋಷಿಯನ್ನು ಅವಮಾನಿಸಿ ತಕ್ಷಕ ಸರ್ಪದ ಕಡಿತದಿಂದ ಸಾಯುವ ಶಾಪ ಪಡೆಯುತ್ತಾನೆ; ಜನಮೇಜಯನ ತಂದೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "abhimanyu",
+     "ref": "14.66.8",
+     "ed": "vu"
+    },
+    {
+     "type": "parent",
+     "to": "uttara",
+     "ref": "14.66.8",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Named Parikṣit when the Kuru line has dwindled",
+     "kn": "ಕುರುವಂಶ ಕ್ಷೀಣಿಸಿದಾಗ ‘ಪರಿಕ್ಷಿತ್’ ಎಂದು ಹೆಸರು",
+     "ref": "10.16.3",
+     "ed": "vu",
+     "with": [
+      "ashvatthaman",
+      "vyasa"
+     ]
+    },
+    {
+     "en": "Born while the Vṛṣṇi heroes are staying at Hastināpura",
+     "kn": "ವೃಷ್ಣಿ ವೀರರು ಹಸ್ತಿನಾಪುರದಲ್ಲಿ ತಂಗಿದ್ದಾಗ ಜನನ",
+     "ref": "14.66.8",
+     "ed": "vu"
+    },
+    {
+     "en": "Installed as king by Yudhiṣṭhira",
+     "kn": "ಯುಧಿಷ್ಠಿರನಿಂದ ಪಟ್ಟಾಭಿಷೇಕ",
+     "ref": "17.1.7",
+     "ed": "vu",
+     "with": [
+      "subhadra",
+      "yudhishthira"
+     ]
+    },
+    {
+     "en": "Cursed to die by Takṣaka's bite",
+     "kn": "ತಕ್ಷಕನ ಕಡಿತದಿಂದ ಸಾಯುವ ಶಾಪ",
+     "ref": "1.42.39",
+     "ed": "vu"
+    }
+   ]
+  },
+  {
+   "id": "duryodhana",
+   "name": "Duryodhana",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Suyodhana",
+    "Gāndhāri"
+   ],
+   "match": [],
+   "role_en": "Eldest Kaurava, king of the Kurus and chief enemy of the Pāṇḍavas",
+   "role_kn": "ಹಿರಿಯ ಕೌರವ; ಕುರುರಾಜ, ಪಾಂಡವರ ಮುಖ್ಯ ವೈರಿ",
+   "desc_en": "Duryodhana is the eldest of Dhṛtarāṣṭra and Gāndhārī's hundred sons. He grudges the Pāṇḍavas their right: as a boy he poisons Bhīma, later plots against them in the lacquer house at Vāraṇāvata, and with Śakuni wins Yudhiṣṭhira's kingdom at dice. He refuses all Kṛṣṇa's peace offers, saying he will not give even a needle's point of land. In the war Bhīṣma, Droṇa, Karṇa and Śalya lead his army in turn; at the end Bhīma breaks his thighs in a mace duel. He is shown by the epic enjoying heaven, which Yudhiṣṭhira at first finds hard to accept.",
+   "desc_kn": "ದುರ್ಯೋಧನ ಧೃತರಾಷ್ಟ್ರ-ಗಾಂಧಾರಿಯರ ನೂರು ಮಕ್ಕಳಲ್ಲಿ ಹಿರಿಯ. ಪಾಂಡವರ ಹಕ್ಕಿನ ಬಗ್ಗೆ ಅವನಿಗೆ ದ್ವೇಷ: ಬಾಲ್ಯದಲ್ಲಿ ಭೀಮನಿಗೆ ವಿಷ ಉಣಿಸುತ್ತಾನೆ, ಮುಂದೆ ವಾರಣಾವತದ ಅರಗಿನ ಮನೆಯಲ್ಲಿ ಅವರನ್ನು ಸುಡಲು ಸಂಚು ಹೂಡುತ್ತಾನೆ, ಶಕುನಿಯೊಂದಿಗೆ ಜೂಜಾಡಿ ಯುಧಿಷ್ಠಿರನ ರಾಜ್ಯ ಗೆಲ್ಲುತ್ತಾನೆ. ಕೃಷ್ಣನ ಎಲ್ಲ ಸಂಧಾನ ಪ್ರಸ್ತಾಪಗಳನ್ನು ತಿರಸ್ಕರಿಸುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ಭೀಷ್ಮ, ದ್ರೋಣ, ಕರ್ಣ, ಶಲ್ಯರು ಅವನ ಸೇನೆಯನ್ನು ಒಬ್ಬರ ನಂತರ ಒಬ್ಬರು ನಡೆಸುತ್ತಾರೆ; ಕೊನೆಗೆ ಗದಾಯುದ್ಧದಲ್ಲಿ ಭೀಮ ಅವನ ತೊಡೆ ಮುರಿಯುತ್ತಾನೆ. ಮಹಾಭಾರತ ಅವನು ಸ್ವರ್ಗದಲ್ಲಿ ಸುಖವಾಗಿರುವುದನ್ನು ತೋರಿಸುತ್ತದೆ; ಯುಧಿಷ್ಠಿರನಿಗೆ ಅದನ್ನು ಒಪ್ಪುವುದು ಮೊದಲು ಕಷ್ಟವಾಗುತ್ತದೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "dhritarashtra"
+    },
+    {
+     "type": "parent",
+     "to": "gandhari"
+    },
+    {
+     "type": "enemy",
+     "to": "yudhishthira"
+    },
+    {
+     "type": "enemy",
+     "to": "bhima"
+    },
+    {
+     "type": "killed_by",
+     "to": "bhima",
+     "ref": "9.59.46",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Poisons Bhīma's food",
+     "kn": "ಭೀಮನ ಆಹಾರಕ್ಕೆ ವಿಷ ಬೆರೆಸುತ್ತಾನೆ",
+     "ref": "1.138.15",
+     "ed": "vu",
+     "with": [
+      "bhima"
+     ]
+    },
+    {
+     "en": "Sends Purocana to build the lacquer house",
+     "kn": "ಅರಗಿನ ಮನೆ ಕಟ್ಟಲು ಪುರೋಚನನನ್ನು ಕಳುಹಿಸುತ್ತಾನೆ",
+     "ref": "1.182.3",
+     "ed": "vu"
+    },
+    {
+     "en": "Insults Draupadī in the dice hall",
+     "kn": "ಜೂಜಿನ ಸಭೆಯಲ್ಲಿ ದ್ರೌಪದಿಯನ್ನು ಅವಮಾನಿಸುತ್ತಾನೆ",
+     "ref": "2.93.24",
+     "ed": "vu",
+     "with": [
+      "bhima",
+      "draupadi"
+     ]
+    },
+    {
+     "en": "Rejects Kṛṣṇa's peace mission",
+     "kn": "ಕೃಷ್ಣನ ಸಂಧಾನವನ್ನು ತಿರಸ್ಕರಿಸುತ್ತಾನೆ",
+     "ref": "5.127.1",
+     "ed": "vu",
+     "with": [
+      "krishna"
+     ]
+    },
+    {
+     "en": "Struck down by Bhīma in the mace duel",
+     "kn": "ಗದಾಯುದ್ಧದಲ್ಲಿ ಭೀಮನಿಂದ ಬೀಳುತ್ತಾನೆ",
+     "ref": "9.59.46",
+     "ed": "vu",
+     "with": [
+      "bhima"
+     ]
+    },
+    {
+     "en": "Seen in heaven by Yudhiṣṭhira",
+     "kn": "ಯುಧಿಷ್ಠಿರ ಸ್ವರ್ಗದಲ್ಲಿ ಅವನನ್ನು ಕಾಣುತ್ತಾನೆ",
+     "ref": "18.1.4",
+     "ed": "vu",
+     "with": [
+      "yudhishthira"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "duhshasana",
+   "name": "Duḥśāsana",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [],
+   "match": [
+    "Duśśāsana"
+   ],
+   "role_en": "Duryodhana's next brother, who dragged Draupadī into the hall",
+   "role_kn": "ದುರ್ಯೋಧನನ ತಮ್ಮ; ದ್ರೌಪದಿಯನ್ನು ಸಭೆಗೆ ಎಳೆದು ತಂದವನು",
+   "desc_en": "Duḥśāsana is the second of Dhṛtarāṣṭra's sons and Duryodhana's closest brother. In the dice hall, at Duryodhana's order, he seizes Draupadī by the hair and tries to pull off her cloth. Bhīma vows to drink his blood. In the war Bhīma meets him in single combat, tears open his chest and drinks his blood, keeping the vow.",
+   "desc_kn": "ದುಶ್ಶಾಸನ ಧೃತರಾಷ್ಟ್ರನ ಮಕ್ಕಳಲ್ಲಿ ಎರಡನೆಯವನು, ದುರ್ಯೋಧನನ ನಿಕಟ ತಮ್ಮ. ಜೂಜಿನ ಸಭೆಯಲ್ಲಿ ದುರ್ಯೋಧನನ ಆಜ್ಞೆಯಂತೆ ಅವನು ದ್ರೌಪದಿಯ ಕೂದಲು ಹಿಡಿದೆಳೆದು ವಸ್ತ್ರ ಸೆಳೆಯಲು ಯತ್ನಿಸುತ್ತಾನೆ. ಭೀಮ ಅವನ ರಕ್ತ ಕುಡಿಯುವುದಾಗಿ ಪ್ರತಿಜ್ಞೆ ಮಾಡುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ಭೀಮ ಅವನೊಂದಿಗೆ ದ್ವಂದ್ವ ಯುದ್ಧ ಮಾಡಿ ಎದೆ ಸೀಳಿ ರಕ್ತ ಕುಡಿದು ತನ್ನ ಪ್ರತಿಜ್ಞೆ ಪೂರೈಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "dhritarashtra"
+    },
+    {
+     "type": "parent",
+     "to": "gandhari"
+    },
+    {
+     "type": "killed_by",
+     "to": "bhima",
+     "ref": "8.87.28",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Drags Draupadī into the hall and starts to strip her",
+     "kn": "ದ್ರೌಪದಿಯನ್ನು ಸಭೆಗೆ ಎಳೆದು ವಸ್ತ್ರ ಸೆಳೆಯಲು ಆರಂಭಿಸುತ್ತಾನೆ",
+     "ref": "2.90.40",
+     "ed": "vu",
+     "with": [
+      "draupadi"
+     ]
+    },
+    {
+     "en": "Bhīma vows to drink his blood",
+     "kn": "ಭೀಮ ಅವನ ರಕ್ತ ಕುಡಿಯುವ ಪ್ರತಿಜ್ಞೆ ಮಾಡುತ್ತಾನೆ",
+     "ref": "2.92.63",
+     "ed": "vu",
+     "with": [
+      "bhima"
+     ]
+    },
+    {
+     "en": "Fights Bhīma in the war",
+     "kn": "ಯುದ್ಧದಲ್ಲಿ ಭೀಮನೊಂದಿಗೆ ಹೋರಾಡುತ್ತಾನೆ",
+     "ref": "8.87.2",
+     "ed": "vu",
+     "with": [
+      "bhima"
+     ]
+    },
+    {
+     "en": "Killed by Bhīma",
+     "kn": "ಭೀಮನಿಂದ ವಧೆ",
+     "ref": "8.87.28",
+     "ed": "vu",
+     "with": [
+      "bhima"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vikarna",
+   "name": "Vikarṇa",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 3,
+   "epithets": [],
+   "match": [],
+   "role_en": "The Kaurava who spoke up for Draupadī in the dice hall",
+   "role_kn": "ಜೂಜಿನ ಸಭೆಯಲ್ಲಿ ದ್ರೌಪದಿಯ ಪರವಾಗಿ ಮಾತನಾಡಿದ ಕೌರವ",
+   "desc_en": "Vikarṇa is one of Dhṛtarāṣṭra's hundred sons. When Draupadī is dragged into the hall, he alone among the Kauravas asks the elders to answer her question, arguing that Yudhiṣṭhira had no right to stake her after losing himself. The assembly praises him, but Karṇa overrules him. He fights on Duryodhana's side in the war and is killed by Bhīma.",
+   "desc_kn": "ವಿಕರ್ಣ ಧೃತರಾಷ್ಟ್ರನ ನೂರು ಮಕ್ಕಳಲ್ಲಿ ಒಬ್ಬ. ದ್ರೌಪದಿಯನ್ನು ಸಭೆಗೆ ಎಳೆದು ತಂದಾಗ ಕೌರವರಲ್ಲಿ ಅವನೊಬ್ಬನೇ ಹಿರಿಯರು ಅವಳ ಪ್ರಶ್ನೆಗೆ ಉತ್ತರಿಸಬೇಕೆಂದು ಕೇಳುತ್ತಾನೆ; ತನ್ನನ್ನೇ ಸೋತ ಮೇಲೆ ಯುಧಿಷ್ಠಿರ ಅವಳನ್ನು ಪಣಕ್ಕಿಡುವ ಹಕ್ಕಿಲ್ಲ ಎಂದು ವಾದಿಸುತ್ತಾನೆ. ಸಭಿಕರು ಅವನನ್ನು ಹೊಗಳುತ್ತಾರೆ, ಆದರೆ ಕರ್ಣ ಅವನನ್ನು ಅಡಗಿಸುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ದುರ್ಯೋಧನನ ಪಕ್ಷದಲ್ಲಿ ಹೋರಾಡಿ ಭೀಮನಿಂದ ಹತನಾಗುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "dhritarashtra"
+    },
+    {
+     "type": "parent",
+     "to": "gandhari"
+    },
+    {
+     "type": "killed_by",
+     "to": "bhima",
+     "ref": "11.19.1",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Speaks up for Draupadī as she is dragged forward",
+     "kn": "ದ್ರೌಪದಿಯನ್ನು ಎಳೆದು ತರುವಾಗ ಅವಳ ಪರವಾಗಿ ಮಾತನಾಡುತ್ತಾನೆ",
+     "ref": "2.90.11",
+     "ed": "vu",
+     "with": [
+      "draupadi"
+     ]
+    },
+    {
+     "en": "Appeals to all the kings in the hall",
+     "kn": "ಸಭೆಯ ಎಲ್ಲ ರಾಜರಿಗೂ ಮನವಿ ಮಾಡುತ್ತಾನೆ",
+     "ref": "2.90.18",
+     "ed": "vu"
+    },
+    {
+     "en": "Gāndhārī sees him slain by Bhīma",
+     "kn": "ಭೀಮನಿಂದ ಹತನಾದ ವಿಕರ್ಣನನ್ನು ಗಾಂಧಾರಿ ಕಾಣುತ್ತಾಳೆ",
+     "ref": "11.19.1",
+     "ed": "vu",
+     "with": [
+      "gandhari",
+      "bhima"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "yuyutsu",
+   "name": "Yuyutsu",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 3,
+   "epithets": [
+    "Vaiśyāputra"
+   ],
+   "match": [],
+   "role_en": "Dhṛtarāṣṭra's son by a Vaiśya woman, who left the Kauravas for the Pāṇḍavas",
+   "role_kn": "ಧೃತರಾಷ್ಟ್ರನ ವೈಶ್ಯ ಪತ್ನಿಯ ಮಗ; ಕೌರವರನ್ನು ಬಿಟ್ಟು ಪಾಂಡವರನ್ನು ಸೇರಿದವನು",
+   "desc_en": "Yuyutsu is Dhṛtarāṣṭra's son by a Vaiśya woman, counted as the hundred-and-first. Just before the war begins, Yudhiṣṭhira calls out to the warriors of the other side that anyone may join him, and Yuyutsu leaves the Kauravas and crosses over. He is one of the few on the Kaurava side to survive. After the war he serves the elder Dhṛtarāṣṭra, and Yudhiṣṭhira puts the kingdom in his care when he sets out to heaven.",
+   "desc_kn": "ಯುಯುತ್ಸು ಧೃತರಾಷ್ಟ್ರನಿಗೆ ವೈಶ್ಯ ಸ್ತ್ರೀಯಲ್ಲಿ ಹುಟ್ಟಿದ ಮಗ; ನೂರೊಂದನೆಯವನೆಂದು ಲೆಕ್ಕ. ಯುದ್ಧ ಆರಂಭವಾಗುವ ಮುನ್ನ ಯುಧಿಷ್ಠಿರ ಎದುರು ಪಕ್ಷದ ಯೋಧರಿಗೆ ತನ್ನ ಬಳಿ ಬರಬಹುದೆಂದು ಕರೆಯುತ್ತಾನೆ; ಯುಯುತ್ಸು ಕೌರವರನ್ನು ಬಿಟ್ಟು ಪಾಂಡವರ ಪಕ್ಷಕ್ಕೆ ಬರುತ್ತಾನೆ. ಕೌರವ ಪಕ್ಷದಲ್ಲಿ ಬದುಕುಳಿದ ಕೆಲವರಲ್ಲಿ ಅವನೂ ಒಬ್ಬ. ಯುದ್ಧಾನಂತರ ವೃದ್ಧ ಧೃತರಾಷ್ಟ್ರನ ಸೇವೆ ಮಾಡುತ್ತಾನೆ; ಯುಧಿಷ್ಠಿರ ಸ್ವರ್ಗಯಾತ್ರೆಗೆ ಹೊರಡುವಾಗ ರಾಜ್ಯವನ್ನು ಅವನ ವಶಕ್ಕೆ ಒಪ್ಪಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "dhritarashtra",
+     "ref": "1.126.4",
+     "ed": "vu"
+    },
+    {
+     "type": "ally",
+     "to": "yudhishthira",
+     "ref": "6.43.97",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Counted among Dhṛtarāṣṭra's hundred and one sons",
+     "kn": "ಧೃತರಾಷ್ಟ್ರನ ನೂರೊಂದು ಮಕ್ಕಳಲ್ಲಿ ಒಬ್ಬ",
+     "ref": "1.64.162",
+     "ed": "vu"
+    },
+    {
+     "en": "Joins the Pāṇḍavas before the war",
+     "kn": "ಯುದ್ಧಕ್ಕೆ ಮುನ್ನ ಪಾಂಡವರನ್ನು ಸೇರುತ್ತಾನೆ",
+     "ref": "6.43.102",
+     "ed": "vu",
+     "with": [
+      "yudhishthira"
+     ]
+    },
+    {
+     "en": "Attends Dhṛtarāṣṭra after the war",
+     "kn": "ಯುದ್ಧಾನಂತರ ಧೃತರಾಷ್ಟ್ರನ ಸೇವೆ ಮಾಡುತ್ತಾನೆ",
+     "ref": "15.1.5",
+     "ed": "vu",
+     "with": [
+      "dhritarashtra",
+      "vidura"
+     ]
+    },
+    {
+     "en": "Entrusted with the kingdom",
+     "kn": "ರಾಜ್ಯದ ಹೊಣೆ ಅವನಿಗೆ ವಹಿಸಲಾಗುತ್ತದೆ",
+     "ref": "17.1.6",
+     "ed": "vu",
+     "with": [
+      "yudhishthira"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "duhshala",
+   "name": "Duḥśalā",
+   "group": "kaurava",
+   "gender": "f",
+   "rank": 3,
+   "epithets": [],
+   "match": [],
+   "role_en": "The Kauravas' only sister, wife of Jayadratha",
+   "role_kn": "ಕೌರವರ ಏಕೈಕ ತಂಗಿ; ಜಯದ್ರಥನ ಪತ್ನಿ",
+   "desc_en": "Duḥśalā is the one daughter of Dhṛtarāṣṭra and Gāndhārī, married to Jayadratha of Sindhu. When Jayadratha abducts Draupadī and is caught by the Pāṇḍavas, he is spared out of regard for her. After Arjuna kills Jayadratha, she is shown running distraught to find her husband's head. In the horse-sacrifice story she brings her grandson, Suratha's son, to Arjuna, who spares the boy and installs him as king.",
+   "desc_kn": "ದುಶ್ಶಲೆ ಧೃತರಾಷ್ಟ್ರ-ಗಾಂಧಾರಿಯರ ಏಕೈಕ ಮಗಳು; ಸಿಂಧು ದೇಶದ ಜಯದ್ರಥನ ಪತ್ನಿ. ಜಯದ್ರಥ ದ್ರೌಪದಿಯನ್ನು ಅಪಹರಿಸಿ ಪಾಂಡವರಿಗೆ ಸಿಕ್ಕಿಬಿದ್ದಾಗ ಅವಳ ಮೇಲಿನ ಗೌರವದಿಂದ ಅವನನ್ನು ಬಿಡಲಾಗುತ್ತದೆ. ಅರ್ಜುನ ಜಯದ್ರಥನನ್ನು ಕೊಂದ ಮೇಲೆ ಅವಳು ಪತಿಯ ತಲೆಗಾಗಿ ದಿಕ್ಕೆಟ್ಟು ಓಡಾಡುವುದನ್ನು ಗಾಂಧಾರಿ ತೋರಿಸುತ್ತಾಳೆ. ಅಶ್ವಮೇಧದ ಕಥೆಯಲ್ಲಿ ಮೊಮ್ಮಗ — ಸುರಥನ ಮಗನನ್ನು — ಅರ್ಜುನನ ಬಳಿ ಕರೆತರುತ್ತಾಳೆ; ಅರ್ಜುನ ಹುಡುಗನನ್ನು ಉಳಿಸಿ ರಾಜನನ್ನಾಗಿ ಮಾಡುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "dhritarashtra",
+     "ref": "1.131.18",
+     "ed": "vu"
+    },
+    {
+     "type": "parent",
+     "to": "gandhari"
+    },
+    {
+     "type": "spouse",
+     "to": "jayadratha",
+     "ref": "1.131.18",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Given in marriage to Jayadratha",
+     "kn": "ಜಯದ್ರಥನಿಗೆ ಮದುವೆ ಮಾಡಿಕೊಡಲಾಗುತ್ತದೆ",
+     "ref": "1.131.18",
+     "ed": "vu",
+     "with": [
+      "dhritarashtra",
+      "jayadratha"
+     ]
+    },
+    {
+     "en": "Jayadratha was spared for her sake",
+     "kn": "ಅವಳ ಕಾರಣದಿಂದ ಜಯದ್ರಥ ಪಾರಾಗಿದ್ದ",
+     "ref": "11.21.13",
+     "ed": "vu",
+     "with": [
+      "jayadratha"
+     ]
+    },
+    {
+     "en": "Brings her grandson to Arjuna",
+     "kn": "ಮೊಮ್ಮಗನನ್ನು ಅರ್ಜುನನ ಬಳಿ ಕರೆತರುತ್ತಾಳೆ",
+     "ref": "14.78.22",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Arjuna installs her grandson as king",
+     "kn": "ಅರ್ಜುನ ಅವಳ ಮೊಮ್ಮಗನಿಗೆ ಪಟ್ಟ ಕಟ್ಟುತ್ತಾನೆ",
+     "ref": "14.90.34",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jayadratha",
+   "name": "Jayadratha",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Saindhava",
+    "Sindhurāja",
+    "Sauvīra"
+   ],
+   "match": [],
+   "role_en": "King of Sindhu, who abducted Draupadī and was killed by Arjuna",
+   "role_kn": "ಸಿಂಧುರಾಜ; ದ್ರೌಪದಿಯನ್ನು ಅಪಹರಿಸಿ ಅರ್ಜುನನಿಂದ ಹತನಾದವನು",
+   "desc_en": "Jayadratha is the king of Sindhu and Sauvīra, husband of Duḥśalā and son-in-law of Dhṛtarāṣṭra. In the forest he sees Draupadī alone and carries her off; the Pāṇḍavas overtake him, and he is humiliated but spared. He then wins a boon from Śiva that lets him hold back the Pāṇḍavas, except Arjuna, for one day. On the thirteenth day of the war he blocks them from entering the wheel formation where Abhimanyu is killed. Arjuna vows to kill him before the next sunset, and does so, and sends his head into his father's lap.",
+   "desc_kn": "ಜಯದ್ರಥ ಸಿಂಧು-ಸೌವೀರ ದೇಶಗಳ ರಾಜ, ದುಶ್ಶಲೆಯ ಪತಿ, ಧೃತರಾಷ್ಟ್ರನ ಅಳಿಯ. ಕಾಡಿನಲ್ಲಿ ದ್ರೌಪದಿ ಒಬ್ಬಳೇ ಇದ್ದುದನ್ನು ಕಂಡು ಅಪಹರಿಸುತ್ತಾನೆ; ಪಾಂಡವರು ಹಿಂಬಾಲಿಸಿ ಹಿಡಿಯುತ್ತಾರೆ, ಅವಮಾನಿತನಾಗಿ ಬಿಡುಗಡೆ ಪಡೆಯುತ್ತಾನೆ. ನಂತರ ಶಿವನಿಂದ ಒಂದು ದಿನ ಅರ್ಜುನನನ್ನು ಬಿಟ್ಟು ಉಳಿದ ಪಾಂಡವರನ್ನು ತಡೆಯುವ ವರ ಪಡೆಯುತ್ತಾನೆ. ಯುದ್ಧದ ಹದಿಮೂರನೆಯ ದಿನ ಅಭಿಮನ್ಯು ಪ್ರವೇಶಿಸಿದ ಚಕ್ರವ್ಯೂಹಕ್ಕೆ ಇತರ ಪಾಂಡವರು ಹೋಗದಂತೆ ತಡೆಯುತ್ತಾನೆ. ಮರುದಿನ ಸೂರ್ಯಾಸ್ತದೊಳಗೆ ಕೊಲ್ಲುವುದಾಗಿ ಅರ್ಜುನ ಪ್ರತಿಜ್ಞೆ ಮಾಡಿ ಅದನ್ನು ನೆರವೇರಿಸುತ್ತಾನೆ; ಅವನ ತಲೆ ತಂದೆಯ ತೊಡೆಯ ಮೇಲೆ ಬೀಳುವಂತೆ ಮಾಡುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "killed_by",
+     "to": "arjuna",
+     "ref": "7.148.31",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Marries Duḥśalā",
+     "kn": "ದುಶ್ಶಲೆಯನ್ನು ಮದುವೆಯಾಗುತ್ತಾನೆ",
+     "ref": "1.131.18",
+     "ed": "vu",
+     "with": [
+      "duhshala",
+      "dhritarashtra"
+     ]
+    },
+    {
+     "en": "Sees Draupadī in the forest and carries her off",
+     "kn": "ಕಾಡಿನಲ್ಲಿ ದ್ರೌಪದಿಯನ್ನು ಕಂಡು ಅಪಹರಿಸುತ್ತಾನೆ",
+     "ref": "3.268.8",
+     "ed": "vu",
+     "with": [
+      "draupadi"
+     ]
+    },
+    {
+     "en": "Wins Śiva's boon to hold back the Pāṇḍavas for a day",
+     "kn": "ಒಂದು ದಿನ ಪಾಂಡವರನ್ನು ತಡೆಯುವ ಶಿವನ ವರ ಪಡೆಯುತ್ತಾನೆ",
+     "ref": "7.42.17",
+     "ed": "vu"
+    },
+    {
+     "en": "Arjuna vows to kill him",
+     "kn": "ಅರ್ಜುನ ಅವನನ್ನು ಕೊಲ್ಲುವ ಪ್ರತಿಜ್ಞೆ ಮಾಡುತ್ತಾನೆ",
+     "ref": "7.73.52",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Beheaded by Arjuna",
+     "kn": "ಅರ್ಜುನನಿಂದ ಶಿರಚ್ಛೇದ",
+     "ref": "7.148.31",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "karna",
+   "name": "Karṇa",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 1,
+   "epithets": [
+    "Rādheya",
+    "Vaikartana",
+    "Vasuṣeṇa",
+    "Sūtaputra",
+    "Ādhirathi",
+    "Aṅgarāja"
+   ],
+   "match": [],
+   "role_en": "Kuntī's firstborn, raised by a charioteer, Duryodhana's loyal friend and Arjuna's rival",
+   "role_kn": "ಕುಂತಿಯ ಮೊದಲ ಮಗ; ಸೂತನಿಂದ ಬೆಳೆದವನು, ದುರ್ಯೋಧನನ ನಿಷ್ಠ ಗೆಳೆಯ, ಅರ್ಜುನನ ಪ್ರತಿಸ್ಪರ್ಧಿ",
+   "desc_en": "Karṇa is born to Kuntī by the Sun while she is unmarried, with natural armour and earrings; she abandons him, and he is raised by the charioteer Adhiratha and his wife Rādhā. He learns the bow from Paraśurāma, who curses him when he learns Karṇa is no brahmin. In the arena at Hastināpura he challenges Arjuna, and Duryodhana makes him king of Aṅga. He joins the dice-hall insult to Draupadī, gives up his armour and earrings to Indra disguised as a brahmin, and refuses Kuntī's plea to join the Pāṇḍavas, promising only to spare her other sons. In the war he leads the Kaurava army after Droṇa, and Arjuna kills him on the seventeenth day, when his chariot wheel sinks into the ground.",
+   "desc_kn": "ಕರ್ಣ ಕುಂತಿಗೆ ಅವಿವಾಹಿತಳಾಗಿದ್ದಾಗ ಸೂರ್ಯನಿಂದ ಜನಿಸಿದವನು; ಹುಟ್ಟಿನಿಂದಲೇ ಕವಚ-ಕುಂಡಲಗಳಿವೆ. ಅವಳು ಅವನನ್ನು ತ್ಯಜಿಸುತ್ತಾಳೆ; ಸೂತ ಅಧಿರಥ ಮತ್ತು ಅವನ ಪತ್ನಿ ರಾಧೆ ಅವನನ್ನು ಬೆಳೆಸುತ್ತಾರೆ. ಪರಶುರಾಮನಿಂದ ಬಿಲ್ಲುವಿದ್ಯೆ ಕಲಿಯುತ್ತಾನೆ; ಕರ್ಣ ಬ್ರಾಹ್ಮಣನಲ್ಲವೆಂದು ತಿಳಿದ ಪರಶುರಾಮ ಶಪಿಸುತ್ತಾನೆ. ಹಸ್ತಿನಾಪುರದ ರಂಗಭೂಮಿಯಲ್ಲಿ ಅರ್ಜುನನಿಗೆ ಸವಾಲೆಸೆಯುತ್ತಾನೆ; ದುರ್ಯೋಧನ ಅವನನ್ನು ಅಂಗರಾಜನನ್ನಾಗಿ ಮಾಡುತ್ತಾನೆ. ಜೂಜಿನ ಸಭೆಯಲ್ಲಿ ದ್ರೌಪದಿಯ ಅವಮಾನದಲ್ಲಿ ಭಾಗಿಯಾಗುತ್ತಾನೆ; ಬ್ರಾಹ್ಮಣ ವೇಷದ ಇಂದ್ರನಿಗೆ ತನ್ನ ಕವಚ-ಕುಂಡಲಗಳನ್ನು ದಾನ ಮಾಡುತ್ತಾನೆ; ಪಾಂಡವರ ಪಕ್ಷ ಸೇರಬೇಕೆಂಬ ಕುಂತಿಯ ಬೇಡಿಕೆಯನ್ನು ನಿರಾಕರಿಸಿ, ಅವಳ ಉಳಿದ ಮಕ್ಕಳನ್ನು ಉಳಿಸುವುದಾಗಿ ಮಾತ್ರ ಭರವಸೆ ನೀಡುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ದ್ರೋಣನ ನಂತರ ಕೌರವ ಸೇನೆಯನ್ನು ನಡೆಸಿ, ಹದಿನೇಳನೆಯ ದಿನ ರಥಚಕ್ರ ನೆಲದಲ್ಲಿ ಹೂತಿರುವಾಗ ಅರ್ಜುನನಿಂದ ಹತನಾಗುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "kunti",
+     "ref": "1.120.31",
+     "ed": "vu"
+    },
+    {
+     "type": "parent",
+     "to": "surya",
+     "ref": "1.120.31",
+     "ed": "vu"
+    },
+    {
+     "type": "teacher",
+     "to": "parashurama",
+     "ref": "12.3.3",
+     "ed": "vu"
+    },
+    {
+     "type": "friend",
+     "to": "duryodhana",
+     "ref": "1.146.13",
+     "ed": "vu"
+    },
+    {
+     "type": "killed_by",
+     "to": "arjuna",
+     "ref": "8.100.19",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Born to Kuntī and the Sun",
+     "kn": "ಕುಂತಿ ಮತ್ತು ಸೂರ್ಯರಿಗೆ ಜನನ",
+     "ref": "1.120.31",
+     "ed": "vu",
+     "with": [
+      "kunti",
+      "surya"
+     ]
+    },
+    {
+     "en": "Enters the arena; Duryodhana embraces him",
+     "kn": "ರಂಗಭೂಮಿ ಪ್ರವೇಶ; ದುರ್ಯೋಧನ ಅಪ್ಪಿಕೊಳ್ಳುತ್ತಾನೆ",
+     "ref": "1.146.13",
+     "ed": "vu",
+     "with": [
+      "duryodhana",
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Is consecrated king of Aṅga",
+     "kn": "ಅಂಗರಾಜನಾಗಿ ಅಭಿಷಿಕ್ತನಾಗುತ್ತಾನೆ",
+     "ref": "1.147.2",
+     "ed": "vu",
+     "with": [
+      "duryodhana"
+     ]
+    },
+    {
+     "en": "Tells Duḥśāsana to bring Draupadī as a slave",
+     "kn": "ದ್ರೌಪದಿಯನ್ನು ದಾಸಿಯಾಗಿ ತರಲು ದುಶ್ಶಾಸನನಿಗೆ ಹೇಳುತ್ತಾನೆ",
+     "ref": "2.90.91",
+     "ed": "vu",
+     "with": [
+      "duhshasana",
+      "draupadi"
+     ]
+    },
+    {
+     "en": "Gives his earrings and armour to Indra",
+     "kn": "ಇಂದ್ರನಿಗೆ ಕುಂಡಲ-ಕವಚ ದಾನ ಮಾಡುತ್ತಾನೆ",
+     "ref": "3.302.18",
+     "ed": "vu",
+     "with": [
+      "indra",
+      "surya"
+     ]
+    },
+    {
+     "en": "Refuses Kuntī's request to join the Pāṇḍavas",
+     "kn": "ಪಾಂಡವರ ಪಕ್ಷ ಸೇರುವ ಕುಂತಿಯ ಕೋರಿಕೆ ನಿರಾಕರಿಸುತ್ತಾನೆ",
+     "ref": "5.146.24",
+     "ed": "vu",
+     "with": [
+      "kunti"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shakuni",
+   "name": "Śakuni",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Saubala",
+    "Gāndhārarāja",
+    "Subalaputra"
+   ],
+   "match": [],
+   "role_en": "Gāndhāra prince, Gāndhārī's brother, the dice player behind the game",
+   "role_kn": "ಗಾಂಧಾರದ ರಾಜಕುಮಾರ, ಗಾಂಧಾರಿಯ ಅಣ್ಣ; ಜೂಜಿನ ಹಿಂದಿನ ಪಗಡೆಯಾಟಗಾರ",
+   "desc_en": "Śakuni, son of King Subala of Gāndhāra, is Gāndhārī's brother. He settles at Hastināpura as Duryodhana's adviser, joins in the plot against the Pāṇḍavas at Vāraṇāvata, and as a master of dice plays for Duryodhana against Yudhiṣṭhira, winning every stake. He keeps urging Duryodhana to war. In the war he fights beside Duryodhana, and on the eighteenth day Sahadeva kills him.",
+   "desc_kn": "ಶಕುನಿ ಗಾಂಧಾರ ರಾಜ ಸುಬಲನ ಮಗ, ಗಾಂಧಾರಿಯ ಅಣ್ಣ. ಹಸ್ತಿನಾಪುರದಲ್ಲಿ ದುರ್ಯೋಧನನ ಸಲಹೆಗಾರನಾಗಿ ನೆಲೆಸಿ ವಾರಣಾವತದ ಸಂಚಿನಲ್ಲಿ ಭಾಗಿಯಾಗುತ್ತಾನೆ; ಪಗಡೆಯಲ್ಲಿ ನಿಪುಣನಾದ ಅವನು ದುರ್ಯೋಧನನ ಪರವಾಗಿ ಯುಧಿಷ್ಠಿರನೊಂದಿಗೆ ಆಡಿ ಪ್ರತಿ ಪಣವನ್ನೂ ಗೆಲ್ಲುತ್ತಾನೆ. ಯುದ್ಧಕ್ಕೆ ದುರ್ಯೋಧನನನ್ನು ಪದೇಪದೇ ಪ್ರೇರೇಪಿಸುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ದುರ್ಯೋಧನನ ಪಕ್ಕದಲ್ಲೇ ಹೋರಾಡಿ, ಹದಿನೆಂಟನೆಯ ದಿನ ಸಹದೇವನಿಂದ ಹತನಾಗುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "ally",
+     "to": "duryodhana"
+    },
+    {
+     "type": "killed_by",
+     "to": "sahadeva",
+     "ref": "9.27.63",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Brings his sister Gāndhārī to Dhṛtarāṣṭra",
+     "kn": "ತಂಗಿ ಗಾಂಧಾರಿಯನ್ನು ಧೃತರಾಷ್ಟ್ರನಿಗೆ ಮದುವೆ ಮಾಡಿಕೊಡಲು ಕರೆತರುತ್ತಾನೆ",
+     "ref": "1.119.16",
+     "ed": "vu",
+     "with": [
+      "gandhari",
+      "dhritarashtra"
+     ]
+    },
+    {
+     "en": "Joins Duryodhana and Karṇa in plotting to burn Kuntī and her sons",
+     "kn": "ಕುಂತಿ ಮತ್ತು ಮಕ್ಕಳನ್ನು ಸುಡುವ ಸಂಚಿನಲ್ಲಿ ದುರ್ಯೋಧನ-ಕರ್ಣರೊಂದಿಗೆ ಭಾಗಿ",
+     "ref": "1.156.2",
+     "ed": "vu",
+     "with": [
+      "duryodhana",
+      "karna",
+      "kunti"
+     ]
+    },
+    {
+     "en": "Urges Dhṛtarāṣṭra to allow the dice game",
+     "kn": "ಜೂಜಿಗೆ ಅನುಮತಿ ನೀಡುವಂತೆ ಧೃತರಾಷ್ಟ್ರನನ್ನು ಒತ್ತಾಯಿಸುತ್ತಾನೆ",
+     "ref": "2.76.5",
+     "ed": "vu",
+     "with": [
+      "dhritarashtra"
+     ]
+    },
+    {
+     "en": "Wins every stake from Yudhiṣṭhira",
+     "kn": "ಯುಧಿಷ್ಠಿರನಿಂದ ಪ್ರತಿ ಪಣವನ್ನೂ ಗೆಲ್ಲುತ್ತಾನೆ",
+     "ref": "2.85.20",
+     "ed": "vu",
+     "with": [
+      "yudhishthira"
+     ]
+    },
+    {
+     "en": "Killed by Sahadeva",
+     "kn": "ಸಹದೇವನಿಂದ ಹತನಾಗುತ್ತಾನೆ",
+     "ref": "9.27.63",
+     "ed": "vu",
+     "with": [
+      "sahadeva"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ashvatthaman",
+   "name": "Aśvatthāman",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Drauṇi",
+    "Droṇaputra",
+    "Aśvatthāmā"
+   ],
+   "match": [
+    "Aśvatthāmā"
+   ],
+   "role_en": "Droṇa's son, who killed the Pāṇḍavas' sons in their sleep and was cursed to wander",
+   "role_kn": "ದ್ರೋಣನ ಮಗ; ಮಲಗಿದ್ದ ಪಾಂಡವ ಪುತ್ರರನ್ನು ಕೊಂದು ಶಾಪಗ್ರಸ್ತನಾಗಿ ಅಲೆದವನು",
+   "desc_en": "Aśvatthāman is the son of Droṇa and Kṛpī, born with a jewel on his forehead. When Droṇa hears the false report ‘Aśvatthāmā is dead’ he lays down his weapons and is killed. After Duryodhana falls, Aśvatthāman, with Kṛpa and Kṛtavarman, enters the Pāṇḍava camp at night and kills Dhṛṣṭadyumna and the sleeping Draupadeyas. He then releases the Brahmaśiras weapon against the Pāṇḍavas and at the womb of Uttarā; Arjuna's weapon is recalled, and he must give up his jewel. Kṛṣṇa curses him to wander for three thousand years, outcast and suffering.",
+   "desc_kn": "ಅಶ್ವತ್ಥಾಮ ದ್ರೋಣ ಮತ್ತು ಕೃಪಿಯರ ಮಗ; ಹಣೆಯಲ್ಲಿ ಮಣಿಯೊಂದಿಗೆ ಹುಟ್ಟಿದವನು. ‘ಅಶ್ವತ್ಥಾಮ ಸತ್ತ’ ಎಂಬ ಸುಳ್ಳು ಸುದ್ದಿ ಕೇಳಿ ದ್ರೋಣ ಆಯುಧ ಕೆಳಗಿಟ್ಟಾಗ ಹತನಾಗುತ್ತಾನೆ. ದುರ್ಯೋಧನ ಬಿದ್ದ ಮೇಲೆ ಅಶ್ವತ್ಥಾಮ, ಕೃಪ ಮತ್ತು ಕೃತವರ್ಮರೊಂದಿಗೆ ರಾತ್ರಿ ಪಾಂಡವ ಶಿಬಿರ ಪ್ರವೇಶಿಸಿ ಧೃಷ್ಟದ್ಯುಮ್ನ ಮತ್ತು ಮಲಗಿದ್ದ ದ್ರೌಪದೇಯರನ್ನು ಕೊಲ್ಲುತ್ತಾನೆ. ಬಳಿಕ ಪಾಂಡವರ ಮೇಲೆ ಮತ್ತು ಉತ್ತರೆಯ ಗರ್ಭದ ಮೇಲೆ ಬ್ರಹ್ಮಶಿರಾಸ್ತ್ರ ಬಿಡುತ್ತಾನೆ; ಅರ್ಜುನನ ಅಸ್ತ್ರ ಹಿಂಪಡೆಯಲ್ಪಡುತ್ತದೆ, ಅವನು ತನ್ನ ಮಣಿಯನ್ನು ಕೊಡಬೇಕಾಗುತ್ತದೆ. ಮೂರು ಸಾವಿರ ವರ್ಷ ಒಬ್ಬಂಟಿಯಾಗಿ, ಬಹಿಷ್ಕೃತನಾಗಿ, ನೋವಿನಿಂದ ಅಲೆಯುವಂತೆ ಕೃಷ್ಣ ಶಪಿಸುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "parent",
+     "to": "drona"
+    }
+   ],
+   "moments": [
+    {
+     "en": "‘Aśvatthāmā is dead’ is called out to Droṇa",
+     "kn": "‘ಅಶ್ವತ್ಥಾಮ ಸತ್ತ’ ಎಂದು ದ್ರೋಣನಿಗೆ ಕೂಗಿ ಹೇಳಲಾಗುತ್ತದೆ",
+     "ref": "7.191.54",
+     "ed": "vu",
+     "with": [
+      "drona",
+      "yudhishthira"
+     ]
+    },
+    {
+     "en": "Attacks the sleeping Pāṇḍava camp at night",
+     "kn": "ರಾತ್ರಿ ಮಲಗಿದ್ದ ಪಾಂಡವ ಶಿಬಿರದ ಮೇಲೆ ದಾಳಿ ಮಾಡುತ್ತಾನೆ",
+     "ref": "10.8.20",
+     "ed": "vu",
+     "with": [
+      "dhrishtadyumna"
+     ]
+    },
+    {
+     "en": "Cannot recall his weapon and must yield the jewel",
+     "kn": "ಅಸ್ತ್ರ ಹಿಂಪಡೆಯಲಾಗದೆ ಮಣಿಯನ್ನು ಕೊಡಬೇಕಾಗುತ್ತದೆ",
+     "ref": "10.15.27",
+     "ed": "vu",
+     "with": [
+      "vyasa",
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Kṛṣṇa curses him to wander for three thousand years",
+     "kn": "ಮೂರು ಸಾವಿರ ವರ್ಷ ಅಲೆಯುವಂತೆ ಕೃಷ್ಣ ಶಪಿಸುತ್ತಾನೆ",
+     "ref": "10.16.14",
+     "ed": "vu",
+     "with": [
+      "krishna",
+      "vyasa"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kripa",
+   "name": "Kṛpa",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 3,
+   "epithets": [
+    "Śāradvata",
+    "Gautama"
+   ],
+   "match": [],
+   "role_en": "Teacher of the Kuru princes, who survived the war",
+   "role_kn": "ಕುರು ರಾಜಕುಮಾರರ ಗುರು; ಯುದ್ಧದಲ್ಲಿ ಬದುಕುಳಿದವನು",
+   "desc_en": "Kṛpa is the son of the sage Śaradvat Gautama, born with his twin sister Kṛpī in a clump of reeds and brought up by Śantanu. He becomes the teacher of the Kuru princes in archery and is Droṇa's brother-in-law. He fights for the Kauravas in the war and is one of the three Kaurava survivors with Aśvatthāman and Kṛtavarman. He urges Aśvatthāman not to attack the camp, then joins him in the night attack. Later he is Parikṣit's teacher.",
+   "desc_kn": "ಕೃಪ ಶರದ್ವಂತ ಗೌತಮ ಋಷಿಯ ಮಗ; ತಂಗಿ ಕೃಪಿಯೊಂದಿಗೆ ದರ್ಬೆ ಪೊದೆಯಲ್ಲಿ ಹುಟ್ಟಿ ಶಂತನುವಿನ ಬಳಿ ಬೆಳೆದವನು. ಕುರು ರಾಜಕುಮಾರರಿಗೆ ಬಿಲ್ಲುವಿದ್ಯೆ ಕಲಿಸುವ ಗುರುವಾಗುತ್ತಾನೆ; ದ್ರೋಣನ ಭಾವ. ಯುದ್ಧದಲ್ಲಿ ಕೌರವರ ಪರ ಹೋರಾಡಿ, ಅಶ್ವತ್ಥಾಮ ಮತ್ತು ಕೃತವರ್ಮರೊಂದಿಗೆ ಕೌರವ ಪಕ್ಷದಲ್ಲಿ ಉಳಿದ ಮೂವರಲ್ಲಿ ಒಬ್ಬನಾಗುತ್ತಾನೆ. ಶಿಬಿರದ ಮೇಲೆ ದಾಳಿ ಮಾಡಬಾರದೆಂದು ಅಶ್ವತ್ಥಾಮನಿಗೆ ಹೇಳುತ್ತಾನೆ, ಬಳಿಕ ಅವನೊಂದಿಗೆ ರಾತ್ರಿ ದಾಳಿಯಲ್ಲಿ ಸೇರುತ್ತಾನೆ. ಮುಂದೆ ಪರೀಕ್ಷಿತನ ಗುರುವಾಗುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "ally",
+     "to": "duryodhana"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Born in a clump of reeds with his sister",
+     "kn": "ದರ್ಬೆ ಪೊದೆಯಲ್ಲಿ ತಂಗಿಯೊಂದಿಗೆ ಜನನ",
+     "ref": "1.64.149",
+     "ed": "vu",
+     "with": [
+      "ashvatthaman"
+     ]
+    },
+    {
+     "en": "The Kuru princes learn archery from him",
+     "kn": "ಕುರು ರಾಜಕುಮಾರರು ಅವನಿಂದ ಬಿಲ್ಲುವಿದ್ಯೆ ಕಲಿಯುತ್ತಾರೆ",
+     "ref": "1.139.42",
+     "ed": "vu"
+    },
+    {
+     "en": "Advises Aśvatthāman against the night attack",
+     "kn": "ರಾತ್ರಿ ದಾಳಿ ಬೇಡವೆಂದು ಅಶ್ವತ್ಥಾಮನಿಗೆ ಸಲಹೆ ನೀಡುತ್ತಾನೆ",
+     "ref": "10.3.1",
+     "ed": "vu",
+     "with": [
+      "ashvatthaman"
+     ]
+    },
+    {
+     "en": "Is made teacher of Parikṣit",
+     "kn": "ಪರೀಕ್ಷಿತನ ಗುರುವಾಗಿ ನೇಮಕವಾಗುತ್ತಾನೆ",
+     "ref": "17.1.14",
+     "ed": "vu",
+     "with": [
+      "parikshit"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shalya",
+   "name": "Śalya",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 2,
+   "epithets": [
+    "Madrarāja",
+    "Madreśvara",
+    "Madrādhipa"
+   ],
+   "match": [],
+   "role_en": "King of Madra, Nakula and Sahadeva's uncle, who fought for the Kauravas",
+   "role_kn": "ಮದ್ರರಾಜ; ನಕುಲ-ಸಹದೇವರ ಮಾವ, ಕೌರವರ ಪರ ಹೋರಾಡಿದವನು",
+   "desc_en": "Śalya is king of Madra and the brother of Mādrī, so uncle of Nakula and Sahadeva. Marching to join the Pāṇḍavas, he is treated so well by Duryodhana's men that he promises Duryodhana a boon and ends up on his side; he then meets Yudhiṣṭhira and says he will keep to this but will speak ill-omened words to Karṇa. In the war he drives Karṇa's chariot and insults him to unsettle him. On the last day he is the Kaurava commander and Yudhiṣṭhira kills him with a spear.",
+   "desc_kn": "ಶಲ್ಯ ಮದ್ರ ದೇಶದ ರಾಜ, ಮಾದ್ರಿಯ ಅಣ್ಣ — ಹೀಗಾಗಿ ನಕುಲ-ಸಹದೇವರ ಮಾವ. ಪಾಂಡವರನ್ನು ಸೇರಲು ಹೊರಟ ದಾರಿಯಲ್ಲಿ ದುರ್ಯೋಧನನ ಜನರ ಆತಿಥ್ಯದಿಂದ ಸಂತುಷ್ಟನಾಗಿ ದುರ್ಯೋಧನನಿಗೆ ವರ ಕೊಡುವುದಾಗಿ ಹೇಳಿ ಅವನ ಪಕ್ಷ ಸೇರುತ್ತಾನೆ; ಯುಧಿಷ್ಠಿರನನ್ನು ಭೇಟಿಯಾಗಿ ತಾನು ಅದಕ್ಕೆ ಬದ್ಧನೆಂದೂ ಕರ್ಣನಿಗೆ ಅಶುಭ ಮಾತುಗಳನ್ನಾಡುವೆನೆಂದೂ ತಿಳಿಸುತ್ತಾನೆ. ಯುದ್ಧದಲ್ಲಿ ಕರ್ಣನ ಸಾರಥಿಯಾಗಿ ಅವನನ್ನು ಕುಗ್ಗಿಸಲು ಅವಮಾನಿಸುತ್ತಾನೆ. ಕೊನೆಯ ದಿನ ಕೌರವ ಸೇನಾಪತಿಯಾಗುತ್ತಾನೆ; ಯುಧಿಷ್ಠಿರ ಅವನನ್ನು ಶಕ್ತ್ಯಾಯುಧದಿಂದ ಕೊಲ್ಲುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "ally",
+     "to": "duryodhana",
+     "ref": "5.8.25",
+     "ed": "vu"
+    },
+    {
+     "type": "killed_by",
+     "to": "yudhishthira",
+     "ref": "9.16.32",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Deceived by Duryodhana's hospitality on the road",
+     "kn": "ದಾರಿಯಲ್ಲಿ ದುರ್ಯೋಧನನ ಆತಿಥ್ಯದಿಂದ ಮೋಸಹೋಗುತ್ತಾನೆ",
+     "ref": "5.8.16",
+     "ed": "vu",
+     "with": [
+      "duryodhana"
+     ]
+    },
+    {
+     "en": "Meets Yudhiṣṭhira and tells him of his promise",
+     "kn": "ಯುಧಿಷ್ಠಿರನನ್ನು ಭೇಟಿಯಾಗಿ ತನ್ನ ಭರವಸೆಯ ಬಗ್ಗೆ ತಿಳಿಸುತ್ತಾನೆ",
+     "ref": "5.8.36",
+     "ed": "vu",
+     "with": [
+      "yudhishthira"
+     ]
+    },
+    {
+     "en": "Quarrels with Karṇa as his charioteer",
+     "kn": "ಕರ್ಣನ ಸಾರಥಿಯಾಗಿ ಅವನೊಂದಿಗೆ ವಾಗ್ವಾದ ಮಾಡುತ್ತಾನೆ",
+     "ref": "8.34.1",
+     "ed": "vu",
+     "with": [
+      "karna"
+     ]
+    },
+    {
+     "en": "Made Kaurava commander",
+     "kn": "ಕೌರವ ಸೇನಾಪತಿಯಾಗಿ ನೇಮಕ",
+     "ref": "9.1.9",
+     "ed": "vu",
+     "with": [
+      "duryodhana"
+     ]
+    },
+    {
+     "en": "Killed by Yudhiṣṭhira",
+     "kn": "ಯುಧಿಷ್ಠಿರನಿಂದ ಹತನಾಗುತ್ತಾನೆ",
+     "ref": "9.16.32",
+     "ed": "vu",
+     "with": [
+      "yudhishthira"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bhagadatta",
+   "name": "Bhagadatta",
+   "group": "kaurava",
+   "gender": "m",
+   "rank": 3,
+   "epithets": [],
+   "match": [],
+   "role_en": "King of Prāgjyotiṣa, Pāṇḍu's old friend, killed by Arjuna",
+   "role_kn": "ಪ್ರಾಗ್ಜ್ಯೋತಿಷದ ರಾಜ; ಪಾಂಡುವಿನ ಹಳೆಯ ಗೆಳೆಯ, ಅರ್ಜುನನಿಂದ ಹತನಾದವನು",
+   "desc_en": "Bhagadatta is an old king of Prāgjyotiṣa, a friend of Pāṇḍu. Arjuna fights him in a long battle on the northern conquest for the Rājasūya, and he submits. At Kurukṣetra he fights for Duryodhana on his elephant Supratīka. He hurls at Arjuna the weapon given him by his father Naraka, but Kṛṣṇa takes it on his own chest. Arjuna then kills the old king, who has tied his eyelids up with a cloth.",
+   "desc_kn": "ಭಗದತ್ತ ಪ್ರಾಗ್ಜ್ಯೋತಿಷದ ವೃದ್ಧ ರಾಜ, ಪಾಂಡುವಿನ ಗೆಳೆಯ. ರಾಜಸೂಯಕ್ಕಾಗಿ ಉತ್ತರ ದಿಗ್ವಿಜಯದಲ್ಲಿ ಅರ್ಜುನ ಅವನೊಂದಿಗೆ ದೀರ್ಘ ಯುದ್ಧ ಮಾಡುತ್ತಾನೆ; ಅವನು ಶರಣಾಗುತ್ತಾನೆ. ಕುರುಕ್ಷೇತ್ರದಲ್ಲಿ ದುರ್ಯೋಧನನ ಪರ ತನ್ನ ಆನೆ ಸುಪ್ರತೀಕದ ಮೇಲೆ ಹೋರಾಡುತ್ತಾನೆ. ತಂದೆ ನರಕನಿಂದ ಪಡೆದ ಅಸ್ತ್ರವನ್ನು ಅರ್ಜುನನ ಮೇಲೆ ಬಿಡುತ್ತಾನೆ; ಕೃಷ್ಣ ಅದನ್ನು ತನ್ನ ಎದೆಯ ಮೇಲೆ ಸ್ವೀಕರಿಸುತ್ತಾನೆ. ಬಳಿಕ ರೆಪ್ಪೆಗಳನ್ನು ಬಟ್ಟೆಯಿಂದ ಕಟ್ಟಿಕೊಂಡಿದ್ದ ವೃದ್ಧ ರಾಜನನ್ನು ಅರ್ಜುನ ಕೊಲ್ಲುತ್ತಾನೆ.",
+   "relations": [
+    {
+     "type": "ally",
+     "to": "duryodhana"
+    },
+    {
+     "type": "killed_by",
+     "to": "arjuna",
+     "ref": "7.29.54",
+     "ed": "vu"
+    }
+   ],
+   "moments": [
+    {
+     "en": "Called an old friend of Pāṇḍu",
+     "kn": "ಪಾಂಡುವಿನ ಹಳೆಯ ಗೆಳೆಯ ಎಂದು ಹೇಳಲಾಗಿದೆ",
+     "ref": "2.14.15",
+     "ed": "vu",
+     "with": [
+      "pandu"
+     ]
+    },
+    {
+     "en": "Fights Arjuna during the northern conquest",
+     "kn": "ಉತ್ತರ ದಿಗ್ವಿಜಯದಲ್ಲಿ ಅರ್ಜುನನೊಂದಿಗೆ ಹೋರಾಡುತ್ತಾನೆ",
+     "ref": "2.27.17",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Fights Arjuna on his elephant at Kurukṣetra",
+     "kn": "ಕುರುಕ್ಷೇತ್ರದಲ್ಲಿ ಆನೆಯ ಮೇಲೆ ಅರ್ಜುನನೊಂದಿಗೆ ಹೋರಾಡುತ್ತಾನೆ",
+     "ref": "7.28.23",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    },
+    {
+     "en": "Killed by Arjuna",
+     "kn": "ಅರ್ಜುನನಿಂದ ಹತನಾಗುತ್ತಾನೆ",
+     "ref": "7.29.54",
+     "ed": "vu",
+     "with": [
+      "arjuna"
+     ]
+    }
+   ]
+  }
+ ]
+}
