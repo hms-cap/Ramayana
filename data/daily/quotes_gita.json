@@ -1,0 +1,353 @@
+{
+ "_comment": "Well-known verses for Today's śloka, with meanings [kn, en]. Chosen and translated by Claude; not reviewed.",
+ "quotes": [
+  {
+   "ed": "vu",
+   "ref": "1.1",
+   "kn": "ಸಂಜಯ, ಧರ್ಮಕ್ಷೇತ್ರವಾದ ಕುರುಕ್ಷೇತ್ರದಲ್ಲಿ ಯುದ್ಧ ಮಾಡಲೆಂದು ಸೇರಿದ ನನ್ನ ಮಕ್ಕಳೂ ಪಾಂಡವರೂ ಏನು ಮಾಡಿದರು?",
+   "en": "Sañjaya, what did my sons and the sons of Pāṇḍu do when they gathered, eager to fight, on the field of dharma, Kurukṣetra?"
+  },
+  {
+   "ed": "vu",
+   "ref": "2.3",
+   "kn": "ಪಾರ್ಥ, ಹೇಡಿತನಕ್ಕೆ ಒಳಗಾಗಬೇಡ; ಇದು ನಿನಗೆ ತಕ್ಕುದಲ್ಲ. ಹೃದಯದ ಈ ಕ್ಷುದ್ರ ದೌರ್ಬಲ್ಯವನ್ನು ಬಿಟ್ಟು ಎದ್ದೇಳು.",
+   "en": "Do not give in to weakness, Pārtha; it does not suit you. Throw off this petty faintness of heart and stand up."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.11",
+   "kn": "ಶೋಕಿಸಬಾರದವರಿಗಾಗಿ ಶೋಕಿಸುತ್ತಿದ್ದೀಯೆ, ಆದರೂ ಜ್ಞಾನಿಯಂತೆ ಮಾತಾಡುತ್ತೀಯೆ. ಸತ್ತವರಿಗಾಗಲಿ ಬದುಕಿರುವವರಿಗಾಗಲಿ ಪಂಡಿತರು ಶೋಕಿಸುವುದಿಲ್ಲ.",
+   "en": "You grieve for those who should not be grieved for, yet you speak words of wisdom. The wise grieve neither for the dead nor for the living."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.13",
+   "kn": "ಈ ದೇಹದಲ್ಲಿ ದೇಹಿಗೆ ಬಾಲ್ಯ, ಯೌವನ, ಮುಪ್ಪು ಬರುವಂತೆಯೇ ಬೇರೊಂದು ದೇಹವೂ ದೊರೆಯುತ್ತದೆ; ಧೀರನು ಅದರಿಂದ ಗೊಂದಲಗೊಳ್ಳುವುದಿಲ್ಲ.",
+   "en": "As childhood, youth and old age come to the embodied one in this body, so does another body; the steady person is not confused by this."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.14",
+   "kn": "ಕೌಂತೇಯ, ಇಂದ್ರಿಯಗಳ ಸ್ಪರ್ಶದಿಂದ ಬರುವ ಶೀತ-ಉಷ್ಣ, ಸುಖ-ದುಃಖಗಳು ಬಂದು ಹೋಗುವಂಥವು, ಅನಿತ್ಯ; ಅವನ್ನು ಸಹಿಸಿಕೋ.",
+   "en": "Cold and heat, pleasure and pain come from the touch of the senses; they come and go and do not last. Bear them, Bhārata."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.20",
+   "kn": "ಆತ್ಮ ಎಂದೂ ಹುಟ್ಟುವುದಿಲ್ಲ, ಸಾಯುವುದಿಲ್ಲ; ಇದ್ದು ಮತ್ತೆ ಇಲ್ಲವಾಗುವುದೂ ಇಲ್ಲ. ಅದು ಹುಟ್ಟಿಲ್ಲದ್ದು, ನಿತ್ಯ, ಶಾಶ್ವತ, ಪುರಾತನ; ದೇಹ ಹತವಾದರೂ ಅದು ಹತವಾಗುವುದಿಲ್ಲ.",
+   "en": "It is never born and never dies; having been, it never ceases to be. Unborn, eternal, everlasting, ancient, it is not killed when the body is killed."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.22",
+   "kn": "ಮನುಷ್ಯ ಹಳೆಯ ಬಟ್ಟೆಗಳನ್ನು ಬಿಟ್ಟು ಹೊಸವನ್ನು ತೊಡುವಂತೆ, ದೇಹಿಯು ಜೀರ್ಣವಾದ ದೇಹಗಳನ್ನು ಬಿಟ್ಟು ಹೊಸ ದೇಹಗಳನ್ನು ಸೇರುತ್ತಾನೆ.",
+   "en": "As a person puts aside worn-out clothes and takes new ones, so the embodied one puts aside worn-out bodies and goes to new ones."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.23",
+   "kn": "ಇದನ್ನು ಶಸ್ತ್ರಗಳು ಕತ್ತರಿಸಲಾರವು, ಬೆಂಕಿ ಸುಡಲಾರದು, ನೀರು ನೆನೆಸಲಾರದು, ಗಾಳಿ ಒಣಗಿಸಲಾರದು.",
+   "en": "Weapons do not cut it, fire does not burn it, water does not wet it, wind does not dry it."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.27",
+   "kn": "ಹುಟ್ಟಿದವನಿಗೆ ಸಾವು ಖಚಿತ, ಸತ್ತವನಿಗೆ ಹುಟ್ಟು ಖಚಿತ; ತಪ್ಪಿಸಲಾಗದ ಈ ಸಂಗತಿಗಾಗಿ ನೀನು ಶೋಕಿಸಬಾರದು.",
+   "en": "For one who is born death is certain, and for one who dies birth is certain; so you should not grieve over what cannot be avoided."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.38",
+   "kn": "ಸುಖ-ದುಃಖ, ಲಾಭ-ನಷ್ಟ, ಗೆಲುವು-ಸೋಲುಗಳನ್ನು ಸಮವಾಗಿ ಕಂಡು ಯುದ್ಧಕ್ಕೆ ಸಿದ್ಧನಾಗು; ಹೀಗೆ ಮಾಡಿದರೆ ಪಾಪ ತಟ್ಟುವುದಿಲ್ಲ.",
+   "en": "Treat pleasure and pain, gain and loss, victory and defeat alike, and then prepare for battle; so you will incur no wrong."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.47",
+   "kn": "ನಿನಗೆ ಕರ್ಮ ಮಾಡುವುದರಲ್ಲಿ ಮಾತ್ರ ಅಧಿಕಾರ, ಫಲಗಳಲ್ಲಿ ಎಂದೂ ಇಲ್ಲ. ಕರ್ಮಫಲವೇ ನಿನ್ನ ಗುರಿಯಾಗದಿರಲಿ; ಕರ್ಮ ಮಾಡದಿರುವುದರಲ್ಲೂ ಆಸಕ್ತಿ ಬೇಡ.",
+   "en": "Your right is to the work alone, never to its fruits. Do not let the fruit of action be your motive, and do not be attached to inaction."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.48",
+   "kn": "ಧನಂಜಯ, ಆಸಕ್ತಿಯನ್ನು ಬಿಟ್ಟು, ಸಿದ್ಧಿ-ಅಸಿದ್ಧಿಗಳಲ್ಲಿ ಸಮನಾಗಿದ್ದು, ಯೋಗದಲ್ಲಿ ನೆಲೆನಿಂತು ಕರ್ಮಗಳನ್ನು ಮಾಡು; ಸಮತ್ವವೇ ಯೋಗ.",
+   "en": "Do your work established in yoga, Dhanañjaya, giving up attachment and staying even in success and failure; evenness of mind is called yoga."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.50",
+   "kn": "ಸಮಬುದ್ಧಿಯುಳ್ಳವನು ಇಲ್ಲಿಯೇ ಪುಣ್ಯ ಪಾಪಗಳೆರಡನ್ನೂ ಬಿಡುತ್ತಾನೆ; ಆದ್ದರಿಂದ ಯೋಗದಲ್ಲಿ ತೊಡಗು. ಕರ್ಮಗಳಲ್ಲಿ ಕೌಶಲವೇ ಯೋಗ.",
+   "en": "One whose mind is disciplined leaves behind both good and bad deeds here; so give yourself to yoga. Yoga is skill in action."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.55",
+   "kn": "ಪಾರ್ಥ, ಮನಸ್ಸಿನಲ್ಲಿರುವ ಎಲ್ಲ ಬಯಕೆಗಳನ್ನೂ ಬಿಟ್ಟು, ತನ್ನಲ್ಲಿ ತಾನೇ ತೃಪ್ತನಾಗಿರುವವನನ್ನು ಸ್ಥಿತಪ್ರಜ್ಞ ಎನ್ನುತ್ತಾರೆ.",
+   "en": "When a person gives up all the desires of the mind and is content in the self by the self, he is called one of steady wisdom."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.56",
+   "kn": "ದುಃಖಗಳಲ್ಲಿ ಮನಸ್ಸು ಕಲಕದವನು, ಸುಖಗಳಲ್ಲಿ ಹಂಬಲವಿಲ್ಲದವನು, ರಾಗ ಭಯ ಕ್ರೋಧಗಳನ್ನು ಕಳೆದುಕೊಂಡವನು ಸ್ಥಿರಬುದ್ಧಿಯ ಮುನಿ ಎನಿಸುತ್ತಾನೆ.",
+   "en": "One whose mind is not shaken in sorrow, who does not crave pleasures, and who is free of passion, fear and anger is called a sage of steady mind."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.62",
+   "kn": "ವಿಷಯಗಳನ್ನೇ ಧ್ಯಾನಿಸುವವನಿಗೆ ಅವುಗಳಲ್ಲಿ ಆಸಕ್ತಿ ಹುಟ್ಟುತ್ತದೆ; ಆಸಕ್ತಿಯಿಂದ ಬಯಕೆ, ಬಯಕೆಯಿಂದ ಕೋಪ ಹುಟ್ಟುತ್ತದೆ.",
+   "en": "When a person dwells on the objects of sense, attachment to them arises; from attachment comes desire, and from desire comes anger."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.63",
+   "kn": "ಕೋಪದಿಂದ ಮೋಹ, ಮೋಹದಿಂದ ಸ್ಮೃತಿ ತಪ್ಪುವುದು, ಸ್ಮೃತಿ ತಪ್ಪಿದರೆ ಬುದ್ಧಿನಾಶ; ಬುದ್ಧಿ ನಾಶವಾದರೆ ಮನುಷ್ಯನೇ ನಾಶವಾಗುತ್ತಾನೆ.",
+   "en": "From anger comes delusion, from delusion loss of memory, from loss of memory the ruin of understanding; and when understanding is ruined, one perishes."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.69",
+   "kn": "ಎಲ್ಲ ಜೀವಿಗಳಿಗೆ ಯಾವುದು ರಾತ್ರಿಯೋ ಅದರಲ್ಲಿ ಸಂಯಮಿ ಎಚ್ಚರವಾಗಿರುತ್ತಾನೆ; ಜೀವಿಗಳು ಯಾವುದರಲ್ಲಿ ಎಚ್ಚರವಾಗಿರುತ್ತವೋ ಅದು ಕಾಣುವ ಮುನಿಗೆ ರಾತ್ರಿ.",
+   "en": "What is night for all beings, in that the self-controlled one is awake; and where beings are awake, that is night for the sage who sees."
+  },
+  {
+   "ed": "vu",
+   "ref": "2.70",
+   "kn": "ನದಿಗಳ ನೀರು ತುಂಬುತ್ತಿದ್ದರೂ ಅಚಲವಾಗಿ ನಿಲ್ಲುವ ಸಮುದ್ರದೊಳಗೆ ಸೇರುವಂತೆ, ಯಾರೊಳಗೆ ಎಲ್ಲ ಬಯಕೆಗಳೂ ಸೇರಿ ಅಡಗುತ್ತವೋ ಅವನು ಶಾಂತಿ ಪಡೆಯುತ್ತಾನೆ; ಬಯಕೆಗಳನ್ನು ಬಯಸುವವನಲ್ಲ.",
+   "en": "As waters enter the ocean, which is ever being filled yet stays unmoved, so the one into whom all desires enter finds peace, not the one who chases desires."
+  },
+  {
+   "ed": "vu",
+   "ref": "3.5",
+   "kn": "ಯಾರೂ ಒಂದು ಕ್ಷಣವೂ ಕರ್ಮ ಮಾಡದೆ ಇರಲಾರರು; ಪ್ರಕೃತಿಯಿಂದ ಹುಟ್ಟಿದ ಗುಣಗಳು ಎಲ್ಲರಿಂದಲೂ ಬಲವಂತವಾಗಿ ಕರ್ಮ ಮಾಡಿಸುತ್ತವೆ.",
+   "en": "No one can stay even a moment without acting; everyone is made to act, helplessly, by the qualities born of nature."
+  },
+  {
+   "ed": "vu",
+   "ref": "3.8",
+   "kn": "ನಿನ್ನ ನಿಯತ ಕರ್ಮವನ್ನು ಮಾಡು; ಕರ್ಮ ಮಾಡದಿರುವುದಕ್ಕಿಂತ ಮಾಡುವುದೇ ಮೇಲು. ಕರ್ಮವಿಲ್ಲದೆ ನಿನ್ನ ದೇಹಯಾತ್ರೆಯೂ ಸಾಗದು.",
+   "en": "Do the work that is yours to do; action is better than inaction. Without action even the upkeep of your body would not be possible."
+  },
+  {
+   "ed": "vu",
+   "ref": "3.19",
+   "kn": "ಆದ್ದರಿಂದ ಆಸಕ್ತಿಯಿಲ್ಲದೆ ಸದಾ ಮಾಡಬೇಕಾದ ಕರ್ಮವನ್ನು ಮಾಡು; ಆಸಕ್ತಿಯಿಲ್ಲದೆ ಕರ್ಮ ಮಾಡುವ ಮನುಷ್ಯ ಪರಮ ಗತಿಯನ್ನು ಪಡೆಯುತ್ತಾನೆ.",
+   "en": "So always do the work that must be done, without attachment; a person who acts without attachment reaches the highest."
+  },
+  {
+   "ed": "vu",
+   "ref": "3.21",
+   "kn": "ಶ್ರೇಷ್ಠನು ಏನೇನು ಮಾಡುತ್ತಾನೋ ಉಳಿದ ಜನರೂ ಅದನ್ನೇ ಮಾಡುತ್ತಾರೆ; ಅವನು ಯಾವುದನ್ನು ಮಾದರಿಯಾಗಿಸುತ್ತಾನೋ ಲೋಕ ಅದನ್ನೇ ಅನುಸರಿಸುತ್ತದೆ.",
+   "en": "Whatever the best person does, others do too; the standard he sets, the world follows."
+  },
+  {
+   "ed": "vu",
+   "ref": "3.27",
+   "kn": "ಕರ್ಮಗಳೆಲ್ಲ ಪ್ರಕೃತಿಯ ಗುಣಗಳಿಂದ ನಡೆಯುತ್ತವೆ; ಅಹಂಕಾರದಿಂದ ಮೂಢನಾದವನು 'ನಾನೇ ಮಾಡುವವನು' ಎಂದು ತಿಳಿಯುತ್ತಾನೆ.",
+   "en": "All actions are done by the qualities of nature; one deluded by the sense of \"I\" thinks, \"I am the doer.\""
+  },
+  {
+   "ed": "vu",
+   "ref": "3.35",
+   "kn": "ಚೆನ್ನಾಗಿ ಆಚರಿಸಿದ ಪರಧರ್ಮಕ್ಕಿಂತ ಕೊರತೆಯಿದ್ದರೂ ಸ್ವಧರ್ಮವೇ ಮೇಲು. ಸ್ವಧರ್ಮದಲ್ಲಿ ಸಾವೂ ಶ್ರೇಯಸ್ಕರ; ಪರಧರ್ಮ ಭಯವನ್ನು ತರುತ್ತದೆ.",
+   "en": "Better one's own duty done imperfectly than another's done well. Death in one's own duty is better; another's duty brings danger."
+  },
+  {
+   "ed": "vu",
+   "ref": "3.37",
+   "kn": "ರಜೋಗುಣದಿಂದ ಹುಟ್ಟಿದ ಈ ಕಾಮ, ಈ ಕ್ರೋಧ — ಎಷ್ಟು ತಿಂದರೂ ತಣಿಯದ, ಮಹಾಪಾಪಿಯಾದ ಇದನ್ನೇ ಇಲ್ಲಿ ಶತ್ರುವೆಂದು ತಿಳಿ.",
+   "en": "It is desire, it is anger, born of the quality of passion, all-devouring and greatly sinful; know this to be the enemy here."
+  },
+  {
+   "ed": "vu",
+   "ref": "4.7",
+   "kn": "ಭಾರತ, ಧರ್ಮ ಕುಗ್ಗಿ ಅಧರ್ಮ ತಲೆಯೆತ್ತಿದಾಗಲೆಲ್ಲ ನಾನು ನನ್ನನ್ನು ಸೃಷ್ಟಿಸಿಕೊಳ್ಳುತ್ತೇನೆ.",
+   "en": "Whenever dharma declines and adharma rises, Bhārata, I bring myself into being."
+  },
+  {
+   "ed": "vu",
+   "ref": "4.8",
+   "kn": "ಸಜ್ಜನರನ್ನು ಕಾಪಾಡಲು, ದುಷ್ಟರನ್ನು ನಾಶಮಾಡಲು, ಧರ್ಮವನ್ನು ನೆಲೆಗೊಳಿಸಲು ಯುಗ ಯುಗದಲ್ಲೂ ನಾನು ಹುಟ್ಟಿ ಬರುತ್ತೇನೆ.",
+   "en": "To protect the good, to destroy the wicked and to set dharma firmly in place, I am born in age after age."
+  },
+  {
+   "ed": "vu",
+   "ref": "4.11",
+   "kn": "ಯಾರು ನನ್ನನ್ನು ಹೇಗೆ ಆಶ್ರಯಿಸುತ್ತಾರೋ ಅವರನ್ನು ನಾನು ಹಾಗೆಯೇ ಅನುಗ್ರಹಿಸುತ್ತೇನೆ. ಪಾರ್ಥ, ಮನುಷ್ಯರು ಎಲ್ಲ ರೀತಿಯಿಂದಲೂ ನನ್ನ ದಾರಿಯನ್ನೇ ಹಿಡಿಯುತ್ತಾರೆ.",
+   "en": "As people come to me, so I accept them. In every way, Pārtha, people follow my path."
+  },
+  {
+   "ed": "vu",
+   "ref": "4.38",
+   "kn": "ಈ ಲೋಕದಲ್ಲಿ ಜ್ಞಾನಕ್ಕೆ ಸಮನಾದ ಪವಿತ್ರ ವಸ್ತು ಬೇರಿಲ್ಲ; ಯೋಗದಲ್ಲಿ ಸಿದ್ಧಿ ಪಡೆದವನು ಕಾಲಕ್ರಮದಲ್ಲಿ ಅದನ್ನು ತನ್ನಲ್ಲೇ ಕಂಡುಕೊಳ್ಳುತ್ತಾನೆ.",
+   "en": "Nothing here purifies like knowledge; one perfected in yoga finds it in himself in time."
+  },
+  {
+   "ed": "vu",
+   "ref": "4.39",
+   "kn": "ಶ್ರದ್ಧೆಯುಳ್ಳವನು, ಅದರಲ್ಲೇ ತತ್ಪರನಾದವನು, ಇಂದ್ರಿಯಗಳನ್ನು ಗೆದ್ದವನು ಜ್ಞಾನವನ್ನು ಪಡೆಯುತ್ತಾನೆ; ಜ್ಞಾನ ಪಡೆದು ಬೇಗನೆ ಪರಮ ಶಾಂತಿಯನ್ನು ಹೊಂದುತ್ತಾನೆ.",
+   "en": "One who has faith, is devoted to it and has mastered the senses gains knowledge; and having gained it, soon reaches the highest peace."
+  },
+  {
+   "ed": "vu",
+   "ref": "5.18",
+   "kn": "ವಿದ್ಯೆ ವಿನಯಗಳಿಂದ ಕೂಡಿದ ಬ್ರಾಹ್ಮಣನಲ್ಲಿ, ಹಸುವಿನಲ್ಲಿ, ಆನೆಯಲ್ಲಿ, ನಾಯಿಯಲ್ಲಿ, ಚಂಡಾಲನಲ್ಲಿ ಪಂಡಿತರು ಒಂದೇ ತತ್ತ್ವವನ್ನು ಕಾಣುತ್ತಾರೆ.",
+   "en": "The wise see the same in a learned and humble brahmin, a cow, an elephant, a dog and an outcaste."
+  },
+  {
+   "ed": "vu",
+   "ref": "6.5",
+   "kn": "ತನ್ನನ್ನು ತಾನೇ ಉದ್ಧರಿಸಿಕೊಳ್ಳಬೇಕು; ತನ್ನನ್ನು ಕುಗ್ಗಿಸಿಕೊಳ್ಳಬಾರದು. ತನಗೆ ತಾನೇ ಬಂಧು, ತನಗೆ ತಾನೇ ಶತ್ರು.",
+   "en": "Raise yourself by yourself; do not let yourself sink. You alone are your own friend, you alone your own enemy."
+  },
+  {
+   "ed": "vu",
+   "ref": "6.6",
+   "kn": "ತನ್ನನ್ನು ತಾನು ಗೆದ್ದವನಿಗೆ ಅವನ ಆತ್ಮವೇ ಬಂಧು; ಗೆಲ್ಲದವನಿಗೆ ಅವನ ಆತ್ಮವೇ ಶತ್ರುವಿನಂತೆ ವೈರ ಸಾಧಿಸುತ್ತದೆ.",
+   "en": "For one who has mastered himself, the self is a friend; for one who has not, the self acts like an enemy."
+  },
+  {
+   "ed": "vu",
+   "ref": "6.17",
+   "kn": "ಆಹಾರ ವಿಹಾರಗಳಲ್ಲಿ ಮಿತಿ, ಕೆಲಸಗಳಲ್ಲಿ ಮಿತಿ, ನಿದ್ದೆ ಎಚ್ಚರಗಳಲ್ಲಿ ಮಿತಿ ಇರುವವನಿಗೆ ಯೋಗವು ದುಃಖವನ್ನು ಕಳೆಯುತ್ತದೆ.",
+   "en": "For one who is moderate in food and recreation, in work, and in sleeping and waking, yoga puts an end to sorrow."
+  },
+  {
+   "ed": "vu",
+   "ref": "6.30",
+   "kn": "ಯಾರು ಎಲ್ಲೆಡೆ ನನ್ನನ್ನು ಕಾಣುತ್ತಾನೋ, ಎಲ್ಲವನ್ನೂ ನನ್ನಲ್ಲಿ ಕಾಣುತ್ತಾನೋ ಅವನಿಗೆ ನಾನು ಇಲ್ಲವಾಗುವುದಿಲ್ಲ, ನನಗೆ ಅವನು ಇಲ್ಲವಾಗುವುದಿಲ್ಲ.",
+   "en": "One who sees me everywhere and sees everything in me is never lost to me, nor am I lost to him."
+  },
+  {
+   "ed": "vu",
+   "ref": "6.32",
+   "kn": "ಅರ್ಜುನ, ಸುಖವಾಗಲಿ ದುಃಖವಾಗಲಿ, ಎಲ್ಲರದನ್ನೂ ತನ್ನದರಂತೆಯೇ ಸಮವಾಗಿ ಕಾಣುವ ಯೋಗಿಯೇ ಶ್ರೇಷ್ಠ.",
+   "en": "The yogī who sees pleasure or pain everywhere as the same, by likeness to himself, is held to be the highest, Arjuna."
+  },
+  {
+   "ed": "vu",
+   "ref": "6.35",
+   "kn": "ಮಹಾಬಾಹು, ಮನಸ್ಸು ಚಂಚಲ, ಹಿಡಿತಕ್ಕೆ ಸಿಗುವುದು ಕಷ್ಟ ಎಂಬುದರಲ್ಲಿ ಸಂಶಯವಿಲ್ಲ; ಆದರೆ ಅಭ್ಯಾಸ ಮತ್ತು ವೈರಾಗ್ಯದಿಂದ ಅದನ್ನು ಹಿಡಿಯಬಹುದು.",
+   "en": "No doubt the mind is restless and hard to hold, mighty-armed one; but by practice and dispassion it can be held."
+  },
+  {
+   "ed": "vu",
+   "ref": "7.14",
+   "kn": "ಗುಣಗಳಿಂದಾದ ನನ್ನ ಈ ದೈವೀ ಮಾಯೆಯನ್ನು ದಾಟುವುದು ಕಷ್ಟ; ನನ್ನನ್ನೇ ಶರಣು ಹೊಂದುವವರು ಈ ಮಾಯೆಯನ್ನು ದಾಟುತ್ತಾರೆ.",
+   "en": "This divine māyā of mine, made of the qualities, is hard to cross; those who take refuge in me alone cross over it."
+  },
+  {
+   "ed": "vu",
+   "ref": "7.19",
+   "kn": "ಹಲವು ಜನ್ಮಗಳ ಕೊನೆಯಲ್ಲಿ ಜ್ಞಾನಿಯು 'ವಾಸುದೇವನೇ ಎಲ್ಲವೂ' ಎಂದು ಅರಿತು ನನ್ನನ್ನು ಸೇರುತ್ತಾನೆ; ಅಂಥ ಮಹಾತ್ಮ ಬಹು ದುರ್ಲಭ.",
+   "en": "At the end of many births the one who knows comes to me, seeing that Vāsudeva is all; such a great soul is very rare."
+  },
+  {
+   "ed": "vu",
+   "ref": "8.5",
+   "kn": "ಅಂತ್ಯಕಾಲದಲ್ಲಿ ನನ್ನನ್ನೇ ನೆನೆಯುತ್ತ ದೇಹ ಬಿಟ್ಟು ಹೋಗುವವನು ನನ್ನ ಭಾವವನ್ನೇ ಹೊಂದುತ್ತಾನೆ; ಇದರಲ್ಲಿ ಸಂಶಯವಿಲ್ಲ.",
+   "en": "One who leaves the body at the end remembering me alone comes to my state; of this there is no doubt."
+  },
+  {
+   "ed": "vu",
+   "ref": "9.22",
+   "kn": "ಬೇರೆ ಚಿಂತೆಯಿಲ್ಲದೆ ನನ್ನನ್ನೇ ನೆನೆದು ಉಪಾಸಿಸುವ, ಸದಾ ನನ್ನಲ್ಲಿ ನೆಲೆಸಿದ ಜನರ ಯೋಗಕ್ಷೇಮವನ್ನು ನಾನೇ ಹೊರುತ್ತೇನೆ.",
+   "en": "For those who worship me thinking of nothing else, who are always joined to me, I myself carry what they need and guard what they have."
+  },
+  {
+   "ed": "vu",
+   "ref": "9.26",
+   "kn": "ಎಲೆ, ಹೂ, ಹಣ್ಣು, ನೀರು — ಯಾರು ಭಕ್ತಿಯಿಂದ ನನಗೆ ಅರ್ಪಿಸುತ್ತಾನೋ, ಶುದ್ಧ ಮನಸ್ಸಿನವನ ಆ ಭಕ್ತಿಯ ಕಾಣಿಕೆಯನ್ನು ನಾನು ಸ್ವೀಕರಿಸುತ್ತೇನೆ.",
+   "en": "A leaf, a flower, a fruit, water: whoever offers it to me with devotion, that offering of love from a pure heart I accept."
+  },
+  {
+   "ed": "vu",
+   "ref": "9.27",
+   "kn": "ಕೌಂತೇಯ, ನೀನು ಏನು ಮಾಡುತ್ತೀಯೋ, ಏನು ತಿನ್ನುತ್ತೀಯೋ, ಏನು ಹೋಮಿಸುತ್ತೀಯೋ, ಏನು ಕೊಡುತ್ತೀಯೋ, ಯಾವ ತಪಸ್ಸು ಮಾಡುತ್ತೀಯೋ ಅದನ್ನೆಲ್ಲ ನನಗೆ ಅರ್ಪಿಸು.",
+   "en": "Whatever you do, eat, offer in sacrifice or give, whatever austerity you practise, Kaunteya, do it as an offering to me."
+  },
+  {
+   "ed": "vu",
+   "ref": "9.29",
+   "kn": "ನಾನು ಎಲ್ಲ ಜೀವಿಗಳಲ್ಲೂ ಸಮ; ನನಗೆ ದ್ವೇಷಿಯೂ ಇಲ್ಲ, ಪ್ರಿಯನೂ ಇಲ್ಲ. ಆದರೆ ಭಕ್ತಿಯಿಂದ ನನ್ನನ್ನು ಭಜಿಸುವವರು ನನ್ನಲ್ಲಿದ್ದಾರೆ, ನಾನೂ ಅವರಲ್ಲಿದ್ದೇನೆ.",
+   "en": "I am the same to all beings; none is hateful or dear to me. But those who worship me with devotion are in me, and I am in them."
+  },
+  {
+   "ed": "vu",
+   "ref": "9.34",
+   "kn": "ನನ್ನಲ್ಲಿ ಮನಸ್ಸಿಡು, ನನ್ನ ಭಕ್ತನಾಗು, ನನ್ನನ್ನು ಪೂಜಿಸು, ನನಗೆ ನಮಸ್ಕರಿಸು; ಹೀಗೆ ನನ್ನನ್ನೇ ಪರಮ ಗತಿಯಾಗಿಸಿಕೊಂಡು ನನ್ನನ್ನೇ ಸೇರುತ್ತೀಯೆ.",
+   "en": "Fix your mind on me, be devoted to me, worship me, bow to me; joined to me in this way, with me as your goal, you will come to me."
+  },
+  {
+   "ed": "vu",
+   "ref": "10.8",
+   "kn": "ನಾನೇ ಎಲ್ಲದರ ಮೂಲ; ನನ್ನಿಂದಲೇ ಎಲ್ಲವೂ ನಡೆಯುತ್ತದೆ ಎಂದು ಅರಿತು ಜ್ಞಾನಿಗಳು ಭಾವಪೂರ್ಣವಾಗಿ ನನ್ನನ್ನು ಭಜಿಸುತ್ತಾರೆ.",
+   "en": "I am the source of all; from me everything proceeds. Knowing this, the wise worship me with all their heart."
+  },
+  {
+   "ed": "vu",
+   "ref": "11.32",
+   "kn": "ನಾನು ಲೋಕಗಳನ್ನು ನಾಶಮಾಡಲು ಬೆಳೆದು ನಿಂತ ಕಾಲ; ಲೋಕಗಳನ್ನು ಸಂಹರಿಸಲು ಇಲ್ಲಿ ತೊಡಗಿದ್ದೇನೆ. ನೀನಿಲ್ಲದಿದ್ದರೂ ಎದುರು ಸೈನ್ಯಗಳಲ್ಲಿ ನಿಂತ ಈ ಯೋಧರೆಲ್ಲ ಉಳಿಯುವುದಿಲ್ಲ.",
+   "en": "I am Time, grown great to destroy the worlds, at work here to draw them in. Even without you, none of the warriors in the opposing ranks will survive."
+  },
+  {
+   "ed": "vu",
+   "ref": "11.33",
+   "kn": "ಆದ್ದರಿಂದ ಎದ್ದೇಳು, ಕೀರ್ತಿ ಗಳಿಸು; ಶತ್ರುಗಳನ್ನು ಗೆದ್ದು ಸಮೃದ್ಧ ರಾಜ್ಯವನ್ನು ಅನುಭವಿಸು. ಇವರು ಆಗಲೇ ನನ್ನಿಂದ ಹತರಾಗಿದ್ದಾರೆ; ಸವ್ಯಸಾಚಿ, ನೀನು ನಿಮಿತ್ತ ಮಾತ್ರನಾಗು.",
+   "en": "So stand up and win glory; conquer your enemies and enjoy a thriving kingdom. They are already slain by me; be only the instrument, Savyasācin."
+  },
+  {
+   "ed": "vu",
+   "ref": "12.13",
+   "kn": "ಯಾವ ಜೀವಿಯನ್ನೂ ದ್ವೇಷಿಸದವನು, ಸ್ನೇಹ ಕರುಣೆಗಳುಳ್ಳವನು, 'ನನ್ನದು', 'ನಾನು' ಎಂಬುದಿಲ್ಲದವನು, ಸುಖ ದುಃಖಗಳಲ್ಲಿ ಸಮನಾದವನು, ಕ್ಷಮಾಶೀಲನು (ನನಗೆ ಪ್ರಿಯ).",
+   "en": "One who hates no being, who is friendly and compassionate, free of \"mine\" and \"I\", even in pain and pleasure, and forgiving (is dear to me)."
+  },
+  {
+   "ed": "vu",
+   "ref": "12.19",
+   "kn": "ನಿಂದೆ ಸ್ತುತಿಗಳನ್ನು ಸಮವಾಗಿ ಕಾಣುವವನು, ಮೌನಿ, ಸಿಕ್ಕಷ್ಟರಲ್ಲಿ ತೃಪ್ತ, ಮನೆಯ ಮೋಹವಿಲ್ಲದವನು, ಸ್ಥಿರಬುದ್ಧಿಯ ಭಕ್ತ ನನಗೆ ಪ್ರಿಯ.",
+   "en": "One to whom blame and praise are alike, who is silent, content with whatever comes, without a fixed home, steady in mind and devoted, is dear to me."
+  },
+  {
+   "ed": "vu",
+   "ref": "16.21",
+   "kn": "ಕಾಮ, ಕ್ರೋಧ, ಲೋಭ — ಇವು ಆತ್ಮವನ್ನು ನಾಶಮಾಡುವ ನರಕದ ಮೂರು ಬಾಗಿಲುಗಳು; ಆದ್ದರಿಂದ ಈ ಮೂರನ್ನೂ ಬಿಡಬೇಕು.",
+   "en": "Desire, anger and greed are the three gates of hell that ruin the self; so one should give up these three."
+  },
+  {
+   "ed": "vu",
+   "ref": "17.15",
+   "kn": "ಯಾರನ್ನೂ ನೋಯಿಸದ, ಸತ್ಯವೂ ಪ್ರಿಯವೂ ಹಿತವೂ ಆದ ಮಾತು ಮತ್ತು ಸ್ವಾಧ್ಯಾಯದ ಅಭ್ಯಾಸ — ಇದು ಮಾತಿನ ತಪಸ್ಸು.",
+   "en": "Speech that hurts no one, that is true, pleasant and helpful, and the regular study of scripture: this is called the austerity of speech."
+  },
+  {
+   "ed": "vu",
+   "ref": "18.48",
+   "kn": "ಕೌಂತೇಯ, ಹುಟ್ಟಿನಿಂದ ಬಂದ ಕರ್ಮದಲ್ಲಿ ದೋಷವಿದ್ದರೂ ಅದನ್ನು ಬಿಡಬಾರದು; ಬೆಂಕಿಯನ್ನು ಹೊಗೆ ಮುಚ್ಚುವಂತೆ ಎಲ್ಲ ಕಾರ್ಯಗಳನ್ನೂ ದೋಷ ಮುಚ್ಚಿರುತ್ತದೆ.",
+   "en": "One should not give up the work one is born to, Kaunteya, even if it is flawed; every undertaking is clouded by some flaw, as fire is by smoke."
+  },
+  {
+   "ed": "vu",
+   "ref": "18.61",
+   "kn": "ಅರ್ಜುನ, ಈಶ್ವರನು ಎಲ್ಲ ಜೀವಿಗಳ ಹೃದಯದಲ್ಲಿ ನೆಲೆಸಿ, ಯಂತ್ರದ ಮೇಲೆ ಏರಿಸಿದವುಗಳಂತೆ ಅವೆಲ್ಲವನ್ನೂ ತನ್ನ ಮಾಯೆಯಿಂದ ತಿರುಗಿಸುತ್ತಿದ್ದಾನೆ.",
+   "en": "The Lord dwells in the heart of all beings, Arjuna, and by his māyā makes them all turn as if mounted on a machine."
+  },
+  {
+   "ed": "vu",
+   "ref": "18.66",
+   "kn": "ಎಲ್ಲ ಧರ್ಮಗಳನ್ನೂ ಬಿಟ್ಟು ನನ್ನೊಬ್ಬನನ್ನೇ ಶರಣು ಹೊಂದು; ನಾನು ನಿನ್ನನ್ನು ಎಲ್ಲ ಪಾಪಗಳಿಂದ ಬಿಡಿಸುತ್ತೇನೆ, ಶೋಕಿಸಬೇಡ.",
+   "en": "Give up all duties and take refuge in me alone; I will free you from all wrongs. Do not grieve."
+  },
+  {
+   "ed": "vu",
+   "ref": "18.73",
+   "kn": "ಅಚ್ಯುತ, ನಿನ್ನ ಅನುಗ್ರಹದಿಂದ ನನ್ನ ಮೋಹ ನಾಶವಾಯಿತು, ಸ್ಮೃತಿ ಮರಳಿತು; ಸಂದೇಹ ಕಳೆದು ಸ್ಥಿರವಾಗಿ ನಿಂತಿದ್ದೇನೆ. ನಿನ್ನ ಮಾತಿನಂತೆ ಮಾಡುತ್ತೇನೆ.",
+   "en": "My delusion is gone and I have regained my memory by your grace, Acyuta. I stand firm, my doubts gone; I will do as you say."
+  },
+  {
+   "ed": "vu",
+   "ref": "18.78",
+   "kn": "ಯೋಗೇಶ್ವರನಾದ ಕೃಷ್ಣನೆಲ್ಲಿರುವನೋ, ಧನುರ್ಧರನಾದ ಪಾರ್ಥನೆಲ್ಲಿರುವನೋ ಅಲ್ಲಿ ಸಿರಿ, ವಿಜಯ, ಅಭ್ಯುದಯ, ಸ್ಥಿರವಾದ ನೀತಿ ಇರುತ್ತವೆ; ಇದು ನನ್ನ ಮತ.",
+   "en": "Where Kṛṣṇa, lord of yoga, is, and where Pārtha the archer is, there are fortune, victory, well-being and sound conduct; this is my belief."
+  }
+ ]
+}

@@ -833,3 +833,9 @@ a.crow:hover .cn { color: var(--accent); }
 .votd-menu button[hidden] { display: none; }
 .votd-menu button:hover, .votd-menu button:focus-visible { background: var(--paper-2); }
 .votd-menu button[aria-disabled="true"] { opacity: .5; }
+
+/* Today's śloka: meaning on the card face (v0.14) */
+.vc-mean { margin: 0.7rem 0 0; padding: 0.55rem 0 0 0.8rem; border-left: 3px solid var(--accent); }
+.vc-mean p { margin: 0; }
+.vc-mean p[lang="kn"] { font: 500 1.02rem/1.6 var(--f-knda); }
+.vc-mean p[lang="en"] { margin-top: 0.35rem; font-size: 0.88rem; line-height: 1.45; opacity: .78; }

@@ -648,6 +648,22 @@ const savePrefs =""", 1)
         ".itihasa-back:hover{opacity:1}\n", encoding="utf-8")
 
 
+def daily_quotes(wid: str, recs_of) -> list[tuple[dict, dict]]:
+    """Today's śloka set: well-known verses from data/daily/quotes_<work>.json, each with its meaning.
+    recs_of(ed) -> {ref: record}. Returns [(record, quote)] in a fixed shuffled order."""
+    qs = json.loads((ROOT / "data" / "daily" / f"quotes_{wid}.json").read_text(encoding="utf-8"))["quotes"]
+    out = []
+    for q in qs:
+        r = recs_of(q["ed"]).get(q["ref"])
+        assert r, f"quotes_{wid}: no verse {q['ed']} {q['ref']}"
+        out.append((r, q))
+    return sorted(out, key=lambda t: daily.digest("order" + t[0]["uid"]))
+
+
+def _ksv(r: dict) -> str:
+    return f'{r["k"]}.{r["s"]}.{r["v"]}'
+
+
 def build_daily(out: Path, editions, titles: dict) -> dict:
     """365 automatic verse-of-the-day cards (etl/daily.py) -> dist/data/daily/. Returns the fallback card."""
     ed = next(e for e in editions if e["id"] == "ce")
@@ -664,13 +680,25 @@ def build_daily(out: Path, editions, titles: dict) -> dict:
         cw = crosswalk_for(r, ed)
         return bool(cw) and cw["status"] == "match" and len(cw["links"]) == 1
 
-    chosen = daily.select(recs, WORDS, metre_of, has_match)
+    eds = {e["id"]: e for e in editions}
+    byed = {"ce": {_ksv(r): r for r in recs},
+            "vu": {_ksv(r): r for r in (json.loads(l) for l in open(ROOT / "data" / "normalized" / "vu.jsonl", encoding="utf-8"))}}
+    for r in byed["vu"].values():
+        sizes[("vu", r["k"], r["s"])] += 1
+    chosen = daily_quotes("ram", lambda e: byed[e])
 
-    def card(r):
-        v = render_verse(r, ed)
+    def card(r, e=ed):
+        v = render_verse(r, e)
         k = kanda_info(r["k"])
         units = []
-        for u in WORDS[r["uid"]]:
+        wuid = r["uid"]
+        if e["id"] != "ce":
+            cw0 = v["crosswalk"]
+            wuid = None
+            if cw0 and cw0["status"] == "match" and len(cw0["links"]) == 1:
+                _, tk, ts, tv = uid_ref(cw_target_uid(cw0))
+                wuid = f"CE-{tk}-{ts:03d}-{tv:03d}"
+        for u in WORDS.get(wuid, []):
             g = GLOSS.get(u["l"][-1], "")          # the head word of a compound carries the grammar
             g = re.sub(r"^(?:p\. ?p\. ?\d*\s*|pass\. ?\d*\s*|Ved\.\s*|[PAU]\.,?\s*)", "", g.split(" | ")[0]).strip()
             if len(g) > 70:
@@ -681,22 +709,27 @@ def build_daily(out: Path, editions, titles: dict) -> dict:
                     d["k"] = GLOSS_KN[u["l"][-1]]
                 units.append(d)
         cw = v["crosswalk"]
-        c = {"uid": r["uid"], "ref": v["ref"], "path": f'ce/{r["k"]}/{r["s"]}/#v{r["v"]}',
+        c = {"uid": r["uid"], "ref": v["ref"], "ed": e["id"], "path": f'{e["id"]}/{r["k"]}/{r["s"]}/#v{r["v"]}',
              "slp": v["slp1"].split(" / "), "meter": v["meter"], "scan": v["scan"],
              "ctx": {"k": r["k"], "kn": k["kn"], "deva": k["deva"], "iast": k["iast"], "en": k["en"], "s": r["s"], "v": r["v"],
-                     "of": sizes[(r["k"], r["s"])], "title": (titles.get((r["k"], r["s"])) or {}).get("title_iast", "")},
+                     "of": sizes[(r["k"], r["s"])] if e["id"] == "ce" else sizes[("vu", r["k"], r["s"])],
+                     "title": (titles.get((r["k"], r["s"])) or {}).get("title_iast", "") if e["id"] == "ce" else ""},
              "w": units}
         if cw:
             c["cw"] = {"status": cw["status"], "refs": [l["ref"] for l in cw["links"]], "paths": [l["path"] for l in cw["links"]]}
+            if e["id"] == "vu":
+                c["cw"].update(other=cw["other_label"], other_kn="ಪರಿಷ್ಕೃತ ಪಾಠ")
         if r["uid"] in cur:
             c.update({kk: vv for kk, vv in cur[r["uid"]].items() if kk in ("m", "u")})
         return c
 
-    cards = [card(r) for r in chosen]
-    assert len(cards) == daily.N, len(cards)
+    cards = []
+    for r, q in chosen:
+        c = card(r, eds[q["ed"]])
+        c["m"] = [q["en"], q["kn"]]
+        cards.append(c)
     daily.write(out, cards)
-    first = next(r for r in recs if r["uid"] == "CE-1-001-001")
-    return card(first)
+    return cards[0]
 
 
 def build_daily_mbh(wdir: Path, W: dict, editions) -> dict:
@@ -724,20 +757,31 @@ def build_daily_mbh(wdir: Path, W: dict, editions) -> dict:
     def accept(r):
         return r["v"] >= 1 and sum(len(" ".join(l)) for l in r["lines"]) <= 130
 
-    chosen = daily.select(recs, elig_words, lambda r: r.get("meter"), accept)
-    want = {ok[r["uid"]][0] for r in chosen}
+    ed_ce = next(e for e in editions if e["id"] == "ce")
+    recs_ce = [json.loads(l) for l in open(norm_path(W, "ce"), encoding="utf-8")]
+    for r in recs_ce:
+        sizes[("ce", r["k"], r["s"])] += 1
+    byed = {"vu": {_ksv(r): r for r in recs}, "ce": {_ksv(r): r for r in recs_ce}}
+    chosen = daily_quotes("mbh", lambda e: byed[e])
+    for r, q in chosen:
+        if q["ed"] == "ce":
+            cw0 = crosswalk_for(r, ed_ce, W)
+            ok[r["uid"]] = (r["uid"], cw0)
+        elif not ok.get(r["uid"]):
+            ok[r["uid"]] = (None, crosswalk_for(r, ed_vu, W))
+    want = {ok[r["uid"]][0] for r, q in chosen}
     units_of = {}
     for line in gzip.open(ROOT / "data" / "normalized" / "mbh" / "words.jsonl.gz", "rt", encoding="utf-8"):
         r = json.loads(line)
         if r["uid"] in want:
             units_of[r["uid"]] = r["units"]
 
-    def card(r):
-        v = lean_verse(r)
+    def card(r, e="vu"):
+        v = lean_verse(r, ed_ce if e == "ce" else None, W) if e == "ce" else lean_verse(r)
         k = unit_info(W, r["k"])
         cuid, cw = ok[r["uid"]]
         units = []
-        for u in units_of[cuid]:
+        for u in units_of.get(cuid, []):
             g = GLOSS.get(u["l"][-1], "")          # the head word of a compound carries the grammar
             g = re.sub(r"^(?:p\. ?p\. ?\d*\s*|pass\. ?\d*\s*|Ved\.\s*|[PAU]\.,?\s*)", "", g.split(" | ")[0]).strip()
             if len(g) > 70:
@@ -748,16 +792,21 @@ def build_daily_mbh(wdir: Path, W: dict, editions) -> dict:
                 if kn:
                     d["k"] = kn
                 units.append(d)
-        return {"uid": r["uid"], "ref": v["ref"], "ed": "vu", "path": f'vu/{r["k"]}/{r["s"]}/#v{r["v"]}',
-                "slp": v["slp1"].split(" / "), "meter": v["meter"], "scan": v["scan"],
-                "ctx": {"k": r["k"], "kn": k["kn"], "deva": k["deva"], "iast": k["iast"], "en": k["en"], "s": r["s"], "v": r["v"],
-                        "of": sizes[(r["k"], r["s"])], "title": ""},
-                "w": units,
-                "cw": {"status": "match", "refs": [l["ref"] for l in cw["links"]], "paths": [l["path"] for l in cw["links"]],
-                       "other": cw["other_label"], "other_kn": "ಪುಣೆ ಪರಿಷ್ಕೃತ ಪಾಠ"}}
+        c = {"uid": r["uid"], "ref": v["ref"], "ed": e, "path": f'{e}/{r["k"]}/{r["s"]}/#v{r["v"]}',
+             "slp": v["slp1"].split(" / "), "meter": v["meter"], "scan": v["scan"],
+             "ctx": {"k": r["k"], "kn": k["kn"], "deva": k["deva"], "iast": k["iast"], "en": k["en"], "s": r["s"], "v": r["v"],
+                     "of": sizes[(r["k"], r["s"])] if e == "vu" else sizes[("ce", r["k"], r["s"])], "title": ""},
+             "w": units}
+        if cw and cw.get("links"):
+            c["cw"] = {"status": cw["status"], "refs": [l["ref"] for l in cw["links"]], "paths": [l["path"] for l in cw["links"]],
+                       "other": cw["other_label"], "other_kn": "ಪುಣೆ ಪರಿಷ್ಕೃತ ಪಾಠ" if e == "vu" else "ಕುಂಭಕೋಣ ಪಾಠ"}
+        return c
 
-    cards = [card(r) for r in chosen]
-    assert len(cards) == daily.N, len(cards)
+    cards = []
+    for r, q in chosen:
+        c = card(r, q["ed"])
+        c["m"] = [q["en"], q["kn"]]
+        cards.append(c)
     daily.write(wdir, cards)
     return cards[0]
 
@@ -771,7 +820,7 @@ def build_daily_gita(wdir: Path, W: dict, editions) -> dict:
     for r in recs:
         sizes[r["s"]] += 1
     chs = {c["n"]: c for c in gita_chapters()}
-    chosen = daily.select(recs, {r["uid"]: range(8) for r in recs}, lambda r: r.get("meter"))
+    chosen = daily_quotes("gita", lambda e: {f'{r["s"]}.{r["v"]}': r for r in recs})
 
     def card(r):
         v = render_verse(r, ed_vu, W)
@@ -787,8 +836,11 @@ def build_daily_gita(wdir: Path, W: dict, editions) -> dict:
                        "other": cw["other_label"], "other_kn": "ಪುಣೆ ಪರಿಷ್ಕೃತ ಪಾಠ"}
         return d
 
-    cards = [card(r) for r in chosen]
-    assert len(cards) == daily.N, len(cards)
+    cards = []
+    for r, q in chosen:
+        c = card(r)
+        c["m"] = [q["en"], q["kn"]]
+        cards.append(c)
     daily.write(wdir, cards)
     return cards[0]
 
@@ -1019,7 +1071,7 @@ def write_pwa(out: Path, done: list) -> None:
                 label = f'{e["short"]}: {kn["en"]}' if not pre else f'{W["short_en"]}, {e["short"]}: {kn["en"]}'
                 packs.append({"id": f'{pre.strip("/")}{"-" if pre else ""}{e["id"]}-{k}', "label": label, "urls": urls, "bytes": size(urls),
                               "w": W["id"], "e": e["id"], "k": k, "u": [kn["kn"], kn["deva"], kn["iast"]]})
-        core = [f"{pre}data/search-{e['id']}.json" for e in d["eds"]] + [f"{pre}data/daily/c{i}.json" for i in range(8)]
+        core = [f"{pre}data/search-{e['id']}.json" for e in d["eds"]] + [f"{pre}data/daily/{f.name}" for f in sorted((out / pre / "data" / "daily").glob("c*.json"))]
         packs.append({"id": f'{pre.strip("/") or "ram"}-core', "label": ("Search index and verse-of-the-day cards" if not pre else f'{W["short_en"]}: search index and verse-of-the-day cards'),
                       "urls": core, "bytes": size(core), "w": W["id"], "e": "", "k": 0})
     (out / "data" / "offline.json").write_text(json.dumps({"version": json.loads((ROOT / "data" / "changes.json").read_text())[0][0], "packs": packs},

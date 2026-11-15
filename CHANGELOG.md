@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.14.0 — 2026-11-15
+- Today's śloka now comes from a set of well-known, often-quoted verses (37 Rāmāyaṇa, 53 Mahābhārata, 58 Gītā; `data/daily/quotes_*.json`) instead of 365 random ones, with a Kannada and an English meaning on the card face and on the shared picture. Some are from the Traditional text, some from the critical text, whichever has the verse (Read opens that one). The verses were chosen and the meanings written by Claude; not yet reviewed.
+
 ## 0.13.1 — 2026-11-14
 - Today's śloka card simplified: it shows only the verse, with where it is from in words (kāṇḍa/parva and number, in the chosen script) and the metre. Round buttons are now ⋯, Share and Read; the ⋯ menu holds Another śloka, Back to today's, Save, Word by word, and Metre, place and other text. The five dots are gone (tap or swipe still turn the card).
 

@@ -1,6 +1,8 @@
 """Verse-of-the-day cards.
 
-365 Critical Edition verses are chosen deterministically (same set on every
+Today's śloka (since v0.14) uses the well-known verses in data/daily/quotes_<work>.json with
+meanings (build.py daily_quotes). select() below is the older automatic choice of 365 verses, kept for
+tests and as a fallback. 365 Critical Edition verses are chosen deterministically (same set on every
 build) and written as chunked JSON for the home page. The cards are
 *automatic*: the verse, its metre and scansion, its place in the epic, the
 word-by-word analysis with dictionary glosses, and the Vulgate cross-walk.

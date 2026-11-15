@@ -127,8 +127,7 @@
     var s = sc(), sav = !!P.get().savarna, kn = s === "knda", out = [];
     var cx = c.ctx || {}, kname0 = s === "knda" ? cx.kn : s === "deva" ? cx.deva : cx.iast, nn0 = function (n) { return s === "iast" ? n : T.digits(n, s); };
     out.push({ key: "verse", lines: lines(c, s), ref: c.ref, where: cx.s ? (kname0 || "") + " " + nn0(cx.s) + (cx.v ? "." + nn0(cx.v) : "") : c.ref,
-      meta: [c.meter].filter(Boolean).join(" · ") });
-    if (c.m) out.push({ key: "m", text: c.m[kn ? 1 : 0] });
+      meta: [c.meter].filter(Boolean).join(" · "), mean: c.m ? [c.m[1], c.m[0]] : null });
     if (c.w && c.w.length) out.push({ key: "words", dl: c.w.map(function (u) {
       return [u.f.map(function (f) { return T.render(f, s, sav); }).join("-"), gl(u.t, s) + (gl(u.t, s) ? " — " : "") + (kn && u.k ? u.k : u.g)];
     }), note: kn ? "ನಿಘಂಟಿನ ಅರ್ಥಗಳು (ಇಂಗ್ಲಿಷ್; ಕನ್ನಡ ಅರ್ಥ ಇರುವಲ್ಲಿ ಕನ್ನಡ — ಅದು ಇನ್ನೂ ಪರಿಶೀಲನೆಯಾಗಿಲ್ಲ); ಸ್ವಯಂಚಾಲಿತ" : "Dictionary senses of each base word, chosen automatically" });
@@ -162,7 +161,8 @@
     var h = '<h3 class="vc-label">' + esc(L(sec.key, s)) + "</h3>";
     if (sec.lines) {
       h += '<div class="vc-verse t-' + s + '" lang="' + langOf(s) + '">' + sec.lines.map(function (l) { return '<span class="ln">' + marked(l) + "</span>"; }).join("") + "</div>" +
-        '<p class="vc-ref">' + esc(sec.where || sec.ref) + (sec.meta ? " · " + esc(sec.meta) : "") + "</p>";
+        '<p class="vc-ref">' + esc(sec.where || sec.ref) + (sec.meta ? " · " + esc(sec.meta) : "") + "</p>" +
+        (sec.mean ? '<div class="vc-mean"><p lang="kn">' + esc(sec.mean[0]) + '</p><p lang="en">' + esc(sec.mean[1]) + "</p></div>" : "");
     } else if (sec.dl) {
       h += '<dl class="vc-dl" lang="en">' + sec.dl.map(function (r) { return '<dt lang="' + langOf(s) + '">' + esc(r[0]) + "</dt><dd>" + esc(r[1]) + "</dd>"; }).join("") + "</dl>" + '<p class="vc-note">' + esc(sec.note) + "</p>";
     } else {
@@ -291,6 +291,11 @@
         while (size > 32 && sec.lines.some(function (l) { ctx.font = "400 " + size + "px " + fam; return ctx.measureText(l).width > inner; })) size -= 2;
         sec.lines.forEach(function (l) { wrap(l, "400 " + size + "px " + fam, inner).forEach(function (w) { txt(w, x0, y + size, "400 " + size + "px " + fam, "#1B1712"); y += Math.round(size * 1.7); }); });
         wrap(sec.ref + (sec.meta ? " · " + sec.meta : ""), "500 28px " + ui, inner).forEach(function (w) { txt(w, x0, y + 24, "500 28px " + ui, "#A86A12"); y += 40; });
+        if (sec.mean) {
+          y += 14; var knf = "400 31px 'Noto Serif Kannada',serif";
+          wrap(sec.mean[0], knf, inner).forEach(function (w) { txt(w, x0, y + 30, knf, "#1B1712"); y += 48; });
+          y += 6; wrap(sec.mean[1], "italic 400 27px " + ui, inner).forEach(function (w) { txt(w, x0, y + 24, "italic 400 27px " + ui, "#4A4F66"); y += 38; });
+        }
       } else if (sec.dl) {
         sec.dl.forEach(function (r) {
           txt(r[0], x0, y + 34, "400 34px " + fam, "#1B1712"); y += 52;

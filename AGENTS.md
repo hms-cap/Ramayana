@@ -1,7 +1,7 @@
 # ಇತಿಹಾಸ (Itihāsa) — handoff for agents
 
 Browsable Sanskrit epics: Vālmīki Rāmāyaṇa (site root), Mahābhārata (`/mbh/`) and the Bhagavadgītā taken out of it (`/gita/`), with Kannada / Devanāgarī / IAST scripts, two editions of each, word-by-word analysis, a built-in dictionary, and an appendix of metres. Static site, built by Python, no server.
-Repo `hms-cap/Ramayana` · live (Vercel) https://ramayana-blond.vercel.app/ (the old GitHub Pages copy is no longer updated) · version in `site/static/version.js` (now 0.13.0) · owner: Hemanth.
+Repo `hms-cap/Ramayana` · live (Vercel) https://ramayana-blond.vercel.app/ (the old GitHub Pages copy is no longer updated) · version in `site/static/version.js` (now 0.14.0) · owner: Hemanth.
 
 ## How it is built and shipped
 - `python site/build.py` (Jinja2 + lxml, `requirements.txt`) reads `data/` and writes `dist/` (~600 MB, 100k+ files, ~5,500 chapter pages). `python site/build.py` takes a few minutes.
@@ -42,3 +42,4 @@ Reader with three scripts + scansion + chant; two editions per work with edition
 7. Gītā Dhyāna readings were chosen by majority of web witnesses (`data/gita/dhyana.json` variants); a reader should confirm them. The MBH cross-walk `report.json` was not regenerated after the 6.23.1 / 6.40.78 fix (four entries hand-set to match).
 5. Mahābhārata Pune text: permission from BORI not checked. Licences are in `etl/sources.json` and the About page.
 6. Possible appendix sections beyond Chandas (alaṅkāra, glossary, name index), Back behaviour that skips in-dictionary steps, shrinking the build (compact word files with one shared gloss file, ~152 → ~40 MB; pages drawn in the browser from chapter JSON, ~378 → ~60 MB).
+- Today's śloka (v0.14): the home card shows well-known verses from `data/daily/quotes_{ram,mbh,gita}.json` (`ed`, `ref`, `kn`, `en`), via `daily_quotes()` in `build.py`; the meaning shows on the card face. Chosen and translated by Claude, unreviewed. `tests/test_quotes.py` checks every ref exists. Add a verse by appending to the file.
