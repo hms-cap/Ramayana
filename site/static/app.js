@@ -67,6 +67,7 @@
   };
   window.VRPrefs = {
     off: function () { return offList(); },
+    offFor: function (w) { var v = prefs[{ mbh: "offMbh", gita: "offGita" }[w] || "off"]; return Array.isArray(v) ? v : ["ce"]; },
     get: function () { return prefs; },
     set: function (k, v) { prefs[k] = v; save(prefs); apply(); }
   };

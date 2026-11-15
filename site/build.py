@@ -602,6 +602,8 @@ def build(out: Path, only: str | None = None) -> None:
     if only is None:
         build_appendix(out, env, ram["base"])
         build_characters(out, env, ram["base"])
+    if only is None:
+        write_daily(out)
     write_pwa(out, done)
     (out / ".nojekyll").write_text("")
     print(f"built {sum(e['sargas'] for d in done for e in d['eds'])} sarga/adhyāya pages -> {out}")
@@ -646,6 +648,17 @@ const savePrefs =""", 1)
     (out / "dict" / "kosha" / "itihasa.css").write_text(
         ".itihasa-back{font-size:.9rem;font-weight:700;text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:.25rem .8rem;opacity:.85}\n"
         ".itihasa-back:hover{opacity:1}\n", encoding="utf-8")
+
+
+DAILY: list = []                     # cards of all works; write_daily() writes them as one set for every home page
+
+
+def write_daily(out: Path) -> None:
+    """One card a day for the whole site: the three works' quote cards in one fixed, shuffled order."""
+    cards = sorted(DAILY, key=lambda c: daily.digest("day" + c["wk"] + c["uid"] + c["ed"] + c["ref"]))
+    from math import gcd
+    assert gcd(daily.STRIDE, len(cards)) == 1, len(cards)
+    daily.write(out, cards)
 
 
 def daily_quotes(wid: str, recs_of) -> list[tuple[dict, dict]]:
@@ -727,8 +740,9 @@ def build_daily(out: Path, editions, titles: dict) -> dict:
     for r, q in chosen:
         c = card(r, eds[q["ed"]])
         c["m"] = [q["en"], q["kn"]]
+        c["wk"] = "ram"
         cards.append(c)
-    daily.write(out, cards)
+    DAILY.extend(cards)
     return cards[0]
 
 
@@ -806,8 +820,9 @@ def build_daily_mbh(wdir: Path, W: dict, editions) -> dict:
     for r, q in chosen:
         c = card(r, q["ed"])
         c["m"] = [q["en"], q["kn"]]
+        c["wk"] = "mbh"
         cards.append(c)
-    daily.write(wdir, cards)
+    DAILY.extend(cards)
     return cards[0]
 
 
@@ -840,8 +855,9 @@ def build_daily_gita(wdir: Path, W: dict, editions) -> dict:
     for r, q in chosen:
         c = card(r)
         c["m"] = [q["en"], q["kn"]]
+        c["wk"] = "gita"
         cards.append(c)
-    daily.write(wdir, cards)
+    DAILY.extend(cards)
     return cards[0]
 
 
@@ -1046,7 +1062,7 @@ def write_pwa(out: Path, done: list) -> None:
         for e in d["eds"]:
             shell.append(f'{pre}{e["id"]}/')
             shell += [f'{pre}{e["id"]}/{k}/' for k in range(1, nu + 1)]
-        shell += [f"{pre}data/daily/index.json"]
+        shell += ["data/daily/index.json"] if not pre else []
     shell += ["data/grammar.json", "manifest.webmanifest"]
     shell += sorted(str(p.relative_to(out)) for p in (out / "static").rglob("*") if p.is_file() and p.suffix != ".txt")
     sw = (ROOT / "site" / "sw.js").read_text(encoding="utf-8").replace("/*SHELL_FILES*/[]", json.dumps(shell))
@@ -1071,8 +1087,8 @@ def write_pwa(out: Path, done: list) -> None:
                 label = f'{e["short"]}: {kn["en"]}' if not pre else f'{W["short_en"]}, {e["short"]}: {kn["en"]}'
                 packs.append({"id": f'{pre.strip("/")}{"-" if pre else ""}{e["id"]}-{k}', "label": label, "urls": urls, "bytes": size(urls),
                               "w": W["id"], "e": e["id"], "k": k, "u": [kn["kn"], kn["deva"], kn["iast"]]})
-        core = [f"{pre}data/search-{e['id']}.json" for e in d["eds"]] + [f"{pre}data/daily/{f.name}" for f in sorted((out / pre / "data" / "daily").glob("c*.json"))]
-        packs.append({"id": f'{pre.strip("/") or "ram"}-core', "label": ("Search index and verse-of-the-day cards" if not pre else f'{W["short_en"]}: search index and verse-of-the-day cards'),
+        core = [f"{pre}data/search-{e['id']}.json" for e in d["eds"]] + ([f"data/daily/{f.name}" for f in sorted((out / "data" / "daily").glob("c*.json"))] if not pre else [])
+        packs.append({"id": f'{pre.strip("/") or "ram"}-core', "label": ("Search index and verse-of-the-day cards" if not pre else f'{W["short_en"]}: search index'),
                       "urls": core, "bytes": size(core), "w": W["id"], "e": "", "k": 0})
     (out / "data" / "offline.json").write_text(json.dumps({"version": json.loads((ROOT / "data" / "changes.json").read_text())[0][0], "packs": packs},
                                                          ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

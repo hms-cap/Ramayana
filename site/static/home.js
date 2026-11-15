@@ -95,17 +95,23 @@
   })();
 
   /* ---- verse of the day ---- */
+  var WK = {    // the daily card can come from any of the three texts
+    ram: { pre: "", en: "Rāmāyaṇa", kn: "ರಾಮಾಯಣ", deva: "रामायणम्", sub: ["sarga", "ಸರ್ಗ", "सर्गः"], epic: ["In the epic", "ರಾಮಾಯಣದಲ್ಲಿ"], site: "", name: "ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ" },
+    mbh: { pre: "mbh/", en: "Mahābhārata", kn: "ಮಹಾಭಾರತ", deva: "महाभारतम्", sub: ["adhyāya", "ಅಧ್ಯಾಯ", "अध्यायः"], epic: ["In the epic", "ಮಹಾಭಾರತದಲ್ಲಿ"], site: "/mbh", name: "ಮಹಾಭಾರತ" },
+    gita: { pre: "gita/", en: "Bhagavadgītā", kn: "ಭಗವದ್ಗೀತೆ", deva: "भगवद्गीता", sub: ["adhyāya", "ಅಧ್ಯಾಯ", "अध्यायः"], epic: ["In the Gītā", "ಭಗವದ್ಗೀತೆಯಲ್ಲಿ"], site: "/gita", name: "ಭಗವದ್ಗೀತೆ" }
+  };
+  function wk() { return WK[(card && card.wk) || B.work] || WK.ram; }
   var grammar = null, ix = null, card = null, idx = 0, cardNo = 0, shuffled = false, today = null;
   var LAB = {
     verse: ["Śloka", "ಶ್ಲೋಕ"], words: ["Words and grammar", "ಪದಗಳು ಮತ್ತು ವ್ಯಾಕರಣ"], metre: ["Metre", "ಛಂದಸ್ಸು"],
-    ctx: [B.epicEn || "In the epic", B.epicKn || "ರಾಮಾಯಣದಲ್ಲಿ"], other: ["Other recension", "ಇನ್ನೊಂದು ಪಾಠ"], m: ["Meaning", "ಅರ್ಥ"], u: ["Use and significance", "ಬಳಕೆ ಮತ್ತು ಮಹತ್ವ"],
+    ctx: ["In the epic", "ರಾಮಾಯಣದಲ್ಲಿ"], other: ["Other recension", "ಇನ್ನೊಂದು ಪಾಠ"], m: ["Meaning", "ಅರ್ಥ"], u: ["Use and significance", "ಬಳಕೆ ಮತ್ತು ಮಹತ್ವ"],
     kind: ["Today's śloka", "ಇಂದಿನ ಶ್ಲೋಕ"], another: ["Another śloka", "ಇನ್ನೊಂದು ಶ್ಲೋಕ"]
   };
   var CWSTAT = {
     match: ["Same verse in the", "ಎರಡೂ ಪಾಠಗಳಲ್ಲಿ ಇದೆ:"], variant: ["Different reading in the", "ಪಾಠಭೇದ:"], regrouped: ["Lines grouped differently in the", "ಪಾದಗಳ ಗುಂಪು ಬೇರೆ:"],
     partial: ["Only partly in the", "ಭಾಗಶಃ ಮಾತ್ರ:"], absent: ["Not in the", "ಇಲ್ಲ:"]
   };
-  function L(key, s) { return LAB[key][s === "knda" ? 1 : 0]; }
+  function L(key, s) { if (key === "ctx") return wk().epic[s === "knda" ? 1 : 0]; return LAB[key][s === "knda" ? 1 : 0]; }
 
   function lines(c, s) {
     var d = s === "iast" ? ["|", "||"] : ["।", "॥"], sav = !!P.get().savarna;
@@ -126,14 +132,14 @@
   function plain(c) {
     var s = sc(), sav = !!P.get().savarna, kn = s === "knda", out = [];
     var cx = c.ctx || {}, kname0 = s === "knda" ? cx.kn : s === "deva" ? cx.deva : cx.iast, nn0 = function (n) { return s === "iast" ? n : T.digits(n, s); };
-    out.push({ key: "verse", lines: lines(c, s), ref: c.ref, where: cx.s ? (kname0 || "") + " " + nn0(cx.s) + (cx.v ? "." + nn0(cx.v) : "") : c.ref,
+    out.push({ key: "verse", lines: lines(c, s), ref: c.ref, where: (s === "knda" ? wk().kn : s === "deva" ? wk().deva : wk().en) + " · " + (cx.s ? (kname0 || "") + " " + nn0(cx.s) + (cx.v ? "." + nn0(cx.v) : "") : c.ref),
       meta: [c.meter].filter(Boolean).join(" · "), mean: c.m ? [c.m[1], c.m[0]] : null });
     if (c.w && c.w.length) out.push({ key: "words", dl: c.w.map(function (u) {
       return [u.f.map(function (f) { return T.render(f, s, sav); }).join("-"), gl(u.t, s) + (gl(u.t, s) ? " — " : "") + (kn && u.k ? u.k : u.g)];
     }), note: kn ? "ನಿಘಂಟಿನ ಅರ್ಥಗಳು (ಇಂಗ್ಲಿಷ್; ಕನ್ನಡ ಅರ್ಥ ಇರುವಲ್ಲಿ ಕನ್ನಡ — ಅದು ಇನ್ನೂ ಪರಿಶೀಲನೆಯಾಗಿಲ್ಲ); ಸ್ವಯಂಚಾಲಿತ" : "Dictionary senses of each base word, chosen automatically" });
     if (c.meter) out.push({ key: "metre", text: c.meter, scan: c.scan });
     var x = c.ctx, kname = s === "knda" ? x.kn : s === "deva" ? x.deva : x.iast, nn = function (n) { return s === "iast" ? n : T.digits(n, s); };
-    out.push({ key: "ctx", text: kname + " · " + (kn ? (B.subKn || "ಸರ್ಗ") + " " : s === "deva" ? (B.subDeva || "सर्गः") + " " : (B.subEn || "sarga") + " ") + nn(x.s) + (x.title ? " — " + x.title : "") + " · " + nn(x.v) + " / " + nn(x.of) });
+    out.push({ key: "ctx", text: kname + " · " + (kn ? wk().sub[1] + " " : s === "deva" ? wk().sub[2] + " " : wk().sub[0] + " ") + nn(x.s) + (x.title ? " — " + x.title : "") + " · " + nn(x.v) + " / " + nn(x.of) });
     if (c.cw) out.push({ key: "other", text: CWSTAT[c.cw.status][kn ? 1 : 0] + " " + (kn ? (c.cw.other_kn || "ಪರಂಪರಾಗತ ಪಾಠ") : (c.cw.other || "Traditional Text")) + (c.cw.refs.length ? " " + c.cw.refs.join(", ") : "") });
     if (c.u) out.push({ key: "u", text: c.u[kn ? 1 : 0] });
     return out;
@@ -188,19 +194,19 @@
     var dots = votd.querySelector(".votd-dots");
     dots.innerHTML = secs.map(function (x, i) { return '<button type="button" role="tab" aria-selected="' + (i === cardNo) + '" aria-label="' + esc(L(x.key, s)) + '" data-card="' + i + '"></button>'; }).join("");
     var vp = card.cw && card.cw.status === "match" && card.cw.paths && card.cw.paths[0];
-    document.getElementById("votd-open").href = WROOT + ((P.off().indexOf(card.ed || "ce") >= 0 && vp) ? vp : card.path);
+    document.getElementById("votd-open").href = ROOT + wk().pre + ((P.offFor(card.wk || B.work).indexOf(card.ed || "ce") >= 0 && vp) ? vp : card.path);
     document.getElementById("votd-today").hidden = !shuffled;
     var wb = document.getElementById("votd-words"), hasW = secs.some(function (x) { return x.key === "words"; });
     wb.setAttribute("aria-disabled", hasW ? "false" : "true"); wb.setAttribute("aria-pressed", secs[cardNo].key === "words" ? "true" : "false");
     paintSave();
   }
-  function saveId() { return (MBH ? "dm-mbh-vu-" : GITA ? "dm-gita-vu-" : "dm-ce-") + card.ref; }
+  function saveId() { var w = card.wk || B.work; return "dm-" + (w === "ram" ? "" : w + "-") + (card.ed || "ce") + "-" + card.ref; }
   function paintSave() {
     var b = document.getElementById("votd-save"), on = S.has(saveId());
     b.setAttribute("aria-pressed", on); b.setAttribute("aria-label", on ? "Saved. Tap to remove" : "Save"); b.title = on ? "Saved" : "Save";
     var t = b.querySelector(".lbl"); if (t) t.textContent = on ? "Saved ✓" : "Save";
   }
-  function cardAt(k) { return getJSON(WROOT + "data/daily/c" + Math.floor(k / ix.chunk) + ".json").then(function (a) { return a[k % ix.chunk]; }); }
+  function cardAt(k) { return getJSON(ROOT + "data/daily/c" + Math.floor(k / ix.chunk) + ".json").then(function (a) { return a[k % ix.chunk]; }); }
   function show(k, isShuffle) {
     return cardAt(k).then(function (c) { card = c; idx = k; shuffled = isShuffle; cardNo = 0; draw(0); }, function () {
       card = JSON.parse(votd.dataset.fallback); shuffled = false; cardNo = 0; draw(0);
@@ -209,7 +215,7 @@
   var day = Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000);
   card = JSON.parse(votd.dataset.fallback);
   Promise.all([getJSON(ROOT + "data/grammar.json").then(function (g) { grammar = g; }, function () { }),
-    getJSON(WROOT + "data/daily/index.json").then(function (i) { ix = i; today = (day * 7919) % ix.n; })]).then(function () { return show(today, false); },
+    getJSON(ROOT + "data/daily/index.json").then(function (i) { ix = i; today = (day * 7919) % ix.n; })]).then(function () { return show(today, false); },
     function () { draw(0); });
 
   votd.addEventListener("click", function (e) {
@@ -254,7 +260,7 @@
   });
   document.getElementById("votd-today").addEventListener("click", function () { show(today, false); });
   document.getElementById("votd-save").addEventListener("click", function () {
-    S.toggle({ id: saveId(), kind: "verse", href: PRE + card.path, label: (MBH ? "Mahābhārata " : GITA ? "Bhagavadgītā " : "CE ") + card.ref, slp: card.slp }); paintSave(); badge();
+    S.toggle({ id: saveId(), kind: "verse", href: wk().pre + card.path, label: (card.wk === "mbh" ? "Mahābhārata " : card.wk === "gita" ? "Bhagavadgītā " : (card.ed === "vu" ? "" : "CE ")) + card.ref, slp: card.slp }); paintSave(); badge();
   });
   document.addEventListener("prefs-changed", function () {
     if (card) draw(0);
@@ -310,9 +316,9 @@
     });
     var cardH = y - cardTop + 20, total = cardTop + cardH + 130;
     if (drawIt) {
-      txt(B.workKn || "ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", pad, 100, "400 44px " + kn + ",serif", "#FFFBF2");
+      txt(wk().name, pad, 100, "400 44px " + kn + ",serif", "#FFFBF2");
       txt(L("kind", s), pad, 150, "500 30px " + ui, "#E8D9A8");
-      txt(B.site || "ramayana-blond.vercel.app", Wd / 2, total - 56, "400 26px " + ui, "#E8D9A8", "center");
+      txt((B.site || "ramayana-blond.vercel.app").replace(/\/(mbh|gita)$/, "") + wk().site, Wd / 2, total - 56, "400 26px " + ui, "#E8D9A8", "center");
     }
     return { total: total, cardH: cardH };
   }

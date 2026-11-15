@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.14.1 — 2026-11-15
+- One śloka a day for the whole app: the Rāmāyaṇa, Mahābhārata and Gītā home pages now show the same card, drawn from all 148 well-known verses together (`data/daily/` at the site root). The card names its text ("Mahābhārata · Udyogaparva 35.52") and Read, Save and Share use that text, whichever page you are on.
+
 ## 0.14.0 — 2026-11-15
 - Today's śloka now comes from a set of well-known, often-quoted verses (37 Rāmāyaṇa, 53 Mahābhārata, 58 Gītā; `data/daily/quotes_*.json`) instead of 365 random ones, with a Kannada and an English meaning on the card face and on the shared picture. Some are from the Traditional text, some from the critical text, whichever has the verse (Read opens that one). The verses were chosen and the meanings written by Claude; not yet reviewed.
 

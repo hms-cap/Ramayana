@@ -28,11 +28,11 @@ def get(path):
 
 
 def widest_cards(n):
-    """Indices of the Mahābhārata daily cards with the longest half-lines (they are the ones that can overflow)."""
-    ix = get("mbh/data/daily/index.json")
+    """Indices of the daily cards (all three works share one set) with the longest half-lines (they are the ones that can overflow)."""
+    ix = get("data/daily/index.json")
     cards = []
     for c in range((ix["n"] + ix["chunk"] - 1) // ix["chunk"]):
-        cards += get(f"mbh/data/daily/c{c}.json")
+        cards += get(f"data/daily/c{c}.json")
     worst = sorted(range(len(cards)), key=lambda i: -max(len(l) for l in cards[i]["slp"]))
     return ix["n"], worst[:n]
 
