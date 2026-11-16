@@ -926,13 +926,13 @@
     {
      "en": "Grieves in the forest after the sage's curse",
      "kn": "ಋಷಿಯ ಶಾಪದ ನಂತರ ಕಾಡಿನಲ್ಲಿ ದುಃಖಿಸುತ್ತಾನೆ",
-     "ref": "1.124.1",
+     "ref": "1.124.2",
      "ed": "vu"
     },
     {
      "en": "Asks Kuntī to call a god to give him sons",
      "kn": "ದೇವತೆಯ ಮೂಲಕ ಮಕ್ಕಳನ್ನು ಪಡೆಯಲು ಕುಂತಿಗೆ ಹೇಳುತ್ತಾನೆ",
-     "ref": "1.129.4",
+     "ref": "1.129.5",
      "ed": "vu",
      "with": [
       "kunti"
@@ -1144,7 +1144,7 @@
     {
      "en": "Answers the Yakṣa's questions beside the lake",
      "kn": "ಸರೋವರದ ಬಳಿ ಯಕ್ಷನ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸುತ್ತಾನೆ",
-     "ref": "3.314.47",
+     "ref": "3.314.48",
      "ed": "vu"
     },
     {
@@ -1168,7 +1168,7 @@
     {
      "en": "Refuses to enter heaven without the dog",
      "kn": "ನಾಯಿಯನ್ನು ಬಿಟ್ಟು ಸ್ವರ್ಗಕ್ಕೆ ಹೋಗಲು ನಿರಾಕರಿಸುತ್ತಾನೆ",
-     "ref": "17.3.14",
+     "ref": "17.3.15",
      "ed": "vu",
      "with": [
       "indra",
@@ -1717,7 +1717,7 @@
     {
      "type": "spouse",
      "to": "arjuna",
-     "ref": "1.234.17",
+     "ref": "1.234.18",
      "ed": "vu"
     }
    ],
@@ -1725,7 +1725,7 @@
     {
      "en": "Draws Arjuna into the water and asks to wed him",
      "kn": "ಅರ್ಜುನನನ್ನು ನೀರಿನೊಳಗೆ ಸೆಳೆದು ಮದುವೆಯಾಗಲು ಕೇಳುತ್ತಾಳೆ",
-     "ref": "1.234.17",
+     "ref": "1.234.18",
      "ed": "vu",
      "with": [
       "arjuna"
@@ -2817,7 +2817,7 @@
     {
      "en": "Cannot recall his weapon and must yield the jewel",
      "kn": "ಅಸ್ತ್ರ ಹಿಂಪಡೆಯಲಾಗದೆ ಮಣಿಯನ್ನು ಕೊಡಬೇಕಾಗುತ್ತದೆ",
-     "ref": "10.15.27",
+     "ref": "10.15.28",
      "ed": "vu",
      "with": [
       "vyasa",
@@ -2827,7 +2827,7 @@
     {
      "en": "Kṛṣṇa curses him to wander for three thousand years",
      "kn": "ಮೂರು ಸಾವಿರ ವರ್ಷ ಅಲೆಯುವಂತೆ ಕೃಷ್ಣ ಶಪಿಸುತ್ತಾನೆ",
-     "ref": "10.16.14",
+     "ref": "10.16.15",
      "ed": "vu",
      "with": [
       "krishna",

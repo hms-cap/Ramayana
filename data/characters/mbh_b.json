@@ -466,7 +466,7 @@
     {
      "en": "Answers the king's last questions on the fruit of hearing",
      "kn": "ಕೇಳುವುದರ ಫಲದ ಬಗ್ಗೆ ರಾಜನ ಕೊನೆಯ ಪ್ರಶ್ನೆಗೆ ಉತ್ತರಿಸುತ್ತಾನೆ",
-     "ref": "18.6.2",
+     "ref": "18.6.3",
      "ed": "vu",
      "with": [
       "janamejaya"
@@ -1481,7 +1481,7 @@
     {
      "en": "Boasts among the women of the palace",
      "kn": "ಅರಮನೆಯ ಹೆಂಗಸರ ನಡುವೆ ಜಂಬ ಕೊಚ್ಚುತ್ತಾನೆ",
-     "ref": "4.38.2",
+     "ref": "4.38.3",
      "ed": "vu"
     },
     {
@@ -1793,7 +1793,7 @@
     {
      "en": "Tells the Pāṇḍavas who he is",
      "kn": "ತಾನು ಯಾರೆಂದು ಪಾಂಡವರಿಗೆ ಹೇಳುತ್ತಾನೆ",
-     "ref": "1.142.54",
+     "ref": "1.142.55",
      "ed": "vu"
     },
     {
@@ -1839,7 +1839,7 @@
     {
      "type": "other",
      "to": "arjuna",
-     "ref": "7.143.4",
+     "ref": "7.143.5",
      "ed": "vu",
      "note_en": "Arjuna cuts off his arm while he is about to kill Sātyaki",
      "note_kn": "ಸಾತ್ಯಕಿಯನ್ನು ಕೊಲ್ಲಲಿದ್ದ ಅವನ ತೋಳನ್ನು ಅರ್ಜುನ ಕತ್ತರಿಸುತ್ತಾನೆ"
@@ -1867,7 +1867,7 @@
     {
      "en": "Arm cut off; he reproaches Arjuna",
      "kn": "ತೋಳು ಕತ್ತರಿಸಲ್ಪಟ್ಟು ಅರ್ಜುನನನ್ನು ನಿಂದಿಸುತ್ತಾನೆ",
-     "ref": "7.143.4",
+     "ref": "7.143.5",
      "ed": "vu",
      "with": [
       "arjuna"
@@ -1970,7 +1970,7 @@
     {
      "type": "spouse",
      "to": "shakuntala",
-     "ref": "1.94.20",
+     "ref": "1.94.21",
      "ed": "vu"
     }
    ],
@@ -2035,7 +2035,7 @@
     {
      "en": "Agrees to a gāndharva marriage with Duṣyanta",
      "kn": "ದುಷ್ಯಂತನೊಂದಿಗೆ ಗಾಂಧರ್ವ ವಿವಾಹಕ್ಕೆ ಒಪ್ಪುತ್ತಾಳೆ",
-     "ref": "1.94.4",
+     "ref": "1.94.5",
      "ed": "vu",
      "with": [
       "dushyanta"

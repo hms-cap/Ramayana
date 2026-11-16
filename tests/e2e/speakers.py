@@ -7,7 +7,7 @@ with sync_playwright() as p:
     errs = []; pg.on("pageerror", lambda e: errs.append(str(e)))
     for ed in ("vu/6/25", "ce/6/23"):
         pg.goto(f"{B}/mbh/{ed}/"); pg.wait_for_selector("#v1 .t-knda .ln")
-        lines1 = pg.locator("#v1 .t-knda .ln").all_inner_texts()
+        lines1 = pg.locator("#v1 .t-knda > p:first-child .ln").all_inner_texts()
         print(ed, "v1:", len(lines1), "lines; speaker:", pg.inner_text("#v1 .speaker .sx-kn"), "| v2 speaker:", pg.inner_text("#v2 .speaker .sx-kn"))
         assert len(lines1) == 2 and "ಉವಾಚ" not in "".join(lines1), lines1
         assert "ಸಂಜಯ" in pg.inner_text("#v2 .speaker .sx-kn")
@@ -15,7 +15,7 @@ with sync_playwright() as p:
         assert pg.evaluate("document.documentElement.scrollWidth") <= 390
     # inline speaker inside a verse (Kumbakonam, source puts it mid-record) renders in every script
     pg.goto(f"{B}/mbh/ce/1/19/#v17"); pg.wait_for_selector("#v17 .apx")
-    assert pg.locator("#v17 .t-knda .ln").count() == 2
+    assert pg.locator("#v17 .t-knda > p:first-child .ln").count() == 2
     pg.click("#v17 .apx summary"); pg.wait_for_selector("#v17 .ax-knda .al")
     print("appendix fold:", pg.inner_text("#v17 .apx summary"), "|", pg.locator("#v17 .ax-knda .al").count(), "lines,", pg.locator("#v17 .ax-knda .spk").count(), "speaker")
     assert pg.locator("#v17 .ax-knda .spk").count() >= 1 and pg.is_visible("#v17 .ax-knda")

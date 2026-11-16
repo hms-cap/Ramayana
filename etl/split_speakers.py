@@ -47,6 +47,15 @@ SPK_WORD = re.compile(r"(uvāca|ūcuḥ|ūcatuḥ)$")
 UNMARKED = re.compile(r"(?!(?:sa|sā|tam|taṃ|te|tān|tāṃ|tāḥ|tau|ca|punar|punaḥ|idam|idaṃ|tato|tataḥ) )\S+ (?:uvāca|ūcuḥ|ūcatuḥ)")
 
 
+def is_header(t: str) -> bool:
+    """'saṃjaya uvāca', 'ṛṣaya ūcuḥ', 'brahmovāca', 'sautiruvāca' — not 'provāca' or 'tam uvāca'."""
+    w = t.split()
+    if len(w) == 2:
+        return bool(UNMARKED.fullmatch(t))
+    return len(w) == 1 and len(t) >= 7 and bool(re.search(r"(uvāca|ovāca|ūcuḥ|ūcatuḥ)$", t)) \
+        and not re.match(r"(prat[iy]|pro|abhy|samud|upo)", t)
+
+
 def key(s: str) -> str:
     return re.sub(r"[^a-zāīūṛṝḷṃḥṅñṭḍṇśṣ]", "", s.lower())
 
@@ -136,10 +145,10 @@ def src_ce(folder: Path) -> dict:
             out.setdefault(uid, []).append((kind, pid, clean(body)))
     # inside a passage a speaker line is sometimes numbered like the line after it ("@041_0003 vaiśaṃpāyana uvāca",
     # "@041_0003 dhṛtarāṣṭrasya …"), not marked "="
+    # or numbered as an ordinary line ("@006_0000 vaiśaṃpāyana uvāca"): a bare speaker header is a speaker
     for uid, ls in out.items():
-        for i, (kind, pid, t) in enumerate(ls[:-1]):
-            nk, npid, _ = ls[i + 1]
-            if kind == "app" and nk == "app" and pid == npid and len(t.split()) <= 3 and SPK_WORD.search(t):
+        for i, (kind, pid, t) in enumerate(ls):
+            if kind == "app" and is_header(t):
                 ls[i] = ("appspk", (pid[0], sum(1 for x in ls[:i] if x[0] == "app" and x[1][0] == pid[0])), t)
     return out
 

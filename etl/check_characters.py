@@ -39,7 +39,7 @@ def verses(work: str, ed: str) -> dict:
     with open(NORM[work] / f"{ed}.jsonl", encoding="utf-8") as f:
         for line in f:
             r = json.loads(line)
-            text = " ".join(p for ln in r["lines"] for p in ln)
+            text = " ".join([x["t"] for x in r.get("spk", [])] + [p for ln in r["lines"] for p in ln])   # speaker lines count
             out[f'{r["k"]}.{r["s"]}.{r["v"]}'] = loose_for_index(iast_to_slp1(text.lower()))
     return out
 
