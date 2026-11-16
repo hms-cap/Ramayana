@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.16.0 — 2026-11-16
+- Pariśiṣṭa → Stotras: 24 well-known hymns inside the epics (7 Rāmāyaṇa, 17 Mahābhārata), e.g. Ādityahṛdayam, Viṣṇusahasranāma, Bhīṣmastavarāja, the two Śivasahasranāmas, the Durgā stotras, Arjuna's hymn in Gītā 11. Each shows its name in your script, who praises whom, the opening line, a one-line Kannada and English note, and links per edition with the verse count (or "Only in the Traditional text").
+- A link opens the reader with the hymn's verses marked (`#vA-B`). Site search lists matching stotras above the verse results.
+- `data/stotras.json` (with sources for each hymn) and `etl/stotras.py` (find / show / heads / check). Ranges are checked in tests. The list was researched and the ranges checked by Claude agents; the notes are not yet reviewed by a Kannada reader.
+
 ## 0.15.1 — 2026-11-16
 - Bookmarks can be exported to a file and imported back (Bookmarks sheet → Export / Import). Import adds to what is already there; nothing is overwritten. Works for moving bookmarks between devices.
 
