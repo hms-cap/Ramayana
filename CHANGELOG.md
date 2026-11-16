@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.17.1 — 2026-11-16
+- Kāṇḍa and parva lists: long first lines wrap instead of making the page scroll sideways on phones.
+- Release note: Vercel builds only when the last commit changes `site/static/version.js`; 0.17.0 reached main with a later commit on top, so it is released as 0.17.1.
+
 ## 0.17.0 — 2026-11-16
 - Back (‹) in the header now always goes up one level: sarga → kāṇḍa/parva list → Read → Home. It no longer goes to the edition page ("Traditional Text (Vulgate …)"), the Critical text or the previous sarga.
 - Previous / Next, swipes, the edition switch and the jump sheet replace the page instead of adding to history, so the phone's Back leaves reading in one step.
