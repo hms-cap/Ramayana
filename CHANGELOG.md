@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.19.0 — 2026-11-16
+- Gītās that run over several adhyāyas (Anugītā, Brāhmaṇagītā and others) open on an adhyāya list first: one row per adhyāya with its opening words and verse count, edition tabs, Read from the start and Chant. Back from the reader lands on that list; Back from the list lands on the gītā in Gītās.
+
 ## 0.18.3 — 2026-11-16
 - Pariśiṣṭa home: Stotras and Gītās come first, Chandas last; the Stotras and Gītās rows carry chips for the first eight items (opening that item in its list) and "+N more"; Characters has a chip for each epic. The switch chips on the sub-pages follow the same order.
 

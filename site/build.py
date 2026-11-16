@@ -1085,6 +1085,7 @@ def build_stotras(out: Path, env: Environment, base: dict) -> None:
                 groups[loc0["k"]].append(dict(
                     st=st, deity=st.get("deity", "other"), n=links[0]["n"], chs=links[0]["chs"], name=s3(st["name_iast"]), by=s3(st["by"]), to=s3(st["to"]),
                     kind=sx(*kind), open=open_, links=links, s=loc0["s"], href=links[0]["href"],
+                    page=(st["id"] + "/") if len(pts[ed0]) > 1 else None,
                     gita=dict(href=f'../../gita/vu/1/{g["s"]}/#v{g["v"][0]}-{g["v"][1]}', ref=f'{g["s"]}.{g["v"][0]}–{g["v"][1]}') if g else None,
                     only=(eds[links[0]["ed"]]["short"] if len(links) == 1 else None)))
             if not groups:
@@ -1098,6 +1099,41 @@ def build_stotras(out: Path, env: Environment, base: dict) -> None:
         ctx = {**base, "page": "appendix", "chip_on": "app", "wroot": "../../", "root": "../../", "up": "../", "secs": secs,
                "P": dict(C, title_sx=sx(*C["title"]), name=name)}
         rel.write_text(env.get_template("stotras.html").render(**ctx), encoding="utf-8")
+        # one page per passage that runs over several adhyāyas: its adhyāya list, before the verses
+        multi = {x["st"]["id"]: x for sec in secs for g_ in sec["groups"] for x in g_["rows"] if x["page"]}
+        pneed = defaultdict(set)
+        for i in multi:
+            for ed, pp in parts_of[i].items():
+                for k, sa, a, b in pp:
+                    pneed[(multi[i]["st"]["work"], ed)].add((k, sa, a))
+        pfirst = {}
+        for (w, ed), keys in pneed.items():
+            for line in open(norm_path(WORKS[w], ed), encoding="utf-8"):
+                r = json.loads(line)
+                if (r["k"], r["s"], r["v"]) in keys:
+                    pfirst[(w, ed, r["k"], r["s"], r["v"])] = r
+        for i, x in multi.items():
+            st, w = x["st"], x["st"]["work"]
+            W, eds = WORKS[w], {e["id"]: e for e in load_editions(WORKS[w])}
+            tabs = []
+            for ed, pp in parts_of[i].items():
+                rows = []
+                for n, (k, sa, a, b) in enumerate(pp, 1):
+                    r = pfirst.get((w, ed, k, sa, a))
+                    op = None
+                    if r:
+                        pads = [y for ln in r["lines"] for y in ln if not re.fullmatch(r"\s*\S+\s+uvāca\s*", y)]
+                        words = re.sub(r"\s*\[\d+(?:_\d+)?\]", "", pads[0] if pads else "").split()
+                        l1 = iast_to_slp1(" ".join(words[:8]))
+                        op = sx(render(l1, "knda"), render(l1, "deva"), render(l1, "iast"))
+                    rows.append(dict(n=n, ch=sx(to_digits(sa, "knda"), to_digits(sa, "deva"), str(sa)), sa=sa, nv=b - a + 1, open=op,
+                                     href=f'../../../{W["prefix"]}{ed}/{k}/{sa}/#v{a}-{b}'))
+                tabs.append(dict(ed=ed, name=eds[ed]["short"], rows=rows))
+            d = out / "appendix" / name / i
+            d.mkdir(parents=True, exist_ok=True)
+            ctx = {**base, "page": "appendix", "chip_on": "app", "wroot": "../../../", "root": "../../../", "up": f"../#{i}",
+                   "P": dict(C, title_sx=sx(*C["title"]), name=name), "r": x, "tabs": tabs, "unit": "Adhyāya"}
+            (d / "index.html").write_text(env.get_template("passage.html").render(**ctx), encoding="utf-8")
         order = [x["st"]["id"] for sec in secs for g_ in sec["groups"] for x in g_["rows"]]
         by_id = {st["id"]: st for st in data}
         for i in order:

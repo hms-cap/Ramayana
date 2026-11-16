@@ -1032,3 +1032,16 @@ a.crow:hover .cn { color: var(--accent); }
 .appx-list .achip a.ach { display: inline-block; padding: 0.25rem 0.7rem; border-radius: 99px; box-shadow: none; background: var(--ac-soft); color: var(--ac); }
 .appx-list .achip a.ach.more { background: transparent; box-shadow: 0 0 0 1px var(--ac); font: 600 0.75rem var(--f-ui); padding: 0.35rem 0.7rem; }
 .appx-list .achip a.ach:hover, .appx-list .achip a.ach:focus-visible { box-shadow: 0 0 0 2px var(--ac); }
+
+/* Gītā adhyāya list (v0.19) */
+.passage .st-acts { margin: 0.8rem 0; }
+.pt-list { list-style: none; margin: 0.4rem 0 1rem; padding: 0; display: grid; gap: 0.45rem; }
+.appx .pt-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0.8rem; border-radius: 16px; background: var(--card); box-shadow: 0 0 0 1px var(--rule); color: var(--ink); text-decoration: none; }
+.pt-n { flex: none; min-width: 2.4rem; height: 2.4rem; padding: 0 0.3rem; border-radius: 99px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font: 400 1.15rem var(--f-knda); }
+.pt-t { flex: 1; min-width: 0; display: block; }
+.pt-t b { display: block; font: 600 0.85rem var(--f-ui); }
+.pt-t .st-open { display: block; overflow-wrap: anywhere; }
+.pt-v { flex: none; font: 600 0.72rem var(--f-ui); color: var(--muted); }
+.pt-row:hover, .pt-row:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
+.pt-list { grid-template-columns: minmax(0, 1fr); } .pt-list > li, .appx .pt-row { min-width: 0; }
+.pt-t .st-open { white-space: normal; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }

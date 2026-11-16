@@ -9,7 +9,8 @@ with sync_playwright() as p:
     n = pg.locator(".st").count(); print("gītās:", n); assert n >= 15
     assert pg.locator("[data-st-tab]").count() == 0 and pg.is_visible("#anugita")
     # Anugītā: part 1, Next part, part 2
-    pg.click("#anugita [data-st-read].stb"); pg.wait_for_selector(".stbar")
+    pg.click("#anugita [data-st-read].stb"); pg.wait_for_selector(".pt-row"); assert pg.locator(".pt-row:visible").count() == 35, "adhyāya list"
+    pg.click("[data-pread].stb"); pg.wait_for_selector(".stbar")
     pos = pg.inner_text(".stbar-pos"); print("anugītā:", pos); assert "Part" in pos
     shown = pg.evaluate("[...document.querySelectorAll('.verses > .verse')].filter(l => l.offsetParent).length"); assert shown == pg.locator(".verse.st-hl").count()
     u1 = pg.url; pg.click(".st-endli a.dk"); pg.wait_for_selector(".stbar"); print("next part:", pg.inner_text(".stbar-pos"), pg.url); assert pg.url != u1
@@ -21,7 +22,7 @@ with sync_playwright() as p:
     pg.click(".ch-x"); pg.wait_for_timeout(500); print("✕ from chant:", pg.url); assert "/appendix/gitas/" in pg.url
     # Brāhmaṇagītā shares adhyāyas with the Anugītā but keeps its own name
     if pg.query_selector("#brahmanagita"):
-        pg.goto(B + "/appendix/gitas/#brahmanagita"); pg.click("#brahmanagita [data-st-read].stb"); pg.wait_for_selector(".stbar")
+        pg.goto(B + "/appendix/gitas/#brahmanagita"); pg.click("#brahmanagita [data-st-read].stb"); pg.wait_for_selector(".pt-row"); pg.click(".pt-row >> nth=0"); pg.wait_for_selector(".stbar")
         pg.click(".st-endli a.dk"); pg.wait_for_selector(".stbar"); nm = pg.inner_text(".stbar-nm b"); print("brāhmaṇagītā part 2:", nm, pg.inner_text(".stbar-pos"))
         assert "ಬ್ರಾಹ್ಮಣ" in nm
     # a one-adhyāya gītā and Back to the list

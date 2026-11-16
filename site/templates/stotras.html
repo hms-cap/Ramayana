@@ -30,7 +30,7 @@
     <ul class="st-list">
     {% for r in g.rows %}
       <li class="st" id="{{ r.st.id }}" data-deity="{{ r.deity }}" data-find="{{ (r.st.name_iast ~ ' ' ~ r.st.name_en ~ ' ' ~ r.st.by ~ ' ' ~ r.st.to ~ ' ' ~ r.deity)|lower }}">
-        <a class="st-main" href="{{ r.href }}" data-st-read>
+        <a class="st-main" href="{{ r.page or r.href }}" data-st-read>
           <b class="st-name">{{ r.name }}</b>
           <span class="st-who">{{ r.by }} <span aria-label="to">→</span> {{ r.to }} · <span class="st-kind">{{ r.kind }}</span> · <span class="st-en">{{ r.st.name_en }}</span></span>
           {% if r.open %}<span class="st-open">{{ r.open }} …</span>{% endif %}
@@ -38,7 +38,7 @@
           {% if r.st.about and r.st.about.en %}<span class="st-about">{{ r.st.about.en }}</span>{% endif %}
         </a>
         <div class="st-acts">
-          <a class="stb dk" href="{{ r.href }}" data-st-read>Read</a>
+          <a class="stb dk" href="{{ r.page or r.href }}" data-st-read>{{ "Adhyāyas" if r.page else "Read" }}</a>
           <a class="stb" href="{{ r.href }}" data-st-chant>▶ Chant</a>
           <button type="button" class="stb gh" data-st-daily aria-pressed="false">☆ Daily</button>
           <span class="st-n">{% if r.chs > 1 %}{{ r.chs }} adhyāyas · {% endif %}{{ r.n }} verse{{ "s" if r.n != 1 }}</span>

@@ -24,7 +24,8 @@
     var pre = k === "gita" ? "gita/vu/" : PRE[st.w] + k + "/";
     return ROOT + pre + p[0] + "/" + p[1] + "/#v" + p[2] + "-" + p[3];
   }
-  function listHref(st) { return ROOT + (st.l || "appendix/stotras/") + "#" + st.id; }
+  function multi(st) { return Object.keys(st.parts).some(function (k) { return st.parts[k].length > 1; }); }
+  function listHref(st) { return ROOT + (st.l || "appendix/stotras/") + (multi(st) ? st.id + "/" : "#" + st.id); }
   function isGita(st) { return st.t === "g"; }
   // passages can overlap (the Brāhmaṇagītā is inside the Anugītā): the one opened last wins ("vr.stid", this tab)
   function prefId() { try { return sessionStorage.getItem("vr.stid"); } catch (e) { return null; } }
@@ -143,7 +144,7 @@
     if (b && document.body.classList.contains("in-stotra")) {
       e.preventDefault(); e.stopPropagation();
       var ref = ""; try { ref = document.referrer ? new URL(document.referrer).pathname : ""; } catch (x) { /* ignore */ }
-      if (/\/appendix\/(stotras|gitas)\/?$/.test(ref) && history.length > 1) history.back(); else location.assign(listHref(cur.st));
+      if (/\/appendix\/(stotras|gitas)\/([^\/]+\/)?$/.test(ref) && history.length > 1) history.back(); else location.assign(listHref(cur.st));
     }
   }, true);
   window.addEventListener("popstate", function () { if (nextAfterPop) { var h = nextAfterPop; nextAfterPop = null; location.replace(h); } });
