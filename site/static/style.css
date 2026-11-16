@@ -932,3 +932,7 @@ a.crow:hover .cn { color: var(--accent); }
 .ch-tally { margin: 0; font: 600 0.95rem var(--f-ui); opacity: .9; }
 .ch-repc .ch-btn { min-height: 40px; padding: 0 1.1rem; }
 @media (prefers-reduced-motion: reduce) { .stbar-prog > i { transition: none; } }
+.in-stotra:not(.st-all) .verses > .verse:not(.st-hl) { display: none; }
+.st-note { margin: 0.2rem 0 0.6rem; font: 500 0.85rem var(--f-ui); color: var(--muted); }
+.st-note button { all: unset; cursor: pointer; color: var(--accent); font-weight: 600; text-decoration: underline; }
+.st-note button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

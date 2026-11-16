@@ -41,7 +41,8 @@
 
   function clear() {
     if (bar) bar.remove(); bar = null;
-    document.querySelectorAll(".st-endli").forEach(function (x) { x.remove(); });
+    document.querySelectorAll(".st-endli, .st-note").forEach(function (x) { x.remove(); });
+    document.body.classList.remove("st-all");
     document.body.classList.remove("in-stotra");
     document.querySelectorAll("[data-back][data-up]").forEach(function (a) { a.setAttribute("href", a.dataset.up); a.setAttribute("aria-label", "Back"); });
   }
@@ -74,6 +75,13 @@
       '<a class="stb gh" href="' + esc(listHref(st)) + '">Back to list</a>' +
       (D ? '<button type="button" class="stb gh" data-st-dly aria-pressed="' + inD + '">' + (inD ? "★ Daily" : "☆ Daily") + "</button>" : "") + "</div>";
     vs[vs.length - 1].after(end);
+    // only the stotra's own verses are shown; a note above says so and offers the whole chapter
+    var ol = document.querySelector(".verses"), total = document.querySelectorAll(".verses > .verse[id]").length;
+    if (ol && total > n) {
+      var note = document.createElement("p"); note.className = "st-note";
+      note.innerHTML = 'Showing the stotra only (' + digits(n) + " of " + digits(total) + ' verses). <button type="button" data-st-all>Show the whole chapter</button>';
+      ol.parentNode.insertBefore(note, ol);
+    }
     progress();
   }
   function progress() {
@@ -87,6 +95,8 @@
 
   document.addEventListener("click", function (e) {
     if (!cur) return;
+    var al = e.target.closest("[data-st-all]");
+    if (al) { var on = document.body.classList.toggle("st-all"); al.textContent = on ? "Show the stotra only" : "Show the whole chapter"; if (on) { var f = document.querySelector(".verse.st-first"); if (f) f.scrollIntoView({ block: "start" }); } return; }
     var b = e.target.closest(".stbar-go, [data-st-again]");
     if (b) { chant(cur, false); return; }
     b = e.target.closest("[data-st-dly]");

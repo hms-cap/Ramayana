@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.16.2 — 2026-11-16
+- Opening a stotra shows only its own verses, not the ones before and after in the chapter. A line above says how many, with "Show the whole chapter" to see the rest.
+
 ## 0.16.1 — 2026-11-16
 - Stotras list: openings cut to one line (Nārada's hymn no longer fills a page), deity chips (Viṣṇu, Śiva, Devī, Sūrya, others), a search box, and Read / ▶ Chant / ☆ Daily on each card. The address keeps the stotra you opened, so Back lands on it.
 - Reader: a stotra bar under the header (name, verse position and progress, ▶ Chant); ‹ and the header Back go to the list at that stotra, not to the parva or kāṇḍa page. An end card after the last verse offers Chant, the next stotra, Back to list and Daily.
