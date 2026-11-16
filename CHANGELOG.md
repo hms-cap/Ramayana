@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.18.0 — 2026-11-16
+- Pariśiṣṭa → Gītās: 25 teachings inside the Mahābhārata called gītās (besides the Bhagavadgītā): the Anugītā (35 adhyāyas) with the Brāhmaṇagītā inside it, Vyādhagītā, Sanatsujātīya, Parāśara, Haṃsa, Piṅgalā, Maṅki, Bodhya, Vṛtra, Yājñavalkya and others, with notes in Kannada and English. A link from the Gītā home page.
+- Gītās that run over several adhyāyas are read part by part: the bar shows "Part 3 of 35", the end of each part has Next part, and chant carries on into the next part. Back leaves in one step and lands on the gītā in the list. Read, Chant and Daily as for stotras; search finds gītās.
+- `data/gitas.json` (loc may span adhyāyas: `s2`), checked by `etl/stotras.py check data/gitas.json` in the tests. The Uttara Gītā and the Aṣṭāvakra Gītā are not in either edition; gītās outside the Mahābhārata are not included.
+
 ## 0.17.1 — 2026-11-16
 - Kāṇḍa and parva lists: long first lines wrap instead of making the page scroll sideways on phones.
 - Release note: Vercel builds only when the last commit changes `site/static/version.js`; 0.17.0 reached main with a later commit on top, so it is released as 0.17.1.

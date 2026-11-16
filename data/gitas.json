@@ -10,7 +10,8 @@
    "to": "Arjuna",
    "kind": "gita",
    "opening": {
-    "vu": "śrāvitastvaṃ mayā guhyaṃ jñāpitaśca sanātanam"
+    "vu": "śrāvitastvaṃ mayā guhyaṃ jñāpitaśca sanātanam",
+    "ce": "śrāvitas tvaṃ mayā guhyaṃ jñāpitaś"
    },
    "loc": {
     "vu": {
@@ -33,8 +34,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "After the war Kṛṣṇa retells the Gītā's teaching to Arjuna, who says he has forgotten it: on the self, rebirth and liberation through knowledge.",
+    "kn": "ಯುದ್ಧದ ನಂತರ, ತಾನು ಮರೆತುಹೋಗಿದ್ದೇನೆ ಎಂದ ಅರ್ಜುನನಿಗೆ ಕೃಷ್ಣನು ಗೀತೆಯ ಉಪದೇಶವನ್ನು ಮತ್ತೆ ಹೇಳುತ್ತಾನೆ; ಆತ್ಮ, ಪುನರ್ಜನ್ಮ ಮತ್ತು ಜ್ಞಾನದಿಂದ ಮುಕ್ತಿ ಇದರ ವಿಷಯ."
    },
    "cited": "Aśvamedhikaparva ch. XVI–LI (36 chapters) in Roy/Ganguli numbering (Wikipedia, Ganguli heading 'Anugita Parva'); dharmawiki/hinduscriptures 'Aśvamedhikaparva adhyāya 16'; Debroy table (BORI critical ed.) 14.16–50. Named in the epic's own parvasaṅgraha: vu 1.2.80, ce 1.2.66 ('anugītā tataḥ parva').",
    "tier": "core",
@@ -55,7 +56,8 @@
    "to": "Brāhmaṇī",
    "kind": "gita",
    "opening": {
-    "vu": "brāhmaṇī brāhmaṇaṃ kaṃcijjñānavijñānapāragam"
+    "vu": "brāhmaṇī brāhmaṇaṃ kaṃcijjñānavijñānapāragam",
+    "ce": "brāhmaṇī brāhmaṇaṃ kaṃ cij jñānavijñānapāragam"
    },
    "loc": {
     "vu": {
@@ -78,8 +80,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Within the Anugītā, a Brahmin tells his wife, as Kṛṣṇa relates it to Arjuna, that the body and senses are the fires of an inner sacrifice.",
+    "kn": "ಅನುಗೀತೆಯೊಳಗೆ ಕೃಷ್ಣನು ಅರ್ಜುನನಿಗೆ ಹೇಳುವ ಕಥೆಯಲ್ಲಿ, ದೇಹ ಮತ್ತು ಇಂದ್ರಿಯಗಳೇ ಅಂತರಂಗದ ಯಜ್ಞದ ಅಗ್ನಿಗಳು ಎಂದು ಬ್ರಾಹ್ಮಣನು ತನ್ನ ಪತ್ನಿಗೆ ವಿವರಿಸುತ್ತಾನೆ."
    },
    "cited": "Listed as 'part of the Anugītā' (dharmawiki, hinduscriptures); one blog gives Aśvamedha adhyāya 20/21–24/34 (speakingmuni; 'Brahma Gita?'). Not separately titled in the colophon/text of either edition; Kṛṣṇa introduces it 'daṃpatyoḥ pārtha saṃvādo' (vu 14.21.1, ce 14.20.1).",
    "tier": "core",
@@ -99,7 +101,8 @@
    "to": "Yudhiṣṭhira",
    "kind": "gita",
    "opening": {
-    "vu": "nāhaṃ śakyo'nupāyena hantuṃ bhūtena kenacit"
+    "vu": "nāhaṃ śakyo'nupāyena hantuṃ bhūtena kenacit",
+    "ce": "nāhaṃ śakyo 'nupāyena hantuṃ bhūtena"
    },
    "loc": {
     "vu": {
@@ -115,13 +118,13 @@
      "s": 13,
      "v": [
       12,
-      18
+      19
      ]
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "After the war Kṛṣṇa quotes verses of Desire personified, who cannot be killed by force or rites but only by wisdom, to urge Yudhiṣṭhira to perform the horse sacrifice.",
+    "kn": "ಯುದ್ಧದ ನಂತರ ದುಃಖಿತ ಯುಧಿಷ್ಠಿರನಿಗೆ ಅಶ್ವಮೇಧ ಮಾಡಲು ಹೇಳುತ್ತಾ, ಬಲ ಅಥವಾ ಕರ್ಮಗಳಿಂದಲ್ಲ ಜ್ಞಾನದಿಂದಲೇ ತನ್ನನ್ನು ಗೆಲ್ಲಬಹುದು ಎನ್ನುವ ಕಾಮನ ಮಾತುಗಳನ್ನು ಕೃಷ್ಣ ಉಲ್ಲೇಖಿಸುತ್ತಾನೆ."
    },
    "cited": "Text itself: 'atra gāthāḥ kāmagītāḥ kīrtayanti purāvidaḥ' (vu 14.13.11, ce 14.13.11); Debroy (BORI) Aśvamedhika 13; speakingmuni/vkkondawar blog Aśvamedha 13; Open magazine 'A Dirge for Desire' (Aśvamedhikaparva).",
    "tier": "core",
@@ -141,7 +144,8 @@
    "to": "Kauśika",
    "kind": "gita",
    "opening": {
-    "vu": "abhivādaye tvāṃ bhagavansvāgataṃ te dvijottama"
+    "vu": "abhivādaye tvāṃ bhagavansvāgataṃ te dvijottama",
+    "ce": "abhivādaye tvā bhagavan svāgataṃ te"
    },
    "loc": {
     "vu": {
@@ -149,7 +153,7 @@
      "s": 210,
      "v": [
       13,
-      38
+      36
      ],
      "s2": 219
     },
@@ -158,14 +162,14 @@
      "s": 198,
      "v": [
       12,
-      34
+      32
      ],
      "s2": 206
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "In the forest-exile books a pious butcher of Mithilā teaches a proud ascetic, Kauśika, that dharma lies in one's own duty, non-violence and serving parents.",
+    "kn": "ವನವಾಸದ ಪರ್ವದಲ್ಲಿ ಮಿಥಿಲೆಯ ಧರ್ಮವ್ಯಾಧನು ಗರ್ವಿತ ತಪಸ್ವಿ ಕೌಶಿಕನಿಗೆ ಧರ್ಮವು ತನ್ನ ಕರ್ತವ್ಯ, ಅಹಿಂಸೆ ಮತ್ತು ತಂದೆತಾಯಿಯ ಸೇವೆಯಲ್ಲಿದೆ ಎಂದು ಬೋಧಿಸುತ್ತಾನೆ."
    },
    "cited": "Āraṇyakaparva, Mārkaṇḍeyasamāsyā-parvan; Debroy (BORI) 3.197–206 ('Dharma Vyadha'); Sunday Guardian: 'Dharma-Vyadha Gita, Aranyaka Parva, Markandeya-samasya upa-parva'; dharmawiki/dasarpai/hinduscriptures 'Vyadha Gita, Vana Parva'. Vulgate 3.209–219 (Gita Press/Roy about 3.198–206).",
    "tier": "core",
@@ -186,7 +190,8 @@
    "to": "Senajit",
    "kind": "gita",
    "opening": {
-    "vu": "unmattā'hamanunmattaṃ kāntamanvavasaṃ ciram"
+    "vu": "unmattā'hamanunmattaṃ kāntamanvavasaṃ ciram",
+    "ce": "unmattāham anunmattaṃ kāntam anvavasaṃ ciram"
    },
    "loc": {
     "vu": {
@@ -207,8 +212,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "In Bhīṣma's teaching to Yudhiṣṭhira, the courtesan Piṅgalā, waiting in vain for a lover, concludes that giving up hope is the highest happiness.",
+    "kn": "ಭೀಷ್ಮನು ಯುಧಿಷ್ಠಿರನಿಗೆ ಹೇಳುವ ಉಪದೇಶದಲ್ಲಿ, ಪ್ರಿಯನಿಗಾಗಿ ವ್ಯರ್ಥವಾಗಿ ಕಾದ ವೇಶ್ಯೆ ಪಿಂಗಳೆ ಆಶೆಯನ್ನು ತೊರೆಯುವುದೇ ಪರಮ ಸುಖ ಎಂದು ಕಂಡುಕೊಳ್ಳುತ್ತಾಳೆ."
    },
    "cited": "Text: 'atra piṅgalayā gītā gāthā' (vu 12.173.58, ce 12.168.46). Debroy (BORI) 12.168; Gita Press numbering 174 (speakingmuni: '168 or 174'); dharmawiki/dasarpai/hinduscriptures 'Pingala Gita, Moksha Parva' (some wrongly tie it to Bhāgavata Uddhava).",
    "tier": "core",
@@ -230,7 +235,8 @@
    "to": "Yudhiṣṭhira",
    "kind": "gita",
    "opening": {
-    "vu": "abravīnmāṃ purā kaścidbrāhmaṇastyāgamāśritaḥ"
+    "vu": "abravīnmāṃ purā kaścidbrāhmaṇastyāgamāśritaḥ",
+    "ce": "abravīn māṃ purā kaś cid"
    },
    "loc": {
     "vu": {
@@ -251,8 +257,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Bhīṣma tells Yudhiṣṭhira of Śampāka, a renouncing Brahmin who praises owning nothing: the rich live in fear and loss, the penniless sleep untroubled.",
+    "kn": "ಏನೂ ಇಲ್ಲದಿರುವುದನ್ನೇ ಹೊಗಳುವ ಸಂನ್ಯಾಸಿ ಬ್ರಾಹ್ಮಣ ಶಂಪಾಕನ ಮಾತುಗಳನ್ನು ಭೀಷ್ಮನು ಯುಧಿಷ್ಠಿರನಿಗೆ ಹೇಳುತ್ತಾನೆ: ಶ್ರೀಮಂತರಿಗೆ ಭಯ ಮತ್ತು ನಷ್ಟ, ನಿರ್ಧನರಿಗೆ ನೆಮ್ಮದಿಯ ನಿದ್ರೆ."
    },
    "cited": "Text: 'śamyākena vimuktena gītaṃ śāntigatena ca' (vu 12.175.2, ce 12.170.2). Debroy (BORI) 12.170 ('Shamyaka'); dharmawiki 'Shampaka Gita, Shanti Parva, 21 verses'; hinduscriptures 'Sampaaka Gita, 21 verses'; one list also 'Shiva-Shampaka'. Gita Press 176.",
    "tier": "core",
@@ -273,7 +279,8 @@
    "to": "Yudhiṣṭhira",
    "kind": "gita",
    "opening": {
-    "vu": "īhamāno dhanaṃ maṅkirbhagnehaśca punaḥ punaḥ"
+    "vu": "īhamāno dhanaṃ maṅkirbhagnehaśca punaḥ punaḥ",
+    "ce": "īhamāno dhanaṃ maṅkir bhagnehaś ca"
    },
    "loc": {
     "vu": {
@@ -294,8 +301,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Bhīṣma tells Yudhiṣṭhira how the poor Brahmin Maṅki, after losing his last two oxen, gave up desire and found peace.",
+    "kn": "ತನ್ನ ಕೊನೆಯ ಎರಡು ಎತ್ತುಗಳನ್ನು ಕಳೆದುಕೊಂಡ ಬಡ ಬ್ರಾಹ್ಮಣ ಮಂಕಿ ಆಸೆಯನ್ನು ತ್ಯಜಿಸಿ ಶಾಂತಿ ಪಡೆದ ಕಥೆಯನ್ನು ಭೀಷ್ಮನು ಯುಧಿಷ್ಠಿರನಿಗೆ ಹೇಳುತ್ತಾನೆ."
    },
    "cited": "Text: 'nirvedānmaṅkinā gītam' (vu 12.176.4, ce 12.171.4). Debroy (BORI) 12.171 ('Manki and Bodhya'); Gita Press 177 (speakingmuni: '177 (possibly 171)'); dharmawiki/hinduscriptures: Moksha Parva, ~50 verses.",
    "tier": "core",
@@ -316,7 +323,8 @@
    "to": "Yayāti",
    "kind": "gita",
    "opening": {
-    "vu": "upadeśena vartāmi nānuśāsmīha kaṃcana"
+    "vu": "upadeśena vartāmi nānuśāsmīha kaṃcana",
+    "ce": "upadeśena vartāmi nānuśāsmīha kaṃ cana"
    },
    "loc": {
     "vu": {
@@ -337,8 +345,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Bhīṣma tells Yudhiṣṭhira of the sage Bodhya, who tells King Yayāti he learned renunciation from six teachers, among them Piṅgalā, a bird and a serpent.",
+    "kn": "ಪಿಂಗಳೆ, ಪಕ್ಷಿ, ಸರ್ಪ ಮೊದಲಾದ ಆರು ಗುರುಗಳಿಂದ ತ್ಯಾಗವನ್ನು ಕಲಿತೆ ಎಂದು ಮುನಿ ಬೋಧ್ಯನು ರಾಜ ಯಯಾತಿಗೆ ಹೇಳಿದ್ದನ್ನು ಭೀಷ್ಮನು ಯುಧಿಷ್ಠಿರನಿಗೆ ತಿಳಿಸುತ್ತಾನೆ."
    },
    "cited": "Text: 'bodhyasya padasaṃcayam' (vu 12.176.57, ce 12.171.57). Gita Press 178 (speakingmuni); dharmawiki/hinduscriptures 'Bodhya Gita, Moksha Parva' (Bodhya and Yayāti); Debroy places it with Maṅki in 12.171.",
    "tier": "core",
@@ -359,7 +367,8 @@
    "to": "Yudhiṣṭhira",
    "kind": "gita",
    "opening": {
-    "vu": "chinnasthūṇaṃ vṛpaṃ dṛṣṭvā virāvaṃ ca gavāṃ bhṛśam"
+    "vu": "chinnasthūṇaṃ vṛpaṃ dṛṣṭvā virāvaṃ ca",
+    "ce": "chinnasthūṇaṃ vṛṣaṃ dṛṣṭvā virāvaṃ ca"
    },
    "loc": {
     "vu": {
@@ -380,8 +389,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Bhīṣma tells Yudhiṣṭhira how King Vicakhnu, seeing a sacrificial yard of lowing cows, declared that killing animals is not dharma and true sacrifice is non-violence.",
+    "kn": "ಯಜ್ಞಶಾಲೆಯಲ್ಲಿ ಕೂಗುತ್ತಿದ್ದ ಹಸುಗಳನ್ನು ಕಂಡ ರಾಜ ವಿಚಖ್ನು, ಪ್ರಾಣಿವಧೆ ಧರ್ಮವಲ್ಲ, ಅಹಿಂಸೆಯೇ ನಿಜವಾದ ಯಜ್ಞ ಎಂದು ಹೇಳಿದ ಕಥೆಯನ್ನು ಭೀಷ್ಮನು ಯುಧಿಷ್ಠಿರನಿಗೆ ಹೇಳುತ್ತಾನೆ."
    },
    "cited": "Text: 'prajānām anukampārthaṃ gītaṃ rājñā vicakhnunā' (ce 12.257.1; vu 12.271.3 spelling 'vicakhyunā'). Debroy (BORI) 12.257; dharmawiki lists it as 'Chapters 279–280 (Mokṣadharma), eleven verses'; speakingmuni '264–265 (possibly 279–280)'; hinduscriptures 'eleven verses'.",
    "tier": "core",
@@ -402,7 +411,8 @@
    "to": "Yudhiṣṭhira",
    "kind": "gita",
    "opening": {
-    "vu": "svagṛhādabhiniḥsṛtya lābhe'lābhe samo muniḥ"
+    "vu": "svagṛhādabhiniḥsṛtya lābhe'lābhe samo muniḥ",
+    "ce": "svagṛhād abhiniḥsṛtya lābhālābhe samo muniḥ"
    },
    "loc": {
     "vu": {
@@ -423,8 +433,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Bhīṣma passes on to Yudhiṣṭhira the sage Hārīta's twenty verses on the ideal wandering renouncer, who lives homeless, harms no one and gives fearlessness to all.",
+    "kn": "ಮನೆಯಿಲ್ಲದೆ ಅಲೆಯುವ, ಯಾರಿಗೂ ಹಾನಿ ಮಾಡದ, ಎಲ್ಲರಿಗೂ ಅಭಯ ನೀಡುವ ಆದರ್ಶ ಸಂನ್ಯಾಸಿಯ ಕುರಿತ ಹಾರೀತ ಮುನಿಯ ಇಪ್ಪತ್ತು ಶ್ಲೋಕಗಳನ್ನು ಭೀಷ್ಮನು ಯುಧಿಷ್ಠಿರನಿಗೆ ಹೇಳುತ್ತಾನೆ."
    },
    "cited": "Text: 'hārītena purā gītaṃ taṃ nibodha yudhiṣṭhira' (vu 12.284.3); ce lacks this introductory verse (ce 12.269.2 goes straight into the teaching). Debroy (BORI) 12.269; Gita Press 277/278 (speakingmuni); dharmawiki/hinduscriptures 'Harita Gita, 20 verses on non-violence with sannyāsa'.",
    "tier": "core",
@@ -445,7 +455,8 @@
    "to": "Śukra",
    "kind": "gita",
    "opening": {
-    "vu": "satyena tapasā caiva viditvā saṃkṣayaṃ hyaham"
+    "vu": "satyena tapasā caiva viditvā saṃkṣayaṃ",
+    "ce": "satyena tapasā caiva viditvā saṃkṣayaṃ"
    },
    "loc": {
     "vu": {
@@ -453,7 +464,7 @@
      "s": 285,
      "v": [
       16,
-      59
+      58
      ],
      "s2": 286
     },
@@ -462,14 +473,14 @@
      "s": 270,
      "v": [
       16,
-      58
+      57
      ],
      "s2": 271
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Bhīṣma tells Yudhiṣṭhira of the defeated asura Vṛtra, who accepts his fall as the fruit of karma and time and is taught by Sanatkumāra before dying in yoga.",
+    "kn": "ಸೋತ ಅಸುರ ವೃತ್ರನು ತನ್ನ ಪತನವನ್ನು ಕರ್ಮ ಮತ್ತು ಕಾಲದ ಫಲವೆಂದು ಒಪ್ಪಿ, ಸನತ್ಕುಮಾರನಿಂದ ಉಪದೇಶ ಪಡೆದು ಯೋಗದಲ್ಲಿ ದೇಹ ತ್ಯಜಿಸಿದ ಕಥೆಯನ್ನು ಭೀಷ್ಮ ಹೇಳುತ್ತಾನೆ."
    },
    "cited": "Text: 'asminn arthe purā gītaṃ ... yathā daityena vṛtreṇa' (vu 12.285.13, ce 12.270.13). Debroy (BORI) 12.270–271; Gita Press 278 (speakingmuni; 'possibly 279–280'); dharmawiki/hinduscriptures: 'Vritra Gita, two chapters, Vritra and Shukra'.",
    "tier": "core",
@@ -490,7 +501,8 @@
    "to": "Janaka",
    "kind": "gita",
    "opening": {
-    "vu": "dharma eva kṛtaḥ śreyāniha loke paratra ca"
+    "vu": "dharma eva kṛtaḥ śreyāniha loke",
+    "ce": "dharma eva kṛtaḥ śreyān iha"
    },
    "loc": {
     "vu": {
@@ -513,8 +525,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "The sage Parāśara answers King Janaka in a long discourse on dharma, the duties of the classes, attachment and the path to liberation, told by Bhīṣma.",
+    "kn": "ಭೀಷ್ಮನು ಹೇಳುವಂತೆ, ಜನಕ ರಾಜನ ಪ್ರಶ್ನೆಗೆ ಪರಾಶರ ಮುನಿಯು ಧರ್ಮ, ವರ್ಣಧರ್ಮ, ಆಸಕ್ತಿಯ ಅಪಾಯ ಮತ್ತು ಮೋಕ್ಷಮಾರ್ಗದ ಕುರಿತು ದೀರ್ಘವಾಗಿ ಉಪದೇಶಿಸುತ್ತಾನೆ."
    },
    "cited": "Text: 'parāśaraṃ mahātmānaṃ papraccha janako nṛpaḥ' (vu 12.296.3, ce 12.279.3). Debroy (BORI) 12.279–287; Gita Press 290–298 (speakingmuni); dharmawiki/hinduscriptures: 'Parasara Gita, nine chapters, Moksha Parva'.",
    "tier": "core",
@@ -535,7 +547,8 @@
    "to": "Sādhyāḥ",
    "kind": "gita",
    "opening": {
-    "vu": "śakune vayaṃ sma devā vai sādhyāstvāmanuyuṅkṣmahe"
+    "vu": "śakune vayaṃ sma devā vai",
+    "ce": "śakune vayaṃ sma devā vai"
    },
    "loc": {
     "vu": {
@@ -556,8 +569,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "A golden swan, Prajāpati in disguise, answers the Sādhya gods on liberation, stressing truthfulness, self-restraint, patience and freedom from anger; Bhīṣma narrates.",
+    "kn": "ಬಂಗಾರದ ಹಂಸದ ರೂಪದಲ್ಲಿರುವ ಪ್ರಜಾಪತಿಯು ಸಾಧ್ಯ ದೇವತೆಗಳಿಗೆ ಮೋಕ್ಷದ ಬಗ್ಗೆ ಸತ್ಯ, ಸಂಯಮ, ಕ್ಷಮೆ ಮತ್ತು ಕ್ರೋಧರಾಹಿತ್ಯವನ್ನು ಬೋಧಿಸುತ್ತಾನೆ; ಭೀಷ್ಮ ನಿರೂಪಕ."
    },
    "cited": "Text: 'sādhyānām iha saṃvādaṃ haṃsasya ca' (vu 12.305.2, ce 12.288.2). Debroy (BORI) 12.288; Gita Press 299 (speakingmuni); dharmawiki/hinduscriptures: 'Hamsa Gita, Moksha Parva'.",
    "tier": "core",
@@ -577,7 +590,8 @@
    "to": "Yudhiṣṭhira",
    "kind": "gita",
    "opening": {
-    "vu": "bahuśrutaṃ tapastyāgaḥ śraddhā yajñakriyā kṣamā"
+    "vu": "bahuśrutaṃ tapastyāgaḥ śraddhā yajñakriyā kṣamā",
+    "ce": "bāhuśrutyaṃ tapas tyāgaḥ śraddhā yajñakriyā"
    },
    "loc": {
     "vu": {
@@ -598,8 +612,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Named a gītā only in a colophon: Yudhiṣṭhira's brothers and Vidura each argue whether dharma, wealth or desire is highest, and he concludes with liberation.",
+    "kn": "ಕೊನೆಯ ಪುಷ್ಪಿಕೆಯಲ್ಲಿ ಮಾತ್ರ ಗೀತೆ ಎಂದು ಹೆಸರಾದ ಭಾಗ: ಧರ್ಮ, ಅರ್ಥ, ಕಾಮಗಳಲ್ಲಿ ಯಾವುದು ಶ್ರೇಷ್ಠ ಎಂದು ವಿದುರ ಮತ್ತು ಪಾಂಡವರು ವಾದಿಸುತ್ತಾರೆ; ಯುಧಿಷ್ಠಿರ ಮೋಕ್ಷವನ್ನು ಸಾರುತ್ತಾನೆ."
    },
    "cited": "Debroy (BORI) 12.161 ('Shadaja'); dharmawiki 'Shadja Gita, Shanti Parva, Adhyāya 161'; speakingmuni '161 or 167'; vedapath colophon 'Ṣaḍja-gītā' on Śānti ch. 167 (Gita Press/Apaddharma numbering); Open magazine: 'the only Gita in the Apad Dharma sub-parva'. The name is not in the text of our two editions (no 'gītā' word).",
    "tier": "core",
@@ -620,7 +634,8 @@
    "to": "Māndhātā",
    "kind": "gita",
    "opening": {
-    "vu": "dharmāma rājā bhavati na kāmakaraṇāya tu"
+    "vu": "dharmāma rājā bhavati na kāmakaraṇāya",
+    "ce": "dharmāya rājā bhavati na kāmakaraṇāya"
    },
    "loc": {
     "vu": {
@@ -643,8 +658,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Bhīṣma recounts the sage Utathya telling King Māndhātā that a king exists for dharma and the protection of the weak, and setting out the duties of the classes.",
+    "kn": "ರಾಜನು ಇರುವುದು ಧರ್ಮ ಮತ್ತು ದುರ್ಬಲರ ರಕ್ಷಣೆಗಾಗಿ ಎಂದು ಮುನಿ ಉತಥ್ಯನು ರಾಜ ಮಾಂಧಾತನಿಗೆ ಹೇಳಿ, ವರ್ಣಗಳ ಕರ್ತವ್ಯಗಳನ್ನು ವಿವರಿಸಿದ್ದನ್ನು ಭೀಷ್ಮ ಹೇಳುತ್ತಾನೆ."
    },
    "cited": "Debroy (BORI) 12.91–92; dharmawiki/speakingmuni/hinduscriptures-type lists 'Utathya Gita, Shanti Parva, Rājadharma, chapters 90–91' (Gita Press). The title is not in the text.",
    "tier": "core",
@@ -663,7 +678,8 @@
    "to": "Vasumanas",
    "kind": "gita",
    "opening": {
-    "vu": "dharmamevānuvartasva na dharmādvidyate param"
+    "vu": "dharmamevānuvartasva na dharmādvidyate param",
+    "ce": "dharmam evānuvartasva na dharmād vidyate"
    },
    "loc": {
     "vu": {
@@ -686,8 +702,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Bhīṣma recounts the seer Vāmadeva teaching King Vasumanas the duty of kings: win by non-violence where possible, protect the people, and use force last.",
+    "kn": "ರಾಜಧರ್ಮದ ಬೋಧನೆ: ಸಾಧ್ಯವಾದಷ್ಟು ಅಹಿಂಸೆಯಿಂದ ಗೆಲ್ಲಬೇಕು, ಪ್ರಜೆಗಳನ್ನು ಕಾಪಾಡಬೇಕು, ಬಲವನ್ನು ಕೊನೆಯ ಉಪಾಯವಾಗಿ ಬಳಸಬೇಕು ಎಂದು ವಾಮದೇವನು ರಾಜ ವಸುಮನಸ್ಸಿಗೆ ಹೇಳುತ್ತಾನೆ."
    },
    "cited": "Text: 'gītaṃ dṛṣṭārthatattvena vāmadevena dhīmatā' (vu 12.92.2, ce 12.93.2). Debroy (BORI) 12.93–95; dharmawiki/speakingmuni 'Vamadeva Gita, Rājadharma, chapters 92–94' (Gita Press).",
    "tier": "core",
@@ -706,7 +722,8 @@
    "to": "Sumitra",
    "kind": "gita",
    "opening": {
-    "vu": "purā'haṃ rājaśārdūla tīrthānyanucaranprabho"
+    "vu": "purā'haṃ rājaśārdūla tīrthānyanucaranprabho",
+    "ce": "purāhaṃ rājaśārdūla tīrthāny anucaran prabho"
    },
    "loc": {
     "vu": {
@@ -714,7 +731,7 @@
      "s": 127,
      "v": [
       2,
-      28
+      25
      ],
      "s2": 128
     },
@@ -723,13 +740,13 @@
      "s": 126,
      "v": [
       2,
-      52
+      49
      ]
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Called a gītā only by tradition: the sage Ṛṣabha tells grieving King Sumitra how a hermit taught another king that hope is the slenderest yet strongest bond.",
+    "kn": "ಸಂಪ್ರದಾಯದಲ್ಲಿ ಮಾತ್ರ ಗೀತೆ ಎನಿಸಿದ ಭಾಗ: ದುಃಖಿತ ರಾಜ ಸುಮಿತ್ರನಿಗೆ ಋಷಭ ಮುನಿಯು, ಆಶೆಯೇ ಅತಿ ಸೂಕ್ಷ್ಮವಾದರೂ ಅತಿ ಬಿಗಿಯಾದ ಬಂಧ ಎಂದು ಒಬ್ಬ ತಪಸ್ವಿ ರಾಜನಿಗೆ ಕಲಿಸಿದ ಕಥೆ ಹೇಳುತ್ತಾನೆ."
    },
    "cited": "Debroy (BORI) 'Kamanda, Rishabha and Yama' 12.123–127; speakingmuni 'Rishabha Gita, Shanti Parva, 125–128 (Gita Press)'; purankosh 12.125–128 (Kinjawadekar); Ganguli §CXXVIII (Vīradyumna speaks). The word 'gītā' is not in the text; the vulgate frame is 'itihāsaṃ sumitrasya nirvṛttamṛṣabhasya ca' (vu 12.125.8, ce 12.125.8).",
    "tier": "core",
@@ -749,7 +766,8 @@
    "to": "Dhṛtarāṣṭra",
    "kind": "gita",
    "opening": {
-    "vu": "amṛtyuṃ karmaṇā kecinmṛtyurnāstīti cāpare"
+    "vu": "amṛtyuṃ karmaṇā kecinmṛtyurnāstīti cāpare",
+    "ce": "amṛtyuḥ karmaṇā ke cin mṛtyur"
    },
    "loc": {
     "vu": {
@@ -772,8 +790,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "On the eve of war the eternal youth Sanatsujāta, summoned by Vidura, tells Dhṛtarāṣṭra that heedlessness is death and heedfulness is immortality; not formally called a gītā.",
+    "kn": "ಯುದ್ಧದ ಮೊದಲು ವಿದುರನ ಕರೆಯ ಮೇರೆಗೆ ಬಂದ ಸನತ್ಸುಜಾತನು ಧೃತರಾಷ್ಟ್ರನಿಗೆ ಪ್ರಮಾದವೇ ಮೃತ್ಯು, ಅಪ್ರಮಾದವೇ ಅಮೃತತ್ವ ಎಂದು ಹೇಳುತ್ತಾನೆ; ಇದನ್ನು ಗೀತೆ ಎಂದು ಹೆಸರಿಸಿಲ್ಲ."
    },
    "cited": "Parvasaṅgraha: 'parva sānatsujātaṃ' (vu 1.2.60, ce 1.2.51); Debroy (BORI) 5.42–45; speakingmuni/vkkondawar 'Sanatsujata Gita, Udyoga Parva 41–46' (Gita Press). Sunday Guardian: 'not explicitly called a Gita but with Gita-like wisdom'.",
    "tier": "core",
@@ -794,7 +812,8 @@
    "to": "Yudhiṣṭhira",
    "kind": "gita",
    "opening": {
-    "vu": "śokasthānasahasrāṇi harṣasthānaśatāni ca"
+    "vu": "śokasthānasahasrāṇi harṣasthānaśatāni ca",
+    "ce": "śokasthānasahasrāṇi bhayasthānaśatāni ca"
    },
    "loc": {
     "vu": {
@@ -815,8 +834,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Named a gītā by modern lists, not the text: in the first exile days the Brahmin Śaunaka tells grieving Yudhiṣṭhira that sorrow comes from attachment.",
+    "kn": "ಪಟ್ಟಿಗಳಲ್ಲಿ ಮಾತ್ರ ಗೀತೆ ಎನಿಸಿದ ಭಾಗ: ವನವಾಸದ ಆರಂಭದಲ್ಲಿ ದುಃಖಿತ ಯುಧಿಷ್ಠಿರನಿಗೆ ಬ್ರಾಹ್ಮಣ ಶೌನಕನು ದುಃಖವು ಆಸಕ್ತಿಯಿಂದ ಹುಟ್ಟುತ್ತದೆ ಎಂದು ಹೇಳುತ್ತಾನೆ."
    },
    "cited": "Debroy (BORI) 3.2 ('Shounaka', 66 shlokas); dharmawiki/dasarpai/speakingmuni/vkkondawar 'Shaunaka Gita, Aranyaka/Vana Parva'.",
    "tier": "additional",
@@ -837,7 +856,8 @@
    "to": "Draupadī",
    "kind": "gita",
    "opening": {
-    "vu": "kṣamā dharmaḥ kṣamā yajñaḥ kṣamā vedāḥ kṣamā śrutam"
+    "vu": "kṣamā dharmaḥ kṣamā yajñaḥ kṣamā",
+    "ce": "kṣamā dharmaḥ kṣamā yajñaḥ kṣamā"
    },
    "loc": {
     "vu": {
@@ -858,8 +878,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Named a gītā only by Debroy: answering Draupadī's call for vengeance, Yudhiṣṭhira cites Kāśyapa's verses that forgiveness is dharma, truth and sacrifice.",
+    "kn": "ಡೆಬ್ರಾಯ್ ಮಾತ್ರ ಗೀತೆ ಎಂದು ಕರೆದ ಭಾಗ: ಸೇಡಿಗೆ ಕರೆದ ದ್ರೌಪದಿಗೆ ಯುಧಿಷ್ಠಿರನು, ಕ್ಷಮೆಯೇ ಧರ್ಮ, ಸತ್ಯ, ಯಜ್ಞ ಎನ್ನುವ ಕಾಶ್ಯಪನ ಶ್ಲೋಕಗಳನ್ನು ಉಲ್ಲೇಖಿಸುತ್ತಾನೆ."
    },
    "cited": "Text: 'gītāḥ kṣamāvatāṃ kṛṣṇe kāśyapena mahātmanā' (vu 3.29.38, ce 3.30.35) and 'iti gītāḥ kāśyapena gāthā' (vu 3.29.48, ce 3.30.44); Debroy (BORI) 3.30 ('Kashyapa'; 'message is conquering anger').",
    "tier": "additional",
@@ -876,7 +896,8 @@
    "to": "Yudhiṣṭhira",
    "kind": "gita",
    "opening": {
-    "vu": "brāhmaṇaḥ ko bhavedrājanvedyaṃ kiṃca yudhiṣṭhira"
+    "vu": "brāhmaṇaḥ ko bhavedrājanvedyaṃ kiṃca yudhiṣṭhira",
+    "ce": "brāhmaṇaḥ ko bhaved rājan"
    },
    "loc": {
     "vu": {
@@ -899,8 +920,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Named a gītā in some lists: the serpent Nahuṣa, holding Bhīma, questions Yudhiṣṭhira, who defines a Brahmin by conduct such as truth, charity and forbearance, not birth.",
+    "kn": "ಕೆಲವು ಪಟ್ಟಿಗಳಲ್ಲಿ ಗೀತೆ ಎನಿಸಿದ ಭಾಗ: ಭೀಮನನ್ನು ಹಿಡಿದ ಸರ್ಪ ನಹುಷನ ಪ್ರಶ್ನೆಗೆ ಯುಧಿಷ್ಠಿರನು ಸತ್ಯ, ದಾನ, ಕ್ಷಮೆ, ಶೀಲಗಳಿಂದ ಬ್ರಾಹ್ಮಣ, ಜನ್ಮದಿಂದಲ್ಲ ಎಂದು ಉತ್ತರಿಸುತ್ತಾನೆ."
    },
    "cited": "Debroy (BORI) 3.177–178 ('Nahusha', 83 shlokas, Ajagara sub-parva); dharmawiki/dasarpai/vkkondawar/Sunday Guardian 'Nahusha Gita'. Vulgate Ajagara-parvan.",
    "tier": "additional",
@@ -921,7 +942,8 @@
    "to": "his father",
    "kind": "gita",
    "opening": {
-    "vu": "dhīraḥ kiṃ svit tāta kuryātprajānan"
+    "vu": "dhīraḥ kiṃsvittāta kuryātprajānan kṣipraṃ hyāyurbhraśyate",
+    "ce": "dhīraḥ kiṃ svit tāta kuryāt"
    },
    "loc": {
     "vu": {
@@ -942,8 +964,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Named a gītā only by Debroy: a young Brahmin urges his Veda-bound father to renounce household life for liberation now, since death is near; Bhīṣma narrates.",
+    "kn": "ಡೆಬ್ರಾಯ್ ಮಾತ್ರ ಗೀತೆ ಎಂದು ಕರೆದ ಭಾಗ: ಮೃತ್ಯು ಹತ್ತಿರವಿರುವುದರಿಂದ ಗೃಹಸ್ಥಾಶ್ರಮ ಬಿಟ್ಟು ಈಗಲೇ ಮೋಕ್ಷಕ್ಕೆ ಹೊರಡಿ ಎಂದು ಯುವ ಬ್ರಾಹ್ಮಣನು ತನ್ನ ತಂದೆಗೆ ಹೇಳುತ್ತಾನೆ."
    },
    "cited": "Debroy (BORI) 12.169 ('Putra Gita', 37 shlokas); framing 'pituḥ putreṇa saṃvādam' (vu 12.174.2, ce 12.169.2). Not otherwise listed in the lists read.",
    "tier": "additional",
@@ -960,7 +982,8 @@
    "to": "Prahlāda",
    "kind": "gita",
    "opening": {
-    "vu": "paśya prahlāda bhūtānāmutpattimanimittataḥ"
+    "vu": "paśya prahlāda bhūtānāmutpattimanimittataḥ",
+    "ce": "paśyan prahrāda bhūtānām utpattim animittataḥ"
    },
    "loc": {
     "vu": {
@@ -981,8 +1004,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Named a gītā in few lists: a sage living by the python's vow of accepting whatever comes tells Prahlāda why loss and gain do not trouble him.",
+    "kn": "ಕೆಲವೇ ಪಟ್ಟಿಗಳಲ್ಲಿ ಗೀತೆ ಎನಿಸಿದ ಭಾಗ: ಹೆಬ್ಬಾವಿನಂತೆ ಬಂದದ್ದನ್ನು ಸ್ವೀಕರಿಸುವ ವ್ರತದ ಮುನಿಯು, ಲಾಭನಷ್ಟಗಳು ತನ್ನನ್ನು ಕದಡುವುದಿಲ್ಲ ಏಕೆಂದು ಪ್ರಹ್ಲಾದನಿಗೆ ಹೇಳುತ್ತಾನೆ."
    },
    "cited": "Debroy (BORI) 12.172 ('Ajagara', 37 shlokas); dharmawiki lists 'Ajagara Gita, Shantiparva, an ascetic advises Prahlada'; text refrain 'vratam idam ājagaram' (ce 12.172.33–36). Vulgate 12.177.",
    "tier": "additional",
@@ -1000,7 +1023,8 @@
    "to": "Kāśyapa",
    "kind": "gita",
    "opening": {
-    "vu": "manuṣyayonimicchanti sarvabhūtāni sarvaśaḥ"
+    "vu": "manuṣyayonimicchanti sarvabhūtāni sarvaśaḥ",
+    "ce": "manuṣyayonim icchanti sarvabhūtāni sarvaśaḥ"
    },
    "loc": {
     "vu": {
@@ -1021,8 +1045,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Named a gītā only by Debroy: Indra, as a jackal, tells a Brahmin who wants to die that human birth is rare and he should be content and self-controlled.",
+    "kn": "ಡೆಬ್ರಾಯ್ ಮಾತ್ರ ಗೀತೆ ಎಂದು ಕರೆದ ಭಾಗ: ಸಾಯಲು ಬಯಸಿದ ಬ್ರಾಹ್ಮಣನಿಗೆ ನರಿಯ ರೂಪದ ಇಂದ್ರನು, ಮಾನವ ಜನ್ಮ ವಿರಳ, ತೃಪ್ತಿ ಮತ್ತು ಸಂಯಮದಿಂದಿರು ಎನ್ನುತ್ತಾನೆ."
    },
    "cited": "Debroy (BORI) 12.173 ('Srigala', 52 shlokas); text calls it 'indrakāśyapasaṃvāda' (vu 12.178.4, ce 12.173.4).",
    "tier": "additional",
@@ -1039,7 +1063,8 @@
    "to": "Janaka",
    "kind": "gita",
    "opening": {
-    "vu": "śrūyatāmavanīpāla yadetadanupṛcchasi"
+    "vu": "śrūyatāmavanīpāla yadetadanupṛcchasi",
+    "ce": "śrūyatām avanīpāla yad etad anupṛcchasi"
    },
    "loc": {
     "vu": {
@@ -1062,8 +1087,8 @@
     }
    },
    "about": {
-    "en": "",
-    "kn": ""
+    "en": "Named a gītā in some lists: Yājñavalkya gives King Janaka a long Sāṅkhya-Yoga exposition of the twenty-five principles, creation, dissolution and the path to Brahman.",
+    "kn": "ಕೆಲವು ಪಟ್ಟಿಗಳಲ್ಲಿ ಗೀತೆ ಎನಿಸಿದ ಭಾಗ: ಯಾಜ್ಞವಲ್ಕ್ಯನು ರಾಜ ಜನಕನಿಗೆ ಇಪ್ಪತ್ತೈದು ತತ್ತ್ವಗಳು, ಸೃಷ್ಟಿ-ಲಯ ಮತ್ತು ಬ್ರಹ್ಮಪ್ರಾಪ್ತಿಯ ಮಾರ್ಗವನ್ನು ಸಾಂಖ್ಯ-ಯೋಗದ ರೀತಿಯಲ್ಲಿ ವಿವರಿಸುತ್ತಾನೆ."
    },
    "cited": "Debroy (BORI) 12.298–306 (9 ch., 283 shlokas, 'Yajnavalkya'); dharmawiki 'Yajnavalkya Gita, Shantiparva, 310–318' (Gita Press); speakingmuni 'Yajnavalkya Gita 310–318'; sanskritdocuments title 'yājñavalkyagītā mahābhārate śāntiparvāntargatā' (seen in search results only).",
    "tier": "additional",
