@@ -9,6 +9,7 @@
    "by": "Agastya",
    "to": "Sūrya",
    "kind": "stotra",
+   "deity": "surya",
    "opening": {
     "vu": "tato yuddhapariśrantaṃ samare cintayā"
    },
@@ -42,6 +43,7 @@
    "by": "Brahmā",
    "to": "Rāma",
    "kind": "stuti",
+   "deity": "vishnu",
    "opening": {
     "vu": "bhavānnārāyaṇo devaḥ śrīmāṃścakrāyudho vibhuḥ",
     "ce": "bhavān nārāyaṇo devaḥ śrīmāṃś cakrāyudho vibhuḥ"
@@ -83,6 +85,7 @@
    "by": "Devāḥ",
    "to": "Viṣṇu",
    "kind": "stuti",
+   "deity": "vishnu",
    "opening": {
     "vu": "tvām niyokṣyāmahe viṣṇo lokānām hita",
     "ce": "tvāṃ niyokṣyāmahe viṣṇo lokānāṃ hitakāmyayā"
@@ -122,6 +125,7 @@
    "by": "Sītā",
    "to": "Gaṅgā",
    "kind": "prayer",
+   "deity": "devi",
    "opening": {
     "vu": "putraḥ daśarathasya ayam mahā rājasya",
     "ce": "putro daśarathasyāyaṃ mahārājasya dhīmataḥ"
@@ -161,6 +165,7 @@
    "by": "Hanumān",
    "to": "Rāma",
    "kind": "prayer",
+   "deity": "vishnu",
    "opening": {
     "vu": "namo astu rāmāya salakṣmaṇāya",
     "ce": "namo 'stu rāmāya salakṣmaṇāya"
@@ -201,6 +206,7 @@
    "by": "Sītā",
    "to": "Agni",
    "kind": "prayer",
+   "deity": "other",
    "opening": {
     "vu": "yadyasti patiśuśrūṣā yadyasti caritaṃ tapaḥ",
     "ce": "yady asti patiśuśrūṣā yady asti caritaṃ tapaḥ"
@@ -240,6 +246,7 @@
    "by": "Kausalyā",
    "to": "Rāma",
    "kind": "prayer",
+   "deity": "other",
    "opening": {
     "vu": "yam pālayasi dharmam tvam dhṛtyā ca",
     "ce": "svasti sādhyāś ca viśve ca marutaś"
@@ -279,6 +286,7 @@
    "by": "Bhīṣma",
    "to": "Viṣṇu",
    "kind": "sahasranama",
+   "deity": "vishnu",
    "opening": {
     "vu": "kimekaṃ daivataṃ loke kiṃ vā'pyekaṃ",
     "ce": "kim ekaṃ daivataṃ loke kiṃ vāpy ekaṃ"
@@ -318,6 +326,7 @@
    "by": "Bhīṣma",
    "to": "Kṛṣṇa",
    "kind": "stotra",
+   "deity": "vishnu",
    "opening": {
     "vu": "ārirādhayiṣuḥ kṛṣṇaṃ vācaṃ jigadiṣāmi",
     "ce": "ārirādhayiṣuḥ kṛṣṇaṃ vācaṃ jigamiṣāmi"
@@ -357,6 +366,7 @@
    "by": "Yudhiṣṭhira",
    "to": "Kṛṣṇa",
    "kind": "stuti",
+   "deity": "vishnu",
    "opening": {
     "vu": "tava kṛṣṇa prasādena nayena na balena ca",
     "ce": "tava kṛṣṇa prasādena nayena ca balena ca"
@@ -397,6 +407,7 @@
    "by": "Upamanyu",
    "to": "Śiva",
    "kind": "sahasranama",
+   "deity": "shiva",
    "opening": {
     "vu": "brahmaproktairṛṣiproktairvedavedāṅgasambhavai sarvalokeṣu",
     "ce": "brahmaproktair ṛṣiproktair vedavedāṅgasaṃbhavaiḥ"
@@ -438,6 +449,7 @@
    "by": "Dakṣa",
    "to": "Śiva",
    "kind": "sahasranama",
+   "deity": "shiva",
    "opening": {
     "vu": "namaste devadeveśa devāribalasūdana"
    },
@@ -470,6 +482,7 @@
    "by": "Taṇḍi",
    "to": "Śiva",
    "kind": "stotra",
+   "deity": "shiva",
    "opening": {
     "vu": "pavitrāṇāṃ pavitrastvaṃ gatirgatimatāṃvara",
     "ce": "pavitrāṇāṃ pavitras tvaṃ gatir gatimatāṃ vara"
@@ -509,6 +522,7 @@
    "by": "Yudhiṣṭhira",
    "to": "Durgā",
    "kind": "stotra",
+   "deity": "devi",
    "opening": {
     "vu": "namostu varade kṛṣṇe kumāri brahmacāriṇi"
    },
@@ -540,6 +554,7 @@
    "by": "Arjuna",
    "to": "Durgā",
    "kind": "stotra",
+   "deity": "devi",
    "opening": {
     "vu": "namaste siddhasenāni ārye mandaravāsini"
    },
@@ -572,6 +587,7 @@
    "by": "Yudhiṣṭhira",
    "to": "Sūrya",
    "kind": "namavali",
+   "deity": "surya",
    "opening": {
     "vu": "tvaṃ bhāno jagataścakṣustvamātmā",
     "ce": "sūryo 'ryamā bhagas tvaṣṭā pūṣārkaḥ savitā raviḥ"
@@ -611,6 +627,7 @@
    "by": "Upamanyu",
    "to": "Aśvinau",
    "kind": "stuti",
+   "deity": "other",
    "opening": {
     "vu": "prapūrvagau pūrvajau citrabhānū girā vāṃ",
     "ce": "pra pūrvagau pūrvajau citrabhānū"
@@ -650,6 +667,7 @@
    "by": "Devāḥ",
    "to": "Garuḍa",
    "kind": "stuti",
+   "deity": "other",
    "opening": {
     "vu": "tvamṛṣistvaṃ mahābhāgastvaṃ devaḥ patageśvaraḥ",
     "ce": "tvam ṛṣis tvaṃ mahābhāgas tvaṃ devaḥ"
@@ -689,6 +707,7 @@
    "by": "Arjuna",
    "to": "Śiva",
    "kind": "stuti",
+   "deity": "shiva",
    "opening": {
     "vu": "kapardinsarvabhūteśa bhaganetranipātana",
     "ce": "kapardin sarvabhūteśa bhaganetranipātana"
@@ -729,6 +748,7 @@
    "by": "Kṛṣṇa, Arjuna",
    "to": "Rudra",
    "kind": "stotra",
+   "deity": "shiva",
    "opening": {
     "vu": "namo bhavāya śarvāya rudrāya varadāya ca",
     "ce": "namo bhavāya śarvāya rudrāya varadāya ca"
@@ -769,6 +789,7 @@
    "by": "Aśvatthāman",
    "to": "Rudra",
    "kind": "stotra",
+   "deity": "shiva",
    "opening": {
     "vu": "ugraṃ sthāṇuṃ śivaṃ rudraṃ śarvamīśānamīśvaram",
     "ce": "ugraṃ sthāṇuṃ śivaṃ rudraṃ śarvam īśānam īśvaram"
@@ -809,6 +830,7 @@
    "by": "Nārada",
    "to": "Nārāyaṇa",
    "kind": "stotra",
+   "deity": "vishnu",
    "opening": {
     "vu": "om̐ namaste devadeveśa niṣkriya nirguṇa lokasākṣin",
     "ce": "namas te devadeva [1] niṣkriya [2] nirguṇa"
@@ -848,6 +870,7 @@
    "by": "Mārkaṇḍeya",
    "to": "Skanda",
    "kind": "namavali",
+   "deity": "other",
    "opening": {
     "vu": "āgeyaścaiva skanadaśca dīptakīrtiranāmayaḥ"
    },
@@ -879,6 +902,7 @@
    "by": "Arjuna",
    "to": "Kṛṣṇa",
    "kind": "stuti",
+   "deity": "vishnu",
    "opening": {
     "vu": "paśyāmi devāṃstava deva dehe sarvāṃstathā",
     "ce": "paśyāmi devāṃs tava deva dehe"

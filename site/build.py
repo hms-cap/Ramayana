@@ -105,6 +105,9 @@ def load_recs(W: dict, ed_id: str) -> list[dict]:
     """An edition's verse records. Gītā records ({ch, v}) are put on the k/s/v frame the pages use: k=1, s=adhyāya,
     with the Dhyāna ślokas as adhyāya 0."""
     recs = [json.loads(l) for l in open(norm_path(W, ed_id), encoding="utf-8")]
+    for r in recs:  # editors' running numbers inside a verse ("[1] … [171]", Pune 12.325.4) are not text: hide them
+        if any("[" in p for ln in r["lines"] for p in ln):
+            r["lines"] = [[re.sub(r"\s*\[\d+(?:_\d+)?\]", "", p) for p in ln] for ln in r["lines"]]
     if W["id"] != "gita":
         return recs
     for r in recs:
@@ -965,6 +968,10 @@ STOTRA_KIND = {"stotra": ("ಸ್ತೋತ್ರ", "स्तोत्रम्"
                "prayer": ("ಪ್ರಾರ್ಥನೆ", "प्रार्थना", "Prayer")}
 
 
+DEITY = {"vishnu": ("ವಿಷ್ಣು", "विष्णुः", "Viṣṇu"), "shiva": ("ಶಿವ", "शिवः", "Śiva"), "devi": ("ದೇವೀ", "देवी", "Devī"),
+         "surya": ("ಸೂರ್ಯ", "सूर्यः", "Sūrya"), "other": ("ಇತರ", "इतरे", "Others")}
+
+
 def build_stotras(out: Path, env: Environment, base: dict) -> None:
     """Pariśiṣṭa -> Stotras: the well-known hymns inside the two epics (data/stotras.json), grouped by kāṇḍa / parva,
     each linking into the reader at its verses (#vA-B: the reader highlights the range)."""
@@ -1007,23 +1014,34 @@ def build_stotras(out: Path, env: Environment, base: dict) -> None:
             r = first.get((w, ed0, loc0["k"], loc0["s"], loc0["v"][0]))
             open_ = None
             if r:
-                l1 = iast_to_slp1(r["lines"][0][0] if r["lines"] and r["lines"][0] else "")
+                words = re.sub(r"\s*\[\d+(?:_\d+)?\]", "", r["lines"][0][0] if r["lines"] and r["lines"][0] else "").split()
+                l1 = iast_to_slp1(" ".join(words[:8]))  # one line on the card: at most eight words
                 open_ = sx(render(l1, "knda"), render(l1, "deva"), render(l1, "iast"))
             g = st.get("gita")
             kind = STOTRA_KIND.get(st.get("kind"), STOTRA_KIND["stotra"])
             groups[loc0["k"]].append(dict(
-                st=st, name=s3(st["name_iast"]), by=s3(st["by"]), to=s3(st["to"]), kind=sx(*kind), open=open_, links=links, s=loc0["s"],
+                st=st, deity=st.get("deity", "other"), n=links[0]["n"], name=s3(st["name_iast"]), by=s3(st["by"]), to=s3(st["to"]), kind=sx(*kind), open=open_, links=links, s=loc0["s"],
                 href=links[0]["href"], gita=dict(href=f'../../gita/vu/1/{g["s"]}/#v{g["v"][0]}-{g["v"][1]}', ref=f'{g["s"]}.{g["v"][0]}–{g["v"][1]}') if g else None,
                 only=(eds[links[0]["ed"]]["short"] if len(links) == 1 else None)))
         gl = [dict(u=unit_info(W, k), rows=sorted(groups[k], key=lambda x: x["s"])) for k in sorted(groups)]
-        secs.append(dict(work=w, W=W, groups=gl, n=sum(len(x["rows"]) for x in gl)))
+        rows = [x for g_ in gl for x in g_["rows"]]
+        deities = [(d, sx(*DEITY[d]), sum(1 for x in rows if x["deity"] == d)) for d in DEITY if any(x["deity"] == d for x in rows)]
+        secs.append(dict(work=w, W=W, groups=gl, n=len(rows), deities=deities))
     rel = out / "appendix" / "stotras" / "index.html"
     rel.parent.mkdir(parents=True, exist_ok=True)
     ctx = {**base, "page": "appendix", "chip_on": "app", "wroot": "../../", "root": "../../", "up": "../", "secs": secs}
     rel.write_text(env.get_template("stotras.html").render(**ctx), encoding="utf-8")
-    # a small index for site search
-    (out / "data" / "stotras.json").write_text(json.dumps([dict(id=st["id"], w=st["work"], n=st["name_iast"], e=st["name_en"], by=st["by"], to=st["to"])
-                                                          for st in data], ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    # the index for site search and for the reader's stotra bar (page order: by work, then position in the text)
+    order = [x["st"]["id"] for sec in secs for g_ in sec["groups"] for x in g_["rows"]]
+    by_id = {st["id"]: st for st in data}
+    idx = []
+    for i in order:
+        st = by_id[i]
+        loc = {ed: [l["k"], l["s"], l["v"][0], l["v"][1]] for ed, l in st["loc"].items() if l}
+        if st.get("gita"):
+            loc["gita"] = [1, st["gita"]["s"], st["gita"]["v"][0], st["gita"]["v"][1]]
+        idx.append(dict(id=i, w=st["work"], n=st["name_iast"], e=st["name_en"], by=st["by"], to=st["to"], d=st.get("deity", "other"), loc=loc))
+    (out / "data" / "stotras.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"  stotras: {len(data)}")
 
 

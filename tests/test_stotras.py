@@ -21,6 +21,7 @@ class TestStotras(unittest.TestCase):
                 self.assertNotIn(st["id"], ids); ids.add(st["id"])
                 self.assertIn(st["work"], ("ram", "mbh"))
                 self.assertIn(st["kind"], KINDS)
+                self.assertIn(st["deity"], {"vishnu", "shiva", "devi", "surya", "other"})
                 for k in ("name_iast", "name_en", "by", "to"):
                     self.assertTrue(st[k].strip())
                 self.assertTrue(st["loc"].get("vu") or st["loc"].get("ce"), "located in at least one edition")

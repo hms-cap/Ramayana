@@ -1,5 +1,13 @@
 [
  [
+  "0.16.1",
+  "2026-11-16",
+  [
+   "Stotras: chant just the hymn, with a repeat counter; pin your daily stotras and tick them off.",
+   "Back from a stotra now returns to the Stotras list; filter stotras by deity or search them."
+  ]
+ ],
+ [
   "0.16.0",
   "2026-11-16",
   [

@@ -6,41 +6,52 @@
 <article class="prose appx stotras">
   <p class="crumbs-l"><a href="../">{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }}</a> ›</p>
   <h1>{{ sx("ಸ್ತೋತ್ರಗಳು", "स्तोत्राणि", "Stotras") }} <small>Pariśiṣṭa</small></h1>
-  <p>The well-known hymns of praise inside the two epics: who sings them, to whom, and where. Tap one to read it; its verses are marked in the text.</p>
+  <p>The well-known hymns of praise inside the two epics. Read one with its verses marked in the text, or chant just the hymn.</p>
+
+  <section class="st-daily" id="st-daily" hidden aria-labelledby="st-daily-h">
+    <h2 class="grp" id="st-daily-h">My daily stotras · <span id="st-today"></span></h2>
+    <div class="st-dlist" id="st-dlist"></div>
+  </section>
+
   <div class="seg cw-seg" role="tablist" aria-label="Work">
-    {% for s in secs %}<a href="#{{ s.work }}" role="tab" data-cw-tab="{{ s.work }}">{{ work_sx(s.W) }} <em>{{ s.n }}</em></a>{% endfor %}
+    {% for s in secs %}<a href="#{{ s.work }}" role="tab" data-st-tab="{{ s.work }}">{{ work_sx(s.W) }} <em>{{ s.n }}</em></a>{% endfor %}
   </div>
+  <label class="st-search"><span aria-hidden="true">⌕</span><input type="search" id="st-q" placeholder="Search stotras, deities, singers" aria-label="Search stotras" autocomplete="off"></label>
   {% for s in secs %}
-  <section class="cw-sec" data-cw-sec="{{ s.work }}" aria-label="{{ s.W.en }}">
-    <h2 class="cw-h">{{ work_sx(s.W) }} <small>{{ s.W.en }}</small></h2>
+  <section class="cw-sec st-sec" data-st-sec="{{ s.work }}" aria-label="{{ s.W.en }}">
+    <div class="st-chips" role="group" aria-label="Deity">
+      <button type="button" data-deity="" aria-pressed="true">All <em>{{ s.n }}</em></button>
+      {% for d, lab, n in s.deities %}<button type="button" data-deity="{{ d }}" aria-pressed="false">{{ lab }} <em>{{ n }}</em></button>{% endfor %}
+    </div>
     {% for g in s.groups %}
+    <div class="st-grp">
     <h3 class="grp"><span class="g-kn">{{ sx(g.u.kn, g.u.deva, g.u.en) }}</span> <span class="g-en">{{ s.W.Unit }} {{ g.u.n }}</span></h3>
     <ul class="st-list">
     {% for r in g.rows %}
-      <li class="st" id="{{ r.st.id }}">
-        <a class="st-main" href="{{ r.href }}">
+      <li class="st" id="{{ r.st.id }}" data-deity="{{ r.deity }}" data-find="{{ (r.st.name_iast ~ ' ' ~ r.st.name_en ~ ' ' ~ r.st.by ~ ' ' ~ r.st.to ~ ' ' ~ r.deity)|lower }}">
+        <a class="st-main" href="{{ r.href }}" data-st-read>
           <b class="st-name">{{ r.name }}</b>
-          <span class="st-en">{{ r.st.name_en }}</span>
-          <span class="st-who">{{ r.by }} <span aria-label="to">→</span> {{ r.to }} · <span class="st-kind">{{ r.kind }}</span></span>
+          <span class="st-who">{{ r.by }} <span aria-label="to">→</span> {{ r.to }} · <span class="st-kind">{{ r.kind }}</span> · <span class="st-en">{{ r.st.name_en }}</span></span>
           {% if r.open %}<span class="st-open">{{ r.open }} …</span>{% endif %}
           {% if r.st.about and r.st.about.kn %}<span class="st-about" lang="kn">{{ r.st.about.kn }}</span>{% endif %}
           {% if r.st.about and r.st.about.en %}<span class="st-about">{{ r.st.about.en }}</span>{% endif %}
         </a>
-        <p class="st-loc">{% for l in r.links %}<a href="{{ l.href }}">{{ l.name }} {{ l.ref }} <small>({{ l.n }} verses)</small></a>{% endfor %}{% if r.gita %}<a href="{{ r.gita.href }}">Gītā {{ r.gita.ref }}</a>{% endif %}{% if r.only %}<span class="st-only">Only in the {{ r.only }}</span>{% endif %}</p>
+        <div class="st-acts">
+          <a class="stb dk" href="{{ r.href }}" data-st-read>Read</a>
+          <a class="stb" href="{{ r.href }}" data-st-chant>▶ Chant</a>
+          <button type="button" class="stb gh" data-st-daily aria-pressed="false">☆ Daily</button>
+          <span class="st-n">{{ r.n }} verse{{ "s" if r.n != 1 }}</span>
+        </div>
+        <p class="st-loc">{% for l in r.links %}<a href="{{ l.href }}" data-st-read>{{ l.name }} {{ l.ref }}</a>{% endfor %}{% if r.gita %}<a href="{{ r.gita.href }}" data-st-read>Gītā {{ r.gita.ref }}</a>{% endif %}{% if r.only %}<span class="st-only">Only in the {{ r.only }}</span>{% endif %}</p>
       </li>
     {% endfor %}
     </ul>
+    </div>
     {% endfor %}
+    <p class="hint st-none" hidden>No stotra matches. Clear the search or choose All.</p>
   </section>
   {% endfor %}
-  <p class="hint">Which hymns count as well known follows Gita Press and the common stotra collections. Verse ranges were checked against both texts here; the notes are written by Claude and have not yet been reviewed.</p>
+  <p class="hint">Which hymns count as well known follows Gita Press and the common stotra collections. Verse ranges were checked against both texts here; the notes are written by Claude and have not yet been reviewed. Daily stotras are kept on this device.</p>
 </article>
 {% endblock %}
-{% block scripts %}<script src="{{ root }}static/characters.js"></script>
-<script>(function () {  // #stotra-id (from search): open its work's tab and scroll to it
-  var id = decodeURIComponent(location.hash.slice(1)), li = id && document.getElementById(id);
-  if (!li || !li.classList.contains("st")) return;
-  var sec = li.closest("[data-cw-sec]"), tab = sec && document.querySelector('[data-cw-tab="' + sec.getAttribute("data-cw-sec") + '"]');
-  if (tab) tab.click();
-  li.classList.add("st-now"); li.scrollIntoView({ block: "center" });
-})();</script>{% endblock %}
+{% block scripts %}<script src="{{ root }}static/stotras.js"></script>{% endblock %}

@@ -4,6 +4,28 @@
 (function () {
   "use strict";
   var T = window.Translit, P = window.VRPrefs, S = window.VRSaved;
+  // ---- daily stotras (Pariśiṣṭa → Stotras): ids to recite, and which are done on which day; this device only ----
+  var DKEY = "vr.daily";
+  function dget() { try { var d = JSON.parse(localStorage.getItem(DKEY) || "null"); if (d && Array.isArray(d.ids)) return { ids: d.ids, done: d.done || {} }; } catch (e) { /* ignore */ } return { ids: [], done: {} }; }
+  function dset(d) {
+    var days = Object.keys(d.done).sort().slice(-14), keep = {};   // keep two weeks of ticks
+    days.forEach(function (k) { keep[k] = d.done[k]; }); d.done = keep;
+    try { localStorage.setItem(DKEY, JSON.stringify(d)); } catch (e) { /* ignore */ }
+    document.dispatchEvent(new Event("daily-changed"));
+  }
+  function today() { var t = new Date(); return t.getFullYear() + "-" + ("0" + (t.getMonth() + 1)).slice(-2) + "-" + ("0" + t.getDate()).slice(-2); }
+  window.VRDaily = {
+    ids: function () { return dget().ids; },
+    has: function (id) { return dget().ids.indexOf(id) >= 0; },
+    toggle: function (id) { var d = dget(), i = d.ids.indexOf(id); if (i >= 0) d.ids.splice(i, 1); else d.ids.push(id); dset(d); return i < 0; },
+    done: function (id) { return (dget().done[today()] || []).indexOf(id) >= 0; },
+    mark: function (id, on) {
+      var d = dget(), t = today(), l = d.done[t] || [], i = l.indexOf(id);
+      if (on && i < 0) l.push(id); if (!on && i >= 0) l.splice(i, 1);
+      d.done[t] = l; dset(d);
+    },
+    all: dget, merge: function (x) { var d = dget(), n = 0; (x && x.ids || []).forEach(function (id) { if (typeof id === "string" && d.ids.indexOf(id) < 0) { d.ids.push(id); n++; } }); if (n) dset(d); return n; }
+  };
   if (!S || !T) return;
   var B = document.body.dataset, ROOT = B.root || "", WORK = B.work;
   var SCR = ["knda", "deva", "iast"];
@@ -147,9 +169,9 @@
   function say(t) { var m = document.getElementById("bm-msg"); if (m) m.textContent = t; }
   var ex = document.getElementById("bm-export"), im = document.getElementById("bm-import"), fi = document.getElementById("bm-file");
   if (ex) ex.addEventListener("click", function () {
-    var l = S.list();
-    if (!l.length) { say("Nothing to export yet."); return; }
-    var blob = new Blob([JSON.stringify({ app: "itihasa", kind: "bookmarks", version: 1, exported: new Date().toISOString(), items: l }, null, 1)], { type: "application/json" });
+    var l = S.list(), dl = window.VRDaily.ids();
+    if (!l.length && !dl.length) { say("Nothing to export yet."); return; }
+    var blob = new Blob([JSON.stringify({ app: "itihasa", kind: "bookmarks", version: 1, exported: new Date().toISOString(), items: l, daily: { ids: dl } }, null, 1)], { type: "application/json" });
     var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
     a.download = "itihasa-bookmarks-" + new Date().toISOString().slice(0, 10) + ".json";
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
@@ -165,6 +187,7 @@
           var d = JSON.parse(r.result), items = Array.isArray(d) ? d : d.items;
           if (!Array.isArray(items)) throw new Error("no items");
           var n = S.merge(items);
+          if (d.daily) window.VRDaily.merge(d.daily);
           say(n ? "Added " + n + " bookmark" + (n === 1 ? "" : "s") + (items.length > n ? "; " + (items.length - n) + " already here." : ".") : "Nothing new: all " + items.length + " were already here.");
         } catch (e) { say("That file is not an Itihāsa bookmarks backup."); }
         fi.value = "";

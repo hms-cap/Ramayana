@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.16.1 — 2026-11-16
+- Stotras list: openings cut to one line (Nārada's hymn no longer fills a page), deity chips (Viṣṇu, Śiva, Devī, Sūrya, others), a search box, and Read / ▶ Chant / ☆ Daily on each card. The address keeps the stotra you opened, so Back lands on it.
+- Reader: a stotra bar under the header (name, verse position and progress, ▶ Chant); ‹ and the header Back go to the list at that stotra, not to the parva or kāṇḍa page. An end card after the last verse offers Chant, the next stotra, Back to list and Daily.
+- Chant just the stotra: chant opens on the stotra's verses only, with a repeat counter (×1, ×3, ×11, ×108); closing a chant started from the list returns to the list.
+- My daily stotras: pin stotras to the top of the Stotras page and tick them off each day (a completed chant ticks it). Kept on this device and included in the bookmarks export.
+- The editors' running numbers ([1] … [171]) inside the Pune text of Nārada's hymn (12.325.4) are no longer shown.
+
 ## 0.16.0 — 2026-11-16
 - Pariśiṣṭa → Stotras: 24 well-known hymns inside the epics (7 Rāmāyaṇa, 17 Mahābhārata), e.g. Ādityahṛdayam, Viṣṇusahasranāma, Bhīṣmastavarāja, the two Śivasahasranāmas, the Durgā stotras, Arjuna's hymn in Gītā 11. Each shows its name in your script, who praises whom, the opening line, a one-line Kannada and English note, and links per edition with the verse count (or "Only in the Traditional text").
 - A link opens the reader with the hymn's verses marked (`#vA-B`). Site search lists matching stotras above the verse results.

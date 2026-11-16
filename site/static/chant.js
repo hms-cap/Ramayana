@@ -98,16 +98,35 @@
     el.setAttribute("aria-label", "Chant view, " + model.title[st.sc]);
 
     function cards() {
+      if (model.range) return repCard();
       var h = "";
       [["prev", "Previous", model.prev], ["next", "Next", model.next]].forEach(function (c) {
         if (c[2]) h += '<a class="ch-card" href="' + esc(c[2].href) + '" data-nav="' + c[0] + '"><span>' + c[1] + '</span><b>' + esc(c[2].label) + '</b></a>';
       });
       return '<div class="ch-cards">' + h + (model.next ? "" : '<p class="ch-end" lang="sa">॥ इति ॥</p>') + '</div>';
     }
+    // a stotra (range mode): count recitations; the last one ticks the stotra off for today
+    var R = model.range;
+    function repCard() {
+      var tgt = R.target, n = R.count;
+      var btns = [1, 3, 11, 108].map(function (x) { return '<button type="button" data-rep="' + x + '" aria-pressed="' + (x === tgt) + '">×' + x + "</button>"; }).join("");
+      var fin = n >= tgt;
+      return '<div class="ch-cards ch-repc"><p class="ch-end" lang="sa">॥ इति ॥</p>' +
+        '<div class="ch-seg ch-reps" role="group" aria-label="Times to recite">' + btns + "</div>" +
+        '<p class="ch-tally" aria-live="polite">' + (fin ? "Done: " + n + " of " + tgt + (R.id && window.VRDaily && window.VRDaily.has(R.id) ? " · ticked for today" : "") : "Recitation " + (n + 1) + " of " + tgt) + "</p>" +
+        (fin ? '<button type="button" class="ch-btn ch-again" data-rep-act="again">Start again</button><button type="button" class="ch-btn" data-rep-act="close">Close</button>'
+             : '<button type="button" class="ch-btn ch-done" data-rep-act="done">' + (n + 1 < tgt ? "Done · begin recitation " + (n + 2) : "Done") + "</button>") + "</div>";
+    }
+    function repDone() {
+      R.count++;
+      if (R.count < R.target) { place(0); render(false); body.scrollTop = 0; return; }
+      if (R.onDone) R.onDone();
+      render(false); if (layout === "book") body.scrollTop = body.scrollHeight;
+    }
     function sync() {
       el.style.setProperty("--chz", size + "px");
       el.dataset.sc = st.sc; el.classList.toggle("kn", st.sc === "knda");
-      el.querySelector(".ch-title").textContent = model.title[st.sc];
+      el.querySelector(".ch-title").textContent = model.title[st.sc] + (R && R.target > 1 ? " · " + Math.min(R.count + 1, R.target) + "/" + R.target : "");
       el.querySelector(".ch-title").lang = langOf(st.sc);
       el.querySelectorAll("[data-l]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.l === layout ? "true" : "false"); });
       el.querySelectorAll("[data-s]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.s === st.sc ? "true" : "false"); });
@@ -215,6 +234,10 @@
       }
       if (b.classList.contains("ch-pdf")) { window.VRChant.pdf(model, st.sc, b); return; }
       if (b.dataset.nav) { e.preventDefault(); go(b.dataset.nav); }
+      if (R && b.dataset.rep) { R.target = +b.dataset.rep; try { localStorage.setItem("vr.reps", R.target); } catch (x) { /* ignore */ } render(false); if (layout === "book") body.scrollTop = body.scrollHeight; return; }
+      if (R && b.dataset.repAct === "done") return repDone();
+      if (R && b.dataset.repAct === "again") { R.count = 0; place(0); render(false); body.scrollTop = 0; return; }
+      if (R && b.dataset.repAct === "close") return view.close();
     });
     // swipes: sideways, at least 70 px, not on the header
     var sx = null, sy = null;
@@ -293,6 +316,18 @@
   window.VRChant = window.VRChant || {};
   window.VRChant.model = pageModel;
   window.VRChant.open = open;
+  // chant only verses a..b of this page (a stotra). opt: {title:{knda,deva,iast}, id, back (✕ leaves the page too), onDone}
+  window.VRChant.openRange = function (a, b, opt) {
+    var m = pageModel(); if (!m) return;
+    m.verses = m.verses.filter(function (v) { return +v.n >= a && +v.n <= b; });
+    if (!m.verses.length) return;
+    m.parts = [{ group: 1, verses: m.verses }]; m.prev = m.next = null;
+    if (opt.title) m.title = opt.title;
+    var tg = 1; try { tg = +localStorage.getItem("vr.reps") || 1; } catch (e) { /* ignore */ }
+    m.range = { target: [1, 3, 11, 108].indexOf(tg) >= 0 ? tg : 1, count: 0, id: opt.id, onDone: opt.onDone };
+    if (opt.back) { ssSet({ moves: 1, origin: location.href }); openChant(m, 0, true); }
+    else openChant(m, 0, false);
+  };
   window.VRChant.chantScript = chantScript;
   window.VRChant.bookVerse = bookVerse;
   window.VRChant.dandas = dandas;
