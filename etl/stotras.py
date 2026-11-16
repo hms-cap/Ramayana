@@ -31,8 +31,8 @@ def text(r):
 
 def loose(s):
     # spelling-tolerant, space-free key: anusvāra/nasal, v/b, sandhi spacing, punctuation and digits ignored
-    t = loose_for_index(iast_to_slp1(s.lower()))
-    return re.sub(r"[^a-zA-Z]", "", t)
+    t = loose_for_index(iast_to_slp1(s.lower().replace("'", "a")))
+    return re.sub(r"[^a-zA-Z]", "", t).replace("M", "m")
 
 
 def contains(r, words):

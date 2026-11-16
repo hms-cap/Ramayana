@@ -1,6 +1,1030 @@
-{"_comment": "Stotras appendix. loc: verse range per edition (vu Traditional, ce Critical; null if absent). gita: the same range in the Gītā reader (adhyāya s). Checked by: python etl/stotras.py check", "stotras": [
- {"id": "aditya-hrdaya", "work": "ram", "name_iast": "Ādityahṛdayam", "name_en": "Heart of the Sun", "by": "Agastya", "to": "Sūrya", "kind": "stotra",
-  "opening": {"vu": "tato yuddhapariśrantaṃ"}, "loc": {"vu": {"k": 6, "s": 107, "v": [1, 31]}, "ce": null}, "about": {"en": "", "kn": ""}, "sources": []},
- {"id": "vishnu-sahasranama", "work": "mbh", "name_iast": "Viṣṇusahasranāma", "name_en": "Thousand names of Viṣṇu", "by": "Bhīṣma", "to": "Viṣṇu", "kind": "sahasranama",
-  "opening": {"vu": "viśvaṃ viṣṇur vaṣaṭkāro"}, "loc": {"vu": {"k": 13, "s": 254, "v": [16, 122]}, "ce": {"k": 13, "s": 135, "v": [14, 120]}}, "about": {"en": "", "kn": ""}, "sources": []}
-]}
+{
+ "_comment": "Stotras appendix. loc: verse range per edition (vu Traditional, ce Critical; null if absent). opening: first words of the start verse (per edition if they differ). gita: the same range in the Gītā reader. Checked by: python etl/stotras.py check",
+ "stotras": [
+  {
+   "id": "adityahrdayam",
+   "work": "ram",
+   "name_iast": "Ādityahṛdayam",
+   "name_en": "Heart of the Sun",
+   "by": "Agastya",
+   "to": "Sūrya",
+   "kind": "stotra",
+   "opening": {
+    "vu": "raśmimantaṃ samudyantaṃ devāsuranamaskṛtam"
+   },
+   "loc": {
+    "vu": {
+     "k": 6,
+     "s": 107,
+     "v": [
+      3,
+      30
+     ]
+    },
+    "ce": null
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "The best-known stotra inside the Rāmāyaṇa, recited daily for victory, health and removal of sorrow; kasarabada calls it 'the only Stotram in entire Ramayana'.",
+   "cited": "Yuddha 107 (hindupedia, kasarabada, Gita Press numbering); verses 1-2 narrate, 3 'rāma rāma mahābāho', 4-5 phalaśruti, 6-24 hymn proper, 25-27 benefits, 28-30 Rāma's recitation. Absent from critical edition (not found in ce 6.105 or anywhere).",
+   "sources": [
+    "https://hindupedia.com/en/Adithya_hrudayam",
+    "https://www.kasarabada.org/AdityahrudayamUpasanaE.html",
+    "https://www.hindupedia.com:443/en/Stotra"
+   ]
+  },
+  {
+   "id": "brahma-stuti-of-rama",
+   "work": "ram",
+   "name_iast": "Brahmakṛtā Rāmastutiḥ",
+   "name_en": "Brahmā's praise of Rāma",
+   "by": "Brahmā",
+   "to": "Rāma",
+   "kind": "stuti",
+   "opening": {
+    "vu": "bhavān nārāyaṇo devaḥ śrīmāṃś cakrāyudho vibhuḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 6,
+     "s": 120,
+     "v": [
+      14,
+      34
+     ]
+    },
+    "ce": {
+     "k": 6,
+     "s": 105,
+     "v": [
+      12,
+      29
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "The classic Rāmāyaṇa passage revealing Rāma's identity as Viṣṇu; listed in stotra collections as 'Brahma-kṛta Rāma-stuti', with its own phalaśruti ('those who recite it suffer no defeat').",
+   "cited": "Yuddha 117.13-33 on valmikiramayan.net / sanskritdocuments (Kumbhakonam-style numbering); Yuddha 120 in our vu. Verse 33/34 closing calls it 'imam ārṣaṃ stavam' (ce ends 29 with 'ye narāḥ kīrtayiṣyanti nāsti teṣāṃ parābhavaḥ').",
+   "sources": [
+    "https://sanskritdocuments.org/sites/valmikiramayan/yuddha/sarga117/yuddhaitrans117.htm",
+    "https://sanskritdocuments.org/sites/valmikiramayan/yuddha/sarga117/yuddharoman117.htm",
+    "https://www.hindupedia.com:443/en/Stotra"
+   ]
+  },
+  {
+   "id": "devas-stuti-of-vishnu",
+   "work": "ram",
+   "name_iast": "Devakṛtā Viṣṇustutiḥ",
+   "name_en": "The gods' praise of Viṣṇu",
+   "by": "Devāḥ",
+   "to": "Viṣṇu",
+   "kind": "stuti",
+   "opening": {
+    "vu": "tvāṃ niyokṣyāmahe viṣṇo lokānāṃ hitakāmyayā"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 15,
+     "v": [
+      19,
+      26
+     ]
+    },
+    "ce": {
+     "k": 1,
+     "s": 14,
+     "v": [
+      17,
+      21
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "The petition that sets the Rāma avatāra in motion; treated as the gods' stuti of Viṣṇu in Bāla Kāṇḍa summaries.",
+   "cited": "Bāla 15.18-26 (valmikiramayan.net: 'devas bowed and offered prayers'; 15.26 'evaṃ stutaḥ'). ce end estimated (verse 21 is the last of the gods' speech heard in heads).",
+   "sources": [
+    "https://www.valmikiramayan.net/utf8/baala/sarga15/balaroman15.htm"
+   ]
+  },
+  {
+   "id": "sita-prayer-to-ganga",
+   "work": "ram",
+   "name_iast": "Sītākṛtā Gaṅgāstutiḥ",
+   "name_en": "Sītā's prayer to Gaṅgā",
+   "by": "Sītā",
+   "to": "Gaṅgā",
+   "kind": "prayer",
+   "opening": {
+    "vu": "putro daśarathasyāyaṃ mahārājasya dhīmataḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 2,
+     "s": 52,
+     "v": [
+      83,
+      90
+     ]
+    },
+    "ce": {
+     "k": 2,
+     "s": 46,
+     "v": [
+      68,
+      73
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Sītā's well-known invocation of Gaṅgā for Rāma's safe return after fourteen years, with praise of Gaṅgā as 'tripathagā' and consort of the ocean.",
+   "cited": "Ayodhyā 52.83-91 (valmikiramayan.net); vu verse 82 narrates, ce 2.46.67 narrates; ce lacks the vu's extra vow verses 89-90.",
+   "sources": [
+    "https://www.valmikiramayan.net/utf8/ayodhya/sarga52/ayodhyaitrans52.htm"
+   ]
+  },
+  {
+   "id": "hanuman-namaskara-sundara",
+   "work": "ram",
+   "name_iast": "Namo'stu Rāmāya",
+   "name_en": "Hanumān's salutation",
+   "by": "Hanumān",
+   "to": "Rāma",
+   "kind": "prayer",
+   "opening": {
+    "vu": "namo 'stu rāmāya salakṣmaṇāya"
+   },
+   "loc": {
+    "vu": {
+     "k": 5,
+     "s": 13,
+     "v": [
+      59,
+      59
+     ]
+    },
+    "ce": {
+     "k": 5,
+     "s": 11,
+     "v": [
+      59,
+      59
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Frequently chanted single-verse salutation of Hanumān, recited in Sundara Kāṇḍa pārāyaṇa as a prayer for success; the page itself does not label it a stotra.",
+   "cited": "Sundara 13.59 (sanskritdocuments/valmikiramayan.net, shlokam.org 'Namostu Ramaya Sa'); a single verse, popularly chanted on its own.",
+   "sources": [
+    "https://sanskritdocuments.org/sites/valmikiramayan/sundara/sarga13/sundaraitrans13.htm",
+    "https://shlokam.org/shloka/namostu-ramaya-sa.htm"
+   ]
+  },
+  {
+   "id": "sita-prayer-to-agni-for-hanuman",
+   "work": "ram",
+   "name_iast": "Śīto bhava",
+   "name_en": "Sītā's prayer to Agni for Hanumān",
+   "by": "Sītā",
+   "to": "Agni",
+   "kind": "prayer",
+   "opening": {
+    "vu": "yadyasti patiśuśrūṣā yadyasti caritaṃ tapaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 5,
+     "s": 53,
+     "v": [
+      27,
+      31
+     ]
+    },
+    "ce": {
+     "k": 5,
+     "s": 51,
+     "v": [
+      23,
+      27
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Well-known satya-based invocation, quoted as an example of the power of Sītā's pativratā truth; chanted for protection from fire.",
+   "cited": "Sundara 53.27-31 (vedapath.app 5.53.28 shows 'yady asti patiśuśrūṣā... śīto bhava hanūmataḥ'); vu verse 27 narrates the invocation.",
+   "sources": [
+    "https://vedapath.app/en/ramayana/sundara-kanda/53/5.53.28"
+   ]
+  },
+  {
+   "id": "kausalya-svastivachana",
+   "work": "ram",
+   "name_iast": "Kausalyākṛtaṃ Svastyayanam",
+   "name_en": "Kausalyā's blessing of Rāma",
+   "by": "Kausalyā",
+   "to": "Rāma",
+   "kind": "prayer",
+   "opening": {
+    "vu": "yaṃ pālayasi dharmaṃ tvaṃ dhṛtyā ca niyamena ca"
+   },
+   "loc": {
+    "vu": {
+     "k": 2,
+     "s": 25,
+     "v": [
+      2,
+      26
+     ]
+    },
+    "ce": {
+     "k": 2,
+     "s": 22,
+     "v": [
+      2,
+      18
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "The classic mother's maṅgalāśīr/svastyayana; recited as a protective blessing for travellers, resembling a stotra of the Maṅgalāśāsana type.",
+   "cited": "Ayodhyā 25.2-26 (valmikiramayan.net: 'blessings and svastivācana'; 26 'stutibhiḥ anurūpābhiḥ'); ce lacks vu verse 3 'dharmastvām abhirakṣatu' and begins at 'svasti sādhyāś ca viśve ca'.",
+   "sources": [
+    "https://www.valmikiramayan.net/utf8/ayodhya/sarga25/ayodhyaitrans25.htm"
+   ]
+  },
+  {
+   "id": "vishnu-sahasranama",
+   "work": "mbh",
+   "name_iast": "Viṣṇusahasranāma",
+   "name_en": "Thousand names of Viṣṇu",
+   "by": "Bhīṣma",
+   "to": "Viṣṇu",
+   "kind": "sahasranama",
+   "opening": {
+    "vu": "viśvaṃ viṣṇur vaṣaṭkāro bhūtabhavyabhavatprabhuḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 13,
+     "s": 254,
+     "v": [
+      16,
+      123
+     ]
+    },
+    "ce": {
+     "k": 13,
+     "s": 135,
+     "v": [
+      14,
+      120
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "The most recited stotra of the epic, taught by Bhīṣma to Yudhiṣṭhira; core text of daily Vaiṣṇava recitation with Śaṅkara's commentary.",
+   "cited": "Anuśāsana 149 (Gita Press, Kumbhakonam-type counts differ), 13.135 (BORI); in our vu 13.254",
+   "sources": [
+    "https://ipfs.ssi.eecc.de/ipns/en.wikipedia-on-ipfs.org/wiki/Anushasana_Parva"
+   ]
+  },
+  {
+   "id": "bhishmastavaraja",
+   "work": "mbh",
+   "name_iast": "Bhīṣmastavarāja",
+   "name_en": "Bhīṣma's king of hymns",
+   "by": "Bhīṣma",
+   "to": "Kṛṣṇa",
+   "kind": "stotra",
+   "opening": {
+    "vu": "ārirādhayiṣuḥ kṛṣṇaṃ vācaṃ jigadiṣāmi yām"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 46,
+     "v": [
+      17,
+      132
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 47,
+     "v": [
+      10,
+      63
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Bhīṣma's dying-on-the-bed-of-arrows hymn to Kṛṣṇa, traditionally called Stavarāja, recited as an independent Vaiṣṇava stotra with its own commentaries and manuscripts.",
+   "cited": "Śānti 47 (Gita Press; Leipzig MyMss record Śāntiparvan ch. 47), 12.47 (BORI); in our vu 12.46 [opening note: preceded by śuciṃ śucipadaṃ haṃsaṃ at 12.46.18 vu / 12.47.11 ce]",
+   "sources": [
+    "https://mymssportal.dl.uni-leipzig.de/receive/MyMssWork_work_00003819"
+   ]
+  },
+  {
+   "id": "yudhishthira-krishna-stuti",
+   "work": "mbh",
+   "name_iast": "Yudhiṣṭhirakṛtā Kṛṣṇastutiḥ",
+   "name_en": "Yudhiṣṭhira's praise of Kṛṣṇa",
+   "by": "Yudhiṣṭhira",
+   "to": "Kṛṣṇa",
+   "kind": "stuti",
+   "opening": {
+    "vu": "tvāmekamāhuḥ puruṣaṃ tvāmāhuḥ sātvatāṃ patim"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 42,
+     "v": [
+      3,
+      30
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 43,
+     "v": [
+      3,
+      30
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Yudhiṣṭhira's thanksgiving litany of Kṛṣṇa's names and forms after his abhiṣeka; circulated as a separate Kṛṣṇa stotra. DOUBTFUL as 'well known': end verse not fixed, page not read.",
+   "cited": "Śānti 42 (vu) / 12.43 (BORI); sanskritdocuments has it as 'yudhiṣṭhirakṛtaṃ 1 śrīkṛṣṇastotram' (title seen in search results only; page not retrievable) [opening note: namaste... at 12.42.3]",
+   "sources": []
+  },
+  {
+   "id": "tandi-shivasahasranama",
+   "work": "mbh",
+   "name_iast": "Śivasahasranāma (Taṇḍi)",
+   "name_en": "Thousand names of Śiva, taught by Taṇḍi",
+   "by": "Upamanyu",
+   "to": "Śiva",
+   "kind": "sahasranama",
+   "opening": {
+    "vu": "sthiraḥ sthāṇuḥ prabhur bhānuḥ pravaro varado varaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 13,
+     "s": 48,
+     "v": [
+      31,
+      153
+     ]
+    },
+    "ce": {
+     "k": 13,
+     "s": 17,
+     "v": [
+      30,
+      150
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "The standard Śivasahasranāma (also in Śivapurāṇa/Liṅgapurāṇa variants), taught by Kṛṣṇa after Upamanyu; widely printed in Śaiva stotra collections.",
+   "cited": "Anuśāsana 17 (Gita Press; Leipzig record 'Śivasahasranāma, Anuśāsanaparvan 17'), 13.17 (BORI); in our vu 13.48",
+   "sources": [
+    "https://mymssportal.dl.uni-leipzig.de/receive/MyMssWork_work_00003823"
+   ]
+  },
+  {
+   "id": "daksha-shivasahasranama",
+   "work": "mbh",
+   "name_iast": "Śivasahasranāma (Dakṣa)",
+   "name_en": "Dakṣa's thousand names of Śiva",
+   "by": "Dakṣa",
+   "to": "Śiva",
+   "kind": "sahasranama",
+   "opening": {
+    "vu": "namaste devadeveśa devāribalasūdana"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 290,
+     "v": [
+      74,
+      178
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 274,
+     "v": [
+      60,
+      60
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Second Mahābhārata Śivasahasranāma, sung by Dakṣa after Śiva's grace in the Dakṣa-yajña episode; printed as 'Dakṣaproktaṃ śivasahasranāmastotram'.",
+   "cited": "Śānti 284 (Gita Press, Dakṣa-yajña/Jvarotpatti section; chapter number from memory, not confirmed by a fetched source); our vu 12.290; BORI places it in an appendix to 12.274 [ce: appendix insertion, whole text lumped in one verse]",
+   "sources": []
+  },
+  {
+   "id": "tandi-shivastava",
+   "work": "mbh",
+   "name_iast": "Taṇḍikṛtaḥ Śivastavaḥ",
+   "name_en": "Taṇḍi's hymn to Śiva",
+   "by": "Taṇḍi",
+   "to": "Śiva",
+   "kind": "stotra",
+   "opening": {
+    "vu": "pavitrāṇāṃ pavitras tvaṃ gatir gatimatāṃ vara"
+   },
+   "loc": {
+    "vu": {
+     "k": 13,
+     "s": 47,
+     "v": [
+      12,
+      16
+     ]
+    },
+    "ce": {
+     "k": 13,
+     "s": 16,
+     "v": [
+      13,
+      16
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Short stava with which Taṇḍi pleased Śiva, the narrative prelude to the sahasranāma; printed as 'Taṇḍikṛtaṃ Śivastotram'. Less famous than the sahasranāma (marked doubtful).",
+   "cited": "Anuśāsana 16 (BORI), vu 13.47; sanskritdocuments title 'taṇḍirṣikṛtaṃ śivastotram' seen in search results",
+   "sources": []
+  },
+  {
+   "id": "krishna-shiva-stuti-1",
+   "work": "mbh",
+   "name_iast": "Kṛṣṇakṛtā Śivastutiḥ (1)",
+   "name_en": "Kṛṣṇa's hymn to Śiva (1)",
+   "by": "Kṛṣṇa",
+   "to": "Śiva",
+   "kind": "stotra",
+   "opening": {
+    "vu": "namo devādhidevāya mahādevāya vai namaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 13,
+     "s": 45,
+     "v": [
+      275,
+      290
+     ]
+    },
+    "ce": {
+     "k": 13,
+     "s": 14,
+     "v": [
+      150,
+      165
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Kṛṣṇa's account to Yudhiṣṭhira of how he worshipped Śiva at Upamanyu's āśrama; end verse a rough estimate. Doubtful as separate known stotra.",
+   "cited": "Anuśāsana 14 (BORI), vu 13.45; sanskritdocuments 'kṛṣṇakṛtaṃ 4 śivastotram' (title seen only in search results, not read)",
+   "sources": []
+  },
+  {
+   "id": "krishna-shiva-stuti-2",
+   "work": "mbh",
+   "name_iast": "Kṛṣṇakṛtā Śivastutiḥ (2)",
+   "name_en": "Kṛṣṇa's hymn to Śiva (2)",
+   "by": "Kṛṣṇa",
+   "to": "Śiva",
+   "kind": "stotra",
+   "opening": {
+    "vu": "namo 'stu te śāśvata sarvayone brahmādhipaṃ tvām ṛṣayo vadanti"
+   },
+   "loc": {
+    "vu": {
+     "k": 13,
+     "s": 45,
+     "v": [
+      395,
+      405
+     ]
+    },
+    "ce": {
+     "k": 13,
+     "s": 15,
+     "v": [
+      30,
+      45
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Kṛṣṇa's 'tvaṃ vai brahmā ca rudraś ca' praise of Sthāṇu after the vision; end verse estimated. Doubtful as separate known stotra.",
+   "cited": "Anuśāsana 15 (BORI), vu 13.45; sanskritdocuments Kṛṣṇakṛta Śivastotra series (title only)",
+   "sources": []
+  },
+  {
+   "id": "durga-stotra-yudhishthira",
+   "work": "mbh",
+   "name_iast": "Durgāstotra (Yudhiṣṭhira)",
+   "name_en": "Yudhiṣṭhira's hymn to Durgā",
+   "by": "Yudhiṣṭhira",
+   "to": "Durgā",
+   "kind": "stotra",
+   "opening": {
+    "vu": "namostu varade kṛṣṇe kumāri brahmacāriṇi"
+   },
+   "loc": {
+    "vu": {
+     "k": 4,
+     "s": 8,
+     "v": [
+      2,
+      27
+     ]
+    },
+    "ce": null
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Yudhiṣṭhira's hymn to Durgā on entering Virāṭa's city, who grants victory; one of the best known Durgā stotras, frequently printed as 'Yudhiṣṭhirakṛtaṃ Durgāstavam'.",
+   "cited": "Virāṭa 6 (Gita Press, Ganguly/Krishnakosh Virāṭa 6); sanskritdocuments 'Durgā-stava mahābhārāntargata', Virāṭaparva ch. 8 (southern recension), 'Durgā nakṣatramālikā stuti' with 27 or 36 verses [CE: absent from main text; hymn in appendix/not found] [opening note: intro yaśodāgarbhasaṃbhūtāṃ nārāyaṇavarapriyām]",
+   "sources": [
+    "https://sanskritdocuments.org/doc_devii/durgAnakshatramAlikAstuti.html"
+   ]
+  },
+  {
+   "id": "durga-stotra-arjuna",
+   "work": "mbh",
+   "name_iast": "Durgāstotra (Arjuna)",
+   "name_en": "Arjuna's hymn to Durgā",
+   "by": "Arjuna",
+   "to": "Durgā",
+   "kind": "stotra",
+   "opening": {
+    "vu": "namas te siddhasenāni ārye mandaravāsini"
+   },
+   "loc": {
+    "vu": {
+     "k": 6,
+     "s": 23,
+     "v": [
+      4,
+      16
+     ]
+    },
+    "ce": {
+     "k": 6,
+     "s": 22,
+     "v": [
+      16,
+      16
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Kṛṣṇa tells Arjuna to pray to Durgā for victory just before the Gītā; extremely popular 'Durgā Stuti' in Devī collections.",
+   "cited": "Bhīṣma Parva 23 (Gita Press, ramanuja.org, shastras.com, mahabharataonline); our vu 6.23; BORI relegates to appendix inside 6.22 [ce: lumped appendix text]",
+   "sources": [
+    "https://www.ramanuja.org/sv/bhakti/archives/sep96/0070.html",
+    "https://www.shastras.com/devi-stotras/durga-stuti-arjuna-kruta/"
+   ]
+  },
+  {
+   "id": "surya-ashtottarashatanama",
+   "work": "mbh",
+   "name_iast": "Sūryāṣṭottaraśatanāma",
+   "name_en": "108 names of the Sun",
+   "by": "Yudhiṣṭhira",
+   "to": "Sūrya",
+   "kind": "namavali",
+   "opening": {
+    "vu": "tvaṃ bhāno jagataś cakṣus tvam ātmā sarvadehinām"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 3,
+     "v": [
+      17,
+      81
+     ]
+    },
+    "ce": {
+     "k": 3,
+     "s": 3,
+     "v": [
+      17,
+      33
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Dhaumya's 108 names of the Sun with which Yudhiṣṭhira gained the inexhaustible Akṣayapātra; recited as Sūryāṣṭottaraśata.",
+   "cited": "Āraṇyaka/Vana Parva 3 (Ganguly/Krishnakosh Vana 3); sanskritdocuments 'sūryāṣṭottaraśatanāmāvaliḥ' [vu: hymn 17-67, names ~68-81] [ce: names; the preceding praise is lumped at 3.3.14] [vu hymn 3.3.17-67, names 68-81; ce names 18-29, praise lumped at 3.3.14] [opening note: names from sūryo 'ryamā bhagas tvaṣṭā pūṣārkaḥ savitā raviḥ]",
+   "sources": [
+    "https://en.krishnakosh.org/krishna/Mahabharata_Vana_Parva_Chapter_3"
+   ]
+  },
+  {
+   "id": "upamanyu-ashvin-stuti",
+   "work": "mbh",
+   "name_iast": "Aśvinīstutiḥ",
+   "name_en": "Upamanyu's hymn to the Aśvins",
+   "by": "Upamanyu",
+   "to": "Aśvinau",
+   "kind": "stuti",
+   "opening": {
+    "vu": "prapūrvagau pūrvajau citrabhānū girā vāṃ śaṃsāmi tapasā hyanantau"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 3,
+     "v": [
+      57,
+      68
+     ]
+    },
+    "ce": {
+     "k": 1,
+     "s": 3,
+     "v": [
+      60,
+      71
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Upamanyu's Ṛgvedic-style verses to the Aśvins that restore his sight; classic Vedic-flavoured hymn inside the epic.",
+   "cited": "Ādi 3 (Paushya/Utathya story; Gita Press 1.3, BORI 1.3)",
+   "sources": []
+  },
+  {
+   "id": "garuda-stuti",
+   "work": "mbh",
+   "name_iast": "Garuḍastutiḥ",
+   "name_en": "The gods' hymn to Garuḍa",
+   "by": "Devāḥ",
+   "to": "Garuḍa",
+   "kind": "stuti",
+   "opening": {
+    "vu": "tvam ṛṣis tvaṃ mahābhāgas tvaṃ devaḥ patageśvaraḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 23,
+     "v": [
+      16,
+      26
+     ]
+    },
+    "ce": {
+     "k": 1,
+     "s": 20,
+     "v": [
+      10,
+      14
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Gods praise Garuḍa when he blazes like fire while carrying off the amṛta; the nucleus of later Garuḍa stotras.",
+   "cited": "Ādi 20 (BORI/Pune) = 1.23 in our vu (Āstīka/Garuḍa story)",
+   "sources": []
+  },
+  {
+   "id": "kadru-indra-stuti",
+   "work": "mbh",
+   "name_iast": "Indrastutiḥ (Kadrū)",
+   "name_en": "Kadrū's hymn to Indra",
+   "by": "Kadrū",
+   "to": "Indra",
+   "kind": "stuti",
+   "opening": {
+    "vu": "namas te sarvadeveśa namas te balasūdana"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 25,
+     "v": [
+      7,
+      17
+     ]
+    },
+    "ce": {
+     "k": 1,
+     "s": 21,
+     "v": [
+      7,
+      16
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Kadrū praises Indra so that rain will relieve her sun-scorched snake sons; short eulogy that is nature-hymn in form.",
+   "cited": "Ādi 21 (BORI), 1.25 in our vu [opening note: ce: namas te devadeveśa...]",
+   "sources": []
+  },
+  {
+   "id": "arjuna-kirata-shiva-stuti",
+   "work": "mbh",
+   "name_iast": "Arjunakṛtā Śivastutiḥ",
+   "name_en": "Arjuna's hymn to Śiva (Kirāta)",
+   "by": "Arjuna",
+   "to": "Śiva",
+   "kind": "stuti",
+   "opening": {
+    "vu": "kapardin sarvabhūteśa bhaganetranipātana"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 39,
+     "v": [
+      74,
+      80
+     ]
+    },
+    "ce": {
+     "k": 3,
+     "s": 40,
+     "v": [
+      57,
+      64
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Arjuna recognises Śiva as the hunter and prays; the episode that wins him the Pāśupata.",
+   "cited": "Vana 39 (Gita Press; Kirātārjunīya part), BORI 3.40",
+   "sources": [
+    "https://sanskritdocuments.org/doc_shiva/vyAsakRRitaMshatarudrIyaM.itx"
+   ]
+  },
+  {
+   "id": "krishna-arjuna-rudrastotra",
+   "work": "mbh",
+   "name_iast": "Rudrastutiḥ (Kṛṣṇārjunau)",
+   "name_en": "Kṛṣṇa and Arjuna's hymn to Rudra",
+   "by": "Kṛṣṇa, Arjuna",
+   "to": "Rudra",
+   "kind": "stotra",
+   "opening": {
+    "vu": "namo bhavāya śarvāya rudrāya varadāya ca paśūnāṃ pataye nityam ugrāya ca kapardine"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 80,
+     "v": [
+      55,
+      65
+     ]
+    },
+    "ce": {
+     "k": 7,
+     "s": 57,
+     "v": [
+      49,
+      58
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Kṛṣṇa and Arjuna praise Śiva in the lake visit that wins the Pāśupatāstra before Jayadratha's death; a popular Rudra stotra.",
+   "cited": "Droṇa 80 (vu) / 7.57 (BORI), 'Śiva-sahasranāma/Śivastuti within the Pāśupata journey; sanskritdocuments 'kṛṣṇārjunābhyāṃ kṛtaṃ rudrastotram' (title seen in search results only)",
+   "sources": []
+  },
+  {
+   "id": "ashvatthama-rudrastotra",
+   "work": "mbh",
+   "name_iast": "Rudrastutiḥ (Aśvatthāman)",
+   "name_en": "Aśvatthāman's hymn to Rudra",
+   "by": "Aśvatthāman",
+   "to": "Rudra",
+   "kind": "stotra",
+   "opening": {
+    "vu": "ugraṃ sthāṇuṃ śivaṃ rudraṃ śarvam īśānam īśvaram"
+   },
+   "loc": {
+    "vu": {
+     "k": 10,
+     "s": 7,
+     "v": [
+      2,
+      12
+     ]
+    },
+    "ce": {
+     "k": 10,
+     "s": 7,
+     "v": [
+      2,
+      12
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Aśvatthāman offers himself as oblation to Śiva before the night massacre; short, powerful, and often cited in Advaita-l/Śaiva discussion.",
+   "cited": "Sauptika Parva 7.2-11 (sanskritdocuments transcription 'drauṇikṛtaṃ rudrastotram'); BORI 10.7",
+   "sources": [
+    "https://sanskritdocuments.org/doc_shiva/drauNikRRitaMrudrastotram.html"
+   ]
+  },
+  {
+   "id": "narada-narayana-stuti",
+   "work": "mbh",
+   "name_iast": "Nāradakṛtā Nārāyaṇastutiḥ",
+   "name_en": "Nārada's hymn to Nārāyaṇa",
+   "by": "Nārada",
+   "to": "Nārāyaṇa",
+   "kind": "stotra",
+   "opening": {
+    "vu": "namaste devadeveśa niṣkriya nirguṇa lokasākṣin kṣetrajña puruṣottama"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 346,
+     "v": [
+      3,
+      4
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 325,
+     "v": [
+      3,
+      4
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "The long litany of about 170 epithets in the Nārāyaṇīya, sung before Nārada's vision of the universal form; included in Pāñcarātra/Vaiṣṇava stotra collections.",
+   "cited": "Śānti 339 (Ganguly/KMG Nārāyaṇīya), 12.325 (BORI, verse 4 numbered 12325004A-Q), our vu 12.346",
+   "sources": [
+    "https://studylearningcircle.blogspot.com/2020/11/narada-stuthi-in-santi-parva.html"
+   ]
+  },
+  {
+   "id": "skanda-namastotra",
+   "work": "mbh",
+   "name_iast": "Skandanāmastotra",
+   "name_en": "The names of Skanda",
+   "by": "Mārkaṇḍeya",
+   "to": "Skanda",
+   "kind": "namavali",
+   "opening": {
+    "vu": "āgneyaś ca skandaś ca dīptakīrtir anāmayaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 233,
+     "v": [
+      1,
+      21
+     ]
+    },
+    "ce": null
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Mārkaṇḍeya's list of Skanda's names with phalaśruti, source of the popular Skanda nāmāvali.",
+   "cited": "Vana 3.233 (Kumbhakonam edition per studylearningcircle); Vana 232 in other numberings (Ganguly) — not resolved [CE: absent from main text; hymn in appendix/not found] [opening note: intro bhagavañ śrotum icchāmi nāmāni ca mahātmanaḥ]",
+   "sources": [
+    "https://studylearningcircle.blogspot.com/2025/10/skanda-namastotram-mahabharate-vana.html"
+   ]
+  },
+  {
+   "id": "gita-arjuna-vishvarupa-stuti",
+   "work": "mbh",
+   "name_iast": "Viśvarūpastutiḥ",
+   "name_en": "Arjuna's hymn to the Universal Form",
+   "by": "Arjuna",
+   "to": "Kṛṣṇa",
+   "kind": "stuti",
+   "opening": {
+    "vu": "sthāne hṛṣīkeśa tava prakīrtyā jagat prahṛṣyaty anurajyate ca"
+   },
+   "loc": {
+    "vu": {
+     "k": 6,
+     "s": 35,
+     "v": [
+      15,
+      46
+     ]
+    },
+    "ce": {
+     "k": 6,
+     "s": 33,
+     "v": [
+      15,
+      46
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "fame": "Arjuna's awed hymn (11.36 sthāne, 11.40 namaḥ purastāt) is recited separately and in Viśvarūpa stotra collections.",
+   "cited": "Bhagavadgītā 11.15-46 (inside Bhīṣma Parva 6.35 vu / 6.33 BORI) – in the Gītā, not a stand-alone epic episode [opening note: vision begins paśyāmi devāṃs tava deva dehe, 11.15]",
+   "sources": [],
+   "gita": {
+    "s": 11,
+    "v": [
+     15,
+     46
+    ]
+   }
+  }
+ ]
+}
