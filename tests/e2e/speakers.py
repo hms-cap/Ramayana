@@ -20,7 +20,7 @@ with sync_playwright() as p:
     print("appendix fold:", pg.inner_text("#v17 .apx summary"), "|", pg.locator("#v17 .ax-knda .al").count(), "lines,", pg.locator("#v17 .ax-knda .spk").count(), "speaker")
     assert pg.locator("#v17 .ax-knda .spk").count() >= 1 and pg.is_visible("#v17 .ax-knda")
     # a Kumbakonam verse found only in an appendix passage of the Pune text
-    pg.goto(f"{B}/mbh/vu/1/68/#v104"); pg.wait_for_selector("#v104 .badge")
+    pg.goto(f"{B}/mbh/vu/1/68/#v104"); pg.wait_for_selector("#v104 .badge", state="attached")
     t = pg.text_content("#v104 .badge"); print("badge:", t); assert "Appendix I" in t
     # chant view: the verse lines only
     pg.goto(f"{B}/mbh/vu/6/25/"); pg.wait_for_selector("#v1 .t-knda .ln"); pg.click(".chant-open"); pg.wait_for_selector(".chant")

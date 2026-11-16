@@ -23,7 +23,7 @@ async def main():
         await pg.click(".wchip[data-work-pick=app]")
         await pg.wait_for_url("**/appendix/")
         assert await pg.evaluate("localStorage.getItem('vr.work')") != "app"   # the appendix is not a work
-        await pg.click(".appx-list a")
+        await pg.click(".appx-list a[href=\"chandas/\"]")
         await pg.wait_for_url("**/appendix/chandas/")
         assert await pg.locator(".ctable tbody tr").count() >= 15
         await pg.click(".ctable tbody th a >> nth=0")

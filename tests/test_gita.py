@@ -95,7 +95,8 @@ class GitaData(unittest.TestCase):
 
     def test_mbh_preface_removed(self):
         r = self.mbh["ce"]["CE-6-023-001"]
-        self.assertEqual(len(r["lines"]), 3)
+        self.assertEqual(len(r["lines"]), 2)          # the speaker line is in "spk" (etl/split_speakers.py)
+        self.assertEqual(r["spk"][0]["t"], "dhṛtarāṣṭra uvāca")
         self.assertNotIn("atha dhyānaṃ", json.dumps(r, ensure_ascii=False))
         self.assertTrue((ROOT / "data" / "gita" / "gretil_preface.txt").read_text(encoding="utf-8").count("\n") > 30)
 

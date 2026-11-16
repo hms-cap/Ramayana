@@ -32,7 +32,8 @@ class MahabharataData(unittest.TestCase):
     def test_every_verse_has_text(self):
         for rows in (self.ce, self.vu):
             for r in rows:
-                self.assertTrue(r["lines"] and all(l and all(p.strip() for p in l) for l in r["lines"]), r["uid"])
+                # 5 Pune records hold only an Appendix I passage (etl/split_speakers.py)
+                self.assertTrue((r["lines"] or r.get("app")) and all(l and all(p.strip() for p in l) for l in r["lines"]), r["uid"])
 
     def test_pune_has_no_gaps(self):
         per = {}

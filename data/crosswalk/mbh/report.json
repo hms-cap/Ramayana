@@ -1,18 +1,18 @@
 {
  "vulgate_verses": {
   "match": 63188,
-  "absent": 13234,
+  "absent": 13222,
   "partial": 5920,
-  "variant": 1135,
+  "variant": 1137,
   "regrouped": 5474,
-  "appendix": 7464
+  "appendix": 7474
  },
  "ce_verses": {
   "match": 62657,
   "partial": 3293,
-  "variant": 1027,
+  "variant": 1028,
   "regrouped": 4966,
-  "absent": 1878
+  "absent": 1877
  },
  "vulgate_sargas_mapped": 2099,
  "vulgate_sargas_total": 2310,
