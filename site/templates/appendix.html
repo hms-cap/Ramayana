@@ -6,15 +6,15 @@
 <article class="prose appx">
   <h1>{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }} <small>Appendix</small></h1>
   <p>Reference pages that run across both epics.</p>
-  <ul class="appx-list">
-    <li><a href="chandas/"><b>{{ sx("ಛಂದಸ್ಸು", "छन्दः", "Chandas") }}</b>
-      <span>Index of metres in the Rāmāyaṇa and the Mahābhārata, with counts and verses to read. {{ n_metres }} metres.</span></a></li>
-    <li><a href="characters/"><b>{{ sx("ಪಾತ್ರಗಳು", "पात्राणि", "Characters") }}</b>
-      <span>Who is who in the Rāmāyaṇa and the Mahābhārata: relations, key moments with verses to read, mentions, and family trees.</span></a></li>
-    <li><a href="stotras/"><b>{{ sx("ಸ್ತೋತ್ರಗಳು", "स्तोत्राणि", "Stotras") }}</b>
-      <span>The well-known hymns inside the two epics, such as the Ādityahṛdayam and the Viṣṇusahasranāma, with where to read them.</span></a></li>
-    <li><a href="gitas/"><b>{{ sx("ಗೀತೆಗಳು", "गीताः", "Gītās") }}</b>
-      <span>The other gītās inside the Mahābhārata, such as the Anugītā, the Vyādha Gītā and the Sanatsujātīya, read part by part.</span></a></li>
+  <ul class="appx-list achips">
+    <li><a class="achip c-met" href="chandas/"><span class="aic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18M3 16h18M7 4v16M15 4v16"/></svg></span>
+      <span class="atx"><b>{{ sx("ಛಂದಸ್ಸು", "छन्दः", "Chandas") }}</b><span>Metres, with counts and verses to read</span></span><em class="apill">{{ n_metres }} metres</em></a></li>
+    <li><a class="achip c-chr" href="characters/"><span class="aic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><circle cx="17.5" cy="9" r="2.4"/><path d="M17 14.3c2.4.3 4 2.2 4 4.7"/></svg></span>
+      <span class="atx"><b>{{ sx("ಪಾತ್ರಗಳು", "पात्राणि", "Characters") }}</b><span>Who is who: relations, moments, family trees</span></span><em class="apill">Both epics</em></a></li>
+    <li><a class="achip c-sto" href="stotras/"><span class="aic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 3 4 5 4 8a4 4 0 0 1-8 0c0-3 1.5-5 4-8z"/><path d="M6 21h12"/></svg></span>
+      <span class="atx"><b>{{ sx("ಸ್ತೋತ್ರಗಳು", "स्तोत्राणि", "Stotras") }}</b><span>Well-known hymns: Ādityahṛdayam, Viṣṇusahasranāma</span></span><em class="apill">{{ n_stotras }} hymns</em></a></li>
+    <li><a class="achip c-git" href="gitas/"><span class="aic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4z"/><path d="M20 5h-6a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6z"/></svg></span>
+      <span class="atx"><b>{{ sx("ಗೀತೆಗಳು", "गीताः", "Gītās") }}</b><span>Anugītā, Vyādha Gītā, Sanatsujātīya, read part by part</span></span><em class="apill">{{ n_gitas }} gītās</em></a></li>
   </ul>
 </article>
 {% endblock %}

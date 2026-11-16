@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.18.1 — 2026-11-16
+- Pariśiṣṭa: the four entries are now chips with an icon, a colour, a short line and a count (metres, hymns, gītās).
+
 ## 0.18.0 — 2026-11-16
 - Pariśiṣṭa → Gītās: 25 teachings inside the Mahābhārata called gītās (besides the Bhagavadgītā): the Anugītā (35 adhyāyas) with the Brāhmaṇagītā inside it, Vyādhagītā, Sanatsujātīya, Parāśara, Haṃsa, Piṅgalā, Maṅki, Bodhya, Vṛtra, Yājñavalkya and others, with notes in Kannada and English. A link from the Gītā home page.
 - Gītās that run over several adhyāyas are read part by part: the bar shows "Part 3 of 35", the end of each part has Next part, and chant carries on into the next part. Back leaves in one step and lands on the gītā in the list. Read, Chant and Daily as for stotras; search finds gītās.

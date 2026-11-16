@@ -999,3 +999,20 @@ a.crow:hover .cn { color: var(--accent); }
 .gitas-link { margin: 0.4rem 0 1rem; }
 .gitas-link a { display: block; padding: 0.75rem 1rem; border-radius: 16px; background: var(--card); color: var(--ink); text-decoration: none; box-shadow: 0 1px 3px rgba(30,34,53,.14); }
 .gitas-link b { display: block; font: 600 1.05rem var(--f-knda); } .gitas-link span { font: 500 0.85rem var(--f-ui); color: var(--muted); }
+
+/* Pariśiṣṭa chips (v0.18.1) */
+.achips { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 0.7rem; }
+.achips a.achip { display: flex; align-items: center; gap: 0.75rem; padding: 0.8rem 0.9rem; border-radius: 20px; box-shadow: 0 0 0 1px var(--rule); position: relative; min-width: 0; }
+.achip .aic { width: 46px; height: 46px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--ac-soft); color: var(--ac); }
+.achip .aic svg { width: 24px; height: 24px; }
+.achip .atx { min-width: 0; flex: 1; }
+.achip .atx b { display: block; font: 400 1.3rem/1.2 var(--f-knda); overflow-wrap: anywhere; }
+.achips .achip .atx > span { display: block; font: 500 0.8rem/1.35 var(--f-ui); color: var(--muted); margin-top: 0.15rem; }
+.achip .apill { flex: none; align-self: flex-start; font: 600 0.68rem var(--f-ui); font-style: normal; padding: 0.15rem 0.55rem; border-radius: 99px; background: var(--ac-soft); color: var(--ac); white-space: nowrap; }
+.achip:hover, .achip:focus-visible { box-shadow: 0 0 0 2px var(--ac); }
+.c-met { --ac: #2E6A8E; --ac-soft: #DCE9F1; } .c-chr { --ac: #9C3D1E; --ac-soft: #F4E0D6; }
+.c-sto { --ac: #A86A12; --ac-soft: #F1E2C2; } .c-git { --ac: #3C7A4A; --ac-soft: #DDEBDF; }
+:root[data-theme="dark"] .c-met { --ac: #7DB5DA; --ac-soft: #1E2F3A; } :root[data-theme="dark"] .c-chr { --ac: #E59A6E; --ac-soft: #3A2419; }
+:root[data-theme="dark"] .c-sto { --ac: #E2B65A; --ac-soft: #3A2E18; } :root[data-theme="dark"] .c-git { --ac: #82C08F; --ac-soft: #1F3125; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .c-met { --ac: #7DB5DA; --ac-soft: #1E2F3A; } :root:not([data-theme="light"]) .c-chr { --ac: #E59A6E; --ac-soft: #3A2419; }
+  :root:not([data-theme="light"]) .c-sto { --ac: #E2B65A; --ac-soft: #3A2E18; } :root:not([data-theme="light"]) .c-git { --ac: #82C08F; --ac-soft: #1F3125; } }
