@@ -5,6 +5,7 @@
 {{ workchips(W, works_list, root) }}
 {% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
 <section class="read-head"><h1><span lang="kn">ಓದು</span> <small>Read</small></h1><p><a class="searchbar" href="{{ wroot }}search/">Search verses or jump to {{ {'ram': '1.5.12', 'gita': '2.47'}.get(W.id, '1.2.19') }}</a></p></section>
+<div class="bmbar" data-bmbar data-continue hidden></div>
 <div class="kgrid">
 {% if W.single %}{{ gita_cards(gita_chs, gita_counts, wroot) }}{% else %}{% for k in eds[0].kandas %}{% set i = loop.index0 %}{{ kcard(k, vu_e.kandas[i].sargas, ce_e.kandas[i].sargas, unit=W.subs) }}{% endfor %}{% endif %}
 </div>

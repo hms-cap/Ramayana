@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.0 — 2026-11-16
+- Bookmarks: a ☆ in every verse row bookmarks that verse (the sarga/adhyāya "Save" button is now "Bookmark"). Each text keeps its own bookmarks, on this device.
+- A strip of the text's latest bookmarks sits under the title of every reading page, with the one you are on highlighted, and at the top of each text's Home and Read pages (the Read page also has "Continue reading"). "See all" opens a list sheet with a tab per text, grouped by kāṇḍa / parva, in your script, with remove.
+- New `static/bookmarks.js` and `data/units.json` (unit names in three scripts). Bookmarks share the old Saved list, so earlier saves appear as bookmarks and the Saved page still shows everything.
+
 ## 0.14.1 — 2026-11-15
 - One śloka a day for the whole app: the Rāmāyaṇa, Mahābhārata and Gītā home pages now show the same card, drawn from all 148 well-known verses together (`data/daily/` at the site root). The card names its text ("Mahābhārata · Udyogaparva 35.52") and Read, Save and Share use that text, whichever page you are on.
 

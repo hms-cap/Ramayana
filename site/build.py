@@ -602,6 +602,7 @@ def build(out: Path, only: str | None = None) -> None:
     if only is None:
         build_appendix(out, env, ram["base"])
         build_characters(out, env, ram["base"])
+    write_units(out)
     if only is None:
         write_daily(out)
     write_pwa(out, done)
@@ -651,6 +652,15 @@ const savePrefs =""", 1)
 
 
 DAILY: list = []                     # cards of all works; write_daily() writes them as one set for every home page
+
+
+def write_units(out: Path) -> None:
+    """data/units.json: kāṇḍa / parva / adhyāya names per work in three scripts, for the bookmarks list."""
+    d = {}
+    for key, W in WORKS.items():
+        d[key] = {str(k): [kn, slp1_to_brahmic(iast_to_slp1(iast), "deva"), iast] for k, (iast, kn, en) in enumerate(W["units"], 1)}
+    (out / "data").mkdir(parents=True, exist_ok=True)
+    (out / "data" / "units.json").write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
 def write_daily(out: Path) -> None:
@@ -1063,7 +1073,7 @@ def write_pwa(out: Path, done: list) -> None:
             shell.append(f'{pre}{e["id"]}/')
             shell += [f'{pre}{e["id"]}/{k}/' for k in range(1, nu + 1)]
         shell += ["data/daily/index.json"] if not pre else []
-    shell += ["data/grammar.json", "manifest.webmanifest"]
+    shell += ["data/grammar.json", "data/units.json", "manifest.webmanifest"]
     shell += sorted(str(p.relative_to(out)) for p in (out / "static").rglob("*") if p.is_file() and p.suffix != ".txt")
     sw = (ROOT / "site" / "sw.js").read_text(encoding="utf-8").replace("/*SHELL_FILES*/[]", json.dumps(shell))
     (out / "sw.js").write_text(sw, encoding="utf-8")

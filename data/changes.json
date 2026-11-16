@@ -1,5 +1,13 @@
 [
  [
+  "0.15.0",
+  "2026-11-16",
+  [
+   "Bookmark any verse with the ☆ beside it. Each text shows its bookmarks at the top while you read, and \"See all\" opens the full list.",
+   "The Save button on a sarga or adhyāya is now called Bookmark; your earlier saves are kept."
+  ]
+ ],
+ [
   "0.14.1",
   "2026-11-15",
   [

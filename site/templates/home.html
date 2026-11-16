@@ -2,6 +2,7 @@
 {% from "_art.html" import kcard, workchips, gita_cards %}
 {% block main %}
 {{ workchips(W, works_list, root) }}
+<div class="bmbar" data-bmbar hidden></div>
 {% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
 <section class="greet">
   <h1 lang="kn">ನಮಸ್ಕಾರ</h1>

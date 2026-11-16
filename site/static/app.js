@@ -253,7 +253,7 @@
     toggle: function (item) {
       var l = savedList(), i = l.findIndex(function (x) { return x.id === item.id; });
       if (i >= 0) l.splice(i, 1); else { item.ts = Date.now(); l.unshift(item); }
-      setSaved(l); return i < 0;
+      setSaved(l); document.dispatchEvent(new Event("saved-changed")); return i < 0;
     }
   };
   function paintSave() {
@@ -261,7 +261,7 @@
       var on = window.VRSaved.has(b.dataset.save);
       b.setAttribute("aria-pressed", on ? "true" : "false");
       b.firstChild.nodeValue = on ? "★ " : "☆ ";
-      b.querySelector("span").textContent = on ? "Saved" : "Save";
+      b.querySelector("span").textContent = on ? "Bookmarked" : "Bookmark";
     });
   }
   document.addEventListener("click", function (e) {

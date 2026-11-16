@@ -19,8 +19,9 @@
     <div class="head-actions">
       <button type="button" class="chant-open act" aria-haspopup="dialog"><span lang="kn">ಪಠಣ</span> Chant view</button>
       <button type="button" class="pdf-btn act" data-nopdf>PDF</button>
-      <button type="button" class="save-btn act" aria-pressed="false" data-save="{{ W.prefix }}{{ ed.id }}/{{ kanda.n }}/{{ s }}/">☆ <span>Save</span></button>
+      <button type="button" class="save-btn act" aria-pressed="false" data-save="{{ W.prefix }}{{ ed.id }}/{{ kanda.n }}/{{ s }}/">☆ <span>Bookmark</span></button>
     </div>
+    <div class="bmbar" data-bmbar hidden></div>
     {% if dhyana %}
     <p class="sub">{{ dhyana.note_en }} {{ verses|length }} verses.</p>
     {% elif W.single %}

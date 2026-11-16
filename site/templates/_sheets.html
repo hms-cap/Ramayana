@@ -41,6 +41,21 @@
   </div>
 </section>
 
+<section class="sheet" id="bmsheet" role="dialog" aria-modal="true" aria-labelledby="bm-title" hidden>
+  <div class="grab" aria-hidden="true"></div>
+  <header class="sheet-head"><h2 id="bm-title">Bookmarks</h2><button type="button" class="pillbtn dark" data-close-sheet>Done</button></header>
+  <div class="sheet-body">
+    <div class="wk" role="tablist" aria-label="Text">
+      <button type="button" role="tab" data-bm-work="ram">Rāmāyaṇa <b></b></button>
+      <button type="button" role="tab" data-bm-work="mbh">Mahābhārata <b></b></button>
+      <button type="button" role="tab" data-bm-work="gita">Gītā <b></b></button>
+    </div>
+    <div id="bm-list"></div>
+    <p class="hint" id="bm-empty" hidden>Nothing bookmarked in this text yet. Tap ☆ beside a verse, or Bookmark at the top of a {{ W.sub }} page.</p>
+    <p class="hint">Bookmarks are kept on this device only.</p>
+  </div>
+</section>
+
 <section class="sheet" id="dlsheet" role="dialog" aria-modal="true" aria-labelledby="dl-title" hidden>
   <div class="grab" aria-hidden="true"></div>
   <header class="sheet-head"><div class="dl-ttl"><button type="button" class="round" data-open-sheet="settings" aria-label="Back to settings">‹</button><h2 id="dl-title">Downloads</h2></div><button type="button" class="pillbtn dark" data-close-sheet>Done</button></header>
