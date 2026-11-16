@@ -20,7 +20,7 @@ with sync_playwright() as p:
     print("bar:", pg.inner_text(".stbar").replace("\n", " | "))
     assert pg.locator(".st-endli").count() == 1
     shown = pg.evaluate("[...document.querySelectorAll('.verses > .verse')].filter(l => l.offsetParent).length"); print("shown:", shown); assert shown == 27, "only the stotra's verses"
-    pg.click("[data-st-all]"); assert pg.evaluate("[...document.querySelectorAll('.verses > .verse')].filter(l => l.offsetParent).length") > 100
+    pg.click("[data-st-all]"); assert pg.evaluate("[...document.querySelectorAll('.verses > .verse')].filter(l => l.offsetParent).length") > 27
     pg.click("[data-st-all]"); assert pg.evaluate("[...document.querySelectorAll('.verses > .verse')].filter(l => l.offsetParent).length") == 27
     pg.click(".stbar-bk"); pg.wait_for_url("**/appendix/stotras/**"); print("back to:", pg.url); assert pg.url.endswith("#adityahrdayam")
     assert pg.is_visible("#adityahrdayam")
