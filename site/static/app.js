@@ -238,10 +238,23 @@
 
   // Open the details of a verse linked by anchor.
   function openFromHash() {
+    markRange();
     var m = /^#v(\d+)$/.exec(location.hash);
     if (!m) return;
     var el = document.getElementById("v" + m[1]);
     if (el && root.dataset.filter === "shared" && el.classList.contains("v-absent")) { prefs.filter = ""; apply(); }
+  }
+  // A stotra link (#vA-B, from the Pariśiṣṭa) marks verses A to B and scrolls to A.
+  function markRange() {
+    [].forEach.call(document.querySelectorAll(".verse.st-hl"), function (li) { li.classList.remove("st-hl", "st-first", "st-last"); });
+    var m = /^#v(\d+)-(\d+)$/.exec(location.hash);
+    if (!m) return;
+    var a = +m[1], b = +m[2], firstEl = null;
+    [].forEach.call(document.querySelectorAll(".verses > .verse[id]"), function (li) {
+      var n = +li.id.slice(1);
+      if (n >= a && n <= b) { li.classList.add("st-hl"); if (n === a) { li.classList.add("st-first"); firstEl = li; } if (n === b) li.classList.add("st-last"); }
+    });
+    if (firstEl) { if (firstEl.classList.contains("v-absent") && root.dataset.filter === "shared") { prefs.filter = ""; apply(); } setTimeout(function () { firstEl.scrollIntoView({ block: "start" }); }, 0); }
   }
   // ---- Saved list ("My"): sargas and single verses, kept on this device ----
   var SAVED = "vr.saved";

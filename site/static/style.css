@@ -866,3 +866,28 @@ a.crow:hover .cn { color: var(--accent); }
 .bm-x { all: unset; cursor: pointer; color: var(--muted); width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; }
 .bm-x:hover { background: var(--paper-2); }
 .bm-io { display: flex; gap: 0.6rem; margin: 1rem 0 0.3rem; } .bm-io .btn { flex: 1; }
+
+/* Stotras appendix (v0.16) */
+.st-list { list-style: none; padding: 0; margin: 0.3rem 0 0.8rem; display: grid; gap: 0.6rem; }
+.st { border-radius: 16px; background: var(--card); box-shadow: 0 1px 3px rgba(30,34,53,.14); overflow: hidden; }
+.st-main { display: block; padding: 0.75rem 0.95rem 0.4rem; color: var(--ink); text-decoration: none; }
+.st-name { display: block; font: 600 1.2rem var(--f-knda); }
+[data-script="deva"] .st-name, [data-script="iast"] .st-name { font-family: var(--f-deva, inherit); }
+.st-en { display: block; font: 500 0.85rem var(--f-ui); color: var(--muted); }
+.st-who { display: block; margin-top: 0.3rem; font-size: 0.95rem; }
+.st-kind { color: var(--accent); }
+.st-open { display: block; margin-top: 0.35rem; color: var(--ink); opacity: .85; font-size: 0.98rem; overflow-wrap: anywhere; }
+.st-about { display: block; margin-top: 0.3rem; font: 400 0.88rem var(--f-ui); color: var(--muted); }
+.st-about[lang="kn"] { font-family: var(--f-knda); font-size: 0.95rem; }
+.st-loc { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0.3rem 0.95rem 0.75rem; }
+.st-loc a { font: 600 0.82rem var(--f-ui); padding: 0.35rem 0.7rem; min-height: 32px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 0.25rem; border-radius: 999px; background: var(--paper-2); color: var(--ink); text-decoration: none; }
+.st-loc a small { color: var(--muted); font-weight: 500; }
+.st-only { font: 500 0.78rem var(--f-ui); color: var(--muted); align-self: center; }
+.stotras h3.grp { font: 700 0.75rem var(--f-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 1.2rem 0 0.2rem; }
+.stotras h3.grp .g-kn { font-family: var(--f-knda); text-transform: none; letter-spacing: 0; font-size: 0.95rem; color: var(--ink); }
+.verse.st-hl { box-shadow: inset 4px 0 0 var(--sand, #d9b25c); background: color-mix(in srgb, var(--sand, #d9b25c) 9%, transparent); }
+.st-now { outline: 2px solid var(--accent); }
+.st-hits { margin: 0.6rem 0; display: grid; gap: 0.4rem; } .st-hits[hidden] { display: none; }
+.st-hits-t { margin: 0; font: 700 0.72rem var(--f-ui); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.st-hit { display: block; padding: 0.55rem 0.8rem; border-radius: 14px; background: var(--card); box-shadow: 0 1px 3px rgba(30,34,53,.14); color: var(--ink); text-decoration: none; }
+.st-hit b { display: block; font-size: 1.05rem; } .st-hit small { color: var(--muted); font: 500 0.8rem var(--f-ui); }

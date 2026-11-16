@@ -60,6 +60,7 @@
     if (ed !== edSel.options[0].value) params.set("ed", ed);
     if (k) params.set("k", k);
     history.replaceState(null, "", params.toString() ? "?" + params : location.pathname);
+    stotras(raw);
     if (!raw) { list.textContent = ""; status.textContent = ""; return; }
     var key = T.queryToLoose(raw);
     if (key.length < 2) { list.textContent = ""; status.textContent = "Type at least two letters."; return; }
@@ -73,6 +74,32 @@
       }
       show(hits, total, ed);
     }, function () { status.textContent = "The search index could not be loaded. Check your connection and search again."; });
+  }
+
+  // Stotras whose name, English title, singer or deity match: shown above the verse hits, linking to the Pariśiṣṭa.
+  var ROOT = document.body.dataset.root || WROOT, stot = null, stBox = document.getElementById("st-hits");
+  function stotras(raw) {
+    if (!stBox) return;
+    var key = T.queryToLoose(raw), low = raw.toLowerCase();
+    if (!raw || key.length < 3) { stBox.hidden = true; return; }
+    if (!stot) stot = fetch(ROOT + "data/stotras.json").then(function (r) { return r.json(); }).catch(function () { stot = null; return []; });
+    stot.then(function (rows) {
+      if (q.value.trim() !== raw) return;
+      var sc = (window.VRPrefs && window.VRPrefs.get().script) || "knda"; if (sc.indexOf("-") > 0) sc = sc.split("-")[0];
+      var hits = rows.filter(function (r) {
+        var k = T.looseForIndex(T.iastToSlp1([r.n, r.by, r.to].join(" ").toLowerCase()));
+        return k.indexOf(key) >= 0 || r.e.toLowerCase().indexOf(low) >= 0;
+      }).slice(0, 6);
+      stBox.textContent = ""; stBox.hidden = !hits.length;
+      if (!hits.length) return;
+      stBox.appendChild(el("p", "st-hits-t", "Stotras"));
+      hits.forEach(function (r) {
+        var a = el("a", "st-hit"); a.href = ROOT + "appendix/stotras/#" + r.id;
+        a.appendChild(el("b", null, T.render(T.iastToSlp1(r.n), sc, false)));
+        a.appendChild(el("small", null, r.e + " · " + (r.w === "mbh" ? "Mahābhārata" : "Rāmāyaṇa")));
+        stBox.appendChild(a);
+      });
+    });
   }
 
   function schedule() { clearTimeout(timer); timer = setTimeout(run, 180); }

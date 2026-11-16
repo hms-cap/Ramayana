@@ -1,0 +1,6 @@
+{"_comment": "Stotras appendix. loc: verse range per edition (vu Traditional, ce Critical; null if absent). gita: the same range in the Gītā reader (adhyāya s). Checked by: python etl/stotras.py check", "stotras": [
+ {"id": "aditya-hrdaya", "work": "ram", "name_iast": "Ādityahṛdayam", "name_en": "Heart of the Sun", "by": "Agastya", "to": "Sūrya", "kind": "stotra",
+  "opening": {"vu": "tato yuddhapariśrantaṃ"}, "loc": {"vu": {"k": 6, "s": 107, "v": [1, 31]}, "ce": null}, "about": {"en": "", "kn": ""}, "sources": []},
+ {"id": "vishnu-sahasranama", "work": "mbh", "name_iast": "Viṣṇusahasranāma", "name_en": "Thousand names of Viṣṇu", "by": "Bhīṣma", "to": "Viṣṇu", "kind": "sahasranama",
+  "opening": {"vu": "viśvaṃ viṣṇur vaṣaṭkāro"}, "loc": {"vu": {"k": 13, "s": 254, "v": [16, 122]}, "ce": {"k": 13, "s": 135, "v": [14, 120]}}, "about": {"en": "", "kn": ""}, "sources": []}
+]}

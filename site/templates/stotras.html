@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "_art.html" import workchips %}
+{% block title %}Stotras — ಇತಿಹಾಸ{% endblock %}
+{% block main %}
+{{ workchips(W, works_list, root, chip_on) }}
+<article class="prose appx stotras">
+  <p class="crumbs-l"><a href="../">{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }}</a> ›</p>
+  <h1>{{ sx("ಸ್ತೋತ್ರಗಳು", "स्तोत्राणि", "Stotras") }} <small>Pariśiṣṭa</small></h1>
+  <p>The well-known hymns of praise inside the two epics: who sings them, to whom, and where. Tap one to read it; its verses are marked in the text.</p>
+  <div class="seg cw-seg" role="tablist" aria-label="Work">
+    {% for s in secs %}<a href="#{{ s.work }}" role="tab" data-cw-tab="{{ s.work }}">{{ work_sx(s.W) }} <em>{{ s.n }}</em></a>{% endfor %}
+  </div>
+  {% for s in secs %}
+  <section class="cw-sec" data-cw-sec="{{ s.work }}" aria-label="{{ s.W.en }}">
+    <h2 class="cw-h">{{ work_sx(s.W) }} <small>{{ s.W.en }}</small></h2>
+    {% for g in s.groups %}
+    <h3 class="grp"><span class="g-kn">{{ sx(g.u.kn, g.u.deva, g.u.en) }}</span> <span class="g-en">{{ s.W.Unit }} {{ g.u.n }}</span></h3>
+    <ul class="st-list">
+    {% for r in g.rows %}
+      <li class="st" id="{{ r.st.id }}">
+        <a class="st-main" href="{{ r.href }}">
+          <b class="st-name">{{ r.name }}</b>
+          <span class="st-en">{{ r.st.name_en }}</span>
+          <span class="st-who">{{ r.by }} <span aria-label="to">→</span> {{ r.to }} · <span class="st-kind">{{ r.kind }}</span></span>
+          {% if r.open %}<span class="st-open">{{ r.open }} …</span>{% endif %}
+          {% if r.st.about and r.st.about.kn %}<span class="st-about" lang="kn">{{ r.st.about.kn }}</span>{% endif %}
+          {% if r.st.about and r.st.about.en %}<span class="st-about">{{ r.st.about.en }}</span>{% endif %}
+        </a>
+        <p class="st-loc">{% for l in r.links %}<a href="{{ l.href }}">{{ l.name }} {{ l.ref }} <small>({{ l.n }} verses)</small></a>{% endfor %}{% if r.gita %}<a href="{{ r.gita.href }}">Gītā {{ r.gita.ref }}</a>{% endif %}{% if r.only %}<span class="st-only">Only in the {{ r.only }}</span>{% endif %}</p>
+      </li>
+    {% endfor %}
+    </ul>
+    {% endfor %}
+  </section>
+  {% endfor %}
+  <p class="hint">Which hymns count as well known follows Gita Press and the common stotra collections. Verse ranges were checked against both texts here; the notes are written by Claude and have not yet been reviewed.</p>
+</article>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}static/characters.js"></script>
+<script>(function () {  // #stotra-id (from search): open its work's tab and scroll to it
+  var id = decodeURIComponent(location.hash.slice(1)), li = id && document.getElementById(id);
+  if (!li || !li.classList.contains("st")) return;
+  var sec = li.closest("[data-cw-sec]"), tab = sec && document.querySelector('[data-cw-tab="' + sec.getAttribute("data-cw-sec") + '"]');
+  if (tab) tab.click();
+  li.classList.add("st-now"); li.scrollIntoView({ block: "center" });
+})();</script>{% endblock %}

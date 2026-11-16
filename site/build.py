@@ -117,7 +117,7 @@ def load_recs(W: dict, ed_id: str) -> list[dict]:
 
 
 # the Pariśiṣṭa (appendix) chip beside the two works; its pages are built by build_appendix()
-APPENDIX = dict(id="app", prefix="appendix/", kn_chip="\u0caa\u0cb0\u0cbf\u0cb6\u0cbf\u0cb7\u0ccd\u0c9f", short_en="Pariśiṣṭa", sub_en="Chandas, Characters", theme="#1F4B3F")
+APPENDIX = dict(id="app", prefix="appendix/", kn_chip="\u0caa\u0cb0\u0cbf\u0cb6\u0cbf\u0cb7\u0ccd\u0c9f", short_en="Pariśiṣṭa", sub_en="Chandas, Characters, Stotras", theme="#1F4B3F")
 
 
 def load_editions(W=None):
@@ -602,6 +602,7 @@ def build(out: Path, only: str | None = None) -> None:
     if only is None:
         build_appendix(out, env, ram["base"])
         build_characters(out, env, ram["base"])
+        build_stotras(out, env, ram["base"])
     write_units(out)
     if only is None:
         write_daily(out)
@@ -959,6 +960,73 @@ def build_appendix(out: Path, env: Environment, base: dict) -> None:
         write(f"appendix/chandas/{m['slug']}", "metre.html", 3, m=m, pada=pada.get(m["name"]), sections=sections, chandas_up="../")
 
 
+STOTRA_KIND = {"stotra": ("ಸ್ತೋತ್ರ", "स्तोत्रम्", "Stotra"), "stuti": ("ಸ್ತುತಿ", "स्तुतिः", "Stuti"),
+               "sahasranama": ("ಸಹಸ್ರನಾಮ", "सहस्रनाम", "Sahasranāma"), "namavali": ("ನಾಮಾವಳಿ", "नामावलिः", "Nāmāvali"),
+               "prayer": ("ಪ್ರಾರ್ಥನೆ", "प्रार्थना", "Prayer")}
+
+
+def build_stotras(out: Path, env: Environment, base: dict) -> None:
+    """Pariśiṣṭa -> Stotras: the well-known hymns inside the two epics (data/stotras.json), grouped by kāṇḍa / parva,
+    each linking into the reader at its verses (#vA-B: the reader highlights the range)."""
+    p = ROOT / "data" / "stotras.json"
+    if not p.exists():
+        return
+    data = json.loads(p.read_text(encoding="utf-8"))["stotras"]
+    s3 = lambda iast: sx(slp1_to_brahmic(iast_to_slp1(iast), "knda"), slp1_to_brahmic(iast_to_slp1(iast), "deva"), iast)
+    need = defaultdict(set)
+    for st in data:
+        for ed, loc in st["loc"].items():
+            if loc:
+                need[(st["work"], ed)].add((loc["k"], loc["s"], loc["v"][0]))
+    first = {}
+    for (w, ed), keys in need.items():
+        for line in open(norm_path(WORKS[w], ed), encoding="utf-8"):
+            r = json.loads(line)
+            if (r["k"], r["s"], r["v"]) in keys:
+                first[(w, ed, r["k"], r["s"], r["v"])] = r
+    secs = []
+    for w in EPICS:
+        W, eds = WORKS[w], {e["id"]: e for e in load_editions(WORKS[w])}
+        groups = defaultdict(list)
+        for st in data:
+            if st["work"] != w:
+                continue
+            links = []
+            for ed in ("vu", "ce"):
+                loc = st["loc"].get(ed)
+                if not loc:
+                    continue
+                a, b = loc["v"]
+                ref = f'{loc["k"]}.{loc["s"]}.{a}–{b}' if b != a else f'{loc["k"]}.{loc["s"]}.{a}'
+                links.append(dict(ed=ed, name=eds[ed]["short"], ref=ref, n=b - a + 1,
+                                  href=f'../../{W["prefix"]}{ed}/{loc["k"]}/{loc["s"]}/#v{a}-{b}'))
+            if not links:
+                continue
+            ed0 = links[0]["ed"]
+            loc0 = st["loc"][ed0]
+            r = first.get((w, ed0, loc0["k"], loc0["s"], loc0["v"][0]))
+            open_ = None
+            if r:
+                l1 = iast_to_slp1(r["lines"][0][0] if r["lines"] and r["lines"][0] else "")
+                open_ = sx(render(l1, "knda"), render(l1, "deva"), render(l1, "iast"))
+            g = st.get("gita")
+            kind = STOTRA_KIND.get(st.get("kind"), STOTRA_KIND["stotra"])
+            groups[loc0["k"]].append(dict(
+                st=st, name=s3(st["name_iast"]), by=s3(st["by"]), to=s3(st["to"]), kind=sx(*kind), open=open_, links=links, s=loc0["s"],
+                href=links[0]["href"], gita=dict(href=f'../../gita/vu/1/{g["s"]}/#v{g["v"][0]}-{g["v"][1]}', ref=f'{g["s"]}.{g["v"][0]}–{g["v"][1]}') if g else None,
+                only=(eds[links[0]["ed"]]["short"] if len(links) == 1 else None)))
+        gl = [dict(u=unit_info(W, k), rows=sorted(groups[k], key=lambda x: x["s"])) for k in sorted(groups)]
+        secs.append(dict(work=w, W=W, groups=gl, n=sum(len(x["rows"]) for x in gl)))
+    rel = out / "appendix" / "stotras" / "index.html"
+    rel.parent.mkdir(parents=True, exist_ok=True)
+    ctx = {**base, "page": "appendix", "chip_on": "app", "wroot": "../../", "root": "../../", "up": "../", "secs": secs}
+    rel.write_text(env.get_template("stotras.html").render(**ctx), encoding="utf-8")
+    # a small index for site search
+    (out / "data" / "stotras.json").write_text(json.dumps([dict(id=st["id"], w=st["work"], n=st["name_iast"], e=st["name_en"], by=st["by"], to=st["to"])
+                                                          for st in data], ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"  stotras: {len(data)}")
+
+
 def build_characters(out: Path, env: Environment, base: dict) -> None:
     """Pariśiṣṭa -> Characters: an index of both epics, one page per character (relationship circle, key moments,
     mentions), family trees, and names.json per work (the word panel links a lemma to its character; search uses it).
@@ -1064,7 +1132,7 @@ def build_characters(out: Path, env: Environment, base: dict) -> None:
 
 def write_pwa(out: Path, done: list) -> None:
     """Service worker (with its shell list), manifest, and the offline download packs."""
-    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/"] + CHAR_SHELL
+    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/", "appendix/stotras/", "data/stotras.json"] + CHAR_SHELL
     for d in done:
         pre = d["W"]["prefix"]
         nu = len(d["W"]["units"])
@@ -1138,5 +1206,6 @@ if __name__ == "__main__":
         ram = build_work_base()
         build_appendix(out, e, ram)
         build_characters(out, e, ram)
+        build_stotras(out, e, ram)
     else:
         build(Path(a.out), a.only)
