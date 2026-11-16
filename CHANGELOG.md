@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.18.2 — 2026-11-16
+- Pariśiṣṭa pages (Chandas, Characters, Stotras, Gītās) have a row of chips to switch between them.
+
 ## 0.18.1 — 2026-11-16
 - Pariśiṣṭa: the four entries are now chips with an icon, a colour, a short line and a count (metres, hymns, gītās).
 

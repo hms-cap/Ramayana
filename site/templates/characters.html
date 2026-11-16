@@ -1,10 +1,11 @@
 {% extends "base.html" %}
-{% from "_art.html" import workchips %}
+{% from "_art.html" import workchips, appx_chips %}
 {% block title %}Characters — ಇತಿಹಾಸ{% endblock %}
 {% block main %}
 {{ workchips(W, works_list, root, chip_on) }}
 <article class="prose appx chars">
   <p class="crumbs-l"><a href="../">{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }}</a> ›</p>
+  {{ appx_chips("characters") }}
   <h1>{{ sx("ಪಾತ್ರಗಳು", "पात्राणि", "Characters") }} <small>Pariśiṣṭa</small></h1>
   <p>Who is who in the two epics: a line on each person, how they are related, key moments with the verse to read, and how often the name is used in each part of the text. Choose a work, then a name.</p>
   <div class="seg cw-seg" role="tablist" aria-label="Work">

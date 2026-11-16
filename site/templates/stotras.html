@@ -1,10 +1,11 @@
 {% extends "base.html" %}
-{% from "_art.html" import workchips %}
+{% from "_art.html" import workchips, appx_chips %}
 {% block title %}{{ P.title[2] }} — ಇತಿಹಾಸ{% endblock %}
 {% block main %}
 {{ workchips(W, works_list, root, chip_on) }}
 <article class="prose appx stotras">
   <p class="crumbs-l"><a href="../">{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }}</a> ›</p>
+  {{ appx_chips(P.name) }}
   <h1>{{ P.title_sx }} <small>Pariśiṣṭa</small></h1>
   <p>{{ P.intro }}</p>
 

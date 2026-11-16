@@ -1,10 +1,11 @@
 {% extends "base.html" %}
-{% from "_art.html" import workchips %}
+{% from "_art.html" import workchips, appx_chips %}
 {% block title %}Chandas, index of metres — ಇತಿಹಾಸ{% endblock %}
 {% block main %}
 {{ workchips(W, works_list, root, chip_on) }}
 <article class="prose appx">
   <p class="crumbs-l"><a href="../">{{ sx("ಪರಿಶಿಷ್ಟ", "परिशिष्टम्", "Pariśiṣṭa") }}</a> ›</p>
+  {{ appx_chips("chandas") }}
   <h1>{{ sx("ಛಂದಸ್ಸು", "छन्दः", "Chandas") }} <small>Index of metres</small></h1>
   <p>Chandas is the measure of a verse: how many syllables each pāda has, and which are short (laghu, <span lang="sa">।</span>) and which long (guru, <span lang="sa">ऽ</span>).
      The metre of every verse was found by the app's own scansion, so it is a reading aid and not an editor's ruling. Choose a metre to see how it is built, how many verses use it in each part of each text, and verses to read.</p>

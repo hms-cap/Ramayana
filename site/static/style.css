@@ -1016,3 +1016,8 @@ a.crow:hover .cn { color: var(--accent); }
 :root[data-theme="dark"] .c-sto { --ac: #E2B65A; --ac-soft: #3A2E18; } :root[data-theme="dark"] .c-git { --ac: #82C08F; --ac-soft: #1F3125; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .c-met { --ac: #7DB5DA; --ac-soft: #1E2F3A; } :root:not([data-theme="light"]) .c-chr { --ac: #E59A6E; --ac-soft: #3A2419; }
   :root:not([data-theme="light"]) .c-sto { --ac: #E2B65A; --ac-soft: #3A2E18; } :root:not([data-theme="light"]) .c-git { --ac: #82C08F; --ac-soft: #1F3125; } }
+
+.apchips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.2rem 0 0.8rem; }
+.apchip { padding: 0.3rem 0.85rem; border-radius: 99px; font: 600 0.8rem var(--f-ui); text-decoration: none; background: var(--ac-soft); color: var(--ac); box-shadow: 0 0 0 1px transparent; }
+.apchip.on { background: var(--ac); color: var(--paper); }
+.apchip:focus-visible { box-shadow: 0 0 0 2px var(--ac); }

@@ -40,3 +40,10 @@
 {% macro gita_cards(chs, counts, wroot) %}
 {% for c in chs %}{{ kcard(c, counts.vu[c.n], counts.ce[c.n], tag='a', unit='verses', href=wroot ~ 'vu/1/' ~ c.n ~ '/') }}{% endfor %}
 {% endmacro %}
+{% macro appx_chips(on) %}
+<nav class="apchips" aria-label="Pariśiṣṭa">
+{% for id, href, cls, en in [("chandas","../chandas/","c-met","Chandas"),("characters","../characters/","c-chr","Characters"),("stotras","../stotras/","c-sto","Stotras"),("gitas","../gitas/","c-git","Gītās")] %}
+  <a class="apchip {{ cls }}{% if id == on %} on{% endif %}" href="{{ href }}"{% if id == on %} aria-current="page"{% endif %}>{{ en }}</a>
+{% endfor %}
+</nav>
+{% endmacro %}
