@@ -945,9 +945,12 @@ def build_appendix(out: Path, env: Environment, base: dict) -> None:
         ctx = {**shared, "wroot": "../" * depth, "root": "../" * depth, "up": "../", **kw}
         p.write_text(env.get_template(tpl).render(**ctx), encoding="utf-8")
 
-    write("appendix", "appendix.html", 1, n_metres=len(present),
-          n_stotras=len(json.loads((ROOT / "data" / "stotras.json").read_text(encoding="utf-8"))["stotras"]),
-          n_gitas=len(json.loads((ROOT / "data" / "gitas.json").read_text(encoding="utf-8"))["gitas"]))
+    s3 = lambda iast: sx(slp1_to_brahmic(iast_to_slp1(iast), "knda"), slp1_to_brahmic(iast_to_slp1(iast), "deva"), iast)
+    chips = {}
+    for key, fn in (("stotras", "stotras.json"), ("gitas", "gitas.json")):
+        rows = json.loads((ROOT / "data" / fn).read_text(encoding="utf-8"))[key]
+        chips[key] = [dict(id=r["id"], name=s3(r["name_iast"])) for r in rows]
+    write("appendix", "appendix.html", 1, n_metres=len(present), n_stotras=len(chips["stotras"]), n_gitas=len(chips["gitas"]), chips=chips)
     index = []
     for m in present:
         c = counts(m)

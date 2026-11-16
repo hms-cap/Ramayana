@@ -42,7 +42,7 @@
 {% endmacro %}
 {% macro appx_chips(on) %}
 <nav class="apchips" aria-label="Pariśiṣṭa">
-{% for id, href, cls, en in [("chandas","../chandas/","c-met","Chandas"),("characters","../characters/","c-chr","Characters"),("stotras","../stotras/","c-sto","Stotras"),("gitas","../gitas/","c-git","Gītās")] %}
+{% for id, href, cls, en in [("stotras","../stotras/","c-sto","Stotras"),("gitas","../gitas/","c-git","Gītās"),("characters","../characters/","c-chr","Characters"),("chandas","../chandas/","c-met","Chandas")] %}
   <a class="apchip {{ cls }}{% if id == on %} on{% endif %}" href="{{ href }}"{% if id == on %} aria-current="page"{% endif %}>{{ en }}</a>
 {% endfor %}
 </nav>

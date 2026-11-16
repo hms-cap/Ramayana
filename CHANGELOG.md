@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.18.3 — 2026-11-16
+- Pariśiṣṭa home: Stotras and Gītās come first, Chandas last; the Stotras and Gītās rows carry chips for the first eight items (opening that item in its list) and "+N more"; Characters has a chip for each epic. The switch chips on the sub-pages follow the same order.
+
 ## 0.18.2 — 2026-11-16
 - Pariśiṣṭa pages (Chandas, Characters, Stotras, Gītās) have a row of chips to switch between them.
 

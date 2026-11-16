@@ -1002,14 +1002,14 @@ a.crow:hover .cn { color: var(--accent); }
 
 /* Pariśiṣṭa chips (v0.18.1) */
 .achips { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 0.7rem; }
-.achips a.achip { display: flex; align-items: center; gap: 0.75rem; padding: 0.8rem 0.9rem; border-radius: 20px; box-shadow: 0 0 0 1px var(--rule); position: relative; min-width: 0; }
+.achips li.achip { display: flex; align-items: center; gap: 0.75rem; padding: 0.8rem 0.9rem; border-radius: 20px; box-shadow: 0 0 0 1px var(--rule); position: relative; min-width: 0; }
 .achip .aic { width: 46px; height: 46px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--ac-soft); color: var(--ac); }
 .achip .aic svg { width: 24px; height: 24px; }
 .achip .atx { min-width: 0; flex: 1; }
 .achip .atx b { display: block; font: 400 1.3rem/1.2 var(--f-knda); overflow-wrap: anywhere; }
 .achips .achip .atx > span { display: block; font: 500 0.8rem/1.35 var(--f-ui); color: var(--muted); margin-top: 0.15rem; }
 .achip .apill { flex: none; align-self: flex-start; font: 600 0.68rem var(--f-ui); font-style: normal; padding: 0.15rem 0.55rem; border-radius: 99px; background: var(--ac-soft); color: var(--ac); white-space: nowrap; }
-.achip:hover, .achip:focus-visible { box-shadow: 0 0 0 2px var(--ac); }
+.achip:hover, .achip:focus-within { box-shadow: 0 0 0 2px var(--ac); }
 .c-met { --ac: #2E6A8E; --ac-soft: #DCE9F1; } .c-chr { --ac: #9C3D1E; --ac-soft: #F4E0D6; }
 .c-sto { --ac: #A86A12; --ac-soft: #F1E2C2; } .c-git { --ac: #3C7A4A; --ac-soft: #DDEBDF; }
 :root[data-theme="dark"] .c-met { --ac: #7DB5DA; --ac-soft: #1E2F3A; } :root[data-theme="dark"] .c-chr { --ac: #E59A6E; --ac-soft: #3A2419; }
@@ -1021,3 +1021,14 @@ a.crow:hover .cn { color: var(--accent); }
 .apchip { padding: 0.3rem 0.85rem; border-radius: 99px; font: 600 0.8rem var(--f-ui); text-decoration: none; background: var(--ac-soft); color: var(--ac); box-shadow: 0 0 0 1px transparent; }
 .apchip.on { background: var(--ac); color: var(--paper); }
 .apchip:focus-visible { box-shadow: 0 0 0 2px var(--ac); }
+
+.achips li.achip { display: block; padding: 0.8rem 0.9rem; background: var(--card); }
+.achip .ahead { display: flex; align-items: center; gap: 0.75rem; color: var(--ink); text-decoration: none; min-width: 0; }
+.achs { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.7rem 0 0; }
+.ach { padding: 0.25rem 0.7rem; border-radius: 99px; font: 400 0.95rem var(--f-knda); text-decoration: none; background: var(--ac-soft); color: var(--ac); overflow-wrap: anywhere; }
+.ach.more { font: 600 0.75rem var(--f-ui); background: transparent; box-shadow: 0 0 0 1px var(--ac); }
+.ach:hover, .ach:focus-visible { box-shadow: 0 0 0 2px var(--ac); }
+.appx-list .achip a.ahead { display: flex; padding: 0; background: none; box-shadow: none; border-radius: 0; }
+.appx-list .achip a.ach { display: inline-block; padding: 0.25rem 0.7rem; border-radius: 99px; box-shadow: none; background: var(--ac-soft); color: var(--ac); }
+.appx-list .achip a.ach.more { background: transparent; box-shadow: 0 0 0 1px var(--ac); font: 600 0.75rem var(--f-ui); padding: 0.35rem 0.7rem; }
+.appx-list .achip a.ach:hover, .appx-list .achip a.ach:focus-visible { box-shadow: 0 0 0 2px var(--ac); }
