@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.16.3 — 2026-11-16
+- A stotra that begins deep in a chapter now opens at its first verse; before, the page could scroll to the end of the stotra.
+
 ## 0.16.2 — 2026-11-16
 - Opening a stotra shows only its own verses, not the ones before and after in the chapter. A line above says how many, with "Show the whole chapter" to see the rest.
 

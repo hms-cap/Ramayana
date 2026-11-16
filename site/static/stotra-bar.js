@@ -114,10 +114,15 @@
   window.addEventListener("hashchange", paint);
   document.addEventListener("prefs-changed", paint);
 
-  if (!range()) { if (!/#v\d+-\d+/.test(location.hash)) return; }
+  if (!range()) return;
+  // hide the other verses at once (before the first scroll to the stotra), so the page starts at its first verse;
+  // paint() keeps this if the range is a known stotra and clears it otherwise
+  document.body.classList.add("in-stotra");
+  function top() { var f = document.querySelector(".verse.st-first"); if (f) { f.scrollIntoView({ block: "start" }); window.scrollBy(0, -((bar ? bar.getBoundingClientRect().bottom : 0) + 4)); } }
   fetch(ROOT + "data/stotras.json").then(function (r) { return r.json(); }).then(function (list) {
     idx = list; paint();
+    if (!cur) document.body.classList.remove("in-stotra"); else top();
     var want = null; try { want = sessionStorage.getItem("vr.stchant"); sessionStorage.removeItem("vr.stchant"); } catch (e) { /* ignore */ }
     if (cur && want && want === location.pathname + location.hash) chant(cur, true);
-  }).catch(function () { /* offline without the index: the verses are still marked */ });
+  }).catch(function () { document.body.classList.remove("in-stotra"); });
 })();

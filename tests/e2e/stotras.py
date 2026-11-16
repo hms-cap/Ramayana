@@ -50,3 +50,14 @@ with sync_playwright() as p:
     assert pg.evaluate("document.documentElement.scrollWidth <= innerWidth"), "overflow"
     print("errors:", errs); assert not errs
     b.close()
+
+# a stotra that starts deep in its chapter opens at its first verse, even when the index loads slowly
+import time
+with sync_playwright() as p:
+    b = p.chromium.launch(); pg = b.new_context(viewport={"width": 390, "height": 800}, service_workers="block").new_page()
+    pg.route("**/data/stotras.json", lambda r: (time.sleep(1.2), r.continue_()))
+    for sid in ("bhishmastavaraja", "daksha-shivasahasranama"):
+        pg.goto(B + "/appendix/stotras/#" + sid); pg.click(".st-now [data-st-read].stb"); pg.wait_for_selector(".stbar"); pg.wait_for_timeout(500)
+        t = pg.evaluate("document.querySelector('.verse.st-first').getBoundingClientRect().top - document.querySelector('.stbar').getBoundingClientRect().bottom")
+        print(sid, "first verse below bar by", round(t)); assert 0 <= t < 160, sid
+    b.close()
