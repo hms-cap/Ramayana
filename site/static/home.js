@@ -10,14 +10,7 @@
   function getJSON(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
   function lastPlace() { try { return JSON.parse(localStorage.getItem(LAST) || "null"); } catch (e) { return null; } }
 
-  /* ---- Back button: history.back() when we came from inside the site, else the parent page ---- */
-  document.addEventListener("click", function (e) {
-    var b = e.target.closest("[data-back]");
-    if (!b) return;
-    var same = false;
-    try { same = document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1; } catch (x) { /* ignore */ }
-    if (same) { e.preventDefault(); history.back(); }
-  });
+  /* ---- Back (‹) in the header always goes up one level (its href): sarga → kāṇḍa → Read → Home (v0.17) ---- */
 
   /* ---- badge on My ---- */
   function badge() {

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.17.0 — 2026-11-16
+- Back (‹) in the header now always goes up one level: sarga → kāṇḍa/parva list → Read → Home. It no longer goes to the edition page ("Traditional Text (Vulgate …)"), the Critical text or the previous sarga.
+- Previous / Next, swipes, the edition switch and the jump sheet replace the page instead of adding to history, so the phone's Back leaves reading in one step.
+- Sarga header: the breadcrumb is the work and the kāṇḍa; a small edition switch (shown only when the other text is switched on) opens the same sarga in the other text, with ⓘ linking to About → Editions.
+- Tap the sarga title (▾) to jump to any kāṇḍa / sarga from a grid (last read underlined).
+- Badges such as "Different reading in the Baroda Text" open a peek sheet with that verse and the differing words marked, instead of leaving your text.
+- Pages opened from a verse (characters, metres, stotras, search, Saved, About) show a "‹ Back to …" pill that returns to that verse.
+
 ## 0.16.3 — 2026-11-16
 - A stotra that begins deep in a chapter now opens at its first verse; before, the page could scroll to the end of the stotra.
 

@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% set up = '../' %}
+{% set up = wroot ~ 'read/' %}
 {% set cur_ed = ed.id %}
 {% set cur_k = kanda.n %}
 {% block title %}{{ kanda.kn }} — {{ kanda.en }} ({{ ed.short }}){% endblock %}
 {% block main %}
 <div class="listing">
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ wroot }}{{ ed.id }}/">{{ ed.short }}</a></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ wroot }}read/">{{ work_sx(W) }}</a></nav>
   <header class="kanda-head">
     <h1>{{ unit_sx(kanda) }}</h1>
     <p class="sub"><span lang="sa">{{ kanda.deva }}</span> <span class="en">{{ kanda.en }}</span></p>

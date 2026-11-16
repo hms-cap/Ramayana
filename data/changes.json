@@ -1,5 +1,13 @@
 [
  [
+  "0.17.0",
+  "2026-11-16",
+  [
+   "Back now always goes up one level (sarga → kāṇḍa → Read → Home), and the phone's Back leaves reading in one step.",
+   "Tap the sarga title to jump anywhere; other-text badges open a peek instead of leaving your text; a pill brings you back to the verse you were reading."
+  ]
+ ],
+ [
   "0.16.3",
   "2026-11-16",
   [

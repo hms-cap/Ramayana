@@ -393,6 +393,7 @@ def make_env() -> Environment:
 
 
 NO_WORDS_CE: set = set()
+NAV: dict = {}                       # work -> edition -> unit -> sarga numbers ([first, last] when contiguous), for the jump sheet
 GITA_START = {"ce": 23, "vu": 25}    # Bhīṣma Parva adhyāya where the Gītā begins in each Mahābhārata edition
 
 
@@ -447,6 +448,12 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
         for r in recs:
             by_sarga[(r["k"], r["s"])].append(r)
         sarga_keys = sorted(by_sarga)
+        nav = {}
+        for k in range(1, nu + 1):
+            ss = [s for (kk, s) in sarga_keys if kk == k]
+            if ss:
+                nav[str(k)] = [ss[0], ss[-1]] if ss == list(range(ss[0], ss[-1] + 1)) else ss
+        NAV.setdefault(W["id"], {})[ed["id"]] = nav
         titles = {}
         tpath = ROOT / "data" / "normalized" / f'{ed["id"]}_sargas.json'
         if G:
@@ -665,6 +672,8 @@ def write_units(out: Path) -> None:
         d[key] = {str(k): [kn, slp1_to_brahmic(iast_to_slp1(iast), "deva"), iast] for k, (iast, kn, en) in enumerate(W["units"], 1)}
     (out / "data").mkdir(parents=True, exist_ok=True)
     (out / "data" / "units.json").write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    if NAV:
+        (out / "data" / "nav.json").write_text(json.dumps(NAV, separators=(",", ":")), encoding="utf-8")
 
 
 def write_daily(out: Path) -> None:
@@ -1150,7 +1159,7 @@ def build_characters(out: Path, env: Environment, base: dict) -> None:
 
 def write_pwa(out: Path, done: list) -> None:
     """Service worker (with its shell list), manifest, and the offline download packs."""
-    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/", "appendix/stotras/", "data/stotras.json"] + CHAR_SHELL
+    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/", "appendix/stotras/", "data/stotras.json", "data/nav.json"] + CHAR_SHELL
     for d in done:
         pre = d["W"]["prefix"]
         nu = len(d["W"]["units"])

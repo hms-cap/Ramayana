@@ -10,12 +10,13 @@
 <div class="reader" data-chant data-root="{{ root }}" data-wroot="{{ wroot }}" data-edition="{{ ed.id }}" data-work="{{ W.id }}" data-citation="{{ ed.citation }}" data-src="{{ ed.short }} {% if W.single %}{{ W.short_en }} {{ s }}{% else %}{{ kanda.n }}.{{ s }}{% endif %}" data-k="{{ kanda.n }}" data-s="{{ s }}"
      data-title-knda="{{ kanda.kn }} · {{ head_kn }}" data-title-deva="{{ kanda.deva }} · {{ head_deva }}" data-title-iast="{{ kanda.iast }} · {{ head_iast }}">
   <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="{{ wroot }}{{ ed.id }}/">{{ ed.short }}</a>
-    <span aria-hidden="true">/</span>
-    <a href="../">{{ unit_sx(kanda) }}</a>
+    <a href="{{ wroot }}read/">{{ work_sx(W) }}</a>
+    {% if not W.single %}<span aria-hidden="true">›</span>
+    <a href="../">{{ unit_sx(kanda) }}</a>{% endif %}
   </nav>
   <header class="sarga-head">
-    <h1>{{ unit_sx(kanda) }} <span class="sarga-n">{{ sx(head_kn, head_deva, head_iast) }}</span></h1>
+    <h1><button type="button" class="jump-open" aria-haspopup="dialog" aria-label="Go to another {{ W.sub }}">{{ unit_sx(kanda) }} <span class="sarga-n">{{ sx(head_kn, head_deva, head_iast) }}</span><span class="jump-dd" aria-hidden="true">▾</span></button></h1>
+    <p class="edsw"><span class="edsw-cur">{{ ed.short }}</span>{% if alt_href %}<a class="edsw-go" data-ed="{{ other_id }}" data-replace href="{{ alt_href.href }}">⇄ {{ alt_href.label }} {{ alt_href.ref }}</a>{% else %}<span class="edsw-no" data-ed="{{ other_id }}">Not in the {{ other_label }}</span>{% endif %}<a class="edsw-i" href="{{ root }}about/#editions" aria-label="About the two texts">ⓘ</a></p>
     <div class="head-actions">
       <button type="button" class="chant-open act" aria-haspopup="dialog"><span lang="kn">ಪಠಣ</span> Chant view</button>
       <button type="button" class="pdf-btn act" data-nopdf>PDF</button>
@@ -95,10 +96,10 @@
   </ol>
 
   <nav class="pager" aria-label="{{ W.Sub }}s">
-    {% if prev %}<a rel="prev" href="{{ wroot }}{{ ed.id }}/{{ prev[0] }}/{{ prev[1] }}/"><span class="dir">Previous</span> {% if W.single %}{{ "Dhyānam" if prev[1] == 0 else W.Sub ~ " " ~ prev[1] }}{% else %}{{ prev[0] }}.{{ prev[1] }}{% endif %}</a>{% else %}<span></span>{% endif %}
-    {% if next %}<a rel="next" href="{{ wroot }}{{ ed.id }}/{{ next[0] }}/{{ next[1] }}/"><span class="dir">Next</span> {% if W.single %}{{ W.Sub }} {{ next[1] }}{% else %}{{ next[0] }}.{{ next[1] }}{% endif %}</a>{% endif %}
+    {% if prev %}<a rel="prev" data-replace href="{{ wroot }}{{ ed.id }}/{{ prev[0] }}/{{ prev[1] }}/"><span class="dir">Previous</span> {% if W.single %}{{ "Dhyānam" if prev[1] == 0 else W.Sub ~ " " ~ prev[1] }}{% else %}{{ prev[0] }}.{{ prev[1] }}{% endif %}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a rel="next" data-replace href="{{ wroot }}{{ ed.id }}/{{ next[0] }}/{{ next[1] }}/"><span class="dir">Next</span> {% if W.single %}{{ W.Sub }} {{ next[1] }}{% else %}{{ next[0] }}.{{ next[1] }}{% endif %}</a>{% endif %}
   </nav>
 </div>
 {% endblock %}
-{% block scripts %}<script src="{{ root }}static/chant.js"></script><script src="{{ root }}static/stotra-bar.js"></script>
+{% block scripts %}<script src="{{ root }}static/chant.js"></script><script src="{{ root }}static/stotra-bar.js"></script><script src="{{ root }}static/jump.js"></script><script src="{{ root }}static/peek.js"></script>
 <script src="{{ root }}static/dict.js"></script>{% endblock %}

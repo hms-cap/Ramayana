@@ -26,7 +26,7 @@ async def main():
 
         # hub and index
         await pg.goto(B + "appendix/")
-        assert await pg.locator(".appx-list li").count() == 2
+        assert await pg.locator(".appx-list li").count() == 3
         await pg.click(".appx-list a[href='characters/']")
         await pg.wait_for_url("**/appendix/characters/")
         n_ram = await pg.locator("[data-cw-sec=ram] .crow").count()
