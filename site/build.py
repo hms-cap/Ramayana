@@ -120,7 +120,7 @@ def load_recs(W: dict, ed_id: str) -> list[dict]:
 
 
 # the Pariśiṣṭa (appendix) chip beside the two works; its pages are built by build_appendix()
-APPENDIX = dict(id="app", prefix="appendix/", kn_chip="\u0caa\u0cb0\u0cbf\u0cb6\u0cbf\u0cb7\u0ccd\u0c9f", short_en="Pariśiṣṭa", sub_en="Chandas, Characters, Stotras", theme="#1F4B3F")
+APPENDIX = dict(id="app", prefix="appendix/", kn_chip="\u0caa\u0cb0\u0cbf\u0cb6\u0cbf\u0cb7\u0ccd\u0c9f", short_en="Pariśiṣṭa", sub_en="Chandas, Characters, Stotras, Gītās", theme="#1F4B3F")
 
 
 def load_editions(W=None):
@@ -972,7 +972,7 @@ def build_appendix(out: Path, env: Environment, base: dict) -> None:
         write(f"appendix/chandas/{m['slug']}", "metre.html", 3, m=m, pada=pada.get(m["name"]), sections=sections, chandas_up="../")
 
 
-STOTRA_KIND = {"stotra": ("ಸ್ತೋತ್ರ", "स्तोत्रम्", "Stotra"), "stuti": ("ಸ್ತುತಿ", "स्तुतिः", "Stuti"),
+STOTRA_KIND = {"gita": ("ಗೀತೆ", "गीता", "Gītā"), "stotra": ("ಸ್ತೋತ್ರ", "स्तोत्रम्", "Stotra"), "stuti": ("ಸ್ತುತಿ", "स्तुतिः", "Stuti"),
                "sahasranama": ("ಸಹಸ್ರನಾಮ", "सहस्रनाम", "Sahasranāma"), "namavali": ("ನಾಮಾವಳಿ", "नामावलिः", "Nāmāvali"),
                "prayer": ("ಪ್ರಾರ್ಥನೆ", "प्रार्थना", "Prayer")}
 
@@ -981,77 +981,129 @@ DEITY = {"vishnu": ("ವಿಷ್ಣು", "विष्णुः", "Viṣṇu"),
          "surya": ("ಸೂರ್ಯ", "सूर्यः", "Sūrya"), "other": ("ಇತರ", "इतरे", "Others")}
 
 
-def build_stotras(out: Path, env: Environment, base: dict) -> None:
-    """Pariśiṣṭa -> Stotras: the well-known hymns inside the two epics (data/stotras.json), grouped by kāṇḍa / parva,
-    each linking into the reader at its verses (#vA-B: the reader highlights the range)."""
-    p = ROOT / "data" / "stotras.json"
-    if not p.exists():
-        return
-    data = json.loads(p.read_text(encoding="utf-8"))["stotras"]
-    s3 = lambda iast: sx(slp1_to_brahmic(iast_to_slp1(iast), "knda"), slp1_to_brahmic(iast_to_slp1(iast), "deva"), iast)
-    need = defaultdict(set)
-    for st in data:
-        for ed, loc in st["loc"].items():
-            if loc:
-                need[(st["work"], ed)].add((loc["k"], loc["s"], loc["v"][0]))
-    first = {}
-    for (w, ed), keys in need.items():
+PASSAGES = {
+    "stotras": dict(file="stotras.json", key="stotras", t="s", title=("ಸ್ತೋತ್ರಗಳು", "स्तोत्राणि", "Stotras"),
+                    intro="The well-known hymns of praise inside the two epics. Read one with its verses marked in the text, or chant just the hymn.",
+                    hint="Which hymns count as well known follows Gita Press and the common stotra collections."),
+    "gitas": dict(file="gitas.json", key="gitas", t="g", title=("ಗೀತೆಗಳು", "गीताः", "Gītās"),
+                  intro="The teachings inside the Mahābhārata that are called gītās, besides the Bhagavadgītā. Read one with only its verses shown, part by part, or chant it.",
+                  hint="Which passages count as gītās follows the usual lists and the chapter colophons of the text."),
+}
+
+
+def _chapter_spans(w: str, eds) -> dict:
+    """(ed, k, s) -> (first verse ≥ 1, last verse) for every chapter of a work."""
+    sp = {}
+    for ed in eds:
         for line in open(norm_path(WORKS[w], ed), encoding="utf-8"):
             r = json.loads(line)
-            if (r["k"], r["s"], r["v"]) in keys:
-                first[(w, ed, r["k"], r["s"], r["v"])] = r
-    secs = []
-    for w in EPICS:
-        W, eds = WORKS[w], {e["id"]: e for e in load_editions(WORKS[w])}
-        groups = defaultdict(list)
-        for st in data:
-            if st["work"] != w:
-                continue
-            links = []
-            for ed in ("vu", "ce"):
-                loc = st["loc"].get(ed)
-                if not loc:
-                    continue
-                a, b = loc["v"]
-                ref = f'{loc["k"]}.{loc["s"]}.{a}–{b}' if b != a else f'{loc["k"]}.{loc["s"]}.{a}'
-                links.append(dict(ed=ed, name=eds[ed]["short"], ref=ref, n=b - a + 1,
-                                  href=f'../../{W["prefix"]}{ed}/{loc["k"]}/{loc["s"]}/#v{a}-{b}'))
-            if not links:
-                continue
-            ed0 = links[0]["ed"]
-            loc0 = st["loc"][ed0]
-            r = first.get((w, ed0, loc0["k"], loc0["s"], loc0["v"][0]))
-            open_ = None
-            if r:
-                words = re.sub(r"\s*\[\d+(?:_\d+)?\]", "", r["lines"][0][0] if r["lines"] and r["lines"][0] else "").split()
-                l1 = iast_to_slp1(" ".join(words[:8]))  # one line on the card: at most eight words
-                open_ = sx(render(l1, "knda"), render(l1, "deva"), render(l1, "iast"))
-            g = st.get("gita")
-            kind = STOTRA_KIND.get(st.get("kind"), STOTRA_KIND["stotra"])
-            groups[loc0["k"]].append(dict(
-                st=st, deity=st.get("deity", "other"), n=links[0]["n"], name=s3(st["name_iast"]), by=s3(st["by"]), to=s3(st["to"]), kind=sx(*kind), open=open_, links=links, s=loc0["s"],
-                href=links[0]["href"], gita=dict(href=f'../../gita/vu/1/{g["s"]}/#v{g["v"][0]}-{g["v"][1]}', ref=f'{g["s"]}.{g["v"][0]}–{g["v"][1]}') if g else None,
-                only=(eds[links[0]["ed"]]["short"] if len(links) == 1 else None)))
-        gl = [dict(u=unit_info(W, k), rows=sorted(groups[k], key=lambda x: x["s"])) for k in sorted(groups)]
-        rows = [x for g_ in gl for x in g_["rows"]]
-        deities = [(d, sx(*DEITY[d]), sum(1 for x in rows if x["deity"] == d)) for d in DEITY if any(x["deity"] == d for x in rows)]
-        secs.append(dict(work=w, W=W, groups=gl, n=len(rows), deities=deities))
-    rel = out / "appendix" / "stotras" / "index.html"
-    rel.parent.mkdir(parents=True, exist_ok=True)
-    ctx = {**base, "page": "appendix", "chip_on": "app", "wroot": "../../", "root": "../../", "up": "../", "secs": secs}
-    rel.write_text(env.get_template("stotras.html").render(**ctx), encoding="utf-8")
-    # the index for site search and for the reader's stotra bar (page order: by work, then position in the text)
-    order = [x["st"]["id"] for sec in secs for g_ in sec["groups"] for x in g_["rows"]]
-    by_id = {st["id"]: st for st in data}
+            key = (ed, r["k"], r["s"])
+            a, b = sp.get(key, (10**9, -1))
+            sp[key] = (min(a, r["v"]) if r["v"] >= 1 else a, max(b, r["v"]))
+    return sp
+
+
+def passage_parts(loc: dict, spans: dict, ed: str) -> list:
+    """A passage's verse range as parts, one per chapter: [[k, s, a, b], …]. loc = {k, s, v:[a, b], s2?} (b is in s2)."""
+    k, s, (a, b) = loc["k"], loc["s"], loc["v"]
+    s2 = loc.get("s2", s)
+    if s2 == s:
+        return [[k, s, a, b]]
+    out = [[k, s, a, spans[(ed, k, s)][1]]]
+    for x in range(s + 1, s2):
+        if (ed, k, x) in spans:
+            out.append([k, x, spans[(ed, k, x)][0], spans[(ed, k, x)][1]])
+    out.append([k, s2, spans[(ed, k, s2)][0], b])
+    return out
+
+
+def build_stotras(out: Path, env: Environment, base: dict) -> None:
+    """Pariśiṣṭa -> Stotras and Gītās: hymns (data/stotras.json) and the gītās inside the Mahābhārata (data/gitas.json),
+    grouped by kāṇḍa / parva, each linking into the reader at its verses (#vA-B: the reader shows just that range).
+    A passage may run over several chapters (loc.s2): it is then read part by part, one chapter at a time.
+    Writes appendix/stotras/, appendix/gitas/ and one index, data/stotras.json, for search and the reader's bar."""
+    s3 = lambda iast: sx(slp1_to_brahmic(iast_to_slp1(iast), "knda"), slp1_to_brahmic(iast_to_slp1(iast), "deva"), iast)
+    spans = {w: _chapter_spans(w, ("vu", "ce")) for w in EPICS}
     idx = []
-    for i in order:
-        st = by_id[i]
-        loc = {ed: [l["k"], l["s"], l["v"][0], l["v"][1]] for ed, l in st["loc"].items() if l}
-        if st.get("gita"):
-            loc["gita"] = [1, st["gita"]["s"], st["gita"]["v"][0], st["gita"]["v"][1]]
-        idx.append(dict(id=i, w=st["work"], n=st["name_iast"], e=st["name_en"], by=st["by"], to=st["to"], d=st.get("deity", "other"), loc=loc))
+    for name, C in PASSAGES.items():
+        p = ROOT / "data" / C["file"]
+        if not p.exists():
+            continue
+        data = json.loads(p.read_text(encoding="utf-8"))[C["key"]]
+        need = defaultdict(set)
+        for st in data:
+            for ed, loc in st["loc"].items():
+                if loc:
+                    need[(st["work"], ed)].add((loc["k"], loc["s"], loc["v"][0]))
+        first = {}
+        for (w, ed), keys in need.items():
+            for line in open(norm_path(WORKS[w], ed), encoding="utf-8"):
+                r = json.loads(line)
+                if (r["k"], r["s"], r["v"]) in keys:
+                    first[(w, ed, r["k"], r["s"], r["v"])] = r
+        secs, parts_of = [], {}
+        for w in EPICS:
+            W, eds = WORKS[w], {e["id"]: e for e in load_editions(WORKS[w])}
+            groups = defaultdict(list)
+            for st in data:
+                if st["work"] != w:
+                    continue
+                links, pts = [], {}
+                for ed in ("vu", "ce"):
+                    loc = st["loc"].get(ed)
+                    if not loc:
+                        continue
+                    pp = passage_parts(loc, spans[w], ed)
+                    pts[ed] = pp
+                    a, b = loc["v"]
+                    if len(pp) > 1:
+                        ref = f'{loc["k"]}.{loc["s"]}.{a} – {loc["k"]}.{loc["s2"]}.{b}'
+                    else:
+                        ref = f'{loc["k"]}.{loc["s"]}.{a}–{b}' if b != a else f'{loc["k"]}.{loc["s"]}.{a}'
+                    k0, s0, a0, b0 = pp[0]
+                    links.append(dict(ed=ed, name=eds[ed]["short"], ref=ref, n=sum(x[3] - x[2] + 1 for x in pp), chs=len(pp),
+                                      href=f'../../{W["prefix"]}{ed}/{k0}/{s0}/#v{a0}-{b0}'))
+                if not links:
+                    continue
+                parts_of[st["id"]] = pts
+                ed0 = links[0]["ed"]
+                loc0 = st["loc"][ed0]
+                r = first.get((w, ed0, loc0["k"], loc0["s"], loc0["v"][0]))
+                open_ = None
+                if r:
+                    pads = [x for ln in r["lines"] for x in ln if not re.fullmatch(r"\s*\S+\s+uvāca\s*", x)]   # skip "X uvāca"
+                    words = re.sub(r"\s*\[\d+(?:_\d+)?\]", "", pads[0] if pads else "").split()
+                    l1 = iast_to_slp1(" ".join(words[:8]))  # one line on the card: at most eight words
+                    open_ = sx(render(l1, "knda"), render(l1, "deva"), render(l1, "iast"))
+                g = st.get("gita")
+                kind = STOTRA_KIND.get(st.get("kind"), STOTRA_KIND["stotra"])
+                groups[loc0["k"]].append(dict(
+                    st=st, deity=st.get("deity", "other"), n=links[0]["n"], chs=links[0]["chs"], name=s3(st["name_iast"]), by=s3(st["by"]), to=s3(st["to"]),
+                    kind=sx(*kind), open=open_, links=links, s=loc0["s"], href=links[0]["href"],
+                    gita=dict(href=f'../../gita/vu/1/{g["s"]}/#v{g["v"][0]}-{g["v"][1]}', ref=f'{g["s"]}.{g["v"][0]}–{g["v"][1]}') if g else None,
+                    only=(eds[links[0]["ed"]]["short"] if len(links) == 1 else None)))
+            if not groups:
+                continue
+            gl = [dict(u=unit_info(W, k), rows=sorted(groups[k], key=lambda x: x["s"])) for k in sorted(groups)]
+            rows = [x for g_ in gl for x in g_["rows"]]
+            deities = [(d, sx(*DEITY[d]), sum(1 for x in rows if x["deity"] == d)) for d in DEITY if any(x["deity"] == d for x in rows)] if name == "stotras" else []
+            secs.append(dict(work=w, W=W, groups=gl, n=len(rows), deities=deities))
+        rel = out / "appendix" / name / "index.html"
+        rel.parent.mkdir(parents=True, exist_ok=True)
+        ctx = {**base, "page": "appendix", "chip_on": "app", "wroot": "../../", "root": "../../", "up": "../", "secs": secs,
+               "P": dict(C, title_sx=sx(*C["title"]), name=name)}
+        rel.write_text(env.get_template("stotras.html").render(**ctx), encoding="utf-8")
+        order = [x["st"]["id"] for sec in secs for g_ in sec["groups"] for x in g_["rows"]]
+        by_id = {st["id"]: st for st in data}
+        for i in order:
+            st = by_id[i]
+            parts = dict(parts_of[i])
+            if st.get("gita"):
+                parts["gita"] = [[1, st["gita"]["s"], st["gita"]["v"][0], st["gita"]["v"][1]]]
+            idx.append(dict(id=i, t=C["t"], l=f"appendix/{name}/", w=st["work"], n=st["name_iast"], e=st["name_en"], by=st["by"], to=st["to"],
+                            d=st.get("deity", "other"), parts=parts))
+        print(f"  {name}: {len(data)}")
     (out / "data" / "stotras.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    print(f"  stotras: {len(data)}")
 
 
 def build_characters(out: Path, env: Environment, base: dict) -> None:
@@ -1159,7 +1211,7 @@ def build_characters(out: Path, env: Environment, base: dict) -> None:
 
 def write_pwa(out: Path, done: list) -> None:
     """Service worker (with its shell list), manifest, and the offline download packs."""
-    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/", "appendix/stotras/", "data/stotras.json", "data/nav.json"] + CHAR_SHELL
+    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/", "appendix/stotras/", "appendix/gitas/", "data/stotras.json", "data/nav.json"] + CHAR_SHELL
     for d in done:
         pre = d["W"]["prefix"]
         nu = len(d["W"]["units"])

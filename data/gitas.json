@@ -1,0 +1,4 @@
+{"_comment": "seed for development; replaced by the researched list", "gitas": [
+ {"id": "anugita", "work": "mbh", "name_iast": "Anugītā", "name_en": "The Gītā retold", "by": "Kṛṣṇa", "to": "Arjuna", "kind": "gita",
+  "opening": {"ce": "janamejaya uvāca"}, "loc": {"ce": {"k": 14, "s": 16, "v": [1, 51], "s2": 18}}, "about": {"en": "x", "kn": "x"}, "sources": ["x"]}
+]}

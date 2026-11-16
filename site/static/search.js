@@ -92,11 +92,11 @@
       }).slice(0, 6);
       stBox.textContent = ""; stBox.hidden = !hits.length;
       if (!hits.length) return;
-      stBox.appendChild(el("p", "st-hits-t", "Stotras"));
+      stBox.appendChild(el("p", "st-hits-t", "Stotras and gītās"));
       hits.forEach(function (r) {
-        var a = el("a", "st-hit"); a.href = ROOT + "appendix/stotras/#" + r.id;
+        var a = el("a", "st-hit"); a.href = ROOT + (r.l || "appendix/stotras/") + "#" + r.id;
         a.appendChild(el("b", null, T.render(T.iastToSlp1(r.n), sc, false)));
-        a.appendChild(el("small", null, r.e + " · " + (r.w === "mbh" ? "Mahābhārata" : "Rāmāyaṇa")));
+        a.appendChild(el("small", null, r.e + " · " + (r.t === "g" ? "Gītā · " : "") + (r.w === "mbh" ? "Mahābhārata" : "Rāmāyaṇa")));
         stBox.appendChild(a);
       });
     });

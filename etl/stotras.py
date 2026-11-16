@@ -5,6 +5,7 @@
     python etl/stotras.py show ram vu 6 107 1 31                   # print verses 1–31 of 6.107 (omit range for the whole chapter)
     python etl/stotras.py heads mbh vu 13 149                      # first words of every verse in a chapter (to spot where a hymn starts/ends)
     python etl/stotras.py check [data/stotras.json]                # every entry: each edition's start verse contains its opening words
+    python etl/stotras.py check data/gitas.json                    # the same for the gītās (ranges may span chapters: loc.s2)
 """
 import json
 import re
@@ -58,26 +59,33 @@ def chapter(work, ed, k, s):
 
 
 def check(path):
-    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    """Every entry: each edition's range exists and its first verse holds the opening words.
+    loc = {k, s, v:[a, b]} or, over several chapters, {k, s, v:[a, b], s2} with a in s and b in s2."""
+    raw = json.loads(Path(path).read_text(encoding="utf-8"))
+    data = raw.get("stotras") or raw.get("gitas") or []
     bad = 0
-    for st in data["stotras"]:
+    for st in data:
         for ed in ("vu", "ce"):
             loc = st["loc"].get(ed)
             if not loc:
                 continue
-            ch = {r["v"]: r for r in chapter(st["work"], ed, loc["k"], loc["s"])}
             a, b = loc["v"]
-            if a not in ch or b not in ch:
-                print(f"BAD  {st['id']} {ed}: verse range {loc['k']}.{loc['s']}.{a}-{b} not in chapter (has {min(ch) if ch else '-'}–{max(ch) if ch else '-'})")
+            s2 = loc.get("s2", loc["s"])
+            ch = {r["v"]: r for r in chapter(st["work"], ed, loc["k"], loc["s"])}
+            ch2 = ch if s2 == loc["s"] else {r["v"]: r for r in chapter(st["work"], ed, loc["k"], s2)}
+            if s2 < loc["s"] or a not in ch or b not in ch2 or (s2 == loc["s"] and b < a):
+                print(f"BAD  {st['id']} {ed}: range {loc['k']}.{loc['s']}.{a} – {loc['k']}.{s2}.{b} not in the text "
+                      f"(chapter {loc['s']} has {min(ch) if ch else '-'}–{max(ch) if ch else '-'}, chapter {s2} has {min(ch2) if ch2 else '-'}–{max(ch2) if ch2 else '-'})")
                 bad += 1
                 continue
             op = st.get("opening", {}).get(ed) or st.get("opening", {}).get("vu") or st.get("opening", {}).get("ce")
+            span = f"{loc['k']}.{loc['s']}.{a}–{b}" if s2 == loc["s"] else f"{loc['k']}.{loc['s']}.{a} – {loc['k']}.{s2}.{b}"
             if op and not contains(ch[a], op):
                 print(f"BAD  {st['id']} {ed}: {loc['k']}.{loc['s']}.{a} does not contain opening {op!r}: {text(ch[a])}")
                 bad += 1
             else:
-                print(f"ok   {st['id']} {ed} {loc['k']}.{loc['s']}.{a}-{b} ({b - a + 1} vv)")
-    print(f"{len(data['stotras'])} entries, {bad} problems")
+                print(f"ok   {st['id']} {ed} {span}")
+    print(f"{len(data)} entries, {bad} problems")
     return bad
 
 

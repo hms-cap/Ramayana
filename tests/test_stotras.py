@@ -11,6 +11,8 @@ import stotras  # noqa: E402
 
 DATA = json.loads((ROOT / "data" / "stotras.json").read_text(encoding="utf-8"))["stotras"]
 KINDS = {"stotra", "stuti", "sahasranama", "namavali", "prayer"}
+GP = ROOT / "data" / "gitas.json"
+GITAS = json.loads(GP.read_text(encoding="utf-8"))["gitas"] if GP.exists() else []
 
 
 class TestStotras(unittest.TestCase):
@@ -32,6 +34,28 @@ class TestStotras(unittest.TestCase):
         buf = io.StringIO()
         with redirect_stdout(buf):
             bad = stotras.check(ROOT / "data" / "stotras.json")
+        self.assertEqual(bad, 0, buf.getvalue())
+
+
+class TestGitas(unittest.TestCase):
+    def test_fields(self):
+        ids = {st["id"] for st in DATA}
+        for st in GITAS:
+            with self.subTest(g=st["id"]):
+                self.assertNotIn(st["id"], ids); ids.add(st["id"])
+                self.assertEqual(st["work"], "mbh"); self.assertEqual(st["kind"], "gita")
+                for k in ("name_iast", "name_en", "by", "to"):
+                    self.assertTrue(st[k].strip())
+                self.assertTrue(st["loc"].get("vu") or st["loc"].get("ce"))
+                self.assertTrue(st["about"]["en"].strip() and st["about"]["kn"].strip(), "notes in both languages")
+                self.assertTrue(st["sources"])
+
+    def test_ranges(self):
+        if not GITAS:
+            self.skipTest("no gītās yet")
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            bad = stotras.check(GP)
         self.assertEqual(bad, 0, buf.getvalue())
 
 

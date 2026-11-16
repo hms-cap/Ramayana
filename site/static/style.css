@@ -996,3 +996,6 @@ a.crow:hover .cn { color: var(--accent); }
 .pk-open:hover { color: var(--paper); opacity: .9; }
 @media print { .pk-back, .pk-sheet { display: none !important; } }
 .sargas .inc { min-width: 0; } .sargas .first, .sargas .meta { overflow-wrap: anywhere; }
+.gitas-link { margin: 0.4rem 0 1rem; }
+.gitas-link a { display: block; padding: 0.75rem 1rem; border-radius: 16px; background: var(--card); color: var(--ink); text-decoration: none; box-shadow: 0 1px 3px rgba(30,34,53,.14); }
+.gitas-link b { display: block; font: 600 1.05rem var(--f-knda); } .gitas-link span { font: 500 0.85rem var(--f-ui); color: var(--muted); }

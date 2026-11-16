@@ -12,6 +12,7 @@
 
   function setHash(h) { try { history.replaceState(history.state, "", "#" + h); } catch (e) { /* ignore */ } }
   function show(w) {
+    if (!ids.length) { secs.forEach(function (s) { s.hidden = false; }); return; }   // one work only: no tabs
     secs.forEach(function (s) { s.hidden = s.dataset.stSec !== w; });
     tabs.forEach(function (t) { var on = t.dataset.stTab === w; t.classList.toggle("on", on); t.setAttribute("aria-selected", on ? "true" : "false"); });
   }

@@ -3,6 +3,7 @@
 {% block main %}
 {{ workchips(W, works_list, root) }}
 <div class="bmbar" data-bmbar hidden></div>
+{% if W.id == 'gita' %}<p class="gitas-link"><a href="{{ root }}appendix/gitas/"><b>{{ sx("ಮಹಾಭಾರತದ ಇತರ ಗೀತೆಗಳು", "महाभारते अन्याः गीताः", "Other gītās in the Mahābhārata") }}</b><span>Anugītā, Vyādha Gītā, Sanatsujātīya and more ›</span></a></p>{% endif %}
 {% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
 <section class="greet">
   <h1 lang="kn">ನಮಸ್ಕಾರ</h1>

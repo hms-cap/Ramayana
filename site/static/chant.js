@@ -108,6 +108,14 @@
     // a stotra (range mode): count recitations; the last one ticks the stotra off for today
     var R = model.range;
     function repCard() {
+      if (R.next) {   // a gītā read part by part: go on to the next part
+        return '<div class="ch-cards ch-repc"><p class="ch-end" lang="sa">॥</p><p class="ch-tally">End of part ' + R.part.i + " of " + R.part.n + "</p>" +
+          '<button type="button" class="ch-btn ch-done" data-rep-act="next">Next part ›</button><button type="button" class="ch-btn" data-rep-act="close">Close</button></div>';
+      }
+      if (R.part) {   // last part: no repetitions, Done ticks it off for today
+        return '<div class="ch-cards ch-repc"><p class="ch-end" lang="sa">॥ इति ॥</p>' + (R.count ? '<p class="ch-tally">Done' + (R.id && window.VRDaily && window.VRDaily.has(R.id) ? " · ticked for today" : "") + "</p>" +
+          '<button type="button" class="ch-btn" data-rep-act="close">Close</button>' : '<button type="button" class="ch-btn ch-done" data-rep-act="done">Done</button><button type="button" class="ch-btn" data-rep-act="close">Close</button>') + "</div>";
+      }
       var tgt = R.target, n = R.count;
       var btns = [1, 3, 11, 108].map(function (x) { return '<button type="button" data-rep="' + x + '" aria-pressed="' + (x === tgt) + '">×' + x + "</button>"; }).join("");
       var fin = n >= tgt;
@@ -126,7 +134,7 @@
     function sync() {
       el.style.setProperty("--chz", size + "px");
       el.dataset.sc = st.sc; el.classList.toggle("kn", st.sc === "knda");
-      el.querySelector(".ch-title").textContent = model.title[st.sc] + (R && R.target > 1 ? " · " + Math.min(R.count + 1, R.target) + "/" + R.target : "");
+      el.querySelector(".ch-title").textContent = model.title[st.sc] + (R && R.part ? " · " + R.part.i + "/" + R.part.n : R && R.target > 1 ? " · " + Math.min(R.count + 1, R.target) + "/" + R.target : "");
       el.querySelector(".ch-title").lang = langOf(st.sc);
       el.querySelectorAll("[data-l]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.l === layout ? "true" : "false"); });
       el.querySelectorAll("[data-s]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.s === st.sc ? "true" : "false"); });
@@ -238,6 +246,7 @@
       if (R && b.dataset.repAct === "done") return repDone();
       if (R && b.dataset.repAct === "again") { R.count = 0; place(0); render(false); body.scrollTop = 0; return; }
       if (R && b.dataset.repAct === "close") return view.close();
+      if (R && b.dataset.repAct === "next" && R.next) { var nx = R.next; teardown(true); return nx(); }
     });
     // swipes: sideways, at least 70 px, not on the header
     var sx = null, sy = null;
@@ -324,7 +333,7 @@
     m.parts = [{ group: 1, verses: m.verses }]; m.prev = m.next = null;
     if (opt.title) m.title = opt.title;
     var tg = 1; try { tg = +localStorage.getItem("vr.reps") || 1; } catch (e) { /* ignore */ }
-    m.range = { target: [1, 3, 11, 108].indexOf(tg) >= 0 ? tg : 1, count: 0, id: opt.id, onDone: opt.onDone };
+    m.range = { target: opt.part ? 1 : ([1, 3, 11, 108].indexOf(tg) >= 0 ? tg : 1), count: 0, id: opt.id, onDone: opt.onDone, part: opt.part, next: opt.next };
     if (opt.back) { ssSet({ moves: 1, origin: location.href }); openChant(m, 0, true); }
     else openChant(m, 0, false);
   };
