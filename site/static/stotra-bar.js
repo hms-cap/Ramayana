@@ -26,8 +26,15 @@
   }
   function listHref(st) { return ROOT + (st.l || "appendix/stotras/") + "#" + st.id; }
   function isGita(st) { return st.t === "g"; }
+  // passages can overlap (the Brāhmaṇagītā is inside the Anugītā): the one opened last wins ("vr.stid", this tab)
+  function prefId() { try { return sessionStorage.getItem("vr.stid"); } catch (e) { return null; } }
+  function setId(id) { try { sessionStorage.setItem("vr.stid", id); } catch (e) { /* ignore */ } }
   function find(list, h, r) {   // → {st, key, i (part), n (parts)}
-    var key = h.w === "gita" ? "gita" : h.ed;
+    var key = h.w === "gita" ? "gita" : h.ed, want = prefId();
+    if (want) {
+      var pick = list.filter(function (x) { return x.id === want; });
+      list = pick.concat(list.filter(function (x) { return x.id !== want; }));
+    }
     for (var j = 0; j < list.length; j++) {
       var st = list[j], pp = st.parts[key];
       if (!pp || (h.w !== "gita" && st.w !== h.w)) continue;
@@ -69,6 +76,7 @@
     clear();
     var h = here(), r = range(); if (!h || !r || !idx) return;
     cur = find(idx, h, r); if (!cur) return;
+    setId(cur.st.id);
     var st = cur.st, vs = verses(r); if (!vs.length) { cur = null; return; }
     var nm = name3(st.n)[sc()], n = r[1] - r[0] + 1, multi = cur.n > 1, last = cur.i === cur.n - 1;
     var what = isGita(st) ? "Gītās" : "Stotras";
@@ -95,7 +103,7 @@
       var i = idx.indexOf(st), nx = null;
       for (var j = i + 1; j < idx.length; j++) { if (idx[j].w === st.w && idx[j].t === st.t) { nx = idx[j]; break; } }
       acts = '<button type="button" class="stb dk" data-st-again>▶ Chant' + (multi ? " this part" : "") + "</button>" +
-        (nx ? '<a class="stb" href="' + esc(partHref(nx, cur.key === "gita" ? "vu" : cur.key, 0)) + '">Next: ' + esc(name3(nx.n)[sc()]) + " ›</a>" : "") +
+        (nx ? '<a class="stb" data-st-id="' + esc(nx.id) + '" href="' + esc(partHref(nx, cur.key === "gita" ? "vu" : cur.key, 0)) + '">Next: ' + esc(name3(nx.n)[sc()]) + " ›</a>" : "") +
         '<a class="stb gh" href="' + esc(listHref(st)) + '">Back to list</a>' +
         (D ? '<button type="button" class="stb gh" data-st-dly aria-pressed="' + inD + '">' + (inD ? "★ Daily" : "☆ Daily") + "</button>" : "");
       end.innerHTML = '<p><b>End of ' + esc(nm) + '</b><small>' + (multi ? "Part " + digits(cur.n) + " of " + digits(cur.n) + " · " : "") + n + " verse" + (n === 1 ? "" : "s") + "</small></p>" +
@@ -123,6 +131,7 @@
 
   document.addEventListener("click", function (e) {
     if (!cur) return;
+    var nid = e.target.closest("[data-st-id]"); if (nid) setId(nid.dataset.stId);
     var al = e.target.closest("[data-st-all]");
     if (al) { var on = document.body.classList.toggle("st-all"); al.textContent = on ? "Show " + (isGita(cur.st) ? "the gītā" : "the stotra") + " only" : "Show the whole chapter"; if (on) { var f = document.querySelector(".verse.st-first"); if (f) f.scrollIntoView({ block: "start" }); } return; }
     var b = e.target.closest(".stbar-go, [data-st-again]");

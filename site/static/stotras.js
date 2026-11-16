@@ -75,7 +75,7 @@
     var a = e.target.closest("[data-st-read], [data-st-chant]");
     if (!a || e.defaultPrevented || e.button > 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
     var id = a.dataset.id || (a.closest(".st") || {}).id;
-    if (id) setHash(id);
+    if (id) { setHash(id); try { sessionStorage.setItem("vr.stid", id); } catch (x) { /* ignore */ } }
     if (a.hasAttribute("data-st-chant")) {
       e.preventDefault();
       var u = new URL(a.href, location.href);

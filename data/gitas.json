@@ -1,4 +1,1077 @@
-{"_comment": "seed for development; replaced by the researched list", "gitas": [
- {"id": "anugita", "work": "mbh", "name_iast": "Anugītā", "name_en": "The Gītā retold", "by": "Kṛṣṇa", "to": "Arjuna", "kind": "gita",
-  "opening": {"ce": "janamejaya uvāca"}, "loc": {"ce": {"k": 14, "s": 16, "v": [1, 51], "s2": 18}}, "about": {"en": "x", "kn": "x"}, "sources": ["x"]}
-]}
+{
+ "_comment": "Gītās inside the Mahābhārata (besides the Bhagavadgītā). loc per edition: {k, s, v:[first, last]} with s2 when the passage ends in a later adhyāya (last verse is in s2). Checked by: python etl/stotras.py check data/gitas.json",
+ "gitas": [
+  {
+   "id": "anugita",
+   "work": "mbh",
+   "name_iast": "Anugītā",
+   "name_en": "Anugita",
+   "by": "Kṛṣṇa",
+   "to": "Arjuna",
+   "kind": "gita",
+   "opening": {
+    "vu": "śrāvitastvaṃ mayā guhyaṃ jñāpitaśca sanātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 14,
+     "s": 17,
+     "v": [
+      9,
+      49
+     ],
+     "s2": 51
+    },
+    "ce": {
+     "k": 14,
+     "s": 16,
+     "v": [
+      9,
+      48
+     ],
+     "s2": 50
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Aśvamedhikaparva ch. XVI–LI (36 chapters) in Roy/Ganguli numbering (Wikipedia, Ganguli heading 'Anugita Parva'); dharmawiki/hinduscriptures 'Aśvamedhikaparva adhyāya 16'; Debroy table (BORI critical ed.) 14.16–50. Named in the epic's own parvasaṅgraha: vu 1.2.80, ce 1.2.66 ('anugītā tataḥ parva').",
+   "tier": "core",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Anugita",
+    "https://mahabharataonline.com/translation/mahabharata_14016.php",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://sriswamisivananda.org/Sacred_Songs.pdf"
+   ]
+  },
+  {
+   "id": "brahmanagita",
+   "work": "mbh",
+   "name_iast": "Brāhmaṇagītā",
+   "name_en": "Brahmana Gita",
+   "by": "Brāhmaṇa",
+   "to": "Brāhmaṇī",
+   "kind": "gita",
+   "opening": {
+    "vu": "brāhmaṇī brāhmaṇaṃ kaṃcijjñānavijñānapāragam"
+   },
+   "loc": {
+    "vu": {
+     "k": 14,
+     "s": 21,
+     "v": [
+      2,
+      12
+     ],
+     "s2": 35
+    },
+    "ce": {
+     "k": 14,
+     "s": 20,
+     "v": [
+      2,
+      12
+     ],
+     "s2": 34
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Listed as 'part of the Anugītā' (dharmawiki, hinduscriptures); one blog gives Aśvamedha adhyāya 20/21–24/34 (speakingmuni; 'Brahma Gita?'). Not separately titled in the colophon/text of either edition; Kṛṣṇa introduces it 'daṃpatyoḥ pārtha saṃvādo' (vu 14.21.1, ce 14.20.1).",
+   "tier": "core",
+   "sources": [
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://vkkondawar.blogspot.com/2015/06/how-many-gitas-generally-with-term.html"
+   ]
+  },
+  {
+   "id": "kamagita",
+   "work": "mbh",
+   "name_iast": "Kāmagītā",
+   "name_en": "Kama Gita",
+   "by": "Kāma",
+   "to": "Yudhiṣṭhira",
+   "kind": "gita",
+   "opening": {
+    "vu": "nāhaṃ śakyo'nupāyena hantuṃ bhūtena kenacit"
+   },
+   "loc": {
+    "vu": {
+     "k": 14,
+     "s": 13,
+     "v": [
+      12,
+      19
+     ]
+    },
+    "ce": {
+     "k": 14,
+     "s": 13,
+     "v": [
+      12,
+      18
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text itself: 'atra gāthāḥ kāmagītāḥ kīrtayanti purāvidaḥ' (vu 14.13.11, ce 14.13.11); Debroy (BORI) Aśvamedhika 13; speakingmuni/vkkondawar blog Aśvamedha 13; Open magazine 'A Dirge for Desire' (Aśvamedhikaparva).",
+   "tier": "core",
+   "sources": [
+    "https://openthemagazine.com/columns/a-dirge-for-desire/",
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://vkkondawar.blogspot.com/2015/06/how-many-gitas-generally-with-term.html",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html"
+   ]
+  },
+  {
+   "id": "vyadhagita",
+   "work": "mbh",
+   "name_iast": "Vyādhagītā",
+   "name_en": "Vyadha Gita",
+   "by": "Dharmavyādha",
+   "to": "Kauśika",
+   "kind": "gita",
+   "opening": {
+    "vu": "abhivādaye tvāṃ bhagavansvāgataṃ te dvijottama"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 210,
+     "v": [
+      13,
+      38
+     ],
+     "s2": 219
+    },
+    "ce": {
+     "k": 3,
+     "s": 198,
+     "v": [
+      12,
+      34
+     ],
+     "s2": 206
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Āraṇyakaparva, Mārkaṇḍeyasamāsyā-parvan; Debroy (BORI) 3.197–206 ('Dharma Vyadha'); Sunday Guardian: 'Dharma-Vyadha Gita, Aranyaka Parva, Markandeya-samasya upa-parva'; dharmawiki/dasarpai/hinduscriptures 'Vyadha Gita, Vana Parva'. Vulgate 3.209–219 (Gita Press/Roy about 3.198–206).",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://latest.sundayguardianlive.com/?p=112771",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://dasarpai.github.io/gk/types-of-gitas"
+   ]
+  },
+  {
+   "id": "pingalagita",
+   "work": "mbh",
+   "name_iast": "Piṅgalāgītā",
+   "name_en": "Pingala Gita",
+   "by": "Piṅgalā",
+   "to": "Senajit",
+   "kind": "gita",
+   "opening": {
+    "vu": "unmattā'hamanunmattaṃ kāntamanvavasaṃ ciram"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 173,
+     "v": [
+      60,
+      64
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 168,
+     "v": [
+      48,
+      52
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'atra piṅgalayā gītā gāthā' (vu 12.173.58, ce 12.168.46). Debroy (BORI) 12.168; Gita Press numbering 174 (speakingmuni: '168 or 174'); dharmawiki/dasarpai/hinduscriptures 'Pingala Gita, Moksha Parva' (some wrongly tie it to Bhāgavata Uddhava).",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://dasarpai.github.io/gk/types-of-gitas",
+    "https://vedapath.app/en/mahabharata/shanti-parva/168"
+   ]
+  },
+  {
+   "id": "sampakagita",
+   "work": "mbh",
+   "name_iast": "Śampākagītā",
+   "name_en": "Shampaka Gita",
+   "by": "Śampāka",
+   "to": "Yudhiṣṭhira",
+   "kind": "gita",
+   "opening": {
+    "vu": "abravīnmāṃ purā kaścidbrāhmaṇastyāgamāśritaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 175,
+     "v": [
+      3,
+      23
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 170,
+     "v": [
+      3,
+      23
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'śamyākena vimuktena gītaṃ śāntigatena ca' (vu 12.175.2, ce 12.170.2). Debroy (BORI) 12.170 ('Shamyaka'); dharmawiki 'Shampaka Gita, Shanti Parva, 21 verses'; hinduscriptures 'Sampaaka Gita, 21 verses'; one list also 'Shiva-Shampaka'. Gita Press 176.",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://dasarpai.github.io/gk/types-of-gitas",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html"
+   ]
+  },
+  {
+   "id": "mankigita",
+   "work": "mbh",
+   "name_iast": "Maṅkigītā",
+   "name_en": "Manki Gita",
+   "by": "Maṅki",
+   "to": "Yudhiṣṭhira",
+   "kind": "gita",
+   "opening": {
+    "vu": "īhamāno dhanaṃ maṅkirbhagnehaśca punaḥ punaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 176,
+     "v": [
+      5,
+      54
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 171,
+     "v": [
+      5,
+      54
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'nirvedānmaṅkinā gītam' (vu 12.176.4, ce 12.171.4). Debroy (BORI) 12.171 ('Manki and Bodhya'); Gita Press 177 (speakingmuni: '177 (possibly 171)'); dharmawiki/hinduscriptures: Moksha Parva, ~50 verses.",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://dasarpai.github.io/gk/types-of-gitas"
+   ]
+  },
+  {
+   "id": "bodhyagita",
+   "work": "mbh",
+   "name_iast": "Bodhyagītā",
+   "name_en": "Bodhya Gita",
+   "by": "Bodhya",
+   "to": "Yayāti",
+   "kind": "gita",
+   "opening": {
+    "vu": "upadeśena vartāmi nānuśāsmīha kaṃcana"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 176,
+     "v": [
+      60,
+      68
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 171,
+     "v": [
+      60,
+      61
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'bodhyasya padasaṃcayam' (vu 12.176.57, ce 12.171.57). Gita Press 178 (speakingmuni); dharmawiki/hinduscriptures 'Bodhya Gita, Moksha Parva' (Bodhya and Yayāti); Debroy places it with Maṅki in 12.171.",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://dasarpai.github.io/gk/types-of-gitas"
+   ]
+  },
+  {
+   "id": "vicakhnugita",
+   "work": "mbh",
+   "name_iast": "Vicakhnugītā",
+   "name_en": "Vicakhnu Gita",
+   "by": "Vicakhnu",
+   "to": "Yudhiṣṭhira",
+   "kind": "gita",
+   "opening": {
+    "vu": "chinnasthūṇaṃ vṛpaṃ dṛṣṭvā virāvaṃ ca gavāṃ bhṛśam"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 271,
+     "v": [
+      4,
+      13
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 257,
+     "v": [
+      2,
+      11
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'prajānām anukampārthaṃ gītaṃ rājñā vicakhnunā' (ce 12.257.1; vu 12.271.3 spelling 'vicakhyunā'). Debroy (BORI) 12.257; dharmawiki lists it as 'Chapters 279–280 (Mokṣadharma), eleven verses'; speakingmuni '264–265 (possibly 279–280)'; hinduscriptures 'eleven verses'.",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://dasarpai.github.io/gk/types-of-gitas"
+   ]
+  },
+  {
+   "id": "haritagita",
+   "work": "mbh",
+   "name_iast": "Hārītagītā",
+   "name_en": "Harita Gita",
+   "by": "Hārīta",
+   "to": "Yudhiṣṭhira",
+   "kind": "gita",
+   "opening": {
+    "vu": "svagṛhādabhiniḥsṛtya lābhe'lābhe samo muniḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 284,
+     "v": [
+      4,
+      23
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 269,
+     "v": [
+      3,
+      20
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'hārītena purā gītaṃ taṃ nibodha yudhiṣṭhira' (vu 12.284.3); ce lacks this introductory verse (ce 12.269.2 goes straight into the teaching). Debroy (BORI) 12.269; Gita Press 277/278 (speakingmuni); dharmawiki/hinduscriptures 'Harita Gita, 20 verses on non-violence with sannyāsa'.",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://dasarpai.github.io/gk/types-of-gitas"
+   ]
+  },
+  {
+   "id": "vritragita",
+   "work": "mbh",
+   "name_iast": "Vṛtragītā",
+   "name_en": "Vritra Gita",
+   "by": "Vṛtra",
+   "to": "Śukra",
+   "kind": "gita",
+   "opening": {
+    "vu": "satyena tapasā caiva viditvā saṃkṣayaṃ hyaham"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 285,
+     "v": [
+      16,
+      59
+     ],
+     "s2": 286
+    },
+    "ce": {
+     "k": 12,
+     "s": 270,
+     "v": [
+      16,
+      58
+     ],
+     "s2": 271
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'asminn arthe purā gītaṃ ... yathā daityena vṛtreṇa' (vu 12.285.13, ce 12.270.13). Debroy (BORI) 12.270–271; Gita Press 278 (speakingmuni; 'possibly 279–280'); dharmawiki/hinduscriptures: 'Vritra Gita, two chapters, Vritra and Shukra'.",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://dasarpai.github.io/gk/types-of-gitas"
+   ]
+  },
+  {
+   "id": "parasharagita",
+   "work": "mbh",
+   "name_iast": "Parāśaragītā",
+   "name_en": "Parashara Gita",
+   "by": "Parāśara",
+   "to": "Janaka",
+   "kind": "gita",
+   "opening": {
+    "vu": "dharma eva kṛtaḥ śreyāniha loke paratra ca"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 296,
+     "v": [
+      6,
+      46
+     ],
+     "s2": 304
+    },
+    "ce": {
+     "k": 12,
+     "s": 279,
+     "v": [
+      6,
+      44
+     ],
+     "s2": 287
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'parāśaraṃ mahātmānaṃ papraccha janako nṛpaḥ' (vu 12.296.3, ce 12.279.3). Debroy (BORI) 12.279–287; Gita Press 290–298 (speakingmuni); dharmawiki/hinduscriptures: 'Parasara Gita, nine chapters, Moksha Parva'.",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds",
+    "https://dasarpai.github.io/gk/types-of-gitas"
+   ]
+  },
+  {
+   "id": "hamsagita",
+   "work": "mbh",
+   "name_iast": "Haṃsagītā",
+   "name_en": "Hamsa Gita",
+   "by": "Haṃsa",
+   "to": "Sādhyāḥ",
+   "kind": "gita",
+   "opening": {
+    "vu": "śakune vayaṃ sma devā vai sādhyāstvāmanuyuṅkṣmahe"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 305,
+     "v": [
+      4,
+      44
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 288,
+     "v": [
+      4,
+      44
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'sādhyānām iha saṃvādaṃ haṃsasya ca' (vu 12.305.2, ce 12.288.2). Debroy (BORI) 12.288; Gita Press 299 (speakingmuni); dharmawiki/hinduscriptures: 'Hamsa Gita, Moksha Parva'.",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://www.hinduscriptures.in/vedic-knowledge/sacred-scriptures/gita/gita-its-various-kinds"
+   ]
+  },
+  {
+   "id": "shadjagita",
+   "work": "mbh",
+   "name_iast": "Ṣaḍjagītā",
+   "name_en": "Shadja Gita",
+   "by": "Vidura, Arjuna, Bhīma",
+   "to": "Yudhiṣṭhira",
+   "kind": "gita",
+   "opening": {
+    "vu": "bahuśrutaṃ tapastyāgaḥ śraddhā yajñakriyā kṣamā"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 165,
+     "v": [
+      5,
+      48
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 161,
+     "v": [
+      5,
+      46
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Debroy (BORI) 12.161 ('Shadaja'); dharmawiki 'Shadja Gita, Shanti Parva, Adhyāya 161'; speakingmuni '161 or 167'; vedapath colophon 'Ṣaḍja-gītā' on Śānti ch. 167 (Gita Press/Apaddharma numbering); Open magazine: 'the only Gita in the Apad Dharma sub-parva'. The name is not in the text of our two editions (no 'gītā' word).",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://openthemagazine.com/columns/the-force-of-destiny/",
+    "https://vedapath.app/en/mahabharata/shanti-parva/168"
+   ]
+  },
+  {
+   "id": "utathyagita",
+   "work": "mbh",
+   "name_iast": "Utathyagītā",
+   "name_en": "Utathya Gita",
+   "by": "Utathya",
+   "to": "Māndhātā",
+   "kind": "gita",
+   "opening": {
+    "vu": "dharmāma rājā bhavati na kāmakaraṇāya tu"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 90,
+     "v": [
+      3,
+      58
+     ],
+     "s2": 91
+    },
+    "ce": {
+     "k": 12,
+     "s": 91,
+     "v": [
+      3,
+      54
+     ],
+     "s2": 92
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Debroy (BORI) 12.91–92; dharmawiki/speakingmuni/hinduscriptures-type lists 'Utathya Gita, Shanti Parva, Rājadharma, chapters 90–91' (Gita Press). The title is not in the text.",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html"
+   ]
+  },
+  {
+   "id": "vamadevagita",
+   "work": "mbh",
+   "name_iast": "Vāmadevagītā",
+   "name_en": "Vamadeva Gita",
+   "by": "Vāmadeva",
+   "to": "Vasumanas",
+   "kind": "gita",
+   "opening": {
+    "vu": "dharmamevānuvartasva na dharmādvidyate param"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 92,
+     "v": [
+      6,
+      25
+     ],
+     "s2": 94
+    },
+    "ce": {
+     "k": 12,
+     "s": 93,
+     "v": [
+      6,
+      12
+     ],
+     "s2": 95
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'gītaṃ dṛṣṭārthatattvena vāmadevena dhīmatā' (vu 12.92.2, ce 12.93.2). Debroy (BORI) 12.93–95; dharmawiki/speakingmuni 'Vamadeva Gita, Rājadharma, chapters 92–94' (Gita Press).",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html"
+   ]
+  },
+  {
+   "id": "rishabhagita",
+   "work": "mbh",
+   "name_iast": "Ṛṣabhagītā",
+   "name_en": "Rishabha Gita",
+   "by": "Ṛṣabha",
+   "to": "Sumitra",
+   "kind": "gita",
+   "opening": {
+    "vu": "purā'haṃ rājaśārdūla tīrthānyanucaranprabho"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 127,
+     "v": [
+      2,
+      28
+     ],
+     "s2": 128
+    },
+    "ce": {
+     "k": 12,
+     "s": 126,
+     "v": [
+      2,
+      52
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Debroy (BORI) 'Kamanda, Rishabha and Yama' 12.123–127; speakingmuni 'Rishabha Gita, Shanti Parva, 125–128 (Gita Press)'; purankosh 12.125–128 (Kinjawadekar); Ganguli §CXXVIII (Vīradyumna speaks). The word 'gītā' is not in the text; the vulgate frame is 'itihāsaṃ sumitrasya nirvṛttamṛṣabhasya ca' (vu 12.125.8, ce 12.125.8).",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://www.purankosh.in/?p=5673",
+    "https://neonvagabond.xyz/mirrors/sacred-texts/hin/m12/m12a127.htm"
+   ]
+  },
+  {
+   "id": "sanatsujatiya",
+   "work": "mbh",
+   "name_iast": "Sanatsujātīya",
+   "name_en": "Sanatsujatiya",
+   "by": "Sanatsujāta",
+   "to": "Dhṛtarāṣṭra",
+   "kind": "gita",
+   "opening": {
+    "vu": "amṛtyuṃ karmaṇā kecinmṛtyurnāstīti cāpare"
+   },
+   "loc": {
+    "vu": {
+     "k": 5,
+     "s": 42,
+     "v": [
+      3,
+      31
+     ],
+     "s2": 46
+    },
+    "ce": {
+     "k": 5,
+     "s": 42,
+     "v": [
+      3,
+      28
+     ],
+     "s2": 45
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Parvasaṅgraha: 'parva sānatsujātaṃ' (vu 1.2.60, ce 1.2.51); Debroy (BORI) 5.42–45; speakingmuni/vkkondawar 'Sanatsujata Gita, Udyoga Parva 41–46' (Gita Press). Sunday Guardian: 'not explicitly called a Gita but with Gita-like wisdom'.",
+   "tier": "core",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://latest.sundayguardianlive.com/?p=112771",
+    "https://vkkondawar.blogspot.com/2015/06/how-many-gitas-generally-with-term.html",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://dasarpai.github.io/gk/types-of-gitas"
+   ]
+  },
+  {
+   "id": "shaunakagita",
+   "work": "mbh",
+   "name_iast": "Śaunakagītā",
+   "name_en": "Shaunaka Gita",
+   "by": "Śaunaka",
+   "to": "Yudhiṣṭhira",
+   "kind": "gita",
+   "opening": {
+    "vu": "śokasthānasahasrāṇi harṣasthānaśatāni ca"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 2,
+     "v": [
+      16,
+      84
+     ]
+    },
+    "ce": {
+     "k": 3,
+     "s": 2,
+     "v": [
+      15,
+      79
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Debroy (BORI) 3.2 ('Shounaka', 66 shlokas); dharmawiki/dasarpai/speakingmuni/vkkondawar 'Shaunaka Gita, Aranyaka/Vana Parva'.",
+   "tier": "additional",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://vkkondawar.blogspot.com/2015/06/how-many-gitas-generally-with-term.html",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html",
+    "https://dasarpai.github.io/gk/types-of-gitas"
+   ]
+  },
+  {
+   "id": "kashyapagita",
+   "work": "mbh",
+   "name_iast": "Kāśyapagītā",
+   "name_en": "Kashyapa Gita",
+   "by": "Kāśyapa",
+   "to": "Draupadī",
+   "kind": "gita",
+   "opening": {
+    "vu": "kṣamā dharmaḥ kṣamā yajñaḥ kṣamā vedāḥ kṣamā śrutam"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 29,
+     "v": [
+      39,
+      47
+     ]
+    },
+    "ce": {
+     "k": 3,
+     "s": 30,
+     "v": [
+      36,
+      43
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Text: 'gītāḥ kṣamāvatāṃ kṛṣṇe kāśyapena mahātmanā' (vu 3.29.38, ce 3.30.35) and 'iti gītāḥ kāśyapena gāthā' (vu 3.29.48, ce 3.30.44); Debroy (BORI) 3.30 ('Kashyapa'; 'message is conquering anger').",
+   "tier": "additional",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf"
+   ]
+  },
+  {
+   "id": "nahushagita",
+   "work": "mbh",
+   "name_iast": "Nahuṣagītā",
+   "name_en": "Nahusha Gita",
+   "by": "Nahuṣa",
+   "to": "Yudhiṣṭhira",
+   "kind": "gita",
+   "opening": {
+    "vu": "brāhmaṇaḥ ko bhavedrājanvedyaṃ kiṃca yudhiṣṭhira"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 182,
+     "v": [
+      20,
+      44
+     ],
+     "s2": 183
+    },
+    "ce": {
+     "k": 3,
+     "s": 177,
+     "v": [
+      15,
+      44
+     ],
+     "s2": 178
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Debroy (BORI) 3.177–178 ('Nahusha', 83 shlokas, Ajagara sub-parva); dharmawiki/dasarpai/vkkondawar/Sunday Guardian 'Nahusha Gita'. Vulgate Ajagara-parvan.",
+   "tier": "additional",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://vkkondawar.blogspot.com/2015/06/how-many-gitas-generally-with-term.html",
+    "https://latest.sundayguardianlive.com/?p=112771",
+    "https://dasarpai.github.io/gk/types-of-gitas"
+   ]
+  },
+  {
+   "id": "putragita",
+   "work": "mbh",
+   "name_iast": "Putragītā",
+   "name_en": "Putra Gita",
+   "by": "Medhāvin",
+   "to": "his father",
+   "kind": "gita",
+   "opening": {
+    "vu": "dhīraḥ kiṃ svit tāta kuryātprajānan"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 174,
+     "v": [
+      5,
+      38
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 169,
+     "v": [
+      5,
+      36
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Debroy (BORI) 12.169 ('Putra Gita', 37 shlokas); framing 'pituḥ putreṇa saṃvādam' (vu 12.174.2, ce 12.169.2). Not otherwise listed in the lists read.",
+   "tier": "additional",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf"
+   ]
+  },
+  {
+   "id": "ajagaragita",
+   "work": "mbh",
+   "name_iast": "Ajagaragītā",
+   "name_en": "Ajagara Gita",
+   "by": "Ajagara muni",
+   "to": "Prahlāda",
+   "kind": "gita",
+   "opening": {
+    "vu": "paśya prahlāda bhūtānāmutpattimanimittataḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 177,
+     "v": [
+      10,
+      36
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 172,
+     "v": [
+      10,
+      36
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Debroy (BORI) 12.172 ('Ajagara', 37 shlokas); dharmawiki lists 'Ajagara Gita, Shantiparva, an ascetic advises Prahlada'; text refrain 'vratam idam ājagaram' (ce 12.172.33–36). Vulgate 12.177.",
+   "tier": "additional",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)"
+   ]
+  },
+  {
+   "id": "shrigalagita",
+   "work": "mbh",
+   "name_iast": "Śṛgālagītā",
+   "name_en": "Srigala Gita",
+   "by": "Indra (as a jackal)",
+   "to": "Kāśyapa",
+   "kind": "gita",
+   "opening": {
+    "vu": "manuṣyayonimicchanti sarvabhūtāni sarvaśaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 178,
+     "v": [
+      8,
+      51
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 173,
+     "v": [
+      8,
+      49
+     ]
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Debroy (BORI) 12.173 ('Srigala', 52 shlokas); text calls it 'indrakāśyapasaṃvāda' (vu 12.178.4, ce 12.173.4).",
+   "tier": "additional",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf"
+   ]
+  },
+  {
+   "id": "yajnavalkyagita",
+   "work": "mbh",
+   "name_iast": "Yājñavalkyagītā",
+   "name_en": "Yajnavalkya Gita",
+   "by": "Yājñavalkya",
+   "to": "Janaka",
+   "kind": "gita",
+   "opening": {
+    "vu": "śrūyatāmavanīpāla yadetadanupṛcchasi"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 315,
+     "v": [
+      8,
+      112
+     ],
+     "s2": 323
+    },
+    "ce": {
+     "k": 12,
+     "s": 298,
+     "v": [
+      8,
+      108
+     ],
+     "s2": 306
+    }
+   },
+   "about": {
+    "en": "",
+    "kn": ""
+   },
+   "cited": "Debroy (BORI) 12.298–306 (9 ch., 283 shlokas, 'Yajnavalkya'); dharmawiki 'Yajnavalkya Gita, Shantiparva, 310–318' (Gita Press); speakingmuni 'Yajnavalkya Gita 310–318'; sanskritdocuments title 'yājñavalkyagītā mahābhārate śāntiparvāntargatā' (seen in search results only).",
+   "tier": "additional",
+   "sources": [
+    "https://sriswamisivananda.org/Sacred_Songs.pdf",
+    "https://dharmawiki.org/index.php/Different_Gitas_(विविधाः_गीताः)",
+    "https://speakingmuni.blogspot.com/2015/06/many-kinds-of-gitas-birds-eye-view.html"
+   ]
+  }
+ ]
+}
