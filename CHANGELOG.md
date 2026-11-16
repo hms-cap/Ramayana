@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.20.0 — 2026-11-16
+- Mahābhārata speaker lines ("dhṛtarāṣṭra uvāca", "sañjaya uvāca") now stand above the verse they introduce, as in the Gītā section, instead of running on as a verse line. In the Traditional text about 6,000 of them had been attached to the end of the previous verse. Both sources mark these lines; `etl/split_speakers.py` reads the marks (Kumbakonam `rend="speak"` and its `…x` id, Pune lines without a pāda letter) and moves them to a `spk` field.
+- With the speaker lines out, about 12,700 more verses get their metre.
+- Pune text: 37,063 lines from 431 Appendix I passages (lines some manuscripts add, outside the critical text) had been run into the verse they follow. They now sit in a closed fold, "Pune Appendix I, No. …", under that verse.
+- Cross-walk recomputed: links that matched only a speaker line are gone; about 7,500 Traditional verses found only in a Pune appendix passage get a new badge, "In an Appendix I passage of the Pune Text", linking to the verse it follows.
+
 ## 0.19.0 — 2026-11-16
 - Gītās that run over several adhyāyas (Anugītā, Brāhmaṇagītā and others) open on an adhyāya list first: one row per adhyāya with its opening words and verse count, edition tabs, Read from the start and Chant. Back from the reader lands on that list; Back from the list lands on the gītā in Gītās.
 

@@ -72,6 +72,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).parent))
 import meter  # noqa: E402
+from split_speakers import raw_layout  # noqa: E402
 from translit import iast_to_slp1, loose_for_index  # noqa: E402
 
 NORM = ROOT / "data" / "normalized"
@@ -92,7 +93,13 @@ COLOPHON = re.compile(r"^(iti\b.*(gītā|upaniṣa)|oṃ tat sat)", re.I)
 
 
 def load(ed):
-    return [json.loads(l) for l in open(NORM / "mbh" / f"{ed}.jsonl", encoding="utf-8")]
+    """The Mahābhārata records with their lines in the ingest layout (speaker lines back in place:
+    etl/split_speakers.py moves them to "spk"; this script reads them from the lines, as before)."""
+    recs = [json.loads(l) for l in open(NORM / "mbh" / f"{ed}.jsonl", encoding="utf-8")]
+    lay = raw_layout(recs)
+    for r in recs:
+        r["lines"] = lay[r["uid"]]
+    return recs
 
 
 def meter_of(lines):

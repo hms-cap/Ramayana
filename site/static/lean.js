@@ -19,7 +19,8 @@
     var m = marks(sc);
     return slp.map(function (l, i) { return [T.render(l, sc, sav), i === slp.length - 1 ? m.last : m.mid]; });
   }
-  function block(sc, lang, slp) {
+  function spkEl(slp, sc) { var e = el("span", "spk"); e.textContent = T.render(slp, sc, false); return e; }
+  function block(sc, lang, slp, spk) {
     var d = el("div", "t t-" + sc, { lang: lang });
     var base = script(slp, sc, false);
     // the Kannada-only "classical pañcama" variant (.ps1); Devanāgarī has no variant
@@ -27,7 +28,8 @@
     var same = !alt || base.map(function (x) { return x[0]; }).join("|") === alt.map(function (x) { return x[0]; }).join("|");
     function para(lines, cls) {
       var p = el("p", cls || ""); if (!cls) p.removeAttribute("class");
-      lines.forEach(function (t) {
+      lines.forEach(function (t, i) {
+        if (spk[i] != null) p.appendChild(spkEl(spk[i], sc));   // a speaker line inside the verse
         var s = el("span", "ln"), dm = el("span", "d");
         s.appendChild(document.createTextNode(t[0])); dm.textContent = t[1]; s.appendChild(dm); p.appendChild(s);
       });
@@ -44,9 +46,13 @@
     var slp = [].map.call(iast.querySelectorAll(".ln"), function (x) {
       return T.iastToSlp1(x.textContent.replace(/\u00a0\|.*$/, "").trim());
     });
+    var spk = {}, seen = 0;
+    [].forEach.call(iast.querySelectorAll(".ln, .spk"), function (x) {
+      if (x.classList.contains("ln")) seen++; else spk[seen] = T.iastToSlp1(x.textContent.trim());
+    });
     var host = iast.parentNode;
-    host.insertBefore(block("knda", "sa-Knda", slp), iast);
-    host.insertBefore(block("deva", "sa-Deva", slp), iast);
+    host.insertBefore(block("knda", "sa-Knda", slp, spk), iast);
+    host.insertBefore(block("deva", "sa-Deva", slp, spk), iast);
 
     // header row: reference pill (opens the details), metre, word-by-word icon
     var vh = el("div", "vh"), b = el("button", "vnum", { type: "button", "aria-expanded": "false", "aria-controls": "d" + n, title: "Verse details" });
@@ -89,4 +95,19 @@
     d.appendChild(el("span", "cite-ok", { role: "status" }));
     body.appendChild(d);
   });
+
+  // Pune Appendix I passages: Kannada and Devanāgarī are made when the fold is first opened
+  document.addEventListener("toggle", function (e) {
+    var d = e.target;
+    if (!d.classList || !d.classList.contains("apx") || !d.open || d.dataset.done) return;
+    d.dataset.done = "1";
+    var src = d.querySelector(".ax-iast");
+    [["knda", "sa-Knda"], ["deva", "sa-Deva"]].forEach(function (x) {
+      var b = el("div", "ax ax-" + x[0], { lang: x[1] });
+      [].forEach.call(src.children, function (c) {
+        var o = el("span", c.className); o.textContent = T.render(T.iastToSlp1(c.textContent.trim()), x[0], false); b.appendChild(o);
+      });
+      d.insertBefore(b, src);
+    });
+  }, true);
 })();

@@ -135,7 +135,7 @@
 
   document.addEventListener("click", function (e) {
     if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    var a = e.target.closest && e.target.closest(".verse .badge a");
+    var a = e.target.closest && e.target.closest(".verse .badge:not(.b-appendix) a");
     if (!a) return;
     e.preventDefault(); open(a);
   });

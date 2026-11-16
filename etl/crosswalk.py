@@ -21,6 +21,8 @@ Method
    (longest increasing subsequence); out-of-order weak matches are dropped.
 5. Unmatched verses get a second, line-level pass so that verses whose
    lines are grouped differently in the two editions are recognised.
+6. (Mahābhārata) Verses still unmatched whose lines all stand in a Pune Appendix I
+   passage get status "appendix", with the CE verse the passage follows as target.
 
 Output: data/crosswalk/{verses.json, sargas.json, review.tsv, report.json}
 """
@@ -195,6 +197,40 @@ def main():
             status[r["i"]] = ("regrouped" if len(hits) == n else "partial", sorted(set(hits)),
                               round(sum(scores) / len(scores), 3))
 
+    # --- pass 5 (Mahābhārata): verses the Pune text has only in an Appendix I passage -----
+    # (etl/split_speakers.py keeps those passages in "app" on the CE verse they follow)
+    app_by_sarga = collections.defaultdict(list)
+    for c in ce:
+        for a in c.get("app", []):
+            app_by_sarga[(c["k"], c["s"])].append(
+                {"i": c["i"], "line_keys": [loose_for_index(iast_to_slp1(" ".join(l))) for l in a["lines"]]})
+    if app_by_sarga:
+        mapped = sorted(sarga_map)
+        for r in vu:
+            if r["i"] in status:
+                continue
+            m = sarga_map.get((r["k"], r["s"]))
+            if m:
+                tk, ts = m["ce"]; win = (-1, 0, 1)
+            else:   # a sarga with no confident match (often wholly appendix matter): go by the sarga before it
+                prev = [x for x in mapped if x[0] == r["k"] and x[1] < r["s"]]
+                if not prev:
+                    continue
+                tk, ts = sarga_map[prev[-1]]["ce"]; win = (0, 1, 2)
+            pool = [c for d in win for c in app_by_sarga.get((tk, ts + d), [])]
+            if not pool:
+                continue
+            hits, scores, n = [], [], 0
+            for lk in r["line_keys"]:
+                if len(lk) < 8:
+                    continue
+                n += 1
+                sc, tgt = best_line(lk, pool)
+                if sc >= LINE_MATCH:
+                    hits.append(tgt); scores.append(sc)
+            if n and len(hits) == n:
+                status[r["i"]] = ("appendix", sorted(set(hits)), round(sum(scores) / len(scores), 3))
+
     # --- assemble -------------------------------------------------------------
     vu_out, ce_out = {}, {}
     ce_hits = collections.defaultdict(list)
@@ -206,7 +242,8 @@ def main():
         kind, targets, sc = st
         vu_out[r["uid"]] = {"status": kind, "targets": [ce[t]["uid"] for t in targets], "score": sc}
         for t in targets:
-            ce_hits[t].append((kind, r["i"], sc))
+            if kind != "appendix":          # the CE verse itself is not this verse
+                ce_hits[t].append((kind, r["i"], sc))
     for c in ce:
         h = ce_hits.get(c["i"])
         if not h:

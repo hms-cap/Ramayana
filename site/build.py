@@ -242,6 +242,25 @@ def lean_verse(rec: dict, ed: dict | None = None, W: dict | None = None) -> dict
            "ids": [{"label": "GRETIL", "value": rec["gretil_id"]}] if rec.get("gretil_id") else
                   [{"label": "Source", "value": rec["source_ref"]}] if rec.get("source_ref") else [],
            "crosswalk": None, "wsrc": None}
+    # speaker lines ("sañjaya uvāca", etl/split_speakers.py): above the verse (at 0) in all three scripts,
+    # or inside it before line i (IAST; lean.js renders the other scripts)
+    def spk3(t):
+        l1 = " ".join(iast_to_slp1(w) for w in t.split())
+        return sx(render(l1, "knda"), render(l1, "deva"), render(l1, "iast"))
+    out["spk0"] = [spk3(x["t"]) for x in rec.get("spk", []) if x["at"] == 0 or not rec["lines"]]
+    out["spk_at"] = {x["at"]: render(" ".join(iast_to_slp1(w) for w in x["t"].split()), "iast")
+                     for x in rec.get("spk", []) if x["at"] > 0 and rec["lines"]}
+    # Pune Appendix I passages that the source runs into this verse: shown in a fold (lean.js renders them on open)
+    out["app"] = []
+    for a in rec.get("app", []):
+        ls = [render(" ".join(iast_to_slp1(p) for p in ln), "iast") for ln in a["lines"]]
+        rows, sp = [], sorted(a.get("spk", []), key=lambda x: x["at"])
+        for i, l in enumerate(ls):
+            rows += [(True, render(iast_to_slp1(x["t"]), "iast")) for x in sp if x["at"] == i]
+            rows.append((False, l))
+        rows += [(True, render(iast_to_slp1(x["t"]), "iast")) for x in sp if x["at"] >= len(ls)]
+        out["app"].append({"id": a["id"].lstrip("0") or a["id"], "n": len(ls), "rows": rows,
+                           "inside": 0 < a["at"] < len(rec["lines"]), "after": a["at"]})
     if ed is not None:
         cw = crosswalk_for(rec, ed, W)
         out["crosswalk"] = cw

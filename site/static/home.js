@@ -102,7 +102,8 @@
   };
   var CWSTAT = {
     match: ["Same verse in the", "ಎರಡೂ ಪಾಠಗಳಲ್ಲಿ ಇದೆ:"], variant: ["Different reading in the", "ಪಾಠಭೇದ:"], regrouped: ["Lines grouped differently in the", "ಪಾದಗಳ ಗುಂಪು ಬೇರೆ:"],
-    partial: ["Only partly in the", "ಭಾಗಶಃ ಮಾತ್ರ:"], absent: ["Not in the", "ಇಲ್ಲ:"]
+    partial: ["Only partly in the", "ಭಾಗಶಃ ಮಾತ್ರ:"], absent: ["Not in the", "ಇಲ್ಲ:"],
+    appendix: ["Only in an appendix passage of the", "ಅನುಬಂಧದಲ್ಲಿ ಮಾತ್ರ:"]
   };
   function L(key, s) { if (key === "ctx") return wk().epic[s === "knda" ? 1 : 0]; return LAB[key][s === "knda" ? 1 : 0]; }
 
