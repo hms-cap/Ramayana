@@ -254,6 +254,17 @@
       var l = savedList(), i = l.findIndex(function (x) { return x.id === item.id; });
       if (i >= 0) l.splice(i, 1); else { item.ts = Date.now(); l.unshift(item); }
       setSaved(l); document.dispatchEvent(new Event("saved-changed")); return i < 0;
+    },
+    // Add items from a backup; ones already here are kept. Returns how many were new.
+    merge: function (items) {
+      var l = savedList(), n = 0;
+      items.forEach(function (it) {
+        if (!it || typeof it.id !== "string" || typeof it.href !== "string" || l.some(function (x) { return x.id === it.id; })) return;
+        l.push({ id: it.id, href: it.href, kind: it.kind === "verse" ? "verse" : "sarga", label: String(it.label || ""), titles: it.titles, slp: it.slp, ts: +it.ts || Date.now() }); n++;
+      });
+      l.sort(function (a, b) { return (b.ts || 0) - (a.ts || 0); });
+      if (n) { setSaved(l); document.dispatchEvent(new Event("saved-changed")); }
+      return n;
     }
   };
   function paintSave() {

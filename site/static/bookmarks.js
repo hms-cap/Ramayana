@@ -143,6 +143,35 @@
     }
     if (e.target.closest("[data-bm-go]") && window.VRSheet) window.VRSheet.close();
   });
+  // ---- export / import (all texts together) ----
+  function say(t) { var m = document.getElementById("bm-msg"); if (m) m.textContent = t; }
+  var ex = document.getElementById("bm-export"), im = document.getElementById("bm-import"), fi = document.getElementById("bm-file");
+  if (ex) ex.addEventListener("click", function () {
+    var l = S.list();
+    if (!l.length) { say("Nothing to export yet."); return; }
+    var blob = new Blob([JSON.stringify({ app: "itihasa", kind: "bookmarks", version: 1, exported: new Date().toISOString(), items: l }, null, 1)], { type: "application/json" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+    a.download = "itihasa-bookmarks-" + new Date().toISOString().slice(0, 10) + ".json";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    say("Exported " + l.length + " bookmark" + (l.length === 1 ? "" : "s") + ".");
+  });
+  if (im && fi) {
+    im.addEventListener("click", function () { fi.click(); });
+    fi.addEventListener("change", function () {
+      var f = fi.files && fi.files[0]; if (!f) return;
+      var r = new FileReader();
+      r.onload = function () {
+        try {
+          var d = JSON.parse(r.result), items = Array.isArray(d) ? d : d.items;
+          if (!Array.isArray(items)) throw new Error("no items");
+          var n = S.merge(items);
+          say(n ? "Added " + n + " bookmark" + (n === 1 ? "" : "s") + (items.length > n ? "; " + (items.length - n) + " already here." : ".") : "Nothing new: all " + items.length + " were already here.");
+        } catch (e) { say("That file is not an Itihāsa bookmarks backup."); }
+        fi.value = "";
+      };
+      r.readAsText(f);
+    });
+  }
   function all_() { paintButtons(); paintBars(); paintSheet(); badge(); }
   document.addEventListener("saved-changed", all_);
   document.addEventListener("prefs-changed", function () { paintBars(); paintSheet(); });

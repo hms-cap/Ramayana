@@ -52,7 +52,8 @@
     </div>
     <div id="bm-list"></div>
     <p class="hint" id="bm-empty" hidden>Nothing bookmarked in this text yet. Tap ☆ beside a verse, or Bookmark at the top of a {{ W.sub }} page.</p>
-    <p class="hint">Bookmarks are kept on this device only.</p>
+    <div class="bm-io"><button type="button" class="btn" id="bm-export">Export</button><button type="button" class="btn" id="bm-import">Import</button><input type="file" id="bm-file" accept="application/json,.json" hidden></div>
+    <p class="hint" id="bm-msg" role="status">Bookmarks are kept on this device only. Export saves all your bookmarks to a file; Import adds them back, here or on another device.</p>
   </div>
 </section>
 

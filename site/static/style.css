@@ -865,3 +865,4 @@ a.crow:hover .cn { color: var(--accent); }
 .bm-tx small { color: var(--muted); font-size: 0.78rem; }
 .bm-x { all: unset; cursor: pointer; color: var(--muted); width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; }
 .bm-x:hover { background: var(--paper-2); }
+.bm-io { display: flex; gap: 0.6rem; margin: 1rem 0 0.3rem; } .bm-io .btn { flex: 1; }

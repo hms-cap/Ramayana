@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.15.1 — 2026-11-16
+- Bookmarks can be exported to a file and imported back (Bookmarks sheet → Export / Import). Import adds to what is already there; nothing is overwritten. Works for moving bookmarks between devices.
+
 ## 0.15.0 — 2026-11-16
 - Bookmarks: a ☆ in every verse row bookmarks that verse (the sarga/adhyāya "Save" button is now "Bookmark"). Each text keeps its own bookmarks, on this device.
 - A strip of the text's latest bookmarks sits under the title of every reading page, with the one you are on highlighted, and at the top of each text's Home and Read pages (the Read page also has "Continue reading"). "See all" opens a list sheet with a tab per text, grouped by kāṇḍa / parva, in your script, with remove.
