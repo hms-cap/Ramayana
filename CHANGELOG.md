@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.22.0 — 2026-11-17
+- New look, "Navaratna": one colour system for the whole app (site/static/theme.css). Ground, card, ink, muted, rule, and one hue per work in four roles (tint, text-on-tint, fill, base): Rāmāyaṇa lapis, Mahābhārata ruby, Gītā emerald, Pariśiṣṭa topaz; light and dark.
+- The four works are a segmented switch at the top of every page.
+- Home: the greeting and pañcāṅga card become one date strip ("TUE 17 NOV · ಕಾರ್ತಿಕ ಶುಕ್ಲ ಅಷ್ಟಮೀ · ಧನಿಷ್ಠಾ") that opens the full pañcāṅga; the śloka card is a light gold leaf; "Continue reading" shows the latest work as a card in its colour and every other work (and the last stotra or gītā) as a chip; units are a quiet two-column list.
+- Settings, simplified to one sheet: script (with Kannada letters only when Kannada is shown), size A− / A+, text to show (Traditional / Pune or Baroda / Both, so both can never be off), theme icons, metre marks, pañcāṅga place (city list or your location), offline, Kannada spelling, and the version with "Check for updates".
+- Pariśiṣṭa: stotra and gītā chips take the colour of the epic they come from.
+
 ## 0.21.0 — 2026-11-17
 - Home: a pañcāṅga readout under the greeting, computed on the device (new `site/static/panchanga.js`, adapted from the VedaAlokana app): one line "Kārtika Śukla Aṣṭamī", and on tap saṃvatsara, ṛtu, ayana, vāra, tithi, nakṣatra and yoga with their ending times, karaṇa, sunrise and sunset. Names follow the script setting (Kannada, Devanāgarī, IAST). Place: Bengaluru by default for Indian time zones, or "use my location". Open/closed is remembered.
 - Home: Today's śloka can be folded to its title and first line, and the choice is remembered.

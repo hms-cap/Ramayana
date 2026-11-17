@@ -2,7 +2,7 @@
    Tokens only (theme.css). `body.page-home.page-home` out-ranks the older .votd / dark rules in style.css. */
 
 /* ---- section heads ---- */
-body.page-home .sec-h, body.page-home .tiles-head h2 { margin: 0; font: 600 1.45rem/1.2 var(--f-text); color: var(--ink); }
+body.page-home.page-home .sec-h, body.page-home.page-home .tiles-head h2 { display: block; text-transform: none; letter-spacing: 0; margin: 0; font: 600 1.45rem/1.2 var(--f-text); color: var(--ink); }
 body.page-home .tiles-head { justify-content: space-between; align-items: baseline; margin: 0; }
 body.page-home .seeall { font: 600 0.82rem var(--f-ui); color: var(--w-on-t); text-decoration: none; }
 
@@ -77,3 +77,4 @@ body.page-home .kcell [hidden] { display: none; }
 @media (min-width: 900px) {
   body.page-home .home-grid { grid-template-columns: 1fr 1fr; gap: 1.6rem; }
 }
+.votd:not(.folded) .votd-peek { display: none !important; }

@@ -71,7 +71,8 @@ async def main():
         assert pg.url.rstrip("/") == B.rstrip("/")
         txt = await pg.inner_text("#continue")
         print("ram continue:", txt.replace("\n", " | "))
-        assert "begin" in txt.lower() and "ಆದಿಪರ್ವ" not in txt   # the Rāmāyaṇa has its own place
+        # v0.22: Continue reading lists every work read so far, the latest first; the Rāmāyaṇa has none yet
+        assert "ಆದಿಪರ್ವ" in txt and "ಕಾಂಡ" not in txt
         assert await pg.evaluate("document.documentElement.dataset.off") == "ce"
 
         # 3. fresh launch returns to the last-used work (no referrer); a link inside the site does not

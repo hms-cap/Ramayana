@@ -7,7 +7,8 @@ import sys
 
 from playwright.async_api import async_playwright
 
-B = "http://localhost:8765/"
+import os
+B = os.environ.get("BASE", "http://localhost:8765").rstrip("/") + "/"
 
 
 async def main():

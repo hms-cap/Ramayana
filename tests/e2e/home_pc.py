@@ -1,6 +1,7 @@
 """Home: today's pañcāṅga readout (folds, follows the script) and the foldable śloka of the day (remembered)."""
 from playwright.sync_api import sync_playwright
-B = "http://localhost:8765"
+import os
+B = os.environ.get("BASE", "http://localhost:8765").rstrip("/")
 with sync_playwright() as p:
     b = p.chromium.launch(); ctx = b.new_context(viewport={"width": 390, "height": 800}, service_workers="block", timezone_id="Asia/Kolkata", locale="en-IN"); pg = ctx.new_page()
     errs = []; pg.on("pageerror", lambda e: errs.append(str(e)))
