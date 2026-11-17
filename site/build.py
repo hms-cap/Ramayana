@@ -968,7 +968,7 @@ def build_appendix(out: Path, env: Environment, base: dict) -> None:
     chips = {}
     for key, fn in (("stotras", "stotras.json"), ("gitas", "gitas.json")):
         rows = json.loads((ROOT / "data" / fn).read_text(encoding="utf-8"))[key]
-        chips[key] = [dict(id=r["id"], name=s3(r["name_iast"])) for r in rows]
+        chips[key] = [dict(id=r["id"], name=s3(r["name_iast"]), w=r.get("work", "mbh")) for r in rows]
     write("appendix", "appendix.html", 1, n_metres=len(present), n_stotras=len(chips["stotras"]), n_gitas=len(chips["gitas"]), chips=chips)
     index = []
     for m in present:
