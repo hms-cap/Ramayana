@@ -1,0 +1,45 @@
+/* Navaratna (v0.22): one colour system for the whole app. Loaded after style.css.
+   Ground, card, ink, muted, rule; and one hue per work in four roles:
+     --w-t     tint (chip / soft background)        --w-on-t  text and icons on the tint, and accent text on the page
+     --w-fill  solid fill with white text on it     --w-b     base (bars, rings, small marks)
+   html[data-hue] picks the page's work (ram lapis, mbh ruby, gita emerald, app topaz);
+   .w-ram / .w-mbh / .w-gita / .w-app set the same tokens on one element (a chip from another work). */
+:root {
+  --paper: #F1F2F5; --paper-2: #E8EAEF; --card: #FFFFFF; --ink: #161B26; --muted: #566070; --rule: #DDE1E8;
+  --focus: #2F62B8; --shadow: 0 8px 22px rgba(22,27,38,.12); --seg: #E8EAEF;
+  --r-card: 20px; --r-cell: 14px;
+  --ram-t: #DFE8F7; --ram-on: #1A3F80; --ram-fill: #1A3F80; --ram-b: #2F62B8;
+  --mbh-t: #F6DDE5; --mbh-on: #7A1638; --mbh-fill: #7A1638; --mbh-b: #B02D58;
+  --gita-t: #D7EFE6; --gita-on: #0D5A42; --gita-fill: #0D5A42; --gita-b: #178A66;
+  --app-t: #F6E8CC; --app-on: #7A500A; --app-fill: #7A500A; --app-b: #C08218;
+  --leaf: #F6E8CC; --leaf-ink: #2B1E06; --leaf-head: #7A500A; --leaf-rule: rgba(122,80,10,.25); --leaf-btn: rgba(122,80,10,.12);
+}
+:root:not([data-theme="dark"]):not([data-theme="system"]) { --paper: #F1F2F5; --paper-2: #E8EAEF; --rule: #DDE1E8; }
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] {
+    --paper: #0F1218; --paper-2: #171B24; --card: #1A1F2A; --ink: #E6E9EF; --muted: #A3ACBB; --rule: #2B3240;
+    --focus: #8FB2F0; --shadow: 0 8px 22px rgba(0,0,0,.5); --seg: #232937;
+    --ram-t: #1C2944; --ram-on: #B4CBF3; --ram-fill: #2A4E91; --ram-b: #7DA4EA;
+    --mbh-t: #3A1A26; --mbh-on: #F2B6C8; --mbh-fill: #8A2348; --mbh-b: #E07A9C;
+    --gita-t: #12322A; --gita-on: #9FDCC4; --gita-fill: #186B52; --gita-b: #4FC29A;
+    --app-t: #3A2C12; --app-on: #F0CF8E; --app-fill: #8A5D10; --app-b: #E0A63E;
+    --leaf: #2C2412; --leaf-ink: #F3E6C8; --leaf-head: #F0CF8E; --leaf-rule: rgba(240,207,142,.22); --leaf-btn: rgba(240,207,142,.12);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F1218; --paper-2: #171B24; --card: #1A1F2A; --ink: #E6E9EF; --muted: #A3ACBB; --rule: #2B3240;
+  --focus: #8FB2F0; --shadow: 0 8px 22px rgba(0,0,0,.5); --seg: #232937;
+  --ram-t: #1C2944; --ram-on: #B4CBF3; --ram-fill: #2A4E91; --ram-b: #7DA4EA;
+  --mbh-t: #3A1A26; --mbh-on: #F2B6C8; --mbh-fill: #8A2348; --mbh-b: #E07A9C;
+  --gita-t: #12322A; --gita-on: #9FDCC4; --gita-fill: #186B52; --gita-b: #4FC29A;
+  --app-t: #3A2C12; --app-on: #F0CF8E; --app-fill: #8A5D10; --app-b: #E0A63E;
+  --leaf: #2C2412; --leaf-ink: #F3E6C8; --leaf-head: #F0CF8E; --leaf-rule: rgba(240,207,142,.22); --leaf-btn: rgba(240,207,142,.12);
+  color-scheme: dark;
+}
+html, html[data-hue="ram"], .w-ram { --w-t: var(--ram-t); --w-on-t: var(--ram-on); --w-fill: var(--ram-fill); --w-b: var(--ram-b); }
+html[data-hue="mbh"], .w-mbh { --w-t: var(--mbh-t); --w-on-t: var(--mbh-on); --w-fill: var(--mbh-fill); --w-b: var(--mbh-b); }
+html[data-hue="gita"], .w-gita { --w-t: var(--gita-t); --w-on-t: var(--gita-on); --w-fill: var(--gita-fill); --w-b: var(--gita-b); }
+html[data-hue="app"], .w-app { --w-t: var(--app-t); --w-on-t: var(--app-on); --w-fill: var(--app-fill); --w-b: var(--app-b); }
+html { --accent: var(--w-on-t); --accent-soft: var(--w-t); --indigo: var(--w-fill); --wb: var(--w-fill); }
+body { background: var(--paper); color: var(--ink); }
