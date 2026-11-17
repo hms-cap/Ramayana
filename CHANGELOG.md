@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.20.1 — 2026-11-17
+- Release of 0.20.0 (its last commit did not change version.js, so Vercel skipped the build).
+
 ## 0.20.0 — 2026-11-16
 - Mahābhārata speaker lines ("dhṛtarāṣṭra uvāca", "sañjaya uvāca") now stand above the verse they introduce, as in the Gītā section, instead of running on as a verse line. In the Traditional text about 6,000 of them had been attached to the end of the previous verse. Both sources mark these lines; `etl/split_speakers.py` reads the marks (Kumbakonam `rend="speak"` and its `…x` id, Pune lines without a pāda letter) and moves them to a `spk` field.
 - With the speaker lines out, about 12,700 more verses get their metre.
