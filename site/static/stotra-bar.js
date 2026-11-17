@@ -147,10 +147,11 @@
     if (b && document.body.classList.contains("in-stotra")) {
       e.preventDefault(); e.stopPropagation();
       var ref = ""; try { ref = document.referrer ? new URL(document.referrer).pathname : ""; } catch (x) { /* ignore */ }
-      if (/\/appendix\/(stotras|gitas)\/([^\/]+\/)?$/.test(ref) && history.length > 1) history.back(); else location.assign(listHref(cur.st));
+      if (window.VRNav && VRNav.canBack()) history.back();   // the trail knows where we came from (v0.23)
+      else if (window.VRNav) VRNav.replace(listHref(cur.st)); else location.assign(listHref(cur.st));
     }
   }, true);
-  window.addEventListener("popstate", function () { if (nextAfterPop) { var h = nextAfterPop; nextAfterPop = null; location.replace(h); } });
+  window.addEventListener("popstate", function () { if (nextAfterPop) { var h = nextAfterPop; nextAfterPop = null; (window.VRNav ? VRNav.replace(h) : location.replace(h)); } });
   var t;
   window.addEventListener("scroll", function () { clearTimeout(t); t = setTimeout(progress, 80); }, { passive: true });
   window.addEventListener("hashchange", paint);

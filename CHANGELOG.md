@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.23.0 — 2026-11-17
+- Navigation: ‹ in the header is now a true Back. The tab keeps a trail of the pages it has shown (site/static/nav.js); ‹ goes one step back on it and names where it goes ("‹ Home", "‹ ಸುಂದರಕಾಂಡ"). Before, ‹ opened the parent page as a new page, so Back from a sarga walked through the kāṇḍa list and the Read page you never visited.
+- › Forward appears after going back. Long-press (or right-click) ‹ for the last few places.
+- Sideways moves replace the page instead of stacking history: Previous/Next, the jump sheet, the edition switch, the crumbs, the works switch. With nothing behind (a shared link, a fresh launch), ‹ goes to the parent page and replaces this one.
+- Read page and kāṇḍa / parva pages redesigned in the new look: unit cells like Home, sarga rows as cards with a number pill, and a "Continue here" card pinned on the kāṇḍa you are reading.
+
 ## 0.22.0 — 2026-11-17
 - New look, "Navaratna": one colour system for the whole app (site/static/theme.css). Ground, card, ink, muted, rule, and one hue per work in four roles (tint, text-on-tint, fill, base): Rāmāyaṇa lapis, Mahābhārata ruby, Gītā emerald, Pariśiṣṭa topaz; light and dark.
 - The four works are a segmented switch at the top of every page.

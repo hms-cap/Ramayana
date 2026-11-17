@@ -182,7 +182,7 @@
       info.moves = (info.moves || 0) + 1;
       ssSet({ moves: info.moves, origin: info.origin, fromList: info.fromList, resume: dir === "next" ? 0 : "last" });
       teardown(true);
-      location.replace(nbr.href);
+      (window.VRNav ? VRNav.replace(nbr.href) : location.replace(nbr.href));
     }
     // book page: record the place while scrolling
     var scrollT;

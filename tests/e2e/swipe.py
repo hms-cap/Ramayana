@@ -1,6 +1,6 @@
 """Swipe between sargas: one finger in the reading view, two fingers in the chant view."""
 from playwright.sync_api import sync_playwright
-B = "http://localhost:8765"
+B = __import__("os").environ.get("BASE", "http://localhost:8765").rstrip("/") + ""
 def swipe(cdp, pts0, pts1, steps=6):
     cdp.send("Input.dispatchTouchEvent", {"type": "touchStart", "touchPoints": [{"x": x, "y": y, "id": i} for i, (x, y) in enumerate(pts0)]})
     for s in range(1, steps + 1):

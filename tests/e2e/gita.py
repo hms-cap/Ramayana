@@ -2,11 +2,12 @@
     python site/build.py && python -m http.server 8765 --directory dist &
     python tests/e2e/gita.py
 """
+import os
 import json
 import sys
 from playwright.sync_api import sync_playwright
 
-B = "http://localhost:8765/"
+B = os.environ.get("BASE", "http://localhost:8765").rstrip("/") + "/"
 
 
 def check(cond, msg):

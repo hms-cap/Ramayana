@@ -111,8 +111,8 @@
     loadUnits().then(function (U) {
       bars.forEach(function (bar) {
         var cont = bar.hasAttribute("data-continue"), last = cont ? lastOf(WORK) : null, html = "";
-        if (last) {
-          var tt = (last.titles && last.titles[sc()]) || last.src;
+        var tt = last && ((last.titles && last.titles[sc()]) || last.src);
+        if (last && last.href && tt) {
           html += '<a class="bm-cont" href="' + ROOT + esc(last.href.replace(/^\/[^/]*\//, "").replace(/^\//, "")) + '"><span aria-hidden="true">▶</span><span><b lang="' + langOf(sc()) + '">Continue · ' + esc(tt) + '</b><small>' + esc(last.src) + ' ' + esc(last.v || "") + '</small></span></a>';
         }
         if (list.length) {
