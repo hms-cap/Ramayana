@@ -10,13 +10,20 @@
   <p class="greet-date" id="greet-date"></p>
 </section>
 
+<section class="pc" id="pc" aria-label="Today's pañcāṅga" hidden></section>
+
 <div class="home-grid">
   <section class="votd" id="votd" aria-roledescription="carousel" aria-label="Verse of the day"
            data-fallback='{{ fallback|e }}'>
     <span class="hole l" aria-hidden="true"></span><span class="hole r" aria-hidden="true"></span>
     <header class="votd-head">
-      <h2><span class="votd-kind">Today's śloka</span><span class="votd-sep"> · </span><span class="votd-name">…</span></h2>
+      <button type="button" class="votd-fold" id="votd-fold" aria-expanded="true" aria-controls="votd-body" aria-label="Hide today's śloka">
+        <h2><span class="votd-kind">Today's śloka</span><span class="votd-sep"> · </span><span class="votd-name">…</span></h2>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <p class="votd-peek" id="votd-peek" aria-hidden="true"></p>
     </header>
+    <div class="votd-body" id="votd-body">
     <div class="votd-view" aria-live="polite"><div class="votd-slide" role="group" aria-roledescription="slide" tabindex="0">
       <noscript>The verse of the day needs JavaScript. <a href="{{ wroot }}vu/1/1/">Begin at 1.1</a>.</noscript>
     </div></div>
@@ -32,6 +39,7 @@
       <button type="button" role="menuitem" id="votd-save" aria-pressed="false"><span class="lbl">Save</span></button>
       <button type="button" role="menuitem" id="votd-words">Word by word</button>
       <button type="button" role="menuitem" id="votd-info">Metre, place, other text</button>
+    </div>
     </div>
   </section>
 
@@ -59,4 +67,4 @@
 </section>
 
 {% endblock %}
-{% block scripts %}<script src="{{ root }}static/home.js"></script><script src="{{ root }}static/read.js"></script>{% endblock %}
+{% block scripts %}<script src="{{ root }}static/panchanga.js"></script><script src="{{ root }}static/home.js"></script><script src="{{ root }}static/read.js"></script>{% endblock %}

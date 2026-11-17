@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.21.0 — 2026-11-17
+- Home: a pañcāṅga readout under the greeting, computed on the device (new `site/static/panchanga.js`, adapted from the VedaAlokana app): one line "Kārtika Śukla Aṣṭamī", and on tap saṃvatsara, ṛtu, ayana, vāra, tithi, nakṣatra and yoga with their ending times, karaṇa, sunrise and sunset. Names follow the script setting (Kannada, Devanāgarī, IAST). Place: Bengaluru by default for Indian time zones, or "use my location". Open/closed is remembered.
+- Home: Today's śloka can be folded to its title and first line, and the choice is remembered.
+
 ## 0.20.1 — 2026-11-17
 - Release of 0.20.0 (its last commit did not change version.js, so Vercel skipped the build).
 

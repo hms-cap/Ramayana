@@ -60,6 +60,65 @@
   /* ---- greeting date, quick Chant chip ---- */
   var gd = document.getElementById("greet-date");
   if (gd) { try { gd.textContent = new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" }); } catch (e) { /* ignore */ } }
+  /* ---- pañcāṅga: computed here (panchanga.js), for the saved place; folds to one line ---- */
+  var pc = document.getElementById("pc");
+  if (pc && window.VRPanchanga) {
+    var PLACE = "vr.place", PCOPEN = "vr.pc.open", pcStamp = "";
+    var place = function () {
+      try { var p = JSON.parse(localStorage.getItem(PLACE) || "null"); if (p && isFinite(p.lat) && isFinite(p.lon)) return p; } catch (e) { /* ignore */ }
+      var tz = ""; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) { /* ignore */ }
+      if (/Kolkata|Calcutta/.test(tz)) return { lat: 12.9716, lon: 77.5946, name: "Bengaluru", guess: true };
+      return { lat: 20, lon: -new Date().getTimezoneOffset() / 4, name: "Your time zone", guess: true };
+    };
+    var nm = function (iast, s) {   // a Sanskrit name in the chosen script
+      if (s === "iast") return iast;
+      return T.render(T.iastToSlp1(iast.toLowerCase()), s, false);
+    };
+    var clock = function (ms, base, s) {
+      var d = new Date(ms), t = d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+      if (s !== "iast") t = T.digits(t, s);
+      var tom = d.getDate() !== new Date(base).getDate();
+      return esc(t) + (tom ? ' <span class="pc-tom">next day</span>' : "");
+    };
+    var paintPc = function () {
+      var s = sc(), pl = place(), now = Date.now(), p;
+      try { p = window.VRPanchanga(new Date(), pl.lat, pl.lon); } catch (e) { pc.hidden = true; return; }
+      var L = function (x) { return '<span lang="' + langOf(s) + '">' + esc(nm(x, s)) + "</span>"; };
+      var open = false; try { open = localStorage.getItem(PCOPEN) === "1"; } catch (e) { /* ignore */ }
+      pc.classList.toggle("open", open); pc.hidden = false;
+      pc.innerHTML = '<button type="button" class="pc-head" id="pc-tog" aria-expanded="' + open + '" aria-controls="pc-more" aria-label="Pañcāṅga: ' + esc(p.masa + " " + p.paksha + " " + p.tithi) + '">' +
+        '<span class="pc-main">' + L(p.masa) + " " + L(p.paksha) + " " + L(p.tithi) + "</span>" +
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>' +
+        '<div class="pc-more" id="pc-more"><div>' +
+        '<p class="pc-sub">' + L(p.samvatsara) + " · " + L(p.rtu) + " · " + L(p.ayana) + " · " + L(p.vara) + "</p>" +
+        '<dl class="pc-grid">' +
+        '<div><dt>Tithi</dt><dd>' + L(p.tithi) + "<small>till " + clock(p.tithiEnd, now, s) + "</small></dd></div>" +
+        '<div><dt>Nakṣatra</dt><dd>' + L(p.nakshatra) + "<small>till " + clock(p.nakshatraEnd, now, s) + "</small></dd></div>" +
+        '<div><dt>Yoga</dt><dd>' + L(p.yoga) + "<small>till " + clock(p.yogaEnd, now, s) + "</small></dd></div>" +
+        '<div><dt>Karaṇa</dt><dd>' + L(p.karana) + "<small>at sunrise</small></dd></div>" +
+        '<div class="pc-sun"><dt>Sun</dt><dd><span>↑ ' + clock(p.sunrise, now, s) + "</span><small>↓ " + (p.sunset ? clock(p.sunset, now, s) : "–") + "</small></dd></div>" +
+        "</dl>" +
+        '<p class="pc-foot"><button type="button" class="pc-loc" id="pc-loc">' + "📍 " + esc(pl.name) + "</button>" +
+        '<span class="pc-note">' + (pl.guess ? "Tap the place to use your location. " : "") + "Computed on this device; ending times can differ by a few minutes from printed pañcāṅgas.</span></p>" +
+        "</div></div>";
+      pcStamp = new Date().toDateString() + "|" + s + "|" + pl.name;
+    };
+    pc.addEventListener("click", function (e) {
+      if (e.target.closest("#pc-tog")) {
+        var on = !pc.classList.contains("open"); pc.classList.toggle("open", on);
+        document.getElementById("pc-tog").setAttribute("aria-expanded", on);
+        try { localStorage.setItem(PCOPEN, on ? "1" : "0"); } catch (x) { /* ignore */ }
+      } else if (e.target.closest("#pc-loc") && navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          try { localStorage.setItem(PLACE, JSON.stringify({ lat: pos.coords.latitude, lon: pos.coords.longitude, name: "Your location" })); } catch (x) { /* ignore */ }
+          paintPc();
+        }, function () { var n = pc.querySelector(".pc-note"); if (n) n.textContent = "Location not available; showing " + place().name + "."; }, { maximumAge: 864e5, timeout: 10000 });
+      }
+    });
+    document.addEventListener("prefs-changed", paintPc);
+    document.addEventListener("visibilitychange", function () { if (!document.hidden && pcStamp.split("|")[0] !== new Date().toDateString()) paintPc(); });
+    paintPc();
+  }
   var qc = document.getElementById("quick-chant");
   if (qc) qc.addEventListener("click", function () {
     var l = lastPlace(), base = location.pathname.replace(/index\.html$/, ""), path = "vu/1/1/", at = 0;
@@ -193,7 +252,21 @@
     var wb = document.getElementById("votd-words"), hasW = secs.some(function (x) { return x.key === "words"; });
     wb.setAttribute("aria-disabled", hasW ? "false" : "true"); wb.setAttribute("aria-pressed", secs[cardNo].key === "words" ? "true" : "false");
     paintSave();
+    var pk = document.getElementById("votd-peek");
+    if (pk) { var l0 = card.slp && card.slp[0]; pk.textContent = l0 ? T.render(l0, s, !!P.get().savarna) : ""; pk.lang = langOf(s); pk.className = "votd-peek t-" + s; }
   }
+  /* fold: the card shrinks to its title and the first line; remembered */
+  var FOLD = "vr.votd.fold", fb = document.getElementById("votd-fold");
+  function setFold(on, keep) {
+    votd.classList.toggle("folded", on);
+    fb.setAttribute("aria-expanded", on ? "false" : "true"); fb.setAttribute("aria-label", on ? "Show today's śloka" : "Hide today's śloka");
+    document.getElementById("votd-body").inert = on;
+    if (on) { var m = document.getElementById("votd-menu"); m.hidden = true; document.getElementById("votd-more").setAttribute("aria-expanded", "false"); }
+    if (!keep) { try { localStorage.setItem(FOLD, on ? "1" : "0"); } catch (e) { /* ignore */ } }
+  }
+  var folded = false; try { folded = localStorage.getItem(FOLD) === "1"; } catch (e) { /* ignore */ }
+  setFold(folded, true);
+  fb.addEventListener("click", function () { setFold(!votd.classList.contains("folded")); });
   function saveId() { var w = card.wk || B.work; return "dm-" + (w === "ram" ? "" : w + "-") + (card.ed || "ce") + "-" + card.ref; }
   function paintSave() {
     var b = document.getElementById("votd-save"), on = S.has(saveId());
