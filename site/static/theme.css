@@ -104,3 +104,13 @@ body { background: var(--paper); color: var(--ink); }
 .bm-cont { border-radius: var(--r-card) !important; background: var(--w-fill) !important; color: #FFFFFF !important; box-shadow: none !important; }
 .bm-cont b { font-family: var(--f-knda); font-weight: 400; }
 .bm-cont small { color: rgba(255,255,255,.8) !important; }
+
+/* bottom tab bar: a label under every icon (v0.23.1) */
+@media (max-width: 899.98px) {
+  .tabbar { height: 66px; }
+  .tabbar a, .tabbar a[aria-current] { flex-direction: column; gap: 1px; height: 54px; min-width: 64px; padding: 0 0.6rem; border-radius: 18px; }
+  .tabbar a em, .tabbar a[aria-current] em { display: block; font: 600 0.68rem/1.1 var(--f-ui); letter-spacing: .01em; }
+  .tabbar a svg { width: 22px; height: 22px; }
+  .tabbar a[aria-current] { background: var(--w-t); color: var(--w-on-t); }
+  .tabbar .badge-n { top: 2px; right: 8px; }
+}

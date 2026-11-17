@@ -16,7 +16,7 @@
   </nav>
   <header class="sarga-head">
     <h1><button type="button" class="jump-open" aria-haspopup="dialog" aria-label="Go to another {{ W.sub }}">{{ unit_sx(kanda) }} <span class="sarga-n">{{ sx(head_kn, head_deva, head_iast) }}</span><span class="jump-dd" aria-hidden="true">▾</span></button></h1>
-    <p class="edsw"><span class="edsw-cur">{{ ed.short }}</span>{% if alt_href %}<a class="edsw-go" data-ed="{{ other_id }}" data-replace href="{{ alt_href.href }}">⇄ {{ alt_href.label }} {{ alt_href.ref }}</a>{% else %}<span class="edsw-no" data-ed="{{ other_id }}">Not in the {{ other_label }}</span>{% endif %}<a class="edsw-i" href="{{ root }}about/#editions" aria-label="About the two texts">ⓘ</a></p>
+    <p class="edsw"><span class="edsw-cur">{{ ed.short }}</span>{% if alt_href %}<a class="edsw-go" data-ed-to="{{ other_id }}" data-replace href="{{ alt_href.href }}">⇄ {{ alt_href.label }} {{ alt_href.ref }}</a>{% else %}<span class="edsw-no" data-ed="{{ other_id }}">Not in the {{ other_label }}</span>{% endif %}<a class="edsw-i" href="{{ root }}about/#editions" aria-label="About the two texts">ⓘ</a></p>
     <div class="head-actions">
       <button type="button" class="chant-open act" aria-haspopup="dialog"><span lang="kn">ಪಠಣ</span> Chant view</button>
       <button type="button" class="pdf-btn act" data-nopdf>PDF</button>

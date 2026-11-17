@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.23.1 — 2026-11-17
+- The edition switch under a sarga title ("⇄ Pune Text 6.23") is always shown; it was hidden whenever the other text was switched off in Settings, which is the default.
+- The bottom tab bar shows a label under every icon (Home, Search, Saved, Dictionary), not only under the current one.
+
 ## 0.23.0 — 2026-11-17
 - Navigation: ‹ in the header is now a true Back. The tab keeps a trail of the pages it has shown (site/static/nav.js); ‹ goes one step back on it and names where it goes ("‹ Home", "‹ ಸುಂದರಕಾಂಡ"). Before, ‹ opened the parent page as a new page, so Back from a sarga walked through the kāṇḍa list and the Read page you never visited.
 - › Forward appears after going back. Long-press (or right-click) ‹ for the last few places.

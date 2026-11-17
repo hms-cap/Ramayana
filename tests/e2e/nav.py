@@ -17,8 +17,8 @@ with sync_playwright() as p:
     pg.go_back(); print("phone Back after 3× Next:", pg.url); assert pg.url.endswith("/read/")
     # ‹ after Next still goes up, not to the previous sarga
     pg.goto(B + "/vu/2/10/"); pg.click(".pager a[rel=next]"); pg.wait_for_load_state(); pg.click("header [data-back]"); assert pg.url.endswith("/vu/2/"), pg.url
-    # edition switch hidden while the Critical text is off; shown and replacing when on
-    pg.goto(B + "/vu/2/10/"); assert not pg.is_visible(".edsw-go")
+    # edition switch is always offered (v0.23.1), and replaces the page
+    pg.goto(B + "/vu/2/10/"); assert pg.is_visible(".edsw-go")
     pg.evaluate("localStorage.setItem('vr-prefs', JSON.stringify({off: [], offMbh: []}))")
     pg.goto(B + "/read/"); pg.goto(B + "/vu/2/10/"); assert pg.is_visible(".edsw-go"); print("switch:", pg.inner_text(".edsw"))
     pg.click(".edsw-go"); pg.wait_for_load_state(); assert "/ce/2/" in pg.url, pg.url

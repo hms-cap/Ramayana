@@ -1,5 +1,12 @@
 [
  [
+  "0.23.1",
+  "2026-11-17",
+  [
+   "The edition switch is always shown, and the bottom tabs have labels."
+  ]
+ ],
+ [
   "0.23.0",
   "2026-11-17",
   [
