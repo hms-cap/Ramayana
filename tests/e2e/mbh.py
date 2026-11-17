@@ -58,7 +58,7 @@ async def main():
         assert "continue" in txt.lower() and "ಆದಿಪರ್ವ" in txt
         # texts switched on are per work: turn the Pune text on in the Mahābhārata only
         await pg.click('[data-open-sheet="settings"]')
-        await pg.click('label.sw:has([data-ed-toggle="ce"])')
+        await pg.click('[data-ed-show="both"]')
         await pg.keyboard.press("Escape")
         prefs = await pg.evaluate("JSON.parse(localStorage.getItem('vr-prefs'))")
         print("prefs:", prefs)

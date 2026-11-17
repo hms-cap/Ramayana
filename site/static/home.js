@@ -57,10 +57,7 @@
     try { var pw = window.VRPrevWork; if (fresh && (pw === "mbh" || pw === "gita") && !/[?&]work=ram/.test(location.search)) { location.replace(ROOT + pw + "/"); return; } } catch (e) { /* ignore */ }
   }
 
-  /* ---- greeting date, quick Chant chip ---- */
-  var gd = document.getElementById("greet-date");
-  if (gd) { try { gd.textContent = new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" }); } catch (e) { /* ignore */ } }
-  /* ---- pañcāṅga: computed here (panchanga.js), for the saved place; folds to one line ---- */
+  /* ---- date strip + pañcāṅga: computed here (panchanga.js), for the saved place; the strip opens the details ---- */
   var pc = document.getElementById("pc");
   if (pc && window.VRPanchanga) {
     var PLACE = "vr.place", PCOPEN = "vr.pc.open", pcStamp = "";
@@ -80,14 +77,20 @@
       var tom = d.getDate() !== new Date(base).getDate();
       return esc(t) + (tom ? ' <span class="pc-tom">next day</span>' : "");
     };
+    var dateStr = function () {   // "TUE 17 NOV"
+      try {
+        var o = {}; new Intl.DateTimeFormat("en-GB", { weekday: "short", day: "numeric", month: "short" }).formatToParts(new Date()).forEach(function (x) { o[x.type] = x.value; });
+        return (o.weekday + " " + o.day + " " + o.month).toUpperCase();
+      } catch (e) { return ""; }
+    };
     var paintPc = function () {
       var s = sc(), pl = place(), now = Date.now(), p;
       try { p = window.VRPanchanga(new Date(), pl.lat, pl.lon); } catch (e) { pc.hidden = true; return; }
       var L = function (x) { return '<span lang="' + langOf(s) + '">' + esc(nm(x, s)) + "</span>"; };
       var open = false; try { open = localStorage.getItem(PCOPEN) === "1"; } catch (e) { /* ignore */ }
       pc.classList.toggle("open", open); pc.hidden = false;
-      pc.innerHTML = '<button type="button" class="pc-head" id="pc-tog" aria-expanded="' + open + '" aria-controls="pc-more" aria-label="Pañcāṅga: ' + esc(p.masa + " " + p.paksha + " " + p.tithi) + '">' +
-        '<span class="pc-main">' + L(p.masa) + " " + L(p.paksha) + " " + L(p.tithi) + "</span>" +
+      pc.innerHTML = '<button type="button" class="pc-head" id="pc-tog" aria-expanded="' + open + '" aria-controls="pc-more" aria-label="' + esc(dateStr() + ": " + p.masa + " " + p.paksha + " " + p.tithi + " " + p.nakshatra) + '">' +
+        '<span class="pc-line"><span class="pc-date">' + esc(dateStr()) + '</span> <span class="pc-main">· ' + L(p.masa) + " " + L(p.paksha) + " " + L(p.tithi) + " · " + L(p.nakshatra) + "</span></span>" +
         '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>' +
         '<div class="pc-more" id="pc-more"><div>' +
         '<p class="pc-sub">' + L(p.samvatsara) + " · " + L(p.rtu) + " · " + L(p.ayana) + " · " + L(p.vara) + "</p>" +
@@ -116,6 +119,7 @@
       }
     });
     document.addEventListener("prefs-changed", paintPc);
+    document.addEventListener("place-changed", paintPc);
     document.addEventListener("visibilitychange", function () { if (!document.hidden && pcStamp.split("|")[0] !== new Date().toDateString()) paintPc(); });
     paintPc();
   }
@@ -127,31 +131,73 @@
     location.assign(WROOT + path.replace(/#.*$/, ""));
   });
 
-  /* ---- Continue ---- */
-  (function () {
-    var l = lastPlace(); if (!l) return;
-    var s = sc(), box = document.getElementById("continue");
-    var rel = l.href.replace(location.pathname.replace(/[^/]*$/, ""), "");   // site-relative path
-    // stored href is a full pathname; make it relative to the site root
-    var base = location.pathname.replace(/index\.html$/, "");
-    var path = l.href.indexOf(base) === 0 ? l.href.slice(base.length) : l.href.replace(/^\/[^/]+\//, "");
-    var RES = '<svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>';
-    document.getElementById("cont-label").textContent = "Continue reading";
-    document.getElementById("cont-icon").innerHTML = RES; document.getElementById("cont-go-ic").innerHTML = RES;
-    document.getElementById("cont-go-t").textContent = "Resume";
-    document.getElementById("cont-barwrap").hidden = false;
-    document.getElementById("cont-where").lang = "";
-    document.getElementById("cont-where").textContent = (l.titles[s] || l.src) + " · verse " + l.v + " of " + l.of;
-    document.getElementById("cont-bar").style.width = Math.round(100 * (l.i + 1) / l.of) + "%";
-    document.getElementById("cont-go").href = WROOT + path;
-  })();
-
   /* ---- verse of the day ---- */
   var WK = {    // the daily card can come from any of the three texts
     ram: { pre: "", en: "Rāmāyaṇa", kn: "ರಾಮಾಯಣ", deva: "रामायणम्", sub: ["sarga", "ಸರ್ಗ", "सर्गः"], epic: ["In the epic", "ರಾಮಾಯಣದಲ್ಲಿ"], site: "", name: "ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ" },
     mbh: { pre: "mbh/", en: "Mahābhārata", kn: "ಮಹಾಭಾರತ", deva: "महाभारतम्", sub: ["adhyāya", "ಅಧ್ಯಾಯ", "अध्यायः"], epic: ["In the epic", "ಮಹಾಭಾರತದಲ್ಲಿ"], site: "/mbh", name: "ಮಹಾಭಾರತ" },
     gita: { pre: "gita/", en: "Bhagavadgītā", kn: "ಭಗವದ್ಗೀತೆ", deva: "भगवद्गीता", sub: ["adhyāya", "ಅಧ್ಯಾಯ", "अध्यायः"], epic: ["In the Gītā", "ಭಗವದ್ಗೀತೆಯಲ್ಲಿ"], site: "/gita", name: "ಭಗವದ್ಗೀತೆ" }
   };
+
+  /* ---- Continue reading: the latest work as a big card, the others (and the last stotra / gītā) as chips ---- */
+  var CW = {
+    ram: { key: "vr.last", pre: "", kn: "ರಾಮಾಯಣ", deva: "रामायणम्", en: "Rāmāyaṇa", sub: ["sarga", "ಸರ್ಗ", "सर्गः"] },
+    mbh: { key: "vr.last.mbh", pre: "mbh/", kn: "ಮಹಾಭಾರತ", deva: "महाभारतम्", en: "Mahābhārata", sub: ["adhyāya", "ಅಧ್ಯಾಯ", "अध्यायः"] },
+    gita: { key: "vr.last.gita", pre: "gita/", kn: "ಭಗವದ್ಗೀತೆ", deva: "भगवद्गीता", en: "Bhagavadgītā", short: ["Gītā", "ಗೀತಾ", "गीता"], sub: ["adhyāya", "ಅಧ್ಯಾಯ", "अध्यायः"] }
+  };
+  var STKEY = "vr.last.st", unitsP = null;
+  function loadUnits() { if (!unitsP) unitsP = getJSON(ROOT + "data/units.json").catch(function () { return {}; }); return unitsP; }
+  function si() { return { knda: 0, deva: 1, iast: 2 }[sc()]; }
+  function nn(n) { return sc() === "iast" ? String(n) : T.digits(String(n), sc()); }
+  function readKey(k) { try { var o = JSON.parse(localStorage.getItem(k) || "null"); return o && o.href ? o : null; } catch (e) { return null; } }
+  function siteHref(h) {   // a stored pathname (+ #hash) -> address from this page, whatever the site root or work
+    var m = /(?:mbh\/|gita\/)?(?:vu|ce)\/\d+\/\d+\/(?:#.*)?$/.exec(h || "");
+    return m ? ROOT + m[0] : null;
+  }
+  function placeOf(h) { var m = /(?:vu|ce)\/(\d+)\/(\d+)\//.exec(h || ""); return m ? { k: +m[1], s: +m[2] } : null; }
+  function entries() {
+    var order = [B.work].concat(["ram", "mbh", "gita"].filter(function (w) { return w !== B.work; })), out = [];
+    order.forEach(function (w, i) {
+      var l = readKey(CW[w].key), pl = l && placeOf(l.href); if (!l || !pl || !siteHref(l.href)) return;
+      out.push({ w: w, l: l, pl: pl, ts: +l.ts || 0, ord: i });
+    });
+    out.sort(function (a, b) { return (b.ts - a.ts) || (a.ord - b.ord); });
+    return out;
+  }
+  function paintCont(U) {
+    var box = document.getElementById("continue"); if (!box) return;
+    var ents = entries(), st = readKey(STKEY), i = si();
+    function uname(e) { var u = U[e.w] && U[e.w][e.pl.k]; return e.w === "gita" ? CW.gita.short[i] : (u ? u[i] : ((e.l.titles && e.l.titles[sc()]) || "").split(" · ")[0]); }
+    if (!ents.length && !st) return;
+    var hero = ents[0], go = document.getElementById("cont-go");
+    document.getElementById("cont-label").textContent = hero ? "Continue reading" : "Begin";
+    if (hero) {
+      var c = CW[hero.w], wn = i === 0 ? c.kn : i === 1 ? c.deva : c.en, sub = i === 0 ? c.sub[1] : i === 1 ? c.sub[2] : c.sub[0];
+      var place = hero.w === "gita" ? sub + " " + nn(hero.pl.s) : uname(hero) + " · " + sub + " " + nn(hero.pl.s);
+      go.className = "cont-hero w-" + hero.w; go.href = siteHref(hero.l.href);
+      var cw = document.getElementById("cont-work"); cw.textContent = wn; cw.lang = sc() === "knda" ? "kn" : "sa";
+      var cwh = document.getElementById("cont-where"); cwh.textContent = place; cwh.lang = sc() === "knda" ? "kn" : "sa";
+      document.getElementById("cont-go-t").textContent = hero.w === "gita" ? hero.pl.s + (hero.l.v ? "." + hero.l.v : "") : hero.pl.k + "." + hero.pl.s;
+    }
+    var chips = (hero ? ents.slice(1) : ents).map(function (e) {
+      var label = uname(e) + " · " + nn(e.pl.s);
+      return { ts: e.ts, h: '<a class="cchip w-' + e.w + '" href="' + esc(siteHref(e.l.href)) + '"><span class="cc-ic" aria-hidden="true">▶</span><span class="cc-t" lang="' + (sc() === "knda" ? "kn" : "sa") + '">' + esc(label) + "</span></a>" };
+    });
+    var sh = st && siteHref(st.href);
+    if (st && sh) chips.push({ ts: +st.ts || 0, h: '<a class="cchip w-app" href="' + esc(sh) + '"><span class="cc-ic" aria-hidden="true">▶</span><span class="cc-t" lang="' + (sc() === "knda" ? "kn" : "sa") + '">' + esc((st.title && (st.title[sc()] || st.title.iast)) || st.id || "") + "</span></a>" });
+    chips.sort(function (a, b) { return b.ts - a.ts; });
+    document.getElementById("cont-chips").innerHTML = chips.map(function (x) { return x.h; }).join("");
+  }
+  function markNow() {   // the unit being read in this work
+    var l = readKey(CW[B.work].key), pl = l && placeOf(l.href); if (!pl) return;
+    var k = GITA ? pl.s : pl.k;
+    document.querySelectorAll("#kcells .kcell").forEach(function (c) {
+      var on = +c.dataset.k === k; c.classList.toggle("now", on);
+      if (on) c.setAttribute("aria-current", "true"); else c.removeAttribute("aria-current");
+    });
+  }
+  markNow();
+  loadUnits().then(function (U) { paintCont(U); document.addEventListener("prefs-changed", function () { paintCont(U); }); });
+
   function wk() { return WK[(card && card.wk) || B.work] || WK.ram; }
   var grammar = null, ix = null, card = null, idx = 0, cardNo = 0, shuffled = false, today = null;
   var LAB = {

@@ -9,8 +9,7 @@ with sync_playwright() as p:
     print("tabbar:", labs); assert labs == ["Home", "Search", "Saved", "Dictionary: Sanskrit to Kannada (Śabdārtha Kaustubha)"], labs
     pg.click("[data-open-sheet=settings]")
     assert pg.is_visible("#settings .set-prev"), "preview"
-    assert not pg.is_visible("#settings [data-pref=savarna]"), "pañcama is under Advanced"
-    pg.click("#settings .acc-d summary"); assert pg.is_visible("#settings [data-pref=savarna]")
+    assert pg.is_visible("#settings [data-pref=savarna]"), "Kannada spelling switch is on the first page"
     pg.click("[data-set-script=deva]"); assert "धर्मक्षेत्रे" in pg.inner_text("#settings .set-prev")
     pg.click("[data-open-sheet=dlsheet]"); pg.wait_for_selector("#dl-list .dl")
     assert not pg.is_visible("#settings")

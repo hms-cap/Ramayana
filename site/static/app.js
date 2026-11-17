@@ -68,6 +68,7 @@
   window.VRPrefs = {
     off: function () { return offList(); },
     offFor: function (w) { var v = prefs[{ mbh: "offMbh", gita: "offGita" }[w] || "off"]; return Array.isArray(v) ? v : ["ce"]; },
+    setOff: function (list) { prefs[OFFK] = list; save(prefs); apply(); },
     get: function () { return prefs; },
     set: function (k, v) { prefs[k] = v; save(prefs); apply(); }
   };

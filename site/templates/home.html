@@ -1,21 +1,15 @@
 {% extends "base.html" %}
-{% from "_art.html" import kcard, workchips, gita_cards %}
+{% from "_art.html" import art, workchips %}
 {% block main %}
 {{ workchips(W, works_list, root) }}
 <div class="bmbar" data-bmbar hidden></div>
 {% if W.id == 'gita' %}<p class="gitas-link"><a href="{{ root }}appendix/gitas/"><b>{{ sx("ಮಹಾಭಾರತದ ಇತರ ಗೀತೆಗಳು", "महाभारते अन्याः गीताः", "Other gītās in the Mahābhārata") }}</b><span>Anugītā, Vyādha Gītā, Sanatsujātīya and more ›</span></a></p>{% endif %}
 {% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
-<section class="greet">
-  <h1 lang="kn">ನಮಸ್ಕಾರ</h1>
-  <p class="greet-date" id="greet-date"></p>
-</section>
-
 <section class="pc" id="pc" aria-label="Today's pañcāṅga" hidden></section>
 
 <div class="home-grid">
   <section class="votd" id="votd" aria-roledescription="carousel" aria-label="Verse of the day"
            data-fallback='{{ fallback|e }}'>
-    <span class="hole l" aria-hidden="true"></span><span class="hole r" aria-hidden="true"></span>
     <header class="votd-head">
       <button type="button" class="votd-fold" id="votd-fold" aria-expanded="true" aria-controls="votd-body" aria-label="Hide today's śloka">
         <h2><span class="votd-kind">Today's śloka</span><span class="votd-sep"> · </span><span class="votd-name">…</span></h2>
@@ -43,28 +37,33 @@
     </div>
   </section>
 
-  <aside class="home-side">
-    <section class="cont" id="continue">
-      <h2><span id="cont-icon" class="cont-ic"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 3.5v13l11-6.5z"/></svg></span> <span id="cont-label">Begin</span></h2>
-      <p class="cont-where" id="cont-where" lang="kn">{{ rail_kandas[0].kn }} · {{ W.sub_kn }} ೧</p>
-      <p class="cont-bar" id="cont-barwrap" hidden><span id="cont-bar" style="width:0"></span></p>
-      <p class="cont-act"><a class="pillbtn light" id="cont-go" href="{{ wroot }}vu/1/1/"><span id="cont-go-ic"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 3.5v13l11-6.5z"/></svg></span> <span id="cont-go-t">Start 1.1</span></a></p>
+  <div class="home-side">
+    <section class="cont" id="continue" aria-labelledby="cont-label">
+      <h2 class="sec-h" id="cont-label">Begin</h2>
+      <a class="cont-hero w-{{ W.id }}" id="cont-go" href="{{ wroot }}vu/1/1/">
+        <span class="ch-tx"><small class="ch-work" id="cont-work" lang="kn">{{ W.kn_chip or W.kn }}</small><span class="ch-where" id="cont-where" lang="kn">{{ rail_kandas[0].kn }} · {{ W.sub_kn }} ೧</span></span>
+        <span class="ch-pill" id="cont-pill"><span aria-hidden="true">▶</span> <span id="cont-go-t">Start 1.1</span></span>
+      </a>
+      <div class="cont-chips" id="cont-chips"></div>
     </section>
-  </aside>
+
+    <section class="tiles-sec units-sec">
+      <div class="tiles-head"><h2 class="sec-h">{{ W.Unit }}s</h2><a class="seeall" href="{{ wroot }}read/">See all</a></div>
+      <div class="kcells" id="kcells">
+      {% if W.single %}{% for c in gita_chs %}<a class="kcard kcell" href="{{ wroot }}vu/1/{{ c.n }}/" data-k="{{ c.n }}"><span class="kl-t">{{ unit_sx(c) }}</span><span class="kl-c">{{ num_sx(c.n) }} · <span data-ed="vu">{{ gita_counts.vu[c.n] }}</span><span data-ed="ce"><span class="sep"> / </span>{{ gita_counts.ce[c.n] }}</span> verses</span><span class="kl-now">reading now</span></a>
+      {% endfor %}{% else %}{% for k in eds[0].kandas %}{% set i = loop.index0 %}<button type="button" class="kcard kcell" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-deva="{{ k.deva }}" data-iast="{{ k.en }}" data-en="{{ k.en }}" data-n-vu="{{ vu_e.kandas[i].sargas }}" data-n-ce="{{ ce_e.kandas[i].sargas }}" style="--kb:{{ k.kb or PAL[k.n][0] }};--kp:{{ k.kp or PAL[k.n][1] }}" aria-haspopup="dialog"><span class="kl-art" hidden>{% if k.svg %}{{ k.svg|safe }}{% else %}{{ art(k.n) }}{% endif %}{% for a in k.alts %}{{ a|safe }}{% endfor %}</span><span class="kl-t">{{ unit_sx(k) }}</span><span class="kl-c">{{ num_sx(k.n) }} · <span data-ed="vu">{{ vu_e.kandas[i].sargas }}</span><span data-ed="ce"><span class="sep"> / </span>{{ ce_e.kandas[i].sargas }}</span> {{ W.subs }}</span><span class="kl-now">reading now</span></button>
+      {% endfor %}{% endif %}
+      </div>
+    </section>
+  </div>
 </div>
 
-<section class="tiles-sec">
-  <div class="tiles-head"><h2>{{ W.Unit }}s</h2><a class="seeall" href="{{ wroot }}read/">See all</a></div>
-  <div class="krail">
-  {% if W.single %}{{ gita_cards(gita_chs, gita_counts, wroot) }}{% else %}{% for k in eds[0].kandas %}{% set i = loop.index0 %}{{ kcard(k, vu_e.kandas[i].sargas, ce_e.kandas[i].sargas, unit=W.subs) }}{% endfor %}{% endif %}
-  </div>
-  <div class="quick">
-    {% if dhyana %}<a class="pillbtn card" href="{{ wroot }}vu/1/0/"><span lang="kn">{{ dhyana.title.kn }}</span> Dhyānam</a>{% endif %}
-    <a class="pillbtn card" href="{{ wroot }}search/">Search</a>
-    <a class="pillbtn card" href="{{ root }}my/">Saved</a>
-    <button type="button" class="pillbtn card" id="quick-chant"><span lang="kn">ಪಠಣ</span> Chant</button>
-  </div>
-</section>
+<div class="quick">
+  {% if dhyana %}<a class="pillbtn card" href="{{ wroot }}vu/1/0/"><span lang="kn">{{ dhyana.title.kn }}</span> Dhyānam</a>{% endif %}
+  <a class="pillbtn card" href="{{ wroot }}search/">Search</a>
+  <a class="pillbtn card" href="{{ root }}my/">Saved</a>
+  <button type="button" class="pillbtn card" id="quick-chant"><span lang="kn">ಪಠಣ</span> Chant</button>
+</div>
 
 {% endblock %}
 {% block scripts %}<script src="{{ root }}static/panchanga.js"></script><script src="{{ root }}static/home.js"></script><script src="{{ root }}static/read.js"></script>{% endblock %}
