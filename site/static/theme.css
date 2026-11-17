@@ -1,0 +1,89 @@
+/* Navaratna (v0.22): one colour system for the whole app. Loaded after style.css.
+   Ground, card, ink, muted, rule; and one hue per work in four roles:
+     --w-t     tint (chip / soft background)        --w-on-t  text and icons on the tint, and accent text on the page
+     --w-fill  solid fill with white text on it     --w-b     base (bars, rings, small marks)
+   html[data-hue] picks the page's work (ram lapis, mbh ruby, gita emerald, app topaz);
+   .w-ram / .w-mbh / .w-gita / .w-app set the same tokens on one element (a chip from another work). */
+:root {
+  --paper: #F1F2F5; --paper-2: #E8EAEF; --card: #FFFFFF; --ink: #161B26; --muted: #566070; --rule: #DDE1E8;
+  --focus: #2F62B8; --shadow: 0 8px 22px rgba(22,27,38,.12); --seg: #E8EAEF;
+  --r-card: 20px; --r-cell: 14px;
+  --ram-t: #DFE8F7; --ram-on: #1A3F80; --ram-fill: #1A3F80; --ram-b: #2F62B8;
+  --mbh-t: #F6DDE5; --mbh-on: #7A1638; --mbh-fill: #7A1638; --mbh-b: #B02D58;
+  --gita-t: #D7EFE6; --gita-on: #0D5A42; --gita-fill: #0D5A42; --gita-b: #178A66;
+  --app-t: #F6E8CC; --app-on: #7A500A; --app-fill: #7A500A; --app-b: #C08218;
+  --leaf: #F6E8CC; --leaf-ink: #2B1E06; --leaf-head: #7A500A; --leaf-rule: rgba(122,80,10,.25); --leaf-btn: rgba(122,80,10,.12);
+}
+:root:not([data-theme="dark"]):not([data-theme="system"]) { --paper: #F1F2F5; --paper-2: #E8EAEF; --rule: #DDE1E8; }
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] {
+    --paper: #0F1218; --paper-2: #171B24; --card: #1A1F2A; --ink: #E6E9EF; --muted: #A3ACBB; --rule: #2B3240;
+    --focus: #8FB2F0; --shadow: 0 8px 22px rgba(0,0,0,.5); --seg: #2C3343;
+    --ram-t: #1C2944; --ram-on: #B4CBF3; --ram-fill: #2A4E91; --ram-b: #7DA4EA;
+    --mbh-t: #3A1A26; --mbh-on: #F2B6C8; --mbh-fill: #8A2348; --mbh-b: #E07A9C;
+    --gita-t: #12322A; --gita-on: #9FDCC4; --gita-fill: #186B52; --gita-b: #4FC29A;
+    --app-t: #3A2C12; --app-on: #F0CF8E; --app-fill: #8A5D10; --app-b: #E0A63E;
+    --leaf: #2C2412; --leaf-ink: #F3E6C8; --leaf-head: #F0CF8E; --leaf-rule: rgba(240,207,142,.22); --leaf-btn: rgba(240,207,142,.12);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F1218; --paper-2: #171B24; --card: #1A1F2A; --ink: #E6E9EF; --muted: #A3ACBB; --rule: #2B3240;
+  --focus: #8FB2F0; --shadow: 0 8px 22px rgba(0,0,0,.5); --seg: #2C3343;
+  --ram-t: #1C2944; --ram-on: #B4CBF3; --ram-fill: #2A4E91; --ram-b: #7DA4EA;
+  --mbh-t: #3A1A26; --mbh-on: #F2B6C8; --mbh-fill: #8A2348; --mbh-b: #E07A9C;
+  --gita-t: #12322A; --gita-on: #9FDCC4; --gita-fill: #186B52; --gita-b: #4FC29A;
+  --app-t: #3A2C12; --app-on: #F0CF8E; --app-fill: #8A5D10; --app-b: #E0A63E;
+  --leaf: #2C2412; --leaf-ink: #F3E6C8; --leaf-head: #F0CF8E; --leaf-rule: rgba(240,207,142,.22); --leaf-btn: rgba(240,207,142,.12);
+  color-scheme: dark;
+}
+html, html[data-hue="ram"], .w-ram { --w-t: var(--ram-t); --w-on-t: var(--ram-on); --w-fill: var(--ram-fill); --w-b: var(--ram-b); }
+html[data-hue="mbh"], .w-mbh { --w-t: var(--mbh-t); --w-on-t: var(--mbh-on); --w-fill: var(--mbh-fill); --w-b: var(--mbh-b); }
+html[data-hue="gita"], .w-gita { --w-t: var(--gita-t); --w-on-t: var(--gita-on); --w-fill: var(--gita-fill); --w-b: var(--gita-b); }
+html[data-hue="app"], .w-app { --w-t: var(--app-t); --w-on-t: var(--app-on); --w-fill: var(--app-fill); --w-b: var(--app-b); }
+html, :root[data-hue][data-hue] { --accent: var(--w-on-t); --accent-soft: var(--w-t); --indigo: var(--w-fill); --wb: var(--w-fill); }
+body { background: var(--paper); color: var(--ink); }
+
+/* ---- shared components ---- */
+.round { background: var(--card); color: var(--ink); box-shadow: 0 0 0 1px var(--rule); }
+.pillbtn.card { background: var(--card); color: var(--ink); box-shadow: 0 0 0 1px var(--rule); }
+.pillbtn.dark { background: var(--ink); color: var(--card); }
+.sheet { background: var(--card); color: var(--ink); }
+.vnum { color: var(--w-on-t); background: var(--w-t); }
+.vnum[aria-expanded="true"] { background: var(--w-fill); color: #FFFFFF; }
+.chant-open.act, .stb.dk { background: var(--w-fill); color: #FFFFFF; box-shadow: none; }
+.act { background: var(--card); color: var(--ink); box-shadow: 0 0 0 1px var(--rule); }
+.stb { background: var(--paper-2); color: var(--ink); }
+.stb[aria-pressed="true"] { background: var(--w-t); color: var(--w-on-t); }
+.stbar { background: var(--w-fill); color: #FFFFFF; }
+.st { border-radius: var(--r-cell); background: var(--card); box-shadow: 0 0 0 1px var(--rule); }
+.badge-ed, .ed-pill { background: var(--w-t); color: var(--w-on-t); }
+
+/* works switcher: a 4-way segmented control on every page (v0.22) */
+.workchips { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px; padding: 3px; border-radius: var(--r-cell); background: var(--seg); box-shadow: none; }
+.workchips .wchip { min-height: 40px; justify-content: center; padding: 0 2px; gap: 0; border-radius: 11px; background: transparent; box-shadow: none; color: var(--ink); text-align: center; }
+.workchips .wchip .wic, .workchips .wchip .wtx small { display: none; }
+.workchips .wchip .wtx { align-items: center; }
+.workchips .wchip .wtx b { font-size: 0.86rem; line-height: 1.25; }
+.workchips .wchip.on { background: var(--w-fill); color: #FFFFFF; box-shadow: none; }
+.workchips .wchip:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+@media (min-width: 40rem) { .workchips .wchip .wtx b { font-size: 0.98rem; } .workchips .wchip { min-height: 44px; } }
+
+/* Pariśiṣṭa: section icons in the Pariśiṣṭa hue; item chips in the hue of the epic they come from */
+.appx-list li.achip { border-radius: var(--r-card); background: var(--card); box-shadow: 0 0 0 1px var(--rule); }
+.achip .aic, .achip .apill { background: var(--w-t); color: var(--w-on-t); }
+.appx-list .achip a.ach { background: var(--w-t); color: var(--w-on-t); }
+.appx-list .achip a.ach.more { background: transparent; color: var(--app-on); box-shadow: 0 0 0 1px var(--app-b); }
+.appx-list .achip a.ach:hover, .appx-list .achip a.ach:focus-visible { box-shadow: 0 0 0 2px var(--w-b); }
+.achip:hover, .achip:focus-within { box-shadow: 0 0 0 2px var(--app-b); }
+.apchip { background: var(--w-t); color: var(--w-on-t); }
+.apchip.on { background: var(--w-fill); color: #FFFFFF; }
+.appx .pt-row { border-radius: var(--r-cell); background: var(--card); box-shadow: 0 0 0 1px var(--rule); }
+.pt-n { background: var(--w-t); color: var(--w-on-t); }
+.apx { border-radius: var(--r-cell); }
+
+/* review fixes (v0.22): visible tracks and edges in dark, Kannada + Latin labels on one baseline */
+.sw i { background: color-mix(in srgb, var(--muted) 45%, var(--card)); }
+#settings .set-chk { box-shadow: 0 0 0 1px var(--rule); }
+.chant-open, #quick-chant, .pillbtn { align-items: center; }
+.chant-open [lang="kn"], #quick-chant [lang="kn"], .pillbtn [lang="kn"] { line-height: 1; position: relative; top: 0.06em; }

@@ -58,7 +58,7 @@ async def main():
         assert "continue" in txt.lower() and "ಆದಿಪರ್ವ" in txt
         # texts switched on are per work: turn the Pune text on in the Mahābhārata only
         await pg.click('[data-open-sheet="settings"]')
-        await pg.click('label.sw:has([data-ed-toggle="ce"])')
+        await pg.click('[data-ed-show="both"]')
         await pg.keyboard.press("Escape")
         prefs = await pg.evaluate("JSON.parse(localStorage.getItem('vr-prefs'))")
         print("prefs:", prefs)
@@ -71,7 +71,8 @@ async def main():
         assert pg.url.rstrip("/") == B.rstrip("/")
         txt = await pg.inner_text("#continue")
         print("ram continue:", txt.replace("\n", " | "))
-        assert "begin" in txt.lower() and "ಆದಿಪರ್ವ" not in txt   # the Rāmāyaṇa has its own place
+        # v0.22: Continue reading lists every work read so far, the latest first; the Rāmāyaṇa has none yet
+        assert "ಆದಿಪರ್ವ" in txt and "ಕಾಂಡ" not in txt
         assert await pg.evaluate("document.documentElement.dataset.off") == "ce"
 
         # 3. fresh launch returns to the last-used work (no referrer); a link inside the site does not

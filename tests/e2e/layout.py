@@ -66,7 +66,7 @@ with sync_playwright() as p:
                 return {x: Math.round(r.x), y: Math.round(r.y), w: Math.round(r.width), clipped: t.scrollWidth > t.clientWidth + 1} })""")
             check(len(chips) == 4, f"{w}px /{path}: four chips")
             ys = sorted({c["y"] for c in chips})
-            check(len(ys) == 2, f"{w}px /{path}: chips in two rows ({ys})")
+            check(len(ys) == 1, f"{w}px /{path}: works switch in one row ({ys})")   # v0.22: a 4-way segmented control
             check(not any(c["clipped"] for c in chips), f"{w}px /{path}: no chip name is cut")
         ctx.close()
 

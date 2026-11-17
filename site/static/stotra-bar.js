@@ -78,6 +78,9 @@
     var h = here(), r = range(); if (!h || !r || !idx) return;
     cur = find(idx, h, r); if (!cur) return;
     setId(cur.st.id);
+    try {   // last stotra / gītā read, for Home → Continue reading
+      localStorage.setItem("vr.last.st", JSON.stringify({ id: cur.st.id, title: name3(cur.st.n), href: location.pathname + location.hash, list: cur.st.t === "g" ? "gitas" : "stotras", ts: Date.now() }));
+    } catch (e) { /* ignore */ }
     var st = cur.st, vs = verses(r); if (!vs.length) { cur = null; return; }
     var nm = name3(st.n)[sc()], n = r[1] - r[0] + 1, multi = cur.n > 1, last = cur.i === cur.n - 1;
     var what = isGita(st) ? "Gītās" : "Stotras";

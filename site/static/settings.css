@@ -1,0 +1,64 @@
+/* Settings sheet (v0.22, "Settings A"): one short sheet. Tokens from theme.css only. */
+#settings .sheet-body, #placesheet .sheet-body { display: flex; flex-direction: column; gap: 10px; padding-bottom: 0.8rem; }
+#settings.sheet { max-height: 96vh; }
+#settings .sheet-body > * { flex: none; }
+#settings .set-prev { margin: 0; padding: 6px 14px; border-radius: var(--r-cell); background: var(--paper-2); color: var(--ink); font-size: 1.05rem; line-height: 1.5; }
+#settings .set-prev small { display: block; color: var(--muted); font: 0.7rem var(--f-ui); }
+#settings .set-blk { display: flex; flex-direction: column; gap: 8px; }
+#settings .set-inl { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+#settings .set-l { margin: 0; font: 700 11px var(--f-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+
+#settings .seg { display: grid; gap: 2px; padding: 3px; border-radius: var(--r-cell); background: var(--seg); }
+#settings .seg4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+#settings .seg3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+#settings .seg button { min-height: 44px; border: 0; border-radius: 11px; background: transparent; color: var(--muted); font: 500 13px var(--f-ui); cursor: pointer; padding: 0 6px; }
+#settings .seg button[aria-checked="true"] { background: var(--card); color: var(--ink); font-weight: 700; box-shadow: 0 1px 3px rgba(22,27,38,.18); }
+#settings .seg button:focus-visible, #settings .stepper button:focus-visible, #settings .set-go:focus-visible, #settings .set-chk:focus-visible,
+#placesheet button:focus-visible, #settings .about-link:focus-visible, #settings .sw input:focus-visible ~ i { outline: 2px solid var(--focus); outline-offset: 2px; }
+#settings .seg4 button { font-family: var(--f-knda); font-size: 18px; padding-bottom: 2px; }
+#settings .seg4 button[lang="sa"] { font-family: var(--f-deva); }
+#settings .seg4 button[data-set-script="iast"] { font: 600 17px var(--f-ui); }
+#settings .seg4 button[data-set-script="knda-deva"] { font-size: 14px; }
+#settings .seg4 button span[lang="sa"] { font-family: var(--f-deva); }
+
+#settings .kn-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 13px; }
+#settings .seg2 { display: flex; border-radius: var(--r-cell); }
+#settings .seg2 button { min-height: 36px; padding: 0 14px; border-radius: 10px; }
+html[data-script="deva"] #settings .kn-row, html[data-script="iast"] #settings .kn-row { display: none; }
+
+#settings .stepper { display: flex; align-items: center; gap: 8px; }
+#settings .stepper button { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--paper-2); color: var(--ink); font: 700 16px var(--f-ui); cursor: pointer; padding: 0; }
+#settings .stepper button small { font-size: 12px; margin-left: 1px; }
+#settings .stepper button:disabled { opacity: .4; cursor: default; }
+#settings .dots { display: flex; gap: 6px; }
+#settings .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--rule); }
+#settings .dots i.on { background: var(--w-b); }
+
+#settings .seg-theme { display: flex; }
+#settings .seg-theme button { min-width: 52px; min-height: 40px; }
+
+#settings .set-list, #placesheet .set-list { border-radius: var(--r-card); box-shadow: 0 0 0 1px var(--rule); overflow: hidden; background: var(--card); }
+#settings .set-list > *, #placesheet .set-list > * { box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 52px; padding: 0 14px; margin: 0; border: 0; border-top: 1px solid var(--rule); border-bottom: 0; background: transparent; color: var(--ink); font: 400 14.5px var(--f-ui); text-align: left; text-decoration: none; cursor: pointer; position: relative; }
+#settings .set-list > :first-child, #placesheet .set-list > :first-child { border-top: 0; }
+#settings .sw small { margin-left: 4px; font-size: 12px; color: var(--muted); }
+#settings .sw small.sub { display: block; margin: 1px 0 0; }
+#settings .sw input { right: 14px; }
+#settings .set-go em { flex: 1; text-align: right; font-style: normal; font-size: 13px; color: var(--muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#settings .set-go b, #placesheet .set-go b { color: var(--muted); font-size: 18px; font-weight: 400; }
+
+#settings .set-ver { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 10px; font-size: 14px; }
+#settings .set-ver-r { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 44px; }
+#settings .set-ver { margin-top: -2px; }
+#settings .set-ver p { margin: 0; flex: 1 1 100%; font-size: 13px; color: var(--muted); }
+#settings .set-ver p:empty { display: none; }
+#settings .set-chk { min-height: 44px; padding: 0 16px; border-radius: 22px; border: 0; background: var(--paper-2); color: var(--ink); font: 600 13px var(--f-ui); cursor: pointer; }
+#settings .set-chk.go { background: var(--w-fill); color: #fff; }
+#settings .set-chk:disabled { opacity: .6; }
+#settings .about-link { margin: 0; min-height: 44px; padding: 0 14px; background: transparent; border-radius: var(--r-cell); font-size: 13px; color: var(--muted); }
+
+#placesheet .pl-loc { min-height: 48px; border: 0; border-radius: var(--r-cell); background: var(--w-fill); color: #fff; font: 700 15px var(--f-ui); cursor: pointer; }
+#placesheet .hint { margin: 0; font-size: 13px; color: var(--muted); min-height: 1em; }
+#placesheet .pl-list { overflow-y: auto; }
+#placesheet .set-go b { visibility: hidden; color: var(--w-b); }
+#placesheet .set-go[aria-checked="true"] b { visibility: visible; }
+#placesheet .set-go[aria-checked="true"] span { font-weight: 700; }
