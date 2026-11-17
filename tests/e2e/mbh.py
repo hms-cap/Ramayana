@@ -2,6 +2,7 @@
     python site/build.py && python -m http.server 8765 --directory dist &
     python tests/e2e/mbh.py
 """
+import os
 import asyncio
 import json
 import sys
@@ -12,7 +13,7 @@ from playwright.async_api import async_playwright
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "etl"))
 from translit import iast_to_slp1, render  # noqa: E402
 
-B = "http://localhost:8765/"
+B = os.environ.get("BASE", "http://localhost:8765").rstrip("/") + "/"
 
 
 async def main():

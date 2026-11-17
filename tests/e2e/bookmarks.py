@@ -1,6 +1,6 @@
 """Bookmarks: verse star, strip under the title, list sheet, Read page bar, MBH lean pages."""
 from playwright.sync_api import sync_playwright
-B = "http://localhost:8765"
+B = __import__("os").environ.get("BASE", "http://localhost:8765").rstrip("/") + ""
 with sync_playwright() as p:
     b = p.chromium.launch(); ctx = b.new_context(viewport={"width": 390, "height": 800}, service_workers="block"); pg = ctx.new_page()
     errs = []; pg.on("pageerror", lambda e: errs.append(str(e)))

@@ -262,7 +262,7 @@
   document.addEventListener("click", function (e) {
     var a = e.target.closest("a[data-replace]");
     if (!a || e.defaultPrevented || e.button > 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    e.preventDefault(); location.replace(a.href);
+    e.preventDefault(); (window.VRNav ? VRNav.replace(a.href) : location.replace(a.href));
   });
   // ---- Saved list ("My"): sargas and single verses, kept on this device ----
   var SAVED = "vr.saved";
@@ -383,6 +383,6 @@
     if (Math.abs(dx) < 90 || Math.abs(dx) < Math.abs(dy) * 2 || dt > 700) return;
     var sel = window.getSelection && String(window.getSelection()); if (sel) return;      // selecting text, not swiping
     var a = document.querySelector(dx < 0 ? 'a[rel="next"]' : 'a[rel="prev"]');
-    if (a) { var m = document.querySelector("main"); if (m && m.animate) m.animate([{ opacity: 1 }, { opacity: 0.2 }], { duration: 120, fill: "forwards" }); location.replace(a.href); }
+    if (a) { var m = document.querySelector("main"); if (m && m.animate) m.animate([{ opacity: 1 }, { opacity: 0.2 }], { duration: 120, fill: "forwards" }); (window.VRNav ? VRNav.replace(a.href) : location.replace(a.href)); }
   }, { passive: true });
 })();

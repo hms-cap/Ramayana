@@ -1,7 +1,7 @@
 """Navigation (v0.17): ‹ is always up (sarga → kāṇḍa → Read → Home), Previous/Next and swipes replace history,
 edition switch, jump sheet, other-text peek sheet, Back-to-verse pill. Rāmāyaṇa, Mahābhārata (lean) and Gītā."""
 from playwright.sync_api import sync_playwright
-B = "http://localhost:8765"
+B = __import__("os").environ.get("BASE", "http://localhost:8765").rstrip("/") + ""
 with sync_playwright() as p:
     b = p.chromium.launch(); ctx = b.new_context(viewport={"width": 390, "height": 800}, service_workers="block"); pg = ctx.new_page()
     errs = []; pg.on("pageerror", lambda e: errs.append(str(e)))

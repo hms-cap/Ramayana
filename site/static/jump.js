@@ -73,12 +73,12 @@
     if (a) {   // drop the sheet's history entry first, then replace this page: Back still leaves reading in one step
       e.preventDefault(); e.stopPropagation();
       var h = a.href; el.remove(); el = null;
-      if (pushed) { pushed = false; pending = h; history.back(); } else location.replace(h);
+      if (pushed) { pushed = false; pending = h; history.back(); } else (window.VRNav ? VRNav.replace(h) : location.replace(h));
     }
   }, true);
   document.addEventListener("keydown", function (e) { if (el && e.key === "Escape") { e.preventDefault(); close(false); } });
   window.addEventListener("popstate", function () {
-    if (pending) { var h = pending; pending = null; location.replace(h); return; }
+    if (pending) { var h = pending; pending = null; (window.VRNav ? VRNav.replace(h) : location.replace(h)); return; }
     if (el) close(true);
   });
 })();

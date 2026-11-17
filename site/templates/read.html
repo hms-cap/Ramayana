@@ -1,13 +1,16 @@
 {% extends "base.html" %}
-{% from "_art.html" import kcard, workchips, gita_cards %}
+{% from "_art.html" import art, PAL, workchips %}
 {% block title %}Read — {{ W.kn }}{% endblock %}
 {% block main %}
 {{ workchips(W, works_list, root) }}
 {% set ce_e = eds|selectattr("id","equalto","ce")|first %}{% set vu_e = eds|selectattr("id","equalto","vu")|first %}
 <section class="read-head"><h1><span lang="kn">ಓದು</span> <small>Read</small></h1><p><a class="searchbar" href="{{ wroot }}search/">Search verses or jump to {{ {'ram': '1.5.12', 'gita': '2.47'}.get(W.id, '1.2.19') }}</a></p></section>
 <div class="bmbar" data-bmbar data-continue hidden></div>
-<div class="kgrid">
-{% if W.single %}{{ gita_cards(gita_chs, gita_counts, wroot) }}{% else %}{% for k in eds[0].kandas %}{% set i = loop.index0 %}{{ kcard(k, vu_e.kandas[i].sargas, ce_e.kandas[i].sargas, unit=W.subs) }}{% endfor %}{% endif %}
+<div class="kcells" id="kcells">
+{% if W.single %}{% if dhyana %}<a class="kcard kcell" href="{{ wroot }}vu/1/0/" data-k="0"><span class="kl-t"><span lang="kn">{{ dhyana.title.kn }}</span></span><span class="kl-c">Dhyānam</span><span class="kl-now">reading now</span></a>
+{% endif %}{% for c in gita_chs %}<a class="kcard kcell" href="{{ wroot }}vu/1/{{ c.n }}/" data-k="{{ c.n }}"><span class="kl-t">{{ unit_sx(c) }}</span><span class="kl-c">{{ num_sx(c.n) }} · <span data-ed="vu">{{ gita_counts.vu[c.n] }}</span><span data-ed="ce"><span class="sep"> / </span>{{ gita_counts.ce[c.n] }}</span> verses</span><span class="kl-now">reading now</span></a>
+{% endfor %}{% else %}{% for k in eds[0].kandas %}{% set i = loop.index0 %}<button type="button" class="kcard kcell" data-k="{{ k.n }}" data-kn="{{ k.kn }}" data-deva="{{ k.deva }}" data-iast="{{ k.en }}" data-en="{{ k.en }}" data-n-vu="{{ vu_e.kandas[i].sargas }}" data-n-ce="{{ ce_e.kandas[i].sargas }}" style="--kb:{{ k.kb or PAL[k.n][0] }};--kp:{{ k.kp or PAL[k.n][1] }}" aria-haspopup="dialog"><span class="kl-art" hidden>{% if k.svg %}{{ k.svg|safe }}{% else %}{{ art(k.n) }}{% endif %}{% for a in k.alts %}{{ a|safe }}{% endfor %}</span><span class="kl-t">{{ unit_sx(k) }}</span><span class="kl-c">{{ num_sx(k.n) }} · <span data-ed="vu">{{ vu_e.kandas[i].sargas }}</span><span data-ed="ce"><span class="sep"> / </span>{{ ce_e.kandas[i].sargas }}</span> {{ W.subs }}</span><span class="kl-now">reading now</span></button>
+{% endfor %}{% endif %}
 </div>
 {% endblock %}
-{% block scripts %}<script src="{{ root }}static/home.js"></script><script src="{{ root }}static/read.js"></script>{% endblock %}
+{% block scripts %}<script src="{{ root }}static/home.js"></script><script src="{{ root }}static/read.js"></script><script src="{{ root }}static/pages.js"></script>{% endblock %}

@@ -1,0 +1,48 @@
+/* Read page and kāṇḍa page (v0.22): the Home cell language. Tokens only (theme.css). */
+
+/* ---- Read: head ---- */
+body.page-read .read-head h1 { font: 400 1.9rem/1.2 var(--f-knda); margin: 0.5rem 0 0.4rem; color: var(--ink); }
+body.page-read .read-head small { font: 500 0.95rem var(--f-ui); color: var(--muted); }
+body.page-read .searchbar { background: var(--card); color: var(--muted); box-shadow: 0 0 0 1px var(--rule); border-radius: var(--r-cell); padding: 0.7rem 1rem; font-size: 0.95rem; }
+
+/* ---- Read: unit cells ---- */
+body.page-read .kcells { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; margin: 0.8rem 0 0; }
+@media (min-width: 40rem) { body.page-read .kcells { grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); } }
+body.page-read.page-read .kcell { position: relative; display: block; width: auto; height: auto; min-height: 0; padding: 0.7rem 0.8rem; border: 0; border-radius: var(--r-cell); background: var(--card); color: var(--ink); box-shadow: 0 0 0 1px var(--rule); text-align: left; text-decoration: none; font: inherit; cursor: pointer; overflow: hidden; }
+body.page-read.page-read .kcell:hover, body.page-read.page-read .kcell:focus-visible { box-shadow: 0 0 0 2px var(--w-b); }
+body.page-read .kl-t { display: block; font: 400 1rem/1.35 var(--f-knda); overflow-wrap: anywhere; }
+body.page-read .kl-c, body.page-read .kl-now { display: block; margin-top: 0.1rem; font: 500 0.72rem var(--f-ui); color: var(--muted); }
+body.page-read .kl-now { display: none; }
+body.page-read.page-read .kcell.now { background: var(--w-t); color: var(--w-on-t); box-shadow: none; }
+body.page-read .kcell.now .kl-c { display: none; }
+body.page-read .kcell.now .kl-now { display: block; color: var(--w-on-t); }
+html[data-script="iast"] body.page-read .kl-t { font-family: var(--f-text); font-size: 1.15rem; }
+body.page-read .kcell [hidden] { display: none; }
+
+/* ---- Kāṇḍa page: head ---- */
+body.page-kanda .listing { min-width: 0; }
+body.page-kanda .kanda-head h1 { font: 400 clamp(1.8rem, 6vw, 2.4rem)/1.25 var(--f-knda); color: var(--ink); margin: 0.5rem 0 0.15rem; }
+body.page-kanda .kanda-head .sub { font-size: 1.05rem; }
+body.page-kanda .kanda-head .count { margin: 0.5rem 0 0; font: 500 0.8rem var(--f-ui); color: var(--muted); }
+body.page-kanda .head-actions { margin: 0.8rem 0 0; }
+body.page-kanda.page-kanda .chant-list.act { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; padding: 0 1.1rem; border: 0; border-radius: 999px; background: var(--w-fill); color: #FFFFFF; box-shadow: none; font: 600 0.92rem var(--f-ui); cursor: pointer; }
+
+/* ---- Kāṇḍa page: continue card and sarga cards ---- */
+body.page-kanda .kcont { margin: 1.1rem 0 0; max-width: var(--measure); }
+body.page-kanda .kc-pin { display: block; padding: 0.8rem 1rem; border-radius: var(--r-cell); background: var(--w-fill); color: #FFFFFF; text-decoration: none; }
+body.page-kanda .kc-lab { display: block; font: 700 0.9rem var(--f-ui); }
+body.page-kanda .kc-first { display: block; margin-top: 0.25rem; font: 400 1rem/1.5 var(--f-knda); opacity: 0.92; overflow-wrap: anywhere; }
+body.page-kanda .kc-pin:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+body.page-kanda .sargas { display: grid; gap: 0.5rem; margin: 1rem 0 0; }
+body.page-kanda .sargas li { min-width: 0; }
+body.page-kanda .sargas a { grid-template-columns: 2.6rem minmax(0, 1fr); align-items: start; gap: 0.75rem; padding: 0.7rem 0.8rem; border: 0; border-radius: var(--r-cell); background: var(--card); color: var(--ink); box-shadow: 0 0 0 1px var(--rule); }
+body.page-kanda .sargas a:hover, body.page-kanda .sargas a:focus-visible { box-shadow: 0 0 0 2px var(--w-b); }
+body.page-kanda .sargas a:hover .first { color: inherit; }
+body.page-kanda .sargas li.now a { background: var(--w-t); box-shadow: none; }
+body.page-kanda .sargas li.now .first, body.page-kanda .sargas li.now .meta { color: var(--w-on-t); }
+body.page-kanda .sargas .sn { display: inline-flex; align-items: center; justify-content: center; min-width: 2.6rem; height: 2rem; padding: 0 0.4rem; border-radius: 999px; background: var(--w-t); color: var(--w-on-t); font: 500 1rem/1 var(--f-knda); text-align: center; }
+html[data-script="iast"] body.page-kanda .sargas .sn { font-family: var(--f-ui); font-size: 0.9rem; font-weight: 600; }
+body.page-kanda .sargas li.now .sn { background: var(--w-fill); color: #FFFFFF; }
+body.page-kanda .sargas .st { padding: 0; border-radius: 0; background: none; box-shadow: none; }
+body.page-kanda .sargas .first { font-size: 1.05rem; line-height: 1.5; }
+body.page-kanda .sargas .meta { font: 500 0.72rem var(--f-ui); color: var(--muted); }

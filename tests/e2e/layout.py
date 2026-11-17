@@ -3,12 +3,13 @@ the two-by-two work chips, and the verse-of-the-day card for the longest Mahābh
     python site/build.py && python -m http.server 8765 --directory dist &
     python tests/e2e/layout.py
 """
+import os
 import json
 import sys
 import urllib.request
 from playwright.sync_api import sync_playwright
 
-B = "http://localhost:8765/"
+B = os.environ.get("BASE", "http://localhost:8765").rstrip("/") + "/"
 PAGES = ["", "mbh/", "gita/", "appendix/", "appendix/chandas/", "ce/1/1/", "vu/2/10/", "mbh/vu/2/10/", "mbh/vu/3/159/", "mbh/ce/2/10/", "gita/vu/1/2/", "gita/ce/1/18/"]
 SIZES = [(360, 780), (390, 844)]
 SCRIPTS = ["knda", "deva", "iast", "all"]
