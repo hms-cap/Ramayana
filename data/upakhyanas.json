@@ -3185,7 +3185,7 @@
      "s": 137,
      "v": [
       12,
-      28
+      29
      ],
      "s2": 140
     },
@@ -3261,7 +3261,7 @@
      "s": 14,
      "v": [
       2,
-      42
+      43
      ],
      "s2": 22
     },
@@ -3441,15 +3441,15 @@
    "frame": "Vaiśaṃpāyana tells how a deer carried off a brahmin's arani, and how Dharma as a Yakṣa killed and then revived the four Pāṇḍavas after Yudhiṣṭhira answered his questions.",
    "group": "Dvaitavana (end of the forest exile)",
    "opening": {
-    "vu": "evaṃ hṛtāyāṃ kṛṣṇāyāṃ prāpya",
-    "ce": "evaṃ hṛtāyāṃ kṛṣṇāyāṃ prāpya"
+    "vu": "araṇīsahitaṃ bhāṇḍaṃ brāhmaṇasya tapasvinaḥ mṛgas",
+    "ce": "araṇīsahitaṃ mahyaṃ samāsaktaṃ vanaspatau mṛgasya"
    },
    "loc": {
     "vu": {
      "k": 3,
      "s": 312,
      "v": [
-      2,
+      8,
       29
      ],
      "s2": 315
@@ -3458,7 +3458,7 @@
      "k": 3,
      "s": 295,
      "v": [
-      2,
+      8,
       28
      ],
      "s2": 298
@@ -3824,16 +3824,18 @@
      "s": 43,
      "v": [
       3,
-      41
-     ]
+      40
+     ],
+     "s2": 44
     },
     "ce": {
      "k": 9,
      "s": 41,
      "v": [
       3,
-      39
-     ]
+      37
+     ],
+     "s2": 42
     }
    },
    "contains": [],
@@ -3861,7 +3863,7 @@
      "s": 45,
      "v": [
       4,
-      108
+      109
      ],
      "s2": 47
     },
@@ -4386,7 +4388,7 @@
    "frame": "Asked by Bhīṣma to tell Śiva's greatness, Kṛṣṇa tells how he practised tapas for a son, met Upamanyu and heard the praise and thousand names of Śiva.",
    "opening": {
     "vu": "yathā te janitāḥ putrā rukmiṇyāṃ cāruvikramāḥ",
-    "ce": "śuśrūṣadhvaṃ brāhmaṇendrās tvaṃ ca tāta yudhiṣṭhira"
+    "ce": "yad avāptaṃ ca me pūrvaṃ"
    },
    "loc": {
     "vu": {
@@ -4402,7 +4404,7 @@
      "k": 13,
      "s": 14,
      "v": [
-      10,
+      11,
       44
      ],
      "s2": 18
