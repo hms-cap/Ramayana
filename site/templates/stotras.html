@@ -44,8 +44,8 @@
           <button type="button" class="stb gh" data-st-daily aria-pressed="false">☆ Daily</button>
           <span class="st-n">{% if r.chs > 1 %}{{ r.chs }} adhyāyas · {% endif %}{{ r.n }} verse{{ "s" if r.n != 1 }}</span>
         </div>
-        <p class="st-loc">{% for l in r.links %}<a href="{{ l.href }}" data-st-read>{{ l.name }} {{ l.ref }}</a>{% endfor %}{% if r.gita %}<a href="{{ r.gita.href }}" data-st-read>Gītā {{ r.gita.ref }}</a>{% endif %}{% if r.only %}<span class="st-only">Only in the {{ r.only }}</span>{% endif %}</p>
-        {% if r.contains or r.twin %}<p class="st-rel">{% for c in r.contains %}<a href="{{ c.href }}">Contains {{ c.name }}</a>{% endfor %}{% if r.twin %}<a class="w-{{ r.twin.work }}" href="{{ r.twin.href }}">Also told in the {{ "Rāmāyaṇa" if r.twin.work == "ram" else "Mahābhārata" }}: {{ r.twin.name }}</a>{% endif %}</p>{% endif %}
+        <p class="st-loc">{% for l in r.links %}<a href="{{ l.href }}" data-st-read>{{ l.name }} {{ l.ref }}</a>{% endfor %}{% if r.gita %}<a href="{{ r.gita.href }}" data-st-read>Gītā {{ r.gita.ref }}</a>{% endif %}{% if r.only %}<span class="st-only">Only in the {{ r.only }}</span>{% endif %}
+        {% if r.contains or r.twin %}<span class="st-rel">{% for c in r.contains %}<a href="{{ c.href }}">Contains {{ c.name }}</a>{% endfor %}{% if r.twin %}<a class="w-{{ r.twin.work }}" href="{{ r.twin.href }}">Also told in the {{ "Rāmāyaṇa" if r.twin.work == "ram" else "Mahābhārata" }}: {{ r.twin.name }}</a>{% endif %}</span>{% endif %}</p>
       </li>
     {% endfor %}
     </ul>

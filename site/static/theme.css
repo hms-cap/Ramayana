@@ -117,6 +117,6 @@ body { background: var(--paper); color: var(--ink); }
 
 /* Upākhyānas (v0.24): the frame line and links to the other lists / the other epic */
 .st-frame { display: block; margin-top: 0.15rem; font: italic 500 0.8rem/1.45 var(--f-ui); color: var(--muted); }
-.st-rel { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.35rem 0 0; }
+.st-rel { display: flex; flex-wrap: wrap; gap: 0.35rem; flex-basis: 100%; margin: 0.15rem 0 0; }
 .st-rel a { padding: 0.2rem 0.65rem; border-radius: 99px; font: 600 0.75rem var(--f-ui); text-decoration: none; background: var(--w-t); color: var(--w-on-t); }
 .st-rel a:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }

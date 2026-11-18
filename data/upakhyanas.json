@@ -43,7 +43,7 @@
   {
    "id": "vishvamitra_kula",
    "work": "ram",
-   "name_iast": "Viśvāmitravaṃśākhyāna (kuśavaṃśa)",
+   "name_iast": "Kuśavaṃśākhyāna",
    "name_en": "Kuśa's line and the birth of Viśvāmitra",
    "kind": "upakhyana",
    "by": "Viśvāmitra",
@@ -119,7 +119,7 @@
   {
    "id": "gangavatarana-ram",
    "work": "ram",
-   "name_iast": "Gaṅgāvataraṇa (Sagara and Bhagīratha)",
+   "name_iast": "Gaṅgāvataraṇa",
    "name_en": "Descent of the Gaṅgā",
    "kind": "upakhyana",
    "by": "Viśvāmitra",
@@ -158,7 +158,7 @@
   {
    "id": "amritamanthana",
    "work": "ram",
-   "name_iast": "Amṛtamanthana and Ditiputra (Maruts)",
+   "name_iast": "Amṛtamanthana",
    "name_en": "Churning of the ocean and Diti's Maruts",
    "kind": "upakhyana",
    "by": "Viśvāmitra",
@@ -234,7 +234,7 @@
   {
    "id": "vamana",
    "work": "ram",
-   "name_iast": "Vāmanākhyāna at Siddhāśrama",
+   "name_iast": "Vāmanākhyāna",
    "name_en": "Vāmana at the Siddhāśrama",
    "kind": "upakhyana",
    "by": "Viśvāmitra",
@@ -270,7 +270,7 @@
   {
    "id": "vasishtha_vishvamitra-ram",
    "work": "ram",
-   "name_iast": "Vasiṣṭha–Viśvāmitra kāmadhenuvṛttānta",
+   "name_iast": "Vasiṣṭhaviśvāmitravṛttānta",
    "name_en": "Vasiṣṭha, Viśvāmitra and the wish-cow (Śabalā)",
    "kind": "upakhyana",
    "by": "Śatānanda",
@@ -421,7 +421,7 @@
   {
    "id": "rambha",
    "work": "ram",
-   "name_iast": "Raṃbhāśāpa",
+   "name_iast": "Rambhāśāpa",
    "name_en": "Viśvāmitra and Rambhā",
    "kind": "upakhyana",
    "by": "Śatānanda",
@@ -459,7 +459,7 @@
   {
    "id": "agastya-ram",
    "work": "ram",
-   "name_iast": "Agastyavātāpīlvalākhyāna",
+   "name_iast": "Agastyākhyāna",
    "name_en": "Agastya, Vātāpi and Ilvala",
    "kind": "upakhyana",
    "by": "Rāma",
@@ -496,7 +496,7 @@
   {
    "id": "shravana",
    "work": "ram",
-   "name_iast": "Śravaṇa (Andhamuni) śāpa",
+   "name_iast": "Andhamuniśāpa",
    "name_en": "Daśaratha's curse (the blind ascetic's son)",
    "kind": "upakhyana",
    "by": "Daśaratha",
@@ -534,7 +534,7 @@
   {
    "id": "ravana_kula",
    "work": "ram",
-   "name_iast": "Pulastya–Viśravas–Vaiśravaṇa",
+   "name_iast": "Pulastyavaṃśākhyāna",
    "name_en": "Pulastya, Viśravas and Kubera (Rāvaṇa's line)",
    "kind": "upakhyana",
    "by": "Agastya",
@@ -572,7 +572,7 @@
   {
    "id": "rakshasa_vamsha",
    "work": "ram",
-   "name_iast": "Rākṣasavaṃśākhyāna (Sukeśa–Mālyavān–Sumālī)",
+   "name_iast": "Rākṣasavaṃśākhyāna",
    "name_en": "The rākṣasas of Laṅkā: Sukeśa, Mālyavān and Sumālī",
    "kind": "upakhyana",
    "by": "Agastya",
@@ -610,7 +610,7 @@
   {
    "id": "ravana_janma",
    "work": "ram",
-   "name_iast": "Rāvaṇajanma and varalābha",
+   "name_iast": "Rāvaṇajanma",
    "name_en": "Birth of Rāvaṇa and his brothers; their boons",
    "kind": "upakhyana",
    "by": "Agastya",
@@ -648,7 +648,7 @@
   {
    "id": "madhu_lavana",
    "work": "ram",
-   "name_iast": "Madhu–Lavaṇopākhyāna",
+   "name_iast": "Madhulavaṇopākhyāna",
    "name_en": "Madhu, the trident and Lavaṇa",
    "kind": "upakhyana",
    "by": "Cyavana (Bhārgava)",
@@ -963,7 +963,7 @@
   {
    "id": "shakuntala",
    "work": "mbh",
-   "name_iast": "Śakuntalopākhyānam",
+   "name_iast": "Śakuntalopākhyāna",
    "name_en": "Śakuntalā and Duṣyanta",
    "kind": "upakhyana",
    "by": "Vaiśaṃpāyana",
@@ -1001,7 +1001,7 @@
   {
    "id": "yayati-mbh",
    "work": "mbh",
-   "name_iast": "Yayātyupākhyānam",
+   "name_iast": "Yayātyupākhyāna",
    "name_en": "Yayāti",
    "kind": "upakhyana",
    "by": "Vaiśaṃpāyana",
@@ -1040,7 +1040,7 @@
   {
    "id": "sunda_upasunda",
    "work": "mbh",
-   "name_iast": "Sundopasundopākhyānam",
+   "name_iast": "Sundopasundopākhyāna",
    "name_en": "Sunda and Upasunda",
    "kind": "upakhyana",
    "by": "Nārada",
@@ -1078,7 +1078,7 @@
   {
    "id": "astika",
    "work": "mbh",
-   "name_iast": "Āstīkaparva narrative",
+   "name_iast": "Āstīkopākhyāna",
    "name_en": "Āstīka",
    "kind": "upakhyana",
    "by": "Sūta (Ugraśravas)",
@@ -1118,7 +1118,7 @@
   {
    "id": "tapatya",
    "work": "mbh",
-   "name_iast": "Tāpatyopākhyānam",
+   "name_iast": "Tāpatyopākhyāna",
    "name_en": "Tapatī and Saṃvaraṇa",
    "kind": "upakhyana",
    "by": "Gandharva Citraratha (Aṅgāraparṇa)",
@@ -1156,7 +1156,7 @@
   {
    "id": "vasishtha_vishvamitra-mbh",
    "work": "mbh",
-   "name_iast": "Vāsiṣṭham ākhyānam",
+   "name_iast": "Vāsiṣṭhopākhyāna",
    "name_en": "Vasiṣṭha and Viśvāmitra",
    "kind": "upakhyana",
    "by": "Gandharva Citraratha",
@@ -1195,7 +1195,7 @@
   {
    "id": "aurva",
    "work": "mbh",
-   "name_iast": "Aurvopākhyānam",
+   "name_iast": "Aurvopākhyāna",
    "name_en": "Aurva",
    "kind": "upakhyana",
    "by": "Vasiṣṭha",
@@ -1233,7 +1233,7 @@
   {
    "id": "pancendra",
    "work": "mbh",
-   "name_iast": "Pañcendropākhyānam",
+   "name_iast": "Pañcendropākhyāna",
    "name_en": "The five Indras",
    "kind": "upakhyana",
    "by": "Vyāsa",
@@ -1269,7 +1269,7 @@
   {
    "id": "nala",
    "work": "mbh",
-   "name_iast": "Nalopākhyānam",
+   "name_iast": "Nalopākhyāna",
    "name_en": "Nala and Damayantī",
    "kind": "upakhyana",
    "by": "Bṛhadaśva",
@@ -1307,7 +1307,7 @@
   {
    "id": "agastya-mbh",
    "work": "mbh",
-   "name_iast": "Agastyopākhyānam (Vātāpi, Ilvala, Lopāmudrā)",
+   "name_iast": "Agastyopākhyāna",
    "name_en": "Agastya",
    "kind": "upakhyana",
    "by": "Lomaśa",
@@ -1346,7 +1346,7 @@
   {
    "id": "vritra-mbh",
    "work": "mbh",
-   "name_iast": "Vṛtravadhopākhyānam",
+   "name_iast": "Vṛtravadhopākhyāna",
    "name_en": "Slaying of Vṛtra",
    "kind": "upakhyana",
    "by": "Lomaśa",
@@ -1385,7 +1385,7 @@
   {
    "id": "gangavatarana-mbh",
    "work": "mbh",
-   "name_iast": "Gaṅgāvataraṇam (Sagara and Bhagīratha)",
+   "name_iast": "Gaṅgāvataraṇa",
    "name_en": "Descent of the Gaṅgā",
    "kind": "upakhyana",
    "by": "Lomaśa",
@@ -1424,7 +1424,7 @@
   {
    "id": "rishyashringa-mbh",
    "work": "mbh",
-   "name_iast": "Ṛṣyaśṛṅgopākhyānam",
+   "name_iast": "Ṛṣyaśṛṅgopākhyāna",
    "name_en": "Ṛṣyaśṛṅga",
    "kind": "upakhyana",
    "by": "Lomaśa",
@@ -1463,7 +1463,7 @@
   {
    "id": "jamadagnya",
    "work": "mbh",
-   "name_iast": "Jāmadagnyopākhyānam",
+   "name_iast": "Jāmadagnyopākhyāna",
    "name_en": "Paraśurāma",
    "kind": "upakhyana",
    "by": "Akṛtavraṇa",
@@ -1501,7 +1501,7 @@
   {
    "id": "cyavana_sukanya",
    "work": "mbh",
-   "name_iast": "Cyavana–Sukanyā upākhyānam",
+   "name_iast": "Sukanyopākhyāna",
    "name_en": "Cyavana and Sukanyā",
    "kind": "upakhyana",
    "by": "Lomaśa",
@@ -1539,7 +1539,7 @@
   {
    "id": "mandhatri",
    "work": "mbh",
-   "name_iast": "Māndhātṛ-upākhyānam",
+   "name_iast": "Māndhātrupākhyāna",
    "name_en": "Māndhātṛ",
    "kind": "upakhyana",
    "by": "Lomaśa",
@@ -1575,7 +1575,7 @@
   {
    "id": "jantu_somaka",
    "work": "mbh",
-   "name_iast": "Jantu (Somaka) upākhyānam",
+   "name_iast": "Jantūpākhyāna",
    "name_en": "Somaka and Jantu",
    "kind": "upakhyana",
    "by": "Lomaśa",
@@ -1613,7 +1613,7 @@
   {
    "id": "shibi",
    "work": "mbh",
-   "name_iast": "Śibi-upākhyānam",
+   "name_iast": "Śibyupākhyāna",
    "name_en": "Śibi and the hawk and dove",
    "kind": "upakhyana",
    "by": "Lomaśa",
@@ -1689,7 +1689,7 @@
   {
    "id": "matsya",
    "work": "mbh",
-   "name_iast": "Matsyopākhyānam",
+   "name_iast": "Matsyopākhyāna",
    "name_en": "Manu and the fish",
    "kind": "upakhyana",
    "by": "Mārkaṇḍeya",
@@ -1725,7 +1725,7 @@
   {
    "id": "indradyumna",
    "work": "mbh",
-   "name_iast": "Aindradyumnam ākhyānam",
+   "name_iast": "Indradyumnopākhyāna",
    "name_en": "Indradyumna and the long-lived crane",
    "kind": "upakhyana",
    "by": "Mārkaṇḍeya",
@@ -1761,7 +1761,7 @@
   {
    "id": "dhundhumara",
    "work": "mbh",
-   "name_iast": "Dhundhumāropākhyānam",
+   "name_iast": "Dhundhumāropākhyāna",
    "name_en": "Dhundhumāra",
    "kind": "upakhyana",
    "by": "Mārkaṇḍeya",
@@ -1799,7 +1799,7 @@
   {
    "id": "pativrata_vyadha",
    "work": "mbh",
-   "name_iast": "Pativratopākhyānam (Brāhmaṇa–Vyādha saṃvāda)",
+   "name_iast": "Pativratopākhyāna",
    "name_en": "The devoted wife and the hunter",
    "kind": "upakhyana",
    "by": "Mārkaṇḍeya",
@@ -1839,7 +1839,7 @@
   {
    "id": "mudgala",
    "work": "mbh",
-   "name_iast": "Mudgalopākhyānam (Vrīhidrauṇika)",
+   "name_iast": "Mudgalopākhyāna",
    "name_en": "Mudgala",
    "kind": "upakhyana",
    "by": "Vyāsa",
@@ -1877,7 +1877,7 @@
   {
    "id": "ramopakhyana",
    "work": "mbh",
-   "name_iast": "Rāmopākhyānam",
+   "name_iast": "Rāmopākhyāna",
    "name_en": "Story of Rāma",
    "kind": "upakhyana",
    "by": "Mārkaṇḍeya",
@@ -1916,7 +1916,7 @@
   {
    "id": "savitri",
    "work": "mbh",
-   "name_iast": "Sāvitry-upākhyānam",
+   "name_iast": "Sāvitryupākhyāna",
    "name_en": "Sāvitrī and Satyavān",
    "kind": "upakhyana",
    "by": "Mārkaṇḍeya",
@@ -1954,7 +1954,7 @@
   {
    "id": "indravijaya",
    "work": "mbh",
-   "name_iast": "Indravijayopākhyānam (Nahuṣa)",
+   "name_iast": "Indravijaya",
    "name_en": "Nahuṣa and Indra",
    "kind": "upakhyana",
    "by": "Śalya",
@@ -1992,7 +1992,7 @@
   {
    "id": "matali",
    "work": "mbh",
-   "name_iast": "Mātalīyopākhyānam",
+   "name_iast": "Mātalīyopākhyāna",
    "name_en": "Mātali and Sumukha",
    "kind": "upakhyana",
    "by": "Kaṇva",
@@ -2106,7 +2106,7 @@
   {
    "id": "amba",
    "work": "mbh",
-   "name_iast": "Ambopākhyānam",
+   "name_iast": "Ambopākhyāna",
    "name_en": "Ambā",
    "kind": "upakhyana",
    "by": "Bhīṣma",
@@ -2218,7 +2218,7 @@
   {
    "id": "tuladhara_jajali",
    "work": "mbh",
-   "name_iast": "Tulādhāra–Jājali saṃvāda",
+   "name_iast": "Tulādhārajājalisaṃvāda",
    "name_en": "Tulādhāra and Jājali",
    "kind": "upakhyana",
    "by": "Bhīṣma",
@@ -2256,7 +2256,7 @@
   {
    "id": "cirakarin",
    "work": "mbh",
-   "name_iast": "Cirakārin-upākhyānam",
+   "name_iast": "Cirakāryupākhyāna",
    "name_en": "Cirakārin",
    "kind": "upakhyana",
    "by": "Bhīṣma",
@@ -2292,7 +2292,7 @@
   {
    "id": "gautami_mrityu",
    "work": "mbh",
-   "name_iast": "Gautamī–Vyādha–Mṛtyu saṃvāda",
+   "name_iast": "Gautamīlubdhakasaṃvāda",
    "name_en": "Gautamī, the hunter and Death",
    "kind": "upakhyana",
    "by": "Bhīṣma",
@@ -2328,7 +2328,7 @@
   {
    "id": "cyavana_kushika",
    "work": "mbh",
-   "name_iast": "Cyavana–Kuśika upākhyānam",
+   "name_iast": "Cyavanakuśikopākhyāna",
    "name_en": "Cyavana and Kuśika",
    "kind": "upakhyana",
    "by": "Bhīṣma",
@@ -2366,7 +2366,7 @@
   {
    "id": "uttanka",
    "work": "mbh",
-   "name_iast": "Uttaṅkopākhyānam (Āśvamedhika)",
+   "name_iast": "Uttaṅkopākhyāna",
    "name_en": "Uttaṅka, Kṛṣṇa and Saudāsa",
    "kind": "upakhyana",
    "by": "Vaiśaṃpāyana",
@@ -2404,7 +2404,7 @@
   {
    "id": "nakula",
    "work": "mbh",
-   "name_iast": "Nakulopākhyānam (Saktuprasthīya)",
+   "name_iast": "Nakulopākhyāna",
    "name_en": "The mongoose",
    "kind": "upakhyana",
    "by": "Vaiśaṃpāyana (the mongoose)",
