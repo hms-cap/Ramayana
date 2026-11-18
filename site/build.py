@@ -1126,7 +1126,7 @@ def build_stotras(out: Path, env: Environment, base: dict) -> None:
                 g = st.get("gita")
                 kind = STOTRA_KIND.get(st.get("kind"), STOTRA_KIND["stotra"])
                 groups[loc0["k"]].append(dict(
-                    st=st, deity=st.get("deity", "other"), n=links[0]["n"], chs=links[0]["chs"], name=s3(st["name_iast"]), by=s3(st["by"]), to=s3(st["to"]),
+                    st=st, deity=(re.sub(r"[^a-z]+", "-", st.get("group", "other").lower()).strip("-") if name == "upakhyanas" else st.get("deity", "other")), group=st.get("group"), n=links[0]["n"], chs=links[0]["chs"], name=s3(st["name_iast"]), by=s3(st["by"]), to=s3(st["to"]),
                     kind=sx(*kind), open=open_, links=links, s=loc0["s"], href=links[0]["href"],
                     page=(st["id"] + "/") if len(pts[ed0]) > 1 else None,
                     gita=dict(href=f'../../gita/vu/1/{g["s"]}/#v{g["v"][0]}-{g["v"][1]}', ref=f'{g["s"]}.{g["v"][0]}–{g["v"][1]}') if g else None,
@@ -1138,6 +1138,12 @@ def build_stotras(out: Path, env: Environment, base: dict) -> None:
             gl = [dict(u=unit_info(W, k), rows=sorted(groups[k], key=lambda x: x["s"])) for k in sorted(groups)]
             rows = [x for g_ in gl for x in g_["rows"]]
             deities = [(d, sx(*DEITY[d]), sum(1 for x in rows if x["deity"] == d)) for d in DEITY if any(x["deity"] == d for x in rows)] if name == "stotras" else []
+            if name == "upakhyanas":   # filter chips by who tells the tales (in reading order of first appearance)
+                seen = []
+                for x in rows:
+                    if x["group"] and x["deity"] not in [q[0] for q in seen]:
+                        seen.append((x["deity"], x["group"], sum(1 for y in rows if y["deity"] == x["deity"])))
+                deities = seen if len(seen) > 1 else []
             secs.append(dict(work=w, W=W, groups=gl, n=len(rows), deities=deities))
         rel = out / "appendix" / name / "index.html"
         rel.parent.mkdir(parents=True, exist_ok=True)

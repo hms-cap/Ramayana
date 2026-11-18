@@ -20,7 +20,7 @@
   <label class="st-search"><span aria-hidden="true">⌕</span><input type="search" id="st-q" placeholder="{{ "Search gītās, teachers" if P.name == "gitas" else ("Search tales, tellers" if P.name == "upakhyanas" else "Search stotras, deities, singers") }}" aria-label="Search {{ P.title[2]|lower }}" autocomplete="off"></label>
   {% for s in secs %}
   <section class="cw-sec st-sec" data-st-sec="{{ s.work }}" aria-label="{{ s.W.en }}">
-    {% if s.deities %}<div class="st-chips" role="group" aria-label="Deity">
+    {% if s.deities %}<div class="st-chips" role="group" aria-label="{{ "Who tells it" if P.name == "upakhyanas" else "Deity" }}">
       <button type="button" data-deity="" aria-pressed="true">All <em>{{ s.n }}</em></button>
       {% for d, lab, n in s.deities %}<button type="button" data-deity="{{ d }}" aria-pressed="false">{{ lab }} <em>{{ n }}</em></button>{% endfor %}
     </div>{% endif %}
