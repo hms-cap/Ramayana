@@ -96,7 +96,7 @@
       hits.forEach(function (r) {
         var a = el("a", "st-hit"); a.href = ROOT + (r.l || "appendix/stotras/") + "#" + r.id;
         a.appendChild(el("b", null, T.render(T.iastToSlp1(r.n), sc, false)));
-        a.appendChild(el("small", null, r.e + " · " + (r.t === "g" ? "Gītā · " : "") + (r.w === "mbh" ? "Mahābhārata" : "Rāmāyaṇa")));
+        a.appendChild(el("small", null, r.e + " · " + (r.t === "g" ? "Gītā · " : r.t === "u" ? "Upākhyāna · " : "") + (r.w === "mbh" ? "Mahābhārata" : "Rāmāyaṇa")));
         stBox.appendChild(a);
       });
     });
