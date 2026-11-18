@@ -505,6 +505,11 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
             page.parent.mkdir(parents=True, exist_ok=True)
             if W["lean"]:
                 verses = [lean_verse(r, ed, W) for r in by_sarga[(k, s)]]
+                # verse numbers our copy lacks (empty in the source): a note where the numbering jumps
+                last_v = None
+                for v in verses:
+                    v["gap"] = (last_v + 1, v["v"] - 1) if last_v is not None and last_v >= 1 and v["v"] > last_v + 1 else None
+                    last_v = v["v"]
                 other_id = "ce" if ed["id"] == "vu" else "vu"
                 alt = alt_edition_href(ed, editions, k, s, W)
                 wnote = ""
@@ -517,6 +522,7 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
                 gch = mbh_gita_chapter(ed["id"], k, s)
                 page.write_text(env.get_template("sarga.html").render(**ctx(
                     3, ed=summary, kanda=kandas[k - 1], s=s, title=None, verses=verses, prev=prev_key, next=next_key,
+                    missing_next=(s + 1, next_key[1] - 1) if next_key and next_key[0] == k and next_key[1] > s + 1 else None,
                     gita_link={"href": f'{up}../../../gita/{ed["id"]}/1/{gch}/', "ch": gch} if gch else None,
                     total_in_kanda=kandas[k - 1]["sargas"], page="sarga", alt_href=alt,
                     shared=sum(1 for v in verses if v["crosswalk"] and v["crosswalk"]["status"] != "absent"),
@@ -566,8 +572,10 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
                     first = {"text": {"knda": {"lines": [line]}}}
                 else:
                     first = render_verse(by_sarga[(k, s)][0], ed, W)
+                prev_s = items[-1]["s"] if items else (0 if s > 1 else s)
                 items.append({"s": s, "count": len(by_sarga[(k, s)]), "first": first, "title": titles.get((k, s)),
-                              "speaker": first.get("speaker") if not W["lean"] else None})
+                              "speaker": first.get("speaker") if not W["lean"] else None,
+                              "missing_before": (prev_s + 1, s - 1) if s > prev_s + 1 else None})   # adhyāyas absent from our copy
             page = wdir / ed["id"] / str(k) / "index.html"
             page.write_text(env.get_template("kanda.html").render(**ctx(
                 2, ed=summary, kanda=kandas[k - 1], items=items, page="kanda")), encoding="utf-8")

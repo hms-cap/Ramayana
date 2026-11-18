@@ -15,6 +15,7 @@
   <div id="kcont" class="kcont" hidden></div>
   <ol class="sargas">
   {% for it in items %}
+    {% if it.missing_before %}<li class="gapnote" role="note">{{ W.Sub }}{% if it.missing_before[0] != it.missing_before[1] %}s {{ it.missing_before[0] }}–{{ it.missing_before[1] }} are{% else %} {{ it.missing_before[0] }} is{% endif %} missing in our copy of the {{ ed.short }}.</li>{% endif %}
     <li data-s="{{ it.s }}">
       <a href="{{ it.s }}/">
         <span class="sn">{% if W.single and it.s == 0 %}<span lang="kn">ॐ</span>{% else %}{{ num_sx(it.s) }}{% endif %}</span>
