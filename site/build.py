@@ -505,6 +505,11 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
             page.parent.mkdir(parents=True, exist_ok=True)
             if W["lean"]:
                 verses = [lean_verse(r, ed, W) for r in by_sarga[(k, s)]]
+                # verse numbers our copy lacks (empty in the source): a note where the numbering jumps
+                last_v = None
+                for v in verses:
+                    v["gap"] = (last_v + 1, v["v"] - 1) if last_v is not None and last_v >= 1 and v["v"] > last_v + 1 else None
+                    last_v = v["v"]
                 other_id = "ce" if ed["id"] == "vu" else "vu"
                 alt = alt_edition_href(ed, editions, k, s, W)
                 wnote = ""
@@ -517,6 +522,7 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
                 gch = mbh_gita_chapter(ed["id"], k, s)
                 page.write_text(env.get_template("sarga.html").render(**ctx(
                     3, ed=summary, kanda=kandas[k - 1], s=s, title=None, verses=verses, prev=prev_key, next=next_key,
+                    missing_next=(s + 1, next_key[1] - 1) if next_key and next_key[0] == k and next_key[1] > s + 1 else None,
                     gita_link={"href": f'{up}../../../gita/{ed["id"]}/1/{gch}/', "ch": gch} if gch else None,
                     total_in_kanda=kandas[k - 1]["sargas"], page="sarga", alt_href=alt,
                     shared=sum(1 for v in verses if v["crosswalk"] and v["crosswalk"]["status"] != "absent"),
@@ -566,8 +572,10 @@ def build_work(W: dict, out: Path, env: Environment) -> dict:
                     first = {"text": {"knda": {"lines": [line]}}}
                 else:
                     first = render_verse(by_sarga[(k, s)][0], ed, W)
+                prev_s = items[-1]["s"] if items else (0 if s > 1 else s)
                 items.append({"s": s, "count": len(by_sarga[(k, s)]), "first": first, "title": titles.get((k, s)),
-                              "speaker": first.get("speaker") if not W["lean"] else None})
+                              "speaker": first.get("speaker") if not W["lean"] else None,
+                              "missing_before": (prev_s + 1, s - 1) if s > prev_s + 1 else None})   # adhyāyas absent from our copy
             page = wdir / ed["id"] / str(k) / "index.html"
             page.write_text(env.get_template("kanda.html").render(**ctx(
                 2, ed=summary, kanda=kandas[k - 1], items=items, page="kanda")), encoding="utf-8")
@@ -1118,7 +1126,7 @@ def build_stotras(out: Path, env: Environment, base: dict) -> None:
                 g = st.get("gita")
                 kind = STOTRA_KIND.get(st.get("kind"), STOTRA_KIND["stotra"])
                 groups[loc0["k"]].append(dict(
-                    st=st, deity=st.get("deity", "other"), n=links[0]["n"], chs=links[0]["chs"], name=s3(st["name_iast"]), by=s3(st["by"]), to=s3(st["to"]),
+                    st=st, deity=(re.sub(r"[^a-z]+", "-", st.get("group", "other").lower()).strip("-") if name == "upakhyanas" else st.get("deity", "other")), group=st.get("group"), n=links[0]["n"], chs=links[0]["chs"], name=s3(st["name_iast"]), by=s3(st["by"]), to=s3(st["to"]),
                     kind=sx(*kind), open=open_, links=links, s=loc0["s"], href=links[0]["href"],
                     page=(st["id"] + "/") if len(pts[ed0]) > 1 else None,
                     gita=dict(href=f'../../gita/vu/1/{g["s"]}/#v{g["v"][0]}-{g["v"][1]}', ref=f'{g["s"]}.{g["v"][0]}–{g["v"][1]}') if g else None,
@@ -1130,6 +1138,12 @@ def build_stotras(out: Path, env: Environment, base: dict) -> None:
             gl = [dict(u=unit_info(W, k), rows=sorted(groups[k], key=lambda x: x["s"])) for k in sorted(groups)]
             rows = [x for g_ in gl for x in g_["rows"]]
             deities = [(d, sx(*DEITY[d]), sum(1 for x in rows if x["deity"] == d)) for d in DEITY if any(x["deity"] == d for x in rows)] if name == "stotras" else []
+            if name == "upakhyanas":   # filter chips by who tells the tales (in reading order of first appearance)
+                seen = []
+                for x in rows:
+                    if x["group"] and x["deity"] not in [q[0] for q in seen]:
+                        seen.append((x["deity"], x["group"], sum(1 for y in rows if y["deity"] == x["deity"])))
+                deities = seen if len(seen) > 1 else []
             secs.append(dict(work=w, W=W, groups=gl, n=len(rows), deities=deities))
         rel = out / "appendix" / name / "index.html"
         rel.parent.mkdir(parents=True, exist_ok=True)

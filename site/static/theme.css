@@ -120,3 +120,6 @@ body { background: var(--paper); color: var(--ink); }
 .st-rel { display: flex; flex-wrap: wrap; gap: 0.35rem; flex-basis: 100%; margin: 0.15rem 0 0; }
 .st-rel a { padding: 0.2rem 0.65rem; border-radius: 99px; font: 600 0.75rem var(--f-ui); text-decoration: none; background: var(--w-t); color: var(--w-on-t); }
 .st-rel a:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+/* gaps in our copy of a text (v0.25) */
+.gapnote { list-style: none; margin: 0.6rem 0; padding: 0.6rem 0.8rem; border-radius: var(--r-cell); border: 1px dashed var(--rule); background: var(--paper-2); color: var(--muted); font: 500 0.82rem/1.45 var(--f-ui); }

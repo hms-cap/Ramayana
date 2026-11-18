@@ -8,9 +8,9 @@ with sync_playwright() as p:
     errs = []; pg.on("pageerror", lambda e: errs.append(str(e)))
     pg.goto(B + "/appendix/"); pg.wait_for_timeout(500)
     row = pg.locator(".achip:has(a[href='upakhyanas/'])"); assert row.count() == 1
-    assert "65 tales" in row.inner_text() and row.locator(".ach").count() >= 8
+    assert "119 tales" in row.inner_text() and row.locator(".ach").count() >= 8
     pg.goto(B + "/appendix/upakhyanas/#nala"); pg.wait_for_timeout(700)
-    assert pg.locator(".st").count() == 65
+    assert pg.locator(".st").count() == 119
     nala = pg.locator("#nala"); assert nala.is_visible() and "Bṛhadaśva" in nala.inner_text() or "ಬೃಹದಶ್ವ" in nala.inner_text()
     assert nala.locator(".st-frame").count() == 1
     # a twin link to the other epic

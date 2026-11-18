@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.25.0 — 2026-11-18
+- Upākhyānas: 54 more Mahābhārata tales (119 in all; 93 from the Mahābhārata): Pauṣya, Pauloma, Ruru, Kaca and Devayānī, Aṇī-Māṇḍavya, Jarāsandha's and Śiśupāla's births, Mārkaṇḍeya's tales (the frog princess, Vāmadeva's horses, Skanda's birth), the Yakṣa's questions, Dambhodbhava, the man in the well, Balarāma's pilgrimage tales, the pigeon and the fowler, Śuka, Upamanyu, Nṛga, Naciketas, Saṃvarta and Marutta, and more.
+- Filter the tales by who tells them (Lomaśa, Mārkaṇḍeya, Bhīṣma on the bed of arrows, Balarāma's pilgrimage…).
+- Gaps in our copies of the texts are now shown where they are: "Adhyāyas 109–110 are missing in our copy of the Traditional Text; Next goes on to 111", and the same for missing verses (Kumbakonam: Vana 109–110, Droṇa 15, 137–138 and a few verses elsewhere; Pune: Ādi 1.151.25–51, Sabhā 2.41.34–41). A test pins the list.
+- Kumbakonam Vana 3.161: the verse numbered 180 in the source is verse 80 (etl/fix_vu_numbering.py).
+
 ## 0.24.0 — 2026-11-18
 - Pariśiṣṭa → Upākhyānas: 65 tales told inside the two epics (26 in the Rāmāyaṇa, 39 in the Mahābhārata), each with who tells it to whom and why, a short note in Kannada and English, its range in both editions, and Read / Chant / Daily. Long tales open on their adhyāya list (Nala 28 adhyāyas) and read part by part.
 - Tales told in both epics link to each other (Ṛṣyaśṛṅga, the descent of the Gaṅgā, Yayāti, Agastya, Vasiṣṭha and Viśvāmitra, Vṛtra; the Rāmopākhyāna links to the Rāmāyaṇa); a tale links to the gītās and hymns inside it (Vyādhagītā, Garuḍa's hymn).
