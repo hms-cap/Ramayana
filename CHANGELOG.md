@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.24.0 — 2026-11-18
+- Pariśiṣṭa → Upākhyānas: 65 tales told inside the two epics (26 in the Rāmāyaṇa, 39 in the Mahābhārata), each with who tells it to whom and why, a short note in Kannada and English, its range in both editions, and Read / Chant / Daily. Long tales open on their adhyāya list (Nala 28 adhyāyas) and read part by part.
+- Tales told in both epics link to each other (Ṛṣyaśṛṅga, the descent of the Gaṅgā, Yayāti, Agastya, Vasiṣṭha and Viśvāmitra, Vṛtra; the Rāmopākhyāna links to the Rāmāyaṇa); a tale links to the gītās and hymns inside it (Vyādhagītā, Garuḍa's hymn).
+- Which tales: the Mahābhārata's own list in the Parvasaṅgraha (Ādi 2), the Pune edition's section names, and the usual lists for the Rāmāyaṇa. Researched and range-checked by agents against the text; boundaries adjusted after an independent check.
+
 ## 0.23.1 — 2026-11-17
 - The edition switch under a sarga title ("⇄ Pune Text 6.23") is always shown; it was hidden whenever the other text was switched off in Settings, which is the default.
 - The bottom tab bar shows a label under every icon (Home, Search, Saved, Dictionary), not only under the current one.

@@ -62,7 +62,7 @@ def check(path):
     """Every entry: each edition's range exists and its first verse holds the opening words.
     loc = {k, s, v:[a, b]} or, over several chapters, {k, s, v:[a, b], s2} with a in s and b in s2."""
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
-    data = raw.get("stotras") or raw.get("gitas") or []
+    data = raw.get("stotras") or raw.get("gitas") or raw.get("upakhyanas") or []
     bad = 0
     for st in data:
         for ed in ("vu", "ce"):

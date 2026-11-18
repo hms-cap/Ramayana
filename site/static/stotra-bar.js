@@ -27,6 +27,7 @@
   function multi(st) { return Object.keys(st.parts).some(function (k) { return st.parts[k].length > 1; }); }
   function listHref(st) { return ROOT + (st.l || "appendix/stotras/") + (multi(st) ? st.id + "/" : "#" + st.id); }
   function isGita(st) { return st.t === "g"; }
+  function kindOf(st) { return st.t === "g" ? "gītā" : st.t === "u" ? "tale" : "stotra"; }
   // passages can overlap (the Brāhmaṇagītā is inside the Anugītā): the one opened last wins ("vr.stid", this tab)
   function prefId() { try { return sessionStorage.getItem("vr.stid"); } catch (e) { return null; } }
   function setId(id) { try { sessionStorage.setItem("vr.stid", id); } catch (e) { /* ignore */ } }
@@ -79,13 +80,13 @@
     cur = find(idx, h, r); if (!cur) return;
     setId(cur.st.id);
     try {   // last stotra / gītā read, for Home → Continue reading
-      localStorage.setItem("vr.last.st", JSON.stringify({ id: cur.st.id, title: name3(cur.st.n), href: location.pathname + location.hash, list: cur.st.t === "g" ? "gitas" : "stotras", ts: Date.now() }));
+      localStorage.setItem("vr.last.st", JSON.stringify({ id: cur.st.id, title: name3(cur.st.n), href: location.pathname + location.hash, list: cur.st.t === "g" ? "gitas" : cur.st.t === "u" ? "upakhyanas" : "stotras", ts: Date.now() }));
     } catch (e) { /* ignore */ }
     var st = cur.st, vs = verses(r); if (!vs.length) { cur = null; return; }
     var nm = name3(st.n)[sc()], n = r[1] - r[0] + 1, multi = cur.n > 1, last = cur.i === cur.n - 1;
-    var what = isGita(st) ? "Gītās" : "Stotras";
+    var what = st.t === "g" ? "Gītās" : st.t === "u" ? "Upākhyānas" : "Stotras";
     bar = document.createElement("div");
-    bar.className = "stbar"; bar.setAttribute("role", "region"); bar.setAttribute("aria-label", isGita(st) ? "Gītā" : "Stotra");
+    bar.className = "stbar"; bar.setAttribute("role", "region"); bar.setAttribute("aria-label", st.t === "g" ? "Gītā" : st.t === "u" ? "Upākhyāna" : "Stotra");
     bar.innerHTML = '<a class="stbar-bk" href="' + esc(listHref(st)) + '" aria-label="Back to ' + what + '">‹</a>' +
       '<div class="stbar-nm"><b lang="' + (sc() === "knda" ? "sa-Knda" : sc() === "deva" ? "sa-Deva" : "sa-Latn") + '">' + esc(nm) + '</b><small><span class="stbar-pos"></span></small></div>' +
       '<button type="button" class="stbar-go">▶ Chant</button><i class="stbar-prog" aria-hidden="true"><i></i></i>';
@@ -118,7 +119,7 @@
     var ol = document.querySelector(".verses"), total = document.querySelectorAll(".verses > .verse[id]").length;
     if (ol && total > n) {
       var note = document.createElement("p"); note.className = "st-note";
-      note.innerHTML = "Showing " + (isGita(st) ? "the gītā" : "the stotra") + " only (" + digits(n) + " of " + digits(total) + ' verses). <button type="button" data-st-all>Show the whole chapter</button>';
+      note.innerHTML = "Showing the " + kindOf(st) + " only (" + digits(n) + " of " + digits(total) + ' verses). <button type="button" data-st-all>Show the whole chapter</button>';
       ol.parentNode.insertBefore(note, ol);
     }
     progress();
@@ -137,7 +138,7 @@
     if (!cur) return;
     var nid = e.target.closest("[data-st-id]"); if (nid) setId(nid.dataset.stId);
     var al = e.target.closest("[data-st-all]");
-    if (al) { var on = document.body.classList.toggle("st-all"); al.textContent = on ? "Show " + (isGita(cur.st) ? "the gītā" : "the stotra") + " only" : "Show the whole chapter"; if (on) { var f = document.querySelector(".verse.st-first"); if (f) f.scrollIntoView({ block: "start" }); } return; }
+    if (al) { var on = document.body.classList.toggle("st-all"); al.textContent = on ? "Show the " + kindOf(cur.st) + " only" : "Show the whole chapter"; if (on) { var f = document.querySelector(".verse.st-first"); if (f) f.scrollIntoView({ block: "start" }); } return; }
     var b = e.target.closest(".stbar-go, [data-st-again]");
     if (b) { chant(false); return; }
     b = e.target.closest("[data-st-dly]");

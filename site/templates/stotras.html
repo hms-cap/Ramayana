@@ -17,7 +17,7 @@
   {% if secs|length > 1 %}<div class="seg cw-seg" role="tablist" aria-label="Work">
     {% for s in secs %}<a href="#{{ s.work }}" role="tab" data-st-tab="{{ s.work }}">{{ work_sx(s.W) }} <em>{{ s.n }}</em></a>{% endfor %}
   </div>{% endif %}
-  <label class="st-search"><span aria-hidden="true">⌕</span><input type="search" id="st-q" placeholder="{{ "Search gītās, teachers" if P.name == "gitas" else "Search stotras, deities, singers" }}" aria-label="Search {{ P.title[2]|lower }}" autocomplete="off"></label>
+  <label class="st-search"><span aria-hidden="true">⌕</span><input type="search" id="st-q" placeholder="{{ "Search gītās, teachers" if P.name == "gitas" else ("Search tales, tellers" if P.name == "upakhyanas" else "Search stotras, deities, singers") }}" aria-label="Search {{ P.title[2]|lower }}" autocomplete="off"></label>
   {% for s in secs %}
   <section class="cw-sec st-sec" data-st-sec="{{ s.work }}" aria-label="{{ s.W.en }}">
     {% if s.deities %}<div class="st-chips" role="group" aria-label="Deity">
@@ -33,6 +33,7 @@
         <a class="st-main" href="{{ r.page or r.href }}" data-st-read>
           <b class="st-name">{{ r.name }}</b>
           <span class="st-who">{{ r.by }} <span aria-label="to">→</span> {{ r.to }} · <span class="st-kind">{{ r.kind }}</span> · <span class="st-en">{{ r.st.name_en }}</span></span>
+          {% if r.frame %}<span class="st-frame">{{ r.frame }}</span>{% endif %}
           {% if r.open %}<span class="st-open">{{ r.open }} …</span>{% endif %}
           {% if r.st.about and r.st.about.kn %}<span class="st-about" lang="kn">{{ r.st.about.kn }}</span>{% endif %}
           {% if r.st.about and r.st.about.en %}<span class="st-about">{{ r.st.about.en }}</span>{% endif %}
@@ -43,7 +44,8 @@
           <button type="button" class="stb gh" data-st-daily aria-pressed="false">☆ Daily</button>
           <span class="st-n">{% if r.chs > 1 %}{{ r.chs }} adhyāyas · {% endif %}{{ r.n }} verse{{ "s" if r.n != 1 }}</span>
         </div>
-        <p class="st-loc">{% for l in r.links %}<a href="{{ l.href }}" data-st-read>{{ l.name }} {{ l.ref }}</a>{% endfor %}{% if r.gita %}<a href="{{ r.gita.href }}" data-st-read>Gītā {{ r.gita.ref }}</a>{% endif %}{% if r.only %}<span class="st-only">Only in the {{ r.only }}</span>{% endif %}</p>
+        <p class="st-loc">{% for l in r.links %}<a href="{{ l.href }}" data-st-read>{{ l.name }} {{ l.ref }}</a>{% endfor %}{% if r.gita %}<a href="{{ r.gita.href }}" data-st-read>Gītā {{ r.gita.ref }}</a>{% endif %}{% if r.only %}<span class="st-only">Only in the {{ r.only }}</span>{% endif %}
+        {% if r.contains or r.twin %}<span class="st-rel">{% for c in r.contains %}<a href="{{ c.href }}">Contains {{ c.name }}</a>{% endfor %}{% if r.twin %}<a class="w-{{ r.twin.work }}" href="{{ r.twin.href }}">Also told in the {{ "Rāmāyaṇa" if r.twin.work == "ram" else "Mahābhārata" }}: {{ r.twin.name }}</a>{% endif %}</span>{% endif %}</p>
       </li>
     {% endfor %}
     </ul>

@@ -966,10 +966,12 @@ def build_appendix(out: Path, env: Environment, base: dict) -> None:
 
     s3 = lambda iast: sx(slp1_to_brahmic(iast_to_slp1(iast), "knda"), slp1_to_brahmic(iast_to_slp1(iast), "deva"), iast)
     chips = {}
-    for key, fn in (("stotras", "stotras.json"), ("gitas", "gitas.json")):
+    for key, fn in (("stotras", "stotras.json"), ("gitas", "gitas.json"), ("upakhyanas", "upakhyanas.json")):
+        if not (ROOT / "data" / fn).exists():
+            chips[key] = []; continue
         rows = json.loads((ROOT / "data" / fn).read_text(encoding="utf-8"))[key]
         chips[key] = [dict(id=r["id"], name=s3(r["name_iast"]), w=r.get("work", "mbh")) for r in rows]
-    write("appendix", "appendix.html", 1, n_metres=len(present), n_stotras=len(chips["stotras"]), n_gitas=len(chips["gitas"]), chips=chips)
+    write("appendix", "appendix.html", 1, n_metres=len(present), n_stotras=len(chips["stotras"]), n_gitas=len(chips["gitas"]), n_upa=len(chips["upakhyanas"]), chips=chips)
     index = []
     for m in present:
         c = counts(m)
@@ -998,7 +1000,7 @@ def build_appendix(out: Path, env: Environment, base: dict) -> None:
 
 STOTRA_KIND = {"gita": ("ಗೀತೆ", "गीता", "Gītā"), "stotra": ("ಸ್ತೋತ್ರ", "स्तोत्रम्", "Stotra"), "stuti": ("ಸ್ತುತಿ", "स्तुतिः", "Stuti"),
                "sahasranama": ("ಸಹಸ್ರನಾಮ", "सहस्रनाम", "Sahasranāma"), "namavali": ("ನಾಮಾವಳಿ", "नामावलिः", "Nāmāvali"),
-               "prayer": ("ಪ್ರಾರ್ಥನೆ", "प्रार्थना", "Prayer")}
+               "prayer": ("ಪ್ರಾರ್ಥನೆ", "प्रार्थना", "Prayer"), "upakhyana": ("ಉಪಾಖ್ಯಾನ", "उपाख्यानम्", "Upākhyāna")}
 
 
 DEITY = {"vishnu": ("ವಿಷ್ಣು", "विष्णुः", "Viṣṇu"), "shiva": ("ಶಿವ", "शिवः", "Śiva"), "devi": ("ದೇವೀ", "देवी", "Devī"),
@@ -1012,6 +1014,9 @@ PASSAGES = {
     "gitas": dict(file="gitas.json", key="gitas", t="g", title=("ಗೀತೆಗಳು", "गीताः", "Gītās"),
                   intro="The teachings inside the Mahābhārata that are called gītās, besides the Bhagavadgītā. Read one with only its verses shown, part by part, or chant it.",
                   hint="Which passages count as gītās follows the usual lists and the chapter colophons of the text."),
+    "upakhyanas": dict(file="upakhyanas.json", key="upakhyanas", t="u", title=("ಉಪಾಖ್ಯಾನಗಳು", "उपाख्यानानि", "Upākhyānas"),
+                       intro="The tales told inside the two epics: Nala, Sāvitrī, Śakuntalā, the descent of the Gaṅgā and more. Each shows who tells it to whom; read it part by part, or chant it.",
+                       hint="Which tales count follows the Mahābhārata's own list in its Parvasaṅgraha (Ādi 2), the Pune edition's section names, and the usual lists for the Rāmāyaṇa."),
 }
 
 
@@ -1049,6 +1054,17 @@ def build_stotras(out: Path, env: Environment, base: dict) -> None:
     s3 = lambda iast: sx(slp1_to_brahmic(iast_to_slp1(iast), "knda"), slp1_to_brahmic(iast_to_slp1(iast), "deva"), iast)
     spans = {w: _chapter_spans(w, ("vu", "ce")) for w in EPICS}
     idx = []
+    # cross-links between the lists: an id → (name in three scripts, list page); a tale told in both epics → the other one
+    REFS = {}
+    for nm, CC in PASSAGES.items():
+        pp_ = ROOT / "data" / CC["file"]
+        if pp_.exists():
+            for x in json.loads(pp_.read_text(encoding="utf-8"))[CC["key"]]:
+                ref = dict(name=s3(x["name_iast"]), href=f'../{nm}/#{x["id"]}')
+                REFS[x["id"]] = ref
+                if x.get("twin"):
+                    REFS[("twin", x["twin"], "ram" if x["work"] == "mbh" else "mbh")] = dict(ref, work=x["work"])
+    REFS[("twin", "ramayana", "mbh")] = dict(name=sx("ವಾಲ್ಮೀಕಿ ರಾಮಾಯಣ", "वाल्मीकिरामायणम्", "Vālmīki Rāmāyaṇa"), href="../../read/", work="ram")
     for name, C in PASSAGES.items():
         p = ROOT / "data" / C["file"]
         if not p.exists():
@@ -1096,7 +1112,7 @@ def build_stotras(out: Path, env: Environment, base: dict) -> None:
                 open_ = None
                 if r:
                     pads = [x for ln in r["lines"] for x in ln if not re.fullmatch(r"\s*\S+\s+uvāca\s*", x)]   # skip "X uvāca"
-                    words = re.sub(r"\s*\[\d+(?:_\d+)?\]", "", pads[0] if pads else "").split()
+                    words = re.sub(r"\s*\[\d+(?:_\d+)?\]|[\[\]]", "", pads[0] if pads else "").split()   # apparatus numbers, stray brackets
                     l1 = iast_to_slp1(" ".join(words[:8]))  # one line on the card: at most eight words
                     open_ = sx(render(l1, "knda"), render(l1, "deva"), render(l1, "iast"))
                 g = st.get("gita")
@@ -1106,7 +1122,9 @@ def build_stotras(out: Path, env: Environment, base: dict) -> None:
                     kind=sx(*kind), open=open_, links=links, s=loc0["s"], href=links[0]["href"],
                     page=(st["id"] + "/") if len(pts[ed0]) > 1 else None,
                     gita=dict(href=f'../../gita/vu/1/{g["s"]}/#v{g["v"][0]}-{g["v"][1]}', ref=f'{g["s"]}.{g["v"][0]}–{g["v"][1]}') if g else None,
-                    only=(eds[links[0]["ed"]]["short"] if len(links) == 1 else None)))
+                    only=(eds[links[0]["ed"]]["short"] if len(links) == 1 else None),
+                    frame=st.get("frame"), contains=[REFS[c] for c in st.get("contains", []) if c in REFS],
+                    twin=REFS.get(("twin", st["twin"], w)) if st.get("twin") else None))
             if not groups:
                 continue
             gl = [dict(u=unit_info(W, k), rows=sorted(groups[k], key=lambda x: x["s"])) for k in sorted(groups)]
@@ -1271,7 +1289,7 @@ def build_characters(out: Path, env: Environment, base: dict) -> None:
 
 def write_pwa(out: Path, done: list) -> None:
     """Service worker (with its shell list), manifest, and the offline download packs."""
-    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/", "appendix/stotras/", "appendix/gitas/", "data/stotras.json", "data/nav.json"] + CHAR_SHELL
+    shell = ["", "about/", "my/", "appendix/", "appendix/chandas/", "appendix/stotras/", "appendix/gitas/", "appendix/upakhyanas/", "data/stotras.json", "data/nav.json"] + CHAR_SHELL
     for d in done:
         pre = d["W"]["prefix"]
         nu = len(d["W"]["units"])

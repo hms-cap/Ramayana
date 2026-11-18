@@ -61,3 +61,39 @@ class TestGitas(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestUpakhyanas(unittest.TestCase):
+    """data/upakhyanas.json: tales told inside the epics (v0.24)."""
+    @classmethod
+    def setUpClass(cls):
+        cls.data = json.loads((ROOT / "data" / "upakhyanas.json").read_text(encoding="utf-8"))["upakhyanas"]
+
+    def test_ranges_and_openings(self):
+        import subprocess
+        out = subprocess.run([sys.executable, str(ROOT / "etl" / "stotras.py"), "check", str(ROOT / "data" / "upakhyanas.json")], capture_output=True, text=True)
+        self.assertIn(" 0 problems", out.stdout.strip().splitlines()[-1])
+
+    def test_fields(self):
+        ids = [u["id"] for u in self.data]
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertGreaterEqual(len(self.data), 60)
+        for u in self.data:
+            for f in ("work", "name_iast", "name_en", "by", "to", "frame", "about", "loc"):
+                self.assertTrue(u.get(f), (u["id"], f))
+            self.assertTrue(u["about"].get("en") and u["about"].get("kn"), u["id"])
+            self.assertEqual(u["kind"], "upakhyana")
+
+    def test_twins_and_contains(self):
+        twins = {}
+        for u in self.data:
+            if u.get("twin") and u["twin"] != "ramayana":
+                twins.setdefault(u["twin"], set()).add(u["work"])
+        for t, works in twins.items():
+            self.assertEqual(works, {"ram", "mbh"}, t)    # a twin is the same tale in both epics
+        known = {u["id"] for u in self.data}
+        known |= {s["id"] for s in json.loads((ROOT / "data" / "stotras.json").read_text(encoding="utf-8"))["stotras"]}
+        known |= {g["id"] for g in json.loads((ROOT / "data" / "gitas.json").read_text(encoding="utf-8"))["gitas"]}
+        for u in self.data:
+            for c in u.get("contains", []):
+                self.assertIn(c, known, u["id"])

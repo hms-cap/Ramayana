@@ -1,0 +1,2705 @@
+{
+ "_comment": "Upākhyānas: tales told inside the two epics. Same shape as data/gitas.json (loc per edition {k, s, v:[first,last], s2?}); frame = who tells it to whom and why; contains = ids of gītās/stotras inside; twin = the same tale in the other epic (shared id). Checked by: python etl/stotras.py check data/upakhyanas.json",
+ "upakhyanas": [
+  {
+   "id": "rishyashringa-ram",
+   "work": "ram",
+   "name_iast": "Ṛṣyaśṛṅgopākhyāna",
+   "name_en": "Ṛṣyaśṛṅga",
+   "kind": "upakhyana",
+   "by": "Sumantra",
+   "to": "Daśaratha",
+   "frame": "Sumantra, privately, tells the childless Daśaratha what Sanatkumāra once foretold about Ṛṣyaśṛṅga.",
+   "opening": {
+    "vu": "etat śrutvā rahaḥ sūto rājānam",
+    "ce": "etac chrutvā rahaḥ sūto rājānam"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 9,
+     "v": [
+      1,
+      31
+     ],
+     "s2": 11
+    },
+    "ce": {
+     "k": 1,
+     "s": 8,
+     "v": [
+      5,
+      29
+     ],
+     "s2": 10
+    }
+   },
+   "contains": [],
+   "twin": "rishyashringa",
+   "cited": "Starts at Sumantra's opening verse ('etat śrutvā rahaḥ sūto…', vu 1.9.1 / ce 1.8.5, a verse that is half frame and half speech); ends with Ṛṣyaśṛṅga and Śāntā settled in Ayodhyā (vu 1.11.31 / ce 1.10.29), before the narrator resumes with Daśaratha's own sacrifice (vu 1.12 / ce 1.11). The tale is told as Sanatkumāra's prophecy, hence the future tenses. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Sumantra repeats Sanatkumāra's prophecy: the boy Ṛṣyaśṛṅga, who has never seen a woman, will be brought to Aṅga by courtesans, marry Śāntā, and conduct Daśaratha's sacrifice for sons.",
+    "kn": "ಸನತ್ಕುಮಾರರ ಭವಿಷ್ಯವಾಣಿಯನ್ನು ಸುಮಂತ್ರ ಹೇಳುತ್ತಾನೆ: ಸ್ತ್ರೀಯನ್ನೇ ಕಾಣದ ಋಷ್ಯಶೃಂಗನನ್ನು ವೇಶ್ಯೆಯರು ಅಂಗದೇಶಕ್ಕೆ ಕರೆತರುತ್ತಾರೆ; ಅವನು ಶಾಂತೆಯನ್ನು ವರಿಸಿ ದಶರಥನ ಪುತ್ರಕಾಮೇಷ್ಟಿಯನ್ನು ನಡೆಸುತ್ತಾನೆ."
+   }
+  },
+  {
+   "id": "vishvamitra_kula",
+   "work": "ram",
+   "name_iast": "Kuśavaṃśākhyāna",
+   "name_en": "Kuśa's line and the birth of Viśvāmitra",
+   "kind": "upakhyana",
+   "by": "Viśvāmitra",
+   "to": "Rāma",
+   "frame": "On the Śoṇa's bank Rāma asks about the country; Viśvāmitra answers with his own family history.",
+   "opening": {
+    "vu": "brahma yonir mahān āsīt kuśo",
+    "ce": "brahmayonir mahān āsīt kuśo nāma"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 32,
+     "v": [
+      1,
+      13
+     ],
+     "s2": 34
+    },
+    "ce": {
+     "k": 1,
+     "s": 31,
+     "v": [
+      1,
+      13
+     ],
+     "s2": 33
+    }
+   },
+   "contains": [],
+   "cited": "Starts at Viśvāmitra's first verse (vu 1.32.1 / ce 1.31.1, after the frame at vu 1.31.24 / ce 1.30.23); ends at his summary 'eṣā rāma mama utpattiḥ…' (vu 1.34.13 / ce 1.33.13). The remarks about the night that follow (vu 1.34.14–18 / ce 1.33.14–18) are left out as frame. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Viśvāmitra traces his ancestry from Kuśa through Kuśanābha's hundred daughters, Gādhi and his sister Satyavatī to himself, answering Rāma's question about the land beside the Śoṇa.",
+    "kn": "ಶೋಣಾ ನದಿಯ ತೀರದ ನಾಡಿನ ಬಗ್ಗೆ ರಾಮ ಕೇಳಿದಾಗ, ವಿಶ್ವಾಮಿತ್ರ ಕುಶನಿಂದ ಕುಶನಾಭ, ಅವನ ನೂರು ಹೆಣ್ಣುಮಕ್ಕಳು, ಗಾಧಿ, ಸತ್ಯವತಿಯ ಮೂಲಕ ತನ್ನ ಜನ್ಮದವರೆಗಿನ ವಂಶವನ್ನು ಹೇಳುತ್ತಾನೆ."
+   }
+  },
+  {
+   "id": "kumarasambhava",
+   "work": "ram",
+   "name_iast": "Kumārasaṃbhavopākhyāna",
+   "name_en": "Birth of Kumāra (Skanda)",
+   "kind": "upakhyana",
+   "by": "Viśvāmitra",
+   "to": "Rāma and Lakṣmaṇa",
+   "frame": "Viśvāmitra answers the princes' questions about Gaṅgā and Umā by telling how Skanda was born.",
+   "opening": {
+    "vu": "nikhilena kathām sarvām ṛṣi",
+    "ce": "purā rāma kṛtodvāhaḥ śitikaṇṭho mahātapāḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 36,
+     "v": [
+      5,
+      32
+     ],
+     "s2": 37
+    },
+    "ce": {
+     "k": 1,
+     "s": 35,
+     "v": [
+      6,
+      31
+     ],
+     "s2": 36
+    }
+   },
+   "contains": [],
+   "cited": "Starts where Viśvāmitra begins the account of Śiva and Umā (vu 1.36.5, the verse that also holds the frame 'nikhilena kathāṃ sarvām…'; ce 1.35.6 'purā rāma kṛtodvāhaḥ'); the prelude on Himavān's two daughters (vu 1.35.14–24) is not included. Ends at the closing verse of the tale (vu 1.37.32 includes the phalaśruti; ce ends at 1.36.31 'eṣa te rāma gaṅgāyā vistaraḥ…'). Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Śiva and Umā's union lasts a hundred divine years without a child; the gods fear the offspring, Śiva's seed falls to Agni and Gaṅgā, and from it Kārttikeya is born.",
+    "kn": "ಶಿವ-ಉಮೆಯರ ಸಮಾಗಮ ನೂರು ದಿವ್ಯ ವರ್ಷ ನಡೆದರೂ ಮಕ್ಕಳಾಗಲಿಲ್ಲ; ದೇವತೆಗಳ ಭಯದಿಂದ ಶಿವನ ವೀರ್ಯ ಅಗ್ನಿ ಮತ್ತು ಗಂಗೆಯ ಮೂಲಕ ಹರಿದು ಕಾರ್ತಿಕೇಯನ ಜನ್ಮವಾಗುತ್ತದೆ."
+   }
+  },
+  {
+   "id": "gangavatarana-ram",
+   "work": "ram",
+   "name_iast": "Gaṅgāvataraṇa",
+   "name_en": "Descent of the Gaṅgā",
+   "kind": "upakhyana",
+   "by": "Viśvāmitra",
+   "to": "Rāma and Lakṣmaṇa",
+   "frame": "Having told of Gaṅgā's birth, Viśvāmitra goes on to tell Rāma and Lakṣmaṇa how she came to earth.",
+   "opening": {
+    "vu": "ayodhyā adhipatiḥ vīraḥ pūrvam āsīt",
+    "ce": "ayodhyādhipatiḥ śūraḥ pūrvam āsīn narādhipaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 38,
+     "v": [
+      2,
+      23
+     ],
+     "s2": 44
+    },
+    "ce": {
+     "k": 1,
+     "s": 37,
+     "v": [
+      2,
+      20
+     ],
+     "s2": 43
+    }
+   },
+   "contains": [],
+   "twin": "gangavatarana",
+   "cited": "Starts at 'ayodhyādhipatiḥ…' (vu 1.38.2 / ce 1.37.2), leaving the one frame verse 1.38.1 / 1.37.1; ends with Viśvāmitra's closing and phalaśruti (vu 1.44.23 / ce 1.43.20), where Rāma's reaction (vu 1.45.1 / ce 1.44.1) resumes the frame. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "King Sagara's sixty thousand sons are burnt by Kapila while searching for the sacrificial horse; after Aṃśumān and Dilīpa fail, Bhagīratha's penance brings Gaṅgā down to raise their ashes.",
+    "kn": "ಯಜ್ಞದ ಕುದುರೆಯನ್ನು ಹುಡುಕುತ್ತಿದ್ದ ಸಗರನ ಅರವತ್ತು ಸಾವಿರ ಮಕ್ಕಳು ಕಪಿಲನ ಕೋಪದಿಂದ ಭಸ್ಮವಾದರು; ಅಂಶುಮಾನ್, ದಿಲೀಪರ ಪ್ರಯತ್ನ ವಿಫಲವಾದ ಮೇಲೆ ಭಗೀರಥನ ತಪಸ್ಸಿನಿಂದ ಗಂಗೆ ಇಳಿದು ಬಂದಳು."
+   }
+  },
+  {
+   "id": "amritamanthana",
+   "work": "ram",
+   "name_iast": "Amṛtamanthana",
+   "name_en": "Churning of the ocean and Diti's Maruts",
+   "kind": "upakhyana",
+   "by": "Viśvāmitra",
+   "to": "Rāma",
+   "frame": "At Viśālā, Rāma asks about the city; Viśvāmitra recounts what once happened in that country.",
+   "opening": {
+    "vu": "śrūyatām rāma śakrasya kathām kathayataḥ",
+    "ce": "śrūyatāṃ rāma śakrasya kathāṃ kathayataḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 45,
+     "v": [
+      14,
+      10
+     ],
+     "s2": 47
+    },
+    "ce": {
+     "k": 1,
+     "s": 44,
+     "v": [
+      13,
+      9
+     ],
+     "s2": 46
+    }
+   },
+   "contains": [],
+   "cited": "One entry with two parts, the churning (vu 1.45.14ff) and Diti's vow (from vu 1.46); the story is continuous. Starts at 'śrūyatām rāma śakrasya kathām…' (vu 1.45.14 / ce 1.44.13); ends 'jagmatus tridivaṃ rāma kṛtārthau…' (vu 1.47.10 / ce 1.46.9), before the history of Viśālā's kings. The critical edition has a much shorter churning (no Śiva and the poison, no tortoise). Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Gods and Daityas churn the milk ocean for amṛta; afterwards Diti, her sons slain, practises austerity to bear a son who will kill Indra, but Indra divides the child into forty-nine Maruts.",
+    "kn": "ದೇವತೆಗಳೂ ದೈತ್ಯರೂ ಅಮೃತಕ್ಕಾಗಿ ಕ್ಷೀರಸಾಗರವನ್ನು ಕಡೆದರು. ಬಳಿಕ ಮಕ್ಕಳನ್ನು ಕಳೆದುಕೊಂಡ ದಿತಿ ಇಂದ್ರನನ್ನು ಕೊಲ್ಲುವ ಮಗನಿಗಾಗಿ ತಪಸ್ಸು ಮಾಡಿದಳು; ಇಂದ್ರ ಗರ್ಭವನ್ನು ನಲವತ್ತೊಂಬತ್ತು ಮರುತ್ತುಗಳಾಗಿ ಸೀಳಿದ."
+   }
+  },
+  {
+   "id": "ahalya",
+   "work": "ram",
+   "name_iast": "Ahalyopākhyāna",
+   "name_en": "Ahalyā",
+   "kind": "upakhyana",
+   "by": "Viśvāmitra",
+   "to": "Rāma",
+   "frame": "Near Mithilā Rāma sees a deserted hermitage; Viśvāmitra tells whose it was and why it is empty.",
+   "opening": {
+    "vu": "hanta te kathayiṣyāmi śṛṇu tattvena",
+    "ce": "hanta te kathayiṣyāmi śṛṇu tattvena"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 48,
+     "v": [
+      15,
+      10
+     ],
+     "s2": 49
+    },
+    "ce": {
+     "k": 1,
+     "s": 47,
+     "v": [
+      14,
+      10
+     ],
+     "s2": 48
+    }
+   },
+   "contains": [],
+   "cited": "Starts at 'hanta te kathayiṣyāmi…' (vu 1.48.15 / ce 1.47.14); the telling ends at vu 1.49.10 / ce 1.48.10. Viśvāmitra's call to enter the hermitage and Rāma's redeeming of Ahalyā (vu 1.49.11–22 / ce 1.48.11–22) is action, not tale, and is left out. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Indra comes to Ahalyā disguised as her husband Gautama; Gautama curses Indra and Ahalyā, who must wait unseen in the empty hermitage until Rāma arrives to free her.",
+    "kn": "ಇಂದ್ರ ಗೌತಮನ ರೂಪದಲ್ಲಿ ಅಹಲ್ಯೆಯ ಬಳಿ ಬಂದ; ಗೌತಮ ಇಬ್ಬರಿಗೂ ಶಾಪ ಕೊಟ್ಟ. ಅಹಲ್ಯೆ ಯಾರಿಗೂ ಕಾಣದೆ ಆಶ್ರಮದಲ್ಲೇ ಉಳಿದು ರಾಮನ ಆಗಮನಕ್ಕಾಗಿ ಕಾಯಬೇಕಾಯಿತು."
+   }
+  },
+  {
+   "id": "vamana",
+   "work": "ram",
+   "name_iast": "Vāmanākhyāna",
+   "name_en": "Vāmana at the Siddhāśrama",
+   "kind": "upakhyana",
+   "by": "Viśvāmitra",
+   "to": "Rāma and Lakṣmaṇa",
+   "frame": "Arriving at his hermitage, Viśvāmitra explains to the princes why it is called Siddhāśrama.",
+   "opening": {
+    "vu": "iha rāma mahābāho viṣṇur deva",
+    "ce": "eṣa pūrvāśramo rāma vāmanasya"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 29,
+     "v": [
+      2,
+      22
+     ]
+    },
+    "ce": {
+     "k": 1,
+     "s": 28,
+     "v": [
+      2,
+      12
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "Extra to the brief; Viśvāmitra's account of the place. vu 1.29.2 / ce 1.28.2 to the sentence 'tenaiva pūrvam ākrānta āśramaḥ…' (vu 1.29.22 / ce 1.28.12). In ce the first verses (vu 1.29.2–3) are missing, so ce starts at 'eṣa pūrvāśramo rāma vāmanasya…'. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "The hermitage was where Viṣṇu once practised austerity; when Bali held the three worlds, Viṣṇu came as the dwarf Vāmana, begged three paces of land and won the worlds back for Indra.",
+    "kn": "ಈ ಆಶ್ರಮದಲ್ಲಿ ಹಿಂದೆ ವಿಷ್ಣು ತಪಸ್ಸು ಮಾಡಿದ್ದ. ಬಲಿ ಮೂರು ಲೋಕಗಳನ್ನು ಗೆದ್ದಾಗ ವಿಷ್ಣು ವಾಮನನಾಗಿ ಮೂರು ಹೆಜ್ಜೆ ನೆಲ ಬೇಡಿ ಲೋಕಗಳನ್ನು ಇಂದ್ರನಿಗೆ ಮರಳಿಸಿದ."
+   }
+  },
+  {
+   "id": "vasishtha_vishvamitra-ram",
+   "work": "ram",
+   "name_iast": "Vasiṣṭhaviśvāmitravṛttānta",
+   "name_en": "Vasiṣṭha, Viśvāmitra and the wish-cow (Śabalā)",
+   "kind": "upakhyana",
+   "by": "Śatānanda",
+   "to": "Rāma",
+   "frame": "At Mithilā, Śatānanda tells Rāma of Viśvāmitra's past, beginning with his clash with Vasiṣṭha.",
+   "opening": {
+    "vu": "śrūyatām ca abhidhāsyāmi kauśikasya mahātmanaḥ",
+    "ce": "śrūyatāṃ cābhidāsyāmi kauśikasya mahātmanaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 51,
+     "v": [
+      16,
+      24
+     ],
+     "s2": 56
+    },
+    "ce": {
+     "k": 1,
+     "s": 50,
+     "v": [
+      16,
+      24
+     ],
+     "s2": 55
+    }
+   },
+   "contains": [],
+   "twin": "vasishtha_vishvamitra",
+   "cited": "Śatānanda's whole account of Viśvāmitra (vu 1.51.16–1.65.29) is split here into five tales. This is the first: from 'śrūyatāṃ ca abhidhāsyāmi kauśikasya…' (vu 1.51.16 / ce 1.50.16) to Viśvāmitra's resolve 'tapo mahat samāsthāsye…' (vu 1.56.24 / ce 1.55.24). The numbering in this vu text puts the Triśaṅku–Vasiṣṭha's-sons scene in sarga 57, after the beginning of Triśaṅku's story in 58 (see trishanku). Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "King Viśvāmitra visits Vasiṣṭha, is feasted by the wish-cow Śabalā and tries to take her; Vasiṣṭha's brahmadaṇḍa defeats his army, and he resolves to become a brahmarṣi.",
+    "kn": "ರಾಜ ವಿಶ್ವಾಮಿತ್ರ ವಸಿಷ್ಠರ ಆಶ್ರಮಕ್ಕೆ ಬಂದು ಕಾಮಧೇನು ಶಬಲೆಯಿಂದ ಔತಣ ಪಡೆದು ಅವಳನ್ನು ಕೇಳಿದ. ವಸಿಷ್ಠರ ಬ್ರಹ್ಮದಂಡದ ಮುಂದೆ ಸೋತು, ತಾನೂ ಬ್ರಹ್ಮರ್ಷಿಯಾಗಲು ನಿಶ್ಚಯಿಸಿದ."
+   }
+  },
+  {
+   "id": "trishanku",
+   "work": "ram",
+   "name_iast": "Triśaṅkūpākhyāna",
+   "name_en": "Triśaṅku",
+   "kind": "upakhyana",
+   "by": "Śatānanda",
+   "to": "Rāma",
+   "frame": "Śatānanda continues Viśvāmitra's story to Rāma with the king Triśaṅku.",
+   "opening": {
+    "vu": "etasmin eva kāle tu",
+    "ce": "etasminn eva kāle tu satyavādī"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 58,
+     "v": [
+      10,
+      34
+     ],
+     "s2": 60
+    },
+    "ce": {
+     "k": 1,
+     "s": 56,
+     "v": [
+      10,
+      33
+     ],
+     "s2": 59
+    }
+   },
+   "contains": [],
+   "cited": "Starts at 'triśaṅkuḥ iti vikhyāta…' (vu 1.58.11 / ce 1.56.10), ends with the gods leaving after the sacrifice (vu 1.60.34 / ce 1.59.33). TEXT NOTE: in the vu data sargas 57 and 58 stand in the reverse story order (the sons' reply and curse is vu 1.57, which follows 1.58.11–22; the crosswalk maps ce 1.56→vu 1.58 and ce 1.57→vu 1.57), so the vu range 58.11→60.34 passes over vu 1.57 although it belongs to the tale. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's. Boundaries adjusted after an independent check (v0.24): tale start/end and phalaśruti included.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Triśaṅku wants to ascend to heaven in his own body; Vasiṣṭha and his sons refuse and curse him, so Viśvāmitra sacrifices for him and holds him in the sky against the gods' objection.",
+    "kn": "ತ್ರಿಶಂಕು ಈ ದೇಹದಲ್ಲೇ ಸ್ವರ್ಗಕ್ಕೆ ಹೋಗಬೇಕೆಂದ. ವಸಿಷ್ಠ ಮತ್ತು ಅವರ ಮಕ್ಕಳು ನಿರಾಕರಿಸಿ ಶಪಿಸಿದರು; ವಿಶ್ವಾಮಿತ್ರ ಯಜ್ಞ ಮಾಡಿ, ದೇವತೆಗಳ ವಿರೋಧದ ನಡುವೆಯೂ ಅವನನ್ನು ಆಕಾಶದಲ್ಲಿ ನಿಲ್ಲಿಸಿದ."
+   }
+  },
+  {
+   "id": "shunahshepa",
+   "work": "ram",
+   "name_iast": "Śunaḥśepopākhyāna",
+   "name_en": "Śunaḥśepa",
+   "kind": "upakhyana",
+   "by": "Śatānanda",
+   "to": "Rāma",
+   "frame": "Śatānanda continues Viśvāmitra's story to Rāma, telling of the boy sold for sacrifice.",
+   "opening": {
+    "vu": "etasmin eva kāle tu ayodhyā",
+    "ce": "etasminn eva kāle tu ayodhyādhipatir"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 61,
+     "v": [
+      5,
+      27
+     ],
+     "s2": 62
+    },
+    "ce": {
+     "k": 1,
+     "s": 60,
+     "v": [
+      5,
+      26
+     ],
+     "s2": 61
+    }
+   },
+   "contains": [],
+   "cited": "Starts at 'etasmin eva kāle tu ayodhyādhipatiḥ…' (vu 1.61.5 / ce 1.60.5, Ambarīṣa's sacrifice) after Viśvāmitra's move to Puṣkara (vu 1.61.1–4); ends at vu 1.62.27 / ce 1.61.26, before Viśvāmitra's further penance. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Ambarīṣa's sacrificial animal is stolen; Ṛcīka sells his middle son Śunaḥśepa as the substitute, and Viśvāmitra teaches the boy a prayer to Indra that saves him.",
+    "kn": "ಅಂಬರೀಷನ ಯಜ್ಞಪಶು ಕಳವಾಯಿತು; ಬದಲಿಗೆ ಋಚೀಕ ತನ್ನ ಮಧ್ಯಮ ಮಗ ಶುನಃಶೇಪನನ್ನು ಮಾರಿದ. ವಿಶ್ವಾಮಿತ್ರ ಹುಡುಗನಿಗೆ ಕಲಿಸಿದ ಇಂದ್ರಸ್ತುತಿಯಿಂದ ಅವನು ಉಳಿದ."
+   }
+  },
+  {
+   "id": "menaka",
+   "work": "ram",
+   "name_iast": "Menakāvṛttānta",
+   "name_en": "Viśvāmitra and Menakā",
+   "kind": "upakhyana",
+   "by": "Śatānanda",
+   "to": "Rāma",
+   "frame": "Śatānanda continues Viśvāmitra's story to Rāma: the first time his austerity was broken.",
+   "opening": {
+    "vu": "tataḥ kālena mahatā menakā parama",
+    "ce": "tataḥ kālena mahatā menakā paramāpsarāḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 63,
+     "v": [
+      4,
+      13
+     ]
+    },
+    "ce": {
+     "k": 1,
+     "s": 62,
+     "v": [
+      4,
+      13
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "vu 1.63.4 'tataḥ kālena mahatā menakā…' / ce 1.62.4 to Viśvāmitra's dismissal of Menakā (vu 1.63.13 / ce 1.62.13; in ce the same verse also carries 'uttaraṃ parvataṃ…'). Brahmā's naming him ṛṣi (vu 1.63.1–3) is left out. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Indra sends the apsaras Menakā to Puṣkara to distract Viśvāmitra; he lives with her for years, then realises he has lost time and sends her away to resume austerity.",
+    "kn": "ಇಂದ್ರ ಅಪ್ಸರೆ ಮೇನಕೆಯನ್ನು ಪುಷ್ಕರಕ್ಕೆ ಕಳುಹಿಸಿದ; ವಿಶ್ವಾಮಿತ್ರ ಅವಳೊಂದಿಗೆ ವರ್ಷಗಳ ಕಾಲ ಇದ್ದು, ನಂತರ ತಪಸ್ಸು ಹಾಳಾದುದನ್ನು ಅರಿತು ಅವಳನ್ನು ಕಳುಹಿಸಿ ಮತ್ತೆ ತಪಸ್ಸಿಗೆ ಹೋದ."
+   }
+  },
+  {
+   "id": "rambha",
+   "work": "ram",
+   "name_iast": "Rambhāśāpa",
+   "name_en": "Viśvāmitra and Rambhā",
+   "kind": "upakhyana",
+   "by": "Śatānanda",
+   "to": "Rāma",
+   "frame": "Śatānanda continues Viśvāmitra's story to Rāma: the second temptation, and the curse that follows.",
+   "opening": {
+    "vu": "tasmin saṃtapyamāne tu viśvāmitre mahāmunau",
+    "ce": "tasmin saṃtapyamāne tu viśvāmitre mahāmunau"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 63,
+     "v": [
+      25,
+      20
+     ],
+     "s2": 64
+    },
+    "ce": {
+     "k": 1,
+     "s": 62,
+     "v": [
+      25,
+      15
+     ],
+     "s2": 63
+    }
+   },
+   "contains": [],
+   "cited": "From the gods' alarm and Indra's order to Rambhā (vu 1.63.25 / ce 1.62.25) to the curse taking effect and Viśvāmitra's loss of peace (vu 1.64.16 / ce 1.63.15). The following vow of silence (vu 1.64.17ff) and the winning of brahmarṣi rank (vu 1.65) are left out; Śatānanda's whole account ends vu 1.65.29 / ce 1.64.20. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's. Boundaries adjusted after an independent check (v0.24): tale start/end and phalaśruti included.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "After a thousand years of austerity, Indra sends Rambhā to tempt Viśvāmitra; he sees through it, curses her to become a stone, and vows to master anger and senses.",
+    "kn": "ಸಾವಿರ ವರ್ಷದ ತಪಸ್ಸಿನ ನಂತರ ಇಂದ್ರ ರಂಭೆಯನ್ನು ಕಳುಹಿಸಿದ. ವಿಶ್ವಾಮಿತ್ರ ಅದನ್ನು ಅರಿತು ಅವಳನ್ನು ಕಲ್ಲಾಗೆಂದು ಶಪಿಸಿದ; ಬಳಿಕ ಕೋಪವನ್ನು ಗೆಲ್ಲುವ ಇನ್ನೂ ಕಠಿಣ ವ್ರತ ತೊಟ್ಟ."
+   }
+  },
+  {
+   "id": "agastya-ram",
+   "work": "ram",
+   "name_iast": "Agastyākhyāna",
+   "name_en": "Agastya, Vātāpi and Ilvala",
+   "kind": "upakhyana",
+   "by": "Rāma",
+   "to": "Lakṣmaṇa and Sītā",
+   "frame": "Walking toward Agastya's brother's hermitage, Rāma tells Lakṣmaṇa and Sītā how Agastya destroyed Vātāpi and Ilvala.",
+   "opening": {
+    "vu": "iha ekadā kila krūro vātāpiḥ",
+    "ce": "ihaikadā kila krūro vātāpir api"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 11,
+     "v": [
+      55,
+      67
+     ]
+    },
+    "ce": {
+     "k": 3,
+     "s": 10,
+     "v": [
+      53,
+      65
+     ]
+    }
+   },
+   "contains": [],
+   "twin": "agastya",
+   "cited": "Told by Rāma (not by Agastya) as they walk: vu 3.11.55 'iha ekadā kila krūro vātāpiḥ…' / ce 3.10.53 to 'viprānukampayā yena karma idaṃ duṣkaraṃ kṛtam' (vu 3.11.67 / ce 3.10.65). The Mahābhārata (Vana) tells a fuller Agastya cycle; the id is shared for the twin link. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Vātāpi, served as a ram by his brother Ilvala at brahmin feasts, would burst out of the guests' bodies; Agastya ate him and burnt Ilvala to ash, which is why the region is safe.",
+    "kn": "ಬ್ರಾಹ್ಮಣರಿಗೆ ಔತಣ ಹಾಕಿ ಕುರಿಯ ರೂಪದ ವಾತಾಪಿಯನ್ನು ಬಡಿಸುತ್ತಿದ್ದ ಇಲ್ವಲ; ವಾತಾಪಿ ಅತಿಥಿಗಳ ಹೊಟ್ಟೆ ಸೀಳಿ ಹೊರಬರುತ್ತಿದ್ದ. ಅಗಸ್ತ್ಯ ಅವನನ್ನು ಜೀರ್ಣಿಸಿ, ಇಲ್ವಲನನ್ನು ಸುಟ್ಟುಹಾಕಿದರು."
+   }
+  },
+  {
+   "id": "shravana",
+   "work": "ram",
+   "name_iast": "Andhamuniśāpa",
+   "name_en": "Daśaratha's curse (the blind ascetic's son)",
+   "kind": "upakhyana",
+   "by": "Daśaratha",
+   "to": "Kausalyā",
+   "frame": "On the night Rāma leaves for exile, the grieving Daśaratha tells Kausalyā the old deed behind his sorrow.",
+   "opening": {
+    "vu": "yad ācarati kalyāṇi śubham vā",
+    "ce": "yad ācarati kalyāṇi śubhaṃ vā"
+   },
+   "loc": {
+    "vu": {
+     "k": 2,
+     "s": 63,
+     "v": [
+      6,
+      61
+     ],
+     "s2": 64
+    },
+    "ce": {
+     "k": 2,
+     "s": 57,
+     "v": [
+      4,
+      47
+     ],
+     "s2": 58
+    }
+   },
+   "contains": [],
+   "cited": "Extra to the brief. Starts at 'yad ācarati kalyāṇi…' (vu 2.63.6 / ce 2.57.4) with Daśaratha's lead-in on karma, then the tale; ends at the curse's recall 'tasmān mām āgataṃ bhadre…' (vu 2.64.61 / ce 2.58.47). The lament that follows is frame. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "As a young prince Daśaratha mistook a boy filling a water jar for an elephant and shot him; the blind parents cursed him to die of grief for a son.",
+    "kn": "ಯುವರಾಜನಾಗಿದ್ದಾಗ ದಶರಥ ಸರಯೂ ತೀರದಲ್ಲಿ ನೀರು ತುಂಬುವ ಶಬ್ದವನ್ನು ಆನೆಯೆಂದು ಭಾವಿಸಿ ಬಾಣ ಬಿಟ್ಟು ಆ ಋಷಿದಂಪತಿಗಳ ಒಬ್ಬನೇ ಮಗನನ್ನು ಕೊಂದ; ಅವರ ಶಾಪ: ಪುತ್ರಶೋಕದಿಂದಲೇ ಸಾವು."
+   }
+  },
+  {
+   "id": "ravana_kula",
+   "work": "ram",
+   "name_iast": "Pulastyavaṃśākhyāna",
+   "name_en": "Pulastya, Viśravas and Kubera (Rāvaṇa's line)",
+   "kind": "upakhyana",
+   "by": "Agastya",
+   "to": "Rāma",
+   "frame": "After Rāvaṇa's fall, visiting sage Agastya tells Rāma where Rāvaṇa came from and how he got his power.",
+   "opening": {
+    "vu": "śṛṇu rāma kathāvṛttaṃ tasya tejobalaṃ",
+    "ce": "śṛṇu rājan yathāvṛttaṃ yasya tejobalaṃ"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 2,
+     "v": [
+      2,
+      36
+     ],
+     "s2": 3
+    },
+    "ce": {
+     "k": 7,
+     "s": 2,
+     "v": [
+      2,
+      31
+     ],
+     "s2": 3
+    }
+   },
+   "contains": [],
+   "cited": "Uttarakāṇḍa is told in the frame of the sages' visit; Agastya narrates vu 7.2–7.36. This first part runs from 'śṛṇu rāma kathāvṛttam…' (vu 7.2.2 / ce 7.2.2) to Kubera's visit to his father (vu 7.3.36 / ce 7.3.31), before Rāma asks about the earlier rākṣasas (7.4). Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Agastya traces Rāvaṇa's origin: Pulastya's son Viśravas, his son Kubera who is given Laṅkā and the Puṣpaka chariot; Rāvaṇa's own line and boons come next.",
+    "kn": "ರಾವಣನ ಮೂಲವನ್ನು ಅಗಸ್ತ್ಯ ಹೇಳುತ್ತಾರೆ: ಪುಲಸ್ತ್ಯನ ಮಗ ವಿಶ್ರವಸ್, ಅವನ ಮಗ ಕುಬೇರನಿಗೆ ಲಂಕೆ ಮತ್ತು ಪುಷ್ಪಕ ವಿಮಾನ ದೊರೆತ ಬಗೆ; ರಾವಣನ ವಂಶ ಮತ್ತು ವರಗಳು ಮುಂದೆ."
+   }
+  },
+  {
+   "id": "rakshasa_vamsha",
+   "work": "ram",
+   "name_iast": "Rākṣasavaṃśākhyāna",
+   "name_en": "The rākṣasas of Laṅkā: Sukeśa, Mālyavān and Sumālī",
+   "kind": "upakhyana",
+   "by": "Agastya",
+   "to": "Rāma",
+   "frame": "Rāma asks about Laṅkā's earlier rākṣasa rulers; Agastya tells the story from their creation.",
+   "opening": {
+    "vu": "prajāpatiḥ purā sṛṣṭvā hyapaḥ salilasambhavaḥ",
+    "ce": "prajāpatiḥ purā sṛṣṭvā apaḥ salilasaṃbhavaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 4,
+     "v": [
+      9,
+      28
+     ],
+     "s2": 8
+    },
+    "ce": {
+     "k": 7,
+     "s": 4,
+     "v": [
+      9,
+      25
+     ],
+     "s2": 8
+    }
+   },
+   "contains": [],
+   "cited": "From Agastya's answer (vu 7.4.9 / ce 7.4.9 'prajāpatiḥ purā sṛṣṭvā…') to his closing 'eṣā mayā tava narādhipa rākṣasānām utpattiḥ…' (vu 7.8.28; in ce the passage ends at 7.8.25 and that verse and the next one, vu 7.8.28–29, are absent). Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Created to guard the waters, the rākṣasas multiply; Sukeśa's sons Mālyavān, Sumālī and Mālī take Laṅkā and oppress the gods until Viṣṇu drives them to Rasātala.",
+    "kn": "ಜಲರಕ್ಷಣೆಗಾಗಿ ಸೃಷ್ಟಿಯಾದ ರಾಕ್ಷಸರು ಹೆಚ್ಚಿದರು; ಸುಕೇಶನ ಮಕ್ಕಳಾದ ಮಾಲ್ಯವಾನ್, ಸುಮಾಲಿ, ಮಾಲಿ ಲಂಕೆಯನ್ನು ವಶಪಡಿಸಿ ದೇವತೆಗಳನ್ನು ಕಾಡಿದರು; ವಿಷ್ಣು ಅವರನ್ನು ಓಡಿಸಿದ."
+   }
+  },
+  {
+   "id": "ravana_janma",
+   "work": "ram",
+   "name_iast": "Rāvaṇajanma",
+   "name_en": "Birth of Rāvaṇa and his brothers; their boons",
+   "kind": "upakhyana",
+   "by": "Agastya",
+   "to": "Rāma",
+   "frame": "Agastya continues to Rāma with Rāvaṇa's own birth and the boons that made him dangerous.",
+   "opening": {
+    "vu": "cirātsumālī vyacaradrasātalaṃ sa rākṣaso viṣṇubhayārditastadā",
+    "ce": "kasya cit tv atha kālasya"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 8,
+     "v": [
+      29,
+      49
+     ],
+     "s2": 10
+    },
+    "ce": {
+     "k": 7,
+     "s": 9,
+     "v": [
+      1,
+      42
+     ],
+     "s2": 10
+    }
+   },
+   "contains": [],
+   "cited": "From vu 7.8.29 'cirāt sumālī vyacarad rasātalam…' (ce 7.9.1 'kasya cit tv atha kālasya sumālī…') to the brothers' boons and settling at Śleṣmātaka (vu 7.10.49 / ce 7.10.42). Rāvaṇa's conquest of Laṅkā and the later feats (vu 7.11ff) are not separate tales here. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Sumālī gives his daughter Kaikasī to the sage Viśravas; their children are Rāvaṇa, Kumbhakarṇa, Śūrpaṇakhā and Vibhīṣaṇa, and the brothers win boons from Brahmā by austerity.",
+    "kn": "ಸುಮಾಲಿ ತನ್ನ ಮಗಳು ಕೈಕಸಿಯನ್ನು ವಿಶ್ರವಸ್ ಋಷಿಗೆ ಕೊಟ್ಟ; ರಾವಣ, ಕುಂಭಕರ್ಣ, ಶೂರ್ಪಣಖೆ, ವಿಭೀಷಣರು ಹುಟ್ಟಿದರು; ಸಹೋದರರು ತಪಸ್ಸಿನಿಂದ ಬ್ರಹ್ಮನಿಂದ ವರ ಪಡೆದರು."
+   }
+  },
+  {
+   "id": "madhu_lavana",
+   "work": "ram",
+   "name_iast": "Madhulavaṇopākhyāna",
+   "name_en": "Madhu, the trident and Lavaṇa",
+   "kind": "upakhyana",
+   "by": "Cyavana (Bhārgava)",
+   "to": "Rāma",
+   "frame": "Asked by Rāma what they fear, the sage Cyavana explains the origin of Lavaṇa's power.",
+   "opening": {
+    "vu": "tathā bruvati kākutsthe bhārgavo vākyamabravīt",
+    "ce": "tathā vadati kākutsthe bhārgavo vākyam"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 61,
+     "v": [
+      2,
+      21
+     ]
+    },
+    "ce": {
+     "k": 7,
+     "s": 53,
+     "v": [
+      2,
+      20
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "From the sage's answer (vu 7.61.2 / ce 7.53.2) to 'sa prabhāveṇa śūlasya…' (vu 7.61.21 / ce 7.53.20); the sages' appeal that follows is frame, and Śatrughna's fight with Lavaṇa is action, left out. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "The asura Madhu, devoted to dharma, received Śiva's trident; his son Lavaṇa now rules Madhuvana and, armed with it, torments the sages who have come to Rāma for protection.",
+    "kn": "ಧರ್ಮನಿಷ್ಠ ಅಸುರ ಮಧುವಿಗೆ ಶಿವ ತ್ರಿಶೂಲ ಕೊಟ್ಟ; ಅವನ ಮಗ ಲವಣ ಈಗ ಮಧುವನದ ಅಧಿಪತಿ, ಆ ಶೂಲದ ಬಲದಿಂದ ಋಷಿಗಳನ್ನು ಪೀಡಿಸುತ್ತಾನೆ; ಅದಕ್ಕೇ ಅವರು ರಾಮನ ಮೊರೆ ಹೊಕ್ಕಿದ್ದಾರೆ."
+   }
+  },
+  {
+   "id": "hanuman_balya",
+   "work": "ram",
+   "name_iast": "Hanumadbālacarita",
+   "name_en": "Hanumān's birth and childhood",
+   "kind": "upakhyana",
+   "by": "Agastya",
+   "to": "Rāma",
+   "frame": "Rāma, praising Hanumān's strength, is told by Agastya why Hanumān does not know his own power.",
+   "opening": {
+    "vu": "sūryadattavarasvarṇaḥ sumerurnāma parvataḥ yatra rājyaṃ praśāstyasya",
+    "ce": "sūryadattavarasvarṇaḥ sumerur nāma parvataḥ yatra rājyaṃ"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 35,
+     "v": [
+      19,
+      51
+     ],
+     "s2": 36
+    },
+    "ce": {
+     "k": 7,
+     "s": 35,
+     "v": [
+      19,
+      45
+     ],
+     "s2": 36
+    }
+   },
+   "contains": [],
+   "cited": "From 'satyam etad raghuśreṣṭha…' (vu / ce 7.35.15) to 'tad etat kathitaṃ sarvaṃ…' (vu 7.36.51 / ce 7.36.45). Vālin's and Sugrīva's birth is only mentioned in passing (vu 7.36.37–39) and is not a separate tale; Vālin's friendship with Rāvaṇa (vu 7.34) is not included. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's. Boundaries adjusted after an independent check (v0.24): tale start/end and phalaśruti included.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Born to Añjanā and Vāyu, the infant Hanumān leaps at the rising sun, is struck down by Indra's vajra, and is later cursed by sages to forget his own strength until reminded.",
+    "kn": "ಅಂಜನಾ ಮತ್ತು ವಾಯುವಿನ ಮಗನಾದ ಶಿಶು ಹನುಮಂತ ಉದಯಿಸುವ ಸೂರ್ಯನತ್ತ ಹಾರಿದ; ಇಂದ್ರನ ವಜ್ರ ಅವನನ್ನು ಬೀಳಿಸಿತು; ನಂತರ ಋಷಿಗಳ ಶಾಪದಿಂದ ತನ್ನ ಬಲವನ್ನು ಮರೆತ."
+   }
+  },
+  {
+   "id": "shveta",
+   "work": "ram",
+   "name_iast": "Śvetopākhyāna",
+   "name_en": "Śveta and the divine ornament",
+   "kind": "upakhyana",
+   "by": "Agastya",
+   "to": "Rāma",
+   "frame": "After Rāma kills Śambūka, Agastya gives him an ornament and tells why such a gift matters.",
+   "opening": {
+    "vu": "evaṃ bruvati kākutsthe munirvākyamathābravīt",
+    "ce": "evaṃ bruvati kākutsthe munir vākyam"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 76,
+     "v": [
+      51,
+      30
+     ],
+     "s2": 78
+    },
+    "ce": {
+     "k": 7,
+     "s": 67,
+     "v": [
+      18,
+      27
+     ],
+     "s2": 69
+    }
+   },
+   "contains": [],
+   "cited": "Śambūka's death is action and left out. From Agastya's reply 'śṛṇu rāma yathāvṛttaṃ…' (vu 7.76.51 / ce 7.67.18) to the end of Śveta's own account relayed by Agastya (vu 7.78.30 / ce 7.69.27). Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "The king Śveta gave only austerity in his life; after death he is found eating his own corpse in a lake until Agastya gives him a divine ornament, which frees him.",
+    "kn": "ರಾಜ ಶ್ವೇತ ಬದುಕಿನಲ್ಲಿ ತಪಸ್ಸು ಮಾತ್ರ ಮಾಡಿ ದಾನ ಮಾಡಿರಲಿಲ್ಲ; ಸತ್ತ ಮೇಲೆ ಸರೋವರದ ಬಳಿ ತನ್ನ ಶವವನ್ನೇ ತಿನ್ನುತ್ತಿದ್ದ. ಅಗಸ್ತ್ಯ ಕೊಟ್ಟ ದಿವ್ಯ ಆಭರಣದ ದಾನದಿಂದ ಅವನಿಗೆ ಮುಕ್ತಿಯಾಯಿತು."
+   }
+  },
+  {
+   "id": "danda",
+   "work": "ram",
+   "name_iast": "Daṇḍopākhyāna",
+   "name_en": "Daṇḍa and the origin of Daṇḍakāraṇya",
+   "kind": "upakhyana",
+   "by": "Agastya",
+   "to": "Rāma",
+   "frame": "Rāma asks why the Daṇḍaka forest is empty of people; Agastya tells of its king Daṇḍa.",
+   "opening": {
+    "vu": "purā kṛtayuge rāma manurdaṇḍadharaḥ prabhuḥ",
+    "ce": "purā kṛtayuge rāma manur daṇḍadharaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 79,
+     "v": [
+      5,
+      19
+     ],
+     "s2": 81
+    },
+    "ce": {
+     "k": 7,
+     "s": 70,
+     "v": [
+      5,
+      18
+     ],
+     "s2": 72
+    }
+   },
+   "contains": [],
+   "cited": "From vu 7.79.5 / ce 7.70.5 'purā kṛtayuge rāma manur…' to 'tataḥ prabhṛti kākutstha daṇḍakāraṇyam ucyate…' (vu 7.81.19 / ce 7.72.18); Agastya's closing and dismissal (vu 7.81.20ff) are frame. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Manu's son Daṇḍa, ruling between the Vindhya and Śaivala mountains, violates Arajā, Śukra's daughter; Śukra's curse buries his realm in dust, leaving the Daṇḍaka forest.",
+    "kn": "ಮನುವಿನ ಮಗ ದಂಡ ಶುಕ್ರನ ಮಗಳು ಅರಜೆಯನ್ನು ಬಲಾತ್ಕರಿಸಿದ; ಶುಕ್ರನ ಶಾಪದಿಂದ ಧೂಳಿನ ಮಳೆಯಾಗಿ ಅವನ ರಾಜ್ಯ ನಾಶವಾಗಿ ದಂಡಕಾರಣ್ಯವಾಯಿತು."
+   }
+  },
+  {
+   "id": "nriga",
+   "work": "ram",
+   "name_iast": "Nṛgopākhyāna",
+   "name_en": "King Nṛga",
+   "kind": "upakhyana",
+   "by": "Rāma",
+   "to": "Lakṣmaṇa",
+   "frame": "Lakṣmaṇa asks why Rāma hears petitions daily; Rāma answers with the king whom delay ruined.",
+   "opening": {
+    "vu": "śrūyate hi purā rājā nṛgo"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 53,
+     "v": [
+      7,
+      1
+     ],
+     "s2": 55
+    },
+    "ce": null
+   },
+   "contains": [],
+   "cited": "From 'śrūyate hi purā rājā nṛgo nāma…' (vu 7.53.7) to 'eṣa te nṛgaśāpasya vistaro…' (vu 7.55.1). Told by Rāma, not Agastya. ABSENT from the Baroda critical edition (ce 7.51→7.52 pass directly from Rāma's return to Cyavana's arrival), so no ce location. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "King Nṛga, having given away a brahmin's cow by mistake to another brahmin, cannot settle the quarrel; both brahmins curse him, and he lives as a chameleon in a pit.",
+    "kn": "ರಾಜ ನೃಗ ಒಬ್ಬ ಬ್ರಾಹ್ಮಣನ ಹಸುವನ್ನು ತಪ್ಪಿ ಇನ್ನೊಬ್ಬನಿಗೆ ದಾನ ಮಾಡಿದ; ಜಗಳ ಬಗೆಹರಿಯದೆ ಇಬ್ಬರೂ ಶಪಿಸಿದರು, ಅವನು ಹೊಂಡದಲ್ಲಿ ಸರ್ಪಸುತ್ತು (ಊಸರವಳ್ಳಿ) ಆಗಿ ಬದುಕಿದ."
+   }
+  },
+  {
+   "id": "nimi",
+   "work": "ram",
+   "name_iast": "Nimivasiṣṭhaśāpa",
+   "name_en": "Nimi and Vasiṣṭha",
+   "kind": "upakhyana",
+   "by": "Rāma",
+   "to": "Lakṣmaṇa",
+   "frame": "Lakṣmaṇa asks for more such stories; Rāma tells how the line of Mithilā began.",
+   "opening": {
+    "vu": "āsīdrājā nimirnāma ikṣvākūṇāṃ mahātmanām"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 55,
+     "v": [
+      4,
+      20
+     ],
+     "s2": 57
+    },
+    "ce": null
+   },
+   "contains": [],
+   "cited": "From 'āsīd rājā nimir nāma…' (vu 7.55.4) to the birth of Janaka and Mithilā (vu 7.57.20); Lakṣmaṇa's interjections are inside the range. Lakṣmaṇa's comment (vu 7.58.1–5) is frame. Told by Rāma. ABSENT from the critical edition. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Nimi and the priest Vasiṣṭha curse each other to lose their bodies; Vasiṣṭha is reborn of Mitra and Varuṇa, and Nimi's body is churned to produce Janaka of Mithilā.",
+    "kn": "ನಿಮಿ ಮತ್ತು ಪುರೋಹಿತ ವಸಿಷ್ಠ ಪರಸ್ಪರ ದೇಹ ಕಳೆದುಕೊಳ್ಳುವಂತೆ ಶಪಿಸಿದರು; ವಸಿಷ್ಠ ಮಿತ್ರಾವರುಣರಿಂದ ಮರುಹುಟ್ಟು ಪಡೆದ, ನಿಮಿಯ ದೇಹವನ್ನು ಮಥಿಸಿದಾಗ ಮಿಥಿಲೆಯ ಜನಕ ಹುಟ್ಟಿದ."
+   }
+  },
+  {
+   "id": "yayati-ram",
+   "work": "ram",
+   "name_iast": "Yayātyupākhyāna",
+   "name_en": "Yayāti and his sons",
+   "kind": "upakhyana",
+   "by": "Rāma",
+   "to": "Lakṣmaṇa",
+   "frame": "Telling Lakṣmaṇa that forbearance does not always come easily, Rāma recalls Yayāti.",
+   "opening": {
+    "vu": "saumitre duḥsaho roṣo yathā kṣānto"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 58,
+     "v": [
+      6,
+      21
+     ],
+     "s2": 59
+    },
+    "ce": null
+   },
+   "contains": [],
+   "twin": "yayati",
+   "cited": "From 'saumitre duḥsaho roṣo yathā kṣānto yayātinā…' (vu 7.58.6) to 'eṣa tūśanasā muktaḥ śāpotsargo yayātinā…' (vu 7.59.21). ABSENT from the critical edition. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Yayāti, cursed by Śukra with old age, asks his sons to take it on; only Pūru agrees, while Yadu refuses and is cast out, showing why anger sometimes must be endured.",
+    "kn": "ಶುಕ್ರನ ಶಾಪದಿಂದ ಮುಪ್ಪಾದ ಯಯಾತಿ ತನ್ನ ಮಕ್ಕಳಲ್ಲಿ ಅದನ್ನು ಪಡೆಯಲು ಕೇಳಿದ; ಪೂರು ಮಾತ್ರ ಒಪ್ಪಿದ, ನಿರಾಕರಿಸಿದ ಯದುವನ್ನು ದೂರಮಾಡಿದ. ಕೋಪವನ್ನು ಸಹಿಸಿದ ಉದಾಹರಣೆ ಇದು."
+   }
+  },
+  {
+   "id": "vritra-ram",
+   "work": "ram",
+   "name_iast": "Vṛtravadhopākhyāna",
+   "name_en": "Vṛtra and Indra's brahmahatyā",
+   "kind": "upakhyana",
+   "by": "Lakṣmaṇa",
+   "to": "Rāma and Bharata",
+   "frame": "Lakṣmaṇa urges Rāma to perform the horse sacrifice and cites Indra's cleansing by it.",
+   "opening": {
+    "vu": "śrūyate hi purāvṛttaṃ vāsave sumahātmani",
+    "ce": "śrūyate hi purāvṛttaṃ vāsave sumahātmani"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 84,
+     "v": [
+      3,
+      20
+     ],
+     "s2": 86
+    },
+    "ce": {
+     "k": 7,
+     "s": 75,
+     "v": [
+      3,
+      19
+     ],
+     "s2": 77
+    }
+   },
+   "contains": [],
+   "cited": "From 'śrūyate hi purāvṛttaṃ vāsave sumahātmani…' (vu 7.84.3 / ce 7.75.3) to Lakṣmaṇa's moral 'īdṛśo hy aśvamedhasya prasādo…' (vu 7.86.20 / ce 7.77.19). The Mahābhārata has a Vṛtra tale too; no twin id is given because the tellings differ. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "twin": "vritra",
+   "about": {
+    "en": "Indra kills the righteous Vṛtra with Viṣṇu's help and is gripped by the guilt of brahminicide; the gods perform a horse sacrifice for him and he is freed.",
+    "kn": "ಧರ್ಮನಿಷ್ಠ ವೃತ್ರನನ್ನು ವಿಷ್ಣುವಿನ ನೆರವಿನಿಂದ ಕೊಂದ ಇಂದ್ರನಿಗೆ ಬ್ರಹ್ಮಹತ್ಯೆ ಅಂಟಿತು; ದೇವತೆಗಳು ಅಶ್ವಮೇಧ ಮಾಡಿಸಿ ಅವನನ್ನು ಪಾಪದಿಂದ ಮುಕ್ತಗೊಳಿಸಿದರು."
+   }
+  },
+  {
+   "id": "ila",
+   "work": "ram",
+   "name_iast": "Ilopākhyāna",
+   "name_en": "Ila / Ilā (Budha and Purūravas)",
+   "kind": "upakhyana",
+   "by": "Rāma",
+   "to": "Lakṣmaṇa and Bharata",
+   "frame": "Rāma answers Lakṣmaṇa's Vṛtra tale with another showing the horse sacrifice's power.",
+   "opening": {
+    "vu": "śrūyate hi purā saumya kardamasya",
+    "ce": "śrūyate hi purā saumya kardamasya"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 87,
+     "v": [
+      3,
+      24
+     ],
+     "s2": 90
+    },
+    "ce": {
+     "k": 7,
+     "s": 78,
+     "v": [
+      3,
+      24
+     ],
+     "s2": 81
+    }
+   },
+   "contains": [],
+   "cited": "From 'śrūyate hi purā saumya kardamasya prajāpateḥ…' (vu 7.87.3 / ce 7.78.3) to the last verse of the telling (vu 7.90.24 / ce 7.81.24: 'īdṛśo hy aśvamedhasya…'); Lakṣmaṇa's and Bharata's questions between the parts are inside the range. Both editions' verse data were read to fix boundaries; the Rāmāyaṇa has no formal upākhyāna headings, so name and extent are the compiler's.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "King Ila of Bāhlī hunting in Śiva's grove turns into a woman; as Ilā she weds Budha and bears Purūravas, and a horse sacrifice later restores her manhood.",
+    "kn": "ಬಾಹ್ಲೀಕದ ರಾಜ ಇಲ ಶಿವನ ವನದಲ್ಲಿ ಬೇಟೆಯಾಡುವಾಗ ಸ್ತ್ರೀಯಾದ; ಇಳೆಯಾಗಿ ಬುಧನನ್ನು ವರಿಸಿ ಪುರೂರವನನ್ನು ಪಡೆದ; ಅಶ್ವಮೇಧದಿಂದ ಮತ್ತೆ ಪುರುಷತ್ವ ಪಡೆದ."
+   }
+  },
+  {
+   "id": "shakuntala",
+   "work": "mbh",
+   "name_iast": "Śakuntalopākhyāna",
+   "name_en": "Śakuntalā and Duṣyanta",
+   "kind": "upakhyana",
+   "by": "Vaiśaṃpāyana",
+   "to": "Janamejaya",
+   "frame": "Janamejaya asks how Duṣyanta won Śakuntalā; Vaiśaṃpāyana tells it as the origin of Bharata, ancestor of the Bhāratas.",
+   "opening": {
+    "vu": "sa kadācinmahābāhuḥ prabhūtabalavāhanaḥ",
+    "ce": "sa kadā cin mahābāhuḥ prabhūtabalavāhanaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 90,
+     "v": [
+      3,
+      12
+     ],
+     "s2": 100
+    },
+    "ce": {
+     "k": 1,
+     "s": 63,
+     "v": [
+      1,
+      49
+     ],
+     "s2": 69
+    }
+   },
+   "contains": [],
+   "cited": "Named in the Parvasaṅgraha (Ādi 2) (vu 1.2.97; the Pune Ādi 2 does not name it). Opening is a merged verse in vu: the tale begins mid-verse at \"sa kadācinmahābāhuḥ\"; starting verse 1.90.3 is the first whole verse carrying it.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Duṣyanta, hunting, meets Kaṇva's foster-daughter Śakuntalā and marries her; he forgets her until a heavenly voice confirms their son, and the boy is named Bharata.",
+    "kn": "ಬೇಟೆಗೆ ಹೋದ ದುಷ್ಯಂತ ಕಣ್ವರ ಸಾಕುಮಗಳು ಶಕುಂತಲೆಯನ್ನು ಮದುವೆಯಾದ; ಅವಳು ಮಗನೊಂದಿಗೆ ಬಂದಾಗ ಅವನು ಒಪ್ಪಲಿಲ್ಲ; ಆಕಾಶವಾಣಿ ಸತ್ಯ ಹೇಳಿದ ಮೇಲೆ ಭರತನೆಂದು ಹೆಸರಾಯಿತು."
+   }
+  },
+  {
+   "id": "yayati-mbh",
+   "work": "mbh",
+   "name_iast": "Yayātyupākhyāna",
+   "name_en": "Yayāti",
+   "kind": "upakhyana",
+   "by": "Vaiśaṃpāyana",
+   "to": "Janamejaya",
+   "frame": "Janamejaya asks about the Kuru ancestors; Vaiśaṃpāyana begins with Yayāti, the line's forefather.",
+   "opening": {
+    "vu": "yayātirāsīnnṛpatirdevarājasamadyutiḥ",
+    "ce": "yayātir āsīd rājarṣir devarājasamadyutiḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 70,
+     "v": [
+      3,
+      50
+     ],
+     "s2": 87
+    },
+    "ce": {
+     "k": 1,
+     "s": 71,
+     "v": [
+      3,
+      26
+     ],
+     "s2": 88
+    }
+   },
+   "contains": [],
+   "twin": "yayati",
+   "cited": "Yayāti–Devayānī cycle within the Sambhava parva; Pune names it as an upaparva-level narrative. Ends with Yayāti's ascent and the Pūru lineage resuming.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Yayāti marries Devayānī, takes Śarmiṣṭhā secretly, is cursed by Śukra with old age, exchanges it for Pūru's youth, and in the end falls from heaven and is raised back by his grandsons.",
+    "kn": "ಯಯಾತಿ ದೇವಯಾನಿಯನ್ನು ಮದುವೆಯಾಗಿ ಶರ್ಮಿಷ್ಠೆಯನ್ನೂ ಗುಟ್ಟಾಗಿ ಒಲಿದ; ಶುಕ್ರನ ಶಾಪದಿಂದ ಮುಪ್ಪಾಗಿ ಪೂರುವಿನ ಯೌವನ ಪಡೆದ; ಕೊನೆಗೆ ಸ್ವರ್ಗದಿಂದ ಬಿದ್ದು ಮೊಮ್ಮಕ್ಕಳಿಂದ ಮರಳಿ ಏರಿದ."
+   }
+  },
+  {
+   "id": "sunda_upasunda",
+   "work": "mbh",
+   "name_iast": "Sundopasundopākhyāna",
+   "name_en": "Sunda and Upasunda",
+   "kind": "upakhyana",
+   "by": "Nārada",
+   "to": "the Pāṇḍavas",
+   "frame": "Nārada tells the Pāṇḍavas this so they will not quarrel over Draupadī, and they agree a rule between them.",
+   "opening": {
+    "vu": "śaṇu me vistareṇemamitihāsaṃ purātanam",
+    "ce": "śṛṇu me vistareṇemam itihāsaṃ purātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 229,
+     "v": [
+      1,
+      31
+     ],
+     "s2": 232
+    },
+    "ce": {
+     "k": 1,
+     "s": 201,
+     "v": [
+      1,
+      30
+     ],
+     "s2": 204
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.90 \"sundopasundopākhyāna\").",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "The inseparable asura brothers Sunda and Upasunda win boons and conquer the worlds, then kill each other fighting over the apsaras Tilottamā, made to tempt them.",
+    "kn": "ಬೇರ್ಪಡದ ಅಸುರ ಸಹೋದರರಾದ ಸುಂದ-ಉಪಸುಂದರು ವರ ಪಡೆದು ಲೋಕಗಳನ್ನು ಗೆದ್ದರು; ಅವರನ್ನು ಮರುಳುಗೊಳಿಸಲು ಸೃಷ್ಟಿಸಿದ ತಿಲೋತ್ತಮೆಗಾಗಿ ಜಗಳವಾಡಿ ಪರಸ್ಪರ ಕೊಂದರು."
+   }
+  },
+  {
+   "id": "astika",
+   "work": "mbh",
+   "name_iast": "Āstīkopākhyāna",
+   "name_en": "Āstīka",
+   "kind": "upakhyana",
+   "by": "Sūta (Ugraśravas)",
+   "to": "Śaunaka",
+   "frame": "Śaunaka asks Ugraśravas for Āstīka's story, which explains why Janamejaya's snake sacrifice was stopped.",
+   "opening": {
+    "vu": "āyuṣmannidamākhyānamāstīkaṃ kathayāmi te",
+    "ce": "āyuṣyam idam ākhyānam āstīkaṃ kathayāmi te"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 16,
+     "v": [
+      4,
+      34
+     ],
+     "s2": 58
+    },
+    "ce": {
+     "k": 1,
+     "s": 14,
+     "v": [
+      4,
+      26
+     ],
+     "s2": 53
+    }
+   },
+   "contains": [
+    "garuda-stuti"
+   ],
+   "cited": "Āstīkaparva in Parvasaṅgraha (Ādi 2) (ce 1.2.73, vu 1.2.91). Range runs from the start of the Āstīka narration to the end of the parva; it folds in the Garuḍa and Kadrū–Vinatā tales and the churning of the ocean, which are not listed separately (contains the Garuḍa stuti).",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Janamejaya's snake sacrifice follows from a feud between Kadrū's snakes and Vinatā's son Garuḍa and from a curse on the snakes; the sage Āstīka, a Jaratkāru's son, persuades the king to stop it.",
+    "kn": "ಕದ್ರೂ ಮತ್ತು ವಿನತೆಯರ ವೈರ, ಹಾವುಗಳಿಗೆ ಬಂದ ಶಾಪದಿಂದ ಜನಮೇಜಯನ ಸರ್ಪಯಜ್ಞ ನಡೆಯಿತು; ಜರತ್ಕಾರುವಿನ ಮಗ ಆಸ್ತೀಕ ರಾಜನನ್ನು ಮೆಚ್ಚಿಸಿ ಯಜ್ಞ ನಿಲ್ಲಿಸಿದ."
+   }
+  },
+  {
+   "id": "tapatya",
+   "work": "mbh",
+   "name_iast": "Tāpatyopākhyāna",
+   "name_en": "Tapatī and Saṃvaraṇa",
+   "kind": "upakhyana",
+   "by": "Gandharva Citraratha (Aṅgāraparṇa)",
+   "to": "Arjuna",
+   "frame": "Arjuna asks why the Gandharva called him Tāpatya; the Gandharva explains with the story of Tapatī.",
+   "opening": {
+    "vu": "hanta te kathayiṣyāmi kathāmetāṃ manoramām",
+    "ce": "hanta te kathayiṣyāmi kathām etāṃ manoramām"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 187,
+     "v": [
+      4,
+      56
+     ],
+     "s2": 189
+    },
+    "ce": {
+     "k": 1,
+     "s": 160,
+     "v": [
+      4,
+      23
+     ],
+     "s2": 163
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.87). Starts after Arjuna's question, at the Gandharva's \"hanta te kathayiṣyāmi\".",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "The sun's daughter Tapatī is loved by King Saṃvaraṇa; Vasiṣṭha's help wins her, and their son Kuru is born, so Arjuna is called Tāpatya as Tapatī's descendant.",
+    "kn": "ಸೂರ್ಯನ ಮಗಳು ತಪತಿಯನ್ನು ರಾಜ ಸಂವರಣ ಪ್ರೀತಿಸಿದ; ವಸಿಷ್ಠರ ನೆರವಿನಿಂದ ಅವಳು ಒಲಿದು ಕುರುವನ್ನು ಹೆತ್ತಳು; ಆದ್ದರಿಂದ ಅರ್ಜುನ ತಾಪತ್ಯ."
+   }
+  },
+  {
+   "id": "vasishtha_vishvamitra-mbh",
+   "work": "mbh",
+   "name_iast": "Vāsiṣṭhopākhyāna",
+   "name_en": "Vasiṣṭha and Viśvāmitra",
+   "kind": "upakhyana",
+   "by": "Gandharva Citraratha",
+   "to": "Arjuna",
+   "frame": "The Gandharva, urging the Pāṇḍavas to take a priest, tells Arjuna of Vasiṣṭha and Viśvāmitra's feud.",
+   "opening": {
+    "vu": "idaṃ vāsiṣṭhamākhyānaṃ purāṇaṃ paricakṣate",
+    "ce": "idaṃ vāsiṣṭham ākhyānaṃ purāṇaṃ paricakṣate"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 191,
+     "v": [
+      2,
+      24
+     ],
+     "s2": 197
+    },
+    "ce": {
+     "k": 1,
+     "s": 165,
+     "v": [
+      2,
+      17
+     ],
+     "s2": 172
+    }
+   },
+   "contains": [
+    "aurva"
+   ],
+   "twin": "vasishtha_vishvamitra",
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.87 vāsiṣṭha). Ends with the end of the Aurva tale, which is nested at the close; the Vāsiṣṭha narration then runs to the dialogue resuming on the choice of a purohita (Dhaumya).",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Viśvāmitra tries to seize Vasiṣṭha's cow Nandinī and fails; Vasiṣṭha's son Śakti dies, and Vasiṣṭha, who bears the loss, serves the Ikṣvākus as priest.",
+    "kn": "ವಿಶ್ವಾಮಿತ್ರ ವಸಿಷ್ಠರ ನಂದಿನೀ ಧೇನುವನ್ನು ಹಿಡಿಯಲು ಯತ್ನಿಸಿ ಸೋತ; ವಸಿಷ್ಠರ ಮಗ ಶಕ್ತಿ ಸತ್ತರೂ ಅವರು ಸಹಿಸಿಕೊಂಡು ಇಕ್ಷ್ವಾಕುಗಳ ಪುರೋಹಿತರಾಗಿ ಉಳಿದರು."
+   }
+  },
+  {
+   "id": "aurva",
+   "work": "mbh",
+   "name_iast": "Aurvopākhyāna",
+   "name_en": "Aurva",
+   "kind": "upakhyana",
+   "by": "Vasiṣṭha",
+   "to": "Parāśara",
+   "frame": "Vasiṣṭha, wishing to end the world over Śakti's death, is dissuaded by the story of Aurva.",
+   "opening": {
+    "vu": "vasiṣṭho vārayāmāsa hetunā yena tacchṛṇu",
+    "ce": "kṛtavīrya iti khyāto babhūva nṛpatiḥ kṣitau"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 194,
+     "v": [
+      11,
+      24
+     ],
+     "s2": 197
+    },
+    "ce": {
+     "k": 1,
+     "s": 169,
+     "v": [
+      11,
+      17
+     ],
+     "s2": 172
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.87 aurva). Nested inside vasishtha_vishvamitra. vu opening begins at the speaker's own verse \"vasiṣṭho vārayāmāsa\".",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "The kṣatriyas kill the Bhṛgus; the infant Aurva, born from his mother's thigh, wants to burn the worlds with his anger, but his ancestors persuade him to put the fire into the ocean.",
+    "kn": "ಕ್ಷತ್ರಿಯರು ಭೃಗುವಂಶವನ್ನು ಕೊಂದರು; ತಾಯಿಯ ತೊಡೆಯಿಂದ ಹುಟ್ಟಿದ ಔರ್ವ ಲೋಕಗಳನ್ನು ಸುಡಲು ಹೊರಟ; ಪಿತೃಗಳು ಅವನನ್ನು ತಡೆದರು, ಅವನು ಕೋಪದ ಬೆಂಕಿಯನ್ನು ಸಮುದ್ರದಲ್ಲಿ ಬಿಟ್ಟ."
+   }
+  },
+  {
+   "id": "pancendra",
+   "work": "mbh",
+   "name_iast": "Pañcendropākhyāna",
+   "name_en": "The five Indras",
+   "kind": "upakhyana",
+   "by": "Vyāsa",
+   "to": "Drupada",
+   "frame": "Vyāsa explains to Drupada, who doubts the marriage, why Draupadī can rightly be wife to all five Pāṇḍavas.",
+   "opening": {
+    "vu": "purā vai naimiśāraṇye devāḥ satramupāsate",
+    "ce": "purā vai naimiṣāraṇye devāḥ satram upāsate"
+   },
+   "loc": {
+    "vu": {
+     "k": 1,
+     "s": 214,
+     "v": [
+      1,
+      36
+     ]
+    },
+    "ce": {
+     "k": 1,
+     "s": 189,
+     "v": [
+      1,
+      34
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.87 pañcendra, vu 1.2.113/118).",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Five Indras are held in a cave by Śiva after a god's offence; they are reborn as the five Pāṇḍavas with Śrī as their common wife Draupadī.",
+    "kn": "ಒಬ್ಬ ಇಂದ್ರನ ತಪ್ಪಿನಿಂದ ಐವರು ಇಂದ್ರರು ಶಿವನ ಗುಹೆಯಲ್ಲಿ ಬಂಧಿತರಾದರು; ಅವರೇ ಐವರು ಪಾಂಡವರಾಗಿ ಹುಟ್ಟಿದರು; ಶ್ರೀ ಅವರ ಸಾಮಾನ್ಯ ಪತ್ನಿ ದ್ರೌಪದಿಯಾದಳು."
+   }
+  },
+  {
+   "id": "nala",
+   "work": "mbh",
+   "name_iast": "Nalopākhyāna",
+   "name_en": "Nala and Damayantī",
+   "kind": "upakhyana",
+   "by": "Bṛhadaśva",
+   "to": "Yudhiṣṭhira",
+   "frame": "Bṛhadaśva comforts Yudhiṣṭhira, who lost his kingdom at dice, with a king who lost and regained his.",
+   "opening": {
+    "vu": "āsīdrājā nalo nāma vīrasenasuto balī",
+    "ce": "āsīd rājā nalo nāma vīrasenasuto balī"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 50,
+     "v": [
+      1,
+      23
+     ],
+     "s2": 77
+    },
+    "ce": {
+     "k": 3,
+     "s": 50,
+     "v": [
+      1,
+      15
+     ],
+     "s2": 78
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.109, vu 1.2.162). Ends at Bṛhadaśva's gift of the akṣahṛdaya to Yudhiṣṭhira; the extra vu verses 3.77.24–53 on Arjuna's tapas are left out as beyond the tale.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Nala of Niṣadha wins Damayantī at her svayaṃvara, loses his kingdom at dice to his brother Puṣkara under Kali's influence, wanders alone, and finally regains wife and kingdom.",
+    "kn": "ನಿಷಧದ ನಳ ಸ್ವಯಂವರದಲ್ಲಿ ದಮಯಂತಿಯನ್ನು ಗೆದ್ದ; ಕಲಿಯ ಪ್ರಭಾವದಿಂದ ಸಹೋದರ ಪುಷ್ಕರನೊಂದಿಗೆ ಜೂಜಿನಲ್ಲಿ ರಾಜ್ಯ ಕಳೆದು ಅಲೆದ; ಕೊನೆಗೆ ಹೆಂಡತಿ, ರಾಜ್ಯ ಎರಡನ್ನೂ ಮರಳಿ ಪಡೆದ."
+   }
+  },
+  {
+   "id": "agastya-mbh",
+   "work": "mbh",
+   "name_iast": "Agastyopākhyāna",
+   "name_en": "Agastya",
+   "kind": "upakhyana",
+   "by": "Lomaśa",
+   "to": "Yudhiṣṭhira",
+   "frame": "Visiting Agastya's hermitage on pilgrimage, Yudhiṣṭhira asks about him and Lomaśa tells of his deeds.",
+   "opening": {
+    "vu": "ilvalo nāma daiteya āsītkauravanandanā",
+    "ce": "ilvalo nāma daiteya āsīt kauravanandana"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 94,
+     "v": [
+      4,
+      34
+     ],
+     "s2": 97
+    },
+    "ce": {
+     "k": 3,
+     "s": 94,
+     "v": [
+      4,
+      25
+     ],
+     "s2": 97
+    }
+   },
+   "contains": [],
+   "twin": "agastya",
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.114, vu 1.2.168). Starts at Lomaśa's \"hanta te kathayiṣyāmi\" after Yudhiṣṭhira's question; includes the Vindhya-humbling, Vātāpi's death and the birth of Dṛḍhasyu. Boundaries adjusted after an independent check (v0.24): tale start/end and phalaśruti included.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Agastya, at the ancestors' wish, marries Lopāmudrā, then goes to the asura Ilvala to get wealth and destroys Vātāpi, and the tale also covers Vindhya's humbling and Dṛḍhasyu's birth.",
+    "kn": "ಪಿತೃಗಳ ಇಚ್ಛೆಯಂತೆ ಅಗಸ್ತ್ಯ ಲೋಪಾಮುದ್ರೆಯನ್ನು ವರಿಸಿ, ಸಂಪತ್ತಿಗಾಗಿ ಇಲ್ವಲನ ಬಳಿ ಹೋಗಿ ವಾತಾಪಿಯನ್ನು ನಾಶಮಾಡಿದರು; ವಿಂಧ್ಯನನ್ನು ತಗ್ಗಿಸಿದ ಕತೆಯೂ ಇದೆ."
+   }
+  },
+  {
+   "id": "vritra-mbh",
+   "work": "mbh",
+   "name_iast": "Vṛtravadhopākhyāna",
+   "name_en": "Slaying of Vṛtra",
+   "kind": "upakhyana",
+   "by": "Lomaśa",
+   "to": "Yudhiṣṭhira",
+   "frame": "Yudhiṣṭhira asks for more of Agastya's deeds; Lomaśa tells how he dealt with the Kāleyas.",
+   "opening": {
+    "vu": "śṛṇu rājankathāṃ divyāmadbhutāmatimānuṣīm",
+    "ce": "śṛṇu rājan kathāṃ divyām adbhutām atimānuṣīm"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 99,
+     "v": [
+      2,
+      21
+     ],
+     "s2": 104
+    },
+    "ce": {
+     "k": 3,
+     "s": 98,
+     "v": [
+      2,
+      19
+     ],
+     "s2": 103
+    }
+   },
+   "contains": [],
+   "cited": "Not named in the Parvasaṅgraha; boundaries by narrator (Lomaśa) from Yudhiṣṭhira's question to the Kāleyas hiding in the sea, which leads into the Agastya tale. Boundaries adjusted after an independent check (v0.24): tale start/end and phalaśruti included.",
+   "tier": "traditional",
+   "sources": [],
+   "twin": "vritra",
+   "about": {
+    "en": "Dadhīca gives his bones to the gods, who make the vajra from them and kill Vṛtra; the surviving Kāleya demons hide in the ocean, which Agastya later drinks.",
+    "kn": "ದಧೀಚಿ ತನ್ನ ಮೂಳೆಗಳನ್ನು ದೇವತೆಗಳಿಗೆ ಕೊಟ್ಟ; ಅದರಿಂದ ವಜ್ರ ಮಾಡಿ ವೃತ್ರನನ್ನು ಕೊಂದರು; ಉಳಿದ ಕಾಲೇಯರು ಸಮುದ್ರದಲ್ಲಿ ಅಡಗಿದರು, ಅದನ್ನು ಅಗಸ್ತ್ಯ ಕುಡಿದರು."
+   }
+  },
+  {
+   "id": "gangavatarana-mbh",
+   "work": "mbh",
+   "name_iast": "Gaṅgāvataraṇa",
+   "name_en": "Descent of the Gaṅgā",
+   "kind": "upakhyana",
+   "by": "Lomaśa",
+   "to": "Yudhiṣṭhira",
+   "frame": "Lomaśa continues to Yudhiṣṭhira from the drained ocean to how the Gaṅgā was brought down to refill it.",
+   "opening": {
+    "vu": "tānuvāca sametāṃstu brahmā lokapitāmahaḥ",
+    "ce": "tān uvāca sametāṃs tu brahmā lokapitāmahaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 105,
+     "v": [
+      1,
+      28
+     ],
+     "s2": 108
+    },
+    "ce": {
+     "k": 3,
+     "s": 104,
+     "v": [
+      1,
+      19
+     ],
+     "s2": 108
+    }
+   },
+   "contains": [],
+   "twin": "gangavatarana",
+   "cited": "Told by Lomaśa, as part of the Agastya/Sagara cycle. CAUTION: in the vu data chapters 3.109–3.110 are missing, so the vu range stops at the last available verse 3.108.28; the true vu end falls beyond the gap.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "The ocean, drunk dry by Agastya, can only be refilled by Bhagīratha, who brings the Gaṅgā down to raise his ancestors, Sagara's sons.",
+    "kn": "ಅಗಸ್ತ್ಯ ಸಮುದ್ರವನ್ನು ಕುಡಿದ ನಂತರ, ಅದನ್ನು ಮತ್ತೆ ತುಂಬಿಸಲು ಬ್ರಹ್ಮ ಭಗೀರಥನ ಬಗ್ಗೆ ಹೇಳಿದ; ಭಗೀರಥ ಗಂಗೆಯನ್ನು ಇಳಿಸಿ ಪೂರ್ವಜರಾದ ಸಗರಪುತ್ರರನ್ನು ಉದ್ಧರಿಸಿದ."
+   }
+  },
+  {
+   "id": "rishyashringa-mbh",
+   "work": "mbh",
+   "name_iast": "Ṛṣyaśṛṅgopākhyāna",
+   "name_en": "Ṛṣyaśṛṅga",
+   "kind": "upakhyana",
+   "by": "Lomaśa",
+   "to": "Yudhiṣṭhira",
+   "frame": "Lomaśa, at Ṛṣyaśṛṅga's hermitage, answers Yudhiṣṭhira's request for his story.",
+   "opening": {
+    "vu": "vibhāṇḍakasya brahmarṣestapasā bhāvitātmanaḥ",
+    "ce": "vibhāṇḍakasya brahmarṣes tapasā bhāvitātmanaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 111,
+     "v": [
+      11,
+      24
+     ],
+     "s2": 114
+    },
+    "ce": {
+     "k": 3,
+     "s": 110,
+     "v": [
+      11,
+      24
+     ],
+     "s2": 113
+    }
+   },
+   "contains": [],
+   "twin": "rishyashringa",
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.116, vu 1.2.169). Starts at Lomaśa's opening of the tale after Yudhiṣṭhira's question.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "In a drought in Aṅga, King Lomapāda has courtesans lure Ṛṣyaśṛṅga, who has never seen a woman, from his father's hermitage; rain falls and he marries Śāntā.",
+    "kn": "ಅಂಗದೇಶದಲ್ಲಿ ಬರ ಬಂದಾಗ ರಾಜ ರೋಮಪಾದ ಸ್ತ್ರೀಯನ್ನೇ ನೋಡದ ಋಷ್ಯಶೃಂಗನನ್ನು ತಂದೆಯ ಆಶ್ರಮದಿಂದ ವೇಶ್ಯೆಯರ ಮೂಲಕ ಕರೆಸಿದ; ಮಳೆ ಸುರಿದು ಅವನು ಶಾಂತೆಯನ್ನು ವರಿಸಿದ."
+   }
+  },
+  {
+   "id": "jamadagnya",
+   "work": "mbh",
+   "name_iast": "Jāmadagnyopākhyāna",
+   "name_en": "Paraśurāma",
+   "kind": "upakhyana",
+   "by": "Akṛtavraṇa",
+   "to": "Yudhiṣṭhira",
+   "frame": "At Mahendra, the companion Akṛtavraṇa tells Yudhiṣṭhira of Paraśurāma's birth, father's death and vengeance.",
+   "opening": {
+    "vu": "etasminneva kāle tu pṛthivyāṃ pṛthivīpatiḥ ]",
+    "ce": "kanyakubje mahān āsīt pārthivaḥ sumahābalaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 116,
+     "v": [
+      19,
+      15
+     ],
+     "s2": 118
+    },
+    "ce": {
+     "k": 3,
+     "s": 115,
+     "v": [
+      9,
+      15
+     ],
+     "s2": 117
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.116, vu 1.2.169). Begins at the Gādhi/Ṛcīka narration; the preceding verses are the frame of Kārtavīrya's oppression of the gods.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Ṛcīka's son Jamadagni fathers Rāma, who kills Kārtavīrya after he steals the sacrificial cow; Jamadagni is killed in revenge, and Rāma slays the kṣatriyas twenty-one times.",
+    "kn": "ಋಚೀಕನ ಮಗ ಜಮದಗ್ನಿಗೆ ರಾಮ ಹುಟ್ಟಿದ; ಕಾರ್ತವೀರ್ಯ ಹೋಮಧೇನುವನ್ನು ಕದ್ದಾಗ ರಾಮ ಅವನನ್ನು ಕೊಂದ; ಜಮದಗ್ನಿಯ ಹತ್ಯೆಯ ನಂತರ ಇಪ್ಪತ್ತೊಂದು ಬಾರಿ ಕ್ಷತ್ರಿಯರನ್ನು ನಾಶಮಾಡಿದ."
+   }
+  },
+  {
+   "id": "cyavana_sukanya",
+   "work": "mbh",
+   "name_iast": "Sukanyopākhyāna",
+   "name_en": "Cyavana and Sukanyā",
+   "kind": "upakhyana",
+   "by": "Lomaśa",
+   "to": "Yudhiṣṭhira",
+   "frame": "At Cyavana's hermitage on the pilgrimage, Lomaśa tells Yudhiṣṭhira of Cyavana's youth and the Aśvins' soma.",
+   "opening": {
+    "vu": "bhṛgormaharṣeḥ putro'bhūccayavano nāma bhārata",
+    "ce": "bhṛgor maharṣeḥ putro 'bhūc cyavano nāma"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 123,
+     "v": [
+      1,
+      11
+     ],
+     "s2": 126
+    },
+    "ce": {
+     "k": 3,
+     "s": 122,
+     "v": [
+      1,
+      10
+     ],
+     "s2": 125
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (saukanya, ce 1.2.117, vu 1.2.171).",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Cyavana, buried in an anthill, is blinded by Sukanyā's pricking; she marries him, and the Aśvins restore his youth, for which he gets them a share of soma against Indra.",
+    "kn": "ಹುತ್ತದಲ್ಲಿ ಮುಳುಗಿದ್ದ ಚ್ಯವನನ ಕಣ್ಣನ್ನು ಸುಕನ್ಯೆ ಚುಚ್ಚಿದಳು; ಅವಳು ಅವನನ್ನು ವರಿಸಿದಳು; ಅಶ್ವಿನಿಗಳು ಅವನಿಗೆ ಯೌವನ ಕೊಟ್ಟರು, ಅದಕ್ಕಾಗಿ ಅವರಿಗೆ ಸೋಮದ ಪಾಲು ಕೊಡಿಸಿದ."
+   }
+  },
+  {
+   "id": "mandhatri",
+   "work": "mbh",
+   "name_iast": "Māndhātrupākhyāna",
+   "name_en": "Māndhātṛ",
+   "kind": "upakhyana",
+   "by": "Lomaśa",
+   "to": "Yudhiṣṭhira",
+   "frame": "Yudhiṣṭhira asks how Māndhātṛ got his name; Lomaśa tells of his birth and greatness.",
+   "opening": {
+    "vu": "śṛṇuṣvāvahito rājanrājñastasya mahātmanaḥ",
+    "ce": "śṛṇuṣvāvahito rājan rājñas tasya mahātmanaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 127,
+     "v": [
+      5,
+      47
+     ]
+    },
+    "ce": {
+     "k": 3,
+     "s": 126,
+     "v": [
+      4,
+      43
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "Named in vu Parvasaṅgraha 1.2.172 (Māndhātu); not in the ce summary. Short tale.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Yuvanāśva accidentally drinks consecrated water meant for his queen and gives birth to a son; Indra feeds the baby from his finger, and the boy grows into the great king Māndhātṛ.",
+    "kn": "ಯುವನಾಶ್ವ ರಾಣಿಗಾಗಿ ಇಟ್ಟಿದ್ದ ಅಭಿಮಂತ್ರಿತ ನೀರನ್ನು ತಪ್ಪಿ ಕುಡಿದು ಮಗನನ್ನು ಹೆತ್ತ; ಇಂದ್ರ ಬೆರಳಿನಿಂದ ಹಾಲುಣಿಸಿದ; ಆ ಮಗನೇ ಮಹಾರಾಜ ಮಾಂಧಾತ."
+   }
+  },
+  {
+   "id": "jantu_somaka",
+   "work": "mbh",
+   "name_iast": "Jantūpākhyāna",
+   "name_en": "Somaka and Jantu",
+   "kind": "upakhyana",
+   "by": "Lomaśa",
+   "to": "Yudhiṣṭhira",
+   "frame": "Yudhiṣṭhira asks about Somaka's deeds; Lomaśa tells of his sacrifice of his son.",
+   "opening": {
+    "vu": "yudhiṣṭhirāsīnnṛpatiḥ somako nāma dhārmikaḥ",
+    "ce": "yudhiṣṭhirāsīn nṛpatiḥ somako nāma dhārmikaḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 128,
+     "v": [
+      2,
+      20
+     ],
+     "s2": 129
+    },
+    "ce": {
+     "k": 3,
+     "s": 127,
+     "v": [
+      2,
+      17
+     ],
+     "s2": 128
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (jantu, ce 1.2.119, vu 1.2.173). vu end .20 chosen as the last verse of the tale.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Somaka, with a hundred wives and only one son, Jantu, sacrifices him on his priest's advice to get a hundred sons; both then suffer afterwards, until released.",
+    "kn": "ನೂರು ಪತ್ನಿಯರಿದ್ದರೂ ಒಬ್ಬನೇ ಮಗ ಜಂತುವನ್ನು ಪಡೆದ ಸೋಮಕ ಪುರೋಹಿತನ ಸಲಹೆಯಂತೆ ನೂರು ಮಕ್ಕಳಿಗಾಗಿ ಅವನನ್ನು ಯಜ್ಞದಲ್ಲಿ ಬಲಿಕೊಟ್ಟ; ಅನಂತರ ಅವರಿಬ್ಬರೂ ಫಲ ಅನುಭವಿಸಿ ಮುಕ್ತರಾದರು."
+   }
+  },
+  {
+   "id": "shibi",
+   "work": "mbh",
+   "name_iast": "Śibyupākhyāna",
+   "name_en": "Śibi and the hawk and dove",
+   "kind": "upakhyana",
+   "by": "Lomaśa",
+   "to": "Yudhiṣṭhira",
+   "frame": "Lomaśa shows Yudhiṣṭhira the site of Śibi's sacrifice and tells what happened there.",
+   "opening": {
+    "vu": "jalāṃ copajalāṃ caiva yamunām abhito nadīm",
+    "ce": "jalāṃ copajalāṃ caiva yamunām abhito nadīm"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 132,
+     "v": [
+      21,
+      32
+     ],
+     "s2": 133
+    },
+    "ce": {
+     "k": 3,
+     "s": 130,
+     "v": [
+      17,
+      30
+     ],
+     "s2": 131
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.115, vu 1.2.174). Begins at the verse naming the Yamunā rivers where the tale is placed; earlier verses are travel frame.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Indra as a hawk and Agni as a dove test King Śibi; he cuts off his own flesh to ransom the dove and wins lasting fame.",
+    "kn": "ಇಂದ್ರ ಗಿಡುಗನಾಗಿ ಮತ್ತು ಅಗ್ನಿ ಪಾರಿವಾಳವಾಗಿ ರಾಜ ಶಿಬಿಯನ್ನು ಪರೀಕ್ಷಿಸಿದರು; ಅವನು ಪಾರಿವಾಳವನ್ನು ಉಳಿಸಲು ತನ್ನ ಮಾಂಸವನ್ನೇ ಕತ್ತರಿಸಿ ಕೊಟ್ಟ; ಶಾಶ್ವತ ಕೀರ್ತಿ ಪಡೆದ."
+   }
+  },
+  {
+   "id": "ashtavakra",
+   "work": "mbh",
+   "name_iast": "Aṣṭāvakrīyam",
+   "name_en": "Aṣṭāvakra",
+   "kind": "upakhyana",
+   "by": "Lomaśa",
+   "to": "Yudhiṣṭhira",
+   "frame": "At Śvetaketu's hermitage, Lomaśa tells Yudhiṣṭhira of Aṣṭāvakra's debate and its result.",
+   "opening": {
+    "vu": "yaḥ kathyate mantravidagryabuddhirauddālakiḥ śvetaketuḥ pṛthivyām",
+    "ce": "yaḥ kathyate mantravid agryabuddhir"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 134,
+     "v": [
+      1,
+      40
+     ],
+     "s2": 136
+    },
+    "ce": {
+     "k": 3,
+     "s": 132,
+     "v": [
+      1,
+      38
+     ],
+     "s2": 134
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (aṣṭāvakrīya, ce 1.2.120, vu 1.2.175). Boundaries adjusted after an independent check (v0.24): tale start/end and phalaśruti included.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Aṣṭāvakra, cursed in the womb by his father Kahoḍa, defeats the court scholar Bandin at Janaka's court and frees his father, drowned by Bandin.",
+    "kn": "ಗರ್ಭದಲ್ಲೇ ತಂದೆ ಕಹೋಡನಿಂದ ಶಾಪ ಪಡೆದ ಅಷ್ಟಾವಕ್ರ ಜನಕನ ಸಭೆಯಲ್ಲಿ ಬಂದಿನನ್ನು ವಾದದಲ್ಲಿ ಸೋಲಿಸಿ, ಅವನಿಂದ ಮುಳುಗಿಸಲ್ಪಟ್ಟ ತಂದೆಯನ್ನು ಮರಳಿ ತಂದ."
+   }
+  },
+  {
+   "id": "matsya",
+   "work": "mbh",
+   "name_iast": "Matsyopākhyāna",
+   "name_en": "Manu and the fish",
+   "kind": "upakhyana",
+   "by": "Mārkaṇḍeya",
+   "to": "Yudhiṣṭhira",
+   "frame": "Yudhiṣṭhira asks Mārkaṇḍeya for the story of Manu, son of Vivasvat; the sage tells of the flood.",
+   "opening": {
+    "vu": "vivasvataḥ suto rājanmaharṣiḥ supratāpavān",
+    "ce": "vivasvataḥ suto rājan paramarṣiḥ pratāpavān"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 190,
+     "v": [
+      2,
+      56
+     ]
+    },
+    "ce": {
+     "k": 3,
+     "s": 185,
+     "v": [
+      2,
+      54
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "Named in vu Parvasaṅgraha (Ādi 2) 1.2.193 (matsya).",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "A small fish begs Manu's protection, grows enormous, and warns of a great flood; Manu takes the seeds in a ship and the fish tows it to safety on a mountain.",
+    "kn": "ಚಿಕ್ಕ ಮೀನೊಂದು ಮನುವಿನ ರಕ್ಷಣೆ ಬೇಡಿ ದೊಡ್ಡದಾಗಿ ಬೆಳೆದು ಪ್ರಳಯದ ಎಚ್ಚರಿಕೆ ಕೊಟ್ಟಿತು; ಮನು ಬೀಜಗಳೊಂದಿಗೆ ದೋಣಿಯಲ್ಲಿ ಹೊರಟ, ಮೀನು ಅದನ್ನು ಎಳೆದು ಬೆಟ್ಟಕ್ಕೆ ಸೇರಿಸಿತು."
+   }
+  },
+  {
+   "id": "indradyumna",
+   "work": "mbh",
+   "name_iast": "Indradyumnopākhyāna",
+   "name_en": "Indradyumna and the long-lived crane",
+   "kind": "upakhyana",
+   "by": "Mārkaṇḍeya",
+   "to": "Yudhiṣṭhira",
+   "frame": "Asked whether anyone is longer-lived than he, Mārkaṇḍeya tells Yudhiṣṭhira of the owl and the crane.",
+   "opening": {
+    "vu": "sa tānuvācāsti khalu rājarṣirindradyumno nāma kṣīṇapuṇyastridivātpracyutaḥ",
+    "ce": "sa tān uvāca"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 202,
+     "v": [
+      2,
+      17
+     ]
+    },
+    "ce": {
+     "k": 3,
+     "s": 191,
+     "v": [
+      2,
+      26
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (aindradyumna, ce 1.2.125, vu 1.2.194). Verses are prose-like.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "The king Indradyumna, fallen from heaven as his fame fades, asks Mārkaṇḍeya, then an owl, and finally the crane Nāḍījaṅgha, who knows him; his fame confirmed, he regains heaven.",
+    "kn": "ಕೀರ್ತಿ ಮಸುಕಾದ ಕಾರಣ ಸ್ವರ್ಗದಿಂದ ಬಿದ್ದ ರಾಜ ಇಂದ್ರದ್ಯುಮ್ನ ಮಾರ್ಕಂಡೇಯರನ್ನೂ ಗೂಬೆ, ನಾಡೀಜಂಘ ಕೊಕ್ಕರೆಗಳನ್ನೂ ಕೇಳಿದ; ಅವರು ಅವನನ್ನು ಗುರುತಿಸಿದ್ದರಿಂದ ಅವನು ಸ್ವರ್ಗ ಮರಳಿ ಪಡೆದ."
+   }
+  },
+  {
+   "id": "dhundhumara",
+   "work": "mbh",
+   "name_iast": "Dhundhumāropākhyāna",
+   "name_en": "Dhundhumāra",
+   "kind": "upakhyana",
+   "by": "Mārkaṇḍeya",
+   "to": "Yudhiṣṭhira",
+   "frame": "Yudhiṣṭhira asks why Kuvalāśva is called Dhundhumāra; Mārkaṇḍeya tells the story.",
+   "opening": {
+    "vu": "hanta te kathayiṣyāmi śṛṇu rājanyudhiṣṭhira",
+    "ce": "hanta te kathayiṣyāmi śṛṇu rājan yudhiṣṭhira"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 204,
+     "v": [
+      9,
+      42
+     ],
+     "s2": 207
+    },
+    "ce": {
+     "k": 3,
+     "s": 192,
+     "v": [
+      6,
+      38
+     ],
+     "s2": 195
+    }
+   },
+   "contains": [],
+   "cited": "Not named in Parvasaṅgraha; Gita Press / traditional title Dhundhumāropākhyāna. Ends with the Dhundhumāra tale's conclusion before the Pativratā question resumes. Boundaries adjusted after an independent check (v0.24): tale start/end and phalaśruti included.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Uttaṅka asks King Kuvalāśva to kill the demon Dhundhu sleeping under the sand; Kuvalāśva's sons die in the fire of its breath, but he slays it and is called Dhundhumāra.",
+    "kn": "ಮರಳಿನ ಅಡಿ ಮಲಗಿದ್ದ ಧುಂಧು ರಾಕ್ಷಸನನ್ನು ಕೊಲ್ಲಲು ಉತ್ತಂಕ ರಾಜ ಕುವಲಾಶ್ವನನ್ನು ಕೇಳಿದ; ಅದರ ಉಸಿರಿನ ಬೆಂಕಿಗೆ ಮಕ್ಕಳು ಬಲಿಯಾದರು, ಅವನು ಧುಂಧುವನ್ನು ಕೊಂದು ಧುಂಧುಮಾರನಾದ."
+   }
+  },
+  {
+   "id": "pativrata_vyadha",
+   "work": "mbh",
+   "name_iast": "Pativratopākhyāna",
+   "name_en": "The devoted wife and the hunter",
+   "kind": "upakhyana",
+   "by": "Mārkaṇḍeya",
+   "to": "Yudhiṣṭhira",
+   "frame": "Yudhiṣṭhira asks about dharma's subtleties; Mārkaṇḍeya answers with Kauśika and the hunter.",
+   "opening": {
+    "vu": "hanta te'haṃ samākhyāsye praśnametaṃ sudurvacam",
+    "ce": "hanta te sarvam ākhyāsye praśnam etaṃ"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 208,
+     "v": [
+      16,
+      36
+     ],
+     "s2": 219
+    },
+    "ce": {
+     "k": 3,
+     "s": 196,
+     "v": [
+      14,
+      32
+     ],
+     "s2": 206
+    }
+   },
+   "contains": [
+    "vyadhagita"
+   ],
+   "cited": "Named in vu Parvasaṅgraha (Ādi 2) 1.2.195 (pativratā ākhyāna). Contains the Vyādhagītā. Starts where the Kauśika narration opens.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "The brahmin Kauśika, proud of his austerity, learns from a devoted wife and then from the hunter Dharmavyādha that duty to parents and household is true dharma.",
+    "kn": "ತಪಸ್ಸಿನ ಅಹಂಕಾರವಿದ್ದ ಬ್ರಾಹ್ಮಣ ಕೌಶಿಕ ಪತಿವ್ರತೆಯಿಂದ ಮತ್ತು ಬೇಟೆಗಾರ ಧರ್ಮವ್ಯಾಧನಿಂದ ಕಲಿತ: ತಂದೆತಾಯಿ ಮತ್ತು ಸಂಸಾರದ ಕರ್ತವ್ಯವೇ ನಿಜವಾದ ಧರ್ಮ."
+   }
+  },
+  {
+   "id": "mudgala",
+   "work": "mbh",
+   "name_iast": "Mudgalopākhyāna",
+   "name_en": "Mudgala",
+   "kind": "upakhyana",
+   "by": "Vyāsa",
+   "to": "Yudhiṣṭhira",
+   "frame": "Vyāsa comforts Yudhiṣṭhira in the forest with Mudgala's story and assures his kingdom after thirteen years.",
+   "opening": {
+    "vu": "śiloñchavṛttirdharmātmā mudgalaḥ saṃyatendriyaḥ",
+    "ce": "śiloñchavṛttir dharmātmā mudgalaḥ saṃśitavrataḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 261,
+     "v": [
+      3,
+      49
+     ],
+     "s2": 262
+    },
+    "ce": {
+     "k": 3,
+     "s": 246,
+     "v": [
+      3,
+      43
+     ],
+     "s2": 247
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (vrīhidrauṇika, ce 1.2.46/125, vu 1.2.198). Boundaries adjusted after an independent check (v0.24): tale start/end and phalaśruti included.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "The ascetic Mudgala, living on gleaned grain and sharing it with guests, refuses the messenger's offer of heaven once he learns that heaven is only temporary.",
+    "kn": "ಹೆಕ್ಕಿದ ಕಾಳಿನಲ್ಲಿ ಬದುಕಿ ಅತಿಥಿಗಳಿಗೂ ಹಂಚುವ ಮುದ್ಗಲ ದೇವದೂತನ ಸ್ವರ್ಗದ ಕರೆಯನ್ನು ನಿರಾಕರಿಸಿದ, ಏಕೆಂದರೆ ಸ್ವರ್ಗವೂ ತಾತ್ಕಾಲಿಕ ಎಂದು ಅರಿತ."
+   }
+  },
+  {
+   "id": "ramopakhyana",
+   "work": "mbh",
+   "name_iast": "Rāmopākhyāna",
+   "name_en": "Story of Rāma",
+   "kind": "upakhyana",
+   "by": "Mārkaṇḍeya",
+   "to": "Yudhiṣṭhira",
+   "frame": "Yudhiṣṭhira asks if anyone has suffered more than he; Mārkaṇḍeya retells Rāma's story to console him.",
+   "opening": {
+    "vu": "prāptamapratimaṃ duḥkhaṃ rāmeṇa bharatarṣabha",
+    "ce": "prāptam apratimaṃ duḥkhaṃ rāmeṇa bharatarṣabha"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 275,
+     "v": [
+      1,
+      13
+     ],
+     "s2": 293
+    },
+    "ce": {
+     "k": 3,
+     "s": 258,
+     "v": [
+      1,
+      12
+     ],
+     "s2": 276
+    }
+   },
+   "contains": [],
+   "twin": "ramayana",
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.126, vu 1.2.201 rāmāyaṇa upākhyāna). Includes Mārkaṇḍeya's closing consolation to Yudhiṣṭhira; the end is a boundary judgement. Twin is the whole Rāmāyaṇa.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Rāvaṇa abducts Sītā; Rāma, with Sugrīva's army, builds a bridge, burns Laṅkā, kills Rāvaṇa and recovers her.",
+    "kn": "ರಾವಣ ಸೀತೆಯನ್ನು ಅಪಹರಿಸಿದ; ರಾಮ ಸುಗ್ರೀವನ ಸೇನೆಯೊಂದಿಗೆ ಸೇತುವೆ ಕಟ್ಟಿ ಲಂಕೆಯನ್ನು ಸುಟ್ಟು ರಾವಣನನ್ನು ಕೊಂದು ಸೀತೆಯನ್ನು ಮರಳಿ ಪಡೆದ."
+   }
+  },
+  {
+   "id": "savitri",
+   "work": "mbh",
+   "name_iast": "Sāvitryupākhyāna",
+   "name_en": "Sāvitrī and Satyavān",
+   "kind": "upakhyana",
+   "by": "Mārkaṇḍeya",
+   "to": "Yudhiṣṭhira",
+   "frame": "Grieving for Draupadī, Yudhiṣṭhira asks about a devoted wife; Mārkaṇḍeya tells of Sāvitrī.",
+   "opening": {
+    "vu": "śṛṇu rājankulastrīṇāṃ mahābhāgyaṃ yudhiṣṭhira",
+    "ce": "śṛṇu rājan kulastrīṇāṃ mahābhāgyaṃ yudhiṣṭhira"
+   },
+   "loc": {
+    "vu": {
+     "k": 3,
+     "s": 294,
+     "v": [
+      4,
+      15
+     ],
+     "s2": 300
+    },
+    "ce": {
+     "k": 3,
+     "s": 277,
+     "v": [
+      4,
+      15
+     ],
+     "s2": 283
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ce 1.2.126, vu 1.2.202).",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Sāvitrī chooses Satyavān, knowing he will die in a year; when Yama takes him, she follows and wins boons by her words until he returns him alive.",
+    "kn": "ಒಂದೇ ವರ್ಷ ಆಯುಷ್ಯವಿದ್ದರೂ ಸಾವಿತ್ರಿ ಸತ್ಯವಾನನ್ನು ವರಿಸಿದಳು; ಯಮ ಅವನನ್ನು ಒಯ್ಯುವಾಗ ಹಿಂದೆ ಹೋಗಿ ತನ್ನ ಮಾತುಗಳಿಂದ ವರಗಳನ್ನು ಪಡೆದು ಪತಿಯನ್ನು ಮರಳಿ ಪಡೆದಳು."
+   }
+  },
+  {
+   "id": "indravijaya",
+   "work": "mbh",
+   "name_iast": "Indravijaya",
+   "name_en": "Nahuṣa and Indra",
+   "kind": "upakhyana",
+   "by": "Śalya",
+   "to": "Yudhiṣṭhira",
+   "frame": "Śalya, consoling Yudhiṣṭhira, shows that Indra and his wife also suffered hardship before recovering their place.",
+   "opening": {
+    "vu": "śṛṇu rājanpurāvṛttamitihāsaṃ purātanam",
+    "ce": "śṛṇu rājan purā vṛttam itihāsaṃ purātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 5,
+     "s": 9,
+     "v": [
+      2,
+      20
+     ],
+     "s2": 18
+    },
+    "ce": {
+     "k": 5,
+     "s": 9,
+     "v": [
+      2,
+      20
+     ],
+     "s2": 18
+    }
+   },
+   "contains": [],
+   "cited": "Told in the Udyoga as Śalya's consolation; not named in Parvasaṅgraha. Includes Viśvarūpa, Vṛtra and Nahuṣa.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Indra kills Triśiras, hides from the guilt of brahminicide, and Nahuṣa is crowned in his place; Nahuṣa's pride makes him fall to a curse, and Indra returns.",
+    "kn": "ತ್ರಿಶಿರನನ್ನು ಕೊಂದು ಬ್ರಹ್ಮಹತ್ಯೆಯ ಭಯದಿಂದ ಅಡಗಿದ ಇಂದ್ರನ ಸ್ಥಾನಕ್ಕೆ ನಹುಷ ಬಂದ; ಅಹಂಕಾರದಿಂದ ಶಾಪಗ್ರಸ್ತನಾಗಿ ಬಿದ್ದ, ಇಂದ್ರ ಮರಳಿ ಪದವಿ ಪಡೆದ."
+   }
+  },
+  {
+   "id": "matali",
+   "work": "mbh",
+   "name_iast": "Mātalīyopākhyāna",
+   "name_en": "Mātali and Sumukha",
+   "kind": "upakhyana",
+   "by": "Kaṇva",
+   "to": "Duryodhana",
+   "frame": "Kaṇva tells Duryodhana of Mātali's persistence in his search, urging him to make peace with the Pāṇḍavas.",
+   "opening": {
+    "vu": "atrāpyudāharantīmamitihāsaṃ purātanam",
+    "ce": "atrāpy udāharantīmam itihāsaṃ purātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 5,
+     "s": 97,
+     "v": [
+      11,
+      43
+     ],
+     "s2": 105
+    },
+    "ce": {
+     "k": 5,
+     "s": 95,
+     "v": [
+      11,
+      38
+     ],
+     "s2": 103
+    }
+   },
+   "contains": [],
+   "cited": "Named in vu Parvasaṅgraha 1.2.61 (mātalīya); ce omits the name. Boundaries adjusted after an independent check (v0.24): tale start/end and phalaśruti included.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "The charioteer Mātali seeks a husband for his daughter Guṇakeśī and, with Nārada, chooses the Nāga Sumukha, whom Indra then grants long life.",
+    "kn": "ಸಾರಥಿ ಮಾತಲಿ ಮಗಳು ಗುಣಕೇಶಿಗೆ ವರನನ್ನು ಹುಡುಕುತ್ತಾ ನಾರದರೊಂದಿಗೆ ನಾಗ ಸುಮುಖನನ್ನು ಆರಿಸಿದ; ಇಂದ್ರ ಸುಮುಖನಿಗೆ ದೀರ್ಘಾಯುಷ್ಯ ಕೊಟ್ಟ."
+   }
+  },
+  {
+   "id": "galava",
+   "work": "mbh",
+   "name_iast": "Gālavacaritam",
+   "name_en": "Gālava",
+   "kind": "upakhyana",
+   "by": "Nārada",
+   "to": "Duryodhana",
+   "frame": "Nārada tells Duryodhana the story of Gālava's stubbornness as a warning against obstinacy.",
+   "opening": {
+    "vu": "atrāpyudāharantīmamitihāsaṃ purātanam",
+    "ce": "atrāpy udāharantīmam itihāsaṃ purātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 5,
+     "s": 106,
+     "v": [
+      7,
+      25
+     ],
+     "s2": 123
+    },
+    "ce": {
+     "k": 5,
+     "s": 104,
+     "v": [
+      7,
+      22
+     ],
+     "s2": 121
+    }
+   },
+   "contains": [],
+   "cited": "Named in vu Parvasaṅgraha 1.2.61 (gālava).",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Gālava, pressed by Viśvāmitra for a guru-dakṣiṇā of eight hundred moon-white horses, seeks them with Garuḍa's help, and ends by giving Yayāti's daughter Mādhavī.",
+    "kn": "ಗುರುದಕ್ಷಿಣೆಯಾಗಿ ವಿಶ್ವಾಮಿತ್ರ ಎಂಟು ನೂರು ಚಂದ್ರವರ್ಣದ ಕುದುರೆಗಳನ್ನು ಕೇಳಿದಾಗ ಗಾಲವ ಗರುಡನ ಸಹಾಯದಿಂದ ಹುಡುಕಿದ; ಕೊನೆಗೆ ಯಯಾತಿಯ ಮಗಳು ಮಾಧವಿಯನ್ನು ಕೊಟ್ಟ."
+   }
+  },
+  {
+   "id": "vidula",
+   "work": "mbh",
+   "name_iast": "Vidulāputrānuśāsanam",
+   "name_en": "Vidulā and her son",
+   "kind": "upakhyana",
+   "by": "Kuntī",
+   "to": "Kṛṣṇa",
+   "frame": "Kuntī sends Kṛṣṇa the story of Vidulā and Sañjaya as her message to the Pāṇḍavas to fight.",
+   "opening": {
+    "vu": "atrāpyudāharantīmamitihāsaṃ purātanam",
+    "ce": "atrāpy udāharantīmam itihāsaṃ purātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 5,
+     "s": 133,
+     "v": [
+      1,
+      22
+     ],
+     "s2": 136
+    },
+    "ce": {
+     "k": 5,
+     "s": 131,
+     "v": [
+      1,
+      21
+     ],
+     "s2": 134
+    }
+   },
+   "contains": [],
+   "cited": "Named in vu Parvasaṅgraha 1.2.63, 1.2.235 (vidulā).",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Vidulā rebukes her defeated son Sañjaya for sitting idle and urges him to fight to recover his kingdom, saying a kṣatriya mother wants a hero.",
+    "kn": "ಸೋತು ಸುಮ್ಮನೆ ಕುಳಿತ ಮಗ ಸಂಜಯನನ್ನು ವಿದುಲೆ ಗದರಿಸಿ ರಾಜ್ಯ ಮರಳಿ ಪಡೆಯಲು ಹೋರಾಡಬೇಕೆಂದಳು; ಕ್ಷತ್ರಿಯ ತಾಯಿ ವೀರನನ್ನು ಬಯಸುತ್ತಾಳೆ."
+   }
+  },
+  {
+   "id": "amba",
+   "work": "mbh",
+   "name_iast": "Ambopākhyāna",
+   "name_en": "Ambā",
+   "kind": "upakhyana",
+   "by": "Bhīṣma",
+   "to": "Duryodhana",
+   "frame": "Asked by Duryodhana why he will not fight Śikhaṇḍin, Bhīṣma tells of Ambā and her rebirth.",
+   "opening": {
+    "vu": "śrṛṇu duryodhana kathāṃ sahaibhirvasudhādhipaiḥ",
+    "ce": "śṛṇu duryodhana kathāṃ sahaibhir vasudhādhipaiḥ"
+   },
+   "loc": {
+    "vu": {
+     "k": 5,
+     "s": 173,
+     "v": [
+      3,
+      69
+     ],
+     "s2": 192
+    },
+    "ce": {
+     "k": 5,
+     "s": 170,
+     "v": [
+      3,
+      65
+     ],
+     "s2": 193
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (ambopākhyāna, ce 1.2.54/150, vu 1.2.67/242).",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Ambā, carried off by Bhīṣma and then rejected, vows vengeance, dies, and is reborn as Śikhaṇḍin, whom Bhīṣma will not fight as he was once a woman.",
+    "kn": "ಭೀಷ್ಮ ಅಪಹರಿಸಿ ತಂದ ಅಂಬೆಯನ್ನು ತಿರಸ್ಕರಿಸಲಾಯಿತು; ಅವಳು ಪ್ರತಿಜ್ಞೆ ಮಾಡಿ ಸತ್ತು ಶಿಖಂಡಿಯಾಗಿ ಹುಟ್ಟಿದಳು; ಹಿಂದೆ ಸ್ತ್ರೀಯಾಗಿದ್ದವನಾದ್ದರಿಂದ ಭೀಷ್ಮ ಅವನನ್ನು ಎದುರಿಸುವುದಿಲ್ಲ."
+   }
+  },
+  {
+   "id": "tripura",
+   "work": "mbh",
+   "name_iast": "Tripuranipātanam",
+   "name_en": "Fall of Tripura",
+   "kind": "upakhyana",
+   "by": "Duryodhana (quoting Mārkaṇḍeya)",
+   "to": "Śalya",
+   "frame": "Duryodhana tells Śalya the Tripura story to persuade him to drive Karṇa's chariot.",
+   "opening": {
+    "vu": "bhūya eva tu madreśa yattvā vakṣyāmi",
+    "ce": "bhūya eva tu madreśa yat te"
+   },
+   "loc": {
+    "vu": {
+     "k": 8,
+     "s": 24,
+     "v": [
+      1,
+      41
+     ],
+     "s2": 27
+    },
+    "ce": {
+     "k": 8,
+     "s": 24,
+     "v": [
+      1,
+      124
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (tripuranipātana, ce 1.2.169, vu 1.2.272). vu spreads the tale over chapters 24–27, ce compresses it into 24.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "The gods have Śiva destroy the asuras' three cities with one arrow, with Brahmā as his charioteer; this is the model for Śalya driving Karṇa.",
+    "kn": "ಅಸುರರ ಮೂರು ನಗರಗಳನ್ನು ದೇವತೆಗಳು ಶಿವನಿಂದ ಒಂದೇ ಬಾಣದಿಂದ ನಾಶ ಮಾಡಿಸಿದರು; ಬ್ರಹ್ಮ ಸಾರಥಿಯಾದ. ಕರ್ಣನಿಗೆ ಶಲ್ಯ ಸಾರಥಿಯಾಗಲು ಇದೇ ಮಾದರಿ."
+   }
+  },
+  {
+   "id": "shodasharajakiya",
+   "work": "mbh",
+   "name_iast": "Ṣoḍaśarājakīyam",
+   "name_en": "Sixteen kings",
+   "kind": "upakhyana",
+   "by": "Vyāsa (Nārada to Sṛñjaya)",
+   "to": "Yudhiṣṭhira",
+   "frame": "After Abhimanyu's death, Vyāsa repeats Nārada's old consolation of Sṛñjaya to Yudhiṣṭhira.",
+   "opening": {
+    "vu": "śaibyasya nṛpateḥ punaḥ sṛñjayo nāma nāmataḥ",
+    "ce": "atraivodāharantīmam itihāsaṃ purātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 7,
+     "s": 55,
+     "v": [
+      11,
+      23
+     ],
+     "s2": 71
+    },
+    "ce": {
+     "k": 12,
+     "s": 29,
+     "v": [
+      12,
+      141
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "vu tells it in the Droṇa parva (and again at 12.28.13–149); the Pune critical edition omits the Droṇa telling and has it only at Śānti 12.29. Hence different k per edition by design. Named in vu Parvasaṅgraha 1.2.62.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "Nārada consoles King Sṛñjaya for his dead son by listing sixteen great kings, all as generous and righteous, who still died.",
+    "kn": "ಮಗನನ್ನು ಕಳೆದುಕೊಂಡ ರಾಜ ಸೃಂಜಯನಿಗೆ ನಾರದ ಹದಿನಾರು ಮಹಾರಾಜರ ಹೆಸರು ಹೇಳಿ, ಅವರೆಲ್ಲ ಉದಾರರೂ ಧಾರ್ಮಿಕರೂ ಆದರೂ ಸತ್ತರು ಎಂದು ಸಮಾಧಾನ ಹೇಳಿದ."
+   }
+  },
+  {
+   "id": "tuladhara_jajali",
+   "work": "mbh",
+   "name_iast": "Tulādhārajājalisaṃvāda",
+   "name_en": "Tulādhāra and Jājali",
+   "kind": "upakhyana",
+   "by": "Bhīṣma",
+   "to": "Yudhiṣṭhira",
+   "frame": "Bhīṣma, asked about dharma, tells Yudhiṣṭhira of Tulādhāra's teaching to Jājali.",
+   "opening": {
+    "vu": "atrāpyudāharantīmamitihāsaṃ purātanam",
+    "ce": "atrāpy udāharantīmam itihāsaṃ purātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 267,
+     "v": [
+      1,
+      27
+     ],
+     "s2": 270
+    },
+    "ce": {
+     "k": 12,
+     "s": 253,
+     "v": [
+      1,
+      22
+     ],
+     "s2": 256
+    }
+   },
+   "contains": [],
+   "cited": "Not named in Parvasaṅgraha; well-known Śānti tale.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "The ascetic Jājali, proud of his austerity, is sent by a voice to the merchant Tulādhāra, who teaches him that non-violence and honest dealing are the highest dharma.",
+    "kn": "ತಪಸ್ಸಿನ ಅಹಂಕಾರವಿದ್ದ ಜಾಜಲಿಯನ್ನು ಅಶರೀರವಾಣಿ ವ್ಯಾಪಾರಿ ತುಲಾಧಾರನ ಬಳಿ ಕಳುಹಿಸಿತು; ಅವನು ಅಹಿಂಸೆ ಮತ್ತು ಪ್ರಾಮಾಣಿಕತೆಯೇ ಶ್ರೇಷ್ಠ ಧರ್ಮ ಎಂದು ಕಲಿಸಿದ."
+   }
+  },
+  {
+   "id": "cirakarin",
+   "work": "mbh",
+   "name_iast": "Cirakāryupākhyāna",
+   "name_en": "Cirakārin",
+   "kind": "upakhyana",
+   "by": "Bhīṣma",
+   "to": "Yudhiṣṭhira",
+   "frame": "Yudhiṣṭhira asks how to judge when to act fast or slowly; Bhīṣma answers with Cirakārin.",
+   "opening": {
+    "vu": "atrāpyudāharantīmamitihāsaṃ purātanam",
+    "ce": "atrāpy udāharantīmam itihāsaṃ purātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 12,
+     "s": 272,
+     "v": [
+      2,
+      78
+     ]
+    },
+    "ce": {
+     "k": 12,
+     "s": 258,
+     "v": [
+      2,
+      75
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "Not named in Parvasaṅgraha; well-known Śānti tale.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Ordered by his father Gautama to kill his mother, Cirakārin deliberates so long that the father relents and regrets the order.",
+    "kn": "ತಂದೆ ಗೌತಮ ತಾಯಿಯನ್ನು ಕೊಲ್ಲಲು ಆಜ್ಞಾಪಿಸಿದಾಗ ಚಿರಕಾರಿ ಬಹಳ ಹೊತ್ತು ಯೋಚಿಸಿದ; ಅಷ್ಟರಲ್ಲಿ ತಂದೆ ಪಶ್ಚಾತ್ತಾಪಪಟ್ಟ."
+   }
+  },
+  {
+   "id": "gautami_mrityu",
+   "work": "mbh",
+   "name_iast": "Gautamīlubdhakasaṃvāda",
+   "name_en": "Gautamī, the hunter and Death",
+   "kind": "upakhyana",
+   "by": "Bhīṣma",
+   "to": "Yudhiṣṭhira",
+   "frame": "Bhīṣma tells Yudhiṣṭhira this to relieve his guilt over the war's dead, showing that no single person causes a death.",
+   "opening": {
+    "vu": "atrāpyudāharantīmamitihāsaṃ purātanam",
+    "ce": "atrāpy udāharantīmam itihāsaṃ purātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 13,
+     "s": 1,
+     "v": [
+      17,
+      83
+     ]
+    },
+    "ce": {
+     "k": 13,
+     "s": 1,
+     "v": [
+      9,
+      75
+     ]
+    }
+   },
+   "contains": [],
+   "cited": "Opens the Anuśāsana parva; not named in Parvasaṅgraha.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Gautamī's son dies of a snake bite; the hunter wants to kill the snake, but she refuses, and Death, Kāla and the snake each place the cause on karma.",
+    "kn": "ಗೌತಮಿಯ ಮಗ ಹಾವು ಕಚ್ಚಿ ಸತ್ತ; ಬೇಡ ಹಾವನ್ನು ಕೊಲ್ಲಬೇಕೆಂದ, ಆದರೆ ಅವಳು ಒಪ್ಪಲಿಲ್ಲ; ಮೃತ್ಯು, ಕಾಲ ಮತ್ತು ಹಾವು ಕಾರಣ ತಮ್ಮದಲ್ಲ, ಕರ್ಮವೇ ಎಂದರು."
+   }
+  },
+  {
+   "id": "cyavana_kushika",
+   "work": "mbh",
+   "name_iast": "Cyavanakuśikopākhyāna",
+   "name_en": "Cyavana and Kuśika",
+   "kind": "upakhyana",
+   "by": "Bhīṣma",
+   "to": "Yudhiṣṭhira",
+   "frame": "Yudhiṣṭhira asks how Viśvāmitra became a brahmin; Bhīṣma tells of Cyavana and Kuśika.",
+   "opening": {
+    "vu": "atrāpyudāharantīmamitihāsaṃ purātanam",
+    "ce": "atrāpy udāharantīmam itihāsaṃ purātanam"
+   },
+   "loc": {
+    "vu": {
+     "k": 13,
+     "s": 87,
+     "v": [
+      7,
+      21
+     ],
+     "s2": 91
+    },
+    "ce": {
+     "k": 13,
+     "s": 52,
+     "v": [
+      7,
+      20
+     ],
+     "s2": 56
+    }
+   },
+   "contains": [],
+   "cited": "Anuśāsana tale; ce chapters 52–56 correspond to vu 87–91.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Cyavana stays with King Kuśika and his queen and tests them; he foretells that Kuśika's line will bear a brahmin, Viśvāmitra, and Bhṛgu's line a kṣatriya warrior.",
+    "kn": "ಚ್ಯವನ ರಾಜ ಕುಶಿಕ ಮತ್ತು ರಾಣಿಯ ಬಳಿ ಇದ್ದು ಅವರನ್ನು ಪರೀಕ್ಷಿಸಿದ; ಕುಶಿಕ ವಂಶದಲ್ಲಿ ಬ್ರಾಹ್ಮಣ ವಿಶ್ವಾಮಿತ್ರ ಮತ್ತು ಭೃಗು ವಂಶದಲ್ಲಿ ಕ್ಷತ್ರಿಯ ಯೋಧ ಹುಟ್ಟುತ್ತಾರೆ ಎಂದು ಭವಿಷ್ಯ ಹೇಳಿದ."
+   }
+  },
+  {
+   "id": "uttanka",
+   "work": "mbh",
+   "name_iast": "Uttaṅkopākhyāna",
+   "name_en": "Uttaṅka, Kṛṣṇa and Saudāsa",
+   "kind": "upakhyana",
+   "by": "Vaiśaṃpāyana",
+   "to": "Janamejaya",
+   "frame": "Vaiśaṃpāyana tells Janamejaya of Kṛṣṇa's meeting with Uttaṅka on the way back to Dvārakā.",
+   "opening": {
+    "vu": "sa prayāto mahābāhuḥ sameṣu marudhanvasu",
+    "ce": "sa prayāto mahābāhuḥ sameṣu marudhanvasu"
+   },
+   "loc": {
+    "vu": {
+     "k": 14,
+     "s": 53,
+     "v": [
+      7,
+      60
+     ],
+     "s2": 58
+    },
+    "ce": {
+     "k": 14,
+     "s": 52,
+     "v": [
+      7,
+      56
+     ],
+     "s2": 57
+    }
+   },
+   "contains": [],
+   "cited": "Āśvamedhika Uttaṅka tale (not the Pauṣya Uttaṅka of Ādi). Start is Uttaṅka's meeting with Kṛṣṇa.",
+   "tier": "traditional",
+   "sources": [],
+   "about": {
+    "en": "Kṛṣṇa, returning to Dvārakā, meets the sage Uttaṅka, who is angry about the war; Kṛṣṇa shows his divine form, and Uttaṅka's earlier tale of Saudāsa and the earrings follows.",
+    "kn": "ದ್ವಾರಕೆಗೆ ಹಿಂದಿರುಗುವಾಗ ಕೃಷ್ಣ ಯುದ್ಧದ ಬಗ್ಗೆ ಕೋಪಗೊಂಡ ಉತ್ತಂಕರನ್ನು ಭೇಟಿಯಾದ; ತನ್ನ ವಿಶ್ವರೂಪ ತೋರಿಸಿದ; ಸೌದಾಸ ಮತ್ತು ಕುಂಡಲದ ಉತ್ತಂಕನ ಹಳೆಯ ಕತೆಯೂ ಬರುತ್ತದೆ."
+   }
+  },
+  {
+   "id": "nakula",
+   "work": "mbh",
+   "name_iast": "Nakulopākhyāna",
+   "name_en": "The mongoose",
+   "kind": "upakhyana",
+   "by": "Vaiśaṃpāyana (the mongoose)",
+   "to": "Janamejaya",
+   "frame": "At Yudhiṣṭhira's horse sacrifice a mongoose tells the brahmins that a poor man's gift surpasses it.",
+   "opening": {
+    "vu": "śrūyatāṃ rājaśārdūla mahadāścaryamuttamam",
+    "ce": "śrūyatāṃ rājaśārdūla mahad āścaryam uttamam"
+   },
+   "loc": {
+    "vu": {
+     "k": 14,
+     "s": 91,
+     "v": [
+      2,
+      98
+     ],
+     "s2": 92
+    },
+    "ce": {
+     "k": 14,
+     "s": 92,
+     "v": [
+      2,
+      93
+     ],
+     "s2": 93
+    }
+   },
+   "contains": [],
+   "cited": "Named in Parvasaṅgraha (Ādi 2) (nakulākhyāna, ce 1.2.209, vu 1.2.343). The mongoose's backstory (ce 14.96) is left out.",
+   "tier": "core",
+   "sources": [],
+   "about": {
+    "en": "A mongoose, half golden, says Yudhiṣṭhira's sacrifice does not equal the gleanings a poor brahmin family once gave to a guest, since that gift turned half his body golden.",
+    "kn": "ಅರ್ಧ ಚಿನ್ನದ ಮುಂಗುಸಿ, ಬಡ ಬ್ರಾಹ್ಮಣ ಕುಟುಂಬ ಅತಿಥಿಗೆ ಕೊಟ್ಟ ಹೆಕ್ಕಿದ ಕಾಳಿನ ದಾನಕ್ಕೆ ಯುಧಿಷ್ಠಿರನ ಯಜ್ಞ ಸಮವಲ್ಲ ಎಂದಿತು; ಅದರಿಂದಲೇ ಅದರ ದೇಹ ಅರ್ಧ ಚಿನ್ನವಾಗಿತ್ತು."
+   }
+  }
+ ]
+}
